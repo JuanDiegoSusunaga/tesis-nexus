@@ -1,4 +1,4 @@
-# Índice General de Fuentes - NotebookLM Backup
+# Índice General de Fuentes
 
 **Total de fuentes:** 109 *(catálogo original — se conserva íntegro por trazabilidad)*
 

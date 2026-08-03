@@ -3,6 +3,7 @@ nexus/
 
 # Configuración local de herramientas (no versionar)
 .claude/
+.agents/
 
 # Temporales de Office
 ~$*
