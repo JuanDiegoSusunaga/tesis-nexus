@@ -1,0 +1,9 @@
+# Prototipo Rust: tiene su propio repositorio (github.com/JuanDiegoSusunaga/nexus)
+nexus/
+
+# Configuración local de herramientas (no versionar)
+.claude/
+
+# Temporales de Office
+~$*
+*.tmp

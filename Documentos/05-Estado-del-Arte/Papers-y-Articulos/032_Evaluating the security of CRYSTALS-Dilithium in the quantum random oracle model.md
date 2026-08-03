@@ -1,0 +1,686 @@
+# Evaluating the security of CRYSTALS-Dilithium in the quantum random oracle model - arXiv
+
+- **ID**: `674b4496-59b7-4022-b098-b57edf39c3bd`
+- **Tipo de Fuente**: `SOURCE_TYPE_PDF`
+- **URL**: [https://arxiv.org/pdf/2312.16619](https://arxiv.org/pdf/2312.16619)
+
+---
+
+## Contenido Extraído / Texto Completo
+
+Evaluating the security of CRYSTALS-Dilithium in the quantum random oracle model 
+Kelsey A. Jackson∗1, Carl A. Miller†1,2, and Daochen Wang‡1,3 
+1Joint Center for Quantum Information and Computer Science (QuICS), University of Maryland 2Computer Security Division, National Institute of Standards and Technology (NIST) 
+3Department of Computer Science, University of British Columbia 
+Abstract 
+In the wake of recent progress on quantum computing hardware, the National Institute of Standards and Technology (NIST) is standardizing cryptographic protocols that are resistant to attacks by quantum adversaries. The primary digital signature scheme that NIST has chosen is CRYSTALS-Dilithium. The hardness of this scheme is based on the hardness of three computational problems: Module Learning with Errors (MLWE), Module Short Integer Solution (MSIS), and SelfTargetMSIS. MLWE and MSIS have been well-studied and are widely believed to be secure. However, SelfTargetMSIS is novel and, though classically as hard as MSIS, its quantum hardness is unclear. In this paper, we provide the first proof of the hardness of SelfTargetMSIS via a reduction from MLWE in the Quantum Random Oracle Model (QROM). Our proof uses recently developed techniques in quantum reprogramming and rewinding. A central part of our approach is a proof that a certain hash function, derived from the MSIS problem, is collapsing. From this approach, we deduce a new security proof for Dilithium under appropriate parameter settings. Compared to the previous work by Kiltz, Lyubashevsky, and Schaffner (EUROCRYPT 2018) that gave the only other rigorous security proof for a variant of Dilithium, our proof has the advantage of being applicable under the condition q = 1 mod 2n, where q denotes the modulus and n the dimension of the underlying algebraic ring. This condition is part of the original Dilithium proposal and is crucial for the efficient implementation of the scheme. We provide new secure parameter sets for Dilithium under the condition q = 1 mod 2n, finding that our public key size and signature size are about 2.9× and 1.3× larger, respectively, than those proposed by Kiltz et al. at the same security level. 
+1 Introduction Quantum computers are theoretically capable of breaking the underlying computational hardness assump-
+tions for many existing cryptographic schemes. Therefore, it is vitally important to develop new cryptographic primitives and protocols that are resistant to quantum attacks. 
+The goal of NIST’s Post-Quantum Cryptography Standardization Project is to design a new generation of cryptographic schemes that are secure against quantum adversaries. In 2022, NIST selected three new digital signature schemes for standardization [Ala+22]: Falcon, SPHINCS+, and CRYSTALS-Dilithium. Of the three, CRYSTALS-Dilithium [Bai+21], or Dilithium in shorthand, was identified as the primary choice for post-quantum digital signing. 
+To practically implement post-quantum cryptography, users must be provided with not only assurance that a scheme is secure in a post-quantum setting, but also the means by which to judge parameter choices and thereby balance their own needs for security and efficiency. The goal of the current work is to provide rigorous assurance of the security of Dilithium as well as implementable parameter sets. A common model for the security of digital signatures is existential unforgeability against chosen message attacks, or EUF-CMA. In this setting, an adversary is allowed to make sequential queries to a signing oracle for the signature scheme, and then afterwards the adversary attempts to forge a signature for a new message. We work in the setting of strong existential unforgeability (sEUF-CMA) wherein we must also guard against the possibility that an adversary 
+∗kaj22475@umd.edu †camiller@umd.edu ‡wdaochen@gmail.com 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+could try to forge a new signature for one of the messages already signed by the oracle. (See Section 2 for details.) 
+Additionally, we utilize the quantum random oracle model (QROM) for hash functions. We recall that when a hash function H : X → Y is used as a subroutine in a digital signature scheme, the random oracle model (ROM) assumes that one can replace each instance of the function H with a black box that accepts inputs from X and returns outputs in Y according to a uniformly randomly chosen function from X to Y . (This model is useful because random functions are easier to work with in theory than actual hash functions.) The random oracle model needs to be refined in the quantum setting because queries to the hash function can be made in superposition: for any quantum state of the form 
+∑ x∈X αx |x⟩, where ∀x ∈ X,αx ∈ C, a quantum computer 
+can efficiently prepare the superposed state ∑ 
+x∈X αx |x⟩ |H(x)⟩. The quantum random oracle model (QROM) therefore assumes that each use of the hash function can be simulated by a black box that accepts a quantum state supported on X and returns a quantum state supported on X×Y (computed by a truly random function from X to Y ) [Bon+11]. While no efficient and truly random functions actually exist, the QROM is generally trusted and it enables the application of a number of useful proof techniques. 
+1.1 The Dilithium signature scheme We give a brief description of CRYSTALS-Dilithium. (The reader is invited to consult [Bai+21] for a full 
+version of the protocol and a more detailed explanation of the design.) Dilithium is based on arithmetic over the ring Rq := Zq[X]/(Xn+1), where q is an odd prime and n is a power of 2. Similar to other Dilithium literature, we generally leave the parameters q, n implicit. For any non-negative integer η, let Sη ⊆ Rq denote the set of all polynomials with coefficients from {−η,−η + 1, . . . , η}. For any positive integer τ ≤ n, let Bτ ⊆ Rq 
+denote the set of all polynomials f such that exactly τ of the coefficients of f are in {−1, 1} and the remaining coefficients are all zero. 
+Dilithium is an instance of a general family of lattice-based signature schemes (see [Pei16, Subsection 5.6.2]) that are obtained by applying the Fiat-Shamir transform to lattice-based interactive proofs-of-knowledge. Neglecting some optimizations that are present in the full version of the scheme, we can concisely express Dilithium as in Fig. 1. The parameters k, ℓ, γ1, γ2, τ, β are positive integers, and H denotes a hash function which maps to the set Bτ . A signature for a message M ∈ {0, 1}∗ takes the form of an ordered pair σ = (z, c), where z ∈ Rℓ 
+q and c ∈ Bτ . 
+The CRYSTALS-Dilithium protocol (simplified) 
+Gen() 
+1. A← Rk×l q 
+2. (s1, s2)← Sl η × Sk 
+η 
+3. t := As1 + s2 
+4. Return (pk, sk) := ((A, t), (A, t, s1, s2)) 
+Verify(pk,M, σ = (z, c)) 
+1. w′ 1 := HighBits(Az − ct, 2γ2) 
+2. Return “Accept” if ∥z∥∞ < γ1 − β and c = H(w′ 
+1 ∥ M); else return “Reject” 
+Sign(sk,M) 
+1. z := ⊥ 2. While z = ⊥: 
+(a) y ← Sl γ1−1 
+(b) w1 := HighBits(Ay, 2γ2) 
+(c) c := H(w1 ∥ M) 
+(d) z := y + cs1 
+(e) If ∥z∥∞ ≥ γ1 − β or ∥LowBits(Ay − cs2, 2γ2)∥∞ ≥ γ2 − β, then z := ⊥ 
+3. Return σ := (z, c) 
+Figure 1: A simplified description of the key generation algorithm (Gen), signature verification algorithm (Verify) and signing algorithm (Sign) for Dilithium. 
+The algorithms in Fig. 1 make use of the subroutines HighBits and LowBits which separate an Rq-vector 
+into two parts. For any vector x ∈ Rℓ q, the vectors xhigh := HighBits(x, 2γ2) and xlow := LowBits(x, 2γ2) satisfy 
+x = (2γ2)xhigh + xlow, and the polynomial coefficients in xlow are all from the set {−γ2,−γ2 + 1, . . . , γ2}. 
+1.2 Known security results for Dilithium 
+The security analysis for Dilithium in [Bai+21] is based on three computational problems. The first two are standard problems (Definitions 1 and 2) but the third problem is non-standard (Definition 3). The first problem is the Module Learning With Errors (MLWE) problem. Assuming that a matrix A ∈ Rm×k 
+q and short vectors s1 ∈ Sk 
+η and s2 ∈ Sm η are chosen uniformly at random, the MLWE problem is to distinguish the matrix-vector 
+pair (A, t := As1 + s2) from a uniformly random matrix-vector pair. 
+Definition 1 (Module Learning with Errors (MLWE)). Let m, k, η ∈ N. The advantage of an algorithm A for solving MLWEm,k,η is defined as: 
+AdvMLWE m,k,η (A) := 
+∣∣Pr[b = 0 | A← Rm×k q , t← Rm 
+q , b← A(A, t)] − Pr[b = 0 | A← Rm×k 
+q , (s1, s2)← Sk η × Sm 
+η , t := As1 + s2, b← A(A, t)] ∣∣. (1) 
+Here, the notation A(x) denotes A taking input x. We note that the MLWE problem is often phrased in other contexts with the short vectors s1 and s2 coming from a Gaussian, rather than a uniform, distribution. The use of a uniform distribution is one of the particular features of CRYSTALS-Dilithium. 
+The second problem, MSIS, is concerned with finding short solutions to randomly chosen linear systems over Rq. 
+Definition 2 (Module Short Integer Solution (MSIS)). Let m, k, γ ∈ N. The advantage of an algorithm A for solving MSISm,k,γ is defined as: 
+AdvMSIS m,k,γ(A) := Pr 
+[ [Im|A]·y = 0 ∧ 0 < ∥y∥∞ ≤ γ | A← Rm×k 
+q , y ← A(A) ] . (2) 
+The third problem is a more complex variant of MSIS that incorporates a hash function H. 
+Definition 3 (SelfTargetMSIS). Let τ,m, k, γ ∈ N and H : {0, 1}∗ → Bτ , where Bτ ⊆ Rq is the set of polynomials with exactly τ coefficients in {−1, 1} and all remaining coefficients zero. The advantage of an algorithm A for solving SelfTargetMSISH,τ,m,k,γ is defined as1: 
+AdvSelfTargetMSIS H,τ,m,k,γ (A) := Pr 
+[ H([Im|A] · y ∥ M) = ym+k ∧ ∥y∥∞ ≤ γ 
+∣∣ A← Rm×k q , (y,M)← A|H⟩(A) 
+] . (3) 
+The security guarantee for CRYSTALS-Dilithium is given in [KLS18, Section 4.5] by the inequality2 
+AdvsEUF-CMA Dilithium (A) ≤ AdvMLWE 
+k,l,η (B) + AdvSelfTargetMSIS H,τ,k,l+1,ζ (C) + AdvMSIS 
+k,l,ζ′(D), (4) 
+where all terms on the right-hand side of the inequality depend on parameters that specify Dilithium, and sEUF-CMA stands for strong unforgeability under chosen message attacks. The interpretation of Eq. (4) is: if there exists a quantum algorithm A that attacks the sEUF-CMA-security of Dilithium, then there exist quantum algorithms B, C,D for MLWE, SelfTargetMSIS, and MSIS that have advantages satisfying Eq. (4) and run in time comparable to A. Eq. (4) implies that breaking the sEUF-CMA security of Dilithium is at least as hard as solving one of the MLWE, MSIS, or SelfTargetMSIS problems. MLWE and MSIS are known to be no harder than LWE and SIS, respectively. However, there are no known attacks taking advantage of their module structure so it is generally believed that they are as hard as their unstructured counterparts [LS15]. In turn, LWE and SIS are at least as hard as the (Gap) Shortest Vector Problem, which is the underlying hard problem of lattice cryptography [Ajt96; Reg09; Pei16]. 
+1 ∥ denotes string concatenation. A|H⟩ denotes A with quantum query access to H — a formal definition can be found in Definition 4. 
+2Strictly speaking, there should be two other terms (AdvPRSam(E) and 2−α+1) on the right-hand side of Eq. (4). However, we ignore them in the introduction as it is easy to set parameters such that these terms are very small. We also mention that the original proof of this inequality uses a flawed analysis of Fiat-Shamir with aborts. The flaw was found and fixed in [Bar+23; Dev+23]. 
+However, the final problem, SelfTargetMSIS, is novel and so its difficulty is an open question. The problem is known to be as classically hard as MSIS since there exists a reduction from MSIS to SelfTargetMSIS in the ROM [KLS18; BN06]. The reduction uses the following “rewinding” argument. Any randomized algorithm can be specified by a deterministic circuit with auxiliary random bits. Therefore, given a randomized algorithm for SelfTargetMSIS, we can run its deterministic circuit with some randomly chosen bits to obtain one solution and then rewind and run it again using the same bits chosen from before, while at the same time reprogramming the random oracle at the query corresponding to the output of the first run, to obtain a second solution. Subtracting these two solutions to SelfTargetMSIS yields a solution to MSIS. However, the argument fails for the following reasons in the QROM (where a quantum algorithm can make queries in superposition to a quantum random oracle): 
+1. The randomness in a quantum algorithm includes the randomness of measurement outcomes. We cannot run a quantum algorithm twice and guarantee that the “random bits” will be the same in both runs because we cannot control measurement outcomes. More generally, we cannot rewind a quantum algorithm to a post-measurement state. 
+2. Since a quantum algorithm can make queries in superposition, it is no longer clear where to reprogram the random oracle. 
+Currently, the only explicit rigorous proof of Dilithium’s security based on conventional hardness assumptions [KLS18] requires modifying the parameters to be such that q = 5mod 8 and 2γ < 
+√ q/2 (but n must remain a 
+power of 2), where γ is a length upper bound on vectors corresponding to valid signatures. This ensures that all non-zero vectors in S2γ are invertible which equips Dilithium with a so-called “lossy mode”. This variant is called Dilithium-QROM. [KLS18] then proves that a signature scheme with such a lossy mode is EUF-CMA. However, the Dilithium specification [Bai+21] uses a value of q satisfying q = 1mod 2n which is incompatible with the assumption that q = 5mod 8 and n > 2 is a power of 2.3 The fact that q = 1mod 2n is central to claims about the speed of the algorithms in [Bai+21]: this condition implies that Rq is isomorphic to the direct product ring Z×n 
+q (or Zn q in shorthand) via the Number Theoretic Transform (NTT), which allows for fast 
+matrix multiplication over Rq. Therefore, it is highly desirable to find a security proof that works under the assumption that q = 1mod 2n. Moreover, when q = 5mod 8 (and n is a power of 2), the ring Rq is structurally different from when q = 1mod 2n, since in the former case Rq is isomorphic to Fqn/2 × Fqn/2 [LN17, Lemma 2.1]. Therefore, it may be imprudent to translate any claims of security in the case q = 5mod 8 to the case q = 1mod 2n. 
+1.3 Overview of main result The main result of our paper is the first proof of the computational hardness of the SelfTargetMSIS problem, 
+presented in Section 3. This hardness result implies a new security proof for Dilithium which, unlike the previous proof in [KLS18], applies to the case q = 1mod 2n. Specifically, we reduce MLWE to SelfTargetMSIS. By Eq. (4), our result implies that the security of Dilithium (with parameters that are not too far from the original parameters) can be based on the hardness of MLWE and MSIS. 
+Theorem 1 (Informal version of Theorem 2). Let m, k, τ, γ, η ∈ N. Suppose q ≥ 16, q = 1 mod 2n, and 2γηn(m+k) < ⌊q/32⌋. If there exists an efficient quantum algorithm A that solves SelfTargetMSISH,τ,m,k,γ with advantage ϵ, under the assumption that H is a random oracle, then there exists an efficient quantum algorithm for solving MLWEm+k,m,η with advantage at least Ω(ϵ2/Q4). Here, Q denotes the number of quantum queries A makes to H. 
+We now give a high-level overview of the proof. The first step is to define two experiments: the chosencoordinate binding experiment CCB and the collapsing experiment Collapse. These experiments are interactive protocols between a verifier and a prover. The protocols end with the verifier outputting a bit b. If b = 1, the prover is said to win the experiment. The reduction then proceeds in three steps: (i) reduce winning CCB to solving SelfTargetMSIS, (ii) reduce winning Collapse to winning CCB, and (iii) reduce solving MLWE to winning Collapse. Combining these steps together gives a reduction from MLWE to SelfTargetMSIS. The reduction can 
+3The parameter n should not be 1 or 2, as that would significantly degrade Dilithium’s efficiency and defeat the purpose of its use of Rq . 
+be illustrated as 
+SelfTargetMSIS (i)←− CCB 
+(ii)←− Collapse (iii)←− MLWE, (5) 
+where the left arrow means “reduces to”. 
+Step (i): SelfTargetMSIS ← CCB. In the CCB experiment, the prover is first given a uniformly random A ∈ Rm×l 
+q which it uses to send the verifier some z ∈ Rm q , the verifier then sends the prover a challenge c 
+chosen uniformly at random from Bτ , and finally the prover sends the verifier a response y ∈ Rl q. The prover 
+wins if Ay = z, ∥y∥∞ ≤ γ, and the last coordinate of y is c. We directly apply the main result of [DFM20] to reduce winning CCB when l = m + k to solving 
+SelfTargetMSISH,τ,m,k,γ when H is a random oracle. In more detail, the result implies that an efficient algorithm that wins SelfTargetMSIS using Q queries with probability ϵ can be used to construct another efficient algorithm that wins CCB with probability at least Ω(ϵ/Q2). 
+Step (ii): CCB← Collapse. In the Collapse experiment, the prover is first given a uniformly random A ∈ Rm×l q 
+which it uses to send the verifier some z ∈ Rm q together with a quantum state that must be supported only 
+on y ∈ Rl q such that Ay = z, ∥y∥∞ ≤ γ. Then, the verifier samples a uniformly random bit b′. If b′ = 1, the 
+verifier measures the quantum state in the computational basis, otherwise, it does nothing. The verifier then returns the quantum state to the prover. The prover responds by sending a bit b′ to the verifier and wins if b′ = b. The advantage of the prover is 2p− 1 where p is its winning probability. 
+By using techniques in [DS23; Unr16], we reduce winning Collapse to winning CCB. More specifically, we show that an efficient algorithm that wins CCB with advantage ϵ can be used to construct another efficient algorithm that wins Collapse with advantage at least ϵ(ϵ − 1/|Bτ |), which is roughly ϵ2 since 1/|Bτ | is very small for the values of τ we will consider. We generalize techniques in [DS23; Unr16] to work for challenge sets of size > 2, which is necessary since the challenge set in the CCB experiment, Bτ , generally has size > 2. The key idea of first applying the quantum algorithm for winning CCB to the uniform superposition of all challenges remains the same. 
+Step (iii): Collapse ← MLWE. We build on techniques in [LMZ23; LZ19] to reduce winning Collapse to winning MLWE. More specifically, we show that an efficient algorithm that wins Collapse with advantage ϵ can be used to construct another efficient algorithm that solves MLWEl,m,η with advantage at least ϵ/4. Given a quantum state supported on y ∈ Rl 
+q with Ay = z and ∥y∥∞ ≤ γ, as promised in the Collapse experiment, [LMZ23; LZ19] considers the following two measurements. Sample b ∈ Rl 
+q from one of the two distributions defined in MLWE (see Eq. (1)), compute a rounded version of b·y in a separate register, and measure that register. When n = 1, [LMZ23] shows that the effect of the measurement in one case is close to the computational basis measurement and in the other case is close to doing nothing. Therefore, an algorithm for winning Collapse can be used to solve MLWE. Our work extends [LMZ23] to arbitrary n provided q = 1mod 2n. The extension relies on the fact that each coefficient of b ·∆, where 0 ̸= ∆ ∈ Rq and b is chosen uniformly at random from Rq, is uniformly random in Zq. (This is despite the fact that b · ∆ is generally not uniformly random in Rq.) We establish this fact using the explicit form of the isomorphism between Rq and Zn 
+q when q = 1mod 2n. Finally, in Section 4, we propose explicit sets of parameters using n = 512 and q ≈ 243.5 such that 
+q = 1mod 2n. These sets of parameters achieve different security levels based on Theorem 1. We compare our sets of parameters with sets proposed by the Dilithium specifications [Bai+21] and the Dilithium-QROM construction of [KLS18]. We also compute the differences in the number of Zq-operations caused by using the NTT on q = 1mod 2n for ring element multiplication compared to a Hybrid-NTT on q = 5mod 8. We find that our public key and signatures sizes are ≈ 11.4× and ≈ 3.2× larger, respectively, than the heuristically chosen parameters in the original Dilithium [Bai+21]. Compared to [KLS18], our parameters yield an increase in public key size and signature size of ≈ 2.9× and ≈ 1.3×, respectively, while yielding a significant decrease (because of the different structure of Rq) in the number of Zq-operations used in key generation, signing, and verification. 
+Theorem 1 proves security for Dilithium in a range of parameters that preserves the algebraic structure of the original protocol [Bai+21]. Future work could explore how to optimize our approach to obtain provably secure parameters that are closer to those proposed in [Bai+21] for practical use. We also seek to generalize these results to other signature schemes that utilize the Fiat-Shamir transform. 
+2 Preliminaries N denotes the set of positive integers. For k ∈ N, [k] denotes the set {1, . . . , k}. An alphabet refers to a 
+finite non-empty set. Given an alphabet S, the notation s ← S denotes selecting an element s uniformly at random from S. Given two alphabets A and B, the notation BA denotes the set of functions from A to B. We write the concatenation of arbitrary strings a, b as a ∥ b. Given matrices A1, . . . , An of the same height, [A1|A2|...|An] denotes the matrix that consists of the Ai matrices placed side by side. log refers to the base-2 logarithm. 
+We always reserve the symbol q for an odd prime and n for a positive integer that is a power of 2. Rq 
+denotes the ring Zq[X]/(Xn + 1) (following the convention in other Dilithium literature [Bai+21; KLS18], we leave the n-dependence implicit). For k ∈ N, a primitive kth root of unity in Zq is an element x ∈ Zq such that xk = 1 and xj ̸= 1 for all j ∈ [k − 1]; such elements exist if and only if q = 1 mod k. Given r ∈ Zq, we define r mod± q to be the unique element r′ ∈ Z such that −(q − 1)/2 ≤ r′ ≤ (q − 1)/2 and r′ = rmod q. For any r = a0 + a1X + · · · + an−1X 
+n−1 ∈ Rq, we define |r|i := |ai mod± q| for all i ∈ {0, 1, . . . , n − 1} and ∥r∥∞ := maxi |r|i. For r ∈ Rm 
+q , we define ∥r∥∞ := maxi∈[m] ∥ri∥∞. For η ∈ N, Sη denotes the set {r ∈ Rq | ∥r∥∞ ≤ η}. For τ ∈ N, Bτ denotes the set of all elements r ∈ Rq such that ∥r∥∞ = 1 and r has exactly τ nonzero coefficients. We note that |Bτ | = 2τ 
+( n τ 
+) . 
+2.1 Quantum computation A (quantum) state, or density matrix, ρ on Cd is a positive semi-definite matrix in Cd×d with trace 1. A pure 
+state is a state of rank 1. Since a pure state can be uniquely written as |ψ⟩⟨ψ| where |ψ⟩ ∈ Cd and ⟨ψ| := |ψ⟩†, we usually refer to a pure state by just |ψ⟩. A (projective) measurement is a set P = {P1, . . . , Pk} ⊆ Cd×d 
+such that ∑k 
+i=1 Pi = 1 and the operators Pi satisfy Pi = P † i = P 2 
+i and PiPj = 0 for any j ̸= i. The effect of performing such a measurement on a quantum state ρ is to produce the density matrix 
+∑k i=1 PiρPi. 
+A register is either (i) an alphabet Σ or (ii) an m-tuple X = (Y1, . . . , Ym) where m ∈ N and Y1, . . . , Ym are alphabets. 
+Case (i) The size of the register is |Σ|, a density matrix on the register refers to a density matrix on C|Σ|, and the computational basis measurement on the register refers to the measurement {|x⟩⟨x| | x ∈ Σ}, where |x⟩ denotes the vector in CΣ ∼= C|Σ| that is 1 in the xth position and zero elsewhere. 
+Case (ii) The size of the register is |Y1| × · · · × |Ym|, a density matrix on the register refers to a density matrix on C|Y1| ⊗ · · · ⊗ C|Ym|, and the computational basis measurement on the register refers to the measurement {|y1⟩⟨y1| ⊗ · · · ⊗ |ym⟩⟨ym| | y1 ∈ Y1, . . . , ym ∈ Ym}. 
+A quantum algorithm A is specified by a register X = (Y1, . . . , Ym) where |Yi| = 2 for all i and a sequence of elementary gates, i.e., 2m × 2m unitary matrices that are of the form 
+T := 
+( 1 0 0 eiπ/4 
+) , H := 
+1√ 2 
+( 1 1 1 −1 
+) , or CNOT := 
+ 1 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0 
+ (6) 
+tensored with 2×2 identity matrices.4 The unitary matrix U associated with A is the product of its elementary gates in sequence. The time complexity of A, Time(A), is its number of elementary gates. To perform a computation given an input x ∈ {0, 1}k where k ≤ m, A applies U to the starting state |ψ0⟩ := |x1 + 1⟩⊗ · · ·⊗ |xk + 1⟩ ⊗ |1⟩⊗(m−k) and measures all registers in the computational basis. We also need the definition of a quantum query algorithm. 
+Definition 4 (Quantum query algorithm). Let t ∈ N. A quantum query algorithm A using t queries is specified by registers X,Y, Z and a sequence of t + 1 quantum algorithms A0,A1, . . . ,At, each with register (X,Y, Z). The time complexity of A, Time(A), is t+ 
+∑t i=0 Time(Ai). 
+Let Ui denote the unitary associated with Ai, γ := |Y |, and ϕ : Y → Zγ be a bijection. Given H : X → Y , let OH denote the unitary matrix defined by OH |x⟩ |y⟩ |z⟩ = |x⟩ |ϕ−1(ϕ(y) + ϕ(H(x)))⟩ |z⟩ for all (x, y, z) ∈ X × Y × Z. Then: 
+4When we later consider a quantum algorithm on a register of size d ∈ N, we mean a quantum algorithm on a register (Y1, . . . , Ym) where |Yi| = 2 for all i and m is the smallest integer such that 2m ≥ d. 
+1. A|H⟩ denotes the algorithm with register (X,Y, Z) that computes as follows. Apply U0 to the starting state |ψ0⟩. Then, for each i = 1, . . . , t in sequence, apply OH then Ui. Finally, measure all registers in the computational basis. 
+2. AH denotes the algorithm with register (X,Y, Z) that computes as follows. Apply U0 to the starting state |ψ0⟩. Then, for each i = 1, . . . , t in sequence, measure register X in the computational basis and apply OH 
+then Ui. Finally, measure all registers in the computational basis. 
+In the definitions of A|H⟩ and AH , we have described what it means for a quantum algorithm to make quantum and classical queries to a function H, respectively. Under this description, we can naturally define quantum query algorithms that make classical queries to one function and quantum queries to another. Such algorithms are relevant in the security definition of Dilithium as described in the next subsection. 
+2.2 Digital signature schemes Let par be common system parameters shared by all participants. For λ ∈ N we define negl(λ) as some 
+function such that negl(λ) ≤ 1/ηc for all constants c and large enough values of λ. 
+Definition 5 (Digital signature scheme). A digital signature scheme is defined by a triple of randomized algorithms SIG = (Gen,Sign,Verify) such that 
+1. The key generation algorithm Gen(par) outputs a public-key, secret-key pair (pk, sk) such that pk defines the message set MSet. 
+2. The signing algorithm Sign(sk,m), where m ∈ MSet, outputs a signature σ. 
+3. The verification algorithm Verify(pk,m, σ) outputs a single bit {0, 1}. 
+We say SIG has correctness error γ ≥ 0 if for all (pk, sk) in the support of Gen(par) and all m ∈ MSet, 
+Pr[Verify(pk,m, σ) = 0 | σ ← Sign(sk,m)] ≤ γ. (7) 
+Definition 6 (EUF-CMA and sEUF-CMA). Let SIG = (Gen,Sign,Verify) be a signature scheme. Let A be a quantum query algorithm. Then 
+AdvEUF-CMA SIG (A) :=Pr[Verify(pk,m, σ) = 1, m /∈ SignQ | (pk, sk)← Gen(par), (m,σ)← ASign(sk,·)(pk)], 
+AdvsEUF-CMA SIG (A) :=Pr[Verify(pk,m, σ) = 1, (m,σ) /∈ SignQR | (pk, sk)← Gen(par), (m,σ)← ASign(sk,·)(pk)], 
+where SignQ is the set of queries made by A to Sign(sk, ·) and SignQR is the set of query-response pairs A sent to and received from Sign(sk, ·). 
+When par is a function of λ ∈ N, we say that SIG is (s)EUF-CMA-secure if for every poly(λ)-time quantum query algorithm A, we have Adv 
+(s)EUF-CMA SIG (A) ≤ negl(λ). 
+In this paper, we use the definition of the Dilithium signature scheme as specified in [Bai+21]. In the concrete parameters section, Section 4, we adopt the same notation as in [Bai+21]. The definition of Dilithium involves a function H : {0, 1}∗ → Bτ that is classically accessible by its Sign and Verify algorithms. In the definitions of EUF-CMA and sEUF-CMA security of Dilithium, we assume that the quantum algorithm A has classical query access to Sign(sk, ·) and quantum query access to H. Our proof of Dilithium’s security will assume that H can be modeled by a random oracle. 
+2.3 Cryptographic problems and experiments We now give the formal definitions of the chosen-coordinate binding and collapsing experiments mentioned 
+in the introduction. More general versions of these definitions can be found in, e.g., [Unr12; DS23]. In Section 1.2 we defined the SelfTargetMSIS problem (Definition 3). Now we define a “plain” version of 
+SelfTargetMSIS, where the input matrix is not given in Hermite Normal Form. First reducing SelfTargetMSIS from Plain-SelfTargetMSIS will be convenient later on. 
+Definition 7 (Plain-SelfTargetMSIS). Let τ,m, l, γ ∈ N and H : {0, 1}∗ → Bτ . The advantage of a quantum query algorithm A for solving Plain-SelfTargetMSISH,τ,m,l,γ is defined as 
+AdvPlain-SelfTargetMSIS H,τ,m,l,γ (A) := Pr 
+[ H(Ay ∥ M) = yl ∧ ∥y∥∞ ≤ γ 
+∣∣ A← Rm×l q , (y,M)← A|H⟩(A) 
+] . (8) 
+Definition 8 (Chosen-Coordinate Binding (CCB)). Let τ,m, l, γ ∈ N. The advantage of a quantum algorithm A = (A1,A2) for winning CCBτ,m,l,γ , denoted AdvCCBτ,m,k,γ(A), is defined as the probability that the experiment below outputs 1. 
+Experiment CCBτ,m,l,γ . 1. Sample A← Rm×l 
+q . 
+2. (z, T )← A1(A), where z ∈ Rm q and T is an arbitrary register. 
+3. Sample c← Bτ . 
+4. y ← A2(T, c), where y ∈ Rl q. 
+5. Output 1 if Ay = z, ∥y∥∞ ≤ γ, and yl = c. 
+When τ,m, l, γ are functions of λ ∈ N, we say that the MSIS hash function is chosen-coordinate binding (CCB) if for every poly(λ)-time quantum algorithm A, AdvCCBτ,m,l,γ(A) ≤ 1/|Bτ |+ negl(λ). 
+Definition 9 (Collapsing (Collapse)). Let m, l, γ ∈ N. The advantage of a quantum algorithm A = (A1,A2) 
+for winning Collapsem,l,γ , denoted AdvCollapsem,l,γ , is defined as 2p − 1 where p is the probability the experiment below outputs 1. 
+Experiment Collapsem,l,γ . 
+1. Sample A← Rm×l q . 
+2. (Y, Z, T ) ← A1(A), where Y is a register on Rl q, Z is a register on Rm 
+q , and T is an arbitrary register. 
+3. Sample b← {0, 1}. If b = 1, measure Y in the computational basis. 
+4. b′ ← A2(Y,Z, T ). 
+5. Output 1 if b′ = b. 
+We say A is valid if the state on the register (Y,Z) output by A1 in step 2 is supported on elements (y, z) ∈ Rl 
+q × Rm q such that Ay = z and ∥y∥∞ ≤ γ. When m, l, γ are functions of λ ∈ N, we say that the MSIS hash 
+function is collapsing if for every poly(λ)-time quantum algorithm A, AdvCollapsem,l,γ (A) ≤ 1/2 + negl(λ). 
+3 Security proof for SelfTargetMSIS 
+The main result of this subsection is the following theorem which follows from Propositions 1 to 4. 
+Theorem 2 (SelfTargetMSIS security). Let m, k, τ, γ, η ∈ N. Suppose q ≥ 16, q = 1 mod 2n, and 2γηn(m+k) < ⌊q/32⌋. Suppose that there exists a quantum query algorithm A for solving SelfTargetMSISH,τ,m,k,γ using Q queries with expected advantage ϵ over uniformly random5 H : {0, 1}∗ → Bτ . Then, for all w ∈ N, there exists a quantum algorithm B that solves MLWEm+k,m,η with advantage at least 
+ϵ− nq−k 
+4(2Q+ 1)2 
+( ϵ− nq−k 
+(2Q+ 1)2 − 1 
+|Bτ | 
+) − 1 
+4 
+1 
+3w . (9) 
+Moreover, Time(B) ≤ Time(A) + poly(log |Bτ |, w, n, log q,m, k). 5Let U ⊂ {0, 1}∗ be the query set of A, i.e., the finite subset of elements in {0, 1}∗ that A could possibly query (in particular 
+|U | ≤ 2O(Time(A))). By uniformly random H : {0, 1}∗ → Bτ , we mean that H restricted to domain U is uniformly random. 
+Assuming that the choice of parameters as functions of the security parameter λ is such that nq−k = negl(λ), 1/|Bτ | = negl(λ), and w = poly(λ), Theorem 2 shows that the advantage of B is roughly Ω(ϵ2/Q4). 
+The proof of Theorem 2 proceeds by the following sequence of reductions, which we have labeled by the number of the section in which they are proven: 
+SelfTargetMSIS 3.2←− Plain-SelfTargetMSIS 
+3.3←− CCB 3.4←− Collapse 
+3.5←− MLWE. 
+First, we establish some properties of Rq that will be used in Sections 3.2 and 3.5. 
+3.1 Properties of Rq 
+Lemma 1. Suppose q = 1 mod 2n. Let w be a primitive (2n)-th root of unity in Zq. Then for all m ∈ Z such that 0 ̸= |m| < n, the following equation holds in Zq: 
+∑n−1 j=0 w 
+2mj = 0. 
+Proof. Consider the following equation in Zq: (1−w2m) · ∑n−1 
+j=0 w 2mj = 1−w2mn = 0, where the first equality 
+uses a telescoping sum and the second uses w2n = 1. But 1− w2m ̸= 0 since 0 ̸= |m| < n and w is a primitive (2n)-th root of unity in Zq. Therefore, since Zq is an integral domain when q is prime, 
+∑n−1 j=0 w 
+2mj = 0 as required. 
+Lemma 2. Suppose q = 1 mod 2n. Then, Rq ∼= Zn 
+q as algebras over Zq.6 
+Proof. For q prime, the multiplicative group Z∗ q of non-zero elements in Zq is cyclic. Let g be a generator of 
+Z∗ q . Let w := g(q−1)/(2n), which is well-defined since q = 1mod 2n. Define the mapping ϕ : Rq → Zn 
+q by: 
+ϕ(p(x)) = 
+ 1 w . . . wn−1 
+1 w3 . . . w3(n−1) 
+... . . . 
+... 1 w(2n−1) . . . w(2n−1)(n−1) 
+  
+a0 a1 ... 
+an−1 
+ , (10) 
+where p(x) := a0 + a1x+ · · ·+ an−1x n−1. It is clear that ϕ is a linear map. To see that ϕ is homomorphic with 
+respect to multiplication, observe that for any p̃(x) ∈ Zq[x] such that p(x) = p̃(x) mod (xn + 1), we have 
+ϕ(p(x)) = ( p̃ ( w1 ) , p̃ ( w3 ) , . . . , p̃ 
+( w(2n−1) 
+)) , (11) 
+since (w2k−1)n + 1 = 0 in Zq for all k ∈ [n]. To see that ϕ is bijective, observe its explicit inverse ϕ′ : Zn 
+q → Rq, defined by 
+ϕ′(c0, . . . , cn−1) =a0 + a1x+ · · ·+ an−1x n−1, where (12) 
+a0 a1 ... 
+an−1 
+ :=n−1 
+ 1 1 . . . 1 
+w−1 w−3 . . . w−(2n−1) 
+... . . . 
+... w−(n−1) w−3(n−1) . . . w−(2n−1)(n−1) 
+  
+c0 c1 ... 
+cn−1 
+ (13) 
+and n−1 denotes the multiplicative inverse of n in Zq, which exists since q = 1 mod 2n =⇒ n < q. Since w is a primitive (2n)-th root of unity in Zq, Lemma 1 implies that the matrices corresponding to ϕ and ϕ′ multiply to the identity in Zq. Therefore, ϕ′ is the inverse of ϕ. 
+3.2 Reduction from Plain-SelfTargetMSIS to SelfTargetMSIS 
+Proposition 1. Suppose q = 1 mod 2n. Let m, k, γ, τ ∈ N and H : {0, 1}∗ → Bτ . Suppose that there exists a quantum query algorithm A using Q queries that solves SelfTargetMSISH,τ,m,k,γ with advantage ϵ, then there exists a quantum query algorithm B using Q queries for solving Plain-SelfTargetMSISH,τ,m,m+k,γ with advantage at least ϵ− n/qk. Moreover, Time(B) ≤ Time(A) +O(n log(q) ·mkmin(m, k)). 
+6To be clear, the algebra Zn q over Zq refers to the set Zn 
+q equipped with component-wise addition and multiplication, and scalar multiplication defined by α · (c0, . . . , cn−1) := (αc0, . . . , αcn−1), where α ∈ Zq and (c0, . . . , cn−1) ∈ Zn 
+q . 
+Proof. The probability that a uniformly random B ← Zm×(m+k) q has row-echelon form [Im|B′] (i.e., rank m) 
+is at least (1 − 1/qk). Therefore, by Lemma 2, the probability that a uniformly random A ← R m×(m+k) q 
+does not have row-echelon form [Im|A′] is at most 1 − (1 − 1/qk)n ≤ n/qk. When A has row-echelon form [Im|A], B first performs row reduction and then runs A. Since the time to perform row reduction on A is O(n log(q) ·mkmin(m, k)), the proposition follows. 
+3.3 Reduction from CCB to Plain-SelfTargetMSIS 
+Let S,U,C,R be alphabets, V : S × U × C × R → {0, 1}, and B = (B1,B2) be a quantum algorithm. We define the Σ-experiment by: 
+Σ-experiment. 1. s← S. 
+2. (u, T )← B1(s), where u ∈ U and T is an arbitrary register. 
+3. c← C. 
+4. r ← B2(T, c). 5. Output 1 if V (s, u, c, r) = 1. 
+The advantage of B for winning the Σ-experiment is the probability of the experiment outputting 1. In this subsection, we use the following theorem from [DFM20]. 
+Theorem 3 (Measure-and-reprogram [DFM20, Theorem 2]). Let A be a quantum query algorithm using Q queries that takes input s ∈ S and outputs u ∈ U and r ∈ R. Then, there exists a two-stage quantum algorithm B = (B1,B2) (not using any queries) such that the advantage of B in the Σ-experiment is at least 
+1 
+(2Q+ 1)2 Pr [ V (s, u,H(u), r) 
+∣∣∣ H ← CU , s← S, (u, r)← A|H⟩(s) ] . (14) 
+Moreover, Time(B1) + Time(B2) ≤ Time(A). 
+In the original statement of the theorem, Time(B1) + Time(B2) is upper bounded by Time(A) − Q + poly(Q, log(|U |, log(|C|)). (The −Q is because our definition of Time(A) includes a +Q term.) The term poly(Q, log(|U |, log(|C|)) accounts for the cost of instantiating Q queries to a 2(Q+ 1)-wise independent hash function family from U to C. By the well-known Vandermonde matrix method (see, e.g., [Zha12, Section 6]), this cost can be upper bounded by O(Q2 · log(|U |) · log(|C|)). However, we follow the convention in [KLS18, Section 2.1] and equate this cost to Q under the fair assumption that B, like A, can also query a random oracle at unit cost. 
+Proposition 2. Let m, l, γ, τ ∈ N. Suppose there exists a quantum query algorithm A for solving Plain-SelfTargetMSISH,τ,m,l,γ using Q queries with expected advantage ϵ over uniformly random H : {0, 1}∗ → Bτ . Then there exists a quantum algorithm B = (B1,B2) for winning CCBτ,m,l,γ with advantage at least ϵ/(2Q+ 1)2. Moreover Time(B1) + Time(B2) ≤ Time(A). 
+Proof. The quantum query algorithm A for Plain-SelfTargetMSISH,τ,m,l,γ takes input A and outputs (y,M). So there exists another quantum query algorithm A′ using Q queries that outputs ((Ay ∥ M), y). 
+The first part of the proposition follows from applying Theorem 3 to A′ with the following parameter settings which make the Σ-experiment identical to the CCBτ,m,l,γ experiment: 
+1. Set S = Rm×l q , U to be the query set of A′, C = Bτ , and R = Rl 
+q. 
+2. Set V : Rm×l q × U ×Bτ ×Rl 
+q → {0, 1} by 
+V (A, u, c, y) = 1[z = Ay, ∥y∥∞ ≤ γ, yl = c], (15) 
+where u ∈ {0, 1}∗ is parsed as u = (z ∥ M) with z ∈ Rm q and M ∈ {0, 1}∗. 
+3.4 Reduction from Collapse to CCB 
+In this subsection, we will use the following lemma, which can be found as [DS23, Proposition 29]. 
+Lemma 3. Let P,Q be projectors in Cd×d and ρ be a density matrix in Cd such that ρQ = ρ. Then tr(QPρP ) ≥ tr(Pρ)2. 
+The following proposition is similar to [Unr16, Theorem 32] and [DS23, Theorem 28] except the size of the challenge set in the CCB experiment (in step 3 of Definition 8) is not restricted to being 2. 
+Proposition 3. Let m, l, γ, τ ∈ N. Suppose that there exists a quantum algorithm A = (A1,A2) that succeeds in CCBτ,m,l,γ with advantage ϵ, then there exists a valid quantum algorithm B = (B1,B2) that succeeds in Collapsem,l,γ with advantage at least ϵ(ϵ − 1/|Bτ |). Moreover, Time(B1) ≤ Time(A1) + Time(A2) + O(ml log(q) log(|Bτ |)) and Time(B2) ≤ Time(A2) +O(log(|Bτ |)). 
+Proof. We assume without loss of generality (wlog) that the arbitrary register in step 2 of the CCBτ,m,l,γ 
+experiment (Definition 8) is of the form (Y, T ′), where Y is a register on Rl q and T ′ is an arbitrary register. 
+We assume wlog that A1 prepares a state |ϕ⟩ on register (Y, Z, T ′), where Z is a register on Rm q , and measures 
+Z in the computational basis to produce the z in step 2 of the CCBτ,m,l,γ experiment. We also assume wlog that A2 acts on its input register (Y, T ′, C), where C is a register on Bτ that contains the c from step 3 of the CCBτ,m,l,γ experiment, as follows: 
+1. Apply a unitary U of the form ∑ 
+r∈Bτ Ur ⊗ |r⟩⟨r| on (Y, T ′, C). 
+2. Measure Y in the computational basis. 
+We proceed to construct B = (B1,B2) for the Collapsem,l,γ experiment (Definition 9). We first construct B1, given input A ∈ Rm×l 
+q , as follows: 
+1. Run A1(A) to prepare state |ϕ⟩ on register (Y, Z, T ′). 2. Prepare state |ψ⟩ := |Bτ |−1/2 
+∑ r∈Bτ 
+|r⟩ on register C in time O(log(|Bτ |)). The current state on register (Y,Z, T ′, C) is σ := |ϕ⟩⟨ϕ| ⊗ |ψ⟩⟨ψ|. Apply U on register (Y, T ′, C) and then measure register (Y,Z, T ′, C) with the projective measurement {Π, 1−Π}, where Π is defined by 
+Π := ∑ r∈Bτ 
+∑ (y,z)∈Rl 
+q×Rm q : 
+∥y∥∞≤γ, Ay=z, yl=r 
+|y, z⟩⟨y, z| ⊗ 1T ′ ⊗ |r⟩⟨r| . (16) 
+This measurement can be implemented by computing a bit indicating whether the constraints defining Π are satisfied into a separate register and then measuring that register, which takes time O(ml log(q)+log(|Bτ |)). 
+3. Let B be a bit register. If Π is measured, set the bit stored in B to 1. If (1−Π) is measured, replace the state on register (Y, Z) with |0l⟩ ⊗ |0m⟩, set the bit stored in B to 0. Then output the register (Y, Z, T ′, C,B). 
+Let T := (T ′, C,B). We construct B2, given input register (Y, Z, T ): 
+1. If B contains 0, output a uniformly random bit b′ ∈ {0, 1}. 2. Else apply U† on register (Y, T ′, C). Then measure C with the projective measurement {|ψ⟩⟨ψ| , 1− |ψ⟩⟨ψ|} 
+using (the inverse of) the preparation circuit for |ψ⟩ in time O(log(|Bτ |). If the outcome is |ψ⟩⟨ψ|, output 0; else output 1. 
+It is clear that B is valid by definition. Moreover, 
+Time(B1) ≤ Time(A1) + Time(A2) +O(ml log(q) log(|Bτ |)), (17) Time(B2) ≤ Time(A2) +O(log(|Bτ |)). (18) 
+We proceed to lower bound the success probability of B. We analyze the probabilities of the following disjoint cases corresponding to B being successful. 
+1. Case 1: In this case, 1 − Π is measured and b′ = b. The probability that 1 − Π is measured is (1 − ϵ). Conditioned on 1 − Π being measured, b′ is a uniformly random bit so the probability b′ = b is 1/2. Therefore, the overall probability of this case is (1− ϵ)/2. 
+2. Case 2: In this case, Π is measured, b = 1, and then 1 − |ψ⟩⟨ψ| is measured. The probability that Π is measured is ϵ and the probability that b = 1 is 1/2. We now condition on these two events happening. Since b = 1, the state of register C in the input to B2 is a mixture of states of the form |r⟩⟨r| where r ∈ Bτ . This is because b = 1 means that register Y is measured in the computational basis and conditioned on Π being measured, the C register is also measured in the computational basis (see the form of Π in Eq. (16)). Therefore, the probability of B2 measuring |ψ⟩⟨ψ| is 1/|Bτ |. Therefore, the overall probability of this case is ϵ · (1/2) · (1− 1/|Bτ |). 
+3. Case 3: In this case, Π is measured, b = 0, and then |ψ⟩⟨ψ| is measured. The probability that b = 0 is 1/2. Conditioned on b = 0, Lemma 3, applied with projectors |ψ⟩⟨ψ| and U†ΠU and state σ, shows that the probability of measuring Π and then |ψ⟩⟨ψ| is least ϵ2. Therefore, the overall probability of this case is at least ϵ2/2. 
+Summing up the probabilities of the above cases, we see that the success probability of B is at least 
+1− ϵ 2 
++ ϵ 
+2 
+( 1− 1 
+|Bτ | 
+) + ϵ2 
+2 = 
+1 
+2 + ϵ 
+2 
+( ϵ− 1 
+|Bτ | 
+) . (19) 
+Therefore, the advantage of B is at least ϵ(ϵ− 1/|Bτ |), as required. 
+3.5 Reduction from MLWE to Collapse 
+The proof structure of the main result of this subsection, Proposition 4, follows [LMZ23, Theorem 1]. We need to modify a number of aspects of their proof since it applies to the SIS hash function whereas here we consider its module variant, i.e., the MSIS hash function. 
+We will use a rounding function ⌊·⌉t : Zq → {0, 1, . . . , t − 1}, where t ∈ N, that is defined as follows. For j ∈ {0, 1, . . . , t− 1}, define 
+Ij := 
+{ {j⌊q/t⌋, j⌊q/t⌋+ 1, . . . , j⌊q/t⌋+ ⌊q/t⌋ − 1} if j ∈ {0, 1, . . . , t− 2}, {(t− 1)⌊q/t⌋, (t− 1)⌊q/t⌋+ 1, . . . , q − 1} if j = t− 1. 
+(20) 
+(Note that Ij contains exactly ⌊q/t⌋ elements for j ∈ {0, 1, . . . , t−2} and at least ⌊q/t⌋ elements for j = t−1 with the constraint that q/t ≤ |It−1| ≤ q/t+t−1.) Then, for a ∈ Zq, define ⌊a⌉t to be the unique j ∈ {0, 1, . . . , t−1} such that a ∈ Ij . 
+We will also use the following convenient notation. Let Y and Z be registers and f : Y → Z. The measurement y 7→ f(y) on register Y refers to the measurement implemented by computing f(y) into a separate register Z, measuring Z in the computational basis, and discarding the result. 
+Finally, we will use the following lemma. 
+Lemma 4. Let 0 ̸= ∆ ∈ Rl q and α ∈ {0, . . . , n− 1}. If b← Rl 
+q, then (b ·∆)α is uniformly distributed in Zq. 
+Proof. Writing b = (b1, . . . , bl) and ∆ = (∆1, . . . ,∆l), we have 
+(b ·∆)α = (b1∆1)α + · · ·+ (bl∆l)α. (21) 
+Since ∆ ̸= 0, there exists an i ∈ [l] such that ∆i ̸= 0. To prove the lemma, it suffices to prove that (bi∆i)a is uniformly distributed in Zq. 
+Let ϕ, ϕ′ be as defined in the proof of Lemma 2. Write ϕ(∆i) = (c0, . . . , cn−1) ∈ Zn q . Since ∆i ̸= 0 there 
+exists j ∈ {0, . . . , n − 1} such that cj ̸= 0. Since bi is a uniformly random element of Rq, ϕ(bi) is a uniformly random element of Zn 
+q . Therefore, the distribution of (bi∆i)α = ϕ′(ϕ(bi)ϕ(∆i))α (where we used Lemma 2 for the equality) is the same as the distribution of 
+ϕ′(d0c0, . . . , dn−1cn−1)α, where d0, . . . , dn−1 ← Zq. (22) 
+By the linearity of ϕ′, 
+ϕ′(d0c0, . . . , dn−1cn−1)α = djcjϕ ′(ej)α + 
+∑ j′ ̸=j 
+dj′cj′ϕ ′(ej′)α, (23) 
+where ej denotes the jth standard basis vector of Zq. But ϕ′(ej)α = n−1 · w−(2j+1)α ̸= 0 (see Lemma 2). Therefore djcjϕ′(ej)α is uniformly distributed in Zq if 
+dj ← Zq. Hence (bi∆i)α is uniformly distributed in Zq as required. 
+The main result of this subsection is the following proposition. 
+Proposition 4. Let m, l, γ, η ∈ N. Suppose q ≥ 16 and 2γηnl < ⌊q/32⌋. Suppose there exists a quantum algorithm A that succeeds in Collapsem,l,γ with advantage ϵ. Then, for all w ∈ N, there exists a quantum algorithm B that solves MLWEl,m,η with advantage at least (ϵ − 3−w)/4. Moreover, Time(B) ≤ Time(A) + poly(w). 
+Before proving this proposition, we first prove two lemmas. Let Y be a register on Rl q and A ∈ Rm×l 
+q . For t ∈ N, we define the following measurements on Y : 
+■ M0: computational basis measurement. 
+■ M t 1: sample e1 ← Sm 
+η , e2 ← Sl η, set b := e⊤1 A + e⊤2 ∈ Rl 
+q, sample s ← Rq, then perform measurement y 7→ ⌊(b · y + s)0⌉t. 
+■ M t 2: sample b← Rl 
+q, s← Rq, then perform measurement y 7→ ⌊(b · y + s)0⌉t. 
+Lemma 5. Let t ∈ N be such that 2γηnl < ⌊q/t⌋. For all y, y′ ∈ Rl q with Ay = Ay′ and ∥y′∥∞, ∥y∥∞ ≤ γ, 
+M t 1(|y⟩⟨y′|) = 
+( 1− t 
+q · E [ |e · (y − y′)|0 
+∣∣∣ e← Sl η 
+]) |y⟩⟨y′| . (24) 
+Proof. We have 
+M t 1(|y⟩⟨y′|) = Pr 
+[ ⌊(b · y + s)0⌉t = ⌊(b · y′ + s)0⌉t 
+∣∣∣ e1 ← Sm η , e2 ← Sl 
+η, b := e⊤1 A+ e⊤2 , s← Rq 
+] · |y⟩⟨y′| . (25) 
+Writing z := Ay = Ay′, we have 
+b · y + s = (e1 · z + s) + e2 · y and b · y′ + s = (e1 · z + s) + e2 · y′. (26) 
+The result follows by observing that |e2 · (y − y′)|0 ≤ ∥e2∥∞ · ∥y − y′∥∞ · nl ≤ 2γηnl < ⌊q/t⌋ and (e1 · z + s) is a uniformly random element of Rq. 
+Lemma 6. Let t ∈ N be such that t2 ≤ q. Then there exists 0 ≤ pt ≤ 2/t such that for all y, y′ ∈ Rl q with 
+y′ ̸= y, we have 
+M t 2(|y⟩⟨y|) = |y⟩⟨y| and M t 
+2(|y⟩⟨y′|) = pt |y⟩⟨y′| . (27) 
+Proof. The first equality is clearly true. For the second, observe that 
+M t 2(|y⟩⟨y′|) = Pr[⌊(b · y + s)0⌉t = ⌊(b · y′ + s)0⌉t | b← Rl 
+q, s← Rq]. (28) 
+Write y′ = y +∆ for some 0 ̸= ∆ ∈ Rl q. Then, (b ·∆)0 is uniformly distributed in Zq by Lemma 4. Therefore, 
+writing pt := Pr[⌊u⌉t = ⌊u+ v⌉t | u, v ← Zq], we have 
+Pr[⌊(b · y + s)0⌉t =⌊(b · y′ + s)0⌉t | b← Rl q, s← Rq] 
+=pt = 1− ( (t− 1)⌊q/t⌋ 
+q · q − ⌊q/t⌋ 
+q + |It−1| q · q − |It−1| 
+q 
+) ≤ 1 
+t + t 
+q ≤ 2 
+t , 
+(29) 
+where the last inequality uses t2 ≤ q. 
+Combining Lemmas 5 and 6 gives the following corollary. 
+Corollary 1. Let t, d ∈ N be such that 2γηnl < ⌊q/(td)⌋ and t2 ≤ q. Let ρ be a density matrix on register Y . Suppose there exists z ∈ Rm 
+q such that ρ is supported on {y ∈ Rl q | Ay = z, ∥y∥∞ ≤ γ}. Then 
+M t 1(ρ) = 
+1 
+d M td 
+1 (ρ) + ( 1− 1 
+d 
+) ρ, (30) 
+M t 2(ρ) = 
+1 
+d M0(M 
+td 1 (ρ)) + 
+( 1− 1 
+d − pt 
+) M0(ρ) + ptρ, (31) 
+where pt is as defined in Lemma 6. 
+Proof. The first equality is immediate. The second equality follows from the observation that M0(M td 1 (ρ)) = 
+M td 1 (M0(ρ)) since M0 and M1 both act on ρ by entry-wise multiplication. 
+Given the above lemmas, Proposition 4 follows from the proof of [LMZ23, Theorem 1]. The high-level idea of the proof is that M t 
+1 is close to the identity operation while M t 2 is close to M0. Therefore, if the identity 
+operation can be efficiently distinguished from M0, then M t 1 and M t 
+2 can be efficiently distinguished, which solves the MLWE problem. For completeness, we give the details below. 
+Proof of Proposition 4. Let t := 4 and d := 8 so that g := 1 − 1/d − pt ≥ 3/8 and dg ≥ 3, where pt is as defined in Lemma 6. Let A = (A1,A2) be a valid algorithm for the Collapsem,l,γ experiment (Definition 9) with advantage ϵ. 
+Fix w ∈ N and A ∈ Rm×l q . Let T := 
+∑w−1 j=0 (dg) 
+−j and let B be the quantum algorithm defined on input b ∈ Rl 
+q as follows: 
+1. Create state ρ on register (Y,Z, T ) by running A1(A). 
+2. Sample j ∈ {0, 1, . . . , w − 1} with probability (dg)−j/T . 
+3. Apply M td 1 to ρ on the Y register for j times. Call the resulting state ρj . 
+4. Sample s← Rq and apply the measurement x 7→ ⌊(b · x+ s)0⌉t to ρj on the Y register to give state ρ′j . 
+5. Compute bit b′ ∈ {0, 1} by running A2(ρ ′ j). 
+6. Output b′ if j is even and 1− b′ if j is odd. 
+For j ∈ {0, 1, . . . , w − 1}, let ϵj denote the signed distinguishing advantage of A2 on inputs ρj versus M0(ρj), i.e., ϵj := Pr[A2(ρj) = 0] − Pr[A2(M0(ρj)) = 0], and let δj denote the signed distinguishing advantage of A2 on inputs M t 
+1(ρj) versus M t 2(ρj). Then the signed distinguishing advantage of B on input distributions[ 
+e1 ← Sm η , e2 ← Sl 
+η, b := e⊤1 A+ e⊤2 ] 
+versus [ b⊤ ← Rl 
+q 
+] is 
+δ := 1 
+T 
+w−1∑ j=0 
+(−dg)−jδj , (32) 
+because ρ′j =M t 1(ρj) if b is sampled according to 
+[ e1 ← Sm 
+η , e2 ← Sl η, b := e⊤1 A +e⊤2 
+] and ρ′j =M t 
+2(ρj) if b is sampled according to 
+[ b⊤ ← Rl 
+q 
+] . 
+By Corollary 1 (which applies by the assumptions in the proposition and the validity of A), we have δj = 
+1 dϵj+1 + gϵj for all j ∈ {0, 1, . . . , w − 2}. Therefore, 
+ϵi(−dg)−i = ϵ0 − 1 
+g 
+i−1∑ j=0 
+(−dg)−jδj for all i ∈ {0, 1, . . . , w − 1}. (33) 
+Then, 
+δ = g 
+T (ϵ0 − ϵw(−dg)−w). (34) 
+We now unfix A ∈ Rm×l q and take the expectation of Eq. (34) over A← Rm×l 
+q to see that 
+|EA[δ]| = g 
+T 
+∣∣∣EA[ϵ0 − ϵw(−dg)−w] ∣∣∣ ≥ (g − 1 
+d 
+) (ϵ− (dg)−w) ≥ 1 
+4 
+( ϵ− 1 
+3w 
+) , (35) 
+where the first inequality uses T ≤ dg/(dg − 1), |ϵw| ≤ 1, and ϵ = |EA[ϵ0]|. Since Time(B) = Time(A)+poly(w) and |EA[δ]| is the advantage of B for solving MLWEl,m,η, the proposition 
+follows. 
+4 Concrete parameters In this section, we describe how to adjust the parameter settings of Dilithium using Theorem 2 to achieve se-
+curity levels comparable to those considered in the Dilithium specifications [Bai+21], Dilithium-QROM [KLS18], and the relevant NIST Federal Information Processing Standards (FIPS) [NIST23, Appendix A]. 
+We will use the same notation as in the Dilithium specification, [Bai+21]. [Bai+21] specifies Dilithium in terms of the variables 
+q, n, k, l,H, τ, d, τ, γ1, γ2, η, β. (36) 
+Except for the variable d, these variables roughly specify Dilithium according to the simplified version given in Fig. 1. The variable d specifies a further compression of the public key. To see how these variables precisely specify the full version of Dilithium, we refer the reader to [Bai+21]. 
+The security analysis of CRYSTALS-Dilithium in [KLS18] leads to [KLS18, Eqs. (10) and (11)] which shows the following. Given a quantum query algorithm A for breaking the sEUF-CMA-security of Dilithium, there exist quantum algorithms B,D, E and quantum query algorithm C such that Time(B) = Time(C) = Time(A) and Time(D) ≈ Time(A) with 
+AdvsEUF-CMA Dilithium (A) ≤ 2−α+1 +AdvMLWE 
+k,l,η (B) + AdvSelfTargetMSIS H,τ,k,l+1,ζ (C) + AdvMSIS 
+k,l,ζ′(D) + AdvPRSam(E) (37) 
+where ζ, ζ ′ are functions of parameters γ1, γ2, β, d, τ defined as follows: 
+ζ := max(γ1 − β, 2γ2 + 1 + 2d−1τ) and ζ ′ := max(2(γ1 − β), 4γ2 + 2). (38) 
+AdvPRSam(E) is the advantage of any algorithm distinguishing between the pseudorandom function used by Dilithium and a randomly selected function; and α is a min-entropy term that can be bounded using [KLS18, Lemma C.1 of ePrint version] by 
+α ≥ min 
+( −n log 
+( 2γ1 + 1 
+2γ2 − 1 
+) ,−kl log(n/q) 
+) . (39) 
+In the QROM, we can construct an optimal pseudorandom function using a random oracle such that AdvPRSam(E) is asymptotically negligible and can be neglected. 
+Theorem 2 shows that the hardness of SelfTargetMSIS in the QROM is at least that of MLWE. Therefore, Theorem 2 and Eq. (37) rigorously imply the asymptotic result that, under suitable choices of parameters as functions of the security parameter λ, if there are no poly(λ)-time quantum algorithms that solve MLWE or MSIS then there is no poly(λ)-time quantum algorithm that breaks the sEUF-CMA security of Dilithium. This is a very positive sign for the security of Dilithium as MSIS and MLWE are far better-studied problems and there is substantial support for the assumption that they are hard problems. 
+We proceed to give concrete estimates of the Core-SVP security of Dilithium under several choices of parameters using Theorem 2 and Eq. (37). These estimates rely on some heuristic assumptions that we will clearly state. We remark that the concrete security estimates appearing in [KLS18; Bai+21] use similar heuristic assumptions. 
+We begin by dividing both sides of Eq. (37) by Time(A). Using Time(B) = Time(C) = Time(A), assuming the approximation in Time(D) ≈ Time(A) can be replaced by equality, and using our work’s parameters in Tables 2 to 4 for which α ≥ 257, we obtain 
+S(A) ≤ 2−256 + AdvMLWE 
+k,l,η (B) Time(B) 
++ AdvSelfTargetMSIS 
+H,τ,k,l+1,ζ (C) Time(C) 
++ AdvMSIS 
+k,l,ζ′(D) Time(D) 
+, (40) 
+where S(A) := AdvsEUF-CMA Dilithium (A)/Time(A). 
+By Theorem 2, for any η′ ∈ N with η′ < ⌊q/32⌋/(2ζn(k + l + 1)), there exists a quantum algorithm C′ for MLWEk+l+1,k,η′ , such that 
+S(A) ≤ 2−256 + AdvMLWE 
+k,l,η (B) Time(B) 
++ 8Q2 
+√ AdvMLWE 
+k+l+1,k,η′(C′) Time(C) 
++ AdvMSIS 
+k,l,ζ′(D) Time(D) 
+, (41) 
+where Q is the number of queries C uses and we assume that Eq. (9) is well-approximated by ϵ2/(64Q4), in particular, that τ is sufficiently large. 
+Also by Theorem 2, we have Time(C′) is at most Time(C) plus polynomial terms. Heuristically assuming that we can neglect the polynomial terms and using Q ≤ Time(C), we obtain 
+S(A) ≤ 2−256 + AdvMLWE 
+k,l,η (B) Time(B) 
++ 8Q3/2 
+√ AdvMLWE 
+k+l+1,k,η′(C′) Time(C′) 
++ AdvMSIS 
+k,l,ζ′(D) Time(D) 
+. (42) 
+Now, for NIST security level l ∈ [5], we upper bound Q by Bl, where Bl is given in Table 1. 
+NIST Security Level (SLl) SL1 SL2 SL3 SL4 SL5 
+Upper bound on Q (Bl) 264 286 296 2128 2128 
+Table 1: Upper bounds on Q for NIST security levels 1 to 5. These numbers are based on [NIST23, Appendix A] together with well-known quantum query complexity results if we model the block ciphers and hash functions used in [NIST23, Appendix A] as random functions.7 
+From the third term on the right-hand side of Eq. (42), we see that the Quantum Core-SVP security of SelfTargetMSIS can be estimated by 
+z 
+2 − 3 
+2 log(Bl)− 3, (43) 
+where z is the Quantum Core-SVP security of the associated MLWE problem. Having reduced the sEUF-NMA security of Dilithium to the security of standard lattice problems MLWE and 
+MSIS, we proceed to estimate their security. Following the analysis in the Dilithium specifications [Bai+21], we perform our security estimates via the Core-SVP methodology introduced in [Alk+16]. In the Core-SVP methodology, we consider attacks using the Block Khorkine-Zolotarev (BKZ) algorithm [SE94; CN11]. The BKZ algorithm with block size µ ∈ N works by making a small number of calls to an SVP solver on µ-dimensional lattices. The Core-SVP methodology conservatively assumes that the run-time of the BKZ algorithm is equal to the cost of a single run of the SVP solver at its core. The latter cost is then estimated as 20.265µ since this is the cost of the best quantum SVP solver [Bai+21, Section C.1] due to Laarhoven [Laa16, Section 14.2.10]. Therefore, to estimate the security of an MLWE or MSIS problem, it suffices to estimate the smallest µ ∈ N such that BKZ with block-size µ can solve the problem. Then we say 0.265µ is the Quantum Core-SVP security of the problem. 
+To describe how the block-size can be estimated, it is convenient to define the function δ : N→ R, 
+δ(µ) := ( (µπ)1/µµ 
+2πe 
+) 1 2(µ−1) 
+. (44) 
+4.1 Concrete security of MLWE Our security analysis of MLWE generally follows the Dilithium specifications, [Bai+21, Appendix C.2]. For 
+a, b, ϵ ∈ N, we first follow [Bai+21, Appendix C.2] and assume that MLWEa,b,ϵ is as hard as the Learning With Errors problem LWEna,nb,ϵ. Then, for a′, b′ ∈ N, LWEa′,b′,ϵ is defined to be the same as MLWEa′,b′,ϵ with n set to 1 so that Rq = Zq. 
+Then, as done in [Bai+21, Appendix C.2], we follow the security analysis in [Alk+16]. [Alk+16] considers two attacks based on the BKZ algorithm, known as the primal attack and dual attack. The block-size is then taken as the minimum of the block-sizes for the primal and dual attacks. These attacks are analyzed as follows. 
+1. Primal attack [Alk+16, Section 6.3]. Let c := na + nb + 1. Then, to solve LWEna,nb,ϵ, we set the BKZ block-size µ to be equal to the smallest integer ≥ 50 such that:8 ξ 
+√ µ ≤ δ(µ)2µ−c · qna/c. 
+2. Dual attack [Alk+16, Section 6.4]. Let c′ := na+nb. Then to solve LWEna,nb,ϵ, we set the BKZ block-size µ to be equal to the smallest integer≥ 50 such that−2π2τ(µ)2 ≥ ln(2−0.2075µ/2), where τ(µ) := δ(µ)c 
+′−1qnb/c ′ ϵ/q. 
+7Given a random function f : [N ] → [N ], the number of quantum queries to f needed to find a preimage of 1 is Θ(N1/2) [Gro96] and the number of quantum queries to f needed to find a collision, i.e., i ̸= j such that f(i) = f(j), is Θ(N1/3) [Zha15]. (We ignore the constants hidden in the Θ-notation; more detailed analysis is possible, see, e.g., [Jaq+20].) 
+8In [Alk+16, Section 6.3], the exponent on δ(µ) is given as 2µ− c− 1, but it was later corrected to 2µ− c by [Alb+17, Section 3.2]. There can be spurious solutions with 0 < µ < 50 for which the approximations leading to the inequality break down. 
+4.2 Concrete security of MSIS Our security analysis of MSIS uses heuristics in the Dilithium specifications [Bai+21, Appendix C.3] and 
+[Lyu12] (which is in turn based on [MR09]).9 For a, b, ξ ∈ N, we first follow [Bai+21, Appendix C.3] and assume that MSISa,b,ξ is as hard as the Short Integer Solutions problem SISna,nb,ξ. Then, for a′, b′ ∈ N, SISa′,b′,ξ is defined to be the same as MSISa′,b′,ξ with n set to 1 so that Rq = Zq. Following [Lyu12], we estimate the security of SISna,nb,ξ, by considering the attack that uses the BKZ algorithm with block-size µ to find a short non-zero vector in the lattice 
+L(A) := {y ∈ Zna+nb | [Ina | A] · y = 0 mod q}, (45) 
+where A ← Zna×nb q . Following [Lyu12, Eq. (3) of ePrint version], the BKZ algorithm is expected to find a 
+vector v ∈ L(A) of Euclidean length10 
+22 √ 
+na log(q) log(δ(µ)). (46) 
+We assume that the entries of v have the same magnitudes since a similar assumption is made in [Bai+21, Appendix C.3]. Then, to solve SISna,nb,ξ, we set the BKZ block-size µ to be the smallest positive integer such that 
+1√ na+ nb 
+· 22 √ 
+na log(q) log(δ(µ)) ≤ ξ. (47) 
+4.3 Parameter sets for different security levels To set Dilithium parameters, we also require q = 1 mod 2γ2, q > 4γ2 (see [Bai+21, Lemma 1] or [KLS18, 
+Lemma 4.1]), and β = τη (see [Bai+21, Table 2]). Moreover, we set parameters to minimize the following metrics [KLS18]: 
+1. the public key size in bytes: (nk(⌈log(q)⌉ − d) + 256)/8; 2. the signature size in bytes: (nl⌈log(2γ1)⌉+ nk + τ(log(n) + 1))/8; 3. the expected number of repeats to sign a message: exp 
+( nβ ( 
+l γ1 
++ k γ2 
+)) . 
+In Tables 2 to 4, we give parameter sets achieving different levels of security that we calculated using the methodology described above. In all tables, we use: 
+q0 := 12439554041857 = 211 · 3 · 19 · 1447 · 73643 + 1 ≈ 243.5. (48) 
+In particular, q0 = 1 mod 2n. Having established our attack model, we quantify the security provided by the proposed parameter sets for 
+both Dilithium [Bai+21] and Dilithium-QROM [KLS18] using our model in Tables 2 and 3. In those tables, we also provide new parameter sets that guarantee the same security if we analyzed the security of SelfTargetMSIS using Theorem 2, in particular, Eq. (43). The new parameter sets are chosen in a way that minimizes their corresponding public key and signature sizes, as well as the expected number of repeats in Sign. In Table 4, we provide our recommended parameter sets at the five security levels specified by NIST.11 
+Compared to the original Dilithium at “SL3”, we find an increase in public key size of ≈ 11.4× and an increase in signature size of ≈ 3.2× [Bai+21]. However, our results are provably secure based on conventional hardness assumptions for the MSIS and MLWE problems, whereas Dilithium must also assume that SelfTargetMSIS is hard for the parameters that they set. (See the discussion in Section 1.2.) Therefore, the main advantage of our parameters compared to Dilithium is that ours are based on rigorous reductions from hard lattice problems, whereas Dilithium’s are based on highly heuristic reductions. We note that the heuristic reduction from SelfTargetMSIS to (a variant of) MSIS given in [Bai+21, End of Section 6.2.1] has been recently challenged [Wan+22]. 
+9We were unable to completely reuse the analysis in [Bai+21, Section C.3] as it is not completely described. Comparing the estimates for µ obtained by the method here with that in [Bai+21, Table 1], we find our estimates are consistently around 4/5 times that given in [Bai+21, Table 1]. Therefore, our estimates underestimate the security of MSIS compared to [Bai+21]. 
+10Compared to [Lyu12, Eq. (3) of ePrint version], we do not take the min of Eq. (46) with q since “trivial” vectors of the form q times a standard basis vector have too large of an infinity-norm to be a solution to SISna,nb,ξ when ξ < q, as will be the case for our parameter choices. 
+11The headings “SLl” appearing in Table 2 follow the headings used in [Bai+21, Table 2]. Under our attack model, they do not exactly correspond to the desired security of NIST’s SLl. This explains the need for Table 4 and why Table 4 differs from Table 2. 
+Dilithium [Bai+21] Our work SL2 SL3 SL5 SL2 SL3 SL5 
+q 223 − 8191 223 − 8191 223 − 8191 q0 q0 q0 n 256 256 256 512 512 512 
+(k, l) (4, 4) (6, 5) (8, 7) (10, 4) (12, 8) (16, 13) d 13 13 13 15 15 15 τ 39 49 60 40 40 40 γ1 217 219 219 220929 370432 555648 γ2 95232 261888 261888 441858 740864 1111296 ζ 350209 724481 769537 1539077 2137089 2877953 ζ ′ 380930 1048184 1048336 1767434 2963458 4445186 η 2 4 2 2 2 2 η′ N/A N/A N/A 8 4 2 
+pk size (bytes) 1312 1952 2592 18592 22304 29728 σ size (bytes) 2476 3448 4804 5554 11058 18546 
+Expected Repeats 4.25 5.10 3.85 5.30 4.70 4.70 LWE BKZ Block-Size 448 669 911 605 1205 2111 Quantum Core-SVP 118 177 241 160 319 559 
+“SelfTargetMSIS” BKZ Block-Size N/A N/A N/A 1753 2177 3025 Quantum Core-SVP N/A N/A N/A 100 141 205 SIS BKZ Block-Size 363 533 773 4942 5644 7423 Quantum Core-SVP 96 141 204 1309 1495 1967 
+Table 2: We give parameter sets that matches the quantized security of those proposed in the Dilithium specifications [Bai+21]. q0 is defined in Eq. (48). The “SelfTargetMSIS” block-size should be understood as the block-size of the LWE problem reduced to via Theorem 2 and Section 4.1. 
+Compared to Dilithium-QROM at its recommended security level, we find an increase in public key size of ≈ 2.9× and an increase in signature size of ≈ 1.3× [KLS18]. However, while both parameter sets produce schemes that can be proven secure under the assumptions that MSIS and MLWE are hard, our parameter sets allow the use of the NTT and are therefore more efficient to implement than those of Dilithium-QROM. We analyze this difference in greater detail below. 
+The main reason why we must increase the public key and signature sizes is due to the loss in the reduction from MLWE to SelfTargetMSIS, as stated in Theorem 2. Concretely, the loss manifests as Eq. (43), which we used to calculate the Quantum Core-SVP numbers for the SelfTargetMSIS-based MLWE problem. An interesting open question is to understand whether this loss is intrinsic. 
+Next, we quantitatively compare the efficiency of ring multiplication for the parameter sets in Table 3. Our work uses q = q0 and n = 512. Since q = 1mod 2n, we can multiply two elements in Rq using the NTT, which uses 3 
+2n log(n) + 2n = 7936 multiplications in Zq and 3n log(n) = 13824 additions in Zq [Lia+21, Section 2.2]. Dilithium-QROM uses a q such that q = 5mod 8 and we can no longer use the NTT to multiply elements in 
+Rq. Instead, we consider the Hybrid-NTT (H-NTT) [Lia+21, Section 5]. When q = 1mod (n/2α+β−1), where α, β are non-negative integer parameters, and n is a power of 2, H-NTT can multiply two elements in Rq using 
+3 
+2 n log(n) + 
+( 3 · 2α+β−3 + 2α−2 + 3 · 2β−3 + 2α−β−2 − 3 
+2 (α+ β) + 
+5 
+4 
+) n (49) 
+multiplications in Zq, and 
+3n log(n) + ( 5 · 2α+β−2 + 5 · 2β−2 + 5 · 2α−2 − 3(α+ β)− 15 
+4 
+) n (50) 
+additions in Zq. Dilithium-QROM uses q = 245 − 21283 and n = 512 so the condition q = 1mod (n/2α+β−1) requires α + β ∈ {8, 9, 10}.12 The number of multiplications and additions in Zq is minimized by setting α = β = 4. Therefore, H-NTT uses 3 
+2n log(n)+95.5n = 55808 multiplications and 3n log(n)+332.25n = 183936 additions in Zq per ring element multiplication. 
+We proceed to count the number of ring element multiplications and additions used by Dilithium’s algorithms (Gen,Sign,Verify) when Sign involves r ∈ N repeats. For the count, we use the simplified descriptions of these 
+12Note that 2α+β−1 needs to be n, n/2, or n/4 for q = 1mod (n/2α+β−1) to be compatible with q = 5mod 8. This means H-NTT would use Ω(n2) multiplications and additions in Zq when multiplying elements of Rq in Dilithium-QROM. 
+Dilithium-QROM [KLS18] Our work recommended very high recommended very high 
+q 245 − 21283 245 − 21283 q0 q0 n 512 512 512 512 
+(k, l) (4, 4) (5, 5) (12, 5) (13, 8) d 15 15 15 15 τ 46 46 40 40 γ1 905679 905679 279949 370432 γ2 905679 905679 555648 740864 ζ 2565023 2565023 1766657 2137089 ζ ′ 3622718 3622718 2222594 2963458 η 7 3 2 2 η′ N/A N/A 5 4 
+pk size (bytes) 7712 9632 22304 24160 σ size (bytes) 5690 7098 7218 11122 
+Expected Repeats 4.29 2.18 5.03 4.97 LWE BKZ Block-Size 499 620 794 1232 Quantum Core-SVP 132 164 210 326 
+“SelfTargetMSIS” BKZ Block-Size N/A N/A 2118 2374 Quantum Core-SVP N/A N/A 133 167 SIS BKZ Block-Size N/A N/A 5910 6197 Quantum Core-SVP N/A N/A 1566 1642 
+Table 3: We give parameter sets that match the quantized security of those proposed in Dilithium-QROM [KLS18]. q0 is defined in Eq. (48). In the “Our work” columns, we assume Q is bounded by 296, which corresponds to NIST Security Level 3. The “SelfTargetMSIS” block-size should be understood as the block-size of the LWE problem reduced to via Theorem 2 and Section 4.1. 
+algorithms given in Fig. 1. 
+Multiplications Gen: kl, Sign: (kl + k + l)r, and Verify : kl + k 
+Additions Gen: kl, Sign: (kl + l)r, and Verify : kl 
+Note that adding two ring elements requires n additions in Zq. Now, in Table 5, we compare the number of multiplications and additions in Zq used by Dilithium when 
+instantiated with the parameter sets in Table 3. Table 5 shows that Dilithium-QROM at its recommended security level would require approximately the 
+following increases in Zq-operation counts when compared to our work: 
+Multiplications Gen: 1.9×, Sign: 1.9×, and Verify : 2.0× Additions Gen: 3.4×, Sign: 3.4×, and Verify : 3.6× 
+We therefore identify a cost-benefit trade-off between the two provably secure formulations of Dilithium, our work and Dilithium-QROM, at the recommended security level. Our work’s public key and signature sizes are 2.9× and 1.3× larger than Dilithium-QROM’s, respectively. However, our scheme requires 1.9× to 3.6× fewer Zq-operations to implement. Moreover, unlike Dilithium-QROM, our work proves security on Dilithium’s native ring where q = 1mod 2n. 
+We make a final remark on the concrete security analysis of our work as well as those originally done for Dilithium and Dilithium-QROM: no analysis accounts rigorously for potential differences in the hardness between LWE with a uniform error distribution and SIS under the ℓ∞ norm as compared to the better-studied versions of these problems which employ a Gaussian error distribution and the ℓ2 norm, respectively. However, the hardness of the former problems is comparable to the hardness of the latter problems over parameter regimes that are polynomially related in the security parameter [Pei07; MP13]. Therefore, like the original analyses of Dilithium and Dilithium-QROM, we assume that the differences in hardness are not significant enough to seriously threaten security. 
+SL1 SL2 SL3 SL4/5 
+q q0 q0 q0 q0 n 512 512 512 512 
+(k, l) (7, 7) (9, 9) (10, 10) (13, 13) d 15 15 15 15 τ 40 40 40 40 γ1 277824 329916 370432 555648 γ2 555648 659832 740864 1111296 ζ 1766657 1975025 2137089 2877953 ζ ′ 2222594 2639330 2963458 4445186 η 2 2 2 2 η′ 7 5 4 2 
+pk size (bytes) 13024 16736 18592 24160 σ size (bytes) 9458 12146 13490 18354 
+Expected Repeats 4.70 5.34 5.25 4.21 LWE BKZ Block-Size 967 1325 1509 2079 Quantum Core-SVP 256 351 399 550 
+“SelfTargetMSIS” BKZ Block-Size 1252 1665 1866 2454 Quantum Core-SVP 66 88 100 130 SIS BKZ Block-Size 3100 4064 4525 5822 Quantum Core-SVP 821 1076 1199 1542 
+Table 4: We give parameter sets that most closely match the security levels requested by NIST [NIST23, Appendix A]. q0 is defined in Eq. (48). The “SelfTargetMSIS” block-size should be understood as the block-size of the LWE problem reduced to via Theorem 2 and Section 4.1. 
+Dilithium-QROM [KLS18] Our work recommended very high recommended very high 
+Multiplications in Zq 
+Gen 892928 1395200 476160 825344 Sign 5745992 4258150 3073692 4930240 
+Verify 1116160 1674240 571392 928512 Additions in Zq 
+Gen 2951168 4611200 860160 1490944 Sign 18981980 14067802 5521572 8873160 
+Verify 3686912 5530880 1026048 1670656 
+Table 5: The number of Zq additions and Zq multiplications required to implement the ring operations performed by the Gen,Sign, and Verify algorithms of Dilithium. These numbers are calculated using the parameters in Table 3 and the analysis from [Lia+21]. 
+5 Acknowledgments This work was supported by the National Institute of Standards and Technology (NIST) and the Joint 
+Center for Quantum Information and Computer Science (QuICS) at the University of Maryland. This research paper is not subject to copyright in the United States. The opinions, findings, and conclusions in the paper are those of the authors and do not necessarily reflect the views or policies of NIST or the United States Government. 
+We thank Marcel Dall’Agnol, Jiahui Liu, Yi-Kai Liu, and Ray Perlner for helpful feedback and correspondence. We thank Amin Shiraz Gilani for his involvement during the early stages of this project. 
+References [Ajt96] M. Ajtai. “Generating Hard Instances of Lattice Problems”. In: Proceedings of the 28th ACM 
+Symposium on the Theory of Computing (STOC). Philadelphia, Pennsylvania, USA: Association 
+for Computing Machinery, 1996, pp. 99–108. isbn: 0897917855. doi: 10.1145/237814.237838 (Cited on page 3). 
+[Ala+22] Gorjan Alagic, Daniel Apon, David Cooper, Quynh Dang, Thinh Dang, John Kelsey, Jacob Lichtinger, Carl Miller, Dustin Moody, Rene Peralta, Ray Perlner, Angela Robinson, Daniel Smith-Tone, and Yi-Kai Liu. “Status report on the third round of the NIST post-quantum cryptography standardization process”. In: US Department of Commerce, NIST (2022). doi: 10.6028/NIST.IR. 8413-upd1 (Cited on page 1). 
+[Alb+17] Martin R. Albrecht, Florian Göpfert, Fernando Virdia, and Thomas Wunderer. “Revisiting the Ex-pected Cost of Solving uSVP and Applications to LWE”. In: Advances in Cryptology – ASIACRYPT 2017. Ed. by Tsuyoshi Takagi and Thomas Peyrin. Cham: Springer International Publishing, 2017, pp. 297–322. isbn: 978-3-319-70694-8. doi: 10.1007/978-3-319-70694-8_11 (Cited on page 16). 
+[Alk+16] Erdem Alkim, Léo Ducas, Thomas Pöppelmann, and Peter Schwabe. “Post-quantum Key Ex-change—A New Hope”. In: 25th USENIX Security Symposium (USENIX Security 16). Austin, TX: USENIX Association, 2016, pp. 327–343. isbn: 978-1-931971-32-4 (Cited on page 16). 
+[Bai+21] Shi Bai, Léo Ducas, Eike Kiltz, Tancrède Lepoint, Vadim Lyubashevsky, Peter Schwabe, Gregor Seiler, and Damien Stehlé. CRYSTALS-Dilithium: Algorithm Specifications and Supporting Doc-umentation (Version 3.1). Current: https://pq-crystals.org/dilithium/resources.shtml; stable: https://doi.org/10.13154/tches.v2018.i1.238- 268. 2021 (Cited on pages 1–7, 15–18). 
+[Bar+23] Manuel Barbosa, Gilles Barthe, Christian Doczkal, Jelle Don, Serge Fehr, Benjamin Grégoire, Yu-Hsuan Huang, Andreas Hülsing, Yi Lee, and Xiaodi Wu. “Fixing and Mechanizing the Security Proof of Fiat-Shamir with Aborts and Dilithium”. In: Advances in Cryptology – CRYPTO 2023. Ed. by Helena Handschuh and Anna Lysyanskaya. Cham: Springer Nature Switzerland, 2023, pp. 358– 389. isbn: 978-3-031-38554-4. doi: 10.1007/978-3-031-38554-4_12 (Cited on page 3). 
+[BN06] Mihir Bellare and Gregory Neven. “Multi-Signatures in the Plain Public-Key Model and a General Forking Lemma”. In: Proceedings of the 13th ACM Conference on Computer and Communica-tions Security. CCS ’06. Alexandria, Virginia, USA: Association for Computing Machinery, 2006, pp. 390–399. isbn: 1595935185. doi: 10.1145/1180405.1180453 (Cited on page 4). 
+[Bon+11] Dan Boneh, Özgür Dagdelen, Marc Fischlin, Anja Lehmann, Christian Schaffner, and Mark Zhandry. “Random Oracles in a Quantum World”. In: Advances in Cryptology – ASIACRYPT 2011. Ed. by Dong Hoon Lee and Xiaoyun Wang. Berlin, Heidelberg: Springer Berlin Heidelberg, 2011, pp. 41– 69. isbn: 978-3-642-25385-0. doi: 10.1007/978-3-642-25385-0_3 (Cited on page 2). 
+[CN11] Yuanmi Chen and Phong Q. Nguyen. “BKZ 2.0: Better Lattice Security Estimates”. In: Advances in Cryptology – ASIACRYPT 2011. Ed. by Dong Hoon Lee and Xiaoyun Wang. Berlin, Heidelberg: Springer Berlin Heidelberg, 2011, pp. 1–20. isbn: 978-3-642-25385-0. doi: 10.1007/978-3-642-25385-0_1 (Cited on page 16). 
+[Dev+23] Julien Devevey, Pouria Fallahpour, Alain Passelègue, and Damien Stehlé. “A Detailed Analysis of Fiat-Shamir with Aborts”. In: Advances in Cryptology – CRYPTO 2023. Ed. by Helena Handschuh and Anna Lysyanskaya. Cham: Springer Nature Switzerland, 2023, pp. 327–357. isbn: 978-3-031-38554-4. doi: 10.1007/978-3-031-38554-4_11 (Cited on page 3). 
+[DFM20] Jelle Don, Serge Fehr, and Christian Majenz. “The Measure-and-Reprogram Technique 2.0: Multi-round Fiat-Shamir and More”. In: Advances in Cryptology – CRYPTO 2020. Ed. by Daniele Mic-ciancio and Thomas Ristenpart. Cham: Springer International Publishing, 2020, pp. 602–631. isbn: 978-3-030-56877-1. doi: 10.1007/978-3-030-56877-1_21 (Cited on pages 5, 10). 
+[DS23] Marcel Dall’Agnol and Nicholas Spooner. “On the Necessity of Collapsing for Post-Quantum and Quantum Commitments”. In: 18th Conference on the Theory of Quantum Computation, Com-munication and Cryptography (TQC 2023). Ed. by Omar Fawzi and Michael Walter. Vol. 266. Leibniz International Proceedings in Informatics (LIPIcs). Dagstuhl, Germany: Schloss Dagstuhl – Leibniz-Zentrum für Informatik, 2023, 2:1–2:23. isbn: 978-3-95977-283-9. doi: 10.4230/LIPIcs. TQC.2023.2 (Cited on pages 5, 7, 11). 
+[Gro96] Lov K. Grover. “A fast quantum mechanical algorithm for database search”. In: Proceedings of the 28th ACM Symposium on the Theory of Computing (STOC). 1996, pp. 212–219. doi: 10.1145/ 237814.237866 (Cited on page 16). 
+[Jaq+20] Samuel Jaques, Michael Naehrig, Martin Roetteler, and Fernando Virdia. “Implementing Grover Oracles for Quantum Key Search on AES and LowMC”. In: Advances in Cryptology – EURO-CRYPT 2020. Ed. by Anne Canteaut and Yuval Ishai. Cham: Springer International Publishing, 2020, pp. 280–310. isbn: 978-3-030-45724-2. doi: 10.1007/978-3-030-45724-2_10 (Cited on page 16). 
+[KLS18] Eike Kiltz, Vadim Lyubashevsky, and Christian Schaffner. “A Concrete Treatment of Fiat-Shamir Signatures in the Quantum Random-Oracle Model”. In: Advances in Cryptology – EUROCRYPT 2018. Ed. by Jesper Buus Nielsen and Vincent Rijmen. Cham: Springer International Publishing, 2018, pp. 552–586. isbn: 978-3-319-78372-7. doi: 10.1007/978-3-319-78372-7_18 (Cited on pages 3–6, 10, 15, 17–20). 
+[Laa16] Thijs Laarhoven. “Search problems in cryptography: from fingerprinting to lattice sieving”. English. PhD Thesis. Mathematics and Computer Science, 2016. isbn: 978-90-386-4021-1 (Cited on page 16). 
+[Lia+21] Zhichuang Liang, Shiyu Shen, Yuantao Shi, Dongni Sun, Chongxuan Zhang, Guoyun Zhang, Yunlei Zhao, and Zhixiang Zhao. “Number Theoretic Transform: Generalization, Optimization, Concrete Analysis and Applications”. In: Information Security and Cryptology. Ed. by Yongdong Wu and Moti Yung. Cham: Springer International Publishing, 2021, pp. 415–432. isbn: 978-3-030-71852-7. doi: 10.1007/978-3-030-71852-7_28 (Cited on pages 18, 20). 
+[LMZ23] Jiahui Liu, Hart Montgomery, and Mark Zhandry. “Another Round of Breaking and Making Quan-tum Money: How To Not Build It From Lattices, And More”. In: Advances in Cryptology – EU-ROCRYPT 2023. Ed. by Carmit Hazay and Martijn Stam. Cham: Springer Nature Switzerland, 2023, pp. 611–638. isbn: 978-3-031-30545-0. doi: 10.1007/978-3-031-30545-0_21 (Cited on pages 5, 12, 14). 
+[LN17] Vadim Lyubashevsky and Gregory Neven. “One-Shot Verifiable Encryption from Lattices”. In: Advances in Cryptology – EUROCRYPT 2017. Ed. by Jean-Sébastien Coron and Jesper Buus Nielsen. Cham: Springer International Publishing, 2017, pp. 293–323. isbn: 978-3-319-56620-7. doi: 10.1007/978-3-319-56620-7_11 (Cited on page 4). 
+[LS15] Adeline Langlois and Damien Stehlé. “Worst-Case to Average-Case Reductions for Module Lat-tices”. In: Designs, Codes and Cryptography 75 (2015), pp. 565–599. doi: 10.1007/s10623-014-9938-4 (Cited on page 3). 
+[Lyu12] Vadim Lyubashevsky. “Lattice Signatures without Trapdoors”. In: Advances in Cryptology – EU-ROCRYPT 2012. Ed. by David Pointcheval and Thomas Johansson. Berlin, Heidelberg: Springer Berlin Heidelberg, 2012, pp. 738–755. isbn: 978-3-642-29011-4. doi: 10.1007/978-3-642-29011-4_43 (Cited on page 17). 
+[LZ19] Qipeng Liu and Mark Zhandry. “Revisiting Post-quantum Fiat-Shamir”. In: Advances in Cryp-tology – CRYPTO 2019. Ed. by Alexandra Boldyreva and Daniele Micciancio. Cham: Springer International Publishing, 2019, pp. 326–355. isbn: 978-3-030-26951-7. doi: 10.1007/978-3-030-26951-7_12 (Cited on page 5). 
+[MP13] Daniele Micciancio and Chris Peikert. “Hardness of SIS and LWE with Small Parameters”. In: Ad-vances in Cryptology – CRYPTO 2013. Ed. by Ran Canetti and Juan A. Garay. Berlin, Heidelberg: Springer Berlin Heidelberg, 2013, pp. 21–39. isbn: 978-3-642-40041-4 (Cited on page 19). 
+[MR09] Daniele Micciancio and Oded Regev. “Lattice-based Cryptography”. In: Post-Quantum Cryptog-raphy. Ed. by Daniel J. Bernstein, Johannes Buchmann, and Erik Dahmen. Berlin, Heidelberg: Springer Berlin Heidelberg, 2009, pp. 147–191. isbn: 978-3-540-88702-7. doi: 10.1007/978-3-540-88702-7_5 (Cited on page 17). 
+[NIST23] National Institute of Standards and Technology. Module-Lattice-Based Digital Signature Standard. Tech. rep. Federal Information Processing Standards Publications (FIPS PUBS) 204. Washington, D.C.: U.S. Department of Commerce, 2023. doi: 10.6028/NIST.FIPS.204.ipd (Cited on pages 15, 16, 20). 
+[Pei07] Chris Peikert. “Limits on the Hardness of Lattice Problems in lp Norms”. In: Twenty-Second Annual IEEE Conference on Computational Complexity (CCC’07). 2007, pp. 333–346. doi: 10.1109/CCC. 2007.12 (Cited on page 19). 
+[Pei16] Chris Peikert. “A Decade of Lattice Cryptography”. In: Found. Trends Theor. Comput. Sci. 10.4 (2016), pp. 283–424. issn: 1551-305X. doi: 10.1561/0400000074 (Cited on pages 2, 3). 
+[Reg09] Oded Regev. “On Lattices, Learning with Errors, Random Linear Codes, and Cryptography”. In: J. ACM 56.6 (2009). issn: 0004-5411. doi: 10.1145/1568318.1568324 (Cited on page 3). 
+[SE94] C. P. Schnorr and M. Euchner. “Lattice basis reduction: Improved practical algorithms and solving subset sum problems”. In: Mathematical Programming 66.1 (1994), pp. 181–199. doi: 10.1007/ BF01581144 (Cited on page 16). 
+[Unr12] Dominique Unruh. “Quantum Proofs of Knowledge”. In: Advances in Cryptology – EUROCRYPT 2012. Ed. by David Pointcheval and Thomas Johansson. Berlin, Heidelberg: Springer Berlin Hei-delberg, 2012, pp. 135–152. isbn: 978-3-642-29011-4. doi: 10.1007/978- 3- 642- 29011- 4_10 (Cited on page 7). 
+[Unr16] Dominique Unruh. “Collapse-Binding Quantum Commitments Without Random Oracles”. In: Ad-vances in Cryptology – ASIACRYPT 2016. Ed. by Jung Hee Cheon and Tsuyoshi Takagi. Berlin, Heidelberg: Springer Berlin Heidelberg, 2016, pp. 166–195. isbn: 978-3-662-53890-6. doi: 10.1007/ 978-3-662-53890-6_6 (Cited on pages 5, 11). 
+[Wan+22] Geng Wang, Wenwen Xia, Gongyu Shi, Ming Wan, Yuncong Zhang, and Dawu Gu. Revisiting the Concrete Hardness of SelfTargetMSIS in CRYSTALS-Dilithium. Cryptology ePrint Archive, Paper 2022/1601. iacr:2022/1601. 2022 (Cited on page 17). 
+[Zha12] Mark Zhandry. “Secure Identity-Based Encryption in the Quantum Random Oracle Model”. In: Advances in Cryptology – CRYPTO 2012. Ed. by Reihaneh Safavi-Naini and Ran Canetti. Berlin, Heidelberg: Springer Berlin Heidelberg, 2012, pp. 758–775. isbn: 978-3-642-32009-5. doi: 10.1007/ 978-3-642-32009-5_44 (Cited on page 10). 
+[Zha15] Mark Zhandry. “A note on the quantum collision and set equality problems”. In: Quantum Informa-tion and Computation 15.7-8 (2015), pp. 557–567. issn: 1533-7146. doi: 10.26421/QIC15.7-8-2 (Cited on page 16). 
