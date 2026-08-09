@@ -35,14 +35,22 @@ Se reporta el grado de cumplimiento de cada objetivo con honestidad, distinguien
 
 ## 7.3 Contribuciones
 
-1. **Un modelo formal y prototipo de referencia** de firmas post-cuánticas (Dilithium) en una arquitectura dual-chain para banca, con el núcleo de firma genuinamente implementado y verificado.
-2. **El análisis cuantificado del sobrecosto post-cuántico** (Cap. 3): el hallazgo de que el cuello de botella es de **datos, no de cómputo**, y la demostración de que el dual-chain amortiza el costo on-chain por transacción al de su diferencia de estado clásica.
-3. **El principio de coherencia post-cuántica del sistema de pruebas** (el verificador L2 debe ser STARK, no Groth16), con la **tensión Dilithium-vs-STARK-friendliness** identificada como decisión de diseño consciente.
-4. **La validación formal instanciada para NEXUS**: la cadena de reducciones con la cota correcta de **tres términos** y el argumento de resistencia cuántica con la estimación *core-SVP* (~0,91×, no "la mitad").
-5. **La reformulación rigurosa de la gestión activa de claves** (min-entropía + SP 800-90B + rotación forward-secure), que reemplaza un enfoque conceptualmente frágil.
-6. **El modelo de cuenta** (identidad estable, política de verificación, *epoch*) + Registro de Claves, que resuelve la coexistencia de rotación/migración PQC con identidad estable.
-7. **La política de residencia efímera de la clave y su métrica** (Cap. 5, §5.6): custodia *seed-only* (formato hoy recomendado por el RFC 9881) elevada a política de seguridad —regeneración KeyGen-por-firma con zeroización, medida empíricamente (+0,75 ms por firma; exposición permanente 126× menor)— y la **ventana de exposición** $W=\text{bytes}\times\Delta t$ como cuantificador; ni la política ni la métrica tienen formalización previa localizada (la guía vigente recomienda incluso cachear la clave expandida).
-8. **La propuesta del *Deception Engine*** (§7.5): conmutación del firmador a un par señuelo ML-DSA ante detección de observación, con el *sequencer* L2 como *honeychecker*. Es una **propuesta de diseño argumentada frente al estado del arte** (no una implementación): la revisión de jul. 2026 no localiza ningún trabajo que combine señuelos criptográficos con firmas post-cuánticas ni con respuesta coordinada en L2.
+Se ordenan por **grado de originalidad** y no por orden de aparición: primero lo que la revisión de la literatura no encontró previamente formulado, y después la síntesis, la cuantificación y la instanciación —donde reside el grueso del trabajo, y que se declara como tal (§7.4)—.
+
+### A. Aportes sin antecedente localizado en la literatura
+
+1. **La política de residencia efímera de la clave** (Cap. 5, §5.6). La custodia *seed-only* ya es estándar —FIPS 204 §3.6.3 la permite y el RFC 9881 la declara el formato recomendado— y **no se reclama como aporte**; lo que se propone es elevarla a **política de firma**: regenerar el par ML-DSA desde la semilla en cada operación y zeroizarlo, **en contra de la recomendación explícita de la guía IETF vigente**, que sugiere cachear la clave expandida [Connolly26]. El aporte incluye tres piezas: su **medición** (+0,12 ms por firma en el perfil H2; +0,75 ms en H1, con *benchmark* reproducible versionado), el argumento de que el beneficio real es un **cambio de categoría de custodia** —32 B sellables en TPM/HSM frente a ~4 KB residentes en montón paginable— y no un mero cociente de tamaños, y el ***trade-off* declarado** frente al modelo de canal lateral, que la política empeora y que esta tesis deja fuera de alcance.
+2. **La métrica de ventana de exposición** $W=\text{bytes}\times\Delta t$ (Cap. 5, §5.6), propuesta como cuantificador **heurístico** de una política de residencia —con su estatus explícitamente acotado (no es una cota de probabilidad de compromiso: la semilla compromete tanto como la clave expandida) y su punto de equilibrio derivado, $\lambda\approx 2.300$ firmas/s—. Lo más cercano localizado en la literatura mide residencia de claves en RAM sin criptografía post-cuántica [Sawa25].
+3. **La propuesta del *Deception Engine*** (§7.5): conmutación del firmador a un par señuelo ML-DSA ante detección de observación, con el *sequencer* L2 como *honeychecker*. Es una **propuesta de diseño argumentada frente al estado del arte** (no una implementación): la revisión de jul. 2026 no localiza ningún trabajo que combine señuelos criptográficos con firmas post-cuánticas ni con respuesta coordinada en L2.
+
+### B. Aportes de síntesis, cuantificación e instanciación
+
+4. **El análisis cuantificado del sobrecosto post-cuántico** (Cap. 3): el hallazgo de que el cuello de botella es de **datos, no de cómputo**, y la demostración de que el dual-chain amortiza el costo on-chain por transacción al de su diferencia de estado clásica.
+5. **El principio de coherencia post-cuántica del sistema de pruebas** (el verificador L2 debe ser STARK, no Groth16), sustanciado con un **PoC STARK propio sin emparejamientos** y con la **tensión Dilithium-vs-STARK-friendliness** identificada como decisión de diseño consciente.
+6. **La reformulación rigurosa de la gestión activa de claves** (min-entropía + SP 800-90B + rotación forward-secure), que reemplaza un enfoque conceptualmente frágil (la entropía de Shannon de la semilla) por uno normativamente fundado.
+7. **La validación formal instanciada para NEXUS**: la cadena de reducciones ensamblada con la cota correcta de **tres términos** y el argumento de resistencia cuántica con la estimación *core-SVP* (~0,91×, no "la mitad") —resultados citados e instanciados, no re-demostrados (Cap. 6, §6.1)—.
+8. **El modelo de cuenta** (identidad estable, política de verificación, *epoch*) + Registro de Claves, que resuelve la coexistencia de rotación/migración PQC con identidad estable.
+9. **La integración de todo lo anterior** en un modelo formal y prototipo de referencia de firmas post-cuánticas sobre una arquitectura dual-chain para banca, con el núcleo de firma genuinamente implementado y verificado.
 
 ## 7.4 Limitaciones
 

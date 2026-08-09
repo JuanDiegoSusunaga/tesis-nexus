@@ -1,7 +1,7 @@
 # ✅ Pendientes — Tesis NEXUS (TG2)
 
 > Vista consolidada de **qué falta** (la cronología de lo hecho vive en [BITACORA_TG2.md](BITACORA_TG2.md); las fases, en [Plan-de-Trabajo-TG2.md](Documentos/04-Administrativo-TG2/Plan-de-Trabajo-TG2.md)).
-> Actualizado: **2026-08-07**.
+> Actualizado: **2026-08-09**.
 
 ## 🔴 Administrativo (condiciones del comité — bloquea todo lo demás)
 
@@ -18,6 +18,10 @@
 
 - [x] ~~**Unificar las cifras del perfil H1**~~ — resuelto 2026-08-07: la oficial es la corrida del **README (2026-07-31, rustc 1.97.1)**: D3 = 413/790/232 µs. Tabla 6.2 actualizada (venía de una corrida pre-julio sin fecha); §5.6, bitácora y README ya coinciden. Nota honesta añadida en §6.6.2: en H1, RSA-2048 verificaba marginalmente más rápido que D3 (218 vs 232 µs).
 - [x] ~~**Regenerar `Tesis-NEXUS-completa.docx`**~~ — hecho 2026-08-07 (pandoc 3.10.1 instalado en el portátil nuevo; `.docx` con todos los cambios del día).
+- [ ] **Regenerar `Tesis-NEXUS-completa.docx`** — el `.md` cambió el 2026-08-09 (endurecimiento defensivo, ver bitácora) y el `.docx` quedó desactualizado; pandoc no estaba disponible en ese entorno. Comando: `pandoc Tesis-NEXUS-completa.md --reference-doc=plantilla-referencia.docx -o Tesis-NEXUS-completa.docx`.
+- [ ] **Enmarcar el trabajo en la banca de forma sustantiva** (hueco identificado el 2026-08-09, **no** aplicado). Hoy «banca» es el dominio declarado pero el texto no invoca ningún requisito bancario concreto: sin ISO 20022, sin FIPS 140-3 / ruta de integración con HSM, sin finalidad regulatoria, sin volúmenes reales de firma. El paper del BIS (*Project Leap*, fuente 076 del índice) está en el estado del arte y **no se cita**. Riesgo de sustentación: *«¿qué cambia si quito la palabra banca del título?»*. Arreglo propuesto: 1–2 párrafos en Cap. 1 §1.1 (o §1.6) con requisitos concretos —finalidad, trazabilidad de rotación, custodia certificada— que además darían soporte de motivación a la Decisión 002.
+- [ ] **Instrumentar el *harness* del STARK para la columna de generación de la Tabla 6.5** (declarado en la nota metodológica 4 de §6.6.3, 2026-08-09): el costo de generación incluye la búsqueda de nonce del *grinding*, que es **geométrica** de media 2²⁰ y varianza alta, y hoy se reporta como corrida única (de ahí el punto de 2⁶ = 826,5 ms). Opciones: (a) medianas de N corridas con nonce re-sembrado, o (b) **preferida** — separar en el harness el costo de *grinding* del resto del prover (NTT + Merkle + FRI), de modo que la componente determinista quede aislada. Debe ejecutarse en **H2** para ser comparable con la tabla publicada.
+- [ ] **Integrar el caso de uso agéntico al manuscrito** — mientras no se integre, sus 17 referencias viven en el **anexo bibliográfico declarado** al final de la bibliografía (movidas el 2026-08-09 por no estar citadas en ningún capítulo). Al integrarlo, migrarlas a las secciones correspondientes.
 - [ ] **Cap. 5:** incorporar el cuadro de tres capas (RCT ≤4 muestras / APT 10³–10⁶ / MCV 1 lote) y los parámetros acordados, cuando se cierre la Decisión 001.
 - [ ] README de `nexus`: actualizar tablas D2/D5 y STARK con el perfil H2 (opcional, consistencia con el capítulo).
 - [ ] Matriz de trazabilidad afirmación→fuente (`Resumenes-y-Matriz/`) — hueco identificado el 2026-08-03, no urgente.
@@ -28,9 +32,9 @@
 - [x] ~~**Throughput multinúcleo (tps)**~~ — hecho 2026-08-07: `examples/throughput_tps.rs`; D3: 12.485 → **199.218 verif/s** (1→24 hilos); §6.6.1 actualizada.
 - [ ] Aplicar la corrección del corte APT (bloqueada por Decisión 001).
 
-## 🗃️ Repos (cambios sin commitear del 2026-08-07)
+## 🗃️ Repos
 
-- [ ] **Commit en `Tesis/`:** `BITACORA_TG2.md`, `Cap5-Gestion-Claves.md`, `Cap6-Validacion-Formal.md`, `Tesis-NEXUS-completa.md` (+ `.docx`), `Decision-001-Parametros-APT.md`, `Decision-002-Registro-Auditable-Rotaciones.md`, `Avances/Entrega-Parcial-01-2026-08-07.md`, este archivo.
+- [x] ~~**Commit en `Tesis/`** (cambios del 2026-08-07)~~ — hecho en `23861ef`.
 - [ ] **Commit + push en `nexus/`:** `examples/apt_sweep.rs`, `examples/throughput_tps.rs`, `benches/residencia_bench.rs` (nuevos), `examples/stark_demo.rs` (trazas extendidas a 2¹⁸), `Cargo.toml` (target del bench nuevo).
 
 ## 🔭 Trabajo futuro ya declarado (no es deuda de TG2)
