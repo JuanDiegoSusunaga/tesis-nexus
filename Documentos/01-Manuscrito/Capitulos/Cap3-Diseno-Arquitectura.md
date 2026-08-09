@@ -119,7 +119,7 @@ Conviene declarar una tensión técnica que demuestra dominio del problema. **Pr
 
 ## 3.6 Modelo de cuenta: identidad estable vs. clave rotable
 
-Un sistema que **rota** y **migra** claves (Cap. 5, cripto-agilidad) enfrenta un problema: si la dirección se deriva de la clave pública, rotar la clave **cambia la dirección/identidad**. NEXUS lo resuelve con **abstracción de verificación**:
+La **cripto-agilidad** es un requisito explícito del dominio, no una comodidad de ingeniería: el sector financiero la enuncia como condición de la transición post-cuántica —porque el esquema estandarizado hoy puede no ser el de 2030, con FIPS 206 aún en borrador— (Cap. 1, §1.3, **R3**). Pero un sistema que **rota** y **migra** claves (Cap. 5) enfrenta un problema: si la dirección se deriva de la clave pública, rotar la clave **cambia la dirección/identidad**. NEXUS lo resuelve con **abstracción de verificación**:
 
 $$\textbf{Cuenta} = (\ \text{id\_estable},\ \ \text{política\_de\_verificación},\ \ \text{epoch}\ ).$$
 
@@ -158,7 +158,7 @@ El **Nexus Sequencer** ordena las transacciones del L2. Un secuenciador único c
 
 ## 3.9 Finalidad
 
-La banca exige **finalidad rápida e irreversible** para la liquidación. El **Finality Gadget** de la Anchor Layer se especifica para finalizar un bloque cuando el peso de voto (ponderado por *stake*) cruza el umbral de 2/3, con verificación de las firmas de voto y enlace de ascendencia entre bloques finalizados. *(Diseño de referencia; su implementación operativa es trabajo futuro, §3.10.)*
+La banca exige **finalidad rápida e irreversible** para la liquidación, con latencias objetivo del orden de $10^2$ ms en los sistemas de pago vigentes (Cap. 1, §1.3, **R6**). El **Finality Gadget** de la Anchor Layer se especifica para finalizar un bloque cuando el peso de voto (ponderado por *stake*) cruza el umbral de 2/3, con verificación de las firmas de voto y enlace de ascendencia entre bloques finalizados. *(Diseño de referencia; su implementación operativa es trabajo futuro, §3.10.)*
 
 > **Validación externa y diseño a contrastar.** Solana **Alpenglow** (Votor + Rotor; testnet may-2026, mainnet ~finales 2026) reduce la finalidad de 12,8 s a **100–150 ms**: **Votor** finaliza en **una ronda** con ≥80 % del *stake* en línea (~100 ms) y en dos rondas al 60 % (~150 ms). Ethereum persigue **finalidad de un solo paso (SSF)** y ~4 s en Lean Consensus. NEXUS adopta como requisito una **finalidad determinista rápida** y contrasta su gadget con el diseño de Votor (quórum por *stake*, finalidad en 1–2 rondas), coherente con las correcciones del consenso (quórum ponderado por *stake* + verificación de votos).
 
