@@ -623,6 +623,8 @@ Los controles anteriores protegen la clave en su **origen** (fuente, KDF) y en s
 
 **Métrica de ventana de exposición.** Se propone cuantificar la superficie de riesgo en memoria como el producto $W = \text{bytes expuestos} \times \Delta t$. Bajo la política, la exposición **permanente** pasa de 4.032 B (clave expandida residente) a 32 B —una reducción de 126× (187× respecto de la representación en memoria del prototipo, 5.993 B)—, y la exposición **transitoria** es una ráfaga de ~1,2 ms por firma (medianas Criterion del Cap. 6 §6.6: KeyGen 413 µs + firma 790 µs). En una medición dedicada de la política completa (KeyGen + firma + zeroización; 1.000 iteraciones, modo *release*), la latencia media de firma pasó de 1,02 ms a 1,77 ms (**+0,75 ms**), con la verificación inalterada: un sobrecosto despreciable frente a los SLA bancarios típicos ($10^2$–$10^3$ ms).
 
+La medición se consolidó como *benchmark* reproducible del repositorio (`nexus-crypto/benches/residencia_bench.rs`: política cacheada vs. efímera vs. expansión aislada, medianas Criterion) y se re-ejecutó en el segundo perfil de hardware (H2, Cap. 6 §6.6): firma con clave cacheada 314 µs, firma bajo la política efímera 432 µs — **sobrecosto de +0,12 ms** (expansión aislada: 133 µs), con una ráfaga transitoria de ~0,43 ms por firma. En hardware moderno el costo de la política es, pues, aún más despreciable que el reportado originalmente. La métrica $W$ permite además fijar el punto de equilibrio: la exposición **media** bajo la política efímera ($32 + 5.993 \times 432\,\mu s \times \lambda$ bytes, con $\lambda$ la tasa de firmas) solo iguala a la de la clave cacheada cuando el firmador se satura ($\lambda \approx 2.300$ firmas/s, un núcleo al ~100 % firmando); a tasas realistas la reducción es de órdenes de magnitud (103× a 10 firmas/s; 20× a 100 firmas/s).
+
 **Posicionamiento frente al estado del arte** (revisión con fuentes verificadas, jul. 2026). La re-expansión sobre la marcha existe en microcontroladores, motivada por la **escasez de RAM**, no por seguridad [BRS22]; el borrador de consideraciones de seguridad de ML-DSA recomienda incluso **cachear** la clave expandida mientras duren las operaciones de firma [Connolly26]; y no se localiza formalización previa de la métrica $W$ ni benchmark publicado del trade-off KeyGen-por-firma (lo más cercano mide tiempos de residencia de claves en RAM tras terminar el proceso, sin PQC [Sawa25]). Ambos elementos —la política y su métrica— son, hasta donde alcanza la revisión, aporte de este trabajo.
 
 **Ingeniería de memoria.** La política se apoya en controles estándar: borrado resistente a *dead-store elimination* (`zeroize`), bloqueo de páginas para impedir su paso al *swap* (`mlock`/`VirtualLock`), exclusión de la memoria criptográfica de los volcados (`MADV_DONTDUMP`) y, en entornos de alta amenaza, ejecución en enclaves cifrados (TEE).
@@ -956,10 +958,10 @@ El análisis cuantificado completo del *overhead* y de su amortización por la a
 | | RSA-2048 | ECDSA P-256 | **Dilithium3** |
 |---|:---:|:---:|:---:|
 | Tamaño de firma | 256 B | 64 B | **3309 B** |
-| Costo de verificación (CPU) | bajo | decenas de µs | ~0,17–0,44 ms medido (**mismo orden, sub-ms**) |
+| Costo de verificación (CPU, **medido en el mismo banco**, §6.6.2) | 92,4 µs | 144,8 µs | **77,6 µs** |
 | Resistencia cuántica | **Rota** (Shor, tiempo poli.) | **Rota** (Shor, tiempo poli.) | **Sin ataque cuántico eficiente conocido** |
 
-La comparación subraya el argumento central de la tesis: Dilithium **iguala** a ECC en costo de verificación y **lo supera** en lo único que importa frente a la amenaza cuántica —la resistencia—, a cambio de un sobrecosto de **tamaño** que la arquitectura dual amortiza.
+La comparación —**medida sobre el mismo banco de pruebas y el mismo hardware** (§6.6.2)— subraya el argumento central de la tesis: Dilithium **no cede nada** frente a los esquemas clásicos en costo de verificación (es, de hecho, el más rápido de los tres) y **los supera** en lo único que importa frente a la amenaza cuántica —la resistencia—, a cambio de un sobrecosto de **tamaño** que la arquitectura dual amortiza.
 
 ---
 
@@ -967,29 +969,99 @@ La comparación subraya el argumento central de la tesis: Dilithium **iguala** a
 
 El análisis asintótico de §6.5 fija la **forma** del costo ($O(k\ell\,n\log n)$) pero oculta las **constantes**. La validación empírica las acota y confirma la factibilidad práctica; **complementa, no sustituye**, la validación formal.
 
-**Metodología.** Banco de pruebas con el *harness* Criterion (`nexus-crypto/benches/dilithium_bench.rs`), ejecutado una vez resuelto el *build* (Plan Maestro, Fase A, ya completada). Para cada nivel (Dilithium2/3/5) y operación ($\mathsf{KeyGen}$, $\mathsf{Sign}$, $\mathsf{Verify}$): 100 muestras con calentamiento, reportando la mediana (robusta a valores atípicos) sobre el hardware indicado.
+**Metodología.** Banco de pruebas con el *harness* Criterion: `nexus-crypto/benches/dilithium_bench.rs` (ML-DSA) y `nexus-crypto/benches/classical_baseline.rs` (líneas base clásicas ECDSA/RSA, §6.6.2); para el verificador STARK, el *harness* dedicado `nexus-zk/examples/stark_demo.rs` (§6.6.3). Para cada nivel (Dilithium2/3/5) y operación ($\mathsf{KeyGen}$, $\mathsf{Sign}$, $\mathsf{Verify}$): 100 muestras con calentamiento, reportando la **mediana** (robusta a valores atípicos). Todas las cargas son de **un solo hilo**; las diferencias entre máquinas reflejan IPC y frecuencia, no paralelismo.
+
+Los resultados se reportan sobre **dos perfiles de hardware**, lo que permite separar lo que depende de la máquina (las constantes) de lo que no (la forma del escalado):
+
+| Perfil | CPU | SO / perfil de compilación | Medición |
+|---|---|---|:---:|
+| **H1** | Intel Kaby Lake (Familia 6, Modelo 142), 4 hilos lógicos — portátil de 2017 | Windows 11; `release` (opt-level 3, LTO fino) | 2026-07 |
+| **H2** | Intel Core Ultra 9 275HX (Arrow Lake-HX), 24 núcleos — portátil de 2026 | Windows 11; rustc 1.97.1; mismo perfil `release` | 2026-08-07 |
+
+*Backend:* crate `fips204` (ML-DSA **puro Rust**, constant-time) en ambos perfiles.
 
 **Métricas e hipótesis a contrastar.**
 - Tiempos por operación y verificaciones por segundo, por nivel.
-- **Contraste teoría–práctica:** verificar que el tiempo escala $\sim$linealmente con $k\ell$ a $n$ fijo (consistente con la Proposición 6.4) y que el número medio de iteraciones de $\mathsf{Sign}$ se aproxima a las constantes $4.25/5.1/3.85$.
-- Comparación del tamaño de bloque ECDSA vs. Dilithium y del throughput de L1 (insumo del análisis de overhead del Cap. 3).
+- **Contraste teoría–práctica:** verificar que el tiempo escala $\sim$linealmente con $k\ell$ a $n$ fijo (consistente con la Proposición 6.4) y que la **forma** del escalado se preserva entre perfiles de hardware.
+- **Comparativa clásica en el mismo banco:** posición de Dilithium3 frente a ECDSA P-256 y RSA-2048/3072 en las tres operaciones (§6.6.2).
+- **Escalado del verificador STARK** frente al tamaño de la traza probada (§6.6.3), insumo del argumento de amortización dual-chain (§6.5.3, Cap. 3).
 
-**Resultados medidos.** *Hardware:* Intel (Kaby Lake, Familia 6 Modelo 142), 4 hilos lógicos, Windows 11; perfil `release` (opt-level 3, LTO fino). *Backend:* crate `fips204` (ML-DSA **puro Rust**, constant-time). *Herramienta:* Criterion, 100 muestras por punto. Se reporta la **mediana** (robusta a valores atípicos):
+### 6.6.1 ML-DSA / Dilithium en ambos perfiles
 
-**Tabla 6.2 — Tiempos medidos de ML-DSA / Dilithium.**
+**Tabla 6.2 — Tiempos medidos de ML-DSA / Dilithium (perfil H1, medianas; corrida del 2026-07-31 con rustc 1.97.1 — la publicada en el README del repositorio `nexus`).**
 
 | Operación | Dilithium2 | Dilithium3 | Dilithium5 |
 |---|---:|---:|---:|
-| Generación de claves | 321 µs | 503 µs | 725 µs |
-| Firma | 727 µs | 1,21 ms | 1,34 ms |
-| **Verificación** | **166 µs** | **279 µs** | **436 µs** |
+| Generación de claves | 234 µs | 413 µs | 564 µs |
+| Firma | 497 µs | 790 µs | 979 µs |
+| **Verificación** | **141 µs** | **232 µs** | **390 µs** |
+
+**Tabla 6.3 — Tiempos medidos de ML-DSA / Dilithium (perfil H2, medianas).**
+
+| Operación | Dilithium2 | Dilithium3 | Dilithium5 |
+|---|---:|---:|---:|
+| Generación de claves | 92,5 µs | 142,1 µs | 198,1 µs |
+| Firma | 183,0 µs | 290,0 µs | 343,3 µs |
+| **Verificación** | **48,8 µs** | **77,6 µs** | **129,2 µs** |
 
 **Contraste teoría–práctica.**
-1. **El cuello de botella no es el cómputo.** La verificación tarda **cientos de microsegundos** (166–436 µs), un costo despreciable frente al *overhead de datos* (~52× en tamaño de firma). Esto confirma empíricamente la tesis central (§6.5.3, Cap. 3): el penalizador post-cuántico es de tamaño, no de CPU. *(Robustez al* backend*: la verificación con `fips204` (Rust puro) es del **mismo orden** que la de implementaciones en C optimizado —p. ej. pqcrypto, ~270 µs en D3—, reforzando que el cuello no es de CPU ni de backend.)*
-2. **Escalado consistente con $O(k\ell\,n\log n)$.** La generación de claves, la firma y la verificación crecen de forma **monótona** con el nivel, en línea con el producto $k\ell$ (16, 30, 56 para D2/D3/D5): KeyGen 321→503→725 µs y Verify 166→279→436 µs crecen de forma monótona con $k\ell$ a $n=256$ fijo, si bien el escalado empírico es **sublineal** respecto a $k\ell$ (KeyGen ×1,57 y ×2,26; Verify ×1,68 y ×2,63 frente a las razones ×1,875 y ×3,5 de $k\ell$), por la influencia de términos de orden inferior y constantes de implementación (cf. la cota afinada $O((k+\ell)\,n\log n + k\ell\,n)$).
+1. **El cuello de botella no es el cómputo.** La verificación tarda **decenas a cientos de microsegundos** (48,8–390 µs según perfil y nivel), un costo despreciable frente al *overhead de datos* (~52× en tamaño de firma). En H2, **un solo núcleo sostiene $\approx$12.900 verificaciones/s** de Dilithium3. Esto confirma empíricamente la tesis central (§6.5.3, Cap. 3): el penalizador post-cuántico es de tamaño, no de CPU. *(Robustez al* backend*: la verificación con `fips204` (Rust puro) es del **mismo orden** que la de implementaciones en C optimizado —p. ej. pqcrypto, ~270 µs en D3 sobre hardware clase H1—, reforzando que el cuello no es de CPU ni de backend.)*
+2. **Escalado consistente con $O(k\ell\,n\log n)$ e independiente del hardware.** Las tres operaciones crecen de forma **monótona** con el nivel, en línea con el producto $k\ell$ (16, 30, 56 para D2/D3/D5), y —el punto que los dos perfiles permiten aislar— **las razones entre niveles se preservan al cambiar de máquina**: Verify D5/D2 es ×2,77 en H1 y ×2,65 en H2; KeyGen D5/D2, ×2,41 y ×2,14. El escalado empírico es **sublineal** respecto a $k\ell$ (frente a las razones ×1,875 y ×3,5 de $k\ell$), por términos de orden inferior y constantes de implementación (cf. la cota afinada $O((k+\ell)\,n\log n + k\ell\,n)$). Es exactamente lo que predice la Proposición 6.4: **el hardware cambia las constantes (H2 resulta 2,5–3,0× más rápido que H1), no la forma del costo.**
 3. **La firma es la operación más costosa.** La domina el bucle de *rejection sampling* (§6.5.2), cuyo número de iteraciones es esperado-constante pero **variable**; es un costo **esperado**, no de peor caso. La mediana mitiga esa variabilidad.
 
-> Las cifras corresponden a un **portátil modesto** y a un *backend* en Rust puro (sin SIMD); en hardware de servidor o con una implementación en C optimizado serían menores. Lo relevante para la tesis es el **orden de magnitud** (verificación en cientos de µs) y la **forma del escalado**, no los valores absolutos.
+**Throughput de verificación multinúcleo (H2).** La métrica de capacidad agregada se midió con el *harness* `nexus-crypto/examples/throughput_tps.rs` (lote de 4.096 transacciones firmadas con claves distintas; verificación Dilithium3 con clave pública; ~2 s por punto): **12.485 verif/s con 1 hilo, 49.843 con 4 y 199.218 con 24** (escalado ×16,0 sobre 24 núcleos heterogéneos: el costo por verificación y por hilo sube de 80 a 120 µs al incorporar los núcleos E). Es decir, un único equipo de consumo sostiene del orden de **2×10⁵ verificaciones por segundo**, dos órdenes de magnitud por encima del throughput transaccional que el análisis de overhead (Cap. 3) toma como referencia para una L2 bancaria — la verificación PQC no es el recurso escaso del sistema.
+
+### 6.6.2 Comparativa medida con criptografía clásica
+
+Las cifras de §6.5.4 se contrastan aquí **en el mismo banco, el mismo hardware (H2) y el mismo mensaje**, con el *harness* `classical_baseline.rs`. Los backends clásicos son los crates `p256` y `rsa` (RustCrypto) —Rust puro, como `fips204`, de modo que la comparación es homogénea en madurez de implementación—. Para RSA-2048, $\mathsf{KeyGen}$ se midió con 10 muestras (su costo, cinco órdenes de magnitud mayor, acotaría el banco); la generación RSA-3072 (segundos por clave) no se midió por no estar en ninguna ruta caliente.
+
+**Tabla 6.4 — Dilithium3 frente a los esquemas clásicos incumbentes (H2, medianas).**
+
+| Esquema | $\mathsf{KeyGen}$ | $\mathsf{Sign}$ | $\mathsf{Verify}$ | $\lvert\sigma\rvert$ |
+|---|---:|---:|---:|---:|
+| ECDSA P-256 | 70,0 µs | 87,5 µs | 144,8 µs | 64 B |
+| RSA-2048 | 106,6 ms | 740,5 µs | 92,4 µs | 256 B |
+| RSA-3072 | no medido ($\gg$1 s) | 2,47 ms | 199,1 µs | 384 B |
+| **Dilithium3 (ML-DSA-65)** | **142,1 µs** | **290,0 µs** | **77,6 µs** | **3309 B** |
+
+Cuatro lecturas:
+
+1. **En verificación, Dilithium3 es el esquema más rápido de la tabla:** 1,9× más rápido que ECDSA P-256, 1,2× que RSA-2048 y 2,6× que RSA-3072. La verificación es precisamente la operación caliente de una blockchain (cada firma se genera una vez y se verifica muchas veces, por el sequencer y por cada validador); el esquema post-cuántico no solo no penaliza esa ruta: la mejora. *(La corrida H1 de la misma comparativa —README del repo, 2026-07-31— muestra el mismo cuadro con una salvedad: allí RSA-2048 verificaba marginalmente más rápido que Dilithium3, 218 vs. 232 µs, con ECDSA última a 301 µs.)*
+2. **En firma**, Dilithium3 es 3,3× más lento que ECDSA pero 2,6× y 8,5× más rápido que RSA-2048 y RSA-3072 — los incumbentes dominantes de la infraestructura bancaria (PKI, HSM).
+3. **En generación de claves**, los 142 µs de Dilithium3 (vs. 106,6 ms de RSA-2048: **750× más rápido**) son el ancla empírica de la política de rotación agresiva del Cap. 5: generar un par de claves *por firma* es viable con retículos e impensable con RSA.
+4. **El único eje donde Dilithium pierde es el tamaño** (3309 B, ~52× ECDSA), lo que cierra el círculo con §6.5.3: el sobrecosto post-cuántico es de datos, no de cómputo, y amortizarlo es tarea de la arquitectura (Cap. 3).
+
+> *Nota de equidad:* los cuatro esquemas se midieron con backends Rust puro sin ensamblador ni SIMD; implementaciones en C optimizado desplazarían las constantes de todos ellos sin alterar los órdenes de magnitud (decenas–centenas de µs) en que se apoya el argumento.
+
+### 6.6.3 Verificador STARK: confirmación del escalado polilogarítmico
+
+El argumento de amortización dual-chain (§6.5.3; Cap. 3, §3.5) depende de una propiedad asintótica del sistema de pruebas: que el costo del **verificador** crezca polilogarítmicamente con el tamaño del cómputo probado. Para un STARK basado en FRI, la teoría predice tamaño de prueba y tiempo de verificación $O(\lambda\,\log^2 n)$ (consultas × capas de FRI × caminos de Merkle de longitud $\log$) y costo del *prover* $\tilde O(n)$. Esta subsección lo contrasta empíricamente con el PoC propio (§6.7): blowup 8, 40 consultas, desafíos en $F_{p^2}$, *grinding* $2^{20}$ (~100 bits de *soundness*), sobre H2.
+
+**Tabla 6.5 — STARK PoC: tamaño y tiempos frente al tamaño de la traza (H2).**
+
+| Traza (pasos) | Prueba | Generación | Verificación |
+|---:|---:|---:|---:|
+| $2^{4}=16$ | 129,0 KB | 4,1 ms | 1,25 ms |
+| $2^{6}=64$ | 190,3 KB | 826,5 ms | 1,78 ms |
+| $2^{8}=256$ | 261,6 KB | 46,9 ms | 2,31 ms |
+| $2^{10}=1.024$ | 342,9 KB | 131,9 ms | 2,93 ms |
+| $2^{12}=4.096$ | 434,2 KB | 290,6 ms | 3,60 ms |
+| $2^{14}=16.384$ | 535,5 KB | 1,10 s | 4,38 ms |
+| $2^{16}=65.536$ | 646,9 KB | 3,13 s | 5,43 ms |
+| $2^{18}=262.144$ | 768,2 KB | 10,25 s | 7,74 ms |
+
+*(KB = 1024 B. Los tamaños de prueba son deterministas: byte a byte idénticos entre máquinas.)*
+
+**Contraste teoría–práctica.**
+1. **Sucinto en el sentido fuerte.** Al multiplicar el cómputo probado por **16.384** (de $2^4$ a $2^{18}$ pasos), la prueba crece solo **×6,0** y la verificación **×6,2**. Si la relación fuera lineal, verificar a $2^{18}$ pasos costaría ~20 s; cuesta **7,74 ms**.
+2. **La firma del $\log^2$.** Los incrementos de tamaño por cada cuadruplicación de la traza forman una progresión aritmética casi exacta (+61,3; +71,3; +81,3; +91,3; +101,3; +111,3; +121,3 KB — **+10 KB más en cada salto**): es la derivada discreta de un polinomio **cuadrático en $\log_2 n$**, de modo que el $O(\log^2 n)$ predicho no es solo una cota, es la **forma observada** de la curva. La verificación exhibe el mismo patrón (+0,53 → +2,31 ms).
+3. **Asimetría prover/verificador.** La generación crece de forma cuasi-lineal hasta 10,25 s en $2^{18}$. Esa asimetría es el modelo económico del rollup de validez: **un** prover paga segundos una vez por lote; **cada** verificador de la L1 paga milisegundos, para siempre.
+4. **Nota metodológica (*grinding*).** La búsqueda de nonce de $2^{20}$ añade a la generación un costo determinista **dependiente del enunciado**, que explica el punto no monótono de $2^6$ (826 ms, reproducible entre corridas); su peso relativo se desvanece en trazas grandes.
+5. **Robustez entre perfiles.** En H1 (julio de 2026, rango $2^4$–$2^{12}$) la verificación midió 4,5→11,4 ms: ~3,5× más lenta que H2 con **la misma forma de curva** y tamaños de prueba idénticos.
+
+**El *trade-off*, declarado.** Una prueba de 768 KB es ~232× una firma Dilithium3; pero se paga **una vez por lote**: a $2^{18}$ pasos equivale a ~3 B por paso probado, y sus 7,74 ms de verificación sustituyen la re-ejecución del lote completo. La cadencia del prover (~10 s en un hilo a $2^{18}$) fija la latencia mínima de bacheo del PoC; su paralelización es trabajo futuro (Cap. 7).
+
+> Las cifras absolutas dependen del perfil (H1 es un portátil de 2017; H2, uno de 2026) y del *backend* (Rust puro, sin SIMD); lo relevante para la tesis es el **orden de magnitud** (verificación de firmas en decenas–centenas de µs; verificación de pruebas en unidades de ms) y la **forma del escalado**, que se preserva entre máquinas.
 
 ---
 
@@ -1010,7 +1082,7 @@ Este capítulo ha validado formalmente el núcleo de seguridad de NEXUS:
 
 1. **Prueba de dureza (Obj. 4.1).** La in-forjabilidad fuerte de Dilithium se reduce, mediante una cota de **tres términos** (MLWE + SelfTargetMSIS + MSIS) en el QROM, a la dureza promedio de MLWE/MSIS, y de ahí —vía reducciones de peor caso— a $\mathrm{Mod\text{-}SIVP}$, un problema reticular que **ningún algoritmo cuántico conocido, incluido el de Shor, resuelve eficientemente** (cadena de §6.4.4).
 2. **Análisis de complejidad (Obj. 4.2).** Las operaciones del esquema tienen costo $O(k\ell\,n\log n)$ (dominado por la NTT, $O(n\log n)$ por multiplicación), con $\mathsf{Sign}$ esperado constante en iteraciones; el sobrecosto del esquema es de **tamaño**, no de cómputo, y se amortiza en la arquitectura dual (Cap. 3).
-3. **Validación empírica (Obj. 4.2).** Una metodología de *benchmark* acota las constantes ocultas y contrasta teoría y práctica.
+3. **Validación empírica (Obj. 4.2).** Los *benchmarks* sobre **dos perfiles de hardware** acotan las constantes ocultas y confirman las tres predicciones del análisis: la verificación de Dilithium3 cuesta **menos** que la de ECDSA y RSA medidas en el mismo banco (77,6 µs vs. 144,8 y 92,4 µs, §6.6.2); la forma del escalado con $k\ell$ se preserva entre máquinas (§6.6.1); y el verificador STARK crece polilogarítmicamente a lo largo de más de cuatro órdenes de magnitud de traza — ×16.384 de cómputo ⇒ ×6,2 de verificación (§6.6.3).
 
 Con ello, el **Objetivo 4 queda atendido en su componente formal**, cerrando el arco de la tesis: *la amenaza cuántica a las firmas de banca se neutraliza con Dilithium, cuya seguridad se reduce a un problema reticular resistente a Shor y cuyo costo —de tamaño— se amortiza mediante la arquitectura dual-chain post-cuántica.*
 
