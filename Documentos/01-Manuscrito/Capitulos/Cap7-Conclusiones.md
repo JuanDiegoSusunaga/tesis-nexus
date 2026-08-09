@@ -13,6 +13,7 @@ Esta tesis se construyó como una sola cadena de razonamiento, y cada capítulo 
 | Eslabón | Capítulo | Qué se estableció |
 |---|---|---|
 | **Amenaza** | 1 | El adversario cuántico recupera claves (Shor) y falsifica firmas de banca; HNDL hace la migración urgente. |
+| **Requisitos del dominio** | 1 | Seis requisitos bancarios (R1–R6: autenticidad normativa, horizonte de décadas, cripto-agilidad, custodia gobernada, trazabilidad auditable, finalidad determinista), anclados en el *Project Leap* del BIS, DORA y los marcos de migración del sector. |
 | **Fundamentos** | 2 | Retículos, Dilithium, estándares NIST, entropía, y la distinción Groth16 (roto)/STARK (PQ). |
 | **Costo + Respuesta + Coherencia** | 3 | La PQC cuesta ~50× en datos (~20× de throughput); el dual-chain lo amortiza a ~$d$; el verificador debe ser STARK. |
 | **Solución** | 4 | Dilithium implementado y ligado a la transacción; derivación determinística por KDF. |
@@ -59,6 +60,7 @@ Se declaran con franqueza, pues delimitan honestamente el aporte:
 - **Modelo, no producto.** El entregable es un modelo formal + prototipo de referencia. La pieza más compelente —la amortización dual-chain— está **rigurosamente analizada y parcialmente construida**: Dilithium es real, y el **verificador STARK post-cuántico que la materializa cuenta ya con un PoC implementado, endurecido (~100 bits) y probado por una batería adversarial** (FRI + Merkle/SHA3, desafíos en $F_{p^2}$, grinding, verificación sucinta; Cap. 3, §3.5), con validación por software, no por reducción formal; su AIR sigue siendo ilustrativo (aritmetización bancaria completa) y la incorporación de DEEP son trabajo futuro.
 - **Seguridad del primitivo, no del sistema completo.** La validación garantiza in-falsificabilidad **a nivel de transacción**, condicionada al **supuesto de consenso honesto-mayoritario** (el consenso operativo es diseño de referencia).
 - **Novedad de síntesis.** El aporte no es un resultado de frontera —la frontera (Ethereum, Solana) converge hacia lo mismo—, sino su **síntesis formal y cuantificada** para banca; la convergencia se interpreta como **validación**.
+- **El encuadre bancario es de requisitos, no de certificación.** Los requisitos R1–R6 (Cap. 1, §1.3) se usan como **criterio de diseño** —cada decisión de los Caps. 3–5 es trazable a uno de ellos— pero el trabajo **no** demuestra conformidad: no hay certificación FIPS 140-3 del módulo, ni integración con mensajería ISO 20022, ni validación contra un régimen jurisdiccional concreto. La distancia entre «atiende el requisito como modelo» y «cumple el requisito como producto» se declara y no se cruza.
 - **El Objetivo 3 es una rama necesaria pero lateral** del arco central (firmas + dual-chain + validación).
 - **Fuera de alcance:** confidencialidad post-cuántica (requeriría un KEM), seguridad de implementación (canales laterales, fallos), y la biometría (eliminada).
 

@@ -20,9 +20,9 @@ The imminent arrival of quantum computers threatens the digital signatures (RSA,
 
 # Capítulo 1 — Introducción
 
-### (Planteamiento del problema, modelo de amenaza y objetivos)
+### (Planteamiento del problema, modelo de amenaza, requisitos de dominio y objetivos)
 
-> **Rol en el arco de la tesis.** Este capítulo abre el arco narrativo: establece la **amenaza** (cuántica a las firmas de banca), anticipa la **solución** (firmas post-cuánticas) y su **costo** (que motiva el dual-chain), fija el **modelo de amenaza preciso**, y enuncia los objetivos, el alcance y la contribución. Los desarrollos correspondientes están en los Capítulos 3–6.
+> **Rol en el arco de la tesis.** Este capítulo abre el arco narrativo: establece la **amenaza** (cuántica a las firmas de banca), fija el **modelo de amenaza preciso** y los **requisitos del dominio bancario** que el sistema debe satisfacer, anticipa la **solución** (firmas post-cuánticas) y su **costo** (que motiva el dual-chain), y enuncia los objetivos, el alcance y la contribución. Los desarrollos correspondientes están en los Capítulos 3–6.
 
 ---
 
@@ -30,7 +30,7 @@ The imminent arrival of quantum computers threatens the digital signatures (RSA,
 
 La infraestructura financiera digital descansa, en su raíz, sobre la criptografía de clave pública: las **firmas digitales** autorizan transacciones y los esquemas de cifrado protegen la confidencialidad. Hoy esa criptografía es, casi universalmente, **RSA** y **criptografía de curva elíptica (ECC)**, cuya seguridad se apoya en la dureza de la factorización y del logaritmo discreto.
 
-La computación cuántica amenaza ese cimiento. El **algoritmo de Shor** resuelve ambos problemas en **tiempo polinómico** sobre un computador cuántico suficientemente grande, rompiendo RSA y ECC. Aunque tal computador no existe aún, la amenaza es **presente** por el fenómeno **"Harvest Now, Decrypt Later" (HNDL)**: un adversario puede **cosechar hoy** información (datos cifrados, claves públicas expuestas) y **explotarla mañana**, cuando disponga de capacidad cuántica. Para infraestructura bancaria —cuyos activos y secretos tienen vida útil de décadas— esto exige adoptar **criptografía post-cuántica (PQC)** **desde ya**, no cuando la amenaza se materialice. La estandarización del NIST (FIPS 203/204/205, finalizados en 2024) y la migración de las grandes cadenas (Cap. 2) confirman que esta transición está en marcha.
+La computación cuántica amenaza ese cimiento. El **algoritmo de Shor** resuelve ambos problemas en **tiempo polinómico** sobre un computador cuántico suficientemente grande, rompiendo RSA y ECC. Aunque tal computador no existe aún, la amenaza es **presente** por el fenómeno **"Harvest Now, Decrypt Later" (HNDL)**: un adversario puede **cosechar hoy** información (datos cifrados, claves públicas expuestas) y **explotarla mañana**, cuando disponga de capacidad cuántica. Para infraestructura bancaria —cuyos activos y secretos tienen vida útil de décadas— esto exige adoptar **criptografía post-cuántica (PQC)** **desde ya**, no cuando la amenaza se materialice (requisito **R2**, §1.3). La estandarización del NIST (FIPS 203/204/205, finalizados en 2024) y la migración de las grandes cadenas (Cap. 2) confirman que esta transición está en marcha.
 
 ## 1.2 Modelo de amenaza
 
@@ -44,7 +44,26 @@ Una validación de seguridad requiere un modelo de amenaza **preciso**. NEXUS di
 
 **Mitigación complementaria — revelar-al-gastar.** Como defensa en profundidad frente a la amenaza (B), NEXUS deriva la **dirección como un hash de la clave pública** ($\text{dirección} = H(pk)$). Así, mientras una cuenta no haya gastado, el adversario solo ve un hash y **no puede recuperar la clave** (Shor opera sobre la clave pública, no sobre su hash). Esto **retrasa** la exposición cuántica y reduce la superficie de "harvest now", complementando a la PQC. *(Refinamiento: minimizar la exposición de la clave pública en las transacciones, no solo en la dirección.)*
 
-## 1.3 El problema: seguridad post-cuántica a un costo tractable
+## 1.3 Requisitos del dominio bancario
+
+El modelo de amenaza dice qué puede hacer el adversario; esta sección dice **qué debe satisfacer el sistema**. Se enuncia de forma explícita porque «banca» no es aquí un adjetivo decorativo: el dominio impone requisitos que un libro mayor genérico no tiene que cumplir, y esos requisitos condicionan decisiones concretas de esta tesis —la rotación gobernada por política, el registro auditable, el modelo de cuenta con clave rotable, la exigencia de finalidad determinista—. Enunciarlos por adelantado permite que cada una de esas decisiones sea **trazable a un requisito**, en lugar de justificarse por sí misma.
+
+El anclaje no es hipotético: el propio sector financiero ya ejecutó el experimento que esta tesis modela. El **BIS Innovation Hub**, con el Banco de Francia, el Deutsche Bundesbank, el Banco de Italia y Swift, llevó a cabo el **Project Leap**, cuya Fase 2 **sustituyó las firmas digitales clásicas por post-cuánticas en un sistema de pagos operativo**, cursando transferencias de liquidez; concluyó que la migración es viable y que su costo debe planificarse [BIS-Leap23]. Su documento de hoja de ruta insiste en tres principios —inventario criptográfico, **cripto-agilidad** y migración por fases— como condiciones de la transición [BIS-Roadmap25]. En el plano normativo, el reglamento europeo **DORA** obliga a las entidades financieras a mantener estándares altos de disponibilidad, confidencialidad, **autenticidad e integridad** de los datos (art. 9(2), con normas técnicas desde ene. 2024) [DORA22], y en los Estados Unidos una propuesta de marco presentada a la *Crypto Assets Task Force* de la SEC —no es regulación vigente, sino insumo de política— prioriza explícitamente la custodia y la infraestructura crítica de mercado para la migración post-cuántica, con HSM, rotación automatizada y trazabilidad auditable como piezas centrales [PQFIF25].
+
+De ese cuerpo se destilan seis requisitos, con el punto del documento donde NEXUS los atiende:
+
+| | Requisito del dominio | Origen | Dónde lo atiende NEXUS |
+|:--:|---|---|---|
+| **R1** | **Autenticidad e integridad** de la instrucción de pago, como obligación normativa y no solo como buena práctica | DORA art. 9(2) [DORA22] | Firma Dilithium ligada al contenido (Cap. 4, §4.3) y su in-forjabilidad validada (Cap. 6) |
+| **R2** | **Horizonte de exposición de décadas**: activos, obligaciones y secretos cuya vida útil excede la llegada del adversario ⇒ migrar **antes**, no después | HNDL; [BIS-Roadmap25]; [PQFIF25] | Adopción de PQC como premisa (§1.1); agenda de migración (Cap. 7) |
+| **R3** | **Cripto-agilidad**: el sector no exige *un* algoritmo sino la capacidad de **cambiarlo** —FIPS 206 sigue en borrador, luego el esquema de hoy puede no ser el de 2030— | Leap Fase 1 [BIS-Leap23]; [BIS-Roadmap25]; [PQFIF25] | Modelo de cuenta con identidad estable + política de verificación y *epoch*, y Key Registry (Cap. 3, §3.6) |
+| **R4** | **Custodia certificada y ciclo de vida gobernado** de la clave de firma: la clave vive tras una frontera de custodia (HSM/TPM), con rotación por política y no *ad hoc* | [PQFIF25] (rotación automatizada; HSM compatibles con FIPS 203–205) | Rotación por uso/edad/salud con secrecia hacia adelante (Cap. 5, §5.5); custodia *seed-only* de 32 B, que es lo que hace que una clave ML-DSA **quepa** en esa frontera (§5.6) |
+| **R5** | **Trazabilidad auditable**: cada evento del ciclo de vida de la clave debe ser reconstruible por un supervisor | DORA [DORA22]; *audit trail* inmutable en [PQFIF25] | Registro auditable de rotaciones (Cap. 5, §5.5) y su diseño de anclaje en cadena (Decisión 002, trabajo en curso) |
+| **R6** | **Finalidad rápida y determinista** de la liquidación, con latencias objetivo del orden de $10^2$ ms | Práctica de sistemas de pago (ISO 20022 sobre SWIFT/Fedwire, firmas de doble control respaldadas por HSM) [PQFIF25] | Requisito de finalidad determinista del *Finality Gadget* (Cap. 3, §3.9); SLA de referencia del análisis de latencia (Cap. 5, §5.6) |
+
+**Lo que estos requisitos no incluyen.** Se declara con la misma precisión: NEXUS **no** aborda la certificación **FIPS 140-3** del módulo criptográfico, la integración con la mensajería **ISO 20022** ni el cumplimiento de un régimen jurisdiccional concreto. Son requisitos de **producto**, no de **modelo**, y quedan fuera del alcance (§1.7). Lo que R1–R6 aportan al trabajo es un criterio: ninguna decisión de diseño de los Capítulos 3–5 se justifica por elegancia, sino por su trazabilidad a uno de ellos.
+
+## 1.4 El problema: seguridad post-cuántica a un costo tractable
 
 Adoptar firmas post-cuánticas no es gratis. Una firma Dilithium es **~50× más grande** que una firma ECDSA (3 309 B vs. 64 B). Aplicada de forma ingenua sobre una blockchain de cadena única, esa inflación de datos **degrada el rendimiento en ~20×** (Cap. 3, §3.3), reabriendo el **trilema de la blockchain** (escalabilidad, seguridad, descentralización) que se creía en vías de solución.
 
@@ -54,7 +73,7 @@ El problema central de esta tesis es, por tanto:
 
 La respuesta de NEXUS es **arquitectónica**: una estructura **dual-chain** (L1 de anclaje + L2 de ejecución) que **amortiza** el sobrecosto de la PQC —ejecutando y probando las firmas fuera de cadena y publicando en L1 solo un compromiso— hasta volver el tamaño de la firma irrelevante para la capa de liquidación (Cap. 3, §3.4). Como corolario, la capa de verificación debe ser ella misma post-cuántica (STARK, no Groth16; Cap. 3, §3.5).
 
-## 1.4 Propuesta y contribución
+## 1.5 Propuesta y contribución
 
 **Tesis (en una frase).**
 
@@ -71,7 +90,7 @@ $$\text{Amenaza} \to \text{Solución (PQC)} \to \text{Costo} \to \text{Respuesta
 
 La **convergencia independiente de Ethereum y Solana** hacia las mismas conclusiones (Cap. 2) **valida** —no resta— esta dirección.
 
-## 1.5 Objetivos
+## 1.6 Objetivos
 
 **Objetivo general.** Diseñar, modelar y **validar formalmente** un modelo matemático-computacional de firmas digitales post-cuánticas (CRYSTALS-Dilithium) para una arquitectura blockchain dual orientada a sistemas bancarios resilientes, incorporando la gestión activa del ciclo de vida de claves y la prueba formal de su seguridad (reducción a Module-LWE) y de su complejidad computacional.
 
@@ -81,23 +100,36 @@ La **convergencia independiente de Ethereum y Solana** hacia las mismas conclusi
 3. **Modelar e implementar la lógica de seguridad activa** del ciclo de vida de claves: min-entropía de la fuente, pruebas de salud (NIST SP 800-90B) y rotación con secrecia hacia adelante (Cap. 5).
 4. **Formalizar y validar la seguridad y la complejidad**: reducción de la in-forjabilidad de Dilithium a Module-LWE / SelfTargetMSIS / Module-SIS → Mod-SIVP, con el argumento de resistencia cuántica; y análisis de complejidad (notación O) (Cap. 6).
 
-## 1.6 Alcance
+## 1.7 Alcance
 
 **Dentro del alcance:** diseño y especificación de la arquitectura dual; implementación verificada de Dilithium y su enlace a las transacciones; derivación determinística por KDF; gestión activa de claves (min-entropía + salud + rotación); y validación formal (reducción + complejidad + benchmarks).
 
-**Fuera del alcance (declarado):** autenticación biométrica / extractores difusos (**eliminados**); implementación operativa de la capa ZK, del consenso BFT en red y de la disponibilidad de datos (diseño de referencia + trabajo futuro); confidencialidad post-cuántica (KEM); seguridad de implementación (canales laterales).
+**Fuera del alcance (declarado):** autenticación biométrica / extractores difusos (**eliminados**); implementación operativa de la capa ZK, del consenso BFT en red y de la disponibilidad de datos (diseño de referencia + trabajo futuro); confidencialidad post-cuántica (KEM); seguridad de implementación (canales laterales); y el **cumplimiento a nivel de producto** de los requisitos de dominio (§1.3): certificación FIPS 140-3 del módulo criptográfico, integración con mensajería ISO 20022 y conformidad con un régimen jurisdiccional concreto. NEXUS se sitúa en el nivel de **modelo**: atiende R1–R6 como requisitos de diseño, no como obligaciones certificables.
 
-## 1.7 Estructura del documento
+## 1.8 Estructura del documento
 
 | Cap. | Contenido | Objetivo |
 |---|---|:---:|
-| **1** | Introducción, modelo de amenaza, objetivos | — |
+| **1** | Introducción, modelo de amenaza, **requisitos de dominio (R1–R6)**, objetivos | — |
 | **2** | Marco teórico y estado del arte | — |
 | **3** | Diseño de la arquitectura Dual-Chain (overhead → respuesta → coherencia) | Obj 1 |
 | **4** | Núcleo criptográfico post-cuántico (Dilithium + KDF) | Obj 2 |
 | **5** | Gestión activa del ciclo de vida de claves | Obj 3 |
 | **6** | Validación formal de seguridad y complejidad | Obj 4 |
 | **7** | Conclusiones y trabajo futuro | — |
+
+---
+
+## Referencias del capítulo
+
+> *Índice local del capítulo; la **Bibliografía** consolidada al final del documento reúne todas las obras bajo clave única.*
+
+- [Sho97] P. Shor. *Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer*. SIAM J. Comput. 1997.
+- NIST. *FIPS 203 (ML-KEM) / 204 (ML-DSA) / 205 (SLH-DSA)*, 2024; *FIPS 206 (FN-DSA)*, borrador.
+- **[BIS-Leap23]** BIS Innovation Hub et al. *Project Leap: Quantum-proofing the financial system* — Fase 1 (2023) y Fase 2, *Quantum-proofing payment systems*. *(sustitución de firmas clásicas por post-cuánticas en un sistema de pagos operativo)*
+- **[BIS-Roadmap25]** BIS. *Roadmap to quantum-readiness*, jul. 2025. *(inventario criptográfico, cripto-agilidad, migración por fases)*
+- **[DORA22]** Reglamento (UE) 2022/2554 (DORA), art. 9(2). *(autenticidad e integridad de los datos como obligación normativa)*
+- **[PQFIF25]** D. B. Corvelo Costa et al. *Post-Quantum Financial Infrastructure Framework*. Aportación a la U.S. Crypto Assets Task Force, SEC, sep. 2025. *(propuesta de marco, no regulación vigente)*
 
 
 # Capítulo 2 — Marco Teórico y Estado del Arte
@@ -166,7 +198,7 @@ Los **blockchains post-cuánticos** son un área activa de investigación [Yang2
 - **Solana**: sus equipos núcleo (Anza y Firedancer) **convergieron independientemente en Falcon** (abril 2026); la **Winternitz Vault** (hash-based) lleva años en producción. **Alpenglow** lleva la finalidad a ~100–150 ms.
 - **Gestión y defensa de la clave del firmador.** En la custodia de claves ML-DSA, guardar **solo la semilla** de 32 bytes es ya práctica estandarizada (FIPS 204 §3.6.3; el RFC 9881 la declara el formato **recomendado** [RFC9881]; OpenSSL 3.5 la implementa por defecto). En cambio, una revisión con fuentes verificadas (jul. 2026) **no localiza ningún sistema** que combine (a) semilla sellada en hardware, (b) detección de compromiso u observación del servidor de firma y (c) respuesta coordinada con la L2. Los antecedentes son parciales: custodia de claves de validador en enclave SGX [CD16] con atestación verificada en cadena (Puffer Secure-Signer [Puffer23]), un *builder* de L2 en TEE orientado a MEV (Rollup-Boost/Unichain), el patrón *honeychecker* de los honeywords [JR13] y las claves señuelo estáticas de una patente industrial [US10521584] — ninguno con criptografía post-cuántica. NEXUS aborda ese hueco con la **residencia efímera** (Cap. 5, §5.6) y la propuesta de **Deception Engine** (Cap. 7, §7.5).
 
-**Posicionamiento.** NEXUS no inventa la categoría ni un resultado de frontera; su aporte es la **síntesis formal y cuantificada** para banca (Cap. 1, §1.4). Crucialmente, la industria **converge independientemente** hacia los mismos principios que NEXUS formaliza —firmas post-cuánticas, agregación por pruebas para domar el overhead, y sistemas de prueba post-cuánticos (STARK)—, lo que **valida** la dirección del trabajo. La divergencia en la elección de esquema (Ethereum→hash-based, Solana→Falcon, NEXUS→Dilithium) evidencia que la decisión debe justificarse según las prioridades de cada sistema, como hace NEXUS (Cap. 4, §4.6).
+**Posicionamiento.** NEXUS no inventa la categoría ni un resultado de frontera; su aporte es la **síntesis formal y cuantificada** para banca (Cap. 1, §1.5), instanciada sobre los requisitos de dominio R1–R6 (Cap. 1, §1.3). Crucialmente, la industria **converge independientemente** hacia los mismos principios que NEXUS formaliza —firmas post-cuánticas, agregación por pruebas para domar el overhead, y sistemas de prueba post-cuánticos (STARK)—, lo que **valida** la dirección del trabajo. La divergencia en la elección de esquema (Ethereum→hash-based, Solana→Falcon, NEXUS→Dilithium) evidencia que la decisión debe justificarse según las prioridades de cada sistema, como hace NEXUS (Cap. 4, §4.6).
 
 ## 2.8 Síntesis del marco
 
@@ -314,7 +346,7 @@ Conviene declarar una tensión técnica que demuestra dominio del problema. **Pr
 
 ## 3.6 Modelo de cuenta: identidad estable vs. clave rotable
 
-Un sistema que **rota** y **migra** claves (Cap. 5, cripto-agilidad) enfrenta un problema: si la dirección se deriva de la clave pública, rotar la clave **cambia la dirección/identidad**. NEXUS lo resuelve con **abstracción de verificación**:
+La **cripto-agilidad** es un requisito explícito del dominio, no una comodidad de ingeniería: el sector financiero la enuncia como condición de la transición post-cuántica —porque el esquema estandarizado hoy puede no ser el de 2030, con FIPS 206 aún en borrador— (Cap. 1, §1.3, **R3**). Pero un sistema que **rota** y **migra** claves (Cap. 5) enfrenta un problema: si la dirección se deriva de la clave pública, rotar la clave **cambia la dirección/identidad**. NEXUS lo resuelve con **abstracción de verificación**:
 
 $$\textbf{Cuenta} = (\ \text{id\_estable},\ \ \text{política\_de\_verificación},\ \ \text{epoch}\ ).$$
 
@@ -353,7 +385,7 @@ El **Nexus Sequencer** ordena las transacciones del L2. Un secuenciador único c
 
 ## 3.9 Finalidad
 
-La banca exige **finalidad rápida e irreversible** para la liquidación. El **Finality Gadget** de la Anchor Layer se especifica para finalizar un bloque cuando el peso de voto (ponderado por *stake*) cruza el umbral de 2/3, con verificación de las firmas de voto y enlace de ascendencia entre bloques finalizados. *(Diseño de referencia; su implementación operativa es trabajo futuro, §3.10.)*
+La banca exige **finalidad rápida e irreversible** para la liquidación, con latencias objetivo del orden de $10^2$ ms en los sistemas de pago vigentes (Cap. 1, §1.3, **R6**). El **Finality Gadget** de la Anchor Layer se especifica para finalizar un bloque cuando el peso de voto (ponderado por *stake*) cruza el umbral de 2/3, con verificación de las firmas de voto y enlace de ascendencia entre bloques finalizados. *(Diseño de referencia; su implementación operativa es trabajo futuro, §3.10.)*
 
 > **Validación externa y diseño a contrastar.** Solana **Alpenglow** (Votor + Rotor; testnet may-2026, mainnet ~finales 2026) reduce la finalidad de 12,8 s a **100–150 ms**: **Votor** finaliza en **una ronda** con ≥80 % del *stake* en línea (~100 ms) y en dos rondas al 60 % (~150 ms). Ethereum persigue **finalidad de un solo paso (SSF)** y ~4 s en Lean Consensus. NEXUS adopta como requisito una **finalidad determinista rápida** y contrasta su gadget con el diseño de Votor (quórum por *stake*, finalidad en 1–2 rondas), coherente con las correcciones del consenso (quórum ponderado por *stake* + verificación de votos).
 
@@ -433,7 +465,7 @@ Una prueba unitaria de ida y vuelta confirma que una firma sobre un mensaje veri
 
 ## 4.3 Enlace criptográfico de la firma a la transacción
 
-La seguridad del primitivo (Cap. 6) solo se traduce en seguridad de la transacción si la firma está **ligada al contenido exacto** de la transacción y se **verifica** antes de aplicar la transición de estado. NEXUS lo garantiza con tres mecanismos:
+Este es el punto donde el requisito **R1** del dominio (Cap. 1, §1.3) —la autenticidad e integridad de la instrucción de pago como obligación normativa— se materializa en el código. La seguridad del primitivo (Cap. 6) solo se traduce en seguridad de la transacción si la firma está **ligada al contenido exacto** de la transacción y se **verifica** antes de aplicar la transición de estado. NEXUS lo garantiza con tres mecanismos:
 
 1. **Preimagen de firma (`signing_hash`).** La firma se computa sobre $H(\mathrm{bincode}(tx))$, donde $tx$ incluye `chain_id` (anti-*replay* entre cadenas), `nonce` (anti-*replay* en la cuenta), tipo de transacción y montos. Así, **cualquier alteración del contenido invalida la firma**.
 
@@ -609,7 +641,7 @@ Como $H$ es de un solo sentido y la semilla anterior se **zeroiza**, el compromi
 
 **Bloqueo ante degradación.** Si las pruebas de salud fallan, la derivación de claves se **bloquea** (no se emiten claves desde una fuente degradada) hasta que la fuente se restablezca o se realice un *reseeding* con una fuente sana.
 
-**Auditoría.** Cada rotación se registra en un **log auditable** (época, motivo, marca de tiempo), requisito propio del contexto bancario (trazabilidad y cumplimiento). El identificador de cuenta permanece estable a través de las rotaciones (Cap. 3, §3.6: la rotación actualiza la *política de verificación* y la *epoch*, no la dirección).
+**Auditoría.** Cada rotación se registra en un **log auditable** (época, motivo, marca de tiempo). No es una comodidad operativa: la trazabilidad reconstruible por un supervisor es un requisito normativo del dominio —DORA obliga a sostener la autenticidad e integridad de los datos, y los marcos de migración post-cuántica del sector prescriben un *audit trail* inmutable de todo el ciclo de vida de la clave— (Cap. 1, §1.3, **R5**; su anclaje en cadena es objeto de la Decisión 002). Del mismo modo, los disparadores por política (y no *ad hoc*) de la rotación responden a **R4**: en el dominio bancario la clave de firma vive tras una frontera de custodia certificada, con un ciclo de vida gobernado. El identificador de cuenta permanece estable a través de las rotaciones (Cap. 3, §3.6: la rotación actualiza la *política de verificación* y la *epoch*, no la dirección).
 
 ---
 
@@ -623,7 +655,7 @@ Los controles anteriores protegen la clave en su **origen** (fuente, KDF) y en s
 
 **Qué gana la política, y qué no.** Conviene precisar el argumento antes de cuantificarlo, porque admite una objeción inmediata: **la semilla $\xi$ es tan comprometedora como la clave expandida** —quien la obtiene reconstruye $(pk,sk)$ con la `KeyGen` del propio estándar—, de modo que pasar de 4.032 B a 32 B **no divide por 126 la probabilidad de compromiso**. El beneficio es de otra naturaleza, y es de dos tipos:
 
-1. **Cambio de categoría de custodia (el argumento principal).** 32 bytes caben en el material que un TPM sella, un HSM envuelve o un enclave conserva en memoria protegida; 4.032 bytes atraviesan necesariamente el montón del proceso, con su paginación, su *swap* y sus volcados. La política no reduce el secreto: lo **traslada a una clase de soporte con controles cualitativamente distintos**. Esa migración de categoría —no el cociente de tamaños— es lo que sostiene la política, y es también lo que la hace componible con la ingeniería de memoria descrita más abajo.
+1. **Cambio de categoría de custodia (el argumento principal).** 32 bytes caben en el material que un TPM sella, un HSM envuelve o un enclave conserva en memoria protegida; 4.032 bytes atraviesan necesariamente el montón del proceso, con su paginación, su *swap* y sus volcados. La política no reduce el secreto: lo **traslada a una clase de soporte con controles cualitativamente distintos**. Esa migración de categoría —no el cociente de tamaños— es lo que sostiene la política, y es también lo que la hace componible con la ingeniería de memoria descrita más abajo. En el dominio bancario esto no es un matiz: el requisito **R4** (Cap. 1, §1.3) sitúa la clave de firma tras una frontera de custodia certificada, y la custodia *seed-only* es precisamente lo que permite que una clave ML-DSA —de kilobytes— **quepa** en esa frontera con el mismo formato que una clave clásica.
 2. **Reducción de la superficie temporal.** El material expandido deja de ser residente y pasa a existir solo durante la operación, acotando la ventana en que un volcado, un depurador o una introspección de hipervisor pueden capturarlo. Frente a un adversario que **muestrea** el estado de la memoria en un instante (un *crash dump* puntual, un *cold-boot* tras un corte), lo que cae es la probabilidad de intersectar esa ventana, y cae con $\Delta t$.
 
 **Métrica de ventana de exposición (heurística de política).** Con esa lectura, se propone cuantificar la superficie de riesgo en memoria como el producto $W = \text{bytes expuestos} \times \Delta t$ (byte·segundo). Su estatus se declara explícitamente: $W$ es una **métrica heurística de ingeniería, no una cota de probabilidad de compromiso**. El factor temporal tiene interpretación directa (fracción del tiempo en que el material es capturable). El factor de bytes **no** mide secrecía —ya se dijo que 32 B comprometen tanto como 4.032 B— sino dos efectos de segundo orden: (i) la fracción de páginas del proceso que un volcado parcial debe capturar para contener el material, y (ii) la tolerancia a la recuperación **parcial**, que en claves reticulares es un efecto real y medido: [ADP18] reconstruye claves module-LWE desde volcados **degradados**, de modo que un objeto grande y redundante en el dominio NTT ofrece al atacante más margen de corrección de errores que 32 bytes sin redundancia. Bajo esa convención, la exposición **permanente** pasa de 4.032 B (clave expandida residente) a 32 B —factor 126× (187× respecto de la representación en memoria del prototipo, 5.993 B)— y la exposición **transitoria** es una ráfaga de ~1,2 ms por firma (medianas Criterion del Cap. 6 §6.6: KeyGen 413 µs + firma 790 µs). En una medición dedicada de la política completa (KeyGen + firma + zeroización; 1.000 iteraciones, modo *release*), la latencia media de firma pasó de 1,02 ms a 1,77 ms (**+0,75 ms**), con la verificación inalterada: un sobrecosto despreciable frente a los SLA bancarios típicos ($10^2$–$10^3$ ms).
@@ -1047,6 +1079,8 @@ Cuatro lecturas:
 3. **En generación de claves**, los 142 µs de Dilithium3 (vs. 106,6 ms de RSA-2048: **750× más rápido**) son el ancla empírica de la política de rotación agresiva del Cap. 5: generar un par de claves *por firma* es viable con retículos e impensable con RSA.
 4. **El único eje donde Dilithium pierde es el tamaño** (3309 B, ~52× ECDSA), lo que cierra el círculo con §6.5.3: el sobrecosto post-cuántico es de datos, no de cómputo, y amortizarlo es tarea de la arquitectura (Cap. 3).
 
+> **Contraste con la evidencia del sector financiero (BIS, *Project Leap* Fase 2).** El experimento de referencia del dominio —el BIS Innovation Hub con el Banco de Italia, el Banco de Francia, el Bundesbank y Swift— **reemplazó las firmas digitales clásicas por post-cuánticas en un sistema de pagos operativo**, cursando transferencias de liquidez [BIS-Leap23]. Sus dos conclusiones son que la migración es **viable** y que la criptografía post-cuántica implica **tiempos de procesamiento significativamente mayores**, que deben preverse en la planificación. Esa segunda conclusión parece contradecir lo medido en esta subsección —que la verificación PQC cuesta, en orden de magnitud, lo mismo que la clásica—, y conviene resolver la aparente tensión, porque la resolución **es** la tesis del Capítulo 3. Lo que Leap mide es el **procesamiento de extremo a extremo de un sistema de mensajería**: serialización, transporte, validación y almacenamiento de mensajes cuyas firmas crecieron ~50×, en modo híbrido (clásico + PQ simultáneos) y sobre bibliotecas recién integradas. Lo que mide la Tabla 6.4 es el costo de CPU de la **primitiva**. Ambas cosas son ciertas a la vez: un sistema de pagos cuyo mensaje engorda 3,3 KB por firma se degrada **aunque verificar esa firma sea gratis**. Leído así, el hallazgo del sector no contradice a esta tesis: **confirma** su diagnóstico —el penalizador es de datos— y **refuerza** su respuesta arquitectónica (§3.4), que ataca precisamente la magnitud que Leap encontró costosa y no la que midió como barata.
+
 > **Nota de equidad (determina cómo debe leerse la tabla).** Los cuatro esquemas se midieron con backends **Rust puro, sin ensamblador ni SIMD**: la comparación es por tanto **homogénea en madurez de implementación**, pero **no** representa el mejor caso de cada esquema. En particular, `p256` (RustCrypto) es sensiblemente más lento que las implementaciones de ECDSA con ensamblador optimizado que se usan en despliegue real (libsecp256k1, OpenSSL), del orden de las **decenas bajas de µs** en verificación; medida contra ellas, la columna $\mathsf{Verify}$ cambiaría de orden. Lo que **no** cambia con el *backend* es el **orden de magnitud** —decenas a centenas de µs para los cuatro—, y es la única propiedad sobre la que esta tesis apoya su argumento: el sobrecosto post-cuántico es de **datos**, no de cómputo (§6.5.3, Cap. 3). Todas las lecturas anteriores deben interpretarse en ese registro.
 
 ### 6.6.3 Verificador STARK: confirmación del escalado polilogarítmico
@@ -1121,6 +1155,7 @@ Con ello, el **Objetivo 4 queda atendido en su componente formal**, cerrando el 
 - **[BDGL16]** Becker, Ducas, Gama, Laarhoven. *New Directions in Nearest Neighbor Searching with Applications to Lattice Sieving.* SODA 2016. *(constante clásica 0.292)*
 - **[Pei16]** Peikert. *A Decade of Lattice Cryptography.* 2016.
 - **[NIST24]** NIST. *FIPS 204: Module-Lattice-Based Digital Signature Standard (ML-DSA).* 2024.
+- **[BIS-Leap23]** BIS Innovation Hub, Banca d'Italia, Banque de France, Deutsche Bundesbank, Swift. *Project Leap Fase 2: Quantum-proofing payment systems*. *(contraste del §6.6.2: mayor tiempo de procesamiento de extremo a extremo, no de la primitiva)*
 
 
 # Capítulo 7 — Conclusiones y Trabajo Futuro
@@ -1138,6 +1173,7 @@ Esta tesis se construyó como una sola cadena de razonamiento, y cada capítulo 
 | Eslabón | Capítulo | Qué se estableció |
 |---|---|---|
 | **Amenaza** | 1 | El adversario cuántico recupera claves (Shor) y falsifica firmas de banca; HNDL hace la migración urgente. |
+| **Requisitos del dominio** | 1 | Seis requisitos bancarios (R1–R6: autenticidad normativa, horizonte de décadas, cripto-agilidad, custodia gobernada, trazabilidad auditable, finalidad determinista), anclados en el *Project Leap* del BIS, DORA y los marcos de migración del sector. |
 | **Fundamentos** | 2 | Retículos, Dilithium, estándares NIST, entropía, y la distinción Groth16 (roto)/STARK (PQ). |
 | **Costo + Respuesta + Coherencia** | 3 | La PQC cuesta ~50× en datos (~20× de throughput); el dual-chain lo amortiza a ~$d$; el verificador debe ser STARK. |
 | **Solución** | 4 | Dilithium implementado y ligado a la transacción; derivación determinística por KDF. |
@@ -1184,6 +1220,7 @@ Se declaran con franqueza, pues delimitan honestamente el aporte:
 - **Modelo, no producto.** El entregable es un modelo formal + prototipo de referencia. La pieza más compelente —la amortización dual-chain— está **rigurosamente analizada y parcialmente construida**: Dilithium es real, y el **verificador STARK post-cuántico que la materializa cuenta ya con un PoC implementado, endurecido (~100 bits) y probado por una batería adversarial** (FRI + Merkle/SHA3, desafíos en $F_{p^2}$, grinding, verificación sucinta; Cap. 3, §3.5), con validación por software, no por reducción formal; su AIR sigue siendo ilustrativo (aritmetización bancaria completa) y la incorporación de DEEP son trabajo futuro.
 - **Seguridad del primitivo, no del sistema completo.** La validación garantiza in-falsificabilidad **a nivel de transacción**, condicionada al **supuesto de consenso honesto-mayoritario** (el consenso operativo es diseño de referencia).
 - **Novedad de síntesis.** El aporte no es un resultado de frontera —la frontera (Ethereum, Solana) converge hacia lo mismo—, sino su **síntesis formal y cuantificada** para banca; la convergencia se interpreta como **validación**.
+- **El encuadre bancario es de requisitos, no de certificación.** Los requisitos R1–R6 (Cap. 1, §1.3) se usan como **criterio de diseño** —cada decisión de los Caps. 3–5 es trazable a uno de ellos— pero el trabajo **no** demuestra conformidad: no hay certificación FIPS 140-3 del módulo, ni integración con mensajería ISO 20022, ni validación contra un régimen jurisdiccional concreto. La distancia entre «atiende el requisito como modelo» y «cumple el requisito como producto» se declara y no se cruza.
 - **El Objetivo 3 es una rama necesaria pero lateral** del arco central (firmas + dual-chain + validación).
 - **Fuera de alcance:** confidencialidad post-cuántica (requeriría un KEM), seguridad de implementación (canales laterales, fallos), y la biometría (eliminada).
 
@@ -1246,7 +1283,14 @@ El hecho de que **Ethereum y Solana hayan convergido, de forma independiente y s
 - **[SP800-108]** NIST. *SP 800-108: Recommendation for Key Derivation Using Pseudorandom Functions*.
 - **[RFC5869]** H. Krawczyk. *Cryptographic Extraction and Key Derivation: The HKDF Scheme*. CRYPTO 2010 (RFC 5869).
 - **[RFC9881]** J. Massimo, P. Kampanakis, S. Turner, B. Westerbaan. *RFC 9881: Internet X.509 PKI — Algorithm Identifiers for ML-DSA*. IETF, 2025. *(la semilla ξ como formato RECOMENDADO de clave privada ML-DSA)*
+- **[DORA22]** Parlamento Europeo y Consejo. *Reglamento (UE) 2022/2554 relativo a la resiliencia operativa digital del sector financiero (DORA)*; art. 9(2) — obligación de sostener la disponibilidad, **autenticidad, integridad** y confidencialidad de los datos; normas técnicas de desarrollo desde ene. 2024. *(fundamento normativo del requisito R1, Cap. 1 §1.3)*
 - **[Connolly26]** D. Connolly. *ML-DSA Security Considerations*. draft-connolly-cfrg-ml-dsa-security-considerations, IETF (borrador), 2026. *(recomienda seed-only; sugiere cachear la clave expandida durante las operaciones — contrapunto de la política de §5.6)*
+
+## Fuentes del sector financiero (banca central, supervisión y marcos de migración)
+
+- **[BIS-Leap23]** BIS Innovation Hub, Banque de France, Deutsche Bundesbank (Fase 1, 2023); con Banca d'Italia, Nexi-Colt y Swift (Fase 2, *Quantum-proofing payment systems*). *Project Leap: Quantum-proofing the financial system*. bis.org/about/bisih/topics/cyber_security/leap.htm. Acceso: ago. 2026. *(Fase 2 sustituyó las firmas digitales clásicas por post-cuánticas en un sistema de pagos operativo: viabilidad demostrada, con tiempos de procesamiento significativamente mayores — véase el contraste de Cap. 6, §6.6.2)*
+- **[BIS-Roadmap25]** Bank for International Settlements. *Roadmap to quantum-readiness* (jul. 2025) y *Quantum computing and the financial system: opportunities and risks* (oct. 2024). *(inventario criptográfico, cripto-agilidad, defensa en profundidad y migración por fases como condiciones de la transición)*
+- **[PQFIF25]** D. B. Corvelo Costa et al. *Post-Quantum Financial Infrastructure Framework (PQFIF): A Roadmap for the Quantum-Safe Transition of Global Financial Infrastructure*. Aportación escrita a la *U.S. Crypto Assets Task Force*, SEC, sep. 2025. sec.gov. *(propuesta de marco presentada al regulador —**no** es regulación vigente—; prioriza custodia (SAB 121) e infraestructura crítica de mercado (Regulation SCI), con HSM, rotación automatizada y* audit trail *inmutable)*
 
 ## Fuentes del estado del arte (industria; estado a mediados de 2026)
 

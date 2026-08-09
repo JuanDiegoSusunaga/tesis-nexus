@@ -46,7 +46,7 @@ Una prueba unitaria de ida y vuelta confirma que una firma sobre un mensaje veri
 
 ## 4.3 Enlace criptográfico de la firma a la transacción
 
-La seguridad del primitivo (Cap. 6) solo se traduce en seguridad de la transacción si la firma está **ligada al contenido exacto** de la transacción y se **verifica** antes de aplicar la transición de estado. NEXUS lo garantiza con tres mecanismos:
+Este es el punto donde el requisito **R1** del dominio (Cap. 1, §1.3) —la autenticidad e integridad de la instrucción de pago como obligación normativa— se materializa en el código. La seguridad del primitivo (Cap. 6) solo se traduce en seguridad de la transacción si la firma está **ligada al contenido exacto** de la transacción y se **verifica** antes de aplicar la transición de estado. NEXUS lo garantiza con tres mecanismos:
 
 1. **Preimagen de firma (`signing_hash`).** La firma se computa sobre $H(\mathrm{bincode}(tx))$, donde $tx$ incluye `chain_id` (anti-*replay* entre cadenas), `nonce` (anti-*replay* en la cuenta), tipo de transacción y montos. Así, **cualquier alteración del contenido invalida la firma**.
 

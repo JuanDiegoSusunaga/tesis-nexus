@@ -36,7 +36,14 @@
 - **[SP800-108]** NIST. *SP 800-108: Recommendation for Key Derivation Using Pseudorandom Functions*.
 - **[RFC5869]** H. Krawczyk. *Cryptographic Extraction and Key Derivation: The HKDF Scheme*. CRYPTO 2010 (RFC 5869).
 - **[RFC9881]** J. Massimo, P. Kampanakis, S. Turner, B. Westerbaan. *RFC 9881: Internet X.509 PKI — Algorithm Identifiers for ML-DSA*. IETF, 2025. *(la semilla ξ como formato RECOMENDADO de clave privada ML-DSA)*
+- **[DORA22]** Parlamento Europeo y Consejo. *Reglamento (UE) 2022/2554 relativo a la resiliencia operativa digital del sector financiero (DORA)*; art. 9(2) — obligación de sostener la disponibilidad, **autenticidad, integridad** y confidencialidad de los datos; normas técnicas de desarrollo desde ene. 2024. *(fundamento normativo del requisito R1, Cap. 1 §1.3)*
 - **[Connolly26]** D. Connolly. *ML-DSA Security Considerations*. draft-connolly-cfrg-ml-dsa-security-considerations, IETF (borrador), 2026. *(recomienda seed-only; sugiere cachear la clave expandida durante las operaciones — contrapunto de la política de §5.6)*
+
+## Fuentes del sector financiero (banca central, supervisión y marcos de migración)
+
+- **[BIS-Leap23]** BIS Innovation Hub, Banque de France, Deutsche Bundesbank (Fase 1, 2023); con Banca d'Italia, Nexi-Colt y Swift (Fase 2, *Quantum-proofing payment systems*). *Project Leap: Quantum-proofing the financial system*. bis.org/about/bisih/topics/cyber_security/leap.htm. Acceso: ago. 2026. *(Fase 2 sustituyó las firmas digitales clásicas por post-cuánticas en un sistema de pagos operativo: viabilidad demostrada, con tiempos de procesamiento significativamente mayores — véase el contraste de Cap. 6, §6.6.2)*
+- **[BIS-Roadmap25]** Bank for International Settlements. *Roadmap to quantum-readiness* (jul. 2025) y *Quantum computing and the financial system: opportunities and risks* (oct. 2024). *(inventario criptográfico, cripto-agilidad, defensa en profundidad y migración por fases como condiciones de la transición)*
+- **[PQFIF25]** D. B. Corvelo Costa et al. *Post-Quantum Financial Infrastructure Framework (PQFIF): A Roadmap for the Quantum-Safe Transition of Global Financial Infrastructure*. Aportación escrita a la *U.S. Crypto Assets Task Force*, SEC, sep. 2025. sec.gov. *(propuesta de marco presentada al regulador —**no** es regulación vigente—; prioriza custodia (SAB 121) e infraestructura crítica de mercado (Regulation SCI), con HSM, rotación automatizada y* audit trail *inmutable)*
 
 ## Fuentes del estado del arte (industria; estado a mediados de 2026)
 
