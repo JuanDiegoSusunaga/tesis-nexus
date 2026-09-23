@@ -1,0 +1,2138 @@
+
+[PÁGINA PDF 1]
+arXiv:2003.05207v3  [cs.CR]  7 Mar 2022
+The Measure-and-Reprogram Technique 2.0: Multi-Round
+Fiat-Shamir and More
+Jelle Don1, Serge Fehr1,2, and Christian Majenz1,3
+1 Centrum Wiskunde & Informatica (CWI), Amsterdam, Netherlands
+2 Mathematical Institute, Leiden University, Netherlands
+3 QuSoft, Amsterdam, Netherlands
+jelle.don@cwi.nl, serge.fehr@cwi.nl, c.majenz@uva.nl
+Abstract. We revisit recent works by Don, Fehr, Majenz and Schaﬀner and by Liu and
+Zhandry on the security of the Fiat-Shamir transformation of Σ-protocols in the quantum
+random oracle model (QROM). Two natural questions that arise in this context are: (1)
+whether the results extend to the Fiat-Shamir transformation of multi-round interactive
+proofs, and (2) whether Don et al.’s O(q2) loss in security is optimal.
+Firstly, we answer question (1) in the aﬃrmative. As a byproduct of solving a technical
+diﬃculty in proving this result, we slightly improve the result of Don et al., equipping it
+with a cleaner bound and an even simpler proof. We apply our result to digital signature
+schemes showing that it can be used to prove strong security for schemes like MQDSS in the
+QROM. As another application we prove QROM-security of a non-interactive OR proof by
+Liu, Wei and Wong.
+As for question (2), we show via a Grover-search based attack that Don et al.’s quadratic
+security loss for the Fiat-Shamir transformation of Σ-protocols is optimal up to a small
+constant factor. This extends to our new multi-round result, proving it tight up to a factor
+that depends on the number of rounds only, i.e. is constant for any constant-round interactive
+proof.
+1
+Introduction
+Reprogramming the quantum random oracle.
+We reconsider the recent work of Don, Fehr,
+Majenz and Schaﬀner [DFMS19] on the quantum random oracle model (QROM). On a technical
+level, they showed how to reprogram the QROM adaptively at one input. More precisely, for any
+oracle quantum algorithm AH, making q calls to a random oracle H and outputting a pair (x, z)
+so that some predicate V (x, H(x), z) is satisﬁed, they showed existence of a “simulator” S that
+mimics the random oracle, extracts x from AH by measuring one of the oracle queries to H, and
+then reprograms H(x) to a given value Θ so that z output by AH now satisﬁes V (x, Θ, z), except
+with a multiplicative O(q2) loss in probability (plus a negligible additive loss). We emphasize that
+the challenging aspect of this problem is that AH’s queries to H may be in quantum superposition,
+and thus measuring such a query disturbs the state and thus the behavior of AH. Still, Don et
+al. managed to control this disturbance suﬃciently. In independent work and using very diﬀerent
+techniques, Liu and Zhandry [LZ19] showed a similar kind of result, but with a O(q9) loss.
+As an immediate application of this technique, it is then concluded that the Fiat-Shamir trans-
+formation of a Σ-protocol is as secure (in the QROM) as the original Σ-protocol (in the standard
+model), up to a O(q2) loss, i.e., any of the typically considered security notions is preserved under
+the Fiat-Shamir transformation, even in the quantum setting. In combination with prior work on
+simulating signature queries [Unr17, KLS18], security (in the QROM) of Fiat-Shamir signatures
+that arise from ordinary Σ-protocols then follows as a corollary.
+Given important examples of multi-round public-coin interactive proofs, used in, e.g., MQDSS
+[CHR+16] and for Bulletproofs [BBB+18]1, a natural question that arises is whether these tech-
+niques and results extend to the reprogrammability of the QROM at multiple inputs and the
+security of the Fiat-Shamir transformation (in the QROM) of multi-round public-coin interactive
+proofs. Another question is whether the O(q2) loss (for the original Σ-protocols) is optimal, or
+whether one might hope for a linear loss as in the classical case.
+In this work, we provide answers to both these natural questions — and more.
+1 The security of the original Bulletproofs protocol relies on the hardness of discrete-log; however, work
+in progress considers post-quantum secure versions [Boo].
+
+
+[PÁGINA PDF 2]
+A technical hurdle for generalizing [DFMS19] to multi-round Fiat-Shamir.
+To start
+with, we observe that the naive approach of applying the original result of [DFMS19] inductively
+so as to reprogram multiple inputs one by one does not work. This is due to a subtle technical
+issue that has to do with the precise statement of the original result. In more detail, the statement
+involves an additive error term εx ≥0 that depends on the particular choice of the point x, which
+is (adaptively) chosen to be the input on which the random oracle (RO) is reprogrammed. The
+guarantee provided by [DFMS19] is that this error term stays negligible even when summed over
+all x’s, i.e., P
+x εx = negl. The formulation of the result for individual x’s with control over P
+x εx
+is important for the later applications to the Fiat-Shamir transformation. However, when applying
+the result twice in a row, with the goal being to reprogram the RO at two inputs x1, x2, then we
+end up with two error terms εx1 and εx1
+x2 (with the second one depending on x1), where the ﬁrst
+one stays negligible when summed over x1 and the second one stays negligible when summed over
+x2 (for any x1); but it is unclear that the sum εx1,x2 := εx1 + εx1
+x2 stays negligible when summed
+over x1 and x2, which is what we would need to get the corresponding generalized statement.
+Our results
+As a ﬁrst contribution, we revise the original result from [DFMS19] of reprogram-
+ming the QROM at one input by showing an improved version that has no additive error term,
+but only the original multiplicative O(q2) loss. For typical direct cryptographic applications, this
+improvement makes no big quantitative diﬀerence due to the error term being negligible, but: (1) it
+makes the statement cleaner and easier to formulate, (2) somewhat surprisingly, the proof is simpler
+than that of the original result in [DFMS19], and (3) most importantly, it removes the technical
+hurdle to extend to multiple inputs. Indeed, we then get the desired multi-input reprogrammability
+result by means of a not too diﬃcult, though somewhat tedious, induction argument.
+Building on our multi-input reprogrammability result above, our next goal then is to show the
+security of the Fiat-Shamir transformation (in the QROM) of multi-round public-coin interactive
+proofs. In contrast to the original result in [DFMS19] for the Fiat-Shamir transformation of Σ-
+protocols some additional work is needed here, to deal with the order of the messages extracted
+from the Fiat-Shamir adversary. Thus, as a stepping stone, we consider and analyze a variant of
+the above multi-input reprogrammability result, which enforces the right order of the extracted
+messages. As a simple corollary of this, we then obtain the desired security of multi-round Fiat-
+Shamir. Here, the multiplicative loss becomes O(q2n) for a (2n + 1)-round public-coin interactive
+proof with constant n.
+In the context of digital signatures, the original motivation for the Fiat-Shamir transformation,
+we extend previous results by Unruh [Unr17] and Don et al. [DFMS19] to show that Fiat-Shamir
+signature schemes based on a multi-round, honest-veriﬁer zero knowledge public-coin interactive
+quantum proof of knowledge have standard signature security (existential unforgeability under
+chosen message attacks, UF-CMA) in the QROM. Assuming the additional collision-resistance-
+like property of computationally unique responses, they are even strongly unforgeable. We go on
+to apply this result to the signature scheme MQDSS [CHR+16], a candidate in the ongoing NIST
+standardization process for post-quantum cryptographic schemes [NIS], providing its ﬁrst QROM
+proof.
+Another application of our multi-round Fiat-Shamir result would for instance be to Bullet-
+proofs [BBB+18].
+As a second application of our multi-input reprogrammability result, we show security (in the
+QROM) of the non-interactive OR-proof introduced by Liu, Wei and Wong [LWW04], further an-
+alyzed by Fischlin, Harasser and Janson [FHJ20]. While the well-known (interactive) OR-proof by
+Cramer, Damgård and Schoenmakers [CDS94] is a Σ-protocol and thus the results from [DFMS19]
+apply, the inherently non-interactive OR-proof by Liu et al. does not follow this blueprint of being
+obtained as the Fiat-Shamir transformation of a Σ-protocol (though in some sense it is “close” to
+being of this form). We show here how the 2-input version of our multi-input reprogrammability
+result implies security of this OR-proof in the QROM.
+Our last contribution is a lower bound that shows that the multiplicative O(q2) loss in the
+security argument of the Fiat-Shamir transformation of Σ-protocols is tight (up to a factor 4).
+Thus, the O(q2) loss is unavoidable in general. Furthermore, we extend this lower bound to the
+Fiat-Shamir transformation of multi-round interactive proofs as considered in this work, and we
+show that also here to obtained loss O(q2n) is in general optimal, up to a constant that depends
+on n only.
+2
+
+
+[PÁGINA PDF 3]
+Related work Before the recently obtained reduction [DFMS19, LZ19] was available, the Fiat-
+Shamir tranform in the QROM was studied in a number of works [Unr17, DFG13, KLS18], where
+weaker security properties were shown. In addition, Unruh developed an alternative transform
+[Unr15] that provided QROM security at the expense of an increased proof size. The Unruh trans-
+form was later generalized to apply to 5-round public coin interactive proof systems [CHR+18].
+2
+Notation
+Up to some modiﬁcations, we follow closely the notation used in [DFMS19]. We consider a (puriﬁed)
+oracle quantum algorithm A that makes q queries to an oracle, i.e., an unspeciﬁed function H :
+X →Y with ﬁnite non-empty sets X, Y. Formally, A is described by a sequence of unitaries
+A1, . . . , Aq and an initial state |φ0⟩.2 For technical reasons that will become clear later, we actually
+allow (some of) the Ai’s to be a projection followed by a unitary (or vice versa). One can think
+of such a projection as a measurement performed by the algorithm, with the algorithm aborting
+except in case of a particular measurement outcome.
+For any concrete choice of H : X →Y, the algorithm A computes the state
+|φH
+q ⟩:= AH|φ0⟩:= AqOH · · · A1OH|φ0⟩,
+where OH is the unitary deﬁned by OH : |c⟩|x⟩|y⟩7→|c⟩|x⟩|y ⊕c·H(x)⟩for any triple c ∈{0, 1},
+x ∈X and y ∈Y, with OH acting on appropriate registers. We emphasize that we allow controlled
+queries to H. Per se, this gives the algorithm more power, and thus will make our result only
+stronger, but it is easy to see that such controlled queries to the standard quantum oracle for
+a function can always be simulated by means of ordinary queries, at the price of one additional
+query.3 The ﬁnal state AH|φ0⟩is considered to be a state over registers X = X1 . . . Xn, Z and E.
+Following [DFMS19], we introduce the following notation. For 0 ≤i, j ≤q we set
+AH
+i→j := AjOH · · · Ai+1OH ,
+where, by convention, AH
+i→j is set to 1 if j ≤i. Furthermore, we let
+|φH
+i ⟩:=
+ AH
+0→i
+
+|φ0⟩
+be the state of A after the i-th step but right before the (i + 1)-st query, which is consistent with
+|φH
+q ⟩above.
+For a given function H : X →Y and for ﬁxed x ∈X and Θ ∈Y, we deﬁne the reprogrammed
+function H∗Θx : X →Y that coincides with H on X \ {x} but maps x to Θ. With this notation
+at hand, we can then write
+ AH∗Θx
+i→q
+  AH
+0→i
+
+|φ0⟩=
+ AH∗Θx
+i→q
+
+|φH
+i ⟩
+for an execution of A where the oracle is reprogrammed at a given point x after the i-th query.
+We stress that (AH∗Θx
+i→q
+)(AH
+0→i) can again be considered to be an oracle quantum algorithm B,
+which depends on Θ ∈Y, that makes q queries to (the unprogrammed) function H. Indeed, the
+(controlled) queries to the reprogrammed oracle H ∗Θx can be simulated by means of controlled
+queries to H (using one additional “work qubit”).4 Exploiting that, in addition to unitaries, we allow
+projections as elementary operations, we can also understand (AH∗Θx
+i→q
+)X(AH
+0→i) to be an oracle
+quantum algorithm again that makes oracle queries to H, where X is the projection X = |x⟩⟨x|,
+acting on the corresponding query register to the oracle.
+2 Alternatively, we may regard |φ0⟩, as an additional input given to A.
+3 Allowing controlled queries to the random oracle is also the more natural model compared to restricting
+to plain access to the unitary. After all, the motivation for the QROM is that in the real world, an
+attacker can implement the modeled hash function on their quantum computer, so they can deﬁnitely
+implement the controlled version as well.
+4 Here it is crucial that we allow controlled queries to H.
+3
+
+
+[PÁGINA PDF 4]
+More generally, for any x = (x1, . . . , xn) ∈X n without duplicate entries, i.e., xi̸ = xj for i̸ = j,
+and for any Θ ∈Yn, we deﬁne
+H ∗Θx = H ∗Θ1x1 ∗· · · ∗Θnxn : X →Y
+x 7→
+(
+Θi
+if x = xi for some i ∈{1, . . . , n}
+H(x)
+otherwise.
+This will then allow us to consider (AH∗Θ1x1∗Θ2x2
+i2→q
+)X2(AH∗Θ1x1
+i1→i2
+)X1(AH
+0→i1) as an oracle quantum
+algorithm with oracle queries to H, etc.
+Eventually, we are interested in the probability that after the execution of the original algorithm
+AH, and upon measuring register X in the computational basis to obtain x = (x1, . . . , xn) ∈X n,
+the state of register Z is of a certain form dependent on x and H(x) = (H(x1), . . . , H(xn)). Such
+a requirement (for a ﬁxed x) is captured by a projection
+GH
+x = |x⟩⟨x| ⊗Πx,H(x) ,
+where {Πx,Θ}x,Θ is a family of projections with x ∈X n and Θ ∈Yn, and with the understanding
+that |x⟩⟨x| acts on X and Πx,H(x) on register Z. We refer to such a family of projections as a
+quantum predicate. We use GΘ
+x as a short hand for GH∗Θx
+x
+, and we write GH
+x and GΘ
+x with x ∈X
+and Θ ∈Y for the case n = 1.
+For an arbitrary but ﬁxed x◦∈X n, we are then interested in the probability
+Pr
+
+x=x◦∧V (x, H(x), z) : (x, z) ←AH 
+=
+GH
+x◦|φH
+q ⟩
+2
+2 .
+where the left hand side is our notation for this probability, where we understand AH to be an
+algorithm that outputs the measured x together with the quantum state z in register Z, and V
+to be the quantum predicate speciﬁed by the projections Πx,Θ. Correspondingly, Pr
+
+x = x◦∧
+V (x, H(x), z) : (x, z) ←AH
+= ∥GH
+x◦|φH
+q ⟩∥2
+2 for the n = 1 case.
+3
+An improved single-input reprogramming result
+For the case n = 1, Don et al. [DFMS19] show the existence of a black-box simulator S such that
+for any oracle quantum algorithm A as considered above with oracle access to a uniformly random
+H, it holds that
+Pr
+Θ
+
+x=x◦∧V (x, Θ, z) : (x, z) ←⟨SA, Θ⟩
+
+≥
+1
+2(q+1)(2q+3) Pr
+H
+
+x=x◦∧V (x, H(x), z) : (x, z) ←AH
+−εx◦,
+(1)
+for any x◦∈X, where the εx◦’s are non-negative and their sum over x◦∈X is bounded by
+1/(2q|Y|), i.e., negligible whenever |Y| is superpolynomial. The notation (x, z) ←⟨SA, Θ⟩is to be
+understood in that in a ﬁrst stage SA outputs x, and then on input Θ it outputs z. At the core,
+Equation (1) follows from Lemma 1 of [DFMS19] which shows that
+E
+Θ,i,b
+h(|x⟩⟨x| ⊗Πx,Θ)
+ AH∗Θx
+i+b→q
+ AH
+i→i+b
+
+X|φH
+i ⟩
+2
+2
+i
+≥
+EΘ
+h(|x⟩⟨x| ⊗Πx,Θ)|φH∗Θx
+q
+⟩
+2
+2
+i
+2(q + 1)(2q + 3)
+−
+X|φH
+q ⟩
+2
+2
+2(q + 1)|Y| ,
+(2)
+and from which the construction of S can be extracted. The bound (1) on the “success probability”
+of S then follows from the observation that S can simulate the calls to H and to H∗Θx by means of
+a 2(q+1)-wise independent hash function, and that H and H∗Θx are indistinguishable for random
+H and Θ.
+In this section we show an improved variant of Equation (1), which avoids the additive error term
+εx◦. While having negligible quantitative eﬀect in typcial situations, it makes the statement simpler.
+In addition, as explained in the introduction, it circumvents a technical issue one encounters when
+4
+
+
+[PÁGINA PDF 5]
+trying to extend to the multi-input case. Furthermore, our improved version comes with a simpler
+proof.5
+The approach is to avoid the additive error term in Equation (2). We achieve this by slightly
+tweaking the simulator S. From the technical perspective, while on the left hand side of Equation
+(2) the expectation is over a random i ∈{0, . . . , q}, selecting one of the q + 1 queries of A at
+random (where the X register of the output state is considered to be a ﬁnal query), and a random
+b ∈{0, 1}, our new version has syntactically the same left hand side, but with the expectation over
+a random pair (i, b) ∈({0, . . . , q91}×{0, 1})∪{(q, 0)} instead. This allows us to absorb the additive
+error term into the success probability of the simulator. Furthermore, it holds for any ﬁxed choice
+of Θ (and not only on average for a random choice).
+Lemma 1 Let A be a q-query oracle quantum algorithm. Then, for any function H : X →Y, any
+x ∈X and Θ ∈Y, and any projection Πx,Θ, it holds that
+E
+i,b
+h(|x⟩⟨x| ⊗Πx,Θ)
+ AH∗Θx
+i+b→q
+ AH
+i→i+b
+
+X|φH
+i ⟩
+2
+2
+i
+≥
+(|x⟩⟨x| ⊗Πx,Θ)|φH∗Θx
+q
+⟩
+2
+2
+(2q + 1)2
+,
+where the expectation is over uniform (i, b) ∈({0, . . ., q91} × {0, 1}) ∪{(q, 0)}.
+This new version of Equation (2) translates to a simulator S that works by running A, but with
+the following modiﬁcations. First, one of the q + 1 queries of A (also counting the ﬁnal output in
+register X) is measured, and the measurement outcome x is output by (the ﬁrst stage of) S. We
+emphasize that the crucial diﬀerence to [DFMS19] is that each of the q actual queries is picked
+with probability
+2
+2q+1, while the ﬁnal output is picked with probability
+1
+2q+1. Then, very much as in
+[DFMS19], this very query of A is answered either using the original H or using the reprogrammed
+oracle H ∗Θx, with the choice being made at random6, while all the remaining queries of A are
+answered using oracle H∗Θx. Finally, (the second stage of) S outputs whatever A outputs.
+In line with Theorem 1 in [DFMS19], i.e. Equation (1) above, we obtain the following result
+from Lemma 1.
+Theorem 2 (Measure-and-reprogram, single input) Let X and Y be ﬁnite non-empty sets.
+There exists a black-box two-stage quantum algorithm S with the following property. Let A be an
+arbitrary oracle quantum algorithm that makes q queries to a uniformly random H : X →Y and
+that outputs some x ∈X and a (possibly quantum) output z. Then, the two-stage algorithm SA
+outputs some x ∈X in the ﬁrst stage and, upon a random Θ ∈Y as input to the second stage, a
+(possibly quantum) output z, so that for any x◦∈X and any (possibly quantum) predicate V :
+Pr
+Θ
+
+x=x◦∧V (x, Θ, z) : (x, z) ←⟨SA, Θ⟩
+
+≥
+1
+(2q + 1)2 Pr
+H
+
+x=x◦∧V (x, H(x), z) : (x, z) ←AH
+.
+Furthermore, S runs in time polynomial in q, log |X| and log |Y|.
+The proof of Lemma 1 follows closely the proof of Equation (1) in [DFMS19], but the streamlined
+statement and simulator allow to cut some corners.
+Proof (of Lemma 1). For any 0 ≤i ≤q, inserting a resolution of the identity and exploiting that
+ AH∗Θx
+i+1→q
+ AH
+i→i+1
+ 1 −X
+
+|φH
+i ⟩=
+ AH∗Θx
+i→q
+ 1 −X
+
+|φH
+i ⟩,
+we can write
+ AH∗Θx
+i+1→q
+
+|φH
+i+1⟩
+=
+ AH∗Θx
+i+1→q
+ AH
+i→i+1
+ 1 −X
+
+|φH
+i ⟩
++
+ AH∗Θx
+i+1→q
+ AH
+i→i+1
+
+X|φH
+i ⟩
+=
+ AH∗Θx
+i→q
+ 1 −X
+
+|φH
+i ⟩
++
+ AH∗Θx
+i+1→q
+ AH
+i→i+1
+
+X|φH
+i ⟩
+=
+ AH∗Θx
+i→q
+
+|φH
+i ⟩−
+ AH∗Θx
+i→q
+
+X|φH
+i ⟩
++
+ AH∗Θx
+i+1→q
+ AH
+i→i+1
+
+X|φH
+i ⟩
+5 We thank Dominique Unruh for the idea that it might be possible to avoid the additive error term,
+and for proposing an argument for achieving that, which inspired us to ﬁnd the simpler argument we
+eventually used.
+6 If it is the ﬁnal output that is measured then there is nothing left to reprogram, so no choice has to be
+made.
+5
+
+
+[PÁGINA PDF 6]
+Rearranging terms, applying GΘ
+x = (|x⟩⟨x| ⊗Πx,Θ) and using the triangle equality, we can thus
+bound
+GΘ
+x
+ AH∗Θx
+i→q
+
+|φH
+i ⟩
+
+2 ≤
+GΘ
+x
+ AH∗Θx
+i+1→q
+
+|φH
+i+1⟩
+
+2
++
+GΘ
+x
+ AH∗Θx
+i→q
+
+X|φH
+i ⟩
+
+2
++
+GΘ
+x
+ AH∗Θx
+i+1→q
+ AH
+i→i+1
+
+X|φH
+i ⟩
+
+2 .
+Summing up the respective sides of the inequality over i = 0, . . . , q −1, we get
+GΘ
+x |φH∗Θx
+q
+⟩
+
+2 ≤
+GΘ
+x |φH
+q ⟩
+
+2 +
+X
+0≤i<q
+b∈{0,1}
+GΘ
+x
+ AH∗Θx
+i+b→q
+ AH
+i→i+b
+
+X|φH
+i ⟩
+
+2 .
+By squaring both sides, dividing by 2q + 1 (i.e., the number of terms on the right hand side), and
+using Jensen’s inequality on the right hand side, we obtain
+GΘ
+x |φH∗Θx
+q
+⟩
+2
+2
+2q + 1
+≤
+GΘ
+x |φH
+q ⟩
+2
+2 +
+X
+0≤i<q
+b∈{0,1}
+GΘ
+x
+ AH∗Θx
+i+b→q
+ AH
+i→i+b
+
+X|φH
+i ⟩
+2
+2
+and thus, noting that we can write
+GΘ
+x |φH
+q ⟩
+2
+2 as
+GΘ
+x
+ AH∗Θx
+i+b→q
+ AH
+i→i+b
+
+X|φH
+i ⟩
+2
+2
+with i = q and b = 0,
+GΘ
+x |φH∗Θx
+q
+⟩
+2
+2
+(2q + 1)2
+≤E
+i,b
+hGΘ
+x
+ AH∗Θx
+i+b→q
+ AH
+i→i+b
+
+X|φH
+i ⟩
+2
+2
+i
+.
+⊓⊔
+For completeness, let us spell out how Theorem 8 of [DFMS19] on the generic security of the
+Fiat-Shamir transformation (in the QROM) can now be re-phrased, avoiding the negligible error
+term present in [DFMS19]. We refer to [DFMS19] or to our later Section 5 for the details on the
+Fiat-Shamir transformation.
+Theorem 3 There exists a black-box quantum polynomial-time two-stage quantum algorithm S
+such that for any adaptive Fiat-Shamir adversary A, making q queries to a uniformly random
+function H with appropriate domain and range, and for any x◦∈X:
+Pr
+
+x=x◦∧v = accept : (x, v) ←⟨SA, V⟩
+
+≥
+1
+(2q + 1)2 Pr
+H
+
+x=x◦∧V H
+F S(x, π) : (x, π) ←AH
+.
+4
+Multi-input reprogrammability
+In this section, we extend our (improved) results on adaptively reprogramming the quantum ran-
+dom oracle at one point x ∈X to multiple points x1, . . . , xn ∈X. This in turn will allow us to
+extend the results on the security of the Fiat-Shamir transformation to multi-round protocols. We
+point out again that the improvement of Lemma 1 over Lemma 1 in
+[DFMS19] plays a crucial
+role here, in that it circumvents the trouble with the negligible error term that occurs when trying
+to extend the result from [DFMS19] to the setting considered here.
+The starting point is the following generalized version of the problem considered in Section 3.
+We assume an oracle quantum algorithm AH that makes q queries to a random oracle H : X →Y
+and then produces an output of the form (x1, . . . , xn, z), where z may be quantum, such that a
+certain (quantum) predicate V (x1, H(x1), . . . , xn, H(xn), z) is satisﬁed with some probability. The
+goal then is to turn such an AH into a multi-stage quantum algorithm S (the simulator) that,
+stage by stage, outputs the xi’s and takes corresponding Θi’s as input, and eventually outputs
+a (possibly quantum) z with the property that V (x1, Θ1, . . . , xn, Θn, z) is satisﬁed with similar
+probability.
+6
+
+
+[PÁGINA PDF 7]
+4.1
+The general case
+Naively, one might hope for an S that outputs x1 in the ﬁrst stage (obtained by measuring one of
+the queries of AH), and then on input Θ1 proceeds by outputting x2 in the second stage (obtained
+by measuring one of the subsequent queries of AH), etc. However, since AH may query the hashes
+of x1, . . . , xn in an arbitrary order, we cannot hope for this to work. Therefore, we have to allow
+S to produce x1, . . . , xn in an arbitrary order as well.7 Formally, we consider S with the following
+syntactic behavior: in the ﬁrst stage it outputs a permutation π together with xπ(1) and takes
+as input Θπ(1), and then for every subsequent stage 1 < i ≤n it outputs xπ(i) and takes as
+input Θπ(i); eventually, in the ﬁnal stage (labeled by n + 1) it outputs z. In line with earlier
+notation, but taking this additional complication into account, we denote such an execution of S
+as (π, π(x), z) ←⟨SA, π(Θ)⟩.
+A ﬁnal issue is that if xi = xj then H(xi) = H(xj) as well, whereas Θi and Θj may well be
+diﬀerent. Thus, we can only expect S to work well when x1, . . . xn has no duplicates.
+For us to be able to mathematically reason about the simulator described above, we introduce
+some additional notation. For the basic simulator from Lemma 1 we write, using r1 = (b1, i1), as
+SH,A
+Θ1,x1,r1 := SH,A,Θ1,x1,r1 :=
+ AH∗Θ1x1
+i1+b1→q
+ AH
+i1→i1+b1
+
+X1
+ AH
+0→i1
+
+.
+This can be recursively extended by applying it to AH now being SH,A
+Θ1,x1,r1 so as to obtain
+SH,A
+Θ1,2,x1,2,r1,2 :=
+ SH∗Θ2x2,A,Θ1,x1,r1
+i2+b2→q
+ SH,A,Θ1,x1,r1
+i2→i2+b2
+
+X2
+ SH,A,Θ1,x1,r1
+0→i2
+
+.
+In general, we can consider the following operator, which simulates A and performs n measure-
+ments:
+SH,A
+Θ,x,r :=
+ SH∗Θnxn,A,Θ,x,r
+in+bn→q
+ SH,A,Θ,x,r
+in→in+bn
+
+Xn
+ SH,A,Θ,x,r
+0→in
+
+.
+where, for arbitrary but ﬁxed n and Θ = (Θ1, . . . , Θn) ∈Yn, the notation Θ is understood
+as Θ = (Θ1, . . . , Θn−1) ∈Yn−1, and correspondingly for x etc. Finally, when considering ﬁxed
+Θ ∈Yn and x ∈X n, we write
+SH
+r (A) := SH,A
+Θ,x,r .
+At the core of our multi-round result will be the following technical lemma, which generalizes
+Lemma 1.
+Lemma 4 Let A be a q-query oracle quantum algorithm. Then, for any function H : X →Y, any
+x ∈X n and Θn ∈Yn, and any projection Πx,Θ, it holds that
+ |x⟩⟨x| ⊗Πx,Θ
+
+AH∗Θx|φ0⟩
+2
+2
+(2q + 1)2n
+≤E
+r
+h |x⟩⟨x|A ⊗Πx,Θ
+
+SH
+r (A)|φ0⟩
+2
+2
+i
+.
+Proof. The proof is by induction on n, where the base case is given by Lemma 1.
+For the induction step we ﬁrst apply the base case, substituting xn for x1, Θn for Θ1, rn for
+r1, H∗Θx for H, and ˆΠxn,Θn for Πx1,Θ1, where
+ˆΠxn,Θn = |x1⟩⟨x1| ⊗. . . ⊗|xn91⟩⟨xn91| ⊗Πx,Θ
+to obtain
+ |xn⟩⟨xn| ⊗ˆΠxn,Θn
+
+A(H∗Θx)∗Θnxn|φ0⟩
+2
+2
+(2q + 1)2
+≤E
+rn
+h |xn⟩⟨xn|A ⊗ˆΠxn,Θn
+
+SH∗Θx
+rn
+(A)|φ0⟩
+2
+2
+i
+which we can write as
+ |x⟩⟨x| ⊗Πx,Θ
+
+AH∗Θx|φ0⟩
+2
+2
+(2q + 1)2n
+≤
+Ern
+h |x⟩⟨x| ⊗Πx,Θ
+
+SH∗Θx
+rn
+(A)|φ0⟩
+2
+2
+i
+(2q + 1)2(n91)
+(3)
+7 Looking ahead, in Section 4.2 we will force AH to query, and thus S to extract, x1, . . . , xn in the right
+order by requiring x2 to contain H(x1) as a substring, x3 to contain H(x2) as a substring, etc. This will
+be important for the the multi-round Fiat-Shamir application.
+7
+
+
+[PÁGINA PDF 8]
+dividing both sides by (2q + 1)2(n91) and swapping registers appropriately (to make sure that the
+register which contains xn comes after the others).
+Now ﬁx rn. We deﬁne
+ˆΠx,Θ := |xn⟩⟨xn| ⊗Πx,Θ.
+and apply the induction hypothesis for n−1, substituting SH∗Θx
+rn
+(A) for AH∗Θx, and ˆΠx,Θ for
+Πx,Θ, in order to derive
+ |x⟩⟨x| ⊗Πx,Θ
+
+SH∗Θx
+rn
+(A)|φ0⟩
+2
+2
+(2q + 1)2(n91)
+=
+ |x⟩⟨x| ⊗ˆΠx,Θ
+
+SH∗Θx
+rn
+(A)|φ0⟩
+2
+2
+(2q + 1)2(n91)
+≤E
+r
+h |x⟩⟨x| ⊗ˆΠx,Θ
+
+SH
+r (Srn(A))|φ0⟩
+2
+2
+i
+= E
+r
+h |x⟩⟨x| ⊗Πx,Θ
+
+SH
+r (A)|φ0⟩
+2
+2
+i
+.
+Since this inequality holds for any ﬁxed rn, it also holds in expectation over rn. Substituting it in
+Equation 3, we retrieve the statement of the lemma.
+⊓⊔
+Remark 5 In case of x = (x1, . . . , xn) ∈X n without duplicate entries, it follows from the resulting
+mutual orthogonality of the projections Xj and the deﬁnition of SH
+r (A) that the following holds.
+The term in the expectation Er in the inequality of Lemma 4 vanishes for any r = (i, b) for
+which there exist two distinct coordinates j̸ = k with ij = ik. As such, we may well understand
+this expectation to be over r = (i, b) for which ij̸ = ik whenever j̸ = k; this only increases the
+expectation.8 In other words, we may assume that random distinct queries are measured in order
+to extract x1, . . . , xn.
+Theorem 6 (Measure-and-reprogram, multiple inputs) Let n be a positive integer, and let
+X, Y be ﬁnite non-empty sets. There exists a black-box polynomial-time (n + 1)-stage quantum
+algorithm S with the syntax as outlined at the start of this section, satisfying the following property.
+Let A be an arbitrary oracle quantum algorithm that makes q queries to a uniformly random
+H : X →Y and that outputs a tuple x ∈X n and a (possibly quantum) output z. Then, for any
+x◦∈Xn without duplicate entries and for any predicate V :
+Pr
+Θ
+
+x=x◦∧V (x, Θ, z) : (π, π(x), z) ←⟨SA, π(Θ)⟩
+
+≥
+1
+(2q + 1)2n Pr
+H
+
+x=x◦∧V (x, H(x), z) : (x, z) ←AH
+.
+Proof. We consider the inequality of Lemma 4 with the expectation over r understood as in Re-
+mark 5. Additionally taking the expectation over H and Θ on both sides, we obtain
+E
+H,Θ
+" |x⟩⟨x| ⊗Πx,Θ
+
+AH∗Θx|φ0⟩
+2
+2
+(2q + 1)2n
+#
+≤
+E
+H,Θ,r
+h |x⟩⟨x| ⊗Πx,Θ
+
+SH
+r (A)|φ0⟩
+2
+2
+i
+and note that this is equivalent to
+E
+H
+" |x⟩⟨x| ⊗Πx,H(x)
+
+AH|φ0⟩
+2
+2
+(2q + 1)2n
+#
+≤
+E
+H,Θ,r
+h |x⟩⟨x| ⊗Πx,Θ
+
+SH
+r (A)|φ0⟩
+2
+2
+i
+.
+since all values Θj and H(xj) have the same distribution. The term SH
+r (A)|φ0⟩= SH,A
+Θ,x,r|φ0⟩
+corresponds to the output of the simulator that uses oracle access to H to run A on an initial state
+|φ0⟩, while measuring queries ij (ﬁnding xj as the outcome) and reprogramming the oracle at xj
+to Θj from the (ij + bj)-th query onwards, with (ij, bj) = rj.
+Next, we note that the value of the right hand side does not change [Zha12] when instead
+of giving S oracle access to H, we let it choose a random instance from a family of 2q-wise9
+8 One might try to exploit this actual improvement in the bound; however, for typical choices of parame-
+ters, with n a small constant and q large, this is insigniﬁcant.
+9 It is easy to see that the result of [Zha12] also holds for controlled-query algorithms. Alternatively, the
+q controlled queries can be simulated using q + 1 plain queries, and a 2(q + 1)-wise independent function
+can be used.
+8
+
+
+[PÁGINA PDF 9]
+independent hash functions to simulate A on. The choice of r uniquely determines the permutation
+π with the property iπ(1) < · · · < iπ(n); by deﬁnition of SH,A
+Θ,x,r, the values x = (x1, . . . , xn) are then
+extracted from the adversary’s queries in the order π(x) = (xπ(1), . . . , xπ(n)). Since S chooses this
+r itself, we can assume that it includes π in its output. Likewise, the simulator takes as input
+to every stage — from the second to the (n+1)-st — a fresh random value, in the order given by
+π(Θ). However, by deﬁnition of Πx,Θ the ﬁnal output of the simulator satisﬁes the predicate V
+with respect to the given order (without π), i.e. such that V (x, Θ, z) = 1, as is the claim of the
+theorem.
+⊓⊔
+4.2
+The time-ordered case
+In some applications, like the multi-round version of the Fiat-Shamir transformation, we need
+that the simulator extracts the messages in the right order. This can be achieved by replacing
+the hash list H(x) =
+ H(x1), . . . , H(xn)
+
+, consisting of individual hashes, by a hash chain, where
+subsequent hashes depend on previous hashes. Intuitively, this enforces A to query the oracle in
+the given order.
+Formally, considering a function H : (X0 ∪Y) × X →Y and given a tuple x = (x0, x1, . . . , xn)
+in X0 × X n, we deﬁne the hash chain hH,x =
+ hH,x
+1
+, . . . , hH,x
+n
+
+given by
+hH,x
+1
+= H(x0, x1)
+and
+hH,x
+i
+:= H
+ hH,x
+i−1, xi
+
+for 2 ≤i ≤n.
+Theorem 7 (Measure-and-reprogram, enforced extraction order) Let n be a positive in-
+teger, and let X0, X and Y be ﬁnite non-empty sets. There exists a black-box polynomial-time
+(n+1)-stage quantum algorithm S, satisfying the following property. Let A be an arbitrary oracle
+quantum algorithm that makes q queries to a uniformly random H : (X0 ∪Y) × X →Y and that
+outputs a tuple x = (x0, x1, . . . , xn) ∈(X0 × X n) and a (possibly quantum) output z. Then, for
+any x◦∈(X0 × X n) without duplicate entries and for any predicate V :
+Pr
+Θ
+
+x=x◦∧V (x, Θ, z) : (x, z) ←⟨SA, Θ⟩
+
+≥
+n!
+(2q + n + 1)2n Pr
+H
+
+x=x◦∧V (x, hH,x, z) : (x, z) ←AH
+−ǫx◦.
+where ǫx◦is equal to
+n!
+|Y| when summed over all x◦.
+Remark 8 The additive error term n!/|Y| stems from the fact that the extraction in the right
+order fails if A succeeds in guessing one (or more) of the hashes in the hash chain. The claimed
+term can be improved to (n−1)2/|Y|+n!/|Y|2 by doing a more ﬁne-grained analysis, distinguishing
+between permutations π̸ = id that bring 2 elements “out of order” or more. In any case, it can be
+made arbitrary small by extending the range Y of H for computing the hash chain.
+Proof. First, we note that V (x, hH,x, z) = V ′(v, H(v), z) for v = (v1, . . . , vn) given by v1 = (x0, x1)
+and vi =
+ hH,x
+i−1, xi
+
+=
+ H(vi−1), xi
+
+for i ≥2, and V ′(v, h, z) :=
+
+V (x, h, z) ∧h′
+i = hi−1∀i ≥2
+
+for any v of the form v1 = (x0, x1) and vi =
+ h′
+i, xi
+
+for i ≥2. Next, at the cost of n additional
+queries, we can extend A to an algorithm A+ that actually outputs (v, z), since A+ can easily
+obtain the H(vi)’s by making n queries to H. These observations together give
+Pr
+H
+
+x=x◦∧V (x, hH,x, z) : (x, z) ←AH
+= Pr
+H
+
+x=x◦∧V ′(v, H(v), z) : (v, z) ←AH
++
+
+.
+Let v◦= (v◦
+1, . . . , v◦
+n) with v◦
+i := (h◦
+i , x◦
+i ), where h◦
+1 = x◦
+0 and h◦
+i ∈Y is arbitrary but ﬁxed for
+i ≥2. Let Θ be uniformly random in Yn. An application of Theorem 6 yields a simulator ˆS with
+Pr
+Θ
+
+v=v◦∧V ′(v, Θ, z) : (π, π(v), z) ←⟨ˆSA+, π(Θ)⟩
+
+≥
+1
+(q + n + 1)2n Pr
+H
+
+v=v◦∧V ′(v, H(v), z) : (v, z) ←AH
++
+
+.
+9
+
+
+[PÁGINA PDF 10]
+Summing both sides of the inequality over h◦
+i for i ≥2 yields
+Pr
+Θ
+
+x=x◦∧V ′(v, Θ, z) : (π, π(v), z) ←⟨ˆSA+, π(Θ)⟩
+
+≥
+1
+(q + n + 1)2n Pr
+H
+
+x=x◦∧V ′(v, H(v), z) : (v, z) ←AH
++
+
+=
+1
+(q + n + 1)2n Pr
+H
+
+x=x◦∧V (x, hH,x, z) : (x, z) ←AH
+.
+(4)
+Recalling its construction, the simulator ˆSA+ begins by sampling a uniformly random permutation
+π, so we can write
+Pr
+Θ
+
+x=x◦∧V ′(v, Θ, z) : (π, π(v), z) ←⟨ˆSA+, π(Θ)⟩
+
+= 1
+n!
+X
+σ∈Sn
+Pr
+Θ
+
+x=x◦∧V ′(v, Θ, z) : (π, π(v), z) ←⟨ˆSA+, π(Θ)⟩
+π = σ
+
+.
+(5)
+By deﬁnition, the predicate V ′(v, Θ, z) (with v of the form as explained above) is false whenever
+there exists an i ≥2 such that hi̸ = Θi−1. Now suppose that π̸ = id, then there must be some j
+such that π(j) < π(j −1). This implies that the ﬁrst π(j) stages of ˆSA+ which together (in the
+π(j)-th stage) produce vj = (hj, xj) are independent of Θj−1, since Θj−1 is given as input only
+at the later stage π(j −1). We thus have the following, taking it as understood, here and in the
+sequel, that the random variables π, v, Θ and z are as in (5).
+Pr
+
+x=x◦∧V ′(v, Θ, z)
+π̸ = id
+
+≤Pr
+
+x=x◦∧hj = Θj−1|π̸ = id
+
+= Pr
+
+x=x◦|π̸ = id
+
+|Y|
+.
+Using Equation (5), we can bound
+1
+n!
+X
+σ∈Sn
+Pr
+
+x=x◦∧V ′(v, Θ, z)
+π=σ
+
+≤1
+n! Pr
+
+x=x◦∧V ′(v, Θ, z)
+π=id
+
++Pr
+
+x=x◦|π̸=id
+
+|Y|
+.
+We note that by deﬁnition of V ′,
+Pr
+
+x=x◦∧V (x, Θ, z)
+π = id
+
+≥Pr
+
+x=x◦∧V ′(v, Θ, z)
+π = id
+
+.
+Furthermore, we may deﬁne a new simulator S which takes oracle access to A and turns it into
+A+, and always chooses π = id instead of a random permutation. Where ˆS would output (v, z), S
+ignores the h-part of v and simply outputs (x, z). We then have
+Pr
+Θ
+
+x=x◦∧V (x, Θ, z) : (x, z) ←⟨SA, Θ⟩
+
+≥
+n!
+(q + n + 1)2n Pr
+H
+
+x=x◦∧V (x, hH,x, z) : (x, z) ←AH
+−ǫx◦.
+with ǫx◦given by ǫx◦:= n! · PrΘ
+
+x = x◦|π̸ = id
+
+/|Y|.
+⊓⊔
+5
+The multi-round Fiat-Shamir transformation
+A straightforward generalization of the Fiat-Shamir transformation can be applied to arbitrary
+(i.e., multi-round) public-coin interactive proof systems (PCIP). We show here security of this
+multi-round Fiat-Shamir transformation in the QROM.
+5.1
+Public coin interactive proofs and multi-round Fiat-Shamir
+We begin by deﬁning PCIPs, mainly to ﬁx notation, and the corresponding multi-round Fiat-
+Shamir transformation.
+10
+
+
+[PÁGINA PDF 11]
+Deﬁnition 9 (Public coin interactive proof system (PCIP)) A (2n+1)-round public coin
+interactive proof system (PCIP) Π = (P, V) for a language L is a (2n+1)-round two-party inter-
+active protocol of the form, with C being a ﬁnite non-empty set, and V a predicate:
+Prover P(x)
+Veriﬁer V(x)
+a1
+−→
+c1
+←−
+c1
+$←C
+...
+an
+−→
+cn
+←−
+cn
+$←C
+z
+−→
+Accept iﬀV (x, a1, c1, ..., an, cn, z) = 1
+Remark 10 If the language L is deﬁnied by means of an (eﬃciently veriﬁable) witness relation
+R ⊆X × W, then the prover typcially gets a witness w for x as an additional input. We then also
+say that Π is a PCIP for the relation R. In case of a (2n+1)-round PCIP Π for a witness relation
+R that is hard on average, meaning that there exists an instance generator Gen with the property
+that for (w, x) ←Gen it holds that (w, x) ∈R, but given x alone it is computationally hard to ﬁnd
+w with (w, x) ∈R, Π is also called an identiﬁcation scheme.
+Just as in the ordinary Fiat-Shamir transformation, the interaction used to enforce the time
+order between the prover committing to the message ai and receiving the challenge ci can be
+replaced by means of a hash function. In addition, we can include the previous challenge (i.e. the
+previous hash value) in the hash determining the next challenge to enforce the ordering of the n
+pairs (ai, ci) according to increasing i. We thus obtain the following non-interactive proof system.
+Deﬁnition 11 (Fiat-Shamir transformation for general PCIP (mFS))
+Given an (2n+1)-round PCIP Π = (P, V) for a language L and a hash function H with appropriate
+domain, and range equal to C, we deﬁne the non-interactive proof system FS[Π] = (PH
+F S, VH
+F S) as
+follows. The prover P outputs
+(x, a1, ..., an, z) ←PH
+F S
+where z and ai for i = 1, ..., n are computed using P, and the challenges are computed as
+c1 = H(0, x, a1) and
+ci = H(i −1, ci−1, ai) for i = 2, ..., n ,
+The veriﬁer outputs ‘accept’ iﬀV (x, a1, c1, ..., an, cn, z) = 1 for c1 = H(0, x, a1) and ci = H(i −
+1, ci−1, ai), i = 2, ..., n, denoted by VF S(x, a1, c1, ..., an, cn, z) = 1.
+Remark 12 The challenge number i (minus 1) is included in the hash input to ensure that the
+challenges are generated using distinct inputs to H with probability 1. This is to enable us to
+apply Theorem 7, which only holds for duplicate-free lists of hash inputs. In fact, any additional
+strings can be included in the argument when computing ci using H, without inﬂuencing the
+security properties of the non-interactive proof system in a detrimental way. In the literature one
+sometimes sees that the entire previous transcript is hashed (in which case the counter number i
+may then be omitted).
+5.2
+General security of multi-round Fiat-Shamir in the QROM
+When constructing a reduction for mFS, this reduction is participating as a prover in the underlying
+PCIP, and is hence only provided with random challenges one at a time. We thus need the special
+simulator from Theorem 7, which always outputs the corresponding messages in the right order.
+The success of this simulator is based on the very essence of the Fiat-Shamir transformation,
+11
+
+
+[PÁGINA PDF 12]
+namely the fact that the intractability of the hash function takes the role of the interaction in
+enforcing a time order in the transcript of the PCIP.
+The security of the multi-round Fiat-Shamir transformation follows as a simple Corollary of
+Theorem 7.
+Corollary 13 There exists a black-box quantum polynomial-time (n+1)-stage quantum algorithm S
+such that for any adaptive adversary A against the multi-round Fiat-Shamir transformed version
+FS[Π] of a (2n + 1)-round PCIP Π, making q queries to a uniformly random function H with
+appropriate domain and range equal C, and for any x◦∈X:
+Pr
+
+x = x◦∧v = accept : (x, v) ←⟨SA, V⟩
+
+≥
+n!
+(2q + n + 1)2n Pr
+H
+
+x = x◦∧V H
+F S(x, π) : (x, π) ←AH
+−ǫx◦.
+where the additive error term ǫx◦is equal to
+n!
+|C| when summed over all x◦.
+Proof. We may simply set x◦= (x◦, (0, a1), . . . , (n−1, an)) for arbitrary a1, . . . , an, apply Theorem
+7 and then sum over all choices of a1, . . . , an to obtain the claimed inequality. Note that the round
+indices ensure that every such x◦is duplicate free, satisfying the corresponding requirement of
+Theorem 7.
+Note that the additive error terms reﬂect the fact that the random oracle only approximately
+succeeds in enforcing the original time order in the transcript of the PCIP. However, it can be
+made arbitrarily small, as discussed below.
+Remark 14 There exist PCIPs with soundness error much smaller than 1/|C|. As an example,
+consider the sequential repetition of a Σ-protocol with special soundness. Here, the soundness error
+is 1/|C|n. In this case, the term proportional to 1/|C| renders the bound from the above theorem
+trivial. Note however, that (i) this situation is extremely artiﬁcial, as there is absolutely no reason
+to repeat sequentially instead of in parallel, and (ii) the additive error term can be made arbitrarily
+small by considering a variant Π′ of Π where the random challenges are enlarged with a certain
+number of bits that are ignored otherwise, see Remark 8.
+In fact, we suspect that the observation from (i) is true in a much broader sense: if a PCIP
+still has negligible soundness error when allowing the adversary to learn one of the challenges ci
+in advance of sending the corresponding commitment-type message ai, it seems like the number of
+rounds can be reduced and the loss in soundness error can be won back by parallel repetition.
+As for the case of the Fiat-Shamir transformation for Σ-protocols, the general reduction implies
+that security properties that protect against dishonest provers carry over from the interactive to
+the non-interactive proof system. For a deﬁnition of the properties considered in the following
+theorem, see, e.g. [DFMS19]. The quantum proof-of-knowledge-property was intoduced in [Unr12].
+Corollary 15 (Preservation of Soundness/PoK) Let Π be a constant-round PCIP that has
+(statistical/computational) soundness, and/or the (statistical/computational) quantum proof-of-
+knowledge-property, respectively. Then, in the QROM, FS[Π] has (statistical/computational) sound-
+ness, and/or the (statistical/computational) quantum proof-of-knowledge-property, too.
+Proof. Corollary 13 turns any dishonest prover AFS[Π] for FS[Π] with success probability ǫ into a
+dishonest prover AΠ for Π, with success probability ǫ · (2q + 1)−2n, where 2n + 1 is the number
+of rounds in Π. Since n is constant and q is polynomial in the security parameter, the success
+probabilities of the respective provers are polynomially related. The claimed implications follow
+now using the same arguments as in Corollaries 13 and 16 in [DFMS19].
+⊓⊔
+6
+Tightness of the reductions
+Here, we show tightness of our results. We start with proving tightness of Theorems 2 and 3 (up
+to essentially a factor 4). This implies that a O(q2)-loss is unavoidable in general. Indeed, the
+following result shows that for a large and natural class of Σ-protocols Σ, there exists an attack
+12
+
+
+[PÁGINA PDF 13]
+against FS[Σ] that succeeds with a probability q2 times larger than the best attack against Σ. The
+attack is based on an application of Grover’s quantum algorithm for unstructured search.
+To our surprise, we could not ﬁnd an analysis of Grover’s algorithm in the regime we require
+in the literature. Grover search has been analyzed in the case of an unknown number of solutions
+[BBHT98], but the focus of that work is on analyzing the expected number of queries required to
+ﬁnd a solution, while we analyze the probability with which the Grover search algorithm succeeds
+for a ﬁxed but arbitrary number of queries.
+Theorem 16 Let L be a language, and let Σ be a Σ-protocol for L with challenge set C, spe-
+cial soundness and perfect honest-veriﬁer zero-knowledge. Furthermore, we assume that the triples
+(a, c, z) produced by the simulator SZK(x) are always accepted by the veriﬁer even for instances
+x̸ ∈L, and that a has min-entropy γ.10 Then for any q such that (q2 + 1) · e2 · (5q)6 < |C|
+and 2γ/(5q)3 > 2, there exists a q-query dishonest prover that succeeds with probability q2/|C| in
+producing a valid FS[Σ]-proof for an instance x̸ ∈L.
+The idea of the attack against FS[Σ] is quite simple. For a Σ-protocol that is special honest-veriﬁer
+zero-knowledge, meaning that the simulation works by ﬁrst sampling the challenge c and the
+repsonse z and then computing a ﬁtting answer a as a function a(c, z), one simply does a Grover
+search to ﬁnd a pair (c, z) for which H
+ x, a(c, z)
+
+= c. For a typical H, this will give a quadratic
+improvement over the classical search, which, for a random H, succeeds with probability q/|C|
+(due to the special soundness). A subtle issue is that, for some (unlikely) choices of H, there are
+actually many (c, z) for which H
+ x, a(c, z)
+
+= c, in which case the Grover search “overshoots”. In
+the formal proof below, this is dealt with by controlling the probability of H having this (unlikely)
+property. Also, it removes the special honest-veriﬁer zero-knowledge property by doing the Grover
+search over the randomness of the simulator, which requires some additional caution.
+Remark 17 It is not hard to see that Theorem 16 still holds in the following two variations
+of the statement. (1) H(x, a) is random and independent for diﬀerent choices of a, but is not
+necessarily independent for diﬀerent choices of x. (2) The Σ-protocol Σ is replaced by Σ′, which
+has its challenge enlarged with a certain number of bits that are ignored otherwise, in line with
+Remark 14, and FS[Σ′] then uses an H with a correspondingly enlarged range.11
+Proof. Let SZK be the zero-knowledge simulator given by the perfect honest-veriﬁer zero-knowledge
+property of Σ. Consider an adversary AF S against FS[Σ], that works as follows for an arbitrary
+instance x /∈L:
+– Deﬁne the function f H : R →{0, 1} (where R is the set of random coins for SZK) as
+f H(ρ) =
+(
+1
+for SZK(x; ρ) →(a, c, z) ∧H(x||a) = c
+0
+otherwise.
+– Use Grover’s algorithm for q steps, to try and ﬁnd ρ s.t. f(ρ) = 1
+– Run SZK(x; ρ) →(a, c, z) and output (x, a||z).
+Let pH
+1 be the fraction of random coins from R that map to 1 under f H. Note that by the special
+soundness of Σ, in any accepting triple a determines c and we thus have EH[pH
+1 ] =
+1
+|C|. By the
+way Grover works, after q iterations (requiring q queries to H) the probability pH
+2 of ﬁnding such
+an input is sin2((2q + 1)ΘH), where 0 ≤ΘH ≤π/2 is such that sin2(ΘH) = pH
+1 . Now as long
+as Θ is not too large to begin with (i.e. as long as the Grover search will not ‘overshoot’), pH
+2 is
+approximately a factor q2 larger than pH
+1 . Our goal will be to show that also on average over H,
+10 These additional assumptions on the simulator could be avoided, but they simplify the proof. Further-
+more, for typical Σ-protocols they are satisﬁed. In particular, the simulated transcripts for hard instances
+are accepted by the veriﬁer with high probability. Otherwise, the two polynomial-time algorithms could
+otherwise be used to solve the hard instances, a contradiction.
+11 While (1) follows by inspecting the proof, (2) holds more generically: the dishonest prover attacking
+FS[Σ′] simply runs the prover attacking FS[Σ] but enlarges the output register of the hash queries, with
+the corresponding state being set to be the fully mixed state in each query, and then dismisses these
+additional qubits again.
+13
+
+
+[PÁGINA PDF 14]
+the improvement is at least q2. To this end we deﬁne Hbad := {H : pH
+1 > sin2(
+π
+6q+3)} and Hgood
+its complement. Then,
+E
+H[pH
+2 ] = (1 −α) · E
+H
+
+pH
+2 |H ∈Hgood
+
++ α · E
+H
+
+pH
+2 |H ∈Hbad
+
+≥(1 −α) · E
+H
+
+pH
+2 |H ∈Hgood
+
+where α = PrH[H ∈Hbad] and 1 −α = PrH[H ∈Hgood].
+We ﬁrst compute EHgood
+
+pH
+2
+
+. Let H ∈Hgood. We have (2q + 1)ΘH ≤π
+3 . Since
+d
+dΘ sin(Θ) =
+cos(Θ) ≥1/2 for Θ ∈[0, π
+3 ], and Θ ≥sin(Θ), it follows that
+sin((2q + 1) · ΘH)
+≥
+sin(ΘH) + 2q · ΘH
+2
+≥
+(q + 1) · sin(ΘH).
+Using sin(Θ) ≥0 for Θ ∈[0, π
+3 ], we obtain
+pH
+2 = sin2((2q + 1) · ΘH) ≥(q + 1)2 · sin2(ΘH) = (q + 1)2 · pH
+1 .
+Therefore,
+E
+H[pH
+2 ]
+≥
+E
+H
+
+pH
+2 |H ∈Hgood
+
+· Pr
+H [H ∈Hgood]
+≥
+(q + 1)2 · E
+H
+
+pH
+1 |H ∈Hgood
+
+· Pr
+H [H ∈Hgood]
+≥
+(q + 1)2 ·
+
+E
+H[pH
+1 ] −Pr
+H [H ∈Hbad]
+
+.
+(6)
+Next we bound α = PrH[H ∈Hbad] = PrH[pH
+1 > sin2(
+π
+6q+3)]. Note that for pH
+1 to be large, we
+need that for many ﬁrst messages a, H(a) must be the unique challenge c for which there exist
+an accepting response. For a random H this is unlikely to happen. Formally, we argue as follows,
+using the Chernoﬀbound eventually.
+We ﬁrst deﬁne the following equivalence relation:
+ρ ∼ρ′ iﬀSZK(ρ) = (a, c, z) ∧SZK(ρ′) = (a, c′, z′) for ρ, ρ′ ∈R.
+R/∼then denotes the set of equivalence classes [ρ] = {ρ′ ∈R | ρ ∼ρ′}. By the perfect special
+soundness property and the assumptions on SZK, we have that a determines c (remember that
+x /∈L), and therefore f H is constant on elements within a given equivalence class. Thus, f H :
+R/∼→{0, 1}. For two distinct equivalence classes [ρ]̸ = [ρ′], we have
+Pr
+H [f H([ρ]) = 1 ∧f H([ρ′]) = 1] = Pr
+H [f H([ρ]) = 1] · Pr
+H [f H([ρ′]) = 1] ,
+since H(x||a) is chosen independently for diﬀerent a. Finally, taking XH := P
+[ρ] f H([ρ]) we have
+pH
+1 = Pr
+ρ [f H(ρ) = 1] =
+P
+ρ f(ρ)
+|R|
+=
+P
+[ρ]
+ f H([ρ]) · |[ρ]|
+
+|R|
+≤
+|[ρmax]| · P
+[ρ] f H([ρ])
+|R|
+= XH · 2−γ
+where [ρmax] is the [ρ] that maximizes |[ρ]|. It follows that
+α = Pr
+H [pH
+1 > sin2
+
+π
+6q + 3
+
+]
+≤Pr
+H
+
+XH > sin2
+
+π
+6q + 3
+
+· 2γ
+
+≤Pr
+H
+
+XH > 2γ
+|C| +
+2γ
+(5q)3
+
+where we used sin2(x) > x3 for 0 ≤x ≤0.80 and
+π
+6q+3 >
+1
+5q +
+3q
+1
+|C| for |C| > (5q)3 in the last
+inequality. By deﬁnition of f, for any [ρ] we have PrH [f(ρ) = 1] =
+1
+|C|, hence
+E
+H [X] =
+X
+[ρ]
+E
+H[f H([ρ])] =
+X
+[ρ]
+Pr
+H [f H([ρ]) = 1] = |R/∼|
+|C|
+≥2γ
+|C|.
+14
+
+
+[PÁGINA PDF 15]
+We use the following Chernoﬀbound:
+Pr
+H
+h
+XH > (1 + δ) · E
+H
+
+XHi
+<
+
+eδ
+(1 + δ)1+δ
+EH[XH]
+<
+e1+δ
+δ1+δ
+EH[XH]
+=
+e
+δ
+EH[XH]·(1+δ)
+.
+Setting δ :=
+|C|
+(5q)3 , together with the inequalities derived above this leads to
+α ≤
+e · (5q)3
+|C|
+ 2γ
+|C| +
+2γ
+(5q)3
+< e2 · (5q)6
+|C|2
+<
+1
+|C| · (q2 + 1)
+where we used
+2γ
+(5q)3 > 2 in the second to last, and |C| > (q2 + 1) · e2 · (5q)6 in the last inequality.
+Plugging this bound into Equation 6, we get
+E
+H[pH
+2 ] ≥(q2 + 1) ·
+
+p1 −
+1
+|C| · (q2 + 1)
+
+= q2
+|C| + 1
+|C| −1
+|C| = q2
+|C|.
+Thus, the success probability of our adversary AF S after making q queries to H is at least q2
+|C|.
+⊓⊔
+The tightness of Corollary 13 follows from the above tightness result for the case of Σ-protocols
+in a fairly straightforward manner.
+Theorem 18 For every positive integer n, there exists a (2n+1)-round PCIP Π with soundness
+error ǫ and challenge space C such that |C| ≥1/ǫ and such that there exists a q-query dishonest
+prover A on FS(Π) with success probability n−2nq2nǫ.
+Before proving the theorem, we show how it implies the tightness of Theorem 13.
+Corollary 19 The security loss in the bound in Corollary 13 is optimal, up to a multiplicative
+factor that depends on n only.
+Proof. Let Π be a PCIP as shown to exist in Theorem 18. Let ǫΠ, and ǫFS(Π)(q), be the soundness
+error of Π, and the one of its Fiat Shamir transformation against q-query adversaries, respectively.
+By Theorem 18,
+ǫFS(Π)(q) ≥n−2nq2nǫΠ.
+(7)
+Theorem 13, on the other hand, yields
+ǫΠ ≥
+n!
+(2q + n + 1)2n ǫFS(Π)(q) −n!
+|C|
+(8)
+≥
+n!
+(2q + n + 1)2n ǫFS(Π)(q) −n!ǫΠ,
+(9)
+where we used the condition on the challenge space size from Theorem 18 in the last line. Rear-
+ranging terms we obtain
+ǫFS(Π)(q) ≤(2q + n + 1)2n
+
+1 + 1
+n!
+
+ǫΠ(q)
+(10)
+≤2(n + 3)2q2nǫΠ(q),
+(11)
+where we have used 1 ≤q in the last line. In summary, we have constants c1 = n−2n and c2 =
+2(n + 3)2n such that
+c1q2nǫΠ ≤ǫFS(Π)(q) ≤c2q2nǫΠ.
+(12)
+⊓⊔
+15
+
+
+[PÁGINA PDF 16]
+Proof (of Theorem 18). Let ˆΣ be a Σ-protocol for a language L fulﬁlling the requirements of
+Theorem 16. Let the challenge space be denoted by ˆC. Given an arbitrary positive integer, we
+deﬁne an (2n+1)-round PCIP Π for the same language L by means of n sequential independent
+executions of ˆΣ . Concretely, the 2n+ 1 messages of Π are given in terms of the messages ˆai, ˆci and
+ˆzi of the i-th repetition of ˆΣ as
+a1 = ˆa1
+ci = (ˆci, ri) for i = 1, ..., n
+ai = (ˆai, ˆzi−1) for i = 2, ..., n, and
+z = ˆzn,
+where ri is an independent random string of arbitrary (but ﬁxed) length, which is ignored otherwise
+(in line with Remark 14). The purpose of ri is to make the challenge space C of Π arbitrary large,
+as required. The veriﬁcation procedure of Π simply checks if all the triples (ˆai, ˆci, ˆzi) are accepted
+by ˆΣ. By the special soundness property of ˆΣ, the soundness error of this PCIP is ǫ = | ˆC|−n.
+Using Theorem 16, we can attack the Fiat-Shamir transformation of ˆΣ repeatedly to devise an
+attack agains FS(Π): ﬁrst use Theorem 16 to ﬁnd ˆa1 and ˆz1, then use it again to ﬁnd ˆa2 and ˆz2,
+etc., having the property that with the correctly computed challenges these form valid triples for
+an instance x̸ ∈L. In each invocation of Theorem 16 we use a q′-query attack, which then succeeds
+with probability q′2/| ˆC|. Thus, using in total q = nq′ queries, we succeed in breaking FS[Π] with
+probability q′2n/| ˆC|n = n−2nq2nǫ, as claimed.
+There are two issues we neglected in the above argument. First, we actually employ Theorem 16
+for attacking a variant of ˆΣ that has its challenge enlarged (and thus is not special sound); and,
+second, the challenge ci is computed as
+ci = H(i −1, ..., H(1, H(0, x, ˆa1), ˆa2), ..., ˆai) ,
+which is not a uniformly random function of x and ˆai (but only of ˆai). However, by Remark 17,
+the attack from Theorem 16 still applies.
+⊓⊔
+7
+Applications
+7.1
+Digital signature schemes from multi-round Fiat-Shamir
+One of the prime applications of the Fiat-Shamir transformation is the construction of digital
+signature schemes from interactive identiﬁcation schemes. In this context, multi-round variants have
+also been used. An example where a QROM reduction is especially desirable is MQDSS [CHR+16],
+a candidate digital signature scheme in the ongoing NIST standardization process for post-quantum
+cryptographic schemes [NIS]. This digital signature scheme is constructed by applying the multi-
+round Fiat-Shamir transformation to the 5-round identiﬁcation scheme by Sakumoto, Shirai, and
+Hiwatari [SSH11] based on the hardness of solving systems of multivariate quadratic equations.
+In this section, we present a generic construction of a digital signature scheme based on multi-
+round FS, and give a proof sketch of its strong unforgeability under chosen message attacks. We
+refrain from giving a full, self-contained proof here so as to not distract from our main technical
+result and its implications. Many, though not all, parts of the argument are very similar to the
+ones made elsewhere for the 3-round case.
+The following construction is a straightforward generalization of the original construction of
+Fiat and Shamir.
+Deﬁnition 20 (Fiat-Shamir signatures from a general PCIP) Given an (2n+1)-round pub-
+lic coin identiﬁcation scheme Π = (Gen, P, V) for a witness relation R and a hash function H
+with appropriate domain and range equal to C, we deﬁne the digital signature scheme Sig[Π] =
+(Gen, Sign, Verify) as follows. The key generation algorithm Gen is just the one from Π. The sign-
+ing algorithm Sign, on input a secret key sk and a message m, outputs
+σ = (a1, ..., an, z) ←Signsk(m)
+16
+
+
+[PÁGINA PDF 17]
+where z and ai for i = 1, ..., n are computed using P(pk), and the challenges are computed as
+c1 = H(0, pk, m, a1) and
+ci = H(i −1, ci−1, ai) for i = 2, ..., n .
+The veriﬁcation algorithm Verify, on input a public key pk, a message m and a signature σ =
+(a1, ..., an, z), computes ci as speciﬁed above, outputs ‘accept’ iﬀVpk(a1, c1, ..., an, cn, z) = 1, de-
+noted by Verifypk(m, σ) = 1.
+We note that the above deﬁnition is equivalent to the following, alternative formulation: Let
+Signsk(m) produce σ by running P H
+F S(x||m), and let Verify(m, σ) be equal to the outcome of
+V H
+F S(x||m), where (P H
+F S, V H
+F S) = FS[Π∗] and Π∗= (P∗, V∗) is the identiﬁcation scheme obtained
+from Π by setting P∗(x||m) = P(x) and V∗(x||m) = V(x) for any m. This alternative formulation
+will be convenient in the proof of Theorem 23.
+Remark 21 As in the case of the plain multi-round Fiat-Shamir transformation, one can include
+arbitrary additional strings in the argument when computing the challenges ci. Examples where
+this is done include the MQDSS signature scheme [CHR+16], where the message m and the ﬁrst
+commitment a1 are also included in the argument for computing the second challenge, and Bul-
+letproofs, where the challenges are computed by hashing the entire transcript up to that point
+[BBB+18].
+As an identiﬁcation scheme is an interactive honest-veriﬁer zero knowledge proof of knowledge of
+a secret key, the above signature scheme is a a non-interactive zero knowledge proof of knowledge
+of a secret key according to Corollary 13. For a digital signature scheme, however, the stronger
+security notion of (strong) unforgeability against chosen message ((s)UF-CMA) attacks is required.
+In the following, we give a proof sketch for the fact that the above signature scheme is (s)UF-
+CMA. This fact follows immediately once we have convinced ourselves that a certain result by
+Unruh about the Fiat-Shamir transformation holds for the multi-round case as well: For the Fiat-
+Shamir transformation of Σ-protocols, extractability implies a stronger notion of extractability
+enabling a proof of (s)UF-CMA [Unr17]. Here, we just patch the parts of the proof from [Unr17]
+that make use of the fact that the underlying PCIP has only three rounds.
+For the following we need the notion of a PCIP having computationally unique responses.
+Deﬁnition 22 (Computationally unique responses - PCIP) A (2n + 1)-round PCIP Π =
+(P, V)
+is
+said
+to
+have
+computationally
+unique
+responses
+if
+given
+a
+partial
+transcript
+(x, a1, c1, . . . ai, ci) it is computationally hard to ﬁnd two accepting conversations that both extend
+the partial transcript but diﬀer in (at least) ai+1 (here we consider z to be equal to an+1), i.e. for
+coni = x, a1, c1, . . . ai, ci, a(j)
+i+1, c(j)
+i+1 . . . , a(j)
+n , c(j)
+n , z(j), j = 1, 2 we have that
+Pr [V(con1) = 1 ∧V(con2) = 1 : (con1, con2) ←A]
+is negligible for computationally bounded (quantum) A, where a(1)
+i+1̸ = a(2)
+i+1.
+Equipped with this deﬁnition, we can state the main result of this section.
+Theorem 23 ((s)UF-CMA of multi-round FS signatures) Let Π be a PCIP for some hard
+relation R, which is a quantum proof of knowledge and satisﬁes completeness, HVZK, and has
+unpredictable commitments12 as well as a superpolynomially large challenge space. Then Sig[Π] is
+existentially unforgeable under chosen message attack (UF-CMA). If Π in addition has computa-
+tionally unique responses, Sig[Π] is strongly existentially unforgeable under chosen message attack
+(sUF-CMA).
+In [Unr17] (Theorem 24, and 25, respectively), it is proven that an extractable FS proof system
+(of an HVZK Σ-protocol, and of an HVZK Σ-protocol with computationally unique responses,
+respectively) satisﬁes the stronger notion of (strong) simulation-sound extractability. In addition, it
+12 We take unpredictable commitments for PCIP’s to be exactly the same as for Σ-protocols, with the ﬁrst
+message playing the role of the commitment.
+17
+
+
+[PÁGINA PDF 18]
+is shown that such a FS proof system gives rise to a (s)UF-CMA signature scheme if the underlying
+relation is hard. Corollary 15 implies that FS[Π∗] is indeed extractable if Π is extractable. Below we
+rely on the proof in [Unr17] to argue simulation-sound extractability, only pointing out a particular
+diﬀerence for the multi-round case.
+Proof (sketch). Since Π is a quantum proof of knowledge, so is Π∗. By Corollary 15, FS[Π∗] is a
+quantum proof of knowledge (extractable), and by Theorem 20 in [Unr17] (which easily generalizes
+to the multi-round setting), completeness, unpredictable commitments13 and HVZK of Π∗together
+imply ZK for FS[Π∗]. For the proof that FS[Π∗] is also simulation-sound extractable, we refer to
+the proof of Theorem 24 in [Unr17], noting only that in the hop from Game 1 to Game 2 we
+have to adjust the argument as follows: Let SZK be the zero-knowledge simulator that runs the
+HVZK simulator from Π∗and reprograms the oracle as necessary. We write Hf for the oracle
+H after it has been reprogrammed by SZK, at the end of the run of A. We have to show that
+V Hf
+F S (x, a1, . . . , an, z) = 1 implies V H
+F S(x, a1, . . . , an, z) = 1, where (x, a1, . . . , an, z) is the ﬁnal
+output of A. Suppose the implication does not hold. Then either (i)
+Hf(0, x, a1)̸ = H(0, x, a1)
+or (ii) Hf(i −1, ci−1, ai)̸ = H(i −1, c′
+i−1, ai) for some i, where ci−1 is the (i−1)-st challenge as
+recomputed by V Hf
+F S and c′
+i−1 is the one computed by V H
+F S. In case (i) holds, A has queried x and
+the corresponding forged proof that was output by SZK starts with a1. In case (ii), assume that
+Hf(j −1, cj−1, aj) = H(j −1, cj−1, aj) for all j < i, so that ci−1 = c′
+i−1. Then,
+Hf(i −1, ..., H(1, H(0, x, a1), a2), ..., ai)̸ = H(i −1, ..., H(1, H(0, x, a1), a2), ..., ai)
+which means that A either queried x and the corresponding forged proof that was output by SZK
+starts with a1, or else A has queried some x′ such that
+H(i −2, . . . , H(1, H(0, x′, a′
+1), a′
+2), . . . a′
+i−1)
+= H(i −2, . . . , H(1, H(0, x, a1), a2), . . . , ai−1)
+and ai = a′
+i, where (a′
+1, . . . , a′
+i) is part of the SZK proof resulting from the query x′. By the fact
+that H is a random oracle, it is infeasible for A to ﬁnd such an x′.
+In the context of weak simulation-sound extractability, the fact that A has queried x is enough to
+derive a contradiction. For the strong variant, we now have that SZK has output (x, a1, a′
+2, . . . , a′
+n,
+z′) such that
+V(x, a1, Hf(0, x, a1), a′
+2, c′
+2 . . . , a′
+n, c′
+n, z′) = 1
+and A has output (x, a1, a2, . . . , an, z) such that
+V(x, a1, Hf(0, x, a1), a2, c2, . . . , an, cn, z) = 1
+(and A knows both since it interacted with SZK). By the computationally unique responses prop-
+erty of Π, it must be that a2 = a′
+2. But then it follows that
+c2 = Hf(1, Hf(0, x, a1), a2) = Hf(1, Hf(0, x, a1), a′
+2) = c′
+2
+(remember that both proofs are accepting with respect to Hf) which in turn implies that a3 = a′
+3,
+etc. Thus, we obtain that A has output a proof that was produced by SZK, yielding a contradiction.
+We conclude that
+V Hf
+F S (x, a1, . . . , an, z) = 1 implies V H
+F S(x, a1, . . . , an, z) = 1
+except with negligible probability.
+In the rest of the proof of Theorems 24 and 25 in [Unr17], no properties speciﬁc to a three-
+round scheme are used, and so the results extend to the PCIP context, that is, FS[Π∗] is (strongly)
+simulation-sound extractable. Now applying Theorem 31 from [Unr17], we obtain that Sig[Π] is
+(s)UF-CMA.
+⊓⊔
+13 This property is required to have suﬃcient entropy on the inputs to the oracle that are reprogrammed
+by the zero-knowledge simulator SZK. While SZK may reprogram the oracle on inputs (i −1, ci−1, ai)
+for i > 1, it is enough to require the ﬁrst message a1 to have suﬃcient entropy, since with ci−1, these
+later inputs all include a uniformly random element from the superpolynomially large challenge space.
+18
+
+
+[PÁGINA PDF 19]
+Together with the fact that commit-and-open PCIPs can easily be made quantum extractable
+in the right sense by using standard hash-based commitments based on a collapsing hash function,
+we obtain the security of the MQDSS signature scheme. Recall that the standard hash-based
+commitment scheme works as follows. On input s, the commitment algorithm samples a random
+opening string u and outputs it together with the commitment c = H(s, u). Opening just works
+by recomputing the hash and comparing it with c . Note that, while this commitment scheme is
+collapse-binding [Unr16], we need the stronger property of collapsingness of the function deﬁned by
+the commitment algorithm that, on input a string and some randomness, outputs a commitment
+(collapse-binding only requires the collapsingness with respect to the committed string, not the
+opening information).
+Corollary 24 (sUF-CMA of MQDSS) Let ΠSSH be the 5-round identiﬁcation scheme from
+[SSH11] repeated in parallel a suitable number of times and instantiated with the standard hash-
+based commitment scheme using a collapsing hash function. Then the Fiat-Shamir signature scheme
+constructed from ΠSSH is sUF-CMA.
+Proof (sketch). In ΠSSH, the honest prover’s ﬁrst message consists of two commitments, and the
+second and ﬁnal messages contain functions of the strings committed to in the ﬁrst message. This
+structure, together with the computational binding property (implied by the collapse binding prop-
+erty) of the commitments, immediately implies that ΠSSH has computationally unique responses.
+According to Corollary 30 in the appendix, ΠSSH is a quantum proof of knowledge. It also has
+HVZK according to [SSH11]. Finally, the ﬁrst message of ΠSSH is clearly unpredictable. An appli-
+cation of Theorem 23 ﬁnishes the proof.
+⊓⊔
+7.2
+Sequential Or Proofs
+A second application of our multi-input version of the measure-and-reprogram result is to the OR-
+proof as introduced by Liu, Wei and Wong [LWW04] and further analyzed by Fischlin, Harasser
+and Janson [?]. This is an alternative (non-interactive) proof for proving existence/knowledge of
+(at least) one of two witnesses without revealing which one, compared to the well known technique
+by Cramer, Damgård and Schoenmakers [CDS94].
+Formally, given two Σ-protocols Σ0, and Σ1, for languages L0, and L1, respectively, [LWW04]
+proposes as a non-interactive proof for the OR-language L∨= {(x0, x1) : x0 ∈L0 ∨x1 ∈L1} a
+quadruple π∨= (a0, a1, z0, z1) such that
+V H
+∨(x0, x1, π∨):=
+
+V0
+ x0, a0, H(1, x0, x1, a1), z0
+
+∧V1
+ x1, a1, H(0, x0, x1, a0), z1
+
+is satisﬁed. Fischlin et al. call this construction sequential OR proof. We emphasize that the two
+challenges c0 and c1 are computed “over cross”, i.e., the challence c0 for the execution of Σ0 is
+computed by hashing a1, and vice versa. It is straightforward to verify that if Σ0 and Σ1 are
+special honest-veriﬁer zero-knowledge, meaning that for any challenge c and response z one can
+eﬃciently compute a ﬁrst message a such that (a, c, z) is accepted, then it is suﬃcient to be
+able to succeed in one of the two interactive protocols Σ0 and Σ1 in order to honestly produce
+such an OR-proof π∨. Thus, depending on the context, it is suﬃcient that one instance is in the
+corresponding language, or that the prover knows one of the two witnesses, to produce π∨. Indeed,
+if, say, x0 ∈L0 (and a witness w0 is available), then π∨can be produced as follows. Prepare a0
+according to Σ0, compute c1 := H(0, x0, x1, a0) and simulate z1 and a1 using the special honest-
+veriﬁer zero-knowledge property of Σ1 so that V1(x1, a1, c1, z1) is satisﬁed, and then compute the
+response z0 for the challenge c0 := H(1, x0, x1, a1) according to Σ0.
+On the other hand, intuitively one expects that one of the two instances must be true in order
+to be able to successfully produce a proof. Indeed, [LWW04] shows security of the sequential OR
+in the (classical) ROM. [?] go a step further and show security in the (classical) non-programmable
+ROM. Here we show that our multi-input version of the measure-and-reprogram result (as a matter
+of fact the 2-input version) implies security in the QROM.
+Theorem 25 There exists a black-box quantum polynomial-time interactive algorithm ˆP, which
+ﬁrst outputs a bit b and two instances x0, x1, and in a second stage acts as an interactive prover
+19
+
+
+[PÁGINA PDF 20]
+that runs Σb on instance xb, such that for any adversary A making q queries to a uniformly random
+function H and for any x◦
+0, x◦
+1:
+Pr
+
+x0 = x◦
+0 ∧x1 = x◦
+1 ∧vb = accept : (b, x0, x1, vb) ←⟨ˆPA, Vb⟩
+
+≥
+1
+(2q + 1)4 Pr
+H
+
+x0 = x◦
+0 ∧x1 = x◦
+1 ∧V H
+∨(x0, x1, π∨) : (x0, x1, π∨) ←AH
+.
+As explained above, the execution (b, x0, x1, vb) ←⟨ˆPA, Vb⟩should be understood in that ˆPA ﬁrst
+outputs x0, x1 and b, and then it engages with Vb to execute Σb on instance xb. Thus, the statement
+ensures that if AH succeeds to produce a convincing proof π∨then ˆPA succeeds to convincingly
+run Σ0 or Σ1 (with similar success probability), where it is up to ˆPA to choose which one it wants
+to do.
+Of course, the statement translates to the static setting where the two instances x0 and x1 are
+ﬁxed and not produced by the dishonest prover.
+Proof. The algorithm A ﬁts well into the statement of Theorem 6 with the two extractable inputs
+˜x0 = (0, x0, x1, a0) and ˜x1 = (1, x0, x1, a1). Thus, we can consider the 3-stage algorithm S ensured
+by Theorem 6, which behaves as follows with at least the probability given by the right hand
+side of the claimed inequality. In the ﬁrst stage, it outputs a permutation on the set {0, 1}, which
+we represent by a bit b ∈{0, 1} with b = 0 corresponding to the identity permutation, as well
+as ˜xb = (b, x0, x1, ab). On input a random Θb = c1−b (“locally” chosen by ˆP), S then outputs
+˜x1−b = (1 −b, x0, x1, a1−b). Finally, on input a random Θ1−b = cb (provided by Vb as the challenge
+upon the ﬁrst message ab), S outputs z0, z1 so that V∨is satisﬁed with the challenges cb and
+c1−b, and thus in particular Vb
+ xb, ab, cb, zb
+
+is satisﬁed. This directly shows the existence of ˆP as
+claimed.
+⊓⊔
+8
+Acknowledgement
+We thank Dominque Unruh for hinting towards the possibility of the improved Theorem 2 (com-
+pared to [DFMS19]), see also Footnote 8, and Andreas Hülsing for helpful discussions. CM was
+funded by a NWO VENI grant (Project No. VI.Veni.192.159). SF was partly supported by the EU
+Horizon 2020 Research and Innovation Program Grant 780701 (PROMETHEUS). JD was funded
+by ERC-ADG project 740972 (ALGSTRONGCRYPTO).
+References
+BBB+18. B. Bünz, J. Bootle, D. Boneh, A. Poelstra, P. Wuille, and G. Maxwell. Bulletproofs: Short proofs
+for conﬁdential transactions and more. In 2018 IEEE Symposium on Security and Privacy (SP),
+pages 315–334, May 2018.
+BBHT98. Michel Boyer, Gilles Brassard, Peter Høyer, and Alain Tapp. Tight bounds on quantum search-
+ing. Fortschritte der Physik, 46(4-5):493–505, 1998.
+Boo.
+Jonathant
+Bootle.
+Recursive
+techniques
+for
+lattice-based
+zero-knowledge.
+https://www.youtube.com/watch?v=NEayIq_k4ks. Accessed: 06.02.2020.
+CDS94.
+Ronald Cramer, Ivan Damgård, and Berry Schoenmakers.
+Proofs of partial knowledge and
+simpliﬁed design of witness hiding protocols. In Yvo G. Desmedt, editor, Advances in Cryptology
+— CRYPTO ’94, pages 174–187, Berlin, Heidelberg, 1994. Springer Berlin Heidelberg.
+CHR+16. Ming-Shing Chen, Andreas Hülsing, Joost Rijneveld, Simona Samardjiska, and Peter Schwabe.
+From 5-pass mq-based identiﬁcation to mq-based signatures. In Jung Hee Cheon and Tsuyoshi
+Takagi, editors, Advances in Cryptology – ASIACRYPT 2016, pages 135–165, Berlin, Heidelberg,
+2016. Springer Berlin Heidelberg.
+CHR+18. Ming-Shing Chen, Andreas Hülsing, Joost Rijneveld, Simona Samardjiska, and Peter Schwabe.
+Soﬁa: Mq-based signatures in the qrom. In Michel Abdalla and Ricardo Dahab, editors, Public-
+Key Cryptography – PKC 2018, pages 3–33, Cham, 2018. Springer International Publishing.
+DFG13.
+Özgür Dagdelen, Marc Fischlin, and Tommaso Gagliardoni. The Fiat-Shamir transformation
+in a quantum world.
+In Kazue Sako and Palash Sarkar, editors, Advances in Cryptology -
+ASIACRYPT 2013, pages 62–81, Berlin, Heidelberg, 2013. Springer.
+20
+
+
+[PÁGINA PDF 21]
+DFMS19. Jelle Don, Serge Fehr, Christian Majenz, and Christian Schaﬀner. Security of the Fiat-Shamir
+transformation in the quantum random-oracle model.
+In Alexandra Boldyreva and Daniele
+Micciancio, editors, Advances in Cryptology – CRYPTO 2019, pages 356–383, Cham, 2019.
+Springer International Publishing.
+FHJ20.
+Marc Fischlin, Patrick Harasser, and Christian Janson. Signatures from sequential-or proofs. In
+Anne Canteaut and Yuval Ishai, editors, Advances in Cryptology - EUROCRYPT 2020, volume
+12107 of Lecture Notes in Computer Science, pages 212–244. Springer, 2020.
+KLS18.
+Eike Kiltz, Vadim Lyubashevsky, and Christian Schaﬀner. A concrete treatment of Fiat-Shamir
+signatures in the quantum random-oracle model. In Jesper Buus Nielsen and Vincent Rijmen,
+editors, Advances in Cryptology – EUROCRYPT 2018, pages 552–586, Cham, 2018. Springer.
+LWW04.
+Joseph K. Liu, Victor K. Wei, and Duncan S. Wong. Linkable spontaneous anonymous group
+signature for ad hoc groups.
+In Huaxiong Wang, Josef Pieprzyk, and Vijay Varadharajan,
+editors, Information Security and Privacy, pages 325–335, Berlin, Heidelberg, 2004. Springer
+Berlin Heidelberg.
+LZ19.
+Qipeng Liu and Mark Zhandry. On ﬁnding quantum multi-collisions. In Yuval Ishai and Vincent
+Rijmen, editors, Advances in Cryptology – EUROCRYPT 2019, pages 189–218, Cham, 2019.
+Springer International Publishing.
+NIS.
+Nist post-quantum cryptography standardization. https://csrc.nist.gov/projects/post-quantum-cryptography/
+SSH11.
+Koichi Sakumoto, Taizo Shirai, and Harunaga Hiwatari. Public-key identiﬁcation schemes based
+on multivariate quadratic polynomials. In Phillip Rogaway, editor, Advances in Cryptology –
+CRYPTO 2011, pages 706–723, Berlin, Heidelberg, 2011. Springer Berlin Heidelberg.
+Unr12.
+Dominique Unruh. Quantum proofs of knowledge. In David Pointcheval and Thomas Johansson,
+editors, Advances in Cryptology – EUROCRYPT 2012, pages 135–152, Berlin, Heidelberg, 2012.
+Springer.
+Unr15.
+Dominique Unruh. Non-interactive zero-knowledge proofs in the quantum random oracle model.
+In Elisabeth Oswald and Marc Fischlin, editors, Advances in Cryptology - EUROCRYPT 2015,
+pages 755–784, Berlin, Heidelberg, 2015. Springer.
+Unr16.
+Dominique Unruh.
+Computationally binding quantum commitments.
+In Marc Fischlin and
+Jean-Sébastien Coron, editors, Advances in Cryptology – EUROCRYPT 2016, pages 497–527,
+Berlin, Heidelberg, 2016. Springer.
+Unr17.
+Dominique Unruh. Post-quantum security of Fiat-Shamir. In Tsuyoshi Takagi and Thomas
+Peyrin, editors, Advances in Cryptology – ASIACRYPT 2017, pages 65–95, Cham, 2017.
+Springer.
+Zha12.
+Mark Zhandry.
+How to construct quantum random functions.
+In 2012 IEEE 53rd Annual
+Symposium on Foundations of Computer Science, pages 679–687. IEEE, oct 2012.
+A
+Quantum extractability of q2 identiﬁcation schemes
+A class of identiﬁcation schemes that is of particular interest are so-called q2-identiﬁcation schemes.
+The NIST candidate signature scheme MQDSS, for example, is obtained from such an identiﬁcation
+scheme via the multi-round Fiat-Shamir transformation from Deﬁnition 20 (with some additional
+strings included in the hash arguments). In this section, we will prove that a PCIP with a so-called
+“q2 extractor” [CHR+16, Deﬁnition 4.6] is a quantum proof of knowledge if it has an additional
+collapsingness property. This is necessary for its Fiat-Shamir transformation to fulﬁll (s)UF-CMA
+in the QROM (for (s)UF-CMA in the ROM, the q2-extractor alone is suﬃcient [CHR+16]).
+We begin by deﬁning q2 identiﬁcation schemes and their extractors.
+Deﬁnition 26 A 5-round identiﬁcation scheme is a q2 identiﬁcation scheme, if the second chal-
+lenge is a single bit. A q2 identiﬁcation scheme is called q2-extractable if there exists a polynomial-
+time algorithm that, on input four transcripts t(i) = (a(i)
+1 , c(i)
+1 , a(i)
+2 , c(i)
+2 , z(i)), i = 1, 2, 3, 4, such
+that
+c(1)
+1
+= c(2)
+1̸
+= c(3)
+1
+= c(4)
+1
+and
+c(1)
+2
+= c(3)
+3̸
+= c(2)
+2
+= c(4)
+2 ,
+(13)
+outputs the secret key with non-negligible probability.
+For ease of exposition we have assumed that the diﬀerent challenges of a single PCIP come all from
+the same challenge space. A q2 identiﬁcation scheme can be brought into this form by having the
+prover compute the second challenge by selecting the ﬁrst bit of an augmented second challenge
+21
+
+
+[PÁGINA PDF 22]
+that is as large as the ﬁrst one. For classical provers, four transcripts as required by the above
+deﬁnition can be obtained by straightforward rewinding. In the following, we show that, if the q2
+identiﬁcation scheme has an additional property similar to the quantum-computationally unique
+responses property introduced in [DFMS19, LZ19], then the existence of a q2 extractor implies
+that there exists a quantum extractor. This makes the scheme a quantum proof of knowledge.
+The argument follows the same lines as the one given in [DFMS19] to prove that t-soundness
+and quantum-computationally unique responses imply the quantum proof-of-knowledge-property,
+which in turn is an extension of the result by Unruh for Σ-protocols with perfect unique responses
+[Unr12].
+Recall the deﬁnition of a collapsing relation, [DFMS19, Deﬁnition 23], a generalization of the
+notion of a collapsing hash function [Unr16]. We deﬁne the notion of collapsingness for interactive
+proof systems as follows:
+Deﬁnition 27 A (2n + 1)-round interactive proof system Π is called collapsing, if the relation
+RΠ : X × Y →{0, 1} with X = Cn × A1 and Y = A2 × ... × An × Z given by the veriﬁcation
+predicate VΠ of Π is collapsing from X to Y.
+Note that for n = 1, this notion of collapsingness coincides with the notion of quantum-computa-
+tionally unique responses from [DFMS19].
+Given a q2-identiﬁcation scheme Π, consider the following straightforward (ﬁrst stage of a)
+quantum extractor EA
+Π . The extractor runs the prover A using honestly sampled challenges to
+obtain a ﬁrst transcript t(1). Now it rewinds three times and reruns A, each time with a fresh
+pair of challenges, chosen such as to obtain t(i), i = 2, 3, 4 such that the four transcripts fulﬁll the
+conditions (13). For this extractor, we obtain the following
+Theorem 28 Let Π a q2-extractable q2-identiﬁcation scheme that is also collapsing. Then the
+success probability of the extractor EA
+Π is lower-bounded in terms of the success probability of the
+prover A as
+Pr[EA
+Π extracts] ≥
+ Pr
+
+v = accept : (x, v) ←⟨A, VΠ⟩
+7
+(14)
+The proof of this theorem is essentially the same as for Theorem 25 in [DFMS19], which is a
+slight modiﬁcation of an argument from [Unr12].
+As a corollary, we obtain the fact that for q2 identiﬁcation schemes, q2-extractability and
+collapsingness imply the quantum proof of knowledge property as deﬁned in [Unr12].
+Corollary 29 Let Π a q2-extractable q2-identiﬁcation scheme that is also collapsing. Then it is a
+quantum proof of knowledge.
+In particular, the 5-round identiﬁcation scheme ΠSSH from [SSH11] which is used to construct
+the post-quantum digital signature scheme MQDSS has these properties under plausible assump-
+tions, namely that it is instantiated with the standard hash-based commitment scheme using a
+collapsing hash function [Unr16] (see discussion towards the end of Section 7.1). For MQDSS, this
+is no additional assumption, as the Fiat-Shamir transformation uses the QROM anyway, and a
+quantum accessible random oracle is collapsing by [Unr16].
+Corollary 30 If the 5-round identiﬁcation scheme from [SSH11] is instantiated with the stan-
+dard hash-based commitment scheme using a collapsing hash function, it is a quantum proof of
+knowledge.
+Proof (sketch). According to [CHR+16], ΠSSH is a q2-extractable q2 identiﬁcation scheme. In ΠSSH,
+the honest prover’s ﬁrst message consists of two commitments, and the second and ﬁnal messages
+contain functions of the strings commited to in the ﬁrst message, and some opening information,
+respectively. Measuring a function of a register is equivalent to a partial computational basis
+measurement of that register. According to the the collapsing property of the hash function, no
+eﬃcient algorithm can distinguish whether the the committed string and the opening information
+are measured or not. This clearly implies the same indistinguishability for partial measurements
+of the string register, which implies that ΠSSH is collapsing.
+⊓⊔
+Note that the above proof works for any multi-round PCIP that has a similar commit-and-open
+structure.
+22

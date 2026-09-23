@@ -1,0 +1,3604 @@
+
+[PÁGINA PDF 1]
+Succinct Arguments in the Quantum Random Oracle Model
+Alessandro Chiesa
+alexch@berkeley.edu
+UC Berkeley
+Peter Manohar
+pmanohar@cs.cmu.edu
+Carnegie Mellon University
+Nicholas Spooner
+nick.spooner@berkeley.edu
+UC Berkeley
+January 14, 2020
+Abstract
+Succinct non-interactive arguments (SNARGs) are highly eﬃcient certiﬁcates of membership
+in non-deterministic languages.
+Constructions of SNARGs in the random oracle model are
+widely believed to be post-quantum secure, provided the oracle is instantiated with a suitable
+post-quantum hash function. No formal evidence, however, supports this belief.
+In this work we provide the ﬁrst such evidence by proving that the SNARG construction of
+Micali is unconditionally secure in the quantum random oracle model. We also prove that, anal-
+ogously to the classical case, the SNARG inherits the zero knowledge and proof of knowledge
+properties of the PCP underlying the Micali construction. We thus obtain the ﬁrst zero knowl-
+edge SNARG of knowledge (zkSNARK) that is secure in the quantum random oracle model.
+Our main tool is a new lifting lemma that shows how, for a rich class of oracle games, we can
+generically deduce security against quantum attackers by bounding a natural classical property
+of these games. This means that in order to prove our theorem we only need to establish classical
+properties about the Micali construction. This approach not only lets us prove post-quantum
+security but also enables us to prove explicit bounds that are tight up to small factors.
+We additionally use our techniques to prove that SNARGs based on interactive oracle proofs
+(IOPs) with round-by-round soundness are unconditionally secure in the quantum random oracle
+model. This result establishes the post-quantum security of many SNARGs of practical interest.
+Keywords: succinct arguments; quantum random oracle model; probabilistically checkable proofs
+
+
+[PÁGINA PDF 2]
+Contents
+1
+Introduction
+1
+1.1
+SNARGs with random oracles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1
+1.2
+Our results
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2
+1.3
+Related work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+2
+Techniques
+5
+2.1
+The construction of Micali . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+2.2
+Challenges in the quantum setting
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+2.3
+Outline of our approach . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+2.4
+From oracle games to database games
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+2.5
+A basic lifting lemma for database games
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+2.6
+Stronger lifting via conditional instability
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+10
+2.7
+Instability of the Micali oracle game
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+2.8
+zkSNARKs in the QROM . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+2.9
+The BCS construction: succinct arguments beyond Micali . . . . . . . . . . . . . . . . . . . .
+12
+3
+Preliminaries
+14
+3.1
+Quantum notation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14
+3.2
+Oracle algorithms . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+14
+3.3
+Non-interactive arguments in the quantum random oracle model
+. . . . . . . . . . . . . . . .
+15
+3.4
+Probabilistically checkable proofs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15
+3.5
+Databases . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+3.6
+Compressed phase oracle . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+4
+From oracle games to database games
+18
+4.1
+The case of classical adversaries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+18
+4.2
+The case of quantum adversaries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+19
+5
+A lifting lemma for database games
+21
+5.1
+Database properties and the basic lifting lemma . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+5.2
+Conditional instability and the lifting lemma
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+23
+5.3
+Proof of Lemma 5.10 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+25
+6
+Soundness of the Micali construction
+30
+6.1
+Some algorithms for Merkle trees . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+30
+6.2
+The oracle game for the Micali construction . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+31
+6.3
+Proof of Theorem 6.1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+32
+7
+zkSNARKs in the QROM
+35
+7.1
+Zero knowledge . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+35
+7.2
+Proof of knowledge . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+36
+8
+The BCS construction in the QROM
+38
+8.1
+Interactive oracle proofs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+38
+8.2
+The BCS construction and its oracle game . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+38
+8.3
+Round-by-round soundness and knowledge . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+39
+8.4
+Our result . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+40
+8.5
+Proof of Theorem 8.6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+40
+8.6
+On the diﬀerence in hash chains . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+45
+A Proof of Lemma 3.2
+47
+B Round-by-round vs. strong round-by-round soundness
+An appendix authored by James Hulett (jhulett@berkeley.edu)
+48
+Acknowledgments
+51
+References
+51
+
+
+[PÁGINA PDF 3]
+1
+Introduction
+The design and analysis of cryptographic primitives that are plausibly secure against quantum
+attackers is an increasingly important goal. The expected advent of quantum computers demands
+the cryptography community to be prepared well in advance, so much so that the National Institute
+of Standards and Technology (NIST) is already in the process of selecting, from among many
+proposals, a new set of cryptography standards that are “post-quantum” [NIS16]. The proposals
+involve schemes for key agreement, public-key encryption, and digital signatures, and are intended
+to eventually replace existing standards based on the hardness of factoring or discrete logarithms.
+In this paper we study the post-quantum security of a cryptographic primitive that has recently
+received much attention across theoretical and applied communities: succinct arguments [GW11].
+These are argument systems for non-deterministic languages where the communication complexity
+between the prover and veriﬁer is sublinear in the size of the non-deterministic witness.1
+This
+notion originates in seminal works of Kilian [Kil92] and Micali [Mic00], which construct succinct
+arguments for languages in NTIME(T(n)) where communication complexity is poly(λ, log T(n)) and
+the time complexity of the veriﬁer is poly(λ, n, log T(n)); here λ is the security parameter.
+Researchers have studied many aspects of succinct arguments in the last two decades, leading to
+numerous constructions with diﬀerent tradeoﬀs [WB15], eﬃcient realizations in code [SCI14; bell15;
+SCI18; dalek18; stark18; SCI19; iden19], real-world deployments [Zc14; Co17], and standardization
+eﬀorts [ZKP17]. A particularly useful feature is that many succinct arguments can be made zero
+knowledge with minimal overhead. At present, however, most approaches to obtain eﬃcient succinct
+arguments are “pre-quantum”, since they rely on the discrete logarithm problem (and more).
+A notable exception is a class of succinct arguments obtained by combining two ingredients:
+(a) probabilistic proof systems, which are unconditionally secure, and (b) cryptographic hash func-
+tions, for which we have post-quantum candidates. This class includes the succinct interactive ar-
+gument of Kilian [Kil92], which use probabilistically checkable proofs (PCPs) [BFLS91; FGLSS96;
+AS98; ALMSS98] and collision-resistant hash functions. It also includes the succinct non-interactive
+argument (SNARG) of Micali [Mic00], which uses PCPs and random oracles. More generally, by us-
+ing random oracles one can construct a SNARG from a multi-round generalization of PCPs known
+as interactive oracle proofs (IOPs) [BCS16; RRR16]. All of these succinct arguments are widely
+believed to be post-quantum, provided the hash function is suitably instantiated [BBHR19].2
+There is, however, no formal evidence that supports the above widely-held belief. Since suc-
+cinct arguments are a fundamental cryptographic primitive with both theoretical and real-world
+applications, it is important to prove guarantees on their post-quantum security.
+1.1
+SNARGs with random oracles
+In this paper we focus our attention on the SNARG construction of Micali [Mic00], which is uncon-
+ditionally secure in the random oracle model [BR93; PS96]. SNARGs in the random oracle model
+are not only plausibly post-quantum secure but also enjoy other desirable features. Namely, the
+random oracle can be heuristically instantiated via hash functions that avoid expensive public-key
+cryptographic operations. Moreover, the SNARG uses a transparent (public-coin) setup, because
+the only public parameter needed to produce/verify proofs is the choice of hash function.
+1Achieving communication complexity that is sublinear in the witness size is known to require relaxing soundness
+from statistical to computational, provided one assumes standard complexity conjectures [GH98; GVW02].
+2There is also a class of lattice-based succinct arguments that is plausibly post-quantum; see Section 1.3.
+1
+
+
+[PÁGINA PDF 4]
+We are thus interested in asking: can we establish formal evidence that the SNARG construction
+of Micali is post-quantum secure? One way to establish formal evidence is to prove security in a
+quantum analogue of the random oracle model, as we now explain.
+A quantum attacker can,
+among other things, evaluate a hash function in superposition when given the hash function’s
+code.
+This enables the attacker, for instance, to ﬁnd pre-images [Gro96] or collisions [BHT98]
+faster than a classical attacker. In light of this, Boneh et al. [BDFLSZ11] have argued that, in
+the quantum setting, the correct way to model a random oracle is to allow the attacker to query
+the random oracle in superposition. The resulting model is known as the quantum random oracle
+model (QROM), and a line of work has established post-quantum security within this model for a
+variety of cryptographic primitives; see, e.g., [BDFLSZ11; Zha12; Zha15; TU16; Eat17].
+Our goal is to study the SNARG construction of Micali in the quantum random oracle model.
+We also study the SNARG construction of BCS [BCS16], which yields SNARGs of practical interest.
+1.2
+Our results
+The main result of this paper is establishing that the SNARG construction of Micali [Mic00] is
+unconditionally secure in the quantum random oracle model. This is the ﬁrst formal evidence that
+supports the widely-held belief that this construction is post-quantum secure when the oracle is
+instantiated via a suitable post-quantum hash function.
+Theorem 1 (informal). The non-interactive argument of Micali, when based on a PCP with sound-
+ness error ϵ, has soundness error O(t2ϵ + t3/2λ) against quantum attackers that make t queries to
+a random oracle with output size λ. This soundness error is tight up to small factors.
+A key step in our proof, of independent interest, is a Lifting Lemma that shows how, for a rich
+class of “oracle games”, we can generically deduce security against quantum attackers by bounding
+a natural classical property of these games, instability, that we introduce. This means that to prove
+Theorem 1 we only need to bound the instability of the Micali construction. This approach not only
+yields the theorem but also enables us to prove explicit bounds that are tight up to small factors.
+If we base the Micali construction on suitable PCPs, we obtain new statements about the
+existence of post-quantum non-interactive arguments. First, if the PCP achieves (honest-veriﬁer)
+zero knowledge and proof of knowledge then through the Micali construction we obtain a zero
+knowledge non-interactive argument of knowledge that is unconditionally secure in the quantum
+random oracle model. This strengthens a result of Unruh [Unr15], which assumes the existence of
+a post-quantum Σ-protocol for NP. Moreover, if the PCP has polylogarithmic query complexity
+and veriﬁer running time then we obtain the ﬁrst construction of a zero knowledge succinct non-
+interactive argument of knowledge (zkSNARK) that is secure in the quantum random oracle model.
+Theorem 2 (informal). There exists a zero knowledge non-interactive argument of knowledge for
+NP in the quantum random oracle model. Moreover, the non-interactive argument is succinct, in
+the sense that arguments have size λc and can be veriﬁed in time (λ · n)c, where λ is the random
+oracle’s security parameter, n is instance size, and c ≥1 is a universal constant.
+The above theorem is stated for NP only for simplicity. Analogously to the classical case, a
+more general statement holds for all non-deterministic time languages by relying on suitable PCPs
+for non-deterministic time. For example, the PCP in [BFLS91] achieves proof of knowledge, can be
+made (honest-veriﬁer) zero knowledge [DFKNS92; KPT97], and supports general non-deterministic
+time computations.
+2
+
+
+[PÁGINA PDF 5]
+The BCS construction.
+We conclude with a result that demonstrates how the tools in this
+paper can be used to study the post-quantum security of protocols that are of practical interest.
+Since known PCP constructions are expensive, eﬃcient constructions of succinct arguments in
+the random oracle model are typically based on the BCS construction [BCS16], which instead uses
+interactive oracle proofs (IOPs) [BCS16; RRR16], a multi-round extension of PCPs. This extension
+additionally captures IPs [Bab85; GMR89] and IPCPs [KR08] as special cases.
+We prove that the BCS construction is unconditionally secure in the quantum random oracle
+model, if applied to public-coin IOPs that have round-by-round soundness [CCHLRR18].
+The
+resulting argument inherits proof of knowledge and zero knowledge properties of the underlying
+IOP.
+Theorem 3 (informal). The non-interactive argument of BCS, when based on a public-coin IOP
+with round-by-round soundness error ϵ, has soundness error O(t2ϵ + t3/2λ) against quantum at-
+tackers that make t queries to a random oracle with output size λ. Moreover, it is an argument of
+knowledge if the IOP has round-by-round proof of knowledge, and it is a (statistical) zero knowledge
+argument if the IOP is honest-veriﬁer zero knowledge.
+Round-by-round proof of knowledge is a natural notion that we introduce, analogous to round-
+by-round soundness, and is satisﬁed by many natural protocols. In particular, Theorem 3 enables
+us to deduce the post-quantum security of succinct arguments based on well-known IPs such as
+the sumcheck protocol [LFKN92] and the GKR protocol [GKR15], as well as zkSNARKs based
+on recent IOPs such as [BBHR19; AHIV17; BCRSVW19]. These protocols (among others) are of
+interest to practitioners, and our result can be used to guide parameter choices in practice.
+1.3
+Related work
+Argument systems that use random oracles. Several works study the post-quantum security
+of zero knowledge non-interactive arguments of knowledge that use random oracles, most notably
+those obtained by applying the Fiat–Shamir transformation [FS86] to a post-quantum Σ-protocol.
+These are used to achieve post-quantum digital signatures [CDGORRSZ17; KKW18; BN19], and
+underlie constructions submitted to the NIST call for post-quantum cryptography [NIS16].
+A security reduction for the Fiat–Shamir transformation in the quantum random oracle model
+has been recently achieved [DFMS19; LZ19]. Obtaining a security reduction had been elusive, as
+the classical approach of rewinding the adversary to reduce to special soundness of the Σ-protocol
+does not work for quantum adversaries.3 Before, researchers were only able to prove security if the
+underlying Σ-protocol satisﬁes special properties [DFG13; Unr17; KLS18], or resorted to proving
+security for alternative, less eﬃcient, constructions such as the Unruh transformation [Unr15].
+The question that we study in this paper is complementary to these prior works. On the one
+hand, prior works study the security of the Fiat–Shamir transformation given that the underlying
+Σ-protocol is secure against eﬃcient quantum attackers. On the other hand, we study protocols
+such as the Micali construction and BCS construction that can be viewed as applying the Fiat–
+Shamir transformation to speciﬁc public-coin protocols that are known to be unconditionally secure
+in the (classical) random oracle model. In particular, we establish unconditional security in the
+3Rewinding quantum adversaries is a delicate matter [Wat09] and, more importantly, special soundness does not
+imply post-quantum soundness (relative to some oracle) [ARU14]. These diﬃculties have been circumvented by using
+new techniques that enable reducing directly to the (post-quantum) soundness of the underlying Σ-protocol.
+3
+
+
+[PÁGINA PDF 6]
+quantum random oracle model via an approach that considers the protocol as a whole (similarly
+to the classical analysis of these protocols).
+The foregoing diﬀerences are reﬂected in a technical analysis that departs from prior works.
+Most of the eﬀort in this paper is establishing classical security properties of the Micali and BCS
+constructions, which we then use to generically deduce their quantum security. This approach,
+besides being intuitive, yields tight bounds that can be used to guide parameter choices in practice.
+Succinct arguments based on lattices.
+Several lattice problems are presumed to remain hard
+even against quantum adversaries, and researchers have relied on such problems to propose numer-
+ous cryptographic constructions that are plausibly post-quantum. A handful of works have used
+lattices to achieve various notions of succinct arguments that are plausibly post-quantum. Baum et
+al. [BBCPGL18] rely on the short integer solution (SIS) problem to obtain an argument system for
+arithmetic circuits where the communication complexity grows with the square-root of circuit size;
+the argument system is constant-round, public-coin, and honest-veriﬁer zero knowledge. Boneh et
+al. [BISW17; BISW18] and Gennaro et al. [GMNO18] rely on lattice knowledge assumptions to
+construct designated-veriﬁer SNARGs for boolean circuits, in the preprocessing model [BCIOP13].
+Whether one can use lattices to obtain publicly-veriﬁable SNARGs remains an open problem.
+4
+
+
+[PÁGINA PDF 7]
+2
+Techniques
+We discuss the main ideas behind our results. In Section 2.1 we recall the construction of Micali,
+and then in Section 2.2 we explain the challenges that arise when trying to prove its security in the
+quantum random oracle model. In Section 2.3 we outline our approach to obtain a proof of security
+for the Micali construction (Theorem 1); we elaborate on our approach in Sections 2.4 to 2.7.
+Finally, in Section 2.8 we discuss how to further establish zero knowledge and proof of knowledge;
+we thus obtain the ﬁrst zkSNARK secure in the quantum random oracle model (Theorem 2).
+We conclude in Section 2.9 by explaining how our techniques extend to establish post-quantum
+security for the BCS construction applied to many protocols of practical interest (Theorem 3).
+2.1
+The construction of Micali
+The construction of Micali is a transformation that maps any probabilistically checkable proof (PCP)
+into a corresponding non-interactive argument in the random oracle model. (See Section 3.4 for
+the deﬁnition of a PCP, and Section 3.3 for that of a non-interactive argument.) The resulting
+non-interactive argument is succinct, i.e. a SNARG, provided the PCP has suitable parameters.
+Let (P, V) be a PCP for a relation R with soundness error ϵ, proof length ℓover alphabet Σ,
+and query complexity q. The honest prover P takes as input an instance-witness pair (x, w) and
+outputs a proof string Π: [ℓ] →Σ. The honest veriﬁer V takes as input the instance x, makes q
+probabilistic queries to a (possibly malicious) proof string ˜Π: [ℓ] →Σ, and then accepts or rejects.
+The PCP (P, V) for R is used to construct a SNARG (P, V) for R, as follows.
+The SNARG prover P takes as input an instance x and witness w. First, P uses the random
+oracle h to commit to the proof string Π := P(x, w) via a Merkle tree, obtaining a corresponding
+root rt. Second, P applies the random oracle h to the root rt in order to derive randomness r for
+the PCP veriﬁer V. Third, P simulates the PCP veriﬁer V with the proof string Π, input x, and
+randomness r, in order to deduce the queried locations of Π. Finally, P assembles a SNARG proof
+π that contains the root rt, answers to the queries, and an authentication path for each answer.
+Observe that the SNARG proof π is succinct because it is small (it has size |π| = O(q ·(log |Σ|+
+λ log ℓ)) = Oλ(q) for ℓ, |Σ| = 2O(λ)) and it is cheap to validate via the algorithm described next.
+The SNARG veriﬁer V takes as input an instance x and a (possibly malicious) SNARG proof ˜π.
+First, V uses the random oracle h to check that each answer in ˜π is certiﬁed by an authentication
+path relative to the claimed root ˜rt. Next, V applies the random oracle h to the root ˜rt in order
+to derive randomness ˜r. Finally, V runs the PCP veriﬁer V on the instance x and randomness ˜r,
+answering V’s queries using the claimed answers in ˜π.
+The intuition behind the construction is that the soundness guarantee of a PCP holds only if
+the proof string ˜Π to be validated is ﬁxed before the randomness ˜r for the PCP veriﬁer is known,
+and for this reason the SNARG prover must derive ˜r by hashing a commitment ˜rt to ˜Π.
+This construction is unconditionally secure in the random oracle model [Mic00; Val08; BCS16]:
+Theorem 2.1. The SNARG (P, V) has soundness error O(tϵ+t2/2λ) against (classical) attackers
+that make at most t queries to the random oracle. This soundness error is tight up to small factors.
+A SNARG obtained via the Micali construction also inherits zero knowledge and proof of knowl-
+edge properties of the underlying PCP. We discuss these additional properties and how we establish
+them in the quantum setting later on in Section 2.8. We focus on soundness ﬁrst.
+5
+
+
+[PÁGINA PDF 8]
+2.2
+Challenges in the quantum setting
+Our goal is to show that the SNARG construction of Micali is unconditionally secure in the quantum
+random oracle model. Suppose that ˜P is a t-query quantum prover that convinces the SNARG
+veriﬁer V with probability δ (over the random oracle). We wish to construct a malicious PCP
+prover ˜P that, using ˜P as a subroutine, outputs a proof string ˜Π: [ℓ] →Σ that convinces the PCP
+veriﬁer V with related probability ϵ(δ, t) (here the probability is over the randomness of ˜P and V).
+A natural approach to reduce the SNARG prover ˜P to the PCP prover ˜P would be to try to
+adapt to the quantum setting the reduction that is used for the classical setting. Below we recall
+the classical reduction, and then explain why adapting it to the quantum case is challenging.
+The reduction for classical attackers.
+The reduction from a classical SNARG prover ˜P to a
+PCP prover ˜P relies on a straightline extractor, as we now explain.
+While the SNARG prover ˜P outputs a short proof π that contains a Merkle root and a few
+decommitted values, the PCP prover ˜P must output a “long” proof string ˜Π. How can ˜P obtain
+all this information from seeing only π? The answer is that, when running ˜P as a subroutine, ˜P
+observes the queries that ˜P makes to the oracle, and these queries reveal the proof string ˜Π.
+This is only a caricature of how ˜P actually works, though. The reason is that ˜P need not
+produce a query sequence from which ˜P can just read oﬀa proof string ˜Π consistent with the
+Merkle root in π. For example, ˜P could try to commit to many possible proof strings “in its head”,
+derive the corresponding randomness from each commitment, and then select which commitment
+to include in π. Even worse, ˜P could try to commit to a partial proof string ˜Π via an incomplete
+Merkle tree and, because the PCP veriﬁer inspects only a small fraction of a proof string, hope
+that queries will land to leaves of the Merkle tree that do exist.
+The proof of Theorem 2.1 shows that, despite these complications, there is a way for ˜P to
+observe all queries and answers of a single execution of the SNARG prover ˜P, and then run an
+algorithm on these to extract a suitable proof string ˜Π.
+How to deal with quantum attackers? If we now return to the case where the SNARG prover
+˜P is a quantum attacker, we are immediately confronted with a severe problem.
+Since ˜P can
+query the random oracle in superposition, how can ˜P “observe” queries and answers to the oracle?
+If ˜P were to just measure ˜P’s query register, ˜P may detect this and stop working. This basic
+problem has made obtaining security reductions against quantum attackers that access random
+oracles exceedingly diﬃcult when compared to the case of classical attackers. Papers that study
+the security of cryptographic primitives in the quantum random oracle model have had to develop
+clever techniques to somehow circumvent this problem in various settings of interest.
+Most relevant to this paper is a work of Zhandry [Zha19] that introduces compressed oracles,
+a set of notions and techniques that enables a quantum algorithm to simulate access to a random
+oracle for a quantum attacker. This is achieved by replacing a random oracle h: {0, 1}m →{0, 1}n
+with the action of a specially-crafted unitary O that implicitly keeps track of queries. This is a
+quantum analogue of when, in the classical setting, a simulator merely observes the queries made by
+the attacker and maintains a database of the query-answer pairs. Formally, the classical simulator
+keeps track of a database D, which is a partial function D: {0, 1}m ⇀{0, 1}n.
+The database
+represents the part of the random oracle that has been “revealed” to the attacker by answering
+its queries. In the quantum setting, the state space of the quantum attacker is augmented with
+registers to store the database, which (loosely) keep track of the database D in superposition, as
+it evolves from query to query. Thus, while the original oracle h operates on the state |ψA⟩of the
+6
+
+
+[PÁGINA PDF 9]
+adversary, the unitary O operates on a bipartite state |ψA, ψD⟩. This extended state represents a
+puriﬁcation of the mixed state of the adversary induced by choosing the oracle h at random.
+One may conjecture that the compressed oracle technique, by virtue of “exposing” a quantum
+attacker’s queries, makes proving the quantum security of the Micali construction, or indeed of any
+construction that uses random oracles, straightforward. This is, unfortunately, not the case.
+For example, the results of [Zha19] on compressed oracles allow us to argue directly that, given
+an adversary that outputs a convincing SNARG proof π with high probability, if we measure the
+database D after the adversary terminates, then with high probability one can ﬁnd a convincing
+SNARG proof π in the database D. This does not allow us to reduce to soundness of the underlying
+PCP, however, because to do that we need to argue that one can extract a PCP proof Π from D
+(containing a lot more information than π) that convinces the PCP veriﬁer with high probability.
+While the techniques in [Zha19] suﬃce for analyzing simple protocols like collision ﬁnding, it is
+not clear how to analyze more complex protocols such as the Micali SNARG, as explained above. In
+the next section we describe a general framework for analyzing complex protocols in the quantum
+random oracle model.
+2.3
+Outline of our approach
+The ideas that we use in this paper to analyze the Micali construction are almost entirely generic,
+and can be used to analyze any oracle game. Informally, given a “base game” G ⊆Ak ×Bk ×C, an
+adversary with oracle access to a random oracle h wins the oracle game for G if it outputs a tuple
+(a, b, c) ∈G where h(ai) = bi for each i ∈[k]. Oracle games are a natural notion that captures
+many games of interest, such as ﬁnding pre-images or ﬁnding collisions. Producing a valid proof
+in the Micali construction can also be cast as an oracle game,4 and we shall view the soundness
+property of the Micali construction as stating that the value (maximum winning probability) of
+this game is small (when the statement being proved is false).
+Our proof of quantum security consists of two main parts. First, we generically reduce the value
+of any oracle game to the instability of the game, a purely classical property of the game that we
+introduce. Second, we analyze the instability of the oracle game induced by the Micali construction.
+The instability of this oracle game is not too diﬃcult to analyze because it is a classical quantity,
+and the “hard work” is crisply, and conveniently, encapsulated within our generic reduction. We
+view bounding values of oracle games via instability as the main technical contribution of this paper.
+We now elaborate on our approach: in Section 2.4 we recast prior work in the language of oracle
+games; in Section 2.5 we explain what is instability and how we use it to bound game values; in
+Section 2.6 we introduce conditional instability and use it to prove tighter bounds on oracle game
+values; and in Section 2.7 we outline the analysis of instability for the Micali construction.
+2.4
+From oracle games to database games
+We begin with a sequence of three games whose values are closely related. These games play the
+role of hybrids in our analysis, and are all deﬁned relative to the given base game G ⊆Ak ×Bk ×C.
+• Oracle game. This is the game deﬁned earlier that is played in the real world, using a random
+oracle h. The adversary wins if it outputs a tuple (a, b, c) ∈G with h(ai) = bi for each i ∈[k].
+4At a high level, G is the set of all proofs that cause the veriﬁer to accept relative to some oracle; the h(ai) = bi
+constraints ensure that the veriﬁer accepts this proof relative to the speciﬁc oracle h. For more details, see Section 6.2.
+7
+
+
+[PÁGINA PDF 10]
+• Simulated oracle game. The simulator of Zhandry [Zha19] is used to run the adversary and
+its ﬁnal state is measured, leading to a tuple (a, b, c) and a database D. The adversary wins if
+(a, b, c) ∈G and D(ai) = bi for each i ∈[k]. (The oracle h: {0, 1}m →{0, 1}n is now replaced
+by the database D: {0, 1}m ⇀{0, 1}n stored by the simulator.)
+• Database game. Again the simulator of Zhandry is used to run the adversary, leading to a
+tuple (a, b, c) and a database D. However, now we ignore (a, b, c) and only consider D. The
+adversary wins if there exists (a′, b′, c′) ∈G such that D(ai) = bi for each i ∈[k].
+We let ω∗
+O(G, t), ω∗
+S(G, t), and ω∗
+D(G, t) denote the values of the oracle game, simulated oracle game,
+and database game against quantum adversaries that make at most t oracle queries.
+A result of Zhandry [Zha19, Lemma 5], when stated via the notions above, shows that
+p
+ω∗
+O(G, t) ≤
+p
+ω∗
+S(G, t) +
+p
+k/2n. Moreover, ω∗
+S(G, t) ≤ω∗
+D(G, t) holds trivially, because winning the simulated
+oracle game implies winning the database game, by taking (a′, b′, c′) := (a, b, c). In sum:
+Lemma 2.2. For any base game G,
+q
+ω∗
+O(G, t) ≤
+q
+ω∗
+D(G, t) +
+p
+k/2n .
+The above lemma is a conceptualization of prior work, and is the starting point for the technical
+contributions of this paper. In particular, the lemma tells us that in order to bound the maximum
+winning probability of a quantum adversary in an oracle game (played in the real world) it suﬃces
+to bound the maximum winning probability of the adversary in the corresponding database game.
+See Section 4 for more details.
+2.5
+A basic lifting lemma for database games
+We describe how we use a classical quantity I(PG, t) to bound ω∗
+D(G, t), the maximum winning
+probability of any t-query quantum algorithm in the database game of G. When combined with
+the hybrids in Section 2.4, this reduces the quantum security of oracle games to studying I(PG, t).
+Given a base game G, we let PG be the set of databases that win the database game of G. In the
+classical setting, a natural way to bound the maximum winning probability of the database game
+is to compute, for each possible database D /∈PG (a database that is currently losing the game),
+the maximum probability that adding a query-answer pair to D puts D in PG. Assuming that the
+empty database is not in PG (for otherwise one can win trivially), this quantity characterizes the
+probability that the adversary gets lucky and ends up with a winning database D.
+We deﬁne the instability of PG with query bound t, denoted I(PG, t), to be the maximum
+probability that, for any database D containing less than t queries, making one additional (classical)
+query changes whether or not D is in PG. The foregoing argument explains that the classical value
+of the database game G is bounded by t·I(PG, t). Intuitively this is because each query can increase
+the probability that the database D is in PG by at most I(PG, t).
+We prove that an analogous result holds for quantum adversaries as well. We call this lemma a
+lifting lemma, because it enables us to use the classical quantity of instability to prove a bound on
+the maximum winning probability of quantum adversaries. The version below is a “basic” version,
+because we shall ultimately need a stronger statement, as we discuss in Section 2.6. The result
+below extends an idea of Zhandry sketched in [Zha19, Section 4.3].
+8
+
+
+[PÁGINA PDF 11]
+Lemma 2.3 (Basic lifting lemma). For any base game G,
+ω∗
+D(G, t) ≤O
+ t2 · I(PG, t)
+
+.
+In particular, combining the above with Lemma 2.2, we get
+ω∗
+O(G, t) ≤O
+ t2 · I(PG, t) + k/2n
+.
+Even the above basic lifting lemma is a powerful tool. For example, suppose that G is the
+collision game, where the adversary wins if it outputs an oracle collision. Then I(PG, t) < t/2n,
+because if D is a database with no collisions and less than t entries, then making one more query
+produces a collision with probability less than t/2n, and if D has collisions then it is not possible
+to make an additional query and remove collisions. Then (since k = 2 in the collision game) the
+lifting lemma immediately tells us that ω∗
+O(G, t) ≤O(t3/2n), which shows that the probability that
+a t-query quantum oracle algorithm ﬁnds a collision is bounded by O(t3/2n). This further simpliﬁes
+the analysis of this fact in [Zha19] and matches the bound of [AS04] (which is tight [BHT98]).
+We now sketch the proof of the basic lifting lemma. The proof sketch diﬀers slightly from the
+actual proof, as in the actual proof we do a slightly more complicated analysis that gives us smaller
+constants. The main ideas, however, remain the same.
+We let PG be the operator that projects onto databases that win the database game G: for any
+basis state |D⟩in the database register, PG |D⟩= |D⟩if D ∈PG, and PG |D⟩= 0 if D̸ ∈PG; PG
+acts as the identity on other registers. If |φ⟩is the ﬁnal joint state of the quantum adversary and
+database, then ∥PG |φ⟩∥2 is the probability that D ∈PG after measurement. We will assume that
+∅/∈PG, i.e., that the empty database does not win the database game of G (or else the adversary
+can win by doing nothing).
+We can represent any simulated quantum adversary making at most t queries as a sequence of
+unitary operators U = AtOAt−1O . . . A1O applied to an initial state |φ0, ∅⟩:= |φ0⟩⊗|∅⟩, where O
+is the compressed oracle and |∅⟩is the state of the empty database. Each Ai acts non-trivially only
+on the registers of the adversary being simulated and PG acts non-trivially only on the database
+registers, so PG and Ai commute. So, if PG and O were to also commute, then we could simply
+conclude that PGU |φ0, ∅⟩= UPG |φ0, ∅⟩= 0, i.e., that the adversary never wins. (Here we used
+the fact that ∅/∈PG.)
+However, it is not the case that PG and O commute. This should be expected because in general
+an adversary can win with some positive probability. However, if we could show that they almost
+commute, then we could apply the previous argument to show that PGU |φ0, ∅⟩≈UPG |φ0, ∅⟩= 0;
+i.e., the adversary wins with small probability. The notion of “almost” commuting we use is that
+the operator norm ∥[PG, O]∥of the commutator [PG, O] := PGO −OPG is small.
+Unfortunately, for interesting games the operator norm ∥[PG, O]∥may not be small. For exam-
+ple, if G is the collision game and D is a database with a pre-image of every y ∈{0, 1}n but no
+collisions, then ∥[PG, O] |x, u, D⟩∥= 1. Generally, this norm may be large if D has many entries.
+Query-bounded adversaries, however, cannot produce nonzero amplitudes on databases with
+more entries than the query bound. Hence, intuitively we should not consider states that correspond
+to large databases when bounding the operator norm of the aforementioned commutator. We follow
+this intuition by introducing the notion of a projected oracle, which acts as the compressed oracle
+except that it discards databases that do not belong to a certain subset.
+Deﬁnition 2.4. Let P be the operator that projects onto databases that belong to a given subset P
+of databases. A projected oracle is an operator of the form POP.
+9
+
+
+[PÁGINA PDF 12]
+We thus consider the projected oracle PtOPt, where Pt is operator that projects onto databases
+containing at most t queries.
+For adversaries that make at most t queries, replacing O with
+PtOPt has no eﬀect because the adversary cannot create a database that contains more than t
+entries. Moreover, ∥[PG, PtOPt] |D⟩∥= 0 if D contains more than t entries, so the operator norm
+of [PG, PtOPt] accounts for the action of O only on databases containing at most t entries.
+In sum, projected oracles allow us to cleanly compute the operator norm only over databases
+that are reachable by an adversary making a bounded number of queries. By carefully analyzing
+the action of O, we show that
+∥[PG, PtOPt]∥2 ≤O
+ I(PG, t)
+
+.
+We additionally prove that ∥PGU |φ0, ∅⟩−UPG |φ0, ∅⟩∥≤t∥[PG, PtOPt]∥. Combining these two
+inequalities yields the lifting lemma.
+See Section 5.1 for more details.
+2.6
+Stronger lifting via conditional instability
+The lifting lemma implies that to prove soundness of the Micali construction, it suﬃces to bound the
+instability of the Micali database game. Unfortunately, the instability of the Micali database game
+is actually large, even given the query bound. For example, suppose that D is a database containing
+Merkle trees for many diﬀerent proof strings, but each of these Merkle trees has (miraculously) the
+same root due to collisions. Then, the probability that querying the root yields a good randomness
+for the underlying PCP veriﬁer is large, because the answer to the query only needs to be a good
+random string for any one of the many proofs that D contains.
+This counterexample, however, should not be of concern because it relies on the database having
+many collisions, and we have already argued that creating even a single collision in the database
+is diﬃcult. To deal with this issue, we introduce the notion of conditional instability: I(P | Q, t).
+This is a reﬁned notion of instability that allows us to condition on events, e.g., that the database
+has no collisions. Our main technical contribution is the following stronger variant of Lemma 2.3.
+Deﬁnition 2.5. A database property P is a set of databases. The complement of P is ¯P.
+Lemma 2.6 (Lifting lemma). For any base game G and database property Q,
+ω∗
+D(G, t) ≤O
+
+t2 ·
+ I(PG | ¯Q, t) + I(Q, t)
+
+.
+In particular, combining the above with Lemma 2.2, we get
+ω∗
+O(G, t) ≤O
+
+t2 ·
+ I(PG | ¯Q, t) + I(Q, t)
+
++ k/2n
+.
+The above statement is an “instability analogue” of the standard fact that for any two events
+E1 and E2, Pr[E1] ≤Pr[E1 ∪E2] ≤Pr
+
+E1 | ¯
+E2
+
++ Pr[E2].
+The proof of Lemma 2.6 has three steps. First, we relax the database game PG so that the
+adversary wins if the database is in PG ∪Q. Clearly, winning the relaxed game is only easier than
+the original database game. Lemma 2.3 then implies that ω∗
+D(G, t) ≤O
+
+t2 · I(PG ∪Q, t)
+
+. Finally,
+we show that for any two database properties P and Q it holds that I(P∪Q, t) ≤I(P| ¯Q, t)+I(Q, t),
+which completes the proof.
+10
+
+
+[PÁGINA PDF 13]
+We remark that Lemma 2.6 cannot be proved by simply arguing that I(P, t) ≤I(P ∪Q, t) and
+then applying Lemma 2.3. This is because I(P, t) and I(P ∪Q, t) are in general incomparable (see
+Proposition 5.12 for examples).
+See Section 5.2 for more details.
+2.7
+Instability of the Micali oracle game
+Armed with our lifting lemma, establishing the quantum security of the Micali construction is now
+relatively straightforward. Let PMic be the database property for the Micali game, and let ¯Pcol be
+the no-collision property (the set of databases that do not contain collisions). We show that, for a
+random oracle of the form h: {0, 1}2λ →{0, 1}λ,
+I(Pcol, t) < t/2λ
+and
+I(PMic | ¯Pcol, t) < ε + O(t/2λ) .
+Proving each of these inequalities is merely a classical argument.
+• I(Pcol, t): If D is a database containing less than t entries and has a collision, then adding an
+entry to D cannot remove the collision, so the probability that adding a new entry to D makes
+D have no collisions is 0. Let D be a database containing less than t entries and no collisions.
+For any new query x, adding the query-answer pair (x, y) to D for a random y will contain a
+collision with probability less than t/2λ. Thus, I(Pcol, t) < t/2λ.
+• I(PMic | ¯Pcol, t): It is impossible to go from a database D in PMic to a database D not in PMic by
+adding entries. Let D be a database not in PMic containing less than t entries that contains no
+collisions. There are two ways to make D in PMic: either the new query is for the randomness of
+the PCP veriﬁer in the Micali construction, in which case this ﬁnds a good choice of randomness
+with probability at most ε, or the new query extends one of the Merkle trees that the adversary
+is constructing. To extend the Merkle tree the adversary must ﬁnd a pre-image, which happens
+with probability less than O(t/2λ). Hence, I(PMic | ¯Pcol, t) < ε + O(t/2λ), completing the proof.
+Combining these bounds on instability with the lifting lemma completes the proof of soundness,
+and completes a proof sketch for Theorem 1. See Section 6 for more details.
+2.8
+zkSNARKs in the QROM
+We have so far discussed how to establish soundness of the Micali construction in the quantum
+setting. We now discuss how to further establish zero knowledge and proof of knowledge, obtaining
+the ﬁrst zkSNARKs secure in the quantum random oracle model (and thereby proving Theorem 2).
+Zero knowledge.
+In the classical setting, the Micali construction achieves statistical zero knowl-
+edge provided the underlying PCP is (honest-veriﬁer) statistical zero knowledge (and leaves in the
+Merkle tree are suitably salted to ensure statistical hiding of unrevealed leaves) [IMSX15; BCS16].
+In the quantum setting, an analogous statement is immediate simply because the zero knowledge
+property holds against computationally unbounded veriﬁers that make an unbounded number of
+queries to the random oracle, and any quantum veriﬁer can be simulated by an unbounded veriﬁer.
+Proof of knowledge. In the classical setting, the Micali construction achieves proof of knowledge
+provided the underlying PCP is a proof of knowledge [Val08].
+The quantum analogue of this
+statement, however, does not immediately follow from our soundness analysis. Recall that our
+11
+
+
+[PÁGINA PDF 14]
+strategy was to bound the instability of the Micali property for x /∈L, conditioned on no collisions.
+But when x ∈L this approach will not work, because the instability of the Micali property even
+conditioned on the absence of collisions is 1 (as witnessed by the existence of the honest prover).
+Nevertheless, the tools that we develop in this work are ﬂexible enough that we can apply them
+to also establish proof of knowledge. We consider the following natural extractor strategy: run the
+prover until completion, and measure the database. Then, for each entry in the database, try to
+extract a PCP proof rooted at that entry, and then run the PCP extractor on this proof.
+Let P be the set of databases D where there exists a root rt such that D wins the Micali game
+with a SNARG proof rooted at rt, but the PCP extractor does not extract a valid witness from
+the PCP proof rooted at rt. If the prover wins the Micali game but the extractor fails, then D
+must be in P. We then argue that I(P | ¯Pcol, t) is at most k + O(t/2λ), where k is the knowledge
+error of the underlying PCP. Intuitively, this is because if the PCP extractor fails to extract a
+witness from the PCP proof Π rooted at rt, then Π convinces the veriﬁer with probability at most
+k, and hence the probability of ﬁnding good randomness for Π is at most k. Combining this with
+Lemma 2.6 implies that the probability that the prover wins the Micali game but the extractor
+fails is at most O(t2k + t3/2λ). Hence, if µ is the probability that the prover wins the Micali game,
+then the probability that the extractor succeeds is at least Ω(µ −t2k −t3/2λ).
+See Section 7 for more details.
+2.9
+The BCS construction: succinct arguments beyond Micali
+We apply our techniques to prove post-quantum security of the BCS construction [BCS16], when the
+underlying public-coin IOP satisﬁes a notion of soundness achieved by many protocols of practical
+interest. The notion is round-by-round soundness, and was introduced for IPs in [CCHLRR18] for
+the purposes of facilitating proofs of security of the Fiat–Shamir transformation for correlation-
+intractable hash functions.
+The notion can be extended in a straightforward way to any IOP,
+and this is the notion that we consider in this work. We further show that if the underlying IOP
+is honest-veriﬁer zero knowledge and/or has round-by-round proof of knowledge, then the BCS
+argument inherits these properties. Round-by-round proof of knowledge is a type of knowledge
+property that is analogous to round-by-round soundness (and is also achieved by many protocols
+of practical interest). Below we sketch our analysis; see Section 8 for details.
+Soundness. An IOP has round-by-round soundness if, for any partial transcript tr of the protocol,
+one can tell if tr is “doomed”, i.e., that it is highly unlikely to be accepted by the veriﬁer when
+completed to a full transcript; a doomed full transcript is never accepted by the veriﬁer.
+By the lifting lemma, in order to prove the post-quantum security of the BCS construction it
+suﬃces to bound the conditional instability of the database property P, where D ∈P if D contains
+a partial transcript where the last veriﬁer message has ﬂipped the transcript from “doomed” to
+“not doomed”. We argue that I(P | ¯Pcol, t) < ϵ+O(t/2λ), where ϵ is the round-by-round soundness
+error of the IOP. The proof is similar to the proof for the Micali construction. If D /∈P, there are
+two ways to add an entry and make D ∈P: either the new query is for the randomness of the next
+veriﬁer message in the IOP for some doomed transcript tr, in which case we ﬁnd a message that
+makes tr not doomed with probability ϵ; or the new query extends one of the Merkle trees that the
+adversary is constructing, which happens with probability less than O(t/2λ) as this implies ﬁnding
+a pre-image. Hence, I(P | ¯Pcol, t) < ϵ + O(t/2λ), which completes the proof.
+Zero knowledge. As in the case of Micali, zero knowledge is straightforward, as the BCS construc-
+12
+
+
+[PÁGINA PDF 15]
+tion classically achieves statistical zero knowledge when the IOP is honest-veriﬁer zero knowledge.
+Proof of knowledge. Analogously to our analysis of the Micali construction, we deﬁne a property
+Q, where D ∈Q if D contains a partial transcript that is in P but the BCS extractor fails to extract
+a valid witness. We then argue that I(Q | ¯Pcol) < k + O(t/2λ), where k is the round-by-round
+knowledge error of the IOP; the proof of this fact is similar to the proof of soundness. We conclude
+that if the prover causes the veriﬁer to accept with probability at least µ, then the probability that
+the extractor succeeds is at least Ω(µ −t2k −t3/2λ).
+13
+
+
+[PÁGINA PDF 16]
+3
+Preliminaries
+We denote by R a binary relation of instance-witness pairs (x, w), and by L(R) its corresponding
+language, which is the set {x | ∃w s.t. (x, w) ∈R}. We denote by f : X →Y a function from a set
+X to a set Y ; similarly, we denote by f : X ⇀Y a partial function from a set X to a set Y , i.e., a
+function f : X →Y ∪{⊥}, where ⊥/∈Y is a special symbol indicating that f(x) is undeﬁned.
+3.1
+Quantum notation
+We brieﬂy recall standard quantum notation.
+We let |φ⟩denote an arbitrary quantum state,
+and let |x⟩denote an element of the standard (computational) basis. The norm of a state |φ⟩is
+∥|φ⟩∥:=
+p
+⟨φ|φ⟩. In general, the states that we consider will have norm 1. The operator norm
+of an operator A is ∥A∥:= max|φ⟩:∥|φ⟩∥=1∥A |φ⟩∥. Note that if A is unitary then ∥A∥= 1. The
+commutator of two operators A and B is [A, B] := AB −BA. The following proposition relates
+operator norms and commutators.
+Proposition 3.1. Let A, B, C be operators with ∥B∥, ∥C∥≤1. Then
+∥[A, BC]∥≤∥[A, B]∥+ ∥[A, C]∥.
+Proof. By deﬁnition, [A, BC] = ABC −BCA = ABC −BAC +BAC −BCA = [A, B]C +B[A, C].
+Therefore, ∥[A, BC]∥≤∥[A, B]C∥+ ∥B[A, C]∥≤∥[A, B]∥+ ∥[A, C]∥, as ∥B∥, ∥C∥≤1.
+A projector P is an idempotent linear operator (i.e., P 2 = P).
+Throughout, we will only
+consider orthogonal projectors of the form PS := P
+x∈S |x⟩⟨x|, where S is a set of binary strings.
+Measuring a state |φ⟩in the standard basis results in an output that is in S with probability equal to
+∥PS |φ⟩∥2. Since all PS are diagonal in the same basis, they commute with each other. Note that for
+any non-zero orthogonal projector P it holds that ∥P∥= 1. In particular, since ∥AB∥≤∥A∥∥B∥,
+we see that if A is the product of projectors and unitaries then ∥A∥≤1.
+3.2
+Oracle algorithms
+Let f : {0, 1}m →{0, 1}n be a function. The standard way to model oracle access to f in the
+quantum setting is via a unitary operator Of that acts as |x, y⟩7→|x, y ⊕f(x)⟩for all x ∈{0, 1}m
+and y ∈{0, 1}n. We label the input and output registers X and Y, respectively.
+A t-query quantum oracle algorithm A is speciﬁed via m, n ∈N, t unitary operators A1, . . . , At
+and an initial state |φ0⟩on four registers X, Y, S, T. The register X is on m qubits and is for queries
+to the oracle; the register Y is on n qubits and is for answers from the oracle; the register S is for
+the output of A; and the register T is for scratch space of A. The initial state |φ0⟩and unitary
+operators Ai need not be eﬃciently computable.
+We write
+Af
+to denote AtOfAt−1Of · · · A1Of |φ0⟩, the ﬁnal state of the adversary before
+measurement. (We implicitly extend Of to act as the identity on S, T.) We write Af to denote the
+random variable which is the outcome of measuring the register S of
+Af
+in the computational
+basis. This is the output of A when accessing the oracle f.
+A random oracle is a function h: {0, 1}m →{0, 1}n sampled from U(m, n), the uniform distri-
+bution over functions from {0, 1}m to {0, 1}n. We write h ←U(m, n) to say that h is sampled from
+U(m, n). In the quantum random oracle model [BDFLSZ11], we study Ah for h ←U(m, n).
+14
+
+
+[PÁGINA PDF 17]
+3.3
+Non-interactive arguments in the quantum random oracle model
+Let (P, V) be two polynomial-time (classical) algorithms, known as the prover and veriﬁer. We
+say that (P, V) is a non-interactive argument in the quantum random oracle model (QROM) with
+soundness error ϵ for a relation R if it satisﬁes the following properties.
+• Completeness. For every (x, w) ∈R and function h ∈U(2λ, λ), Ph(x, w) outputs a (classical)
+proof string π for which Vh(x, π) = 1.
+• Soundness. For every x̸ ∈L(R) and t-query quantum oracle algorithm ˜P, the probability over
+a function h ←U(2λ, λ) and (classical) proof string ˜π ←˜Ph that Vh(x, ˜π) = 1 is at most ϵ(t, λ).
+We say that (P, V) has argument size s if a proof π output by Ph(x, w) consists of s(|x|) bits.
+We also consider non-interactive arguments that additionally achieve proof of knowledge and
+zero knowledge. The ﬁrst property will hold against query-bounded adversaries (that are otherwise
+all-powerful), while the second property will hold against unbounded adversaries (and in particular
+need not refer to quantum algorithms). We deﬁne both of these properties below.
+Knowledge.
+The non-interactive argument (P, V) is an argument of knowledge with extraction
+probability κ if there exists a polynomial-time quantum extractor E such that, for every instance
+x and t-query quantum oracle algorithm ˜P, if, over a random oracle h ←U(2λ, λ), for π := ˜Ph
+it holds that Vh(x, π) = 1 with probability µ, the probability that E ˜P(x, 1t, 1λ) outputs a valid
+witness for x is at least κ(t, µ, λ). Here the notation E ˜P denotes that E has black-box access to
+˜P as deﬁned by Unruh [Unr17]. Informally, this means that if ˜P = (A1, . . . , At) with initial state
+|φ0⟩, then E is given an auxiliary register containing |φ0⟩and may apply, in addition to any eﬃcient
+quantum operation, any Ai to any of its registers.
+Zero knowledge.
+The non-interactive argument (P, V) has (statistical) zero knowledge if there
+exists a probabilistic polynomial-time simulator S such that for every instance-witness pair (x, w) ∈
+R the distributions below are statistically close (as a function of λ):
+
+(h, π)
+
+h ←U(2λ, λ)
+π ←Ph(x, w)
+
+and
+
+(h[µ], π)
+
+h ←U(2λ, λ)
+(µ, π) ←Sh(x)
+
+.
+Above, h[µ] is the function that, on input x, equals µ(x) if µ is deﬁned on x, or h(x) otherwise. This
+deﬁnition uses explicitly-programmable random oracles [BR93]. (Non-interactive zero knowledge
+with non-programmable random oracles is impossible for non-trivial languages [Pas03; BCS16].)
+Succinctness for non-deterministic time.
+A zkSNARK for NTIME(T(n)) in the QROM
+is a non-interactive argument for NTIME(T(n)) in the QROM such that: (a) it has (statisti-
+cal) zero knowledge; (b) it has extraction probability poly(µ, 1/t) −poly(µ, t)/2λ; (c) arguments
+have size poly(λ, log T(n)), the prover runs in time poly(λ, n, T(n)), and the veriﬁer runs in time
+poly(λ, n, log T(n)).
+3.4
+Probabilistically checkable proofs
+A probabilistically checkable proof (PCP) for a relation R with soundness error ϵ, proof length ℓ,
+and alphabet Σ is a pair of polynomial-time algorithms (P, V) for which the following holds.
+• Completeness. For every instance-witness pair (x, w) ∈R, P(x, w) outputs a proof string
+Π: [ℓ] →Σ such that Pr
+
+VΠ(x) = 1
+
+= 1.
+15
+
+
+[PÁGINA PDF 18]
+• Soundness. For every instance x̸ ∈L(R) and proof string Π: [ℓ] →Σ, Pr
+
+VΠ(x) = 1
+
+≤ϵ.
+The quantities ϵ, ℓ, Σ can be functions of the instance size |x|. Probabilities are taken over the
+randomness of V. The randomness complexity is the number of random bits used by V, and the
+query complexity q is the number of locations of Π read by V. (Both can be functions of |x|.)
+We also consider PCPs that achieve proof of knowledge and (honest-veriﬁer) zero knowledge.
+We deﬁne both of these properties below.
+Proof of knowledge.
+The PCP (P, V) has knowledge error k if there exists a polynomial-time
+extractor E such that for every instance x and proof string Π: [ℓ] →Σ if Pr[V(x, Π) = 1] > k then
+E(x, Π) outputs a valid witness for x.
+Zero knowledge.
+The PCP (P, V) is (perfect) honest-veriﬁer zero knowledge if there exists a
+probabilistic polynomial-time simulator S such that for every instance-witness pair (x, w) ∈R the
+view of V(x) when given access to a proof string sampled as Π ←P(x, w) equals the view of V(x)
+when given access to S(x). In the latter case, S(x) adaptively answers queries received from V(x).
+3.5
+Databases
+A database mapping X to Y is a partial function D: X ⇀Y . The support of a database D is
+supp(D) := {x ∈X : D(x)̸ = ⊥} and its image is im(D) := {D(x): x ∈supp(D)}. The size of a
+database is the size of its support: |D| := |supp(D)|. Given two databases D and D′, we write
+D ⊆D′ if supp(D) ⊆supp(D′) and D(x) = D′(x) for every x ∈supp(D).
+We deﬁne two operations on databases, corresponding to deletions and insertions. Given a
+database D, input values x, x′ ∈X, and output value y ∈Y , we deﬁne the two databases
+(D −x)(x′) :=
+(
+⊥
+if x = x′
+D(x′)
+if x̸ = x′
+and
+(D + [x 7→y])(x′) :=
+(
+y
+if x = x′
+D(x′)
+if x̸ = x′
+.
+For D: {0, 1}m ⇀{0, 1}n and t ∈N with |D| ≤t ≤2m, we deﬁne the pure quantum state
+|Dt⟩:=
+x1, y1, . . . , x|D|, y|D|
+
+⊗|⊥, 0n⟩⊗(|D|−t)
+where x1, . . . , x|D| is the lexicographic ordering of supp(D) and yi := D(xi) for each i ∈[|D|]. We
+will write |D⟩for |Dt⟩when the bound t is clear from context.
+3.6
+Compressed phase oracle
+The standard method to encode a function h: {0, 1}m →{0, 1}n as a quantum operation is the
+unitary matrix Oh deﬁned in Section 3.2, which acts as |x, y⟩7→|x, y ⊕h(x)⟩. Another method
+is to encode h in the phase of a quantum state, via the unitary matrix O′
+h that acts as |x, u⟩7→
+(−1)u·h(x) |x, u⟩.
+These two encodings are equivalent under an eﬃcient change of basis: Oh =
+(Im ⊗Hn)O′
+h(Im ⊗Hn) where Im is the identity on the ﬁrst m qubits and Hn is the Hadamard
+transformation on the other n qubits. Thus, choosing between the standard oracle Oh or the phase
+oracle O′
+h is a matter of convenience. For example, the Deutsch–Josza algorithm [DJ92] is easier
+to describe with a standard oracle, while Grover’s algorithm [Gro96] is easier with a phase oracle.
+In this paper it is more convenient to always work with phase oracles. All quantum query algo-
+rithms will thus have an oracle phase register U instead of the oracle answer register Y. Moreover,
+since h is sampled at random from the set of all functions from m bits to n bits, we follow Zhandry
+16
+
+
+[PÁGINA PDF 19]
+[Zha19] and extend the adversary’s initial state with a random superposition of all functions h,
+which represents a puriﬁcation of the adversary’s mixed state relative to the random oracle.
+In fact, instead of considering a superposition of functions h, we will consider a superposition
+of databases D, according to the compressed oracle formalism of [Zha19]. Speciﬁcally, throughout
+this paper we will only deal with the compressed phase oracle with m input bits and n output
+bits, which we denote by O. We ﬁx the database query bound of the compressed oracle to be t
+in advance. For the purposes of this paper, we will only use the fact that O is a certain unitary
+matrix, indistinguishable from a real random oracle, whose action is given by the following lemma,
+which we prove in Appendix A for completeness. We refer the reader to [Zha19] for more details.
+Lemma 3.2 ([Zha19]). The compressed phase oracle O (with query bound t) acts on a quantum
+state |x, u, z, D⟩, where x ∈{0, 1}m, u ∈{0, 1}n, z ∈{0, 1}∗, and D: {0, 1}m ⇀{0, 1}n is a
+database with |D| ≤t, as follows.
+• If |D| = t or u = 0n, then O |x, u, z, D⟩= (−1)u·D(x) |x, u, z, D⟩, where u · ⊥:= 0.
+• If D(x) = ⊥, |D| < t, and u̸ = 0n, then O |x, u, z, D⟩= |x, u, z⟩⊗|φ⟩where
+|φ⟩:=
+1
+√
+2n
+X
+y∈{0,1}n
+(−1)u·y |D + [x 7→y]⟩.
+• If D(x)̸ = ⊥, |D| < t, and u̸ = 0n, then O |x, u, z, D⟩= |x, u, z⟩⊗|φ⟩where
+|φ⟩:= (−1)u·D(x) |D⟩+ (−1)u·D(x)
+√
+2n
+|D −x⟩+ 1
+2n
+X
+y∈{0,1}n
+
+1 −(−1)u·y −(−1)u·D(x)
+|D −x + [x 7→y]⟩.
+Given a quantum algorithm A described by unitaries A1, . . . , At and initial state |φ0⟩, we write
+|Sim∗(A)⟩to represent the ﬁnal state of A before measurement when simulated using O as the
+oracle. Formally, |Sim∗(A)⟩= AtO · · · A1O|φ0, ∅⟩, where ∅denotes that the D register holds the
+empty database with t slots, and we implicitly extend each Ai to act as the identity on D.
+The following lemma of [Zha19] shows simulating A by using O as the oracle is perfectly
+indistinguishable from running A with access to a random oracle.
+Lemma 3.3 ([Zha19, Lemma 4]). For any quantum oracle algorithm A making at most t queries,
+TrD(|Sim∗(A)⟩⟨Sim∗(A)|) =
+1
+(2n)2m
+X
+h: {0,1}m→{0,1}n
+Ah
+Ah .
+I.e., |Sim∗(A)⟩puriﬁes the mixed state of A when interacting with a random oracle h ←U(m, n).
+The notation TrD denotes the partial trace over the D (database) register, deﬁned as the unique
+linear operator such that TrD(|a⟩⟨a|Z ⊗|b⟩⟨b|D) := ⟨b|b⟩|a⟩⟨a|Z for all vectors |a⟩, |b⟩. Here Z denotes
+all the registers of the adversary.
+17
+
+
+[PÁGINA PDF 20]
+4
+From oracle games to database games
+In this section we formulate three distinct, but closely related, types of games that represent diﬀerent
+hybrids in our proof of security. The material in this section is mostly a conceptualization of prior
+work, and forms the starting point for the technical contributions presented in later sections.
+The ﬁrst type of games that we consider are oracle games, which correspond to when an adver-
+sary “in the real world” is granted access to a random oracle and must produce a certain output
+in order to win. The second type of games are simulated oracle games, which diﬀer in that the ad-
+versary is executed by a probabilistic process that eﬃciently simulates the random oracle (without
+actually sampling a random function). The third type of games are database games, which diﬀer
+in that we only consider properties of the query-answer pairs recorded in the simulation.
+We shall see that the value (i.e., the maximum winning probability) across all these games are
+closely related. In particular, in order to bound the value of an oracle game it suﬃces to bound the
+value of the corresponding database game. For this reason in Section 5 we shall focus our attention
+on developing new techniques to bound the values of database games.
+We now proceed to formalize the foregoing notions. We ﬁnd it helpful to structure our exposition
+by ﬁrst discussing the special case of classical adversaries (in Section 4.1), and then discussing the
+general case of quantum adversaries (Section 4.2). In either case, we will derive each type of game
+from a base game that represents a target set of “winning outputs”.
+Deﬁnition 4.1. Let A, B, C be ﬁnite sets, k ∈N. A base game is a set of tuples G ⊆Ak×Bk×C.
+We will use Ct to denote the set of all classical algorithms that make at most t queries to an
+oracle, and C∗
+t to denote the set of all quantum algorithms that make at most t queries to an oracle.
+4.1
+The case of classical adversaries
+We associate to a base game G three classical notions: the classical oracle game GO, the classical
+simulated oracle game GS, and the classical database game GD. These notions are distinct, but
+they are also closely related as shown in Lemma 4.5 below.
+A classical algorithm A plays the classical oracle game of G as follows: A has access to a random
+oracle h: {0, 1}m →{0, 1}n and wins if it outputs (a, b, c) ∈G with h(ai) = bi for all i ∈[k].
+Deﬁnition 4.2. The value of the classical oracle game of G is
+ωO(G, t) := max
+A∈Ct Pr[A wins GO] = max
+A∈Ct Pr
+
+(a, b, c) ∈G and
+∀i ∈[k] , h(ai) = bi
+
+h ←U(m, n)
+(a, b, c) ←Ah
+
+.
+Next, we discuss the classical simulated oracle game of G, which is deﬁned via a simulator. We
+denote by Sim(A) the probabilistic process that executes the classical algorithm A while simulating
+a random oracle with random consistent answers,5 and then outputs ((a, b, c), D) where (a, b, c)
+is the output of A and D is the database containing all the simulated query-answer pairs. The
+classical algorithm A wins if ((a, b, c), D) is such that (a, b, c) ∈G and D(ai) = bi for all i ∈[k].
+Deﬁnition 4.3. The value of the classical simulated oracle game of G is
+ωS(G, t) := max
+A∈Ct Pr[A wins GS] = max
+A∈Ct Pr
+
+(a, b, c) ∈G and
+∀i ∈[k] , D(ai) = bi
+
+ (a, b, c), D
+
+←Sim(A)
+
+.
+5Initialize an empty database D: {0, 1}m ⇀{0, 1}n. Whenever A queries the oracle at x ∈{0, 1}m, if x ∈supp(D)
+then answer D(x); else if x̸ ∈supp(D) then answer with a random y ∈{0, 1}n and update as D := D + [x 7→y].
+18
+
+
+[PÁGINA PDF 21]
+Finally, we discuss the classical database game of G. We again simulate the classical algorithm
+A using Sim(A) to obtain ((a, b, c), D), but now we discard the tuple (a, b, c) and only consider the
+database D. Concretely, the classical algorithm A wins if there exists a tuple (a′, b′, c′), possibly
+diﬀerent from (a, b, c), such that (a′, b′, c′) ∈G and D(a′
+i) = b′
+i for all i ∈[k].
+Deﬁnition 4.4. The value of the classical database game of G is
+ωD(G, t) := max
+A∈Ct Pr[A wins GD] = max
+A∈Ct Pr
+ ∃(a′, b′, c′) ∈G s.t.
+∀i ∈[k] , D(a′
+i) = b′
+i
+
+ (a, b, c), D
+
+←Sim(A)
+
+.
+The following lemma relates the three classical notions introduced above.
+Lemma 4.5. For every classical algorithm A:
+Pr[A wins GO] ≤Pr[A wins GS] + 1/2n ,
+Pr[A wins GS] ≤Pr[A wins GD] .
+In particular, the values of the three types of classical games are related:
+∀t ∈N , ωO(G, t) ≤ωS(G, t) + 1/2n
+and
+ωS(G, t) ≤ωD(G, t) .
+Proof. We ﬁrst compare GO and GS. Consider the adversary A′ for GO given by running Sim(A)
+and answering a query to x with y := h(x). Let (a, b, c) be the output of A′, and let i be the
+ﬁrst index such that (ai, bi) /∈D. Let E be the event that h(ai) = bi. Then Pr[E] ≤1/2n, so
+Pr[A wins GO] ≤Pr[A′ wins GO ∧¬E] + Pr[E]. Observe that if A′ wins GO and ¬E holds, then
+the simulated A wins GS. Since the A simulated by A′ is indistinguishable from Sim(A), it follows
+that Pr[A wins GO] ≤Pr[A wins GS] + 1/2n.
+We also note that Pr[A wins GS] ≤Pr[A′ wins GO] = Pr[A wins GO], which shows additionally
+that the ﬁrst inequality is tight up to the additive term of 1/2n.
+We now compare GS and GD. Let A be an adversary, and let ((a, b, c), D) be the output of
+Sim(A). Observe that if A wins GS then A wins GD trivially, by taking a′ = a, b′ = b, and c′ = c.
+Hence, Pr[A wins GS] ≤Pr[A wins GD].
+We additionally note that ωS(G, t) = ωD(G, t). This is because if A wins GD, then A′ (the
+adversary that runs Sim(A) and uses h to answer oracle queries) can search over all satisfying tuples
+in G and see if any of them win GS. Since the database stored by A′ is equal to the database stored
+by Sim(A′), it follows that A′ wins GS whenever A wins GD, and hence ωS(G, t) = ωD(G, t).
+4.2
+The case of quantum adversaries
+This section extends the notions and statements of Section 4.1 to the quantum setting, and provides
+a conceptualization of results of Zhandry [Zha19] that is useful in this paper. Analogously to the
+classical setting, we associate to a base game G three notions: its quantum oracle game G∗
+O, its
+quantum simulated oracle game G∗
+S, and its quantum database game G∗
+D. Similarly to before, these
+notions are distinct, but they are also closely related as shown in Lemma 4.9 below. Unlike before,
+however, the notions and statements are not elementary because executing a quantum algorithm
+while recording its queries and answers to the oracle into a database D is not a simple problem.
+A quantum algorithm A plays the quantum oracle game of G as follows: A has access to a ran-
+dom oracle h: {0, 1}m →{0, 1}n and wins if it outputs (a, b, c) ∈G with h(ai) = bi for all i ∈[k].
+19
+
+
+[PÁGINA PDF 22]
+Deﬁnition 4.6. The value of the quantum oracle game of G is
+ω∗
+O(G, t) := max
+A∈C∗
+t
+Pr[A wins G∗
+O] = max
+A∈C∗
+t
+Pr
+
+(a, b, c) ∈G and
+∀i ∈[k] , h(ai) = bi
+
+h ←U(m, n)
+(a, b, c) ←Ah
+
+.
+Next, we discuss the quantum simulated oracle game of G. One can simulate the interaction
+of a quantum algorithm A with a random oracle via the compressed phase oracle O of Zhandry
+[Zha19]. (See Section 3.6 for the deﬁnition of O.) We denote by Sim∗(A) the probabilistic process
+that executes A while answering its queries with O, and then outputs ((a, b, c), D) where (a, b, c)
+is the output of A (obtained by measuring its output register in the computational basis) and D is
+the result of measuring the database registers in the computational basis after A has halted. The
+quantum algorithm A wins if ((a, b, c), D) is such that (a, b, c) ∈G and D(ai) = bi for all i ∈[k].
+Deﬁnition 4.7. The value of the quantum simulated oracle game of G is
+ω∗
+S(G, t) := max
+A∈C∗
+t
+Pr[A wins G∗
+S] = max
+A∈C∗
+t
+Pr
+
+(a, b, c) ∈G and
+∀i ∈[k] , D(ai) = bi
+
+ (a, b, c), D
+
+←Sim∗(A)
+
+.
+Finally, we discuss the quantum database game of G. We again simulate the quantum algorithm
+A using Sim∗(A) to obtain ((a, b, c), D) but now we discard the tuple (a, b, c) and only consider
+the database D. Concretely, the quantum algorithm A wins if there exists a tuple (a′, b′, c) ∈G
+such that D(a′
+i) = b′
+i for all i ∈[k].
+Deﬁnition 4.8. The value of the quantum database game of G is
+ω∗
+D(G, t) := max
+A∈C∗
+t
+Pr[A wins G∗
+D] = max
+A∈C∗
+t
+Pr
+ ∃(a′, b′, c′) ∈G s.t.
+∀i ∈[k] , D(a′
+i) = b′
+i
+
+ (a, b, c), D
+
+←Sim∗(A)
+
+.
+The following lemma relates the three quantum notions introduced above.
+Lemma 4.9 ([Zha19]). For every quantum algorithm A:
+p
+Pr[A wins G∗
+O] ≤
+p
+Pr[A wins G∗
+S] +
+p
+k/2n ,
+Pr[A wins G∗
+S] ≤Pr[A wins G∗
+D] .
+In particular, the values of the three types of quantum games are related:
+∀t ∈N ,
+q
+ω∗
+O(G, t) ≤
+q
+ω∗
+S(G, t) +
+p
+k/2n
+and
+ω∗
+S(G, t) ≤ω∗
+D(G, t) .
+Proof. We ﬁrst compare G∗
+O and G∗
+S. The fact that
+p
+Pr[A wins G∗
+O] ≤
+p
+Pr[A wins G∗
+S] +
+p
+k/2n
+is a restatement of [Zha19, Lemma 5].
+We now compare G∗
+S and G∗
+D. As in the classical setting, if A wins G∗
+S then A wins G∗
+D trivially,
+so Pr[A wins G∗
+S] ≤Pr[A wins G∗
+D]. Note that in the classical case the value of the simulated oracle
+and database games are the same by a simple simulation argument, but in the quantum setting the
+simulation argument does not go through due to the no-cloning theorem.
+20
+
+
+[PÁGINA PDF 23]
+5
+A lifting lemma for database games
+In this section we show how to bound the value of a (classical or quantum) database game via the
+instability of the game, a purely classical quantity that we introduce in this paper. As we will see
+shortly, it is straightforward to argue that for any base game G (Deﬁnition 4.1), the value ωD(G, t)
+is at most t times the instability of G. The goal of this section is to to prove that the (quantum)
+value ω∗
+D(G, t) is at most t2 times the instability of G. In particular, we enable lifting a bound on
+the (classical) instability of G to a bound on the (quantum) value ω∗
+D(G, t). Combining the lifting
+lemma with the fact that oracle games can be generically reduced to database games (as described
+in Section 4.2), we are able to establish the post-quantum security of the Micali construction solely
+by analyzing classical properties of it.
+5.1
+Database properties and the basic lifting lemma
+A database property is a more general notion of a database game.
+Deﬁnition 5.1. A database property P is a set of databases D: X ⇀Y . The negation of P,
+denoted ¯P, is the set (X ⇀Y ) \ P.
+Given a base game, we deﬁne a corresponding database property as follows.
+Deﬁnition 5.2. The database property of a base game G ⊆Ak × Bk × C is
+PG := {D : ∃(a, b, c) ∈G with D(ai) = bi ∀i ∈[k]} .
+For a base game G, the database property PG is closely related to the database game of G.
+This is because winning the database game is equivalent to the database outputted by Sim∗(A)
+being in PG. In particular, the following proposition holds.
+Proposition 5.3. For every base game G ⊆Ak × Bk × C and quantum algorithm A,
+Pr[A wins G∗
+D] = Pr
+h
+D ∈PG
+
+ (a, b, c), D
+
+←Sim∗(A)
+i
+.
+We deﬁne the ﬂip probability of a pair of database properties.
+Deﬁnition 5.4. The ﬂip probability ﬂip(P →Q, t) from property P to property Q is the quantity
+ﬂip(P →Q, t) :=
+max
+D: {0,1}m⇀{0,1}n
+|D|<t , D∈P
+max
+x/∈supp(D) Pr
+y
+
+D + [x 7→y] ∈Q
+
+,
+and ﬂip(∅→Q, t) := 0.
+Intuitively, this is the maximum probability over all databases D ∈P with less than t entries
+that making an additional query puts D ∈Q. The following properties can be obtained easily from
+the above deﬁnition.
+Proposition 5.5 (Properties of the ﬂip probability). Let P, P′, Q, Q′ be database properties.
+(i) If P ⊆P′ and Q ⊆Q′ then ﬂip(P →Q) ≤ﬂip(P′ →Q′).
+(ii) ﬂip(P ∪P′ →Q) = max
+ ﬂip(P →Q), ﬂip(P′ →Q)
+
+.
+21
+
+
+[PÁGINA PDF 24]
+(iii) ﬂip(P →Q ∪Q′) ≤ﬂip(P →Q) + ﬂip(P →Q′).
+The instability of a database property is the following classical quantity.
+Deﬁnition 5.6. The instability I(P, t) of a database property P with query bound t is the max-
+imum probability that, for any database D containing less than t queries, making one additional
+(classical) query changes whether or not D has the property P. Formally, we let
+I(P, t) := max{ﬂip( ¯P →P, t), ﬂip(P →¯P, t)} .
+Note that instability is symmetric: I(P, t) = I( ¯P, t). There is a direct argument that shows
+that ωD(G, t) is bounded by tI(PG, t).6 Similarly, our basic lifting lemma shows that ω∗
+D(G, t) is
+bounded by the instability of the database property PG. Thus, it lifts a classical notion to prove
+a bound on the quantum value of a database game.
+Lemma 5.7 (Basic lifting lemma). For any base game G,
+ω∗
+D(G, t) ≤t2 · 6I(PG, t) .
+Before we proceed to the proof of Lemma 5.7, we ﬁrst introduce some quantum notation.
+Recall that we let |Sim∗(A)⟩denote the ﬁnal quantum state of the simulated adversary. Using the
+deﬁnition of measurement, we can express the probability that the ﬁnal measured database D is in
+a database property P in terms of the state |Sim∗(A)⟩.
+Proposition 5.8. For every database property P and quantum adversary A,
+Pr
+h
+D ∈P
+
+ (a, b, c), D
+
+←Sim∗(A)
+i
+= ∥P |Sim∗(A)⟩∥2 ,
+where P := I ⊗P
+D∈P |D⟩⟨D| is the projector that maps all basis states of the form |x, u, z⟩⊗|D⟩
+to 0 if D /∈P, and is otherwise the identity.
+We learn that in order to bound ω∗
+D(G, t) it suﬃces to bound ∥PG |Sim∗(A)⟩∥for every A ∈C∗
+t .
+Next, deﬁne Pt := I ⊗P
+D:|D|≤t |D⟩⟨D| to be the projector that maps all basis states of the form
+|x, u, z⟩⊗|D⟩to 0 if |D| > t, and is otherwise the identity.
+The proof of Lemma 5.7 follows from two lemmas. The ﬁrst lemma shows that ∥P |Sim∗(A)⟩∥
+is bounded by t∥P(PtOPt) ¯P∥. Intuitively, this is because if P and PtOPt almost commute (i.e., P
+and O almost commute when acting on databases with at most t entries) then each oracle query
+cannot change the probability that the database is in P by too much. The second lemma shows that
+∥P(PtOPt) ¯P∥2 is bounded by I(P, t). Combining the two lemmas with Proposition 5.8 completes
+the proof of Lemma 5.7.
+Lemma 5.9. Let P be a database property with ∅/∈P. For every A ∈C∗
+t ,
+∥P |Sim∗(A)⟩∥≤t · ∥P(PtOPt) ¯P∥.
+Lemma 5.10. For any database property P,
+∥P(PtOPt) ¯P∥2 ≤6I(P, t) .
+6Let A be a classical adversary, and let Ai be the adversary obtained by stopping A immediately before its i-th
+query. Then |Pr[Ai+1 wins GD] −Pr[Ai wins GD]| ≤I(P, t) holds for each i ∈[t] by deﬁnition of instability, and
+Pr[A1 wins GD] = 0 since ∅/∈PG. Therefore, Pr[A wins GD] ≤tI(P, t).
+22
+
+
+[PÁGINA PDF 25]
+Lemmas 5.9 and 5.10 strengthen the proof sketch outlined in Section 2.5. This is because for any
+operator A and projector P, [P, A] = PA−AP = (PAP+PA ¯P)−(PAP+ ¯PAP) = PA ¯P−¯PAP, and
+so ∥[P, A]∥2 = ∥PA ¯P∥2 +∥¯PAP∥2. Hence, Lemma 5.9 implies that ∥P |Sim∗(A)⟩∥≤t·∥[P, PtOPt]∥
+and Lemma 5.10 implies that ∥[P, PtOPt]∥2 ≤12I(P, t).
+We now prove Lemma 5.9, and postpone the proof of Lemma 5.10 to Section 5.3.
+Proof of Lemma 5.9. Recall that the quantum algorithm A is described by some unitaries (A1, . . . , At)
+and initial state |φ0⟩. We can thus describe the quantum algorithm Sim∗(A) via the cumulative uni-
+tary U := AtOAt−1 · · · OA1O acting on the initial state |φ0, ∅⟩where ∅denotes the empty database.
+(We abuse notation and implicitly extend Ai to act as the identity on the database register.) The
+ﬁnal state is |Sim∗(A)⟩:= U|φ0, ∅⟩.
+Let U′ := At(PtOPt)At−1 · · · (PtOPt)A1(PtOPt). We have that U′|φ0, ∅⟩= U|φ0, ∅⟩, as applying
+each Pt has no eﬀect, since the database can only have at most t queries when Pt is applied.
+For any operators C1, . . . , Ct and projector P, we have that
+Ct · · · C1 = ¯PCt ¯PCt−1 ¯P · · · C1 ¯P +
+t
+X
+i=0
+(Ct · · · Ci+1) · P · (Ci ¯P · · · C1 ¯P) .
+(1)
+To see this, we observe that
+Ct · · · C1 = (Ct · · · C2)(C1 ¯P) + (Ct · · · C1) · P ,
+which implies Eq. (1) by induction.
+Let Ci = Ai(PtOPt). Then we have that
+∥P |Sim∗(A)⟩∥= ∥PU′|φ0, ∅⟩∥= ∥
+
+P ¯PCt ¯PCt−1 ¯P · · · C1 ¯P +
+t
+X
+i=0
+P(Ct · · · Ci+1) · P · (Ci ¯P · · · C1 ¯P)
+
+|φ0, ∅⟩∥
+≤
+t
+X
+i=0
+∥P(Ct · · · Ci+1) · P · (Ci ¯P · · · C1 ¯P)|φ0, ∅⟩∥
+≤∥P(Ct · · · C1) · P|φ0, ∅⟩∥+
+t
+X
+i=1
+∥P(Ct · · · Ci+1)∥· ∥P · (Ci ¯P · · · C1 ¯P)|φ0, ∅⟩∥
+≤0 +
+t
+X
+i=1
+∥PCi ¯P∥· ∥(Ci ¯P · · · C1 ¯P)|φ0, ∅⟩∥
+≤
+t
+X
+i=1
+∥PAi(PtOPt) ¯P∥,
+where we use the fact that the operator norm of a product of unitaries/projectors is at most 1, and
+that ∅/∈P. Since P and Ai commute for every i, we get that ∥PAi(PtOPt) ¯P∥= ∥AiP(PtOPt) ¯P∥≤
+∥Ai∥∥P(PtOPt) ¯P∥= ∥P(PtOPt) ¯P∥. Hence, ∥P |Sim∗(A)⟩∥≤t∥P(PtOPt) ¯P∥.
+5.2
+Conditional instability and the lifting lemma
+Lemma 5.7 is not quite suﬃcient to analyze the database game that corresponds to the Micali
+construction. In fact, the instability of this game is high because we take a maximum over all
+23
+
+
+[PÁGINA PDF 26]
+bounded databases, including those which contain collisions. If we were to only take the maximum
+over databases that do not contain collisions, then the instability would be low. Moreover, the
+instability of the “no collision” property is itself low.
+In this section, we strengthen the results of the previous section by introducing the notion of
+conditional instability, which allows us to analyze the value ω∗
+D(G, t) by splitting its database prop-
+erty PG into subproperties and analyzing the subproperties separately, analogous to conditioning
+in probability. In particular, we can then analyze the Micali game by analyzing the no collision
+property and the instability of the Micali database property conditioned on the no collision property.
+For the entirety of this section we will let P and Q be database properties, and we will analyze
+quantities about P conditioned on Q. These results strengthen the results of Section 5.1, as the
+previous results can be recovered by setting Q to be the database property containing all databases.
+Deﬁnition 5.11. Let P and Q be two database properties, and let t be a query bound. We deﬁne
+ﬂip(P | Q, t) := ﬂip( ¯P ∩Q →P ∩Q, t) .
+The conditional instability I(P | Q, t) is deﬁned as
+I(P | Q, t) := max{ﬂip(P | Q, t), ﬂip( ¯P | Q, t)} .
+Before we state the lifting lemma, we observe the following properties of instability.
+Proposition 5.12. Let P and Q be two database properties. Then
+1. I(P, t) and I(P ∪Q, t) are incomparable.
+2. ﬂip(P | Q, t) ≤ﬂip( ¯P →P, t), and therefore I(P | Q, t) ≤I(P, t).
+3. I(P ∪Q, t) ≤I(P | ¯Q, t) + I(Q, t).
+Proof. To show Item 1, we give database properties P, Q such that I(P, t) > I(P ∪Q, t) and
+properties P′, Q′ such that I(P′, t) < I(P′ ∪Q′, t). Let P be the property that D̸ = ∅. Then clearly
+I(P, t) ≥ﬂip( ¯P →P, t) = 1. Let Q be the property that D = ∅. Now P ∪Q is the set of all
+databases, so I(P ∪Q, t) = 0.
+On the other hand, let P′ = ∅be the empty property, and let Q′ be the property that D = ∅.
+Then, I(P′, t) = 0, and I(P′ ∪Q′, t) = I(Q′, t) = 1.
+Item 2 holds since
+ﬂip(P | Q, t) = ﬂip( ¯P ∩Q →P ∩Q, t) ≤ﬂip( ¯P →P, t) .
+Finally, for Item 3 we observe that
+ﬂip(P ∪Q →P ∪Q, t) = ﬂip( ¯P ∩¯Q →P ∪Q, t) ≤ﬂip( ¯P ∩¯Q →P ∩¯Q, t) + ﬂip( ¯P ∩¯Q →Q, t)
+≤ﬂip(P | ¯Q, t) + ﬂip( ¯Q →Q, t) .
+On the other hand,
+ﬂip(P ∪Q →P ∪Q, t) = ﬂip(P ∪Q →¯P ∩¯Q, t) = max(ﬂip(P ∩¯Q →¯P ∩¯Q, t), ﬂip(Q →¯P ∩¯Q, t))
+≤max(ﬂip( ¯P | ¯Q, t), ﬂip(Q →¯Q, t)) .
+Therefore, we get that I(P ∪Q) ≤max
+ ﬂip(P | ¯Q, t) + ﬂip( ¯Q →Q, t), ﬂip( ¯P | ¯Q, t), ﬂip(Q →¯Q, t)
+
+,
+which is at most I(P | ¯Q, t) + I(Q, t).
+24
+
+
+[PÁGINA PDF 27]
+We now state the lifting lemma.
+Lemma 5.13 (Lifting lemma). Let G be a base game. Then for any database property Q,
+ω∗
+D(G, t) ≤t2 · 6
+ I(PG | ¯Q, t) + I(Q, t)
+
+.
+Proof. Let P and Q be two database properties. We show that for every A ∈C∗
+t it holds that
+∥P |Sim∗(A)⟩∥2 ≤t2 · 6
+ I(P | ¯Q, t) + I(Q, t)
+
+.
+Let R = P ∪Q. Then by Lemmas 5.9 and 5.10 we have that
+∥P |Sim∗(A)⟩∥2 ≤∥R |Sim∗(A)⟩∥2 ≤t2 · ∥[R, PtOPt]∥2 ≤t2 · 6I(R, t) ,
+where the ﬁrst inequality holds since P ⊆R. Finally, we use the fact that I(R, t) = I(P ∪Q, t) ≤
+I(P | ¯Q, t) + I(Q, t), which completes the proof.
+We dedicate the remainder of the section to proving Lemma 5.10.
+5.3
+Proof of Lemma 5.10
+Let |Φ⟩be an arbitrary state in the image of Pt ¯P, i.e. |Φ⟩= P
+x,u,z,D αx,u,z,D |x, u, z, D⟩, where the
+sum is over all D: {0, 1}m ⇀{0, 1}n such that D ∈¯P and |D| ≤t. By Lemma 3.2,
+O |Φ⟩= |Φ1⟩+ |Φ2⟩+ |Φ3⟩+ |Φ4⟩+ |Φ5⟩,
+where |Φ1⟩, |Φ2⟩, |Φ3⟩, |Φ4⟩, and |Φ5⟩are the following states:
+|Φ1⟩=
+X
+x,u,z,D
+D∈¯P
+(|D|=t or u=0n)
+αx,u,z,D |x, u, z⟩⊗(−1)u·D(x) |D⟩,
+|Φ2⟩=
+X
+x,u,z,D
+D(x)=⊥,D∈¯P
+|D|<t,u̸=0n
+αx,u,z,D |x, u, z⟩⊗
+1
+√
+2n
+X
+y
+(−1)u·y |D + [x 7→y]⟩,
+|Φ3⟩=
+X
+x,u,z,D
+D(x)̸=⊥,D∈¯P
+|D|<t,u̸=0n
+αx,u,z,D |x, u, z⟩⊗(−1)u·D(x) |D⟩,
+|Φ4⟩=
+X
+x,u,z,D
+D(x)̸=⊥,D∈¯P
+|D|<t,u̸=0n
+αx,u,z,D |x, u, z⟩⊗(−1)u·D(x)
+√
+2n
+|D −x⟩,
+|Φ5⟩=
+X
+x,u,z,D
+D(x)̸=⊥,D∈¯P
+|D|<t,u̸=0
+αx,u,z,D |x, u, z⟩⊗1
+2n
+X
+y
+ 1 −(−1)u·D(x) −(−1)u·y
+|D −x + [x 7→y]⟩.
+25
+
+
+[PÁGINA PDF 28]
+Let |Ψi⟩= PPt |Φi⟩for i ∈[5]. We have that
+|Ψ1⟩= 0 ,
+|Ψ2⟩=
+X
+x,u,z,D
+D(x)=⊥,D∈¯P
+|D|<t,u̸=0n
+αx,u,z,D |x, u, z⟩⊗
+1
+√
+2n
+X
+y
+D+[x7→y]∈P
+(−1)u·y |D + [x 7→y]⟩,
+|Ψ3⟩= 0 ,
+|Ψ4⟩=
+X
+x,u,z,D
+D(x)̸=⊥,D∈¯P,D−x∈P
+|D|<t,u̸=0n
+αx,u,z,D |x, u, z⟩⊗(−1)u·D(x)
+√
+2n
+|D −x⟩
+=
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+(−1)u·w
+√
+2n
+
+|x, u, z⟩⊗
+D′
+,
+|Ψ5⟩=
+X
+x,u,z,D
+D(x)̸=⊥,D∈¯P
+|D|<t,u̸=0n
+αx,u,z,D |x, u, z⟩⊗1
+2n
+X
+y
+D−x+[x7→y]∈P
+ 1 −(−1)u·D(x) −(−1)u·y
+|D −x + [x 7→y]⟩
+=
+X
+x,u,z,D′
+D′(x)=⊥
+|D′|<t−1,u̸=0n
+X
+y
+D′+[x7→y]∈P
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+1
+2n
+ 1 −(−1)u·w −(−1)u·y
+|x, u, z⟩⊗
+D′ + [x 7→y]
+
+Let S ¯P(D′, x) := {y ∈{0, 1}n : D′ + [x 7→y] ∈¯P}, and let SP(D′, x) := {y ∈{0, 1}n : D′ + [x 7→
+y] ∈P}. Observe that |Ψ4⟩is orthogonal to |Ψ2⟩and |Ψ5⟩, as every database D with nonzero
+amplitude in |Ψ4⟩has D(x) = ⊥.
+Deﬁne
+s1 :=
+X
+x,u,z,D
+D(x)̸=⊥,D∈¯P,D−x∈P
+|D|<t,u̸=0n
+|αx,u,z,D|2 ,
+s2 :=
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|=t−1,u̸=0n
+αx,u,z,D′
+2 ,
+s3 :=
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|<t−1,u̸=0n
+αx,u,z,D′
+2 ,
+s4 :=
+X
+x,u,z,D
+D(x)̸=⊥,D∈¯P,D−x∈¯P
+|D|<t,u̸=0n
+|αx,u,z,D|2 .
+Note that by normalization, we have that s1 + s2 + s3 + s4 ≤1.
+26
+
+
+[PÁGINA PDF 29]
+By Cauchy-Schwarz, we have that
+∥|Ψ4⟩∥2 =
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+(−1)u·w
+√
+2n
+
+2
+≤
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+2
+·
+S ¯P(D′, x)
+
+2n
+≤ﬂip(P →¯P, t)
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+2
+≤ﬂip(P →¯P, t)
+X
+x,u,z,D
+D(x)̸=⊥,D∈¯P,D−x∈P
+|D|<t,u̸=0n
+|αx,u,z,D|2
+= ﬂip(P →¯P, t) · s1 .
+Let βw,y = 1 −(−1)u·w −(−1)u·y. Observe that |Ψ2⟩+ |Ψ5⟩= |Ξ1⟩+ |Ξ2⟩+ |Ξ3⟩, where |Ξ1⟩,
+|Ξ2⟩and |Ξ3⟩are the following orthogonal states:
+|Ξ1⟩=
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|=t−1,u̸=0n
+αx,u,z,D′
+1
+√
+2n
+X
+y
+D′+[x7→y]∈P
+(−1)u·y |x, u, z⟩⊗
+D′ + [x 7→y]
+
+|Ξ2⟩=
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+X
+y
+D′+[x7→y]∈P
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+1
+2n βw,y
+
+|x, u, z⟩⊗
+D′ + [x 7→y]
+
+|Ξ3⟩=
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|<t−1,u̸=0n
+X
+y
+D′+[x7→y]∈P
+(−1)u·yαx,u,z,D′
+√
+2n
++
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+1
+2n βw,y
+
+|x, u, z⟩⊗
+D′ + [x 7→y]
+
+.
+We also observe that P
+y
+ 1
+2n βw,y
+2 = 3−2(−1)u·w
+2n
+≤
+5
+2n , and P
+w
+ 1
+2n βw,y
+2 = 3−2(−1)u·y
+2n
+≤
+5
+2n .
+We have that
+∥|Ξ1⟩∥2 =
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|=t−1,u̸=0n
+X
+y
+D′+[x7→y]∈P
+αx,u,z,D′
+1
+√
+2n (−1)u·y
+
+2
+=
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|=t−1,u̸=0n
+αx,u,z,D′
+2 |SP(D′, x)|
+2n
+≤ﬂip( ¯P →P, t)
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|=t−1,u̸=0n
+αx,u,z,D′
+2 = ﬂip( ¯P →P, t) · s2 .
+27
+
+
+[PÁGINA PDF 30]
+By Cauchy-Schwarz, we get that
+∥|Ξ2⟩∥2 =
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+X
+y
+D′+[x7→y]∈P
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+1
+2n βw,y
+
+2
+≤
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+X
+y
+D′+[x7→y]∈P
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+2
+X
+w
+D′+[x7→w]∈¯P
+
+1
+2n βw,y
+
+2
+=
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+2
+X
+y
+D′+[x7→y]∈P
+
+X
+w
+D′+[x7→w]∈¯P
+
+1
+2n βw,y
+
+2
+=
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+2
+X
+w
+D′+[x7→w]∈¯P
+X
+y
+D′+[x7→y]∈P
+
+1
+2n βw,y
+
+2
+≤
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+2
+X
+w
+D′+[x7→w]∈¯P
+5
+2n
+≤
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+25
+S ¯P(D′, x)
+
+2n
+≤5 · ﬂip(P →¯P, t)
+X
+x,u,z,D′
+D′(x)=⊥,D′∈P
+|D′|<t−1,u̸=0n
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+2
+= 5 · ﬂip(P →¯P, t)
+X
+x,u,z,D
+D(x)̸=⊥,D∈¯P,D−x∈P
+|D|<t,u̸=0n
+|αx,u,z,D|2
+= 5 · ﬂip(P →¯P, t) · s1 .
+Finally, we have that by the (square of the) triangle inequality,
+∥|Ξ3⟩∥2 =
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|<t−1,u̸=0n
+X
+y
+D′+[x7→y]∈P
+
+(−1)u·yαx,u,z,D′
+√
+2n
++
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+1
+2n βw,y
+
+2
+≤ε + ε′ + 2
+√
+ε · ε′ ,
+28
+
+
+[PÁGINA PDF 31]
+where
+ε =
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|<t−1,u̸=0n
+X
+y
+D′+[x7→y]∈P
+
+(−1)u·yαx,u,z,D′
+√
+2n
+
+2
+≤
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|<t−1,u̸=0n
+αx,u,z,D′
+2 · |SP(D′, x)|
+2n
+≤ﬂip( ¯P →P, t)
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|<t−1,u̸=0n
+αx,u,z,D′
+2 = ﬂip( ¯P →P, t) · s3 ,
+and
+ε′ =
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|<t−1,u̸=0n
+X
+y
+D′+[x7→y]∈P
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+1
+2n βw,y
+
+2
+≤
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|<t−1,u̸=0n
+X
+y
+D′+[x7→y]∈P
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+2
+·
+ X
+w
+
+1
+2n βw,y
+
+2
+≤
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|<t−1,u̸=0n
+X
+y
+D′+[x7→y]∈P
+
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+2
+· 5
+2n
+≤
+X
+x,u,z,D′
+D′(x)=⊥,D′∈¯P
+|D′|<t−1,u̸=0n
+5|SP(D′, x)|
+2n
+X
+w
+D′+[x7→w]∈¯P
+αx,u,z,D′+[x7→w]
+2
+≤5 · ﬂip( ¯P →P, t)
+X
+x,u,z,D
+D(x)̸=⊥,D∈¯P,D−x∈¯P
+|D|<t,u̸=0n
+|αx,u,z,D|2
+= 5 · ﬂip( ¯P →P, t) · s4 .
+Hence,
+∥|Ξ3⟩∥2 ≤ﬂip( ¯P →P, t)
+
+s3 + 5s4 + 2
+√
+5s3s4
+
+≤6 · ﬂip( ¯P →P, t) · (s3 + s4) .
+Putting it all together (and recalling that s1 + s2 + s3 + s4 ≤1), we get that
+∥¯QPtOΦ∥2 = ∥|Ψ4⟩∥2 + ∥|Ξ1⟩∥2 + ∥|Ξ2⟩∥2 + ∥|Ξ3⟩∥2
+≤ﬂip(P →¯P, t) · s1 + ﬂip( ¯P →P, t) · s2 + ﬂip(P →¯P, t) · 5s1 + ﬂip( ¯P →P, t) · 6(s3 + s4)
+≤I(P, t)
+
+6s1 + s2 + 6s3 + 6s4
+
+≤6I(P, t) ,
+which completes the proof.
+29
+
+
+[PÁGINA PDF 32]
+6
+Soundness of the Micali construction
+We use the lifting lemma to prove that the Micali construction is sound in the quantum random
+oracle model. First, we show that convincing the Micali veriﬁer amounts to winning a corresponding
+oracle game, in the sense of Deﬁnition 4.6. Second, we show that the database property induced
+by this game is stable when conditioned on the database having no collisions. Both of these are
+classical properties of the Micali construction. Indeed, our results show how the existing proof of
+soundness for this protocol ﬁts into our instability framework, making quantum security immediate.
+Theorem 6.1. Let (P, V) be a PCP for a relation R that has soundness error ϵ, proof length
+ℓ, and query complexity q. The Micali construction, when based on (P, V), is a non-interactive
+argument for R that has soundness error O(t2ϵ + t3/2λ) against quantum attackers that make at
+most t −O(q log ℓ) queries to the random oracle. This soundness error is tight up to small factors.
+The rest of this section is organized as follows: in Section 6.1 we describe the properties of Merkle
+trees used in the proof of security; in Section 6.2 we describe the oracle game that corresponds to
+the Micali construction; and in Section 6.3 we prove Theorem 6.1.
+6.1
+Some algorithms for Merkle trees
+The Micali construction uses Merkle trees [Mer89] based on random oracles as succinct commit-
+ments to lists of values that permit cheaply decommitting to chosen entries in the list.
+While
+Merkle trees are well known, we rely on properties of Merkle trees that, while simple, are less well
+known. In this section we introduce notations needed to specify these properties.
+Given a domain Z and a power of two ℓ= 2d, a Merkle tree on a list v = (vi)i∈[ℓ] ∈Zℓwith
+respect to the function h: Z × Z →Z is a list of values (zk,i)k∈{0,...,d},i∈[2k] ∈Z2ℓ, where
+∀i ∈[ℓ] , zd,i := vi ,
+∀k ∈{d −1, . . . , 1, 0} , ∀i ∈[2k] , zk,i := h(zk+1,2i−1, zk+1,2i) .
+The root of the Merkle tree, denoted rt, is z0,1. Given i ∈[ℓ], the authentication path for the i-th
+leaf in the Merkle tree is the list of values ap := (ak)k∈[d] ∈Zd where ak is the sibling of the k-th
+node on the path from vi = zd,i to the root rt = z0,1. An authentication path is valid for v at i
+with respect to rt, h if “hashing up” the path from v at index i to the root using ap yields rt. We
+denote by CheckPathh(rt, i, v, ap) the (eﬃcient) algorithm that checks this condition.
+Below we describe two algorithms that will be used in the proof of security.
+Expanding paths.
+We deﬁne an algorithm Expand that outputs all the input-output pairs that
+arise when validating a given authentication path. The name “expand” denotes the fact the algo-
+rithm outputs not only the authentication path but also the nodes from the given leaf to the root.
+The algorithm Expand is used in Section 6.2 to deﬁne the oracle game for the Micali construction.
+In more detail, Expand is granted oracle access to a function h: Z ×Z →Z and receives as input
+an index i ∈[2d], a value v ∈Z, and an authentication path ap := (ak)k∈[d] ∈Zd. Then Expand sets
+yd := v and proceeds as follows for k = d −1, . . . , 0: if the k-th bit of i is 0, set xk := (yk+1, ak+1);
+else if the k-th bit of i is 1, set xk := (ak+1, yk+1); set yk := h(xk). Finally, Expand outputs the d
+input-output pairs (x, y) := ((xi)d−1
+i=0 , (yi)d−1
+i=0 ). The following property holds.
+Proposition 6.2. CheckPathh(rt, i, v, ap) = 1 if and only if (x, y) ←Expandh(i, v, ap) has y0 = rt.
+30
+
+
+[PÁGINA PDF 33]
+Extracting trees.
+We deﬁne an algorithm Extract that is used to obtain a Merkle tree rooted
+at a chosen entry in a database. This algorithm is similar to the one presented in [Val08; BCS16],
+and below we give a description of it because we use it in Section 6.3 within the security proof.
+In more detail, Extract, receives a database D: Z × Z ⇀Z, a root value rt ∈Z, and a height
+bound d, and outputs a rooted binary tree T = (V, E) of depth at most d where V ⊆Z × {0, 1}≤d.
+The algorithm Extract is deﬁned as follows.
+Extract(D, rt, d):
+1. Initialize the vertex set with the root V := {(rt, ∅)} and the edge set to be empty E := ∅.
+2. While there exists an unmarked vertex (u, s) ∈V such that u ∈im(D) and s ∈{0, 1}<d:
+(a) Mark the vertex (u, s).
+(b) If u is the result of a collision (D(x) = D(x′) = u for distinct x and x′), return ⊥.
+(c) Let x0, x1 ∈Z be the unique values such that D(x0, x1) = u.
+(d) Update the vertex set V := V ∪{(x0, s∥0), (x1, s∥1)}.
+(e) Update the edge set E := E ∪{((u, s), (x0, s∥0)), ((u, s), (x1, s∥1))}.
+3. Output the tree T := (V, E).
+Given a tree T := Extract(D, rt, d), we can deﬁne a string leaves(T) where for each i ∈[2d] ∼= {0, 1}d
+if there exists a vertex (x, i) ∈T then leaves(T)i := x else leaves(T)i := ⊥.
+It will be useful in the analysis of Merkle tree algorithms to deﬁne the set S(D) of “half-
+preimages” in a database D:
+Deﬁnition 6.3. Let D: Z × Z ⇀Z be a database. Then S(D) := {u : ∃u′ ∈Z s.t. (u, u′) ∈
+supp(D) ∨(u′, u) ∈supp(D)}.
+The following two lemmas are about properties of the algorithm Extract. The ﬁrst lemma follows
+from the algorithm description, and the second one is proved below.
+Lemma 6.4. Let D: Z × Z ⇀Z be a database, x ∈Z × Z an input with x /∈supp(D), y ∈Z an
+output, rt ∈Z, and d ∈N. For the rooted binary trees T1 := Extract(D, rt, d) and T2 := Extract(D+
+[x 7→y], rt, d), if the database D + [x 7→y] has no collisions then T1 is a subtree of T2.
+Lemma 6.5. Let D be a database and let x /∈supp(D). Let D′ = D + [x 7→y]. Suppose that
+D, D′ ∈¯Pcol. For any rt ∈Z, if Extract(D, rt, d)̸ = Extract(D′, rt, d), then y ∈{rt} ∪S(D).
+Proof. Let rt ∈Z, and let T1 := Extract(D, rt, d) and T2 := Extract(D + [x 7→y], rt, d), and suppose
+that T1̸ = T2. By Lemma 6.4, we get that T1 ⊊T2. Therefore, there must be a vertex (z, s) that
+is marked in T2 but unmarked in T1. This means that z /∈im(D) but z ∈im(D′), and hence that
+z = y. If (z, s) = (rt, ∅), then y = z = rt. If (z, s)̸ = (rt, ∅), then there exists z′ ∈Z such that either
+(z, z′) ∈supp(D) or (z′, z) ∈supp(D), and hence y ∈S(D).
+6.2
+The oracle game for the Micali construction
+We have summarized the Micali construction in Section 2.1. In order to deﬁne the oracle game that
+represents it, though, we need to recall in more detail how the veriﬁer works. The Micali veriﬁer
+V receives as input an instance x and proof π = (rt, (api)i∈[q], (vi)i∈[q]), and has oracle access to a
+function h: {0, 1}2λ →{0, 1}λ. First, V ensures that all authentication paths are for a Merkle tree
+with ℓleaves (recall that ℓis the PCP proof length). After that, V runs the underlying PCP veriﬁer
+V on input x and random string h(rt, 0λ). When V makes its i-th query to location j ∈[ℓ], V runs
+31
+
+
+[PÁGINA PDF 34]
+CheckPathh(rt, api, vi, j) and answers with vi if this check passes (if not then it rejects). Once V
+halts, V accepts if and only if V accepted.
+Given a proof π as above, we deﬁne
+Expandh(π) :=
+ x1, . . . , xq, (rt, 0λ)
+
+,
+ y1, . . . , yq, r
+
+∈({0, 1}2λ)a × ({0, 1}λ)a
+where r := h(rt, 0λ) is the derived randomness, each (xi, yi) := Expandh(ji, api, vi) is an expanded
+authentication path, and ji ∈[ℓ] is the location of the i-th query of V(x; r). Note that a := O(q log ℓ).
+Deﬁnition 6.6. Let V be a PCP veriﬁer for a relation R and let x be an instance. The Micali
+game for (V, x) is the set GMic
+V,x := {Expandh(π) : h: {0, 1}2λ →{0, 1}λ, π ∈{0, 1}s, Vh(x, π) = 1}.
+6.3
+Proof of Theorem 6.1
+In order to show that the Micali construction is sound in the (quantum) random oracle model, it
+suﬃces to show that the oracle-game value of GMic
+V,x is small whenever x /∈L(R).
+Proposition 6.7. The probability that a t-query classical adversary A causes the Micali veriﬁer V
+to accept x is at most ωO(GMic
+V,x, t + O(q log ℓ)). The probability that a t-query quantum adversary
+A causes the Micali veriﬁer V to accept x is at most ω∗
+O(GMic
+V,x, t + O(q log ℓ)).
+Proof. Let B be the algorithm that, when given access to an oracle h, runs Ah to obtain π and then
+outputs Expandh(π). The query complexity of B is t + O(q log ℓ) because A makes t queries and
+Expand makes O(q log ℓ) queries. Let ((xi)q
+i=1, (rt, 0λ), (yi)q
+i=1, r) be the output of B. By deﬁnition
+of Expand, h((xi)j) = (yi)j for all i, j. Hence Bh wins GMic
+V,x if and only if Vh(x, π) = 1.
+We now need to establish an upper bound on ω∗
+O(GMic
+V,x, t) given that x /∈L(R). By Lemmas 4.9
+and 5.13, it suﬃces to study the instability of the database property PMic := PGMic
+V,x associated with
+the oracle game GMic
+V,x (in the sense of Deﬁnition 5.2). In particular, we upper bound the instability
+of PMic conditioned on the absence of collisions in the database. To simplify this task, we ﬁrst
+“break down” PMic as the union of simpler database properties, at least for databases that do not
+contain collisions. Below we assume that the PCP length ℓequals 2d for some d ∈N.
+Deﬁnition 6.8. For rt ∈{0, 1}λ, Prt is the set of databases D such that (rt, 0λ) ∈supp(D)
+and for T := Extract(D, rt, d) the PCP veriﬁer Vleaves(T)(x; D(rt, 0λ)) accepts (where the veriﬁer
+immediately rejects if it queries a location i with leaves(T)i = ⊥).
+Proposition 6.9. PMic ⊆Pcol ∪S
+rt∈{0,1}λ Prt.
+Proof. By deﬁnition, a database D is in PMic if and only if there exists (x, y) ∈GMic
+V,x such that for
+all i ∈[k], D(xi) = yi. Suppose that D ∈PMic, and let w = ((x1, . . . , xq, (rt, 0λ)), (y1, . . . , yq, r)) ∈
+GMic
+V,x be a witness to this. If D ∈Pcol then we are done, so suppose D ∈¯Pcol. Then D ∈Prt,
+because if D has no collisions then the proof π extracted from root rt must be consistent with w;
+in particular Vleaves(T)(x; D(rt, 0λ)) accepts.
+We now prove two lemmas about instability: ﬁrst we bound the instability of PMic when con-
+ditioned on databases having no collisions; then we bound the instability for the set of databases
+that contain collisions. We denote the latter property by Pcol.
+32
+
+
+[PÁGINA PDF 35]
+Lemma 6.10. If x /∈L(R) then I(PMic | ¯Pcol, t) < ε + (2t + 1)/2λ.
+Proof. Fix a database D ∈¯PMic ∩¯Pcol with |D| < t and ﬁx an input (x0, x1) ∈({0, 1}λ)2. To bound
+the instability I(PMic | ¯Pcol, t), it suﬃces to bound Pry[D + [(x0, x1) 7→y] ∈PMic ∩¯Pcol] because if
+D ∈PMic then D′ ∈PMic for any D′ with D ⊆D′.
+Let S′ = {r ∈{0, 1}λ : VΠ(x; r) accepts, Π = leaves(Extract(D, x0, d))}. We will show that if
+D + [(x0, x1) 7→y] ∈PMic ∩¯Pcol, then y ∈S(D) ∪{x0} ∪S′.
+Let D′ := D + [(x0, x1) 7→y]. Proposition 6.9 implies that if D′ ∈PMic ∩¯Pcol then D′ belongs
+to the set Prt for some rt ∈{0, 1}λ and the database D does not belong to the set Prt. Consider
+the two rooted binary trees T1 := Extract(D, rt, d) and T2 := Extract(D′, rt, d). We have two cases.
+• Case 1: T1̸ = T2. By Lemma 6.5 we get that y ∈S(D) ∪{rt}. Since D′ ∈Prt, we see that
+(rt, 0λ) ∈supp(D′). Thus, either rt ∈S(D) or (x0, x1) = (rt, 0λ). Hence, y ∈S(D) ∪{x0}.
+• Case 2: T1 = T2. It must be that (rt, 0λ) /∈supp(D) but (rt, 0λ) ∈supp(D′). Hence x0 = rt and
+x1 = 0λ. Letting Π1 := leaves(T1) and Π2 := leaves(T2), we have that Π1 = Π2. Now because
+D′ ∈Prt, VΠ2(x; y) accepts, so VΠ1(x; y) accepts, and y ∈S′ as Π1 = leaves(Extract(D, rt, d))
+and x0 = rt.
+We deduce that either y ∈S(D), y = x0, or y ∈S′. Note that these three sets are independent of
+rt, so that in particular this holds for all choices of rt. Hence, Pry[D+[(x0, x1) 7→y] ∈PMic∩¯Pcol] ≤
+Pry[y ∈S(D) ∪{x0} ∪S′]. Clearly, |S(D)| ≤2|D| < 2t and |{x0}| = 1. We have that |S′| ≤ε2λ,
+by the soundness of the PCP, as Π = leaves(Extract(D, x0, d)) depends only on x0 and D, and in
+particular is independent of y. Thus, we conclude that Pry[D + [(x0, x1) 7→y] ∈PMic ∩¯Pcol] <
+ε + (2t + 1)/2λ, so I(PMic | ¯Pcol, t) < ε + (2t + 1)/2λ, as required.
+Lemma 6.11. I(Pcol, t) < t/2λ.
+Proof. Fix D /∈Pcol with |D| < t and x ∈{0, 1}2λ. We have that Pry[D + [x 7→y] ∈Pcol] < t/2λ,
+as in order for this event to occur it must be that y ∈im(D), and |im(D)| < t. For any D ∈Pcol,
+we trivially have that Pry[D + [x 7→y] /∈Pcol] = 0, which completes the proof.
+We can now deduce the following statements:
+Lemma 4.9
+−→
+q
+ω∗
+O(GMic
+V,x, t) ≤
+q
+ω∗
+D(GMic
+V,x, t) + O
+q
+q log ℓ/2λ
+
+,
+Lemma 5.13
+−→
+ω∗
+D(GMic
+V,x, t) ≤t2 · 6
+ I(PMic | ¯Pcol, t) + I(Pcol, t)
+
+.
+By combining the above statements, we get that ω∗
+O(GMic
+V,x, t) = O(t2ε + t3/2λ + q log ℓ/2λ), from
+which we obtain the stated upper bound on the soundness error via Proposition 6.7.
+Tightness.
+For simplicity we assume that the leaves in the Merkle tree commitments are salted,
+as is the case when one wishes to preserves zero knowledge (Section 7.1). We prove tightness of the
+t2ε term, which is the term that dominates in the expression for the soundness error.
+Consider the following adversary. The adversary starts with a proof Π that is accepted by the
+PCP with probability ε and, by making O(ℓ) classical queries, builds a Merkle tree for Π. Let rt
+be the root of the tree. By changing the salt for one of the leaves in the tree and “hashing up”, the
+adversary can construct another valid Merkle tree for Π with a newly sampled root rt′ by making
+33
+
+
+[PÁGINA PDF 36]
+only O(log ℓ) additional queries. The adversary then uses Grover’s algorithm [Gro96] to search for
+a new salt so that the new root rt′ has VΠ(x; h(rt′, 0λ)) = 1.
+With high probability over the choice of h, it holds that at least (ε/2)-fraction of the choices of
+salt will have a root rt′ with VΠ(x; h(rt′, 0λ)) = 1. By running Grover’s algorithm with t queries, the
+adversary thus ﬁnds a good salt with probability Ω(t2ε). Each of the t queries made by Grover’s
+algorithm corresponds to O(t log ℓ) queries to h. The adversary makes O(ℓ) queries initially to
+construct the tree, so this gives us a quantum adversary that wins with probability Ω(t2ε) by
+making O(t log ℓ+ ℓ) queries.
+34
+
+
+[PÁGINA PDF 37]
+7
+zkSNARKs in the QROM
+We prove the existence of zkSNARKs that are unconditionally secure in the quantum random oracle
+model, based on the Micali construction.
+First, we prove that the Micali construction is a zero knowledge non-interactive argument of
+knowledge if the underlying PCP is both honest-veriﬁer zero knowledge and a proof of knowledge.
+Theorem 7.1. Let (P, V) be a PCP for a relation R that is honest-veriﬁer zero knowledge and
+has knowledge error k, and suppose that (P, V) has proof length ℓand query complexity q. The
+Micali construction, when based on (P, V), is a non-interactive argument in the QROM for R
+that is (statistical) zero knowledge and is an argument of knowledge with extraction probability
+κ(µ, λ, t + O(q log ℓ)) = Ω(µ −t2k −t3/2λ).
+We separately prove zero knowledge and proof of knowledge, respectively in Lemma 7.3 and in
+Lemma 7.4 below, thereby establishing the above theorem. Observe that the extraction probability
+κ achieved in the theorem statement implies the soundness bound given Theorem 6.1, because the
+extraction probability is positive when the veriﬁer’s acceptance probability µ is Ω(t2k + t3/2λ).
+If we additionally ensure that the PCP in the Micali construction has small query complexity
+and veriﬁer running time (via standard PCPs), then we obtain zkSNARKs that are unconditionally
+secure in the quantum random oracle model (see deﬁnition in Section 3.3).
+Corollary 7.2. There exist zkSNARKs for NTIME(T(n)) in the quantum random oracle model.
+Proof. The PCP in [BFLS91] supports NTIME(T(n)) with query complexity poly(log T(n)), a prover
+that runs in time poly(n, T(n)), and a veriﬁer that runs in time poly(n, log T(n)). The PCP is a
+proof of knowledge, and can be modiﬁed to achieve honest-veriﬁer zero knowledge and a negligible
+soundness error [DFKNS92; KPT97]. We can then apply Theorem 7.1 to the resulting PCP.
+7.1
+Zero knowledge
+In the classical setting, the Micali construction achieves statistical zero knowledge if the underlying
+PCP is honest-veriﬁer zero knowledge (see deﬁnition in Section 3.4), and if leaves in the Merkle
+tree are salted to ensure statistical hiding of unrevealed leaves [IMSX15; BCS16]. The following
+lemma states that the same is true in the quantum setting.
+Lemma 7.3. The construction of Micali (modiﬁed to use salted Merkle trees), when based on an
+honest-veriﬁer zero knowledge PCP, is a zero knowledge non-interactive argument in the QROM.
+Proof. A straightforward adaptation of Theorem 6.1 establishes soundness in the case where leaves
+in the Merkle tree are salted by the prover with fresh randomness. Moreover, the classical zero
+knowledge guarantee of the Micali construction is statistical, i.e., it holds against veriﬁers that are
+unbounded, in computation and in queries to the random oracle. Such veriﬁers can in particular
+simulate any quantum adversary (including queries in superposition). This means that the zero
+knowledge guarantee also holds in the quantum setting. (Indeed, the deﬁnition of zero knowledge
+that we provide in Section 3.3 for non-interactive arguments in the QROM does not even have to
+mention quantum algorithms; it requires the real view and ideal view to be statistically close.)
+35
+
+
+[PÁGINA PDF 38]
+7.2
+Proof of knowledge
+In the classical setting, the Micali construction is an argument of knowledge if the underlying PCP
+is a proof of knowledge (see deﬁnition in Section 3.4). The following lemma states that the same is
+true in the quantum setting.
+Lemma 7.4. The Micali construction, when based on a PCP of knowledge with knowledge error k, is
+a non-interactive argument of knowledge in the QROM with extraction probability Ω(µ−t2k−t3/2λ)
+against quantum attackers that make at most t −O(q log ℓ) queries and win with probability at least
+µ. In particular, the extraction probability is positive for large enough µ = Ω(t2k + t3/2λ).
+We prove the lemma by building on ideas in the proof of Section 6, and also on some additional
+generic machinery. Below we assume that the proof length ℓequals 2d for some d ∈N.
+Let A be a t′-query quantum adversary A that causes the Micali veriﬁer to accept an instance
+x with probability at least µ. Following the proof of Proposition 6.7, we obtain a t-query quantum
+adversary B that wins the Micali oracle game GMic
+V,x with probability at least µ, for t := t′+O(q log ℓ).
+This transformation can be eﬃciently performed with black-box access to A, because B merely
+extends A with some classical computation that depends on A’s (classical) output.
+We now describe the quantum extractor E for the Micali game, and then argue why it works.
+EA(x, 1t′, 1λ) :
+1. Set t := t′ + O(q log ℓ).
+2. Compute the quantum state |Sim∗(B)⟩, by simulating B.
+3. Measure the database register of |Sim∗(B)⟩to get a database D.
+4. Run w ←E(x, 0ℓ), where 0ℓdenotes the all 0’s proof. If w is a valid witness, return it,
+otherwise continue.
+5. For each rt ∈im(D):
+Run T ←Extract(D, rt, d),
+Set ΠT equal to leaves(T) on all points where leaves(T) is not ⊥, and 0 otherwise.
+Run w ←E(x, ΠT ). If w is a valid witness, return it, otherwise continue.
+Let PE,rt be the set of databases D where running T ←Extract(D, rt, d) and then w ←E(x, ΠT )
+yields (x, w) ∈R, where ΠT is deﬁned as above. Note that EA(x, 1t′, 1λ) outputs a valid witness if
+and only if D ∈∪rt∈{0,1}λPE,rt. This is because if rt ∈im(D) then E tries to extract from rt, and if
+rt /∈im(D) then T ←Extract(D, rt, d) has one vertex (just rt), and so ΠT = 0ℓ.
+We can lower bound the probability that the extractor succeeds as follows:
+Pr
+h
+EA(x, 1t′, 1λ) outputs a valid witness
+i
+= Pr
+h
+D ∈∪rt∈{0,1}λPE,rt
+i
+≥Pr[D ∈∪rtPE,rt ∩PMic] = Pr[D ∈PMic] −Pr
+
+D ∈∩rt ¯PE,rt ∩PMic
+
+≥Pr[D ∈PMic] −Pr
+h
+D ∈∩rt∈{0,1}λ ¯PE,rt ∩((∪rtPrt) ∪Pcol)
+i
+≥Pr[D ∈PMic] −Pr
+
+D ∈Pcol ∪(∪rt(Prt ∩¯PE,rt))
+
+≥Pr[B wins the Micali database game] −t2 · 6I(Pcol ∪(∪rt(Prt ∩¯PE,rt)), t) ,
+where the second inequality follows by Proposition 6.9 and the third by the fact that ∩rt∈{0,1}λ ¯PE,rt∩
+((∪rtPrt)∪Pcol) ⊆Pcol ∪(∪rt(Prt ∩¯PE,rt)). This latter property can be interpreted as follows: either
+there is a collision, or there is some rt ∈supp(D) such that we can produce a correct SNARG proof
+rooted at rt but the PCP extractor cannot extract a valid witness from the PCP proof rooted at rt.
+36
+
+
+[PÁGINA PDF 39]
+We have that the probability that B wins the quantum database game of GMic
+V,x is Ω(µ−q log ℓ/2λ)
+by Lemma 4.9. Hence, in order to complete the proof it suﬃces to show the following proposition.
+Proposition 7.5. I(Pcol ∪(∪rt(Prt ∩¯PE,rt)), t) < k + (2t + 1)/2λ.
+Proof. We have that I(Pcol ∪(∪rt(Prt ∩¯PE,rt)), t) ≤I(Pcol, t) + I(∪rt(Prt ∩¯PE,rt) | ¯Pcol, t).
+By
+Lemma 6.11, we have that I(Pcol, t) < t/2λ.
+We now bound I(∪rt(Prt ∩¯PE,rt) | ¯Pcol, t). Let D ∈¯Pcol be a database, and ﬁx x = (x0, x1) /∈
+supp(D). Let S′ = {r ∈{0, 1}λ : VΠ(x; r) accepts, Π = leaves(Extract(D, x0, d))}.
+Suppose ﬁrst that D /∈∪rt(Prt∩¯PE,rt); we bound Pry[D+[x 7→y] ∈∪rt(Prt∩¯PE,rt)∩¯Pcol]. Fix a
+y such that this holds, and let D′ := D +[x 7→y]. Then there exists rt∗such that D′ ∈Prt∗∩¯PE,rt∗
+and D ∈¯Prt∗∪PE,rt∗. There are two cases.
+• Case 1: D ∈PE,rt∗. Since D′ /∈PE,rt∗, we get that Extract(D, rt∗, d)̸ = Extract(D′, rt∗, d). Hence,
+by Lemma 6.5 we get that y ∈S(D) or y = rt∗. Since D′ ∈Prt∗, we have that (rt∗, 0λ) ∈supp(D′),
+and hence either rt∗∈S(D) or rt∗= x0. Thus, either y ∈S(D) or y = x0.
+• Case 2: D ∈¯Prt∗∩¯PE,rt∗. We have that D′ ∈Prt∗. If Extract(D, rt∗, d)̸ = Extract(D′, rt∗, d), then
+again we get that y ∈S(D) or y = x0. If Extract(D, rt∗, d) = Extract(D′, rt∗, d), then by Case 2
+of Lemma 6.10 we get that x0 = rt∗and y ∈S′. In particular, this implies that D ∈¯PE,x0.
+We conclude that either y ∈S(D)∪{x0}, or D ∈¯PE,x0 and y ∈S′. We know that |S(D) ∪{x0}| <
+2t+1. We show that |S′| ≤k·2λ if D ∈¯PE,x0. Let T = Extract(D, x0, d), Π = leaves(T), and ΠT be
+as deﬁned earlier. Suppose that |S′|/2λ = Prr[VΠ(x; r) accepts] > k. Then, Prr[VΠT (x; r) accepts] ≥
+Prr[VΠ(x; r) accepts] > k and so E(x, ΠT ) outputs a valid witness for x. Therefore, D ∈PE,x0, a
+contradiction, and so |S′| ≤k · 2λ.
+We thus conclude that if D ∈PE,x0 then Pry[D′ ∈¯Pcol ∩(∪rt(Prt ∩¯PE,rt))] < (2t + 1)/2λ,
+and if D ∈¯PE,x0 then Pry[D′ ∈¯Pcol ∩(∪rt(Prt ∩¯PE,rt))] < k + (2t + 1)/2λ. Hence, ﬂip(∪rt(Prt ∩
+¯PE,rt) | ¯Pcol, t) < k + (2t + 1)/2λ.
+Now suppose that D ∈∪rt(Prt ∩¯PE,rt); we bound Pry[D +[x 7→y] ∈∪rt(Prt ∩¯PE,rt)∩¯Pcol]. Fix
+a y such that this holds, and let D′ := D+[x 7→y]. Then there exists rt∗such that D ∈Prt∗∩¯PE,rt∗
+and D′ ∈¯Prt∗∪PE,rt∗. There are two cases.
+• Case 1: D′ ∈¯Prt∗. This is impossible: since D ∈Prt∗∩¯Pcol and D′ ∈¯Pcol, it follows by Lemma 6.4
+that D′ ∈Prt∗.
+• Case 2: D′ ∈Prt∗∩PE,rt∗. Since D ∈¯PE,rt∗and D′ ∈PE,rt∗, it follows that Extract(D, rt∗, d)̸ =
+Extract(D′, rt∗, d). Hence, by Lemma 6.5 we get that y ∈S(D) or y = rt∗. Since D ∈Prt∗, it
+follows that (rt∗, 0λ) ∈supp(D), so rt∗∈S(D). Hence, y ∈S(D).
+We conclude that ﬂip(∪rt(Prt ∩¯PE,rt) | ¯Pcol, t) < 2t/2λ.
+Putting it together, we get that I(∪rt(Prt ∩¯PE,rt) | ¯Pcol, t) < k + (2t + 1)/2λ.
+37
+
+
+[PÁGINA PDF 40]
+8
+The BCS construction in the QROM
+We prove that non-interactive arguments obtained via the BCS construction applied to IOPs with
+round-by-round soundness are unconditionally secure in the quantum random oracle model. More-
+over, if the IOP is honest-veriﬁer zero knowledge and has round-by-round knowledge then BCS con-
+struction yields a zero knowledge non-interactive argument of knowledge. This section is organized
+as follows: in Section 8.1 we deﬁne IOPs; in Section 8.2 we deﬁne the oracle game that corresponds
+to the BCS construction; in Section 8.3 we deﬁne round-by-round soundness and round-by-round
+knowledge; in Section 8.4 we state our result; and in Section 8.5 we prove our result.
+8.1
+Interactive oracle proofs
+A (public-coin) interactive oracle proof (IOP) [BCS16; RRR16] is a multi-round extension of the
+notion of a PCP where in each round the veriﬁer sends a random message mi and the prover replies
+with a proof string Πi. After the interaction, the veriﬁer queries the proof strings (Π1, Π2, . . . )
+received from the prover, and then accepts or rejects. A PCP is then a non-interactive IOP.
+An IOP for a relation R with soundness error ϵ is a pair of polynomial-time interactive algo-
+rithms (P, V) for which the following holds.
+• Completeness. For every instance-witness pair (x, w) ∈R, the probability that P(x, w) con-
+vinces V(x) to accept is 1.
+• Soundness. For every instance x /∈L(R) and unbounded malicious prover ˜P, the probability
+that ˜P convinces V(x) to accept is at most ϵ.
+Like the IP model, a fundamental measure of eﬃciency is the round complexity k. Like the
+PCP model, two additional fundamental measures of eﬃciency are the proof length ℓ, which is the
+total number of alphabet symbols in all of the prover’s messages, and the query complexity q, which
+is the total number of locations queried by the veriﬁer across all of the prover’s messages.
+Transcripts. We denote by tr a transcript of (P, V), which means all veriﬁer messages and proof
+strings up to a point where either the prover or the veriﬁer is about to move. In more detail, tr is
+one of the following cases (with Π0 deﬁned as the empty string):
+• the empty transcript, denoted by the symbol ∅(the veriﬁer is about to move);
+• a partial transcript where the prover is about to move, which is a pair of the form (m, Π) =
+((m1, . . . , mi), (Π1, . . . , Πi−1)) for some i ∈[k];
+• a partial transcript where the veriﬁer is about to move, which is a pair of the form (m, Π) =
+((m1, . . . , mi), (Π1, . . . , Πi)) for some i ∈[k];
+• a full transcript, which is a pair of the form (m, Π) = ((m1, . . . , mk+1), (Π1, . . . , Πk)).
+We allow the proof strings Πi to be partial functions, i.e., databases (Section 3.5).
+Given a transcript tr = (m, Π) = ((m1, . . . , mi), (Π1, . . . , Πi−1)) where the prover is about
+to move, we let tr∥Π denote the transcript ((m1, . . . , mi), (Π1, . . . , Πi−1, Π)).
+Similarly, given a
+transcript tr = (m, Π) = ((m1, . . . , mi), (Π1, . . . , Πi)) where the veriﬁer is about to move, we let
+tr∥m denote the transcript (m, Π) = ((m1, . . . , mi, m), (Π1, . . . , Πi)).
+8.2
+The BCS construction and its oracle game
+The BCS construction transforms a public-coin IOP into a corresponding non-interactive argument,
+using random oracles. Informally, this is achieved by repeating the idea of the Micali construction
+38
+
+
+[PÁGINA PDF 41]
+in each round, and then forcing rounds to be in order via a hash chain; see [BCS16] for details.
+In order to deﬁne the oracle game that represents the BCS construction, we need to recall how
+its veriﬁer works. The BCS veriﬁer V receives as input an instance x and proof
+π = (σ, (rtj)j∈[k], (api)i∈[q], (vi)i∈[q]) ,
+and has oracle access to a function h: {0, 1}2λ →{0, 1}λ.
+First, V checks the hash chain: it
+initializes σ0 := 0λ; then, for each j ∈[k], it computes mj := h(σj−1, “j”) and σj := h(mj, rtj),
+where “j” ∈{0, 1}λ is some unique encoding of the integer j; ﬁnally, V checks that σ = σk. Next,
+V computes the randomness for the query phase as mk+1 := h(σ, “k+1”). The randomness for
+the IOP veriﬁer V is m := (m1, . . . , mk, mk+1). Finally, V simulates the IOP veriﬁer V on m by
+answering its queries using the values contained in π. In more detail, it runs V(x; m) and answers
+its i-th query, for i ∈[q], as follows: if the query is to the j-th proof string at a location s then
+check that CheckPathh(rtj, s, vi, api) accepts and answer with vi if this check passes (else reject).
+Once V halts, V accepts if and only if V accepted. (The BCS veriﬁer V should also do basic
+syntactic checks such as ensuring that if the j-th proof string is supposed to have length ℓj then
+authentication paths relative to the j-th root have an appropriate length.)
+Given a BCS proof π as above, we deﬁne
+BCSExpandh(π) :=
+ (xi)i∈[q], (σj−1, “j”)j∈[k+1], (mj, rtj)j∈[k]
+
+,
+ (yi)i∈[q], (mj)j∈[k+1], (σj)j∈[k]
+
+where σ0 := 0λ, mj := h(σj−1, “j”) for j ∈[k + 1] is the derived message of the veriﬁer in the j-th
+round, σj := h(mj, rtj) for j ∈[k], each (xi, yi) := Expandh(si, api, vi) is an expanded authentication
+path, and si is the location of the i-th query of V(x; m). Note that BCSExpandh(π) ∈({0, 1}2λ)a ×
+({0, 1}λ)a for a := O(q log ℓ) where ℓ:= Pk
+j=1 ℓj is the proof length of the IOP.
+Deﬁnition 8.1. Let V be an IOP veriﬁer for a relation R and let x be an instance. The BCS game
+for (V, x) is the set GBCS
+V,x := {BCSExpandh(π) : h: {0, 1}2λ →{0, 1}λ, π ∈{0, 1}s, Vh(x, π) = 1}.
+Remark 8.2. Our deﬁnition of the BCS construction uses a slightly diﬀerent hash chain from the
+one used in [BCS16]. This is due to our proof technique. Soundness against quantum attackers also
+holds for the hash chain in [BCS16], provided that the underlying IOP satisﬁes a slightly stronger
+variant of round-by-round soundness. This issue is discussed in Section 8.6.
+8.3
+Round-by-round soundness and knowledge
+We deﬁne round-by-round soundness (adapted from [CCHLRR18]) and round-by-round knowledge
+(introduced in this work), which are the notions of soundness and knowledge that we consider in
+Theorem 8.6 below. We ﬁrst deﬁne an IOP state function, and then give the two deﬁnitions.
+Deﬁnition 8.3. Let (P, V) be an IOP for a relation R. A state function for (P, V) is a deter-
+ministic (possibly ineﬃcient) function state that receives as input an instance x and a transcript
+tr = (m, Π) and outputs a bit for which the following holds.
+• Empty transcript: if tr = ∅is the empty transcript then state(x, tr) = 0.
+• Prover moves: if tr is a transcript where the prover is about to move and state(x, tr) = 0, then
+∀Π, state(x, tr∥Π) = 0 .
+39
+
+
+[PÁGINA PDF 42]
+• Full transcript: if tr is a full transcript and state(x, tr) = 0, then VΠ(x; m) = 0.
+Deﬁnition 8.4 ([CCHLRR18] adapted to IOP). An IOP (P, V) for a relation R has round-by-
+round soundness error ϵ if there exists a state function state such that for all x /∈L(R) and
+every transcript tr where the veriﬁer is about to move and state(x, tr) = 0 it holds that
+Pr
+m [state(x, tr∥m) = 1] ≤ϵ .
+Deﬁnition 8.5. An IOP (P, V) for a relation R has round-by-round knowledge error k if
+there exists a polynomial-time extractor E and state function state such that for all x and every
+transcript tr where the veriﬁer is about to move and state(x, tr) = 0, if Prm[state(x, tr ∥m) = 1] > k
+then (x, E(x, tr)) ∈R.
+8.4
+Our result
+We prove that the BCS construction is sound in the quantum random oracle model if the under-
+lying IOP has round-by-round soundness, is a proof of knowledge if the IOP has round-by-round
+knowledge, and is statistical zero knowledge if the IOP is honest-veriﬁer zero knowledge. Our result
+establishes the post-quantum security of many zkSNARKs of practical interest, which rely on zero
+knowledge IOPs (and IPs) that have round-by-round soundness and round-by-round knowledge.
+Theorem 8.6. Let (P, V) be an IOP for a relation R with proof length ℓand query complexity q.
+Then the BCS construction, when based on (P, V), is a non-interactive argument for R such that:
+1. (Soundness) if (P, V) has round-by-round soundness error ϵ, then the argument has soundness
+error O(t2ϵ + t3/2λ) against quantum attackers that make at most t −O(q log ℓ) queries to the
+random oracle.
+2. (Knowledge) if (P, V) has round-by-round knowledge error k, then the argument is an argument
+of knowledge with extraction probability Ω(µ −t2k −t3/2λ) against quantum attackers that make
+at most t −O(q log ℓ) queries and win with probability at least µ. The extraction probability is
+positive for large enough µ = Ω(t2k + t3/2λ).
+3. (Zero Knowledge) if (P, V) is honest-veriﬁer zero knowledge, then the argument is (statistical)
+zero knowledge.
+8.5
+Proof of Theorem 8.6
+We begin by noting that preservation of zero knowledge is straightforward. This is because, analo-
+gous to the Micali construction Section 7.1, the BCS construction achieves statistical zero knowledge
+provided the underlying IOP is honest-veriﬁer zero knowledge. See [BCS16] for details.
+Next, we prove soundness in Section 8.5.1 and knowledge in Section 8.5.2. To start, we deﬁne two
+extraction algorithms that operate on databases, which are similar to those deﬁned in Section 6.1.
+Extracting hash chains.
+We deﬁne an algorithm HExtract that is used to extract a hash chain
+ending at a chosen entry in a database. HExtract receives a database D: Z × Z ⇀Z, an end value
+y ∈Z, and a length bound k, and outputs an integer ℓand two tuples (x1, . . . , xℓ), (y0, . . . , yℓ)
+where ℓ∈[k], each xi and yi ∈Z, D(yi−1, xi) = yi for each i ∈[ℓ], and yℓ= y.
+Formally, the algorithm HExtract is deﬁned as follows.
+40
+
+
+[PÁGINA PDF 43]
+HExtract(D, y, k):
+1. Initialize two lists chain = (y) and input = (), and a counter ℓ←0.
+2. While ℓ< k:
+(a) If y is the result of a collision (D(z, x) = D(z′, x′) = y for distinct (z, x), (z′, x′) in
+Z2), return ⊥.
+(b) Let z, x ∈Z be the unique values such that D(z, x) = y. If none exist, then exit
+the loop.
+(c) Prepend z to chain: chain := {z} ∪chain.
+(d) Prepend x to input: input := {x} ∪input.
+(e) Update y ←z and increment ℓ←ℓ+ 1.
+3. Output (ℓ, input, chain).
+The BCS extractor.
+We now deﬁne the BCS extractor, which ﬁnds a transcript where the hash
+chain of roots ends at a chosen entry in the database. The algorithm BCSExtract is given below.
+BCSExtract(D, σ, k, d1, . . . , dk):
+1. Let (ℓ, (x1, . . . , xℓ), (y0, . . . , yℓ)) ←HExtract(D, σ, k). If HExtract(D, σ, k) outputs ⊥in-
+stead, output ⊥.
+2. If y0̸ = 0λ or x2i−1̸ = “i” for some i ∈{1, . . . , ⌊(ℓ+ 1)/2⌋}, output the empty transcript
+tr = ∅.
+3. Let rti = x2i for i ∈{1, . . . , ⌊ℓ/2⌋}, let mi = y2i−1 for i ∈{1, . . . , ⌊(ℓ+ 1)/2⌋}.
+4. Let Ti = Extract(D, rti, di) for each i ∈{1, . . . , ⌊ℓ/2⌋}. If Ti = ⊥for some i, output ⊥.
+5. Output the transcript tr =
+ m1, . . . , m⌊(ℓ+1)/2⌋
+
+,
+ leaves(T1), . . . , leaves(T⌊ℓ/2⌋)
+
+.
+Lemma 8.7. Let D be a database, and suppose that D ∈¯Pcol. Then BCSExtract(D, σ, k, d1, . . . , dk)
+always outputs a valid transcript tr. In particular, tr̸ = ⊥.
+The following is an analogue of Lemma 6.5 for the BCS extractor.
+Lemma 8.8. Let D be a database and let x /∈supp(D). Let D′ = D + [x 7→y], and suppose that
+D, D′ ∈¯Pcol. Let σ ∈Z. If BCSExtract(D, σ, k, d1, . . . , dk)̸ = BCSExtract(D′, σ, k, d1, . . . , dk), then
+y ∈{σ} ∪S(D).
+Lemma 8.8 follows immediately from the following two claims.
+Claim 8.9. If HExtract(D, σ, k)̸ = HExtract(D′, σ, k) for some σ ∈Z, then y ∈S(D) or y = σ.
+Claim 8.10. If BCSExtract(D, σ, k, d1, . . . , dk)̸ = BCSExtract(D′, σ, k, d1, . . . , dk) and HExtract(D, σ, k) =
+HExtract(D′, σ, k), then y ∈S(D).
+Proof of Claim 8.9. Let (ℓ, (x1, . . . , xℓ), (y0, . . . , yℓ)) be the output of HExtract(D′, σ, k).
+Since
+D, D′ ∈¯Pcol, it follows that HExtract(D, σ, k) outputs (ℓ−i, (xi+1, . . . , xℓ), (yi, . . . , yℓ)) for some
+i ∈[ℓ]. Therefore, the entry ((yi−1, xi), yi) is in D′ but not in D. Hence, x = (yi−1, xi) and y = yi.
+If i = ℓthen y = yℓ= σ, and if i < ℓ, then the entry ((yi, xi+1), yi+1) is in D, so y = yi ∈S(D).
+Proof of Claim 8.10. If HExtract(D, σ, k) = HExtract(D′, σ, k), then there must exist some root
+rti in the execution of BCSExtract such that Extract(D, rti, di)̸ = Extract(D′, rti, di).
+Hence, by
+Lemma 6.5 we get that y ∈S(D) or y = rti. Assume that y = rti. We must have that (u, rti) ∈
+supp(D) for some u ∈Z, as rti = x2i in the hash chain extracted by HExtract, so (y2i−1, x2i) ∈
+supp(D). Since (u, rti) ∈supp(D), it follows that y ∈S(D).
+41
+
+
+[PÁGINA PDF 44]
+8.5.1
+Soundness
+Let R be a relation, and let x /∈L(R). Let (P, V) be an IOP for a relation R that has round-by-
+round error ϵ, proof length ℓ, query complexity q, and k rounds. Let ℓ1, . . . , ℓk be the proof lengths
+of the individual rounds. Without loss of generality assume that for each i, ℓi = 2di for some di.
+For ease of notation, we will omit the arguments k, d1, . . . , dk from the input to BCSExtract.
+We ﬁrst show the following simple proposition.
+Proposition 8.11. The probability that a t-query classical adversary A causes the BCS veriﬁer V
+to accept x is at most ωO(GBCS
+V,x , t + O(q log ℓ)). The probability that a t-query quantum adversary
+A causes the BCS veriﬁer V to accept x is at most ω∗
+O(GBCS
+V,x , t + O(q log ℓ)).
+Proof. Let A be a (either classical or quantum) oracle algorithm. Let B be the algorithm that,
+when given access to an oracle h, runs Ah to obtain π and then outputs BCSExpandh(π). The
+query complexity of B is t + O(q log ℓ) because A makes t queries and BCSExpand makes O(q log ℓ)
+queries. Let ((xi)a
+i=1, (yi)a
+i=1) be the output of B. By deﬁnition of BCSExpand, h(xi) = yi for all
+i ∈[a]. Hence Bh wins GBCS
+V,x if and only if Vh(x, π) = 1.
+Let PBCS := PGBCS
+V,x . Let Pcol be the collision property.
+Deﬁne P :=
+∪σ Pσ, where for σ ∈{0, 1}λ, Pσ is the set of databases D where (1) D
+contains no collisions, (2) tr = BCSExtract(D, σ) is a transcript where the veriﬁer is about to
+move, (3) state(x, tr) = 0, (4) D(σ, “i+1”)̸ = ⊥, where i is the number of rounds in tr, and
+(5) state(x, tr∥D(σ, “i+1”)) = 1.
+Proposition 8.12. PBCS ⊆Pcol ∪P.
+Proof. Suppose D ∈PBCS. If D has a collision, then D ∈Pcol. Suppose D has no collisions. Since
+D ∈PBCS, there exists w =
+ (xi)i∈[q], (σj−1, “j”)j∈[k+1], (mj, rtj)j∈[k]
+
+,
+ (yi)i∈[q], (mj)j∈[k+1], (σj)j∈[k]
+
+∈
+GBCS
+V,x consistent with D.
+Let tr = BCSExtract(D, mk+1).
+Since D has no collisions the tran-
+script tr extracted from mk+1 by BCSExtract is a full transcript and consistent with w, i.e. tr =
+((m1, . . . , mk+1), (Π1, . . . , Πk)). Since w ∈GBCS
+V,x the IOP veriﬁer accepts tr. Therefore, state(x, tr) =
+1. Since state(x, ∅) = 0 and adding a prover message cannot change state from 0 to 1, there ex-
+ists i such that tr1 = ((m1, . . . , mi), (Π1, . . . , Πi)) and tr2 = ((m1, . . . , mi+1), (Π1, . . . , Πi)) satisfy
+state(x, tr1) = 0 and state(x, tr2) = 1. Note that by Item 2 of Deﬁnition 8.3 it must be that tr1
+is a transcript where the veriﬁer is about to move. We have that tr1 = BCSExtract(σi, D), and
+D(σi, “i+1”) = mi+1, so tr2 = tr1∥D(σi, “i+1”). Hence, D ∈Pσi.
+Lemma 8.13. I(P | ¯Pcol, t) < ε + (2t + 1)/2λ.
+Proof. Fix a database D ∈¯Pcol with |D| < t, and ﬁx an input x ∈{0, 1}2λ.
+Suppose that
+D ∈P ∩¯Pcol. Then, Pry[D + [x 7→y] ∈¯P ∩¯Pcol] < 2t/2λ. This is because since D ∈P, D ∈Pσ
+for some σ. Hence, if D + [x 7→y] ∈¯P then D + [x 7→y] /∈Pσ, and so BCSExtract(D, σ)̸ =
+BCSExtract(D + [x 7→y], σ). It follows by Lemma 8.8 that y ∈S(D) ∪{σ}. Since D ∈Pσ, we see
+that σ ∈S(D). Thus, y ∈S(D). Since |S| < 2t, we see that Pry[D + [x 7→y] ∈¯P ∩¯Pcol] < 2t/2λ.
+Now, suppose that D /∈P. We bound Pry[D + [x 7→y] ∈P ∩¯Pcol]. Proposition 8.12 implies
+that, if the event inside the probability statement occurs, then the database D′ := D + [x 7→y]
+belongs to the set Pσ for some σ ∈{0, 1}λ and the database D does not belong to the set Pσ′ for
+all σ′.
+42
+
+
+[PÁGINA PDF 45]
+Let z denote the ﬁrst λ bits of x, and let tr := BCSExtract(D, z).
+If state(x, tr) = 1 then
+set S′ := ∅; otherwise set S′ := {m : state(x, tr∥m) = 1}, where we use the convention that
+state(x, tr∥m) = 0 if tr is not a transcript where the veriﬁer is about to move, i.e. that tr∥m is a
+malformed transcript. Note that this implies that |S′| ≤ε2λ, since the IOP has round-by-round
+soundness error ϵ. We have two cases.
+• Case 1: BCSExtract(D, σ)̸ = BCSExtract(D′, σ). By Lemma 8.8, we see that y ∈S(D) or y = σ.
+Suppose that y = σ. Since D′ ∈Pσ, we get that (σ, u′) ∈supp(D′) for some u′ ∈{0, 1}λ. Hence,
+either σ ∈S(D) or σ = z, and so either y ∈S(D) or y = z.
+• Case 2: BCSExtract(D, σ) = BCSExtract(D′, σ). Let tr be equal to BCSExtract(D′, σ). Since
+D′ ∈Pσ, we have that tr is a transcript where the veriﬁer is about to move and state(x, tr) = 0.
+Let i be the number of rounds in tr. Since D′ ∈Pσ, we also have that D′(σ, “i+1”)̸ = ⊥and
+state(x, tr∥D′(σ, “i+1”)) = 1. Since D /∈Pσ, we must have that D(σ, “i+1”) = ⊥. Hence, z = σ,
+so it follows that y ∈S′.
+We deduce that in all cases, either y ∈S(D), y = z, or y ∈S′. Note that these events are
+independent of σ, so in particular this holds for all choices of σ. Clearly, |S(D)| ≤2|D| < 2t and
+|{z}| = 1. As discussed above, |S′| ≤ε2λ. Hence Pry[D + [x 7→y] ∈PBCS ∩¯Pcol] ≤Pry[y ∈
+S(D)∪{z}∪S′] < ε+(2t+1)/2λ. It follows that I(PBCS | ¯Pcol, t) < ε+(2t+1)/2λ, as required.
+Finishing the proof of soundness.
+Since PBCS ⊆Pcol ∪P, we get that for any A ∈C∗
+t ,
+PrA[A wins GBCS
+V,x ] ≤Pr
+
+D ∈Pcol ∪P
+  (a, b, c), D
+
+←Sim∗(A)
+
+.
+We also have that I(Pcol ∪
+P | ¯Pcol, t) = I(P | ¯Pcol, t) and ∅/∈P ∪Pcol (as state(x, ∅) = 0).
+Therefore, by Lemmas 5.9
+and 5.10 we have that Pr
+
+D ∈Pcol ∪P
+  (a, b, c), D
+
+←Sim∗(A)
+
+≤t2·6
+ I(P| ¯Pcol, t)+I(Pcol, t)
+
+≤
+6(t2ϵ + 4t3/2λ). Thus, ω∗
+D(GBCS
+V,x , t) ≤6(t2ϵ + 4t3/2λ).
+By Lemma 4.9, we have that
+q
+ω∗
+O(GBCS
+V,x , t) ≤
+q
+ω∗
+D(GBCS
+V,x , t) + O
+p
+q log ℓ/2λ
+
+.
+We thus
+conclude that ω∗
+O(GBCS
+V,x , t) = O(t2ε + t3/2λ + q log ℓ/2λ). Applying Proposition 8.11 completes the
+proof of soundness in Theorem 8.6.
+8.5.2
+Knowledge
+Let R be a relation, and let (P, V) be an IOP for a relation R that has round-by-round knowledge
+error k, proof length ℓ, query complexity q, and k rounds. Let ℓ1, . . . , ℓk be the proof lengths of the
+individual rounds. Without loss of generality assume that for each i, ℓi = 2di for some di.
+Let A be a t′-query quantum adversary A that causes the BCS veriﬁer to accept an instance x
+with probability at least µ. Following the proof of Proposition 8.11, we obtain a t-query quantum
+adversary B that wins the BCS oracle game GBCS
+V,x with probability at least µ, for t := t′+O(q log ℓ).
+This transformation can be eﬃciently performed with black-box access to A, because B merely
+extends A with some classical computation that depends on A’s (classical) output.
+We now describe the quantum extractor E for the BCS game, and then argue why it works.
+43
+
+
+[PÁGINA PDF 46]
+EA(x, 1t′, 1λ) :
+1. Set t := t′ + O(q log ℓ).
+2. Compute the quantum state |Sim∗(B)⟩, by simulating B via A.
+3. Measure the database register of |Sim∗(B)⟩to obtain a database D.
+4. Run w ←E(x, ∅). If w is a valid witness, return it, otherwise continue.
+5. For each σ ∈im(D):
+Run tr ←BCSExtract(D, σ), then run w ←E(x, tr). If some Π in tr has an entry that
+is ⊥, treat it as if it were 0.
+If w is a valid witness, return it, otherwise continue.
+Let PE,σ be the set of databases D where running tr ←BCSExtract(D, σ) and then w ←E(x, tr)
+has (x, w) ∈R. Note that EA(x, 1t′, 1λ) outputs a valid witness if and only if D ∈∪σ∈{0,1}λPE,σ.
+This is because if σ ∈im(D) then E tries to extract from σ, and if σ /∈im(D) then BCSExtract(D, σ)
+is the empty transcript, and E always tries to extract from the empty transcript.
+As in the case of Micali, we lower bound the probability that the extractor succeeds as follows:
+Pr
+h
+EA(x, 1t′, 1λ) outputs a valid witness
+i
+= Pr
+h
+D ∈∪σ∈{0,1}λPE,σ
+i
+≥Pr[D ∈∪σPE,σ ∩PBCS] = Pr[D ∈PBCS] −Pr
+
+D ∈∩σ ¯PE,σ ∩PBCS
+
+≥Pr[D ∈PBCS] −Pr
+h
+D ∈∩σ∈{0,1}λ ¯PE,σ ∩((∪σPσ) ∪Pcol)
+i
+≥Pr[D ∈PBCS] −Pr
+
+D ∈Pcol ∪(∪σ(Pσ ∩¯PE,σ))
+
+≥Pr[B wins the BCS database game] −t2 · 6I(Pcol ∪(∪σ(Pσ ∩¯PE,σ)), t) ,
+where the second inequality follows by Proposition 8.12 and the third by the fact that ∩σ∈{0,1}λ ¯PE,σ∩
+((∪σPσ) ∪Pcol) ⊆Pcol ∪(∪σ(Pσ ∩¯PE,σ)).
+We have that the probability that B wins the quantum database game of GMic
+V,x is Ω(µ−q log ℓ/2λ)
+by Lemma 4.9. Hence, in order to complete the proof it suﬃces to show the following proposition.
+Proposition 8.14. I(Pcol ∪(∪σ(Pσ ∩¯PE,σ)), t) < k + (2t + 1)/2λ.
+Proof. We have that I(Pcol ∪(∪σ(Pσ ∩¯PE,σ)), t) ≤I(Pcol, t) + I(∪σ(Pσ ∩¯PE,σ) | ¯Pcol, t).
+By
+Lemma 6.11, we have that I(Pcol, t) < t/2λ.
+We now bound I(∪σ(Pσ ∩¯PE,σ) | ¯Pcol, t). Let D ∈¯Pcol be a database, and let x /∈supp(D). Let
+z be the ﬁrst λ bits of x. Let tr := BCSExtract(D, z). If state(x, tr) = 1 then set S′ := ∅; otherwise
+let S′ := {m : state(x, tr∥m) = 1}, where we use the convention that state(x, tr∥m) = 0 if tr is not
+a transcript where the veriﬁer is about to move, i.e. that tr∥m is a malformed transcript.
+Suppose ﬁrst that D /∈∪σ(Pσ ∩¯PE,σ); we bound Pry[D +[x 7→y] ∈∪σ(Pσ ∩¯PE,σ)∩¯Pcol]. Fix a
+y such that this holds, and let D′ := D + [x 7→y]. Then there exists σ∗such that D′ ∈Pσ∗∩¯PE,σ∗
+and D ∈¯Pσ∗∪PE,σ∗. There are two cases.
+• Case 1: D ∈PE,σ∗. Since D′ /∈PE,σ∗, we get that BCSExtract(D, σ∗)̸ = BCSExtract(D′, σ∗).
+Hence, by Lemma 8.8 we get that y ∈S(D) or y = σ∗. Since D′ ∈Pσ∗, we have that (σ∗, u′) ∈
+supp(D′) for some u′ ∈{0, 1}λ, and hence either σ∗∈S(D) or σ∗= z. Thus, either y ∈S(D) or
+y = z.
+• Case 2: D ∈¯Pσ∗∩¯PE,σ∗. We have that D′ ∈Pσ∗. If BCSExtract(D, σ∗)̸ = BCSExtract(D′, σ∗),
+then again we get that y ∈S(D) or y = z. If BCSExtract(D, σ∗) = BCSExtract(D′, σ∗), then by
+Case 2 of Lemma 8.13 we get that z = σ∗and y ∈S′. In particular, this implies that D ∈¯PE,z.
+44
+
+
+[PÁGINA PDF 47]
+We conclude that either y ∈S(D) ∪{z}, or it holds that D ∈¯PE,z and y ∈S′. We know
+that |S(D) ∪{z}| < 2t + 1.
+We show that |S′| ≤k · 2λ if D ∈¯PE,z.
+If state(x, tr) = 1 then
+|S′| = 0 < k · 2λ, so suppose otherwise. Suppose that |S′|/2λ = Prm[state(x, tr∥m) = 1] > k. Then,
+since state(x, tr) = 0, by the deﬁnition of round-by-round knowledge we get that E(x, tr) outputs a
+valid witness for x. Therefore, D ∈PE,z, a contradiction, and so |S′| ≤k · 2λ.
+We thus conclude that if D ∈PE,z then Pry[D′ ∈¯Pcol ∩(∪σ(Pσ ∩¯PE,σ))] < (2t + 1)/2λ, and if
+D ∈¯PE,z then Pry[D′ ∈¯Pcol∩(∪σ(Pσ∩¯PE,σ))] < k+(2t+1)/2λ. Hence, ﬂip(∪σ(Pσ∩¯PE,σ)| ¯Pcol, t) <
+k + (2t + 1)/2λ.
+Now suppose that D ∈∪σ(Pσ ∩¯PE,σ). We bound Pry[D + [x 7→y] ∈∪σ(Pσ ∩¯PE,σ) ∩¯Pcol]. Fix
+a y such that this holds, and let D′ := D+[x 7→y]. Then there exists σ∗such that D ∈Pσ∗∩¯PE,σ∗
+and D′ ∈¯Pσ∗∪PE,σ∗. There are two cases.
+• Case 1: D′ ∈¯Pσ∗. Since D ∈Pσ∗∪¯Pcol and D′ ∈¯Pcol, it follows that BCSExtract(D, σ∗)̸ =
+BCSExtract(D′, σ∗). Hence, by Lemma 8.8 we get that y ∈S(D) ∪{σ∗}. Since D ∈Pσ∗, we see
+that σ ∈S(D), and so y ∈S(D).
+• Case 2: D′ ∈Pσ∗∩PE,σ∗. Since D ∈Pσ∗, we have that σ∗∈im(D), and hence also in im(D′).
+Since σ∗is in both im(D) and im(D′) and that D ∈¯PE,σ∗and D′ ∈PE,σ∗, it follows that
+BCSExtract(D, σ∗)̸ = BCSExtract(D′, σ∗). Hence, by Lemma 8.8 we get that y ∈S(D) or y = σ∗.
+Since D ∈Pσ∗, it follows that (σ∗, u′) ∈supp(D) for some u′ ∈{0, 1}λ, so σ∗∈S(D). Hence,
+y ∈S(D).
+We conclude that ﬂip(∪σ(Pσ ∩¯PE,σ) | ¯Pcol, t) < 2t/2λ.
+Putting it together, we get that I(∪σ(Pσ ∩¯PE,σ) | ¯Pcol, t) < k + (2t + 1)/2λ.
+8.6
+On the diﬀerence in hash chains
+In the original BCS construction, the messages are generated “outside” of the hash chain. In the
+modiﬁed construction in this paper, we consider the messages as part of the hash chain. This is used
+by our proof technique, which forces the prover to “ﬁx” the message in a given round before moving
+to the next, which allows us to argue from round-by-round soundness as deﬁned in [CCHLRR18].
+We now describe how to prove soundness for the hash chain in [BCS16], provided that the under-
+lying IOP satisﬁes a slightly stronger (and arguably natural) notion of round-by-round soundness.
+We change Deﬁnition 8.4 as follows (we make analogous modiﬁcations to Deﬁnition 8.5). We allow
+the veriﬁer messages in a partial transcript to be ⊥(i.e., undeﬁned), and instead we now enforce
+that for transcripts tr where the veriﬁer is about to move, state(x, tr) = state(x, tr∥⊥), and that for
+any transcript tr that has mi = ⊥for some i and state(x, tr) = 0, then with probability at most ϵ it
+holds that state(x, tr′) = 1, where tr′ is the transcript obtained by “ﬁlling in” mi with a uniformly
+random message. We note that this is a stronger notion of round-by-round soundness, as we can
+recover Deﬁnition 8.4 in the following way. For any transcript tr where the veriﬁer is about to move
+and state(x, tr) = 0, one can ﬁrst consider tr∥⊥, which has state(x, tr) = 0, and then “ﬁll in” the
+last veriﬁer message, which then shows that state(x, tr∥mi) = 1 with probability at most ϵ.
+Like round-by-round soundness, this stronger deﬁnition is also satisﬁed by many natural proto-
+cols, such as the sumcheck protocol. Indeed, it seems that any natural protocol that is round-by-
+round sound should also be sound under this stronger deﬁnition. However, there exists a (contrived)
+protocol that has a large gap between its round-by-round soundness and “strong” round-by-round
+45
+
+
+[PÁGINA PDF 48]
+soundness, and one can show in general that this gap is maximal (this fact, proved in Appendix B,
+is due to James Hulett).
+Given this stronger soundness guarantee, the proof then proceeds as follows. The algorithm
+BCSExtract is modiﬁed to ﬁt the new hash chain, and also so that it extracts the veriﬁer messages
+(which are now not in the hash chain), including the veriﬁer message for the next round. We then
+deﬁne Pσ to be the set of databases where D ∈¯Pcol and state(x, BCSExtract(D, σ)) = 1. The rest
+of the proof is then nearly identical to the proof in Section 8.5.
+46
+
+
+[PÁGINA PDF 49]
+A
+Proof of Lemma 3.2
+Recall from [Zha19] that the compressed phase oracle O is deﬁned as Dec ◦O′ ◦Dec where O′ is
+the unitary that acts as |x, u, z, D⟩7→(−1)u·D(x) |x, u, z, D⟩(where u · ⊥:= 0), Dec is the unitary
+that acts as |x, u, z, D⟩7→|x, u, z⟩Decx |D⟩, and Decx is deﬁned as follows:
+Decx |D⟩:=
+
+
+
+
+
+
+
+1
+√
+2n
+P
+y |D + [x 7→y]⟩
+if D(x) = ⊥and |D| < t
+|D⟩
+if D(x) = ⊥and |D| = t
+|D⟩+
+1
+√
+2n |D′⟩−
+1
+√
+2n |φ0n⟩
+if D(x)̸ = ⊥
+,
+where D′ := D−x, and |φw⟩:=
+1
+√
+2n
+P
+y(−1)y·w |D′ + [x 7→y]⟩, so that |D⟩=
+1
+√
+2n
+P
+w(−1)w·D(x) |φw⟩.
+Note that Decx |φw⟩= |φw⟩+
+  1
+2n
+P
+y(−1)y·w
+(|D′⟩−|φ0n⟩), which equals |φw⟩for w̸ = 0n and |D′⟩
+for w = 0n.
+We now prove each of the cases in the statement of Lemma 3.2. If |D| = t, then Decx does
+nothing, so O |x, u, z, D⟩= O′ |x, u, z, D⟩= (−1)u·D(x) |x, u, z, D⟩. If |D| < t and u = 0n, then O′
+does nothing. Since Decx ◦Decx is the identity, we get that O |x, 0n, z, D⟩= |x, 0n, z, D⟩.
+Now, assume that |D| < t and u̸ = 0n. We ﬁrst consider the case where D(x) = ⊥. We apply
+Dec, then O′, and then Dec again to |x, u, z, D⟩:
+Dec
+−−→|x, u, z⟩⊗
+1
+√
+2n
+X
+y
+|D + [x 7→y]⟩
+O′
+−→|x, u, z⟩⊗
+1
+√
+2n
+X
+y
+(−1)u·y |D + [x 7→y]⟩
+Dec
+−−→|x, u, z⟩⊗
+1
+√
+2n
+X
+y
+(−1)u·y |D + [x 7→y]⟩,
+as the second application of Dec does nothing since u̸ = 0n.
+Finally, suppose D(x) = y∗. As before, we apply Dec, then O′, and then Dec again to |x, u, z, D⟩:
+Dec
+−−→|x, u, z⟩⊗
+ |D⟩+
+1
+√
+2n
+D′
+−
+1
+√
+2n |φ0n⟩
+
+= |x, u, z⟩⊗
+ |D⟩+
+1
+√
+2n
+D′
+−1
+2n
+X
+y
+D′ + [x 7→y]
+ 
+O′
+−→|x, u, z⟩⊗
+ (−1)u·y∗|D⟩+
+1
+√
+2n
+D′
+−1
+2n
+X
+y
+(−1)u·y D′ + [x 7→y]
+ 
+= |x, u, z⟩⊗
+ (−1)u·y∗|D⟩+
+1
+√
+2n
+D′
+−
+1
+√
+2n |φu⟩
+
+Dec
+−−→|x, u, z⟩⊗
+
+(−1)u·y∗ |D⟩+
+1
+√
+2n
+D′
+−
+1
+√
+2n |φ0n⟩
+
++
+1
+√
+2n |φ0n⟩−
+1
+√
+2n |φu⟩
+
+= |x, u, z⟩⊗
+
+(−1)u·y∗|D⟩+ (−1)u·y∗
+√
+2n
+D′
++ (1 −(−1)u·y∗)
+√
+2n
+|φ0n⟩−
+1
+√
+2n |φu⟩
+
+= |x, u, z⟩⊗
+
+(−1)u·y∗|D⟩+ (−1)u·y∗
+√
+2n
+D′
++ 1
+2n
+X
+y
+(1 −(−1)u·y∗−(−1)u·y)
+D′ + [x 7→y]
+ 
+,
+which completes the proof.
+47
+
+
+[PÁGINA PDF 50]
+B
+Round-by-round vs. strong round-by-round soundness
+An appendix authored by James Hulett (jhulett@berkeley.edu)
+We show a tight relation between the round-by-round soundness of an IOP and its “strong” round-
+by-round soundness (Section 8.6). First, we show a relationship between standard soundness and
+strong round-by-round soundness.
+Deﬁnition B.1. A (partial or full) transcript tr is complete if none of the veriﬁer messages in tr
+are ⊥.
+Lemma B.2. A k-round IOP with soundness µ has strong round-by-round soundness µ
+1
+k+1 . 7
+Proof. Let (P, V) be an IOP for a relation R with soundness error at most µ. For any x ∈L(R),
+we let state(x, tr) = 1 if and only if tr has at least one veriﬁer message that is not ⊥. For any
+x̸ ∈L(R), we deﬁne state inductively as follows.
+• For every complete and full transcript tr = (m, Π), we set state(x, tr) = 1 if VΠ(x; m) = 1.
+• For j = 2k + 1, . . . , 0 and for i = 0, 1, . . . , k + 1, for every tr with exactly j messages (veriﬁer and
+prover messages) and exactly i ⊥’s, we set state(x, tr) = 1 if one of the following holds:
+– the last message in tr is a prover message and state(x, tr∥⊥) = 1.
+– the last message is the ℓ-th veriﬁer message with ℓ< k + 1 and there exists Πℓsuch that
+state(x, tr∥Πℓ) = 1.
+– there exists some ℓsuch that mℓ= ⊥and
+Pr
+mℓ[state(x, tr[mℓ]) = 1] > µ
+1
+k+1 ,
+where tr[mℓ] is the transcript where we ﬁll in mℓfor the ℓ-th veriﬁer message in τ.
+• For all other tr, state(x, tr) = 0.
+If x ∈L(R), we observe that state trivially satisﬁes all requirements for (strong) round-by-
+round soundness: the conditions of Deﬁnition 8.3 are satisﬁed, and we also trivially have that
+state(x, tr) = state(x, tr∥⊥). Hence, for the remainder of the proof we will only consider x̸ ∈L(R).
+First, note that the function state is well-deﬁned, as the deﬁnition of state(x, tr) always depends on
+state(x, tr′) for tr′ that has either one more message or one fewer ⊥, so tr′ will already be deﬁned. We
+next show that this state function satisﬁes the stronger requirements of Deﬁnition 8.3 (as deﬁned
+in Section 8.6). Items 2 and 3 are immediately satisﬁed by the deﬁnition of state.
+We now show that state(x, tr) = state(x, tr∥⊥). We have by deﬁnition that if state(x, tr∥⊥) = 1
+then state(x, tr) = 1. We show the other direction by induction on the number of ⊥’s in tr. If tr
+has no ⊥and state(x, tr) = 1, then it must be the case that state(x, tr∥⊥) = 1. For the induction
+step, if state(x, tr) = 1 then either state(x, tr∥⊥) = 1, in which case we are done, or there exists ℓ
+such that mℓ= ⊥and Prmℓ[state(x, tr[mℓ]) = 1] > µ
+1
+k+1 . By the induction hypothesis, we have
+state(x, tr[mℓ]) = state(x, tr[mℓ]∥⊥), which implies that Prmℓ[state(x, tr[mℓ]∥⊥) = 1] > µ
+1
+k+1 , and
+so state(x, tr∥⊥) = 1.
+7We note that this lemma is a strengthening of Proposition 5.5 from [CCHLRR18], and the proof here is a
+modiﬁcation of the original.
+48
+
+
+[PÁGINA PDF 51]
+It remains to show that Item 1 of Deﬁnition 8.3 is satisﬁed. Suppose for contradiction that it is
+not, so that there exists some x̸ ∈L(R) such that state(x, ∅) = 1. We use this to create a malicious
+prover ˜P as follows. ˜P keeps track of an internal transcript tr, starting with tr = ∅, and keeps track
+of a list of all the messages that the veriﬁer has sent so far. Intuitively, ˜P follows the deﬁnition of
+state and updates tr so that state(x, tr) = 1. In what follows, we assume that state(x, tr) is always 1,
+and ˜P aborts if this is not the case. When the veriﬁer sends the message mj in the j-th round, the
+internal transcript of ˜P is some tr that has j −1 rounds, and possibly some ⊥veriﬁer messages. ˜P
+updates tr ←tr∥⊥(which has state(x, tr∥⊥) = state(x, tr) = 1), and then does the following loop:
+while there exists some ℓsuch that mℓ= ⊥and
+Pr
+mℓ[state(x, tr[mℓ]) = 1] > µ
+1
+k+1 ,
+˜P updates tr ←tr[mℓ], where mℓis the message sent by the veriﬁer in the ℓ-th round (ℓ≤j) that
+˜P has stored. Let tr be the internal transcript after this loop terminates (which it must, as every
+iteration decreases the number of ⊥’s in tr by 1). ˜P then has a transcript tr where the prover is
+about to send the j-th message, and the above does not apply. If j = k + 1, then tr must be full
+and complete (as otherwise we would have state(x, tr) = 0), so we are done. If j < k + 1, then by
+deﬁnition of state there exists Πj such that state(x, tr∥Πj) = 1. ˜P then updates tr ←tr∥Πj and
+sends Πj to the veriﬁer.
+We observe that the ﬁnal transcript tr of the interaction of ˜P with V is the same as ˜P’s ﬁnal
+transcript. Hence, V accepts if and only if state(x, tr) = 1. We claim that this happens with
+probability greater than µ. Indeed, for the internal execution of ˜P, we see that for every iteration
+of the loop, the probability that the new transcript has state 1 is greater than µ
+1
+k+1 . This is because
+until we “ﬁll in” the message mj in the internal transcript, the execution of ˜P is independent of
+mj. Every iteration increases the number of non-⊥veriﬁer messages in the internal transcript by 1,
+so this can only happen k + 1 times. Every time a prover message Πj is sent, the resulting internal
+transcript always has state 1. Hence, Pr[state(x, tr) = 1] >
+
+µ
+1
+k+1
+k+1
+= µ, which contradicts the
+soundness of the IOP.
+All that remains is to show that state satisﬁes the stronger version of Deﬁnition 8.4 (as deﬁned
+in Section 8.6) with ϵ = µ
+1
+k+1 . For any incomplete transcript tr that has state(x, tr) = 0, we have
+by deﬁnition of state that for every ℓ,
+Pr
+mℓ[state(x, tr[mℓ]) = 1] ≤µ
+1
+k+1 ,
+which is exactly the requirement for strong round-by-round soundness.
+Using Lemma B.2, we now bound the strong round-by-round soundness of an IOP from its
+round-by-round soundness.
+Theorem B.3. A k-round IOP with round-by-round soundness ϵ has strong round-by-round sound-
+ness (k + 1)
+1
+k+1 ϵ
+1
+k+1 .
+Proof. Suppose that (P, V) has round-by-round soundness ϵ. By Proposition 5.4 of [CCHLRR18],
+(P, V) has standard soundness (k + 1)ϵ.8 Applying Lemma B.2, we get that (P, V) has strong
+round-by-round soundness (k + 1)
+1
+k+1 ϵ
+1
+k+1 as desired.
+8Note that this does not exactly match the proposition in [CCHLRR18] — but this is only because their notation
+has the prover going last, and thus omits the (k + 1)-st veriﬁer message.
+49
+
+
+[PÁGINA PDF 52]
+The following proposition shows that this bound is tight up to the factor of (k + 1)
+1
+k+1 . We
+note that (k + 1)
+1
+k+1 is always smaller than 1.5 (and approaches 1 as k →∞), so this analysis is,
+in particular, tight up to a constant factor.
+Proposition B.4. For any k, there exists a k-round IOP with round-by-round soundness
+  1
+2
+k+1
+that does not have strong round-by-round soundness 1
+2 −δ for any δ > 0.
+Proof. Consider the following protocol for the empty language. The ﬁrst k veriﬁer messages consist
+of a single random bit bi. The ﬁnal (ie, (k + 1)-st) veriﬁer message consists of k + 2 random bits,
+denoted bk+1 and b′
+1, b′
+2, . . . , b′
+k+1. The veriﬁer accepts iﬀbi = b′
+i for every i. This protocol has
+round-by-round soundness
+  1
+2
+k+1, as we can deﬁne state(x, tr) = 1 if tr is a full transcript that
+causes the veriﬁer to accept, and state(x, tr) = 0 otherwise.
+Now suppose this protocol had strong round-by-round soundness 1
+2 −δ for some δ > 0, and
+let state be the state function that witnesses this.
+Fixing some x (certainly not in the empty
+language), we let tr0 be the transcript that has all empty prover messages and ⊥for every veriﬁer
+message. Because state(x, ∅) must be 0, state(x, tr0) must be 0 as well in order to have a valid state
+function. If we now sample the (k + 1)-st veriﬁer message, we will get bk+1 = b′
+k+1 with probability
+1
+2. However, we know the probability over mk+1 that state(x, tr0[mk+1]) = 1 is at most 1
+2 −δ < 1
+2, so
+there must exist an mk+1 such that state(x, tr0[mk+1]) = 0 and bk+1 = b′
+k+1. Let tr1 := tr0[mk+1].
+We now repeat this process for each round in reverse order. We start with some transcript tri
+such that state(x, tri) = 0 and consider sampling randomness for the (k + 1 −i)-th veriﬁer message.
+With probability 1
+2 we will sample an mk+1−i such that bk+1−i = b′
+k+1−i, and with probability 1
+2 −δ
+we will have state(x, tri[mk+1−i]) = 1, so there must exist an mk+1−i where the former holds but
+the latter does not. We then deﬁne tri+1 := tri[mk+1−i]. At the end, we get a (complete) transcript
+trk+1 that causes the veriﬁer to accept but has state(x, trk+1) = 0. Hence, state cannot be a valid
+state function, and so our protocol does not have strong round-by-round soundness 1
+2 −δ.
+Finally, we note that the constant 1
+2 in Proposition B.4 was arbitrary. Indeed, for any rational
+ϵ = p
+q, we could have gotten the same eﬀect by (instead of sampling bits bi, b′
+i and checking if
+bi = b′
+i) sampling xi, x′
+i from [q] and checking if xi −x′
+i (mod q) < p.
+50
+
+
+[PÁGINA PDF 53]
+Acknowledgments
+We thank Chinmay Nirkhe for taking part in early stages of this research, and for providing valuable
+feedback. This research was supported in part by: a Google Faculty Award; the UC Berkeley Center
+for Long-Term Cybersecurity; the NSF Graduate Research Fellowship Program (under Grant No.
+DGE1745016); the ARCS Foundation; and donations from the Ethereum Foundation and the
+Interchain Foundation. Any opinions, ﬁndings, and conclusions or recommendations expressed in
+this material are those of the author(s) and do not necessarily reﬂect the views of the National
+Science Foundation.
+References
+[AHIV17]
+Scott Ames, Carmit Hazay, Yuval Ishai, and Muthuramakrishnan Venkitasubramaniam. “Ligero:
+Lightweight Sublinear Arguments Without a Trusted Setup”. In: Proceedings of the 24th ACM
+Conference on Computer and Communications Security. CCS ’17. 2017, pp. 2087–2104.
+[ALMSS98]
+Sanjeev Arora, Carsten Lund, Rajeev Motwani, Madhu Sudan, and Mario Szegedy. “Proof ver-
+iﬁcation and the hardness of approximation problems”. In: Journal of the ACM 45.3 (1998).
+Preliminary version in FOCS ’92., pp. 501–555.
+[ARU14]
+Andris Ambainis, Ansis Rosmanis, and Dominique Unruh. “Quantum Attacks on Classical Proof
+Systems: The Hardness of Quantum Rewinding”. In: Proceedings of the 55th Annual IEEE Sym-
+posium on Foundations of Computer Science. FOCS ’14. 2014, pp. 474–483.
+[AS04]
+Scott Aaronson and Yaoyun Shi. “Quantum lower bounds for the collision and the element dis-
+tinctness problems”. In: Journal of the ACM 51.4 (2004), pp. 595–605.
+[AS98]
+Sanjeev Arora and Shmuel Safra. “Probabilistic checking of proofs: a new characterization of NP”.
+In: Journal of the ACM 45.1 (1998). Preliminary version in FOCS ’92., pp. 70–122.
+[BBCPGL18]
+Carsten Baum, Jonathan Bootle, Andrea Cerulli, Rafa¨el del Pino, Jens Groth, and Vadim Lyuba-
+shevsky. “Sub-linear Lattice-Based Zero-Knowledge Arguments for Arithmetic Circuits”. In: Pro-
+ceedings of the 38th Annual International Cryptology Conference. CRYPTO ’18. 2018, pp. 669–
+699.
+[BBHR19]
+Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. “Scalable Zero Knowledge
+with No Trusted Setup”. In: Proceedings of the 39th Annual International Cryptology Conference.
+CRYPTO ’19. 2019, pp. 733–764.
+[BCIOP13]
+Nir Bitansky, Alessandro Chiesa, Yuval Ishai, Rafail Ostrovsky, and Omer Paneth. “Succinct
+Non-Interactive Arguments via Linear Interactive Proofs”. In: Proceedings of the 10th Theory of
+Cryptography Conference. TCC ’13. 2013, pp. 315–333.
+[BCRSVW19]
+Eli Ben-Sasson, Alessandro Chiesa, Michael Riabzev, Nicholas Spooner, Madars Virza, and Nicholas
+P. Ward. “Aurora: Transparent Succinct Arguments for R1CS”. In: Proceedings of the 38th An-
+nual International Conference on the Theory and Applications of Cryptographic Techniques. EU-
+ROCRYPT ’19. Full version available at https://eprint.iacr.org/2018/828. 2019, pp. 103–
+128.
+[BCS16]
+Eli Ben-Sasson, Alessandro Chiesa, and Nicholas Spooner. “Interactive Oracle Proofs”. In: Pro-
+ceedings of the 14th Theory of Cryptography Conference. TCC ’16-B. 2016, pp. 31–60.
+[BDFLSZ11]
+Dan Boneh, ¨Ozg¨ur Dagdelen, Marc Fischlin, Anja Lehmann, Christian Schaﬀner, and Mark
+Zhandry. “Random Oracles in a Quantum World”. In: Proceedings of the 17th International Con-
+ference on the Theory and Application of Cryptology and Information Security. ASIACRYPT ’11.
+2011, pp. 41–69.
+[BFLS91]
+L´aszl´o Babai, Lance Fortnow, Leonid A. Levin, and Mario Szegedy. “Checking computations
+in polylogarithmic time”. In: Proceedings of the 23rd Annual ACM Symposium on Theory of
+Computing. STOC ’91. 1991, pp. 21–32.
+51
+
+
+[PÁGINA PDF 54]
+[BHT98]
+Gilles Brassard, Peter Høyer, and Alain Tapp. “Quantum Cryptanalysis of Hash and Claw-Free
+Functions”. In: Proceedings of the 3rd Latin American Symposium on Theoretical Informatics.
+LATIN ’98. 1998, pp. 163–169.
+[BISW17]
+Dan Boneh, Yuval Ishai, Amit Sahai, and David J. Wu. “Lattice-Based SNARGs and Their Appli-
+cation to More Eﬃcient Obfuscation”. In: Proceedings of the 36th Annual International Conference
+on Theory and Applications of Cryptographic Techniques. EUROCRYPT ’17. 2017, pp. 247–277.
+[BISW18]
+Dan Boneh, Yuval Ishai, Amit Sahai, and David J. Wu. “Quasi-Optimal SNARGs via Linear
+Multi-Prover Interactive Proofs”. In: Proceedings of the 37th Annual International Conference on
+Theory and Application of Cryptographic Techniques. EUROCRYPT ’18. 2018, pp. 222–255.
+[BN19]
+Carsten Baum and Ariel Nof. Concretely-Eﬃcient Zero-Knowledge Arguments for Arithmetic Cir-
+cuits and Their Application to Lattice-Based Cryptography. Cryptology ePrint Archive, Report
+2019/532. 2019.
+[BR93]
+Mihir Bellare and Phillip Rogaway. “Random Oracles are Practical: A Paradigm for Designing Ef-
+ﬁcient Protocols”. In: Proceedings of the 1st ACM Conference on Computer and Communications
+Security. CCS ’93. 1993, pp. 62–73.
+[Bab85]
+L´aszl´o Babai. “Trading group theory for randomness”. In: Proceedings of the 17th Annual ACM
+Symposium on Theory of Computing. STOC ’85. 1985, pp. 421–429.
+[CCHLRR18]
+Ran Canetti, Yilei Chen, Justin Holmgren, Alex Lombardi, Guy N. Rothblum, and Ron D. Roth-
+blum. Fiat–Shamir From Simpler Assumptions. Cryptology ePrint Archive, Report 2018/1004.
+2018.
+[CDGORRSZ17]
+Melissa Chase, David Derler, Steven Goldfeder, Claudio Orlandi, Sebastian Ramacher, Christian
+Rechberger, Daniel Slamanig, and Greg Zaverucha. “Post-Quantum Zero-Knowledge and Signa-
+tures from Symmetric-Key Primitives”. In: Proceedings of the 24th ACM Conference on Computer
+and Communications Security. CCS ’17. 2017, pp. 1825–1842.
+[Co17]
+O(1) Labs. Coda Cryptocurrency. https://codaprotocol.com/. 2017.
+[DFG13]
+¨Ozg¨ur Dagdelen, Marc Fischlin, and Tommaso Gagliardoni. “The Fiat-Shamir Transformation
+in a Quantum World”. In: Proceedings of the 19th International Conference on the Theory and
+Application of Cryptology and Information Security. ASIACRYPT ’13. 2013, pp. 62–81.
+[DFKNS92]
+Cynthia Dwork, Uriel Feige, Joe Kilian, Moni Naor, and Shmuel Safra. “Low Communication
+2-Prover Zero-Knowledge Proofs for NP”. In: Proceedings of the 11th Annual International Cryp-
+tology Conference. CRYPTO ’92. 1992, pp. 215–227.
+[DFMS19]
+Jelle Don, Serge Fehr, Christian Majenz, and Christian Schaﬀner. “Security of the Fiat–Shamir
+Transformation in the Quantum Random-Oracle Model”. In: Proceedings of the 39th Annual In-
+ternational Cryptology Conference. CRYPTO ’19. 2019, pp. 356–383.
+[DJ92]
+David Deutsch and Richard Jozsa. “Rapid solution of problems by quantum computation”. In: Pro-
+ceedings of the Royal Society of London. Series A: Mathematical and Physical Sciences 439.1907
+(1992), pp. 553–558.
+[Eat17]
+Edward Eaton. “Leighton-Micali Hash-Based Signatures in the Quantum Random-Oracle Model”.
+In: Proceedings of the 24th International Conference on Selected Areas in Cryptography. SAC ’17.
+2017, pp. 263–280.
+[FGLSS96]
+Uriel Feige, ShaﬁGoldwasser, Laszlo Lov´asz, Shmuel Safra, and Mario Szegedy. “Interactive proofs
+and the hardness of approximating cliques”. In: Journal of the ACM 43.2 (1996). Preliminary
+version in FOCS ’91., pp. 268–292.
+[FS86]
+Amos Fiat and Adi Shamir. “How to prove yourself: practical solutions to identiﬁcation and
+signature problems”. In: Proceedings of the 6th Annual International Cryptology Conference.
+CRYPTO ’86. 1986, pp. 186–194.
+[GH98]
+Oded Goldreich and Johan H˚astad. “On the complexity of interactive proofs with bounded com-
+munication”. In: Information Processing Letters 67.4 (1998), pp. 205–214.
+[GKR15]
+ShaﬁGoldwasser, Yael Tauman Kalai, and Guy N. Rothblum. “Delegating Computation: Inter-
+active Proofs for Muggles”. In: Journal of the ACM 62.4 (2015), 27:1–27:64.
+52
+
+
+[PÁGINA PDF 55]
+[GMNO18]
+Rosario Gennaro, Michele Minelli, Anca Nitulescu, and Michele Orr`u. “Lattice-Based zk-SNARKs
+from Square Span Programs”. In: Proceedings of the 25th ACM Conference on Computer and
+Communications Security. CCS ’18. 2018, pp. 556–573.
+[GMR89]
+ShaﬁGoldwasser, Silvio Micali, and Charles Rackoﬀ. “The knowledge complexity of interactive
+proof systems”. In: SIAM Journal on Computing 18.1 (1989). Preliminary version appeared in
+STOC ’85., pp. 186–208.
+[GVW02]
+Oded Goldreich, Salil Vadhan, and Avi Wigderson. “On interactive proofs with a laconic prover”.
+In: Computational Complexity 11.1/2 (2002), pp. 1–53.
+[GW11]
+Craig Gentry and Daniel Wichs. “Separating Succinct Non-Interactive Arguments From All Falsiﬁ-
+able Assumptions”. In: Proceedings of the 43rd Annual ACM Symposium on Theory of Computing.
+STOC ’11. 2011, pp. 99–108.
+[Gro96]
+Lov K. Grover. “A Fast Quantum Mechanical Algorithm for Database Search”. In: Proceedings of
+the 28th Annual ACM Symposium on Theory of Computing. STOC ’96. 1996, pp. 212–219.
+[IMSX15]
+Yuval Ishai, Mohammad Mahmoody, Amit Sahai, and David Xiao. On Zero-Knowledge PCPs:
+Limitations, Simpliﬁcations, and Applications. Available at http://www.cs.virginia.edu/
+~mohammad/files/papers/ZKPCPs-Full.pdf. 2015.
+[KKW18]
+Jonathan Katz, Vladimir Kolesnikov, and Xiao Wang. “Improved Non-Interactive Zero Knowledge
+with Applications to Post-Quantum Signatures”. In: Proceedings of the 25th ACM Conference on
+Computer and Communications Security. CCS ’18. 2018, pp. 525–537.
+[KLS18]
+Eike Kiltz, Vadim Lyubashevsky, and Christian Schaﬀner. “A Concrete Treatment of Fiat-Shamir
+Signatures in the Quantum Random-Oracle Model”. In: Proceedings of the 37th Annual Inter-
+national Conference on Theory and Application of Cryptographic Techniques. EUROCRYPT ’17.
+2018, pp. 552–586.
+[KPT97]
+Joe Kilian, Erez Petrank, and G´abor Tardos. “Probabilistically checkable proofs with zero knowl-
+edge”. In: Proceedings of the 29th Annual ACM Symposium on Theory of Computing. STOC ’97.
+1997, pp. 496–505.
+[KR08]
+Yael Kalai and Ran Raz. “Interactive PCP”. In: Proceedings of the 35th International Colloquium
+on Automata, Languages and Programming. ICALP ’08. 2008, pp. 536–547.
+[Kil92]
+Joe Kilian. “A note on eﬃcient zero-knowledge proofs and arguments”. In: Proceedings of the 24th
+Annual ACM Symposium on Theory of Computing. STOC ’92. 1992, pp. 723–732.
+[LFKN92]
+Carsten Lund, Lance Fortnow, Howard J. Karloﬀ, and Noam Nisan. “Algebraic Methods for
+Interactive Proof Systems”. In: Journal of the ACM 39.4 (1992), pp. 859–868.
+[LZ19]
+Qipeng Liu and Mark Zhandry. “Revisiting Post-Quantum Fiat–Shamir”. In: Proceedings of the
+39th Annual International Cryptology Conference. CRYPTO ’19. 2019, pp. 326–355.
+[Mer89]
+Ralph C. Merkle. “A certiﬁed digital signature”. In: Proceedings of the 9th Annual International
+Cryptology Conference. CRYPTO ’89. 1989, pp. 218–238.
+[Mic00]
+Silvio Micali. “Computationally Sound Proofs”. In: SIAM Journal on Computing 30.4 (2000).
+Preliminary version appeared in FOCS ’94., pp. 1253–1298.
+[NIS16]
+NIST. Post-Quantum Cryptography. 2016. url: https : / / csrc . nist . gov / Projects / Post -
+Quantum-Cryptography.
+[PS96]
+David Pointcheval and Jacques Stern. “Security Proofs for Signature Schemes”. In: Proceedings of
+the 14th Annual International Conference on Theory and Application of Cryptographic Techniques.
+EUROCRYPT ’96. 1996, pp. 387–398.
+[Pas03]
+Rafael Pass. “On Deniability in the Common Reference String and Random Oracle Model”. In:
+Proceedings of the 23rd Annual International Cryptology Conference. CRYPTO ’03. 2003, pp. 316–
+337.
+[RRR16]
+Omer Reingold, Ron Rothblum, and Guy Rothblum. “Constant-Round Interactive Proofs for Del-
+egating Computation”. In: Proceedings of the 48th ACM Symposium on the Theory of Computing.
+STOC ’16. 2016, pp. 49–62.
+53
+
+
+[PÁGINA PDF 56]
+[SCI14]
+SCIPR Lab. libsnark: a C++ library for zkSNARK proofs. 2014. url: https://github.com/
+scipr-lab/libsnark.
+[SCI18]
+SCIPR Lab. DIZK: Java library for distributed zero knowledge proof systems. 2018. url: https:
+//github.com/scipr-lab/dizk.
+[SCI19]
+SCIPR Lab. libiop: C++ library for IOP-based zkSNARKs. 2019. url: https://github.com/
+scipr-lab/libiop.
+[TU16]
+Ehsan Ebrahimi Targhi and Dominique Unruh. “Post-Quantum Security of the Fujisaki–Okamoto
+and OAEP Transforms”. In: Proceedings of the 14th Theory of Cryptography Conference. TCC ’16-
+B. 2016, pp. 192–216.
+[Unr15]
+Dominique Unruh. “Non-Interactive Zero-Knowledge Proofs in the Quantum Random Oracle
+Model”. In: Proceedings of the 34th Annual International Conference on Theory and Application
+of Cryptographic Techniques. EUROCRYPT ’15. 2015, pp. 755–784.
+[Unr17]
+Dominique Unruh. “Post-quantum Security of Fiat-Shamir”. In: Proceedings of the 23rd Inter-
+national Conference on the Theory and Applications of Cryptology and Information Security.
+ASIACRYPT ’17. 2017, pp. 65–95.
+[Val08]
+Paul Valiant. “Incrementally Veriﬁable Computation or Proofs of Knowledge Imply Time/Space
+Eﬃciency”. In: Proceedings of the 5th Theory of Cryptography Conference. TCC ’08. 2008, pp. 1–
+18.
+[WB15]
+Michael Walﬁsh and Andrew J. Blumberg. “Verifying Computations Without Reexecuting Them”.
+In: Communications of the ACM 58.2 (Jan. 2015), pp. 74–84.
+[Wat09]
+John Watrous. “Zero-Knowledge against Quantum Attacks”. In: SIAM Journal on Computing
+39.1 (2009). Preliminary version appeared in STOC ’06., pp. 25–58.
+[ZKP17]
+ZKP Standards. Zero Knowledge Proof Standardization. https://zkproof.org/. 2017.
+[Zc14]
+Electric Coin Company. Zcash Cryptocurrency. https://z.cash/. 2014.
+[Zha12]
+Mark Zhandry. “Secure Identity-Based Encryption in the Quantum Random Oracle Model”. In:
+Proceedings of the 32nd Annual International Cryptology Conference. CRYPTO ’12. 2012, pp. 758–
+775.
+[Zha15]
+Mark Zhandry. “A note on the quantum collision and set equality problems”. In: Quantum Infor-
+mation & Computation 15.7&8 (2015), pp. 557–567.
+[Zha19]
+Mark Zhandry. “How to Record Quantum Queries, and Applications to Quantum Indiﬀerentia-
+bility”. In: Proceedings of the 39th Annual International Cryptology Conference. CRYPTO ’19.
+2019, pp. 239–268.
+[bell15]
+Sean Bowe. bellman: a zk-SNARK library. 2015. url: https://github.com/zkcrypto/bellman.
+[dalek18]
+dalek cryptography. A pure-Rust implementation of Bulletproofs using Ristretto. 2018. url: https:
+//github.com/dalek-cryptography/bulletproofs.
+[iden19]
+iden3. websnark: A fast zkSNARK proof generator written in native Web Assembly. 2019. url:
+https://github.com/iden3/websnark.
+[stark18]
+libstark. libstark: a C++ library for zkSTARK systems. 2018. url: https : / / github . com /
+elibensasson/libSTARK.
+54

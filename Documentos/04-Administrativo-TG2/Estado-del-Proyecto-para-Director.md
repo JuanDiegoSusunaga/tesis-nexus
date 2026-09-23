@@ -2,6 +2,8 @@
 
 ## Actualización vigente — 23 de septiembre de 2026
 
+**Primera etapa QROM:** [cota del trabajo del nonce y obligaciones de compilación](Avances/QROM-2026-09-23/README.md), con fuentes CMS19/DFM20, 108 perfiles exactos y doce tests adicionales; regresión de 52 Python y 197 Rust, check/build. La cota controla una condición necesaria y es débil: para T=4096,g=20 llega a uno desde Q=451. No es un ataque ni una garantía cuántica completa. El siguiente trabajo prioriza extractor sin orden, cadena de índices/nonces y enlace AIR/FRI, conforme a la solicitud del autor. Dictamen externo pendiente.
+
 **Revisión interna posterior:** [demostración ampliada de nonces adaptativos](Avances/Revision-Critica-ROM-2026-09-23/README.md), con controles de premisas Merkle y 96 escenarios exactos. La cota se conserva; pasan 40 pruebas Python y 197 Rust, con check/build. El próximo estudio debe fijar presupuesto adversario y probabilidad objetivo. Dictamen externo y QROM siguen pendientes.
 
 **Último avance matemático, integrado en `main`:** la [derivación AIR/FRI por rondas](Avances/Cierre-Matematico-2026-09-23/README.md) y la [transferencia clásica ROM a TG2 v1](Avances/Transferencia-ROM-2026-09-23/README.md) proponen una demostración con extracción Merkle, canal hash y nonces adaptativos, acompañada de 108 escenarios. Pasan 28 pruebas Python y 197 Rust, con check/build. El verificador independiente reproduce ocho aceptaciones honestas y seis rechazos de oráculos alejados. La demostración requiere dictamen independiente; los parámetros no quedan acreditados con 100 bits y QROM sigue abierto. Los párrafos siguientes describen los antecedentes técnicos de este complemento; el manuscrito y el Word conservan su edición anterior.

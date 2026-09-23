@@ -118,3 +118,16 @@ python scripts/verificar_revision_rom_tg2.py --salida .tools/revision-rom/verifi
 ```
 
 El analizador calcula 96 escenarios de Bellman con fracciones exactas. El registro ejecuta doce tests nuevos y la regresión anterior: **40 Python, 197 Rust, check/build y manifiesto de 897 archivos**. Sus fuentes, cálculos reproducidos y hashes se guardan junto con `regresion/`. Protege TG1 y los dos paquetes matemáticos anteriores. Requiere salida nueva, código limpio y escritura de Cargo en `C:/tmp/nexus-target`. Es revisión interna; no sustituye dictamen externo ni reducción QROM.
+
+## 11. Primera etapa QROM
+
+El [informe QROM](../Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/README.md) deriva una cota parcial de trabajo mediante DFM20 y documenta las obligaciones pendientes para incorporar AIR/FRI.
+
+```powershell
+python scripts/analizar_qrom_tg2.py --salida .tools/qrom-repeticion/calculos.json
+python scripts/verificar_qrom_tg2.py --salida .tools/qrom-repeticion/verificacion
+```
+
+Se calculan 108 perfiles, doce búsquedas cuánticas pequeñas y nueve contrastes del muestreo. Los doce tests nuevos comprueban, entre otros, 14 prefijos del corpus y 256 tablas de un oráculo XOR. La regresión reúne **52 Python, 197 Rust, check/build y manifiesto de 897 archivos**. Se preservan TG1 y los tres paquetes matemáticos anteriores. Las salidas son exclusivas y Cargo requiere escritura en `C:/tmp/nexus-target`.
+
+`recopilar_fuentes_qrom_tg2.py` descarga CMS19 y DFM20 y conserva texto por página, versión y hashes. Solo ese colector requiere red y PyMuPDF 1.28.2; el README del informe documenta el entorno aislado empleado. La cota parcial es débil, no se interpreta como ataque y no completa QROM de AIR/FRI.

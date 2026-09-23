@@ -26,6 +26,8 @@ Las **197 pruebas** comprueban comportamientos del software en los casos ensayad
 
 La [revisión crítica interna posterior](../Avances/Revision-Critica-ROM-2026-09-23/README.md) amplía la prueba de nonces mediante potencial y añade 96 escenarios pequeños. Pasan 40 pruebas Python y 197 Rust. La fórmula ROM se conserva; el resultado sigue pendiente de revisión externa y del estudio de parámetros para una garantía cuantitativa.
 
+La [primera etapa QROM](../Avances/QROM-2026-09-23/README.md) añade una reducción explícita basada solo en la condición de trabajo, con 108 perfiles y doce pruebas nuevas; pasan 52 Python y 197 Rust. La cota es débil y no incorpora AIR/FRI. Se identifican las obligaciones Q1–Q5 de extractor, muestreo, composición y pérdidas antes de declarar una garantía cuántica completa.
+
 | Tema | Acción concreta | Condición de cierre |
 |---|---|---|
 | Revisión formal R1 | Registrar revisor, observaciones y resolución de las correcciones | Dictamen del director o lector competente |

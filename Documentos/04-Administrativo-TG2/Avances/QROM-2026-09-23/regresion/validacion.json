@@ -1,0 +1,133 @@
+{
+  "fecha_utc": "2026-09-23T17:51:28.270527+00:00",
+  "revisiones": {
+    "documentos_base": "aacaf9edd1ec5d38ba925df95840fa719cf950a5",
+    "codigo": "01dcde960402b6c60a19242b7ae3d6ac3d82a518",
+    "rama_documentos": "main",
+    "rama_codigo": "main"
+  },
+  "estado": "Revisión interna y demostración ampliada propuestas; dictamen externo y QROM pendientes",
+  "pruebas_python": 40,
+  "pruebas_nuevas": 12,
+  "pruebas_rust": 197,
+  "corpus": {
+    "total": 14,
+    "aceptados": 8,
+    "rechazados_fri_traza": 6
+  },
+  "escenarios_adaptativos": 96,
+  "estados_bellman_sumados": 6318,
+  "extraccion": {
+    "ordenes": 60,
+    "sin_evento_hash": 2,
+    "discrepancias_sin_evento_hash": 0
+  },
+  "archivos_protegidos": 68,
+  "codigo_sin_cambios": true,
+  "manifiesto_897": "verificado por la regresión",
+  "CARGO_TARGET_DIR": "C:/tmp/nexus-target",
+  "ejecuciones": [
+    {
+      "nombre": "pruebas-revision",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_revision_rom_tg2.py",
+        "-v"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "calculos",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/analizar_revision_rom_tg2.py",
+        "--salida",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\04-Administrativo-TG2\\Avances\\QROM-2026-09-23\\regresion\\calculos-reproducidos.json"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "regresion",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/verificar_transferencia_rom_tg2.py",
+        "--salida",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\04-Administrativo-TG2\\Avances\\QROM-2026-09-23\\regresion\\regresion"
+      ],
+      "codigo_salida": 0
+    }
+  ],
+  "fuentes": [
+    {
+      "original": "scripts/analizar_revision_rom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/regresion/fuentes/scripts/analizar_revision_rom_tg2.py",
+      "sha256": "4a23ee2bf9f758d2ab561ae184f95e0d117da4588b28ae473b08e535d30836b7",
+      "bytes": 7115
+    },
+    {
+      "original": "scripts/verificar_revision_rom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/regresion/fuentes/scripts/verificar_revision_rom_tg2.py",
+      "sha256": "9aa64db58cf5fec449c6602623250fe3fd90a5c5afb87a40e28f081e451de06f",
+      "bytes": 6430
+    },
+    {
+      "original": "scripts/tests/test_revision_rom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/regresion/fuentes/scripts/tests/test_revision_rom_tg2.py",
+      "sha256": "bf42682140aa2176ffaed289648ba5cf9a74a40d5dbd14d3468249b1bc3b4b46",
+      "bytes": 8220
+    }
+  ],
+  "archivos": [
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/README.md",
+      "sha256": "18bf73bfd882059286da6eef2fa75176807837e5b2ba910daee0ce810d5a7b0e",
+      "bytes": 1854
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/Revision-Critica-ROM.md",
+      "sha256": "fb89056e602571f20bb9438fcb1e6fba415b43db30352399977188f57616fc7a",
+      "bytes": 17176
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/calculos.json",
+      "sha256": "e5d5ff4d1c72117a3ab8a5ba1a82e1c9aad12a90181b8843242d728169d320e9",
+      "bytes": 30432
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/regresion/pruebas-revision.log",
+      "sha256": "f4035557e3b1f6ba3d55706df63be5a238d3b7c9f655dd716649b6b68344fb51",
+      "bytes": 1728
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/regresion/calculos.log",
+      "sha256": "54dded5254a4134069622d80351c0c9345eaccaab365751d7dee2c81bcfaa234",
+      "bytes": 109
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/regresion/regresion.log",
+      "sha256": "1b6a92db77dd9be592704481527d1dab6534b91b69985a92e429831f07a4359f",
+      "bytes": 385
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/regresion/calculos-reproducidos.json",
+      "sha256": "e5d5ff4d1c72117a3ab8a5ba1a82e1c9aad12a90181b8843242d728169d320e9",
+      "bytes": 30432
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/regresion/proteccion.json",
+      "sha256": "54f6112edcf8f9dbe485764992cb3d5ac6e06a61de14f9d2a3e4786860287e7e",
+      "bytes": 14584
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/regresion/regresion/validacion.json",
+      "sha256": "de4a4d905ab822d1ad3d9516e10555ac981678fdc3e6ceb93560177b540f8713",
+      "bytes": 11398
+    }
+  ]
+}

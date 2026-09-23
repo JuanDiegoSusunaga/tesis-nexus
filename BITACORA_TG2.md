@@ -1,5 +1,17 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Primera etapa QROM, 23 de septiembre de 2026
+
+Por solicitud del autor se continuó la investigación en `main`. Se conservaron dos fuentes primarias completas: CMS19, versión de portada del 14 de enero de 2020, y DFM20, arXiv v3 del 7 de marzo de 2022, con extracción por página y SHA-256. Se escribió el [informe QROM](Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/Primer-Paso-QROM.md).
+
+**Resultado matemático parcial:** la aceptación de TG2 v1 exige una salida hash con g bits iniciales cero. Reconstruir la entrada de ese trabajo desde una prueba consume `C_T=13+4log2(T)` llamadas hash. Una especialización del teorema 2 de DFM20 da `Pr[falso y acepta] ≤ min(1,(2(Q+C_T)+1)²/2^g)` en QROM, con una prueba clásica final y todas las consultas de preparación contabilizadas. La cota no utiliza AIR/FRI y es débil: para T=4096,g=20 llega a uno desde Q=451. Ese umbral no demuestra un ataque ni acredita un nivel de seguridad del protocolo.
+
+**Obligaciones identificadas:** el evento Bad_H clásico depende del orden temporal y no es directamente una propiedad de la base de consultas de CMS19; la generación encadenada de 40 índices no equivale a un solo reto uniforme; el potencial clásico de nonces no tiene aún una versión cuántica demostrada. Se documentan Q1–Q5 para extractor, muestreo, AIR/FRI, pérdidas y parámetros. No se incorpora artificialmente el factor ideal h_T en la cota QROM.
+
+**Evidencia:** 108 perfiles exactos, doce búsquedas pequeñas, nueve contrastes de muestreo y doce tests nuevos. Se cotejan los 14 prefijos del corpus y se enumeran 256 tablas de un oráculo XOR con cero, una y dos iteraciones. La simulación exacta demuestra en esos ejemplos el fallo de la expresión lineal clásica frente a búsqueda cuántica; no es un ataque SHA3 ni ejecución en hardware cuántico. Pasan **52 Python, 197 Rust, cargo check y cargo build**. Se verifica el manifiesto de 897 archivos, TG1 y los tres paquetes matemáticos previos. Código Rust limpio. [Registro y fuentes](Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/validacion.json).
+
+El Python global no tenía PyMuPDF; se creó `.tools/qrom-venv` con PyMuPDF 1.28.2 exclusivamente para la recopilación. El resto del análisis usa la biblioteca estándar. Los índices, ruta, balance, preguntas de revisión y brief enlazan el suplemento. La transferencia QROM completa que aproveche AIR/FRI y el dictamen independiente siguen pendientes. El manuscrito y el Word conservan su edición identificada; no se atribuye la aprobación previa del director a este desarrollo.
+
 ## Revisión crítica interna de ROM, 23 de septiembre de 2026
 
 Se revisó la transferencia contra el código `01dcde9` y se escribió un [suplemento matemático](Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/Revision-Critica-ROM.md). El contraste anterior de nonces solo comparaba órdenes fijos; se añadió una búsqueda de estrategias adaptativas y una demostración por potencial que cobra cada candidato antes de su primera respuesta. Contempla intercalación, abandono, restauración, duplicados y una verificación final que completa un candidato parcialmente explorado.

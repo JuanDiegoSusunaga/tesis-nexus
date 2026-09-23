@@ -6,6 +6,8 @@
 
 **Última revisión interna:** [argumento de potencial para nonces y controles de premisas ROM](Avances/Revision-Critica-ROM-2026-09-23/README.md). Pasan 40 pruebas Python y 197 Rust, con check/build. La búsqueda exacta de 96 escenarios pequeños no supera la cota; dictamen externo y QROM pendientes.
 
+**Etapa QROM iniciada a solicitud del autor:** [cota parcial del trabajo y correspondencia con teoremas cuánticos](Avances/QROM-2026-09-23/README.md). Doce pruebas adicionales elevan la regresión a 52 Python y 197 Rust, con check/build. La cota usa una condición necesaria y no incorpora AIR/FRI. El siguiente trabajo se concentra en Q1–Q5 del informe: extractor sin orden temporal, tratamiento cuántico de índices y nonces, enlace por rondas, pérdidas y parámetros. QROM completo y dictamen externo permanecen abiertos.
+
 **Dominio vigente:** sistemas en general, según aclaración expresa del autor registrada el 22 de septiembre en la bitácora. La arquitectura dual, la autenticación de operaciones y el ciclo de vida de claves mantienen su función técnica; cada aplicación debe definir y validar sus reglas de autorización y transición.
 
 Esta ruta complementa el [Plan de Trabajo](Plan-de-Trabajo-TG2.md). Se concentra en TG2 y mantiene los documentos administrativos históricos de TG1 conforme al alcance aprobado. Las observaciones sobre componentes de TG1 se documentarán como límites de la validación de TG2, preservando la versión aprobada.
