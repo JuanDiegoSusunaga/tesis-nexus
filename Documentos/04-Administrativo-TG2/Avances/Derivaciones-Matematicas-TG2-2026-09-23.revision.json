@@ -1,0 +1,276 @@
+{
+  "fecha": "2026-09-23",
+  "estado": "Documento para revision matematica; dictamen pendiente",
+  "paginas_word": 24,
+  "tablas": 8,
+  "celdas_comparadas": 135,
+  "ecuaciones_nativas": 305,
+  "ecuaciones_bloque": 33,
+  "tablas_y_rotulos_en_misma_pagina": true,
+  "enlaces_locales_comprobados": 15,
+  "fuente": {
+    "archivo": "Derivaciones-Matematicas-TG2-2026-09-23.md",
+    "sha256": "267bef11a51252600cd30db3e4a2672ac9e0878643a8299840c831bdb79e129f"
+  },
+  "word": {
+    "archivo": "Derivaciones-Matematicas-TG2-2026-09-23.docx",
+    "sha256": "4a430f139dbdbcb9534839f9fbed5e19d3ec7496863268ac3745456de406cf01"
+  },
+  "paginacion": {
+    "paginas_word": 24,
+    "tablas": [
+      {
+        "tabla": 1,
+        "pagina_inicio": 3,
+        "pagina_fin": 3,
+        "pagina_rotulo": 3
+      },
+      {
+        "tabla": 2,
+        "pagina_inicio": 6,
+        "pagina_fin": 6,
+        "pagina_rotulo": 6
+      },
+      {
+        "tabla": 3,
+        "pagina_inicio": 11,
+        "pagina_fin": 11,
+        "pagina_rotulo": 11
+      },
+      {
+        "tabla": 4,
+        "pagina_inicio": 13,
+        "pagina_fin": 13,
+        "pagina_rotulo": 13
+      },
+      {
+        "tabla": 5,
+        "pagina_inicio": 17,
+        "pagina_fin": 17,
+        "pagina_rotulo": 17
+      },
+      {
+        "tabla": 6,
+        "pagina_inicio": 18,
+        "pagina_fin": 18,
+        "pagina_rotulo": 18
+      },
+      {
+        "tabla": 7,
+        "pagina_inicio": 21,
+        "pagina_fin": 21,
+        "pagina_rotulo": 21
+      },
+      {
+        "tabla": 8,
+        "pagina_inicio": 23,
+        "pagina_fin": 23,
+        "pagina_rotulo": 23
+      }
+    ],
+    "figuras": [],
+    "ecuaciones_bloque": [
+      {
+        "ecuacion": 1,
+        "pagina": 5,
+        "y_inicio_pt": 167.5,
+        "y_fin_pt": 167.5
+      },
+      {
+        "ecuacion": 2,
+        "pagina": 5,
+        "y_inicio_pt": 223.3,
+        "y_fin_pt": 223.3
+      },
+      {
+        "ecuacion": 3,
+        "pagina": 5,
+        "y_inicio_pt": 448.95,
+        "y_fin_pt": 448.95
+      },
+      {
+        "ecuacion": 4,
+        "pagina": 5,
+        "y_inicio_pt": 537.5,
+        "y_fin_pt": 537.5
+      },
+      {
+        "ecuacion": 5,
+        "pagina": 5,
+        "y_inicio_pt": 564.45,
+        "y_fin_pt": 564.45
+      },
+      {
+        "ecuacion": 6,
+        "pagina": 7,
+        "y_inicio_pt": 169.4,
+        "y_fin_pt": 169.4
+      },
+      {
+        "ecuacion": 7,
+        "pagina": 7,
+        "y_inicio_pt": 284.9,
+        "y_fin_pt": 284.9
+      },
+      {
+        "ecuacion": 8,
+        "pagina": 7,
+        "y_inicio_pt": 340,
+        "y_fin_pt": 340
+      },
+      {
+        "ecuacion": 9,
+        "pagina": 8,
+        "y_inicio_pt": 277.6,
+        "y_fin_pt": 277.6
+      },
+      {
+        "ecuacion": 10,
+        "pagina": 8,
+        "y_inicio_pt": 483.2,
+        "y_fin_pt": 483.2
+      },
+      {
+        "ecuacion": 11,
+        "pagina": 9,
+        "y_inicio_pt": 72,
+        "y_fin_pt": 72
+      },
+      {
+        "ecuacion": 12,
+        "pagina": 9,
+        "y_inicio_pt": 264.15,
+        "y_fin_pt": 264.15
+      },
+      {
+        "ecuacion": 13,
+        "pagina": 9,
+        "y_inicio_pt": 594.5,
+        "y_fin_pt": 594.5
+      },
+      {
+        "ecuacion": 14,
+        "pagina": 10,
+        "y_inicio_pt": 167.85,
+        "y_fin_pt": 167.85
+      },
+      {
+        "ecuacion": 15,
+        "pagina": 10,
+        "y_inicio_pt": 537.5,
+        "y_fin_pt": 537.5
+      },
+      {
+        "ecuacion": 16,
+        "pagina": 10,
+        "y_inicio_pt": 604.5,
+        "y_fin_pt": 604.5
+      },
+      {
+        "ecuacion": 17,
+        "pagina": 12,
+        "y_inicio_pt": 209.85,
+        "y_fin_pt": 209.85
+      },
+      {
+        "ecuacion": 18,
+        "pagina": 14,
+        "y_inicio_pt": 367.7,
+        "y_fin_pt": 367.7
+      },
+      {
+        "ecuacion": 19,
+        "pagina": 14,
+        "y_inicio_pt": 633.75,
+        "y_fin_pt": 633.75
+      },
+      {
+        "ecuacion": 20,
+        "pagina": 15,
+        "y_inicio_pt": 200.6,
+        "y_fin_pt": 200.6
+      },
+      {
+        "ecuacion": 21,
+        "pagina": 15,
+        "y_inicio_pt": 465.1,
+        "y_fin_pt": 465.1
+      },
+      {
+        "ecuacion": 22,
+        "pagina": 15,
+        "y_inicio_pt": 654.55,
+        "y_fin_pt": 654.55
+      },
+      {
+        "ecuacion": 23,
+        "pagina": 16,
+        "y_inicio_pt": 119.75,
+        "y_fin_pt": 119.75
+      },
+      {
+        "ecuacion": 24,
+        "pagina": 16,
+        "y_inicio_pt": 207.9,
+        "y_fin_pt": 207.9
+      },
+      {
+        "ecuacion": 25,
+        "pagina": 16,
+        "y_inicio_pt": 293.4,
+        "y_fin_pt": 293.4
+      },
+      {
+        "ecuacion": 26,
+        "pagina": 16,
+        "y_inicio_pt": 475.5,
+        "y_fin_pt": 475.5
+      },
+      {
+        "ecuacion": 27,
+        "pagina": 16,
+        "y_inicio_pt": 573.7,
+        "y_fin_pt": 573.7
+      },
+      {
+        "ecuacion": 28,
+        "pagina": 16,
+        "y_inicio_pt": 600.65,
+        "y_fin_pt": 600.65
+      },
+      {
+        "ecuacion": 29,
+        "pagina": 19,
+        "y_inicio_pt": 336.9,
+        "y_fin_pt": 336.9
+      },
+      {
+        "ecuacion": 30,
+        "pagina": 19,
+        "y_inicio_pt": 459.7,
+        "y_fin_pt": 459.7
+      },
+      {
+        "ecuacion": 31,
+        "pagina": 19,
+        "y_inicio_pt": 594.5,
+        "y_fin_pt": 594.5
+      },
+      {
+        "ecuacion": 32,
+        "pagina": 19,
+        "y_inicio_pt": 690.35,
+        "y_fin_pt": 690.35
+      },
+      {
+        "ecuacion": 33,
+        "pagina": 20,
+        "y_inicio_pt": 377.35,
+        "y_fin_pt": 377.35
+      }
+    ],
+    "fecha": "2026-09-23"
+  },
+  "revision_visual": "Se inspeccionaron las laminas de las paginas y las formulas extensas. Indice y referencias ajustados para evitar paginas con pocas entradas. Se comprobaron de nuevo indice, formula multilineal de variacion total y referencias de la edicion final. El peso de letras de la rasterizacion EMF no indica negrita global del documento.",
+  "alcance": "Recopila argumentos y evidencia existentes. No modifica el manuscrito principal ni ejecuta nuevas mediciones criptograficas."
+}

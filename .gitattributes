@@ -9,3 +9,6 @@
 *.pdf binary
 *.png binary
 *.bin binary
+
+# Fuente del documento matemático independiente, identificada mediante SHA-256.
+/Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-*.md -text

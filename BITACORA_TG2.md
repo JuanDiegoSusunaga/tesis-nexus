@@ -1,5 +1,11 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Documento de derivaciones para revisión, 23 de septiembre de 2026
+
+Se reunieron S1, el contraejemplo de proximidad, la variante vinculada, la cota ideal S2 y la auditoría S3 en un [documento Word independiente](Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-09-23.docx), con [fuente editable](Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-09-23.md). Expone hipótesis, argumentos, evidencia, referencias y preguntas M1–M6. La sección 1.1 aclara la diferencia entre argumentos escritos pendientes de revisión y la transferencia al ejecutable que aún no está demostrada.
+
+Edición de **24 páginas, 8 tablas / 135 celdas y 305 objetos matemáticos nativos, incluidos 33 bloques**. El índice se actualizó con Word; las tablas coinciden con la conversión independiente y mantienen rótulo y cuerpo juntos. Se inspeccionaron la paginación y las fórmulas, con [registro y hashes](Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-09-23.revision.json). Los scripts de generación y actualización quedan en `scripts/`. El manuscrito principal, el código y las mediciones conservan su versión; no se atribuye dictamen ni aprobación a esta recopilación.
+
 ## Estado vigente — organización y versión de repositorios, 23 de septiembre de 2026
 
 Se corrigió `.gitignore` para limitar las exclusiones locales a la raíz: 169 archivos de evidencia, incluidas fuentes de experimentos, dejaban de aparecer en Git por las reglas anteriores. Se añadió `.gitattributes` para conservar los bytes del manuscrito y de la evidencia. Las instantáneas históricas, los documentos administrativos de TG1 y las fuentes STARK heredadas se preservan.

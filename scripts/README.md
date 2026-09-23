@@ -69,3 +69,14 @@ Estos scripts históricos escriben en rutas fechadas fijas y algunos requieren a
 ## 6. Registrar una nueva edición
 
 Después de actualizar y revisar manuscrito, evidencia y código, hacer primero el commit del código. Ejecutar `python scripts/registrar_version_tg2.py`, revisar el manifiesto generado y `python scripts/verificar_version_tg2.py`; después hacer el commit de documentos. El manifiesto fija el commit de código, el commit documental anterior y hashes. El commit documental que contiene el manifiesto identifica la edición sin introducir una referencia circular a su propio hash.
+
+## 7. Documento independiente de derivaciones
+
+La fuente `Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-09-23.md` reúne S1–S3 y el contraejemplo de proximidad. Para compilar el Word y actualizar su índice:
+
+```powershell
+python scripts/generar_derivaciones_docx.py
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/actualizar_derivaciones_word.ps1
+```
+
+El generador verifica contenido de tablas y cantidad de ecuaciones nativas antes de publicar el documento. Sus temporales quedan en `.tools/derivaciones/`. Este proceso solo genera el documento independiente; la fuente y las salidas del manuscrito principal conservan su edición. La inspección visual y los hashes de la copia revisada se registran en el archivo `.revision.json` junto al Word.

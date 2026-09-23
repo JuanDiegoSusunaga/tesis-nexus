@@ -13,6 +13,7 @@
 | Evidencia y fuentes por etapa | [Índice de evidencia](../../06-Evidencia-TG2/README.md) |
 | Código y reproducción | [Instrucciones](../../../scripts/README.md) |
 | Revisión matemática pendiente | [Preguntas M1–M6](../Avances/Revision-Matematica-S1-S3-2026-09-23.md) |
+| Derivaciones matemáticas reunidas | [Word para revisión](../Avances/Derivaciones-Matematicas-TG2-2026-09-23.docx) y [fuente](../Avances/Derivaciones-Matematicas-TG2-2026-09-23.md) |
 | Preparación de sustentación | [Guion](../Presentaciones/Guion-Sustentacion-TG2.md) |
 
 Se enlaza una sola edición del manuscrito; esta carpeta no duplica los archivos Word/PDF. El manifiesto vincula el commit de código con los hashes de la edición y de toda la evidencia conservada. El commit documental que lo contiene identifica el conjunto.
