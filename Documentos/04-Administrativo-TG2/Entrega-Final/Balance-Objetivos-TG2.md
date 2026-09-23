@@ -19,6 +19,7 @@
 - Derivación conservadora en un modelo interactivo ideal y auditoría de correspondencia Merkle/Fiat–Shamir.
 - [Derivación por rondas](../Avances/Cierre-Matematico-2026-09-23/README.md) y [transferencia clásica ROM al protocolo TG2 v1](../Avances/Transferencia-ROM-2026-09-23/README.md), integradas en `main`: demostraciones propuestas, 108 escenarios exactos y verificación independiente completa de 14 certificados. Revisión externa pendiente; QROM y 100 bits no acreditados.
 - Inventario de representaciones y modelo de residencia W; la política de reexpansión se evalúa en un benchmark y no está integrada en el gestor.
+- [Muestreo QROM y reducción condicional al verificador](../Avances/Muestreo-QROM-2026-09-23/README.md), apoyados en las etapas de PoW y extracción sin orden: 72 presupuestos, 28 recorridos, 80 pruebas Python y 197 Rust, check/build. Falta demostrar la cota β de omisión o cola y revisar la reducción; no constituye una garantía cuántica completa.
 
 Las **197 pruebas** comprueban comportamientos del software en los casos ensayados. Los teoremas citados, las derivaciones y las garantías de despliegue tienen sus propias hipótesis; el conteo de pruebas no las sustituye.
 

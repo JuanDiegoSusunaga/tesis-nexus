@@ -2,7 +2,9 @@
 
 ## Actualización vigente — 23 de septiembre de 2026
 
-**Avance QROM vigente:** [extractor sin orden y escapes AIR/FRI](Avances/Extractor-QROM-2026-09-23/README.md). Se propone un lema de estabilidad y una cota cuántica de colisión o escape de campo en la base comprimida. Se contrastan 14 prefijos, 236 retos, 1.974 aperturas AIR y 2.688 inserciones. Pasan 66 Python y 197 Rust, check/build. La cota aún no es una garantía de aceptación del ejecutable: siguen índices/nonces, cola y transferencia al juego real. Dictamen pendiente; los párrafos siguientes registran los avances anteriores.
+**Avance QROM vigente:** [muestreo y reducción condicional al verificador](Avances/Muestreo-QROM-2026-09-23/README.md). Se reconstruyen los índices y nonces, se propone la cobertura de aceptación falsa y se explicitan las pérdidas del paso al juego real. Pasan 80 Python y 197 Rust, check/build; se reproducen 72 cuentas de presupuesto y 28 recorridos del corpus. **Falta demostrar la cota β de omisión o cola.** La reducción requiere dictamen y todavía no da una garantía QROM completa. Los párrafos siguientes registran los avances anteriores.
+
+**Antecedente del extractor QROM:** [extractor sin orden y escapes AIR/FRI](Avances/Extractor-QROM-2026-09-23/README.md). Propone estabilidad y una cota de colisión o escape de campo en la base comprimida; contrasta 14 prefijos, 236 retos, 1.974 aperturas AIR y 2.688 inserciones. Su regresión reunió 66 Python y 197 Rust, check/build. Dictamen pendiente.
 
 **Primera etapa QROM:** [cota del trabajo del nonce y obligaciones de compilación](Avances/QROM-2026-09-23/README.md), con fuentes CMS19/DFM20, 108 perfiles exactos y doce tests adicionales; regresión de 52 Python y 197 Rust, check/build. La cota controla una condición necesaria y es débil: para T=4096,g=20 llega a uno desde Q=451. No es un ataque ni una garantía cuántica completa. El siguiente trabajo prioriza extractor sin orden, cadena de índices/nonces y enlace AIR/FRI, conforme a la solicitud del autor. Dictamen externo pendiente.
 

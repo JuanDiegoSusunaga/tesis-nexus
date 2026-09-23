@@ -1,0 +1,1644 @@
+{
+  "fecha": "2026-09-23",
+  "modelo": "Monedas frescas; sin eventos hash ni algebraicos",
+  "limite": "Contrastes finitos y revisión interna; no certificación de la demostración general",
+  "escenarios": [
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 0,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 1,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 2,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "16"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "4"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 3,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "17",
+        "denominador": "32"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 25
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 4,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "39",
+        "denominador": "64"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 43
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 5,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "85",
+        "denominador": "128"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 63
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 6,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "183",
+        "denominador": "256"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 83
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 7,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "389",
+        "denominador": "512"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 103
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 0,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 1,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 2,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "16"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "4"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 3,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "17",
+        "denominador": "32"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 29
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 4,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "39",
+        "denominador": "64"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 57
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 5,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "85",
+        "denominador": "128"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 96
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 6,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "183",
+        "denominador": "256"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 143
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 1,
+      "Q": 7,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "389",
+        "denominador": "512"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 193
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 0,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 1,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "32"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 2,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "37",
+        "denominador": "128"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 3,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "183",
+        "denominador": "512"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 25
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 4,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "861",
+        "denominador": "2048"
+      },
+      "cota": {
+        "numerador": "5",
+        "denominador": "8"
+      },
+      "estados_bellman": 43
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 5,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "3903",
+        "denominador": "8192"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "4"
+      },
+      "estados_bellman": 63
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 6,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "17269",
+        "denominador": "32768"
+      },
+      "cota": {
+        "numerador": "7",
+        "denominador": "8"
+      },
+      "estados_bellman": 83
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 7,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "75079",
+        "denominador": "131072"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 103
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 0,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 1,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "32"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 2,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "37",
+        "denominador": "128"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 3,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "183",
+        "denominador": "512"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 29
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 4,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "861",
+        "denominador": "2048"
+      },
+      "cota": {
+        "numerador": "5",
+        "denominador": "8"
+      },
+      "estados_bellman": 57
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 5,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "3903",
+        "denominador": "8192"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "4"
+      },
+      "estados_bellman": 96
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 6,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "17269",
+        "denominador": "32768"
+      },
+      "cota": {
+        "numerador": "7",
+        "denominador": "8"
+      },
+      "estados_bellman": 143
+    },
+    {
+      "M": 2,
+      "buenos": 1,
+      "q": 1,
+      "bits": 2,
+      "Q": 7,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "75079",
+        "denominador": "131072"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 193
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 0,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 1,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 2,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "16"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "4"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 3,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 26
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 4,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "73",
+        "denominador": "128"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 48
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 5,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "323",
+        "denominador": "512"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 76
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 6,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "1391",
+        "denominador": "2048"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 109
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 7,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "5903",
+        "denominador": "8192"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 144
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 0,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 1,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 2,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "16"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "4"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 3,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 30
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 4,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "73",
+        "denominador": "128"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 62
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 5,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "323",
+        "denominador": "512"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 112
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 6,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "1391",
+        "denominador": "2048"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 182
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 1,
+      "Q": 7,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "5903",
+        "denominador": "8192"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 270
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 0,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 1,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "32"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 2,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "37",
+        "denominador": "128"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 3,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "179",
+        "denominador": "512"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 26
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 4,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "833",
+        "denominador": "2048"
+      },
+      "cota": {
+        "numerador": "5",
+        "denominador": "8"
+      },
+      "estados_bellman": 48
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 5,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "3767",
+        "denominador": "8192"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "4"
+      },
+      "estados_bellman": 76
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 6,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "16653",
+        "denominador": "32768"
+      },
+      "cota": {
+        "numerador": "7",
+        "denominador": "8"
+      },
+      "estados_bellman": 109
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 7,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "72363",
+        "denominador": "131072"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 144
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 0,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 1,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "32"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 2,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "37",
+        "denominador": "128"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 3,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "179",
+        "denominador": "512"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 30
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 4,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "833",
+        "denominador": "2048"
+      },
+      "cota": {
+        "numerador": "5",
+        "denominador": "8"
+      },
+      "estados_bellman": 62
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 5,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "3767",
+        "denominador": "8192"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "4"
+      },
+      "estados_bellman": 112
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 6,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "16653",
+        "denominador": "32768"
+      },
+      "cota": {
+        "numerador": "7",
+        "denominador": "8"
+      },
+      "estados_bellman": 182
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 2,
+      "bits": 2,
+      "Q": 7,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "72363",
+        "denominador": "131072"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 270
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 0,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 1,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "3",
+        "denominador": "16"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 2,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "32"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 3,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 26
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 4,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "73",
+        "denominador": "256"
+      },
+      "cota": {
+        "numerador": "5",
+        "denominador": "8"
+      },
+      "estados_bellman": 49
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 5,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "329",
+        "denominador": "1024"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "4"
+      },
+      "estados_bellman": 81
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 6,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "1457",
+        "denominador": "4096"
+      },
+      "cota": {
+        "numerador": "7",
+        "denominador": "8"
+      },
+      "estados_bellman": 122
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 7,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "6353",
+        "denominador": "16384"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 169
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 0,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 1,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "3",
+        "denominador": "16"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 2,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "32"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 3,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 30
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 4,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "73",
+        "denominador": "256"
+      },
+      "cota": {
+        "numerador": "5",
+        "denominador": "8"
+      },
+      "estados_bellman": 63
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 5,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "329",
+        "denominador": "1024"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "4"
+      },
+      "estados_bellman": 117
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 6,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "1457",
+        "denominador": "4096"
+      },
+      "cota": {
+        "numerador": "7",
+        "denominador": "8"
+      },
+      "estados_bellman": 198
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 1,
+      "Q": 7,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "6353",
+        "denominador": "16384"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "estados_bellman": 308
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 0,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "16"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "16"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 1,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "64"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 2,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "37",
+        "denominador": "256"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "16"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 3,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "179",
+        "denominador": "1024"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 26
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 4,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "833",
+        "denominador": "4096"
+      },
+      "cota": {
+        "numerador": "5",
+        "denominador": "16"
+      },
+      "estados_bellman": 49
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 5,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "3791",
+        "denominador": "16384"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "estados_bellman": 81
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 6,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "16965",
+        "denominador": "65536"
+      },
+      "cota": {
+        "numerador": "7",
+        "denominador": "16"
+      },
+      "estados_bellman": 122
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 7,
+      "capacidad_simultanea": 2,
+      "optimo": {
+        "numerador": "74859",
+        "denominador": "262144"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 169
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 0,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "1",
+        "denominador": "16"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "16"
+      },
+      "estados_bellman": 1
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 1,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "7",
+        "denominador": "64"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "estados_bellman": 4
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 2,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "37",
+        "denominador": "256"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "16"
+      },
+      "estados_bellman": 12
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 3,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "179",
+        "denominador": "1024"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "estados_bellman": 30
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 4,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "833",
+        "denominador": "4096"
+      },
+      "cota": {
+        "numerador": "5",
+        "denominador": "16"
+      },
+      "estados_bellman": 63
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 5,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "3791",
+        "denominador": "16384"
+      },
+      "cota": {
+        "numerador": "3",
+        "denominador": "8"
+      },
+      "estados_bellman": 117
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 6,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "16965",
+        "denominador": "65536"
+      },
+      "cota": {
+        "numerador": "7",
+        "denominador": "16"
+      },
+      "estados_bellman": 198
+    },
+    {
+      "M": 4,
+      "buenos": 3,
+      "q": 3,
+      "bits": 2,
+      "Q": 7,
+      "capacidad_simultanea": 3,
+      "optimo": {
+        "numerador": "74859",
+        "denominador": "262144"
+      },
+      "cota": {
+        "numerador": "1",
+        "denominador": "2"
+      },
+      "estados_bellman": 308
+    }
+  ],
+  "extraccion": {
+    "ordenes": 60,
+    "sin_evento_hash": 2,
+    "discrepancias_sin_evento_hash": 0
+  }
+}

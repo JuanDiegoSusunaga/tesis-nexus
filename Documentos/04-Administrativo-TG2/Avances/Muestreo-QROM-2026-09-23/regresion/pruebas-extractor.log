@@ -1,0 +1,19 @@
+test_base_inmutable_y_orden_independiente (test_extractor_qrom_tg2.ExtractorQrom.test_base_inmutable_y_orden_independiente) ... ok
+test_ciclos_terminan_por_profundidad_o_rechazo (test_extractor_qrom_tg2.ExtractorQrom.test_ciclos_terminan_por_profundidad_o_rechazo) ... ok
+test_colision_global_impide_extraccion (test_extractor_qrom_tg2.ExtractorQrom.test_colision_global_impide_extraccion) ... ok
+test_corpus_y_calculos_archivados (test_extractor_qrom_tg2.ExtractorQrom.test_corpus_y_calculos_archivados) ... ok
+test_cota_de_base_comprimida_exacta (test_extractor_qrom_tg2.ExtractorQrom.test_cota_de_base_comprimida_exacta) ... ok
+test_entrada_65_bytes_con_dos_roles (test_extractor_qrom_tg2.ExtractorQrom.test_entrada_65_bytes_con_dos_roles) ... ok
+test_escape_artificial_cambia_en_ambos_sentidos (test_extractor_qrom_tg2.ExtractorQrom.test_escape_artificial_cambia_en_ambos_sentidos) ... ok
+test_estabilidad_en_subconjuntos_e_inserciones (test_extractor_qrom_tg2.ExtractorQrom.test_estabilidad_en_subconjuntos_e_inserciones) ... ok
+test_gramatica_en_todos_los_perfiles_y_raiz_compartida (test_extractor_qrom_tg2.ExtractorQrom.test_gramatica_en_todos_los_perfiles_y_raiz_compartida) ... ok
+test_merkle_completa_regiones_ausentes_y_canonicas (test_extractor_qrom_tg2.ExtractorQrom.test_merkle_completa_regiones_ausentes_y_canonicas) ... ok
+test_necesidad_de_estado_fijo_y_premisa_sin_colision (test_extractor_qrom_tg2.ExtractorQrom.test_necesidad_de_estado_fijo_y_premisa_sin_colision) ... ok
+test_prefijos_incompletos_y_extensiones_fuera_de_fase (test_extractor_qrom_tg2.ExtractorQrom.test_prefijos_incompletos_y_extensiones_fuera_de_fase) ... ok
+test_sobrescribir_no_es_el_lema_de_insercion (test_extractor_qrom_tg2.ExtractorQrom.test_sobrescribir_no_es_el_lema_de_insercion) ... ok
+test_ventanas_y_cota_de_cardinalidad (test_extractor_qrom_tg2.ExtractorQrom.test_ventanas_y_cota_de_cardinalidad) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.513s
+
+OK

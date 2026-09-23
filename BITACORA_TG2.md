@@ -1,5 +1,17 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Muestreo QROM y reducción al verificador, 23 de septiembre de 2026
+
+Se continuó en `main` con la reconstrucción del trabajo, absorción del nonce y cadena de 40 índices distintos desde una base sin orden. El [nuevo informe](Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/Muestreo-y-Puente-QROM.md) define el conjunto de parejas localmente aceptables y propone la cobertura de toda aceptación falsa por colisión, escape de campo, omisión o cola.
+
+**Resultado propuesto:** se construye un verificador auxiliar acotado y una expansión de longitud fija `V`, repetible usando solo sus pares hash registrados. Aplicando el lema 4.9 de CMS19 se formula el paso desde el juego real a la base comprimida, con presupuesto `Q+V` y corrección de salida `sqrt(V/2^256)`. La reducción depende de una cota `β` para omisión o cola. **No se ha demostrado una cota útil para β:** su valor y la cota completa quedan en `null` en los cálculos. No se sustituye el argumento clásico de nonces por una expresión cuántica sin prueba.
+
+**Evidencia:** 72 cuentas de presupuesto y 28 recorridos del corpus. Con corte 40 hay dos aceptaciones ordinarias y doce colas; con corte 512, ocho aceptaciones y seis rechazos FRI, sin cola. El resultado cola solo cuenta como éxito del juego auxiliar del análisis; no cambia la aceptación de Rust. Catorce tests nuevos contrastan 256 secuencias pequeñas, duplicados, cortes, ausencia o inconsistencia de respuestas y repetición sin acceso a SHA3. La cola de 512 pasos se ejercita mediante una asignación artificial de oráculo, no mediante un ataque a SHA3.
+
+Pasan **80 pruebas Python, 197 Rust, cargo check y cargo build**, junto con el manifiesto de 897 archivos. Se comprueban 220 archivos protegidos de TG1 y de los cinco paquetes matemáticos anteriores; Rust permanece limpio. [Validación, fuentes y hashes](Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/validacion.json).
+
+Se actualizan índices, ruta, balance, revisión M1–M6 y brief. La herramienta calcula controles locales, pero no decide la falsedad de enunciados ni simula al adversario cuántico general. Próximo trabajo: demostrar β y revisar de forma independiente la cobertura y el cambio de juego antes de evaluar parámetros QROM. Manuscrito y Word conservan su edición identificada. Los apartados siguientes son registros históricos.
+
 ## Extractor QROM y escapes AIR/FRI, 23 de septiembre de 2026
 
 Se continuó en `main` con Q1 y parte de Q3. El [nuevo suplemento](Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/Extractor-y-Escapes-QROM.md) define un extractor determinista de Merkle y del prefijo AIR/FRI sobre una base de consultas sin orden temporal. La extracción completa regiones ausentes con cero, comprueba gramática, raíces compartidas y valores canónicos, y admite el solapamiento nodo/enunciado de 65 bytes. No presupone registrar clásicamente las consultas de un adversario cuántico.

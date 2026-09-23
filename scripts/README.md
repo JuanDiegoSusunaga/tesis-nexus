@@ -142,3 +142,16 @@ python scripts/verificar_extractor_qrom_tg2.py --salida .tools/extractor-qrom-re
 ```
 
 Solo usa la biblioteca estándar de Python. El extractor no consulta SHA3; el auditor instrumenta el corpus clásico para contrastarlo. Registra 45 escenarios, 14 certificados, 236 retos y 1.974 aperturas AIR. Los catorce tests incluyen 2.688 inserciones, ambas direcciones de una propiedad artificial y el control de sobrescritura. La regresión reúne **66 Python, 197 Rust, check/build y manifiesto de 897 archivos**, y protege TG1 y los cuatro complementos anteriores. Las salidas deben ser nuevas y Cargo requiere escritura en `C:/tmp/nexus-target`.
+
+## 13. Muestreo QROM y reducción condicional al verificador
+
+El [informe de muestreo](../Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/README.md) extiende la extracción al nonce y los índices, calcula el conjunto local G y construye una expansión de longitud fija repetible sin acceso al oráculo. Formula una reducción propuesta que depende de una cota β aún sin demostrar.
+
+```powershell
+python scripts/analizar_muestreo_qrom_tg2.py --salida .tools/muestreo-qrom-repeticion/calculos.json
+python scripts/verificar_muestreo_qrom_tg2.py --salida .tools/muestreo-qrom-repeticion/verificacion
+```
+
+Solo usa la biblioteca estándar de Python. Se registran 72 presupuestos y 28 recorridos con cortes de 40 y 512; catorce tests nuevos incluyen 256 secuencias pequeñas, repetición con SHA3 bloqueado y una cola bajo un oráculo artificial. La regresión reúne **80 Python, 197 Rust, check/build y manifiesto de 897 archivos**. Protege TG1 y los cinco paquetes matemáticos anteriores. Las salidas deben ser nuevas y Cargo requiere escritura en `C:/tmp/nexus-target`.
+
+El corte pertenece al experimento auxiliar del análisis y no modifica Rust. Los cálculos dejan β y la cota completa en `null`; el calculador condicional requiere una cota externa demostrada y no la certifica. La herramienta no decide si un enunciado es falso ni reproduce al adversario cuántico general.

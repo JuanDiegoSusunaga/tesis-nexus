@@ -1,0 +1,300 @@
+{
+  "fecha_utc": "2026-09-23T19:59:09.820862+00:00",
+  "revisiones": {
+    "documentos_base": "d5bbef6a5f0a387a1cf860f7ead3e080b921d8c5",
+    "codigo": "01dcde960402b6c60a19242b7ae3d6ac3d82a518",
+    "rama_documentos": "main",
+    "rama_codigo": "main"
+  },
+  "estado": "Derivación ROM clásica propuesta pendiente de revisión independiente; sin reducción QROM",
+  "pruebas_python": 28,
+  "detalle_python": {
+    "pruebas-rom": 11,
+    "pruebas-rbr": 7,
+    "pruebas-manifiesto": 10
+  },
+  "pruebas_rust": 197,
+  "corpus": {
+    "total": 14,
+    "aceptados": 8,
+    "rechazados_fri_traza": 6
+  },
+  "proteccion": {
+    "archivos_tg1_y_rbr_previos": 30,
+    "codigo_sin_cambios": true,
+    "manifiesto_897": "verificado"
+  },
+  "CARGO_TARGET_DIR": "C:/tmp/nexus-target",
+  "ejecuciones": [
+    {
+      "nombre": "pruebas-rom",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_transferencia_rom_tg2.py",
+        "-v"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "pruebas-rbr",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_rbr_conjunto_tg2.py",
+        "-v"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "pruebas-manifiesto",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_verificar_version_tg2.py",
+        "-v"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "manifiesto",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/verificar_version_tg2.py"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "cargo-check",
+      "comando": [
+        "cargo",
+        "check",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "cargo-test",
+      "comando": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "cargo-build",
+      "comando": [
+        "cargo",
+        "build",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml"
+      ],
+      "codigo_salida": 0
+    }
+  ],
+  "fuentes": [
+    {
+      "original": "scripts/analizar_transferencia_rom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/scripts/analizar_transferencia_rom_tg2.py",
+      "sha256": "c675e16983ca7951057981d33675755a3ea129c552848c00bdfb8811b9c8e002",
+      "bytes": 5755
+    },
+    {
+      "original": "scripts/verificar_certificados_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/scripts/verificar_certificados_tg2.py",
+      "sha256": "f10440dc9e87ef414042ea3e6e09974c1fa2224571f7008de7d3659c5e0551da",
+      "bytes": 9455
+    },
+    {
+      "original": "scripts/verificar_transferencia_rom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/scripts/verificar_transferencia_rom_tg2.py",
+      "sha256": "bf1f54c0fab2de8f56c4af28d3b68a11e5100506f78796b6b63a25cd7316aa73",
+      "bytes": 8608
+    },
+    {
+      "original": "scripts/auditar_merkle_fs_r4.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/scripts/auditar_merkle_fs_r4.py",
+      "sha256": "4c94854c4fd44899633b7e8a572853e5096978c5068b3125a594acf6cdbdee53",
+      "bytes": 10237
+    },
+    {
+      "original": "scripts/analizar_rbr_conjunto_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/scripts/analizar_rbr_conjunto_tg2.py",
+      "sha256": "00543637f6d9d4284b7a1950ed1f48a5b74673e49995a2b5494c91fc2c9a7dd4",
+      "bytes": 4947
+    },
+    {
+      "original": "scripts/verificar_version_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/scripts/verificar_version_tg2.py",
+      "sha256": "b18e605bcd2fb2778527a5107fb26f1cd151bcece9481b06cbe00442ce3b56da",
+      "bytes": 3091
+    },
+    {
+      "original": "scripts/tests/test_transferencia_rom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/scripts/tests/test_transferencia_rom_tg2.py",
+      "sha256": "df3fa8a063dddcaa66f1da06b1e2a93a019fcc866b006d9c770a665fa2247f31",
+      "bytes": 8634
+    },
+    {
+      "original": "nexus/nexus-zk/src/stark/air.rs",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/nexus/nexus-zk/src/stark/air.rs",
+      "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7",
+      "bytes": 21761
+    },
+    {
+      "original": "nexus/nexus-zk/src/stark/channel.rs",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/nexus/nexus-zk/src/stark/channel.rs",
+      "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d",
+      "bytes": 7450
+    },
+    {
+      "original": "nexus/nexus-zk/src/stark/field.rs",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/nexus/nexus-zk/src/stark/field.rs",
+      "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7",
+      "bytes": 8456
+    },
+    {
+      "original": "nexus/nexus-zk/src/stark/fri.rs",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/nexus/nexus-zk/src/stark/fri.rs",
+      "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5",
+      "bytes": 12645
+    },
+    {
+      "original": "nexus/nexus-zk/src/stark/merkle.rs",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/nexus/nexus-zk/src/stark/merkle.rs",
+      "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f",
+      "bytes": 5788
+    },
+    {
+      "original": "nexus/nexus-zk/src/stark/mod.rs",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/nexus/nexus-zk/src/stark/mod.rs",
+      "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b",
+      "bytes": 1131
+    },
+    {
+      "original": "nexus/nexus-zk/src/stark/ntt.rs",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/nexus/nexus-zk/src/stark/ntt.rs",
+      "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3",
+      "bytes": 4327
+    },
+    {
+      "original": "nexus/nexus-zk/src/stark/params.rs",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/nexus/nexus-zk/src/stark/params.rs",
+      "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533",
+      "bytes": 4373
+    },
+    {
+      "original": "nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs",
+      "sha256": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f",
+      "bytes": 10024
+    },
+    {
+      "original": "nexus/nexus-zk/tests/tg2_linked_trace_fri.rs",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/nexus/nexus-zk/tests/tg2_linked_trace_fri.rs",
+      "sha256": "1270fe7b2a8b843b038db6fa6803975a1448044df1693b86875c20942316707d",
+      "bytes": 10744
+    },
+    {
+      "original": "nexus/nexus-core/src/types.rs",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/fuentes/nexus/nexus-core/src/types.rs",
+      "sha256": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492",
+      "bytes": 8899
+    }
+  ],
+  "bibliografia_nueva": {
+    "url": "https://eprint.iacr.org/2016/116.pdf",
+    "version_portada": "2016-02-10",
+    "consultada": "2026-09-23"
+  },
+  "archivos": [
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/README.md",
+      "sha256": "525bdf236bcae1e59b361be49542c1b8be71936378d0125a1c96461eed5cc8be",
+      "bytes": 2887
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md",
+      "sha256": "2336aa9548b2820b844834b4c29ef1648930f41435458d3c2cee45a86d945524",
+      "bytes": 21790
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/calculos.json",
+      "sha256": "7862ef41bcd712e6fb8dd03be89c538ff81b113e921e4f733c68d96b9b808e8b",
+      "bytes": 895300
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/bibliografia/BCS16.pdf",
+      "sha256": "a2dc9bd042665081664287281b9bcf64735be2c818ce9207cce57cc43939fa2f",
+      "bytes": 3809663
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/pruebas-rom.log",
+      "sha256": "dec16506de228fa4f50c5b8e0a45cd2f6ecd0947fd83a94a877ee21970e5b84f",
+      "bytes": 1548
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/pruebas-rbr.log",
+      "sha256": "a4a600dea89bddbd9082b2e0bc3ac60dfb668afabe2919d6a477b4763646a6dd",
+      "bytes": 932
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/pruebas-manifiesto.log",
+      "sha256": "35c85336fd51578b8b2351dbad1fa53e4ccaf983ac197937d908194be64ef25b",
+      "bytes": 1238
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/manifiesto.log",
+      "sha256": "52b0a70b2fc9b18440e7811d906024f94195a71cb85d1d291b2e387fccb71386",
+      "bytes": 185
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/cargo-check.log",
+      "sha256": "353733e847339d96c256ce9010a5c1b851abf6af1edfc412f7ee3b98e83c505f",
+      "bytes": 14143
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/cargo-test.log",
+      "sha256": "685a55ef803c0cb5c438cf26421d72948ebc9227bb46e14677b3173e267c655e",
+      "bytes": 31228
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/cargo-build.log",
+      "sha256": "8858bf214b00500278318d7de4a0e26260eb98f0515d22a9d79267ff3be0372b",
+      "bytes": 10542
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/regresion/regresion/regresion/regresion/corpus.json",
+      "sha256": "0d74fe1300cdae66bbecf5955ba4855a0b2046f3ce39f1cedb6a6ff8c05268ed",
+      "bytes": 6513
+    }
+  ]
+}
