@@ -27,7 +27,7 @@ Las **197 pruebas** comprueban comportamientos del software en los casos ensayad
 |---|---|---|
 | Revisión formal R1 | Registrar revisor, observaciones y resolución de las correcciones | Dictamen del director o lector competente |
 | Argumentos S1–S3 | Resolver las seis preguntas del [paquete M1–M6](../Avances/Revision-Matematica-S1-S3-2026-09-23.md) | Dictamen y decisión sobre suficiencia para el alcance aprobado |
-| Garantía concreta del ejecutable | Si se exige, completar correspondencia R1 y propiedades por ronda/compilación ROM-QROM del protocolo conjunto | Hipótesis y pérdidas verificadas; la cota ideal ordinaria no basta |
+| Garantía concreta del ejecutable | Si se exige, completar correspondencia R1, revisar la nueva derivación por rondas y justificar la compilación ROM-QROM del protocolo conjunto | Hipótesis y pérdidas verificadas; las cotas ideales no bastan |
 | Despliegue de claves | Si se afirma protección operativa completa, integrar fuente, custodia durable, épocas y anclaje | Evidencia de integración y recuperación bajo el modelo declarado |
 | Protección física de residencia | Si se afirma reducción efectiva de exposición, observar copias/residuos y proteger semilla | Medición de la frontera declarada y política implementada |
 | Series históricas | Conciliar revisión, condiciones y cifras donde faltan metadatos | Procedencia identificada o limitación histórica conservada |

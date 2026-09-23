@@ -50,7 +50,8 @@
 - [x] Derivar una cota conservadora de composición interactiva ideal: candidato único fijo, campo base, dos FRI y enlace local; reproducir nueve perfiles y contrastes numéricos.
 - [x] Auditar Merkle/Fiat–Shamir: 14 certificados, 560 consultas y 18.880 aperturas reconstruidos; sesgo de campo y condiciones de compilación documentados.
 - [x] Preparar el paquete de revisión matemática S1–S3 con seis preguntas y evidencia enlazada.
-- [ ] Resolver las propiedades por ronda y la compilación del protocolo conjunto si se requiere garantía del ejecutable; registrar revisión independiente y decisión de alcance sobre S1–S3 (S3–S5).
+- [x] Abrir `investigacion/cierre-matematico-tg2` en documentos y código; escribir una función de estado por rondas para AIR y ambos FRI, con un lema elemental de acuerdo y nuevas cotas ideales. [Derivación de la rama](Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md).
+- [ ] Revisar independientemente esa derivación y justificar la compilación del protocolo conjunto: extracción de oráculos, canal hash, consulta en cadena, nonces y pérdidas ROM/QROM. Registrar decisión de alcance sobre S1–S3 (S3–S5).
 - [x] Preservar nueva serie R4: 17 casos Criterion y 40 mediciones STARK, con dispersión, fuentes y metadatos.
 - [x] Completar los dos benchmarks tras el cambio de Windows por el autor; fuentes, configuración y resultados conservados en R4-complemento.
 - [x] Definir el modelo de amenaza y residencia de regiones, inventario de representaciones y sensibilidad; tres pruebas R5 pasan.

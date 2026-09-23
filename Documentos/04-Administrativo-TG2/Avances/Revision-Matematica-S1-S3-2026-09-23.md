@@ -4,6 +4,8 @@
 
 ## Material y orden de lectura
 
+**Complemento posterior en rama de investigación:** [solidez por rondas del IOP conjunto](Cierre-Matematico-2026-09-23/README.md). Propone estados AIR/FRI y cotas ideales más ajustadas. Requiere dictamen y amplía M3–M5; el manuscrito y el Word siguientes conservan su edición anterior. No resuelve por sí solo la compilación concreta.
+
 **Lectura consolidada:** [documento Word de las derivaciones](Derivaciones-Matematicas-TG2-2026-09-23.docx) y [fuente Markdown](Derivaciones-Matematicas-TG2-2026-09-23.md). Reúne los argumentos completos, sus hipótesis, evidencia y preguntas M1–M6. La sección 1.1 explica la diferencia entre una demostración escrita pendiente de revisión y el paso de compilación que sigue abierto.
 
 1. [Manuscrito vigente](../../01-Manuscrito/README.md), §§6.7.2–6.7.6 y conclusiones.

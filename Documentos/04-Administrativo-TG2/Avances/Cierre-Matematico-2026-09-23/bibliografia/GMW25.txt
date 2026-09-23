@@ -1,0 +1,1594 @@
+[PAGINA 1]
+A Simplified Round-by-round Soundness Proof of FRI
+Albert Garreta∗
+Nicolas Mohnblatt†
+Benedikt Wagner‡
+March 27, 2026
+Abstract
+The FRI protocol (ICALP ’18) is one of the most influential and widely deployed building
+blocks at the core of modern SNARK systems. While its concrete security is well understood,
+existing security proofs are intricate and technically complex.
+In this work, we present a novel security analysis of FRI, in particular its round-by-
+round soundness. This analysis yields additional insights about FRI that previous analysis
+did not. Equally important, our approach is significantly simpler than previous proofs. This
+makes it more accessible to a broader audience, lowering the barrier to understanding this
+fundamental protocol. Furthermore, the relative simplicity of our analysis may pave the
+way for future formal verification efforts of modern SNARK constructions.
+Contents
+1
+Introduction
+2
+2
+Preliminaries
+3
+2.1
+Reed-Solomon Codes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3
+2.2
+Mutual correlated agreement for proximity generators
+. . . . . . . . . . . . . . .
+3
+3
+IOPPs and Round-By-Round Soundness
+5
+3.1
+Interactive oracle proof of proximity
+. . . . . . . . . . . . . . . . . . . . . . . . .
+5
+3.2
+Round-by-round soundness
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+4
+The FRI IOPP
+8
+4.1
+Folding univariate functions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+4.2
+Protocol description
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+5
+Our Proof
+10
+5.1
+Intuition and overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+10
+5.2
+Folding preserves agreement sets
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+14
+5.3
+Full proof . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+5.4
+Additional properties . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+20
+5.5
+Comparison to existing proof strategies
+. . . . . . . . . . . . . . . . . . . . . . .
+22
+A Appendix: Batched FRI
+26
+∗Nethermind Research, albert@nethermind.io
+†zkSecurity, nico@zksecurity.xyz
+‡Ethereum Foundation, benedikt.wagner@ethereum.org
+1
+
+[PAGINA 2]
+1
+Introduction
+The FRI protocol [BBHR18] is a foundational component of modern cryptographic argument
+systems, providing an efficient method for proving proximity to a Reed–Solomon (RS) code.
+It lies at the core of an entire industry of succinct hash-based arguments in production. To
+highlight this importance, note that this industry will play a critical role in securing billions of
+dollars on Ethereum in the future1. Given its central importance, it is crucial to have a precise
+and thorough understanding of FRI’s security guarantees.
+A Novel Analysis of FRI.
+While several analyses of FRI exist [BKS18, BCI+20, Sta21,
+BGK+23, ABN23, AFR23, EA23] and its concrete security is well understood, the existing
+proofs are technically complex and can be challenging to follow. In this work, we present a
+novel, simpler and more accessible proof of round-by-round soundness for FRI, which is the
+notion needed to deduce security of the non-interactive protocol that is built from it [BCS16,
+CCH+19, Hol19]. This new analysis offers three main benefits:
+• Accessibility for new researchers: By lowering the technical entry barrier, we aim to make
+this area more approachable, encouraging new contributions and fresh ideas that could
+shape the future of the field.
+• A foundation for formal verification: Our simplified analysis can serve as a template for
+formal verification efforts, which are increasingly important in the context of production
+SNARK systems.
+• Additional insights into FRI: Our novel proof also shows additional structural properties
+of FRI, which may be of independent interest. For instance, they may find application
+when applying FRI in the context of data availability sampling [HASW24] or knowledge
+soundness.
+The third property shows that our proof is not just a simplification of existing proofs, but yields
+fundamentally new insights. We discuss these in Section 5.4 and compare our novel analysis to
+previous approaches in Section 5.5.
+Application in Formal Verification.
+One of the ambitious goals of Ethereum’s post-
+quantum roadmap is to achieve formal verification of every component in the stack [Eth25,
+DHT+26]. We believe that our work contributes to this vision by making the security analysis
+of a key protocol (namely, FRI) more tractable. Following the publication of a preprint of this
+document, Hirai [Hir26] released a machine-assisted Lean4 formalization of our proof.
+Mutual correlated agreement.
+We note that our proof relies on the mutual correlated
+agreement (MCA) property [ACY23, ACFY25], whereas standard analyses of FRI can be carried
+out under the correlated agreement (CA) property. When we initially published this article,
+MCA was a plausible conjecture believed by most domain experts, but stronger than CA. In
+subsequent work [BCH+25, BCGM25, Hab25], the community made significant progress in
+understanding MCA, and it is now known to hold in the same regimes as correlated agreement.
+Interestingly, proofs of MCA use the same tools and proving strategies as those of CA.
+1See for instance https://ethproofs.org/.
+2
+
+[PAGINA 3]
+2
+Preliminaries
+Most of the notation and preliminaries in this section are lifted almost verbatim from STIR and
+WHIR [ACFY24, ACFY25]. As a quick reference, we use the following notation:
+• The notation x ←X means that x is sampled uniformly at random from a finite set X.
+• The “hat” symbol over a function (e.g., bp) indicates that it is a polynomial.
+• Given a polynomial bp, we write degX(bp) to denote the degree of bp in the variable X. We
+omit the subscript when bp is a univariate polynomial.
+• For two functions f, g: L →Σ, we denote ∆(f, g) the fractional Hamming distance be-
+tween f and g, i.e., the fraction of points in which they disagree.
+• For a set S ⊆Σn, ∆(f, S) := minh∈S ∆(f, h).
+• For a function f : L →Σ and a set S ⊆L, we write f[S] to denote the restriction of f to
+the set S. In particular, for two such functions f, g, we have
+f[S] = g[S] ⇐⇒∀s ∈S : f(s) = g(s).
+• For a ternary relation R = {(x, y, w)}, let L(R) := {(x, y) | ∃w, (x, y, w) ∈R} be the
+language induced by R.
+• For a set L ⊆F and m ∈N, we define Lm := {xm : x ∈L}.
+• We assume that all sets in this work admit some canonical ordering of their elements.
+2.1
+Reed-Solomon Codes
+FRI allows to prove proximity to a Reed-Solomon code. We recall Reed-Solomon codes here.
+In general, a linear code of length n over a field F is a linear subspace C ⊆Fn. In the context
+of FRI and Reed-Solomon codes, it is more convenient to interpret a codeword f ∈C as the
+evaluations of a univariate polynomial bf ∈F<d[X] over a fixed domain of size n. We write
+codewords f ∈C as functions f : L →F, where we assume that L has some implicit canonical
+ordering.
+Definition 2.1 (Reed-Solomon code). The Reed-Solomon code over field F, evaluation domain
+L ⊆F, and degree d ∈N is the set of evaluations over L of univariate polynomials (over F) of
+degree less than d:
+RS[F, L, d] :=
+n
+f : L →F
+:
+∃bf ∈F<d[X], ∀x ∈L, f(x) = bf(x)
+o
+.
+The rate of RS[F, L, d] is ρ := d/|L|. Its dimension is d. The minimum distance is 1 −ρ.
+2.2
+Mutual correlated agreement for proximity generators
+Intuitively, mutual correlated agreement states that if the linear combination P
+j rjfj for some
+functions fj and random coefficients rj agrees with a codeword on a sufficiently large domain S,
+then each of the fj agrees with a codeword on the very same domain S – all of that with high
+probability over the rj. The definition below assumes that rj are sampled by an algorithm Gen,
+which allows to model different distributions of rj’s. We note that mutual correlated agreement
+can be defined for general codes, but we restrict ourselves to Reed-Solomon codes as this is
+sufficient for this work.
+Definition 2.2 (Proximity generator, mutual correlated agreement). Let C := RS[F, L, d] be a
+Reed-Solomon code with rate ρ. We say that Gen is a proximity generator for C with mutual
+3
+
+[PAGINA 4]
+correlated agreement with error εmca : [0, 1] →[0, 1] if for every f1, . . . , fm : L →F and every
+δ ∈[0, 1] the following holds:
+Pr
+(r1,...,rm)←Gen(m)
+
+∃S ⊆L s.t.
+|S| ≥(1 −δ) · n
+∧∃u ∈C, u[S] = P
+j∈[m] rj · fj[S]
+∧∃i ∈[m], ∀u′ ∈C, u′[S]̸ = fi[S]
+
+≤εmca(C, m, δ).
+Definition 2.3 (Powers proximity generator). Let m ∈N be a length parameter and r ∈F be a
+field element. We define the Powers proximity generator as the following randomized algorithm,
+taking a uniform r ∈F as input:
+Powers(m; r) := (1, r, . . . , rm−1) ∈Fm.
+Lemma 2.4 ( [BCH+25]). Let C := RS[F, L, d] be a Reed-Solomon code with rate ρ.
+The
+function Powers with length m defined in Definition 2.3 is a proximity generator with mutual
+correlated agreement with error εmca such that for every δ ∈[0, 1]:
+εmca(C, m, δ) :=
+((m−1)
+|F|
+·
+
+2(η+1/2)5+3(η+1/2)·δ·ρ
+3ρ3/2
+· |L| + η+1/2
+√ρ
+
+,
+if δ < 1 −√ρ,
+1,
+otherwise,
+where η := max
+l
+√ρ
+1−√ρ−δ
+m
+, 3
+
+.
+4
+
+[PAGINA 5]
+3
+IOPPs and Round-By-Round Soundness
+Before we move our attention to FRI and its new analysis, we recall the notion of IOPPs and
+round-by-round soundness.
+3.1
+Interactive oracle proof of proximity
+In an interactive oracle proof for a relation R, we consider a prover and a verifier, where
+the prover wants to convince the verifier of the validity of some statement. To this end, the
+prover can provide oracles to the verifier and the verifier can respond with challenges. The
+verifier can additionally query the oracles provided by the prover. For convenience, we split
+the statement into x, to which the verifier has full access, and into an oracle part y, to which
+the verifier has oracle access. The prover also knows some witness w. Completeness states
+that the honest prover convinces the verifier if (x, y, w) ∈R. Soundness instead bounds the
+probability of the prover succeeding if (x, y) is a no-instance. For an interactive oracle proof of
+proximity (IOPP), it is convenient to assume that x describes the parameters of a code, and y
+describes an alleged codeword, and the soundness bound should depends only on the (Hamming)
+distance of the provided y to the code specified by x. For this work, it is sufficient to consider
+public-coin IOPPs, where the verifier’s messages are all uniformly sampled from prescribed sets
+(that are statistically independent from the execution of the protocol). In this case, we denote
+Vy,π1,...,πk(x, α1, . . . , αk+1) to be the deterministic function that has oracle access to y and the
+prover messages, takes as input the verifier messages and outputs the verifier’s decision bit. We
+now give the precise definition.
+Definition 3.1 (Interactive oracle proof of proximity). We say that IOPP = (P, V) is a public-
+coin IOP of proximity for a relation R with k rounds, perfect completeness and soundness β if
+the following holds:
+• Perfect completeness. For every (x, y, w) ∈R,
+Pr
+α1,...,αk
+
+
+Vy,π1,...,πk(x, α1, . . . , αk) = 1
+π1 ←P(x, y, w, α1)
+...
+πk ←P(x, y, w, α1, . . . , αk)
+
+= 1.
+• Soundness. For every (x, y) /∈L(R) and unbounded malicious prover ˜P,
+Pr
+α1,...,αk
+
+
+Vy,π1,...,πk(x, α1, . . . , αk) = 1
+π1 ←˜P(α1)
+...
+πk ←˜P(α1, . . . , αk)
+
+≤β(x, y).
+When the soundness error depends only on the lengths of the inputs and on the distance
+δ of y from the language Lx := {y′ : ∃w, (x, y′, w) ∈R}, we write β(|x|, |y|, δ) (and
+sometimes leave out |x| and |y|, writing β(δ), when the lengths are clear from context).
+Remark 3.2 (Verifier moves last). The above definition assumes that the prover moves last and
+sends the final message πk. In most IOPPs for codes (e.g. FRI [BBHR18], BaseFold [ZCF24],
+STIR [ACFY24], WHIR [ACFY25]), it is the verifier that moves last. In such cases, we set
+πk = ⊥and omit it from our notation.
+Remark 3.3 (IOPP for Reed-Solomon codes). Let C be a Reed-Solomon code. We say that
+(P, V) is an IOPP for C if it is an IOPP for the ternary relation RC = {(C, f, ⊥) | f ∈C}. When
+it is clear from context, we omit C from our notation, writing for example State(f, ∅) instead of
+State(C, f, ∅) or Vf,π1,...,πk(α1, . . . , αk) instead of Vy,π1,...,πk(x, α1, . . . , αk).
+5
+
+[PAGINA 6]
+3.2
+Round-by-round soundness
+We recall the notion of round-by-round soundness [CCH+19]. Before we can define it, we first
+define what a state function is. Intuitively, it associates every (partial) transcript with a state
+that is either 0 or 1. Intuitively, a 0-state indicates that the prover is about to lose, i.e., the
+verifier is about to reject. A malicious prover should start with state 0, and if in the end of the
+interaction the state is still 0, then the verifier rejects.
+Definition 3.4 (State function). Let (P, V) be an IOPP for a relation R = {(x, y, w)}. A
+state function for (P, V) is a (possibly inefficient) function State that receives as inputs x, y,
+and a transcript tr and outputs a bit, and has the following properties:
+• Empty transcript: if tr = ∅is the empty transcript, then State(x, y, tr) = 1 if and only if
+(x, y) ∈L(R).
+• Prover moves: if tr is a transcript where the prover is about to move, and State(x, y, tr) =
+0, then for every prover message π, State(x, y, tr||π) = 0.
+• Full transcript: if tr is a full transcript and State(x, y, tr) = 0, then V rejects given this
+interaction transcript.
+• Default: whenever tr is any transcript and State(x, y, tr) = 1, then every extension tr′ of
+tr satisfies State(x, y, tr′) = 1.
+With this definition at hand, we now think about a malicious prover that wants to convince
+the verifier. It starts in state 0 but must manage to end up in state 1, as otherwise the verifier
+will reject. Thus, in at least one of the rounds, this malicious prover must be lucky in the
+sense that the state changes from 0 to 1. Round-by-round soundness asserts that changing
+the state from 0 to 1 happens only with small probability. A proof of proximity relaxes this
+requirement and allows the probability of changing state to be large when the instance is close
+to the language, as long as this probability decreases and becomes small when the instance is
+far from the language.
+Definition 3.5 (Round-by-round soundness). A k-round IOPP (P, V) for a relation R =
+{(x, y, w)} has round-by-round soundness with error functions (ε1, . . . , εk) if the IOPP has a
+state function State, such that for every x, y and transcript tr = (α1, π2, . . . , αi−1, πi),
+Pr
+αi [State(x, y, tr) = 0 ∧State(x, y, tr||αi) = 1] ≤εi(x, y).
+As with standard soundness, we write εi as a function of distance when appropriate.
+Clearly, by the above reasoning, round-by-round soundness implies standard soundness by
+taking a union bound over all errors in the individual rounds. In practice, however, we are
+interested in the non-interactive BCS-compiled [BCS16] protocol. The soundness of this non-
+interactive protocol relates directly to round-by-round soundness and not to soundness. To get
+an intuition for that, note that a malicious prover in the non-interactive setting can try to query
+the random oracle that outputs the verifier messages multiple times per round. For instance,
+it may try a few queries to find a good α1, then proceed to the next round and so on. With
+soundness, we cannot directly bound the success probability of such a non-interactive prover,
+as the interactive prover in the soundness experiment only gets one challenge per round. On
+the other hand, round-by-round soundness can be used, and we briefly and informally sketch
+the intuition here:
+6
+
+[PAGINA 7]
+Assume the malicious prover starts with a non-codeword that is far from the code. Assume
+that it makes Qi queries to the random oracle for each round i. Then, with every query it can
+change the state from 0 to 1 with probability at most εi, so the probability that it gets lucky
+at some point is at most
+Q1ε1 + · · · + Qkεk ≤(Q1 + · · · + Qk) max
+i
+εi.
+Note that this prover runs in time at least Q1 + · · · + Qk. Therefore, the security level of such
+a scheme is about2 ⌊−log maxi εi⌋.
+2FRI is often used in combination with other building blocks that have their own soundness errors, and the
+BCS transform itself also introduces additional error terms, e.g., related to the collision-resistance of the hash
+function in use. So this is only a sketch of how the round-by-round soundness errors relate to the security level.
+7
+
+[PAGINA 8]
+4
+The FRI IOPP
+In this section, we recall the FRI IOPP [BBHR18], before we give our new analysis in the next
+section. We consider the setting in which a prover holds an initial function f0 : L0 →F, to
+which the verifier has oracle access. Informally, FRI allows the verifier to test that this initial
+function is close to some initial Reed-Solomon code C0, of dimension d0 and rate ρ = d0/|L0|.
+We assume some basic familiarity with the FRI protocol and its associated tools. For a good
+introduction, we refer to the lectures of Dan Boneh available online [Whi25a, Whi25b].
+4.1
+Folding univariate functions
+We first recall some notation for folding univariate functions following notation of STIR and
+WHIR [ACFY24, ACFY25]. Folding is one of the key tools in the FRI protocol as it allows to
+reduce the size of a proximity testing problem by a factor m. Definition 4.2 below is given for
+an arbitrary folding factor m. Readers may be more familiar with the case m = 2 where bpf,z is
+computed from the odd and even coefficients of bf (in the honest case).
+Definition 4.1 (Block). Let m ∈N be an integer and L ⊆F be a multiplicative coset of F∗
+such that |L| is divisible by m. For each z ∈Lm, we define the set
+Block(L, m, z) := {y ∈L : ym = z} ⊆L.
+When L and m are clear from context, we write Block(z).
+Definition 4.2 (Fold function). Let m ∈N be an integer and L ⊆F be a multiplicative coset
+of F∗such that |L| is divisible by m. Let f : L →F be a function and α ∈F. For each z ∈Lm,
+define bpf,z to be the unique polynomial of degree less than m with bpf,z(y) = f(y) for each
+y ∈Block(z). Then, we define the function Fold(f, m, α): Lm →F as
+∀z ∈Lm, Fold(f, m, α)(z) := bpf,z(α).
+By definition, Fold(f, m, α)(z) can be computed by interpolation from the evaluations of f at
+all points in Block(z).
+Remark 4.3. It is well-known (cf. [BS05, ACFY24, ACFY25]) that if the function f is in
+RS[F, L, d], then Fold(f, m, α) is in RS[F, Lm, d/m], for every α ∈F. This is important for the
+completeness of FRI.
+4.2
+Protocol description
+Next, we restate the formal protocol description. Correctness follows by inspection.
+Construction 4.4 (FRI protocol [BBHR18]). Consider the following:
+• Initial setting:
+– a field F;
+– an evaluation domain L0 ⊆F that is a multiplicative coset of F∗;
+– an initial degree bound d0 ∈N such that d0 ≤|L0|/2;
+– an initial code C0 := RS[F, L0, d0] with rate ρ := d0/|L0|;
+• Protocol parameters:
+– a number of folding rounds k ∈N and a total number of rounds k := k + 1;
+– a sequence of folding parameters m1, . . . , mk ∈N such that the order of L0 is divisible
+by Qk
+i=1 mi;
+8
+
+[PAGINA 9]
+– a query repetition parameter t ∈N.
+For convenience, we define for every i ∈[k]:
+• the i-th degree bound di := di−1/mi;
+• the i-th evaluation domain Li := Lmi
+i−1 = {xmi : x ∈Li−1} of order |Li| = |Li−1|/mi;
+• the i-th Reed-Solomon code Ci := RS[F, Li, di].
+Note that by definition, all codes C0, . . . , Ck have the same rate ρ and the order of the (i −1)-th
+domain |Li−1| is divisible by Qk
+j=i mj. In particular, |Li−1| is divisible by mi. Finally, given
+an entry z ∈L0 and round number i ∈{0, . . . , k}, we define the following shorthand notation
+consistent with the definitions of the “local fold check” below:
+z(i) :=
+(
+z,
+i = 0,
+ z(i−1)mi ,
+i ≥1.
+(1)
+Protocol description. The FRI protocol proceeds as follows:
+• Initial function. Let f0 : L0 →F be an initial function. In the honest case, f0 ∈C0.
+• Folding phase. For every round i = 1, . . . , k:
+1. Folding challenge. The verifier sends a challenges αi ←F.
+2. Send folded function. The prover sends a function fi : Li →F. In the honest
+case, fi = Fold(fi−1, mi, αi).
+• Query phase. For every repetition j = 1, . . . , t, the verifier samples sj ←L0. The
+verifier sends αk+1 := (s1, . . . , st).
+• Verifier decision phase:
+1. Final function check. The verifier reads the final function fk in full and asserts
+that fk ∈Ck.
+2. Local fold checks. For every repetition j = 1, . . . , t:
+– Set s(0)
+j
+= sj.
+– For every folding round i = 1, . . . , k:
+∗Set s(i)
+j
+:= (s(i−1)
+j
+)
+mi.
+∗Query Fold(fi−1, mi, αi)(s(i)
+j ). This involves querying fi−1 at all the points
+x ∈Block(s(i)
+j ).
+∗Assert that Fold(fi−1, mi, αi)(s(i)
+j ) = fi(s(i)
+j ).
+Choosing parameters.
+In practice, we often choose F such that the order of F∗is divisible
+by a large power of 2 and pick the values m1, . . . , mk to be powers of 2.
+9
+
+[PAGINA 10]
+5
+Our Proof
+In this section, we present our new security analysis.
+We start with an informal overview
+in Section 5.1. We then state and prove a key lemma about folding univariate functions in
+Section 5.2. Using this lemma, we give our formal proof in Section 5.3 and prove some additional
+properties in Section 5.4.
+Finally, we give a high-level comparison of our proof with exists
+strategies in Section 5.5. We extend our analysis to the case of batched FRI in Section A.
+5.1
+Intuition and overview
+To prove that FRI has round-by-round soundness, we first define a state function. Then, for
+each round of interaction, we will bound the probability that a random verifier message changes
+the state from 0 to 1. Before describing the state function, we introduce the graph of prover
+messages, a useful tool in our reasoning which appears implicitly [BCI+20] or explicitly [BKS18,
+ABN23] in previous analyses of FRI.
+The prover message graph.
+Consider an execution of the FRI protocol for the initial
+function f0 with k rounds of folding. A full transcript for this interaction is of the form
+tr = (α1, f1, . . . , αk, fk, αk+1),
+where the values α1, . . . , αk and f1, . . . , fk are respectively the verifier and prover messages
+during the folding rounds, and αk+1 defines the verifier’s queries to the oracles. By definition
+of the FRI protocol, the functions f0, . . . , fk are defined over related domains (L0, . . . , Lk,
+respectively) and are expected to be consecutive applications of the Fold function to f0.
+We can draw a layered graph in which the i-th layer represents the i-th evaluation domain
+Li, and each node of the layer corresponds to a point y ∈Li. We draw an edge between nodes
+x ∈Li−1 and y ∈Li if and only if xmi = y, or equivalently x ∈Block(y). In this case, we follow
+typical graph conventions and call y the parent node and x the child node; children nodes with
+the same parent node are called siblings. An illustration of this graph for |L0| = 16, k = 3 and
+mi = 2 for all i is given in3 Figure 1.
+Coloring the graph.
+We will now color the graph to reflect the verifier’s observations and
+its eventual output. During the query phase of FRI, the verifier reads the final function fk in
+full and runs tests to assert that the rest of the graph is consistent with it. The verifier samples
+a node s(0) ∈L0 and defines a path of related queries s(1) ∈L1, . . . , s(k) ∈Lk that traverses
+the graph vertically. Roughly, our coloring therefore considers all such paths and marks them
+as red if any of the verifier’s assertions fail, and green otherwise. More concretely, the coloring
+rules are defined below and illustrated in Figure 2:
+1. Base case. The bottom layer is always green.
+2. Inductive rule. Given a node x ∈Li−1 at layer i −1 with parent y ∈Li:
+(a) if the parent y is red, then x is red. This reflects the fact that any verification path
+that goes through x will also go through xmi = y.
+(b) if the parent y is green, compute Fold(fi−1, mi, αi)(y) from x and its siblings and
+i. color x green if an only if Fold(fi−1, mi, αi)(y) = fi(y) (i.e., if the verifier’s
+assertion passes).
+ii. color x red otherwise (i.e., if the verifier’s assertion fails).
+10
+
+[PAGINA 11]
+L0
+L1
+L2
+L3
+s
+−s
+s2
+−s2
+s4
+−s4
+s8
+Figure 1: A prover message graph before coloring. We label some values to make explicit the relation
+between parent and children nodes.
+L0
+L1
+L2
+L3
+X
+X
+Figure 2: A colored prover message graph. We mark a node y ∈Li with an X if the value fi(y) is not
+consistent with Fold(fi−1, mi, αi)(y).
+We stress the following important intuition about the prover message graph:
+• if the verifier sample s(0) is at a red node in the top layer, the verifier will reject.
+• red propagates upwards: if the prover folds incorrectly at any layer (marked by an X in
+Figure 2), the consequences are felt all the way to the top layer.
+• the green nodes in the graph correspond to subsets of the evaluation domains Li where
+the Fold function was applied honestly.
+Given these observations, we are ready to informally describe and analyze our state function.
+State function.
+By definition, we need to set the initial state State(f0, ∅) to be 0 if and only
+if f0 /∈C0. We now separate the description of the state function between the folding rounds
+and the query round.
+3We sincerely apologize to all computer scientists whose hearts ache at the sight of two upside-down trees —
+we draw them this way to show the temporal order of prover messages.
+11
+
+[PAGINA 12]
+• Folding rounds. As noted in our intuition for the prover message graph, the verifier will reject
+all queries that induce a path through red nodes. Therefore, during the folding phase, we can
+focus on the subgraph that contains paths that exclusively traverse green nodes; trusting that
+all other paths will be rejected in the query phase. This allows us to reason only in terms of
+honestly folded functions.
+For convenience, we refer to this accepting subgraph as the green subgraph and denote Wi
+the set of nodes at the i-th layer of the green subgraph. In Figure 2, this corresponds to all
+nodes that are green and not marked with an X.
+Ideally, we would like to establish that if Fold(fi−1, mi, αi) agrees with a codeword ui ∈Ci on
+the green subset Wi ⊆Li, then fi−1 agrees with a codeword ui−1 ∈Li−1 on Wi−1 ⊆Li−1. In
+other words, that:
+(ideal property) “agreement propagates upwards through the green subgraph.”
+Unfortunately, this property does not always hold true. We can, however, show that a relaxed
+version of this implication holds with high probability using mutual correlated agreement. Our
+relaxed ideal property becomes
+(relaxed ideal property) “if all layers of the green subgraph are large enough, then
+agreement propagates upwards through the green subgraph.”
+The notion of large enough is a parameter of our analysis. We let θ ∈[0, 1] be an arbitrary
+parameter and say that a layer Wi ⊆Li is large enough if |Wi| ≥(1 −θ) · |Li|. As we will see,
+θ imposes a tradeoff between the analysis of the folding rounds and that of the query round.
+We can accept a relaxation of the ideal property because if any layer of the green subgraph is
+small (i.e., not large enough), then the red subset at that layer must be large. These red nodes
+will propagate upwards and cause the verifier to reject with high probability. We discuss this
+further in the analysis section for the query phase.
+We define the state function such that it indicates whether the relaxed ideal property holds
+for a given initial function f0 and transcript tr: when all the honest folded functions are safe
+(as per our relaxed ideal property), we set State(f0, tr) = 0; when there is an honest fold
+that is exploitable (one for which all green subgraph layers are large but agreement does not
+propagate upward), we set State(f0, tr) = 1. The event “the state changed from 0 to 1 at
+round i” is captured by the following semi-formal description. Given an initial function f0
+and a transcript tr := (α1, f1, . . . , αi−1, fi−1) such that State(f0, tr) = 0, and an i-th verifier
+message αi, we say that State(f0, tr||αi) = 1 if and only if there exists a set S ⊆Li−1 such
+that:
+1. Smi is large enough. Specifically, |Smi| ≥(1 −θ) · |Li|. Note that this implies that S
+itself is large enough.
+2. The honest fold of fi−1 agrees with a codeword u ∈Ci on the set Smi. In other words,
+there is agreement with the code on this large enough set.
+3. There are no codewords in Ci−1 that agree with fi−1 on the set S. Effectively, that
+agreement does not propagate upwards through the large enough set of green nodes.
+• Query round. The query round is the final round of the protocol. Therefore, by the “full
+transcript” property of the state function (see Definition 3.4), the output of the state function
+at this round must be equivalent to the verifier’s final decision. We therefore set the state
+function to be 1 if and only if all the verifier checks pass.
+12
+
+[PAGINA 13]
+Analysis.
+To complete our proof of round-by-round soundness, we must bound the probability
+at round i that the state changes from 0 of 1. We separate the analysis between the folding
+rounds and the query round.
+• Folding rounds. The analysis of the folding rounds relies on the mutual correlated agreement
+property. This can be applied because the Fold function is indeed a linear combination that
+uses the Powers proximity generator. Any challenge αi that causes an exploitable fold at
+round i (as defined by the state function) is also a challenge that realizes the bad event of
+mutual correlated agreement. This intuition is formally stated and proven in Lemma 5.1. Let
+εmca be the error associated with the Powers proximity generator, we establish that
+εfold
+i
+(δ) := εmca(Ci, mi, θ),
+(2)
+where δ := ∆(f0, C0). Notice that εfold
+i
+is constant with respect to the distance δ. This error
+can be adjusted by varying θ, our notion of “large enough”. From the definition of εmca, it
+follows that smaller values of θ give smaller values of εfold
+i
+. However, we cannot set θ to be
+arbitrarily small. As we will see, doing so would be detrimental to the error in the query
+round.
+• Query round. The analysis of the query round follows directly from our discussion on the
+prover message graph. Consider an initial function f0 and a transcript tr := (α1, f1, . . . , αk, fk)
+such that State(f0, tr) = 0, and a final verifier message αk+1. Notice that if fk /∈Ck, then the
+verifier rejects immediately. Therefore, we will assume that fk ∈Ck.
+From the definition of our state function, we know that State(f, tr||αk+1) = 1 if and only if
+the verifier’s sample is in the green subset W0 ⊆L0. In other words, the probability that the
+state changes from a single query is exactly |W0|/|L0|. We can now separate our analysis in
+two mutually exclusive cases:
+1. if any green subset is small, then |W0|/|L0| ≤1 −θ. This follows from the fact that red
+propagates upwards when coloring the prover message graph.
+2. if all green subsets are large, then we know that “agreement propagates upwards through
+green nodes”. This follows from the fact that State(f, tr) = 0 and our definition of the
+state function for folding rounds. Therefore, there exists a codeword u0 ∈C0 such that
+f0[W0] = u0[W0]. Consequently
+|W0|
+|L0| = 1 −∆(f0, u0) ≤1 −δ,
+where δ = ∆(f0, C0) as defined previously.
+Combining both cases gives us our final upper bound:
+εqry(δ) := |W0|
+|L0| ≤max{1 −θ, 1 −δ}.
+We now see the effect of the parameter θ on the query round error: it is a constant value
+that acts as a clamp, making sure that the error is never lower than 1 −θ. Therefore, to
+minimize the query round error, we would want to use large values of θ. This is at odds with
+the preferred setting of θ in the folding round, and hence why we refer to the variable θ as
+the tradeoff parameter.
+We give all formal details of our proof in Sections 5.2 and 5.3.
+13
+
+[PAGINA 14]
+1
+1
+θ∗
+εmca(θ∗)
+θ
+εmca(θ)
+1
+1
+εmca(θ∗)
+δ
+εfold
+i
+(δ)
+1
+1
+θ∗
+δ
+εqry(δ)
+Figure 3: Sketches of the error functions εmca, εfold
+i
+and εqry for a single repetition of the FRI query
+phase (i.e., t = 1). We assume the code Ci and folding factor mi are fixed and omit them from the
+arguments of εmca.
+Interpreting the error functions.
+It is helpful to visualize the error functions in order to
+reason about the effect of various parameters on the security of FRI. We illustrate what the
+functions look like in Figure 3. These sketches are for pedagogical purposes only, in practice
+these functions take much smaller values, typically around 1/2100.
+The left plot shows the mutual correlated agreement error of the Powers generator. For
+small values of θ, the value εmca(Ci, mi, θ) is extremely small.
+For values beyond the list-
+decoding capacity of the code Ci, the error becomes large [CS25]. In between, the behavior of
+the function is still unknown. The error function given in Lemma 2.4 is a proven upper bound
+on the probability of the bad MCA event and shoots steeply up to 1 around the Johnson bound
+(1 −√ρ) as illustrated.
+The middle and right plots respectively show the errors εfold
+i
+and εqry as functions of the
+distance δ := ∆(f0, C0). Notice how taking small values of θ∗will decrease the constant folding
+round error but cause the query round error to be clamped earlier. Finally, we note that the
+query round error can be made to decrease faster by adjusting the number of repetitions of the
+query phase (where additional queries will make the error function more concave).
+5.2
+Folding preserves agreement sets
+Here we state and prove a simple lemma that is crucial to our analysis. Intuitively, we consider
+folding a function with a random folding challenge r, and show that the distance to the code
+does not go down. The lemma states even more: except with small probability over r, for all
+large enough sets Sm on which the folded function agrees with the code, the original function
+agrees on S with its code. We show that this follows from mutual correlated agreement. The
+proof of the lemma is a generalization of Lemma 4.9 in STIR [ACFY24].
+Lemma 5.1 (Folding preserves agreement set). Let m ∈N be a folding factor, L ⊆F be a
+multiplicative coset of F∗such that |L| is divisible by m and d ∈N be a degree bound with
+d ≥m. Consider the Reed-Solomon codes C0 := RS[F, L, d] and C1 := RS[F, Lm, d/m], both with
+rate ρ = d/|L|.
+If Powers is a proximity generator with mutual correlated agreement (cf. Definition 2.2) with
+error εmca, then for every function f : L →F and distance parameter δ ∈[0, 1],
+Pr
+r←F
+
+∃S ⊆L s.t.
+|Sm| ≥(1 −δ) · |Lm|
+∧∃u′ ∈C1, Fold(f, m, r)[Sm] = u′[Sm]
+∧∀u ∈C0, u[S]̸ = f[S]
+
+≤εmca(C1, m, δ).
+14
+
+[PAGINA 15]
+Proof. Let f : L →F be a function, and define functions f1, . . . , fm : Lm →F so that
+Fold(f, m, r) =
+m
+X
+i=1
+ri−1fi : Lm →F,
+(3)
+as follows. Recall the polynomials bpf,z as defined in Definition 4.2, i.e., for every z ∈Lm, bpf,z is
+the unique polynomial of degree less than m that agrees with f on Block(z). We let fi : Lm →F
+be the function that maps z to the i-th coefficient of bpf,z, i.e., so that bpf,z(Y ) = Pm
+i=1 fi(z)Y i−1
+for every z ∈Lm. One can see that these functions fi satisfy (3), by definition of Fold (cf.
+Definition 4.2).
+Now, using the equality (3) to substitute Fold(f, m, r) in the probability we want to bound,
+we have
+Pr
+r
+
+∃S ⊆L s.t.
+|Sm| ≥(1 −δ0) · |Lm|
+∧∃u′ ∈C1, Fold(f, m, r)[Sm] = u′[Sm]
+∧∀u ∈C0, u[S]̸ = f[S]
+
+
+≤Pr
+r
+
+∃S ⊆L s.t.
+|Sm| ≥(1 −δ0) · |Lm|
+∧∃u′ ∈C1, Pm
+i=1 ri−1fi[Sm] = u′[Sm]
+∧∀u ∈C0, u[S]̸ = f[S]
+
+.
+The latter is almost the event whose probability is bounded in the definition of mutual correlated
+agreement (cf. Definition 2.2) for the code C1 = RS[F, Lm, d/m], except for the last condition,
+which reads
+∀u ∈C0, u[S]̸ = f[S],
+(4)
+while in the aforementioned event, the corresponding condition is
+∃i ∈[m], ∀u′ ∈C1, u′[Sm]̸ = fi[Sm].
+(5)
+Thus, to prove the present lemma, it suffices to prove that (4) implies (5).
+To this end, assume towards contradiction that (5) does not hold, i.e., for every i ∈[m],
+there is a ui ∈C1 such that fi and ui agree on Sm. We will show that then f agrees with a
+codeword in C0 on S. To do so, we will first define a bivariate polynomial bQ(X, Y ) ∈F[X, Y ]
+and will show that f agrees with bQ(Xm, X) on S. We will also show that bQ(Xm, X) has degree
+less than d, which implies our desired result, namely that f agrees on S with a codeword from
+C0.
+Precisely, we define the bivariate polynomial bQ ∈F[X, Y ] as follows: Fix any subset ˜S ⊆Sm
+of size min{|Sm|, d/m}. For every x ∈˜S, let Ix ∈F[X] denote the polynomial of degree less
+than | ˜S| such that
+Ix(z) =
+(
+1
+if z = x,
+0
+if z ∈˜S \ {x} .
+Note that the degree of Ix is less than d/m since | ˜S| ≤d/m. Now, define
+bQ(X, Y ) :=
+X
+x∈˜S
+Ix(X) · bpf,x(Y ) ∈F[X, Y ].
+Clearly, bQ(X, Y ) has degree less than d/m on the variable X, and degree less than m on the
+variable Y .
+Next, we show that for every x ∈Sm, we have bQ(x, Y ) = bpf,x(Y ) as polynomials. Indeed,
+we have
+bQ(˜x, Y ) =
+X
+x∈˜S
+Ix(˜x) · bpf,x(Y ) = bpf,˜x(Y ) =
+m
+X
+i=1
+fi(˜x)Y i−1 =
+m
+X
+i=1
+ui(˜x)Y i−1
+for all ˜x ∈˜S,
+(6)
+15
+
+[PAGINA 16]
+where the first equality is by definition of bQ; the second equality follows from the definition of
+the polynomials Ix(X); the third from the definition of the functions fi; and the fourth from
+the assumption that fi agrees with the codeword ui on Sm ⊇˜S, for all i ∈[m].
+Assume now that | ˜S| = d/m, and recall that bQ(X, Y ) has degree less than d/m on the
+variable X. In particular, bQ(X, Y ) can be seen as a univariate polynomial on the variable X,
+of degree less than d/m, with coefficients on the field of rational functions F(Y ). Similarly,
+Pm
+i=1 ui(X)Y i−1 can be seen as a univariate polynomial on the variable X of degree less than
+d/m, with coefficients in F(Y ). Since we assumed | ˜S| = d/m, because of (6), these two polyno-
+mials agree on d/m distinct points, and so they must be equal as polynomials. Hence, in this
+case,
+bQ(X, Y ) =
+m
+X
+i=1
+ui(X)Y i−1,
+and in particular
+bQ(x, Y ) =
+m
+X
+i=1
+ui(x)Y i−1 = bpf,x(Y )
+for all x ∈Sm,
+(7)
+as claimed. On the other hand, if | ˜S| < d/m, then ˜S = Sm, and then (7) holds for all x ∈Sm
+because of Equation (6).
+Finally, define the polynomial bf(X) := bQ(Xm, X), which has degree less than d because
+bQ(Xm, Y ) has degree on X at most m(d/m −1), and so bQ(Xm, X) has degree on X at most
+m(d/m −1) + (m −1) = d −m + m −1 = d −1.
+Now, note that bf and f agree on S, because for every x ∈S:
+bf(x) = bQ(xm, x) = bpf,xm(x) = f(x),
+where the first equality follows by definition of bf, the second from Equation (7), and the third
+by definition of bpf,xm, since bpf,xm is unique polynomial of degree less than m agreeing with f
+on Block(xm), and x ∈Block(xm). Hence, f agrees with the codeword bf ∈RS[F, L, d] on S, as
+needed. This completes the proofs that (4) implies (5), and therefore completes the proof of
+the desired lemma.
+5.3
+Full proof
+We now state the theorem for round-by-round soundness and give its full proof.
+Theorem 5.2. Consider FRI with parameters as in Construction 4.4 and assume Powers is
+a proximity generator with mutual correlated agreement (cf. Definition 2.2) with error εmca.
+For every tradeoff parameter θ ∈[0, 1], FRI has round-by-round soundness with error functions
+εfold
+1
+, . . . , εfold
+k
+, εqry : (0, 1] →[0, 1] such that for every initial function f0 /∈C0:
+• for all i ∈[k], εfold
+i
+(δ) = εmca(Ci, mi, θ),
+• εqry(δ) = (max{1 −θ, 1 −δ})t = (1 −min{θ, δ})t,
+where δ := ∆(f0, C0).
+Proof. We describe the state function Stateθ for an arbitrary θ and for each round give an upper
+bound on the probability that the state changes from 0 to 1. By default, the state function
+never changes from 1 back to 0, and the state function does not change if the prover moves.
+We describe below how the state function may change from 0 to 1 when the verifier moves, and
+bound the probability of such a change happening.
+16
+
+[PAGINA 17]
+0. Empty transcript. For an empty transcript, we say that Stateθ(f0, ∅) = 1 if and only if
+f0 ∈C0.
+1. Folding rounds (εfold
+1
+, . . . , εfold
+k
+). For rounds i ∈{1, . . . , k}, the transcript tr has the form
+tr =
+(
+∅,
+i = 1,
+(α1, f1, . . . , αi−1, fi−1),
+1 < i ≤k,
+(8)
+and the verifier sends a random message αi ∈F.
+• State function. Suppose that Stateθ(f0, tr) = 0. We say that Stateθ(f0, tr||αi) = 1 if and
+only if there exists a set S ⊆Li−1 such that:
+(a) |Smi| ≥(1 −θ) · |Li|; and
+(b) there exists u′ ∈Ci such that Fold(fi−1, mi, αi)[Smi] = u′[Smi]; and
+(c) for all u ∈Ci−1, there exists x ∈S such that u(x)̸ = fi−1(x).
+• Bounding the error. By Lemma 5.1:
+Pr
+αi [Stateθ(f0, tr) = 0 ∧Stateθ(f0, tr||αi) = 1] ≤εmca(Ci, mi, θ).
+Setting εfold
+i
+(δ) := εmca(Ci, mi, θ) completes the proof for all folding rounds.
+2. Query round εqry. A final round partial transcript tr has the form tr = (α1, f1, . . . , αk, fk).
+The final verifier message αk+1 has the form αk+1 = (s1, . . . , st) with s1, . . . , st ∈L0.
+• State function. Suppose that Stateθ(f0, tr) = 0. We say that Stateθ(f0, tr||αk+1) = 1 if and
+only if both of the following conditions are satisfied:
+(a) the final prover message fk is in the corresponding code Ck, and
+(b) for all j ∈[t], for all i ∈[k], Fold(fi−1, mi, αi)(s(i)
+j ) = fi(s(i)
+j ), where s(i)
+j
+is defined as in
+the verifier decision phase (and Equation (1)).
+• Bounding the error. Consider an initial function f0 and transcript tr such that Stateθ(f0, tr) =
+0. We can assume that Item 2a (final prover message is in the code) is true, otherwise the
+state will remain 0. Throughout this section, we will use the notation z(i) as defined in
+Equation (1).
+Defining AccQueries. Let AccQueries ⊆L0 denote the (potentially empty) set
+AccQueries :=
+n
+z ∈L0 : ∀i ∈[k] Fold(fi−1, mi, αi)(z(i)) = fi(z(i))
+o
+.
+In other words, AccQueries is the set of queries in L0 for which the verifier’s “local fold
+checks” are satisfied for every prover message.
+By definition of AccQueries and the state function, it holds that Stateθ(f0, tr||αk+1) = 1 if
+and only if for every repetition j ∈[t] of the query phase, sj ∈AccQueries. Therefore, it
+holds that:
+Pr
+αk+1
+
+
+Stateθ(f0, tr) = 0
+∧
+Stateθ(f0, tr||αk+1) = 1
+
+=
+Pr
+s1,...,st←L0[∀j ∈[t], sj ∈AccQueries]
+=
+|AccQueries|
+|L0|
+t
+.
+(9)
+17
+
+[PAGINA 18]
+Upper bounding |AccQueries|. Let δ := ∆(f0, C0). The rest of the proof aims to show
+that
+|AccQueries|/|L0| ≤max{1 −θ, 1 −δ}.
+We start by defining the sets W0, . . . , Wk inductively as follows:
+– base case: W0 := AccQueries,
+– induction: Wi+1 := {xmi+1 : x ∈Wi} = W mi+1
+i
+.
+We show in Claim 5.3 that the sets W0, . . . Wk are subsets of L0, . . . , Lk for which all the
+nodes are green and all their immediate children are green (i.e., that these are the layers of
+the green subgraph from Section 5.1). We then split our analysis into two cases: either there
+exists a set Wi that is smaller than (1 −θ) · |Li| or all sets Wi are large. The former case
+is solved using Claim 5.4; the latter using Claim 5.5 and bounding the size of AccQueries
+with the size of the maximal agreement set between f0 and a codeword in C0.
+We state and prove all claims immediately, with the case analysis and application of the
+claims following thereafter.
+Claim 5.3. For every i ∈[k], fi[Wi] = Fold(fi−1, mi, αi)[Wi].
+Proof. By definition of the sets W0, . . . , Wk, it holds that for all i ∈[k], Wi = {z(i) : z ∈
+W0}. For each i ∈[k], let Ai be the subset of elements a from Li such that fi(a) =
+Fold(fi−1, mi, αi)(a). To prove Claim 5.3, it suffices to show that Wi ⊆Ai.
+To this end, fix any i ∈[k], and let w ∈Wi be arbitrary. As noted above, we can write
+w = z(i) for some z ∈W0 = AccQueries. By definition of the set AccQueries, we have
+Fold(fi−1, mi, αi)(w) = Fold(fi−1, mi, αi)(z(i)) = fi(z(i)) = fi(w),
+where we have used the definition of AccQueries in the second equality. The above proves
+that w ∈Ai, by definition of Ai, and thus Wi ⊆Ai as w was arbitrary. This shows that the
+claim is true.
+Claim 5.4. For every γ ∈[0, 1], if there exists i∗∈{0, . . . , k} such that |Wi∗| < (1−γ)·|Li∗|,
+then |W0| < (1 −γ) · |L0|.
+Proof. The statement holds trivially for i∗= 0; we therefore focus on the case i∗∈[k].
+First, note that Wi−1 is contained in the set U = S
+x∈Wi Block(x). Then, since the sets
+Block(x) are disjoint, we have |U| = mi · |Wi|, and so
+|Wi−1| ≤mi · |Wi|.
+Recalling that |Li−1| = mi · |Li|, it holds that
+|Wi−1|
+|Li−1| ≤|Wi|
+|Li| .
+Therefore, if there exists i∗∈[k] such that |Wi∗| < (1 −γ) · |Li∗|, then
+|W0|
+|L0| ≤|Wi∗|
+|Li∗| < 1 −γ,
+proving the claim.
+Claim 5.5. If fk ∈Ck and for all i ∈{0, . . . , k}, |Wi| ≥(1 −θ) · |Li|, then there exists
+u0 ∈C0 such that u0[W0] = f0[W0].
+18
+
+[PAGINA 19]
+Proof. We claim that for all i ∈[k], if there exists ui ∈Ci such that ui[Wi] = fi[Wi] then
+there exists ui−1 ∈Ci−1, ui−1[Wi−1] = fi−1[Wi−1]. Given that Wk ⊆Lk and that fk ∈Ck,
+we can apply this implication for all i ∈[k] and conclude that there exists u0 ∈C0 such
+that u0[W0] = f0[W0].
+It remains to prove this claimed implication. Assume for contradiction that there exists
+i∗∈[k] such that both of the following conditions are satisfied:
+– there exists ui∗∈Ci∗such that ui∗[Wi∗] = fi∗[Wi∗]; and
+– for all u ∈Ci∗−1, u[Wi∗−1]̸ = fi∗−1[Wi∗−1].
+We can rewrite the first bullet point using Claim 5.3:
+ui∗[Wi∗] = fi∗[Wi∗] = Fold(fi∗−1, mi∗, αi∗)[Wi∗].
+Given that Wi∗= (Wi∗−1)m∗
+i by definition, it holds that Items 1b and 1c are satisfied for
+the set Wi∗−1, as shown by the equation above and the second bullet point respectively.
+Since Stateθ(f0, tr) = 0, this implies that |Wi∗| < (1 −θ) · |Li∗| (Item 1a is false). However,
+the premise of Claim 5.5 states that for all i ∈{0, . . . , k}, |Wi| ≥(1 −θ) · |Li|. This is a
+contradiction. So, we have proven the implication, and thus the claim.
+Given Claims 5.4 and 5.5 above, we can separate our analysis into two mutually exclusive
+cases:
+– Case 1: ∃i ∈{0, . . . , k}, |Wi| < (1 −θ) · |Li|. Here, it follows by applying Claim 5.4 for
+γ = θ that
+|W0| < (1 −θ) · |L0|.
+Therefore, substituting AccQueries for W0 and dividing both sides by |L0| yields
+|AccQueries|
+|L0|
+< 1 −θ ≤max{1 −θ, 1 −δ},
+where the second inequality follows by definition of the max function.
+– Case 2: ∀i ∈{0, . . . , k}, |Wi| ≥(1 −θ) · |Li|. Here, it follows from Claim 5.5 that there
+exist u0 ∈C0 such that u0[W0] = f0[W0]. Therefore, the relative agreement between f0
+and u0, denoted 1 −∆(f0, u0), is at least |AccQueries|/|L0|:
+1 −∆(f0, u0) ≥|AccQueries|/|L0|.
+By definition of the relative distance to a code, it holds that ∆(f0, C0) ≤∆(f0, u0).
+Substituting δ for ∆(f0, C0):
+1 −δ ≥1 −∆(f0, u0).
+Chaining these inequalities, we find that
+|AccQueries|
+|L0|
+≤1 −∆(f0, u0) ≤1 −δ ≤max{1 −θ, 1 −δ},
+where the final inequality follows by definition of the max function.
+In both cases, we have shown that |AccQueries|/|L0| ≤max{1 −θ, 1 −δ}. Plugging this
+into Equation (9), we find that:
+Pr
+αk+1
+
+
+Stateθ(f0, tr) = 0
+∧
+Stateθ(f0, tr||αk+1) = 1
+
+≤(max{1 −θ, 1 −δ})t.
+Setting εqry(δ) := (max{1 −θ, 1 −δ})t and noting that max{1 −θ, 1 −δ} = 1 −min{θ, δ}
+completes the proof for the query rounds.
+19
+
+[PAGINA 20]
+3. Verifier decision. A full transcript is of the form tr = (α1, f1, . . . , αk, fk, αk+1). If we have
+Stateθ(f0, tr) = 0, then either Item 2a or Item 2b is false. These conditions are identical to the
+checks performed by the verifier (the final function check and local fold check respectively.)
+Therefore, we have
+Vf0,f1,...,fk(α1, . . . , αk+1) = 0
+as desired.
+5.4
+Additional properties
+Usually, the property that FRI is supposed to provide is the following: if a verifier accepts a
+FRI interaction, then the initial function was somewhat close to a Reed–Solomon codeword
+(except with negligible probability). Our round-by-round soundness analysis allows to surface
+this property.
+As we will show here, our analysis also shows additional properties.
+These
+properties may be used in the future as a stepping stone, e.g., towards proving round-by-round
+knowledge soundness [CMS19, BCFW25] or towards constructing efficient code commitments
+and data availability sampling schemes [HASW24].
+More concretely, we show in Corollary 5.6 that, under certain conditions, a FRI transcript
+guarantees that the prover has committed to a Reed-Solomon codeword. This codeword agrees
+with the initial function on a large subset of its domain; hence proving proximity. Furthermore,
+the commitment is binding in the sense that any attempt to open it at a point where the initial
+function disagrees with the committed codeword results in rejection by the verifier. We note
+that morally, this property is similar to opening-consistency in [HASW24], but in contrast to
+their work, our analysis is not restricted to the unique decoding regime4. Consequently, we
+believe that this can be a starting point for future work towards data availability sampling from
+FRI beyond the unique decoding radius.
+Corollary 5.6. Consider FRI with parameters as in Construction 4.4, a fixed tradeoff param-
+eter θ∗∈[0, 1] and let Stateθ∗be the state function defined in the proof of Theorem 5.2.
+For every distance parameter δ∗∈[0, 1 −ρ] ∩[0, θ∗], if f0 is an initial function and tr :=
+(α1, f1, . . . , αk, fk) is a transcript such that
+Stateθ∗(f0, tr) = 0 ∧
+Pr
+αk+1[Stateθ∗(f0, tr||αk+1) = 1] ≥(1 −δ∗)t
+then the following properties are true:
+1. Proximity: f0 is at least δ∗-close to the code C0, i.e., ∆(f0, C0) ≤δ∗.
+2. Binding: there exists a unique codeword u0 ∈C0 such that u0[AccQueries] = f0[AccQueries],
+where AccQueries ⊆L0 is the set of accepting queries for the pair (f0, tr).
+3. Extractability: there exists a deterministic polynomial-time extractor5 E that, given
+(f0, tr) as input, returns u0 as defined in the binding property above.
+4. Erasure detection: let u0 be defined as in the binding property and αk+1 := (s1, . . . , st)
+be a final round verifier message. If there exists i ∈[t] such that f0(si)̸ = u0(si), then
+Vf0,...,fk(α1, . . . , αk+1) = 0. In other words, the verifier detects that si is a position where
+f0 disagrees with the codeword u0 (i.e., si is an erasure).
+4The notion of opening-consistency itself is already tied to the unique decoding radius.
+5Note that this extractor is straightline by definition: there is no algorithm involved that it could rewind. It
+just gets an input and produces an output.
+20
+
+[PAGINA 21]
+Proof. We first establish a number of useful facts and use them to prove the properties individ-
+ually. Recall that Equation (9) relates the probability of the state changing in the query round
+to the size of AccQueries. Therefore, by assumption
+|AccQueries|
+|L0|
+t
+≥(1 −δ∗)t.
+Since t is a positive integer, it holds that:
+|AccQueries| ≥(1 −δ∗) · |L0|.
+(10)
+By assumption, we have that δ∗≤1−ρ. Therefore, 1−δ∗≥ρ. Substituting into Equation (10):
+|AccQueries| ≥(1 −δ∗) · |L0| ≥ρ · |L0|.
+(11)
+Similarly, it holds by assumption that δ∗≤θ∗. Therefore,
+|AccQueries| ≥(1 −δ∗) · |L0| ≥(1 −θ∗) · |L0|.
+(12)
+For all i ∈[k], we let Wi be defined as in the proof of Theorem 5.2. We now show that,
+∀i ∈[k], |Wi| ≥(1 −θ∗) · |Li|.
+(13)
+The above follows from the fact that W0 = AccQueries by definition, |W0| ≥(1 −θ∗) · |L0| (as
+per Equation (12)) and by applying the contrapositive to Claim 5.4. In other words, since W0
+is large enough, it must be the case that all other Wi were large enough, otherwise red nodes
+would have propagated upwards. Finally, since Equation (13) is true, we can apply Claim 5.5.
+Therefore,
+∃u0 ∈C0, f0[AccQueries] = u0[AccQueries].
+(14)
+Given all the numbered facts above, we prove the properties individually. In all of the analysis
+below, we let u0 ∈C0 be a codeword as in Equation (14).
+• Proximity. By definition of the distance to a code, ∆(f0, C0) ≤∆(f0, u0). Since f0 and
+u0 agree on the set AccQueries, it holds that ∆(f0, u0) ≤1 −|AccQueries|/|L0|. From
+Equation (10), it holds that 1 −|AccQueries|/|L0| ≤δ∗. Chaining these inequalities yields
+∆(f0, C0) ≤δ∗.
+• Binding. To prove the binding property, it suffices to show that u0 is unique. Consider
+u′ ∈C0 such that f0[AccQueries] = u′[AccQueries].
+We will show that u0 = u′.
+Let
+c
+u0, bu′ ∈F<d[X] denote the polynomials of degree less than d that interpolate u0 and u′
+respectively. It holds by definition of u0 and u′ that
+∀x ∈AccQueries, c
+u0(x) = f0(x) = bu′(x).
+Furthermore, from Equation (11), it holds that |AccQueries| is at least ρ·|L0| = d. There-
+fore, since c
+u0 and bu′ agree on AccQueries, it holds that c
+u0 = bu′ as polynomials.
+We
+conclude that u′ = u0.
+• Extractability. Given the above, extractability is simply proven by considering the follow-
+ing extractor E: pick any d points in AccQueries and interpolate the unique polynomial
+of degree less than d that agrees with f0 on those values. The codeword u0 is obtained by
+evaluating this polynomial on L0. Notice that E does not run an error- or list-decoding
+algorithm.
+21
+
+[PAGINA 22]
+• Erasure detection. Let αk+1 := (s1, . . . , st) be a final round verifier message. Recall that
+by definition of AccQueries, it follows that Vf0,...,fk(α1, . . . , αk+1) = 1 if and only if for all
+i ∈[t] si ∈AccQueries. Furthermore, it holds that if si ∈AccQueries, then u0(si) = f0(si).
+Therefore, if there exists si such that u0(si)̸ = f0(si), then si /∈AccQueries. It follows that
+in such a case, Vf0,...,fk(α1, . . . , αk+1) = 0.
+5.5
+Comparison to existing proof strategies
+Let us put our proof into context by comparing it with other analyses.
+Proofs using CA.
+The soundness of FRI is first shown in the eponymous paper [BBHR18].
+The error bounds were later improved by Ben-Sasson, Kopparty and Saraf [BKS18] and Ben-
+Sasson et al. [BCI+20]. Our proof follows the ideas of Ben-Sasson et al. [BCI+20] and Augot,
+Bordage and Nardi [ABN23] but uses mutual correlated agreement (MCA) to analyze folding
+rounds. In contrast, our two references use a weaker notion known as correlated agreement
+(CA), or plain correlated agreement to avoid confusion. Their proofs achieve the same bounds
+as ours, however we consider their reasoning to be conceptually harder to grasp. The main
+difference lies in the guarantee that folding provides in the case when are challenges are safe
+(i.e., state remains 0):
+• MCA: if all green subsets are large enough, then agreement propagates upwards through
+green nodes.
+• CA: if all green subsets are large enough, then agreement propagates upwards through
+layers at unknown nodes.
+The latter loses information about where the agreement is located. Furthermore, agreement
+may not be aligned with green nodes.
+Overcoming these hurdles requires the introduction
+of additional tools, notably a notion of weighted distance (rather than standard Hamming
+distance) and a correlated agreement theorem for this weighted distance.
+The ethSTARK
+documentation [Sta21] and the work by Block et al. [BGK+23] show that the analysis given by
+Ben-Sasson et al. [BCI+20] is in fact a proof of the round-by-round soundness of FRI.
+Do we gain anything?
+One may wonder whether using MCA rather than CA allows us
+to prove that FRI has more bits of security per query. Unfortunately not; as stated above,
+our upper bounds on the round errors is identical to previous analyses. On the other hand,
+we prove that FRI satisfies stronger properties in Corollary 5.6. Our analysis is the first to
+show that FRI’s folding phase (also known as the “commit” phase) is indeed a binding com-
+mitment to some Reed-Solomon codeword. A restricted version of this fact is implicitly shown
+in FRIDA [HASW24] to construct a code commitment from FRI.
+Other proofs.
+The security of FRI is also discussed in works that introduce new frameworks
+as a means of illustrating the power of those frameworks. Attema, Fehr and Resch [AFR23]
+prove that an interactive proof derived from FRI (using Merkle commitments to replace the
+prover’s oracles) meets their notion of generalized special soundness. Evans and Angeris [EA23]
+prove the security of a variant of FRI using only the tools of linear algebra. In both cases, the
+analyses provide looser bounds and are constrained to a smaller set of FRI parameters.
+22
+
+[PAGINA 23]
+Acknowledgements
+We thank Mark Simkin and Ignacio Manzur for early discussions on the topic. We also thank
+the 2025 cohort of the Ethereum Foundation’s PQ Workshop for motivating the publication of
+this manuscript. Thank you to Ariel Gabizon and Yoichi Hirai for individually examining our
+proof and catching mistakes in an earlier draft of this work.
+Use of AI Tools
+We recognize and disclose the use of AI tools to generate diagrams and for occasional grammar
+checking. The rest of the work is entirely our own.
+References
+[ABN23] Daniel Augot, Sarah Bordage, and Jade Nardi. Efficient multivariate low-degree tests
+via interactive oracle proofs of proximity for polynomial codes. DCC, 91(3):1111–1151,
+2023. doi:10.1007/s10623-022-01134-z.
+[ACFY24] Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, and Eylon Yogev.
+STIR: Reed-
+solomon proximity testing with fewer queries. In Reyzin and Stebila [RS24], pages
+380–413. doi:10.1007/978-3-031-68403-6_12.
+[ACFY25] Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, and Eylon Yogev. WHIR: Reed-
+solomon proximity testing with super-fast verification.
+In Serge Fehr and Pierre-
+Alain Fouque, editors, EUROCRYPT 2025, Part IV, volume 15604 of LNCS, pages
+214–243. Springer, Cham, May 2025. doi:10.1007/978-3-031-91134-7_8.
+[ACY23] Gal Arnon, Alessandro Chiesa, and Eylon Yogev.
+IOPs with inverse polynomial
+soundness error.
+In 64th FOCS, pages 752–761. IEEE Computer Society Press,
+November 2023. doi:10.1109/FOCS57990.2023.00050.
+[AFR23] Thomas Attema, Serge Fehr, and Nicolas Resch. Generalized special-sound interac-
+tive proofs and their knowledge soundness. In Guy N. Rothblum and Hoeteck Wee,
+editors, TCC 2023, Part III, volume 14371 of LNCS, pages 424–454. Springer, Cham,
+November / December 2023. doi:10.1007/978-3-031-48621-0_15.
+[BBHR18] Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. Fast reed-solomon
+interactive oracle proofs of proximity. In Ioannis Chatzigiannakis, Christos Kaklama-
+nis, D´aniel Marx, and Donald Sannella, editors, ICALP 2018, volume 107 of LIPIcs,
+pages 14:1–14:17. Schloss Dagstuhl, July 2018. doi:10.4230/LIPIcs.ICALP.2018.
+14.
+[BCFW25] Benedikt B¨unz, Alessandro Chiesa, Giacomo Fenzi, and William Wang. Linear-
+time accumulation schemes. In Benny Applebaum and Huijia (Rachel) Lin, editors,
+TCC 2025, Part I, volume 16268 of LNCS, pages 369–399. Springer, Cham, December
+2025. doi:10.1007/978-3-032-12287-2_13.
+[BCGM25] Sarah Bordage, Alessandro Chiesa, Ziyi Guan, and Ignacio Manzur. All polynomial
+generators preserve distance with mutual correlated agreement. Cryptology ePrint
+Archive, Report 2025/2051, 2025. URL: https://eprint.iacr.org/2025/2051.
+23
+
+[PAGINA 24]
+[BCH+25] Eli Ben-Sasson, Dan Carmon, Ulrich Hab¨ock, Swastik Kopparty, and Shubhangi
+Saraf. On proximity gaps for reed–solomon codes. Cryptology ePrint Archive, Report
+2025/2055, 2025. URL: https://eprint.iacr.org/2025/2055.
+[BCI+20] Eli Ben-Sasson, Dan Carmon, Yuval Ishai, Swastik Kopparty, and Shubhangi Saraf.
+Proximity gaps for reed-solomon codes. In 61st FOCS, pages 900–909. IEEE Com-
+puter Society Press, November 2020. doi:10.1109/FOCS46700.2020.00088.
+[BCS16]
+Eli Ben-Sasson, Alessandro Chiesa, and Nicholas Spooner. Interactive oracle proofs.
+In Martin Hirt and Adam D. Smith, editors, TCC 2016-B, Part II, volume 9986 of
+LNCS, pages 31–60. Springer, Berlin, Heidelberg, October / November 2016. doi:
+10.1007/978-3-662-53644-5_2.
+[BGK+23] Alexander R. Block, Albert Garreta, Jonathan Katz, Justin Thaler, Pratyush Ran-
+jan Tiwari, and Michal Zajac. Fiat-Shamir security of FRI and related SNARKs.
+In Jian Guo and Ron Steinfeld, editors, ASIACRYPT 2023, Part II, volume
+14439 of LNCS, pages 3–40. Springer, Singapore, December 2023.
+doi:10.1007/
+978-981-99-8724-5_1.
+[BKS18]
+Eli Ben-Sasson, Swastik Kopparty, and Shubhangi Saraf. Worst-case to average case
+reductions for the distance to a code.
+In Rocco A. Servedio, editor, 33rd Com-
+putational Complexity Conference, CCC 2018, San Diego, CA, USA, June 22-24,
+2018, volume 102 of LIPIcs, pages 24:1–24:23. Schloss Dagstuhl - Leibniz-Zentrum
+f¨ur Informatik, 2018. URL: https://doi.org/10.4230/LIPIcs.CCC.2018.24, doi:
+10.4230/LIPICS.CCC.2018.24.
+[BS05]
+Eli Ben-Sasson and Madhu Sudan. Simple PCPs with poly-log rate and query com-
+plexity. In Harold N. Gabow and Ronald Fagin, editors, 37th ACM STOC, pages
+266–275. ACM Press, May 2005. doi:10.1145/1060590.1060631.
+[CCH+19] Ran Canetti, Yilei Chen, Justin Holmgren, Alex Lombardi, Guy N. Rothblum,
+Ron D. Rothblum, and Daniel Wichs.
+Fiat-Shamir: from practice to theory.
+In
+Moses Charikar and Edith Cohen, editors, 51st ACM STOC, pages 1082–1090. ACM
+Press, June 2019. doi:10.1145/3313276.3316380.
+[CMS19] Alessandro Chiesa, Peter Manohar, and Nicholas Spooner. Succinct arguments in
+the quantum random oracle model. In Dennis Hofheinz and Alon Rosen, editors,
+TCC 2019, Part II, volume 11892 of LNCS, pages 1–29. Springer, Cham, December
+2019. doi:10.1007/978-3-030-36033-7_1.
+[CS25]
+Elizabeth Crites and Alistair Stewart. On reed–solomon proximity gaps conjectures.
+Cryptology ePrint Archive, Report 2025/2046, 2025. URL: https://eprint.iacr.
+org/2025/2046.
+[DHT+26] Quang Dao, Alexander Hicks, Devon Tuma, Julian Sutherland, Katerina Hristova,
+Frantisek Silvasi, Ilia Vlasov, and Chung Thai Nguyen. Compositional formal verifi-
+cation of SNARKs with ArkLib. Real World Crypto 2026. To appear., 2026.
+[EA23]
+Alex Evans and Guillermo Angeris. Succinct proofs and linear algebra. Cryptology
+ePrint Archive, Report 2023/1478, 2023. URL: https://eprint.iacr.org/2023/
+1478.
+[Eth25]
+Ethereum Foundation.
+zkEVM formal verification project.
+Online, https://
+verified-zkevm.org/, 2025.
+24
+
+[PAGINA 25]
+[Hab25]
+Ulrich Hab¨ock. A note on mutual correlated agreement for reed-solomon codes. Cryp-
+tology ePrint Archive, Report 2025/2110, 2025. URL: https://eprint.iacr.org/
+2025/2110.
+[HASW24] Mathias Hall-Andersen, Mark Simkin, and Benedikt Wagner.
+FRIDA: Data
+availability sampling from FRI.
+In Leonid Reyzin and Douglas Stebila, editors,
+CRYPTO 2024, Part VI, volume 14925 of LNCS, pages 289–324. Springer, Cham,
+August 2024. doi:10.1007/978-3-031-68391-6_9.
+[Hir26]
+Yoichi Hirai. Lean formalization of ”a simplified round-by-round soundness proof of
+fri”. Github https://github.com/zksecurity/simple-rbr-fri, 2026.
+[Hol19]
+Justin Holmgren. On round-by-round soundness and state restoration attacks. Cryp-
+tology ePrint Archive, Report 2019/1261, 2019. URL: https://eprint.iacr.org/
+2019/1261.
+[RS24]
+Leonid Reyzin and Douglas Stebila, editors. CRYPTO 2024, Part X, volume 14929
+of LNCS. Springer, Cham, August 2024.
+[Sta21]
+StarkWare. ethSTARK documentation. Cryptology ePrint Archive, Report 2021/582,
+2021. URL: https://eprint.iacr.org/2021/582.
+[Whi25a] Whiteboard Sessions and Dan Boneh.
+Zk whiteboard sessions – S2M7: FRI and
+proximity proofs (part 1). https://www.youtube.com/watch?v=MBDBrEr2XQg, 2025.
+YouTube video, accessed 10 October 2025.
+[Whi25b] Whiteboard Sessions and Dan Boneh.
+Zk whiteboard sessions – S2M8: FRI and
+proximity proofs (part 2). https://www.youtube.com/watch?v=CWbx_rnj7LI, 2025.
+YouTube video, accessed 10 October 2025.
+[ZCF24]
+Hadas Zeilberger, Binyi Chen, and Ben Fisch.
+BaseFold: Efficient field-agnostic
+polynomial commitment schemes from foldable codes. In Reyzin and Stebila [RS24],
+pages 138–169. doi:10.1007/978-3-031-68403-6_5.
+25
+
+[PAGINA 26]
+A
+Appendix: Batched FRI
+In practice, we are often interested in simultaneously testing the proximity of multiple initial
+functions g1, . . . , gb : L0 →F to the RS code C0. FRI can be extended to this effect using an
+additional round of batching. The overall protocol, which we refer to as batched FRI, is in fact
+an IOPP for the interleaved Reed-Solomon code C0≡b as defined below.
+Interleaved codes.
+Consider a Reed-Solomon code RS[F, L, d] as in Definition 2.1 and an
+interleaving factor b ∈N. We define the b-interleaved Reed-Solomon code RS[F, L, d]≡b as
+RS[F, L, d]≡b := {(g1, . . . , gb) : ∀i ∈[b], gi ∈RS[F, L, d]} .
+We write g := (g1, . . . , gb) and treat the tuple as a function g : L →Fb, where for all x ∈L,
+g(x) := (g1(x), . . . , gb(x)).
+The fractional Hamming distance between tuples g and h and
+between the tuple g and a set S ⊆Fb are defined with respect to this tuple-as-a-function view.
+The rate ρ of the interleaved code is identical to the rate of the underlying RS code and is
+computed as d/|L|. Likewise, its minimum distance is also 1 −ρ.
+Construction A.1 (Batched FRI). Consider the same initial setting and protocol parameters
+as in Construction 4.4, and let PFRI, VFRI respectively denote the FRI prover and FRI verifier.
+Additionally, consider a batch size b ∈N and proximity generator Gen that takes as input a
+length parameter n ∈N and randomness s ∈S, for some set S, and outputs (β1, . . . , βn) ∈Fn.
+The batched FRI protocol proceeds as follows:
+• Initial functions. Let g1, . . . , gb : L0 →F be initial functions and write g := (g1, . . . , gb).
+In the honest case, g ∈C0≡b.
+• Batching phase:
+1. Batching challenge. The verifier sends a batching challenge s ←S and computes
+(β1, . . . , βb) := Gen(b; s).
+2. Send batched function. The prover sends a function f0 : L0 →F. In the honest
+case, f0 := Pb
+i=1 βi · gi.
+• FRI interactive phase:
+1. Folding phase.
+The prover and verifier run the FRI folding phase with initial
+function f0, producing challenges α1, . . . , αk and functions f1, . . . , fk. In the honest
+case, the prover runs the honest FRI prover PFRI.
+2. Query phase. The prover and verifier run the FRI query phase, producing a query
+challenge αk+1 := (s1, . . . , st).
+• Verifier decision phase:
+1. FRI decision phase. Assert that Vf0,...,fk
+FRI
+(α1, . . . , αk+1) = 0.
+2. Local batching check. For every repetition j = 1, . . . , t done in the verifier call
+VFRI above, the verifier additionally queries g(sj) and asserts that f0(sj) = Pb
+i=1 βi·
+gi(sj).
+Round-by-round soundness.
+We treat batched FRI as an IOPP for the interleaved RS
+code and show that it has round-by-round soundness.
+26
+
+[PAGINA 27]
+Theorem A.2. Consider batched FRI with parameters as in Construction A.1, and assume Gen
+is a proximity generator with mutual correlated agreement with error εmca
+Gen and Powers is a prox-
+imity generator with mutual correlated agreement with error εmca
+Powers. For every tradeoff parame-
+ter θ ∈[0, 1], batched FRI has round-by-round soundness with error functions εbatch, εfold
+1
+, . . . , εfold
+k
+,
+εqry : (0, 1] →[0, 1] such that for every initial input g /∈C0≡b:
+• εbatch(δ) = εmca
+Gen(C0, b, θ),
+• for all i ∈[k], εfold
+i
+(δ) = εmca
+Powers(Ci, mi, θ),
+• εqry(δ) = (max{1 −θ, 1 −δ})t = (1 −min{θ, δ})t,
+where δ := ∆
+ g, C0≡b
+.
+Proof. The proof is almost identical to the proof of Theorem 5.2. To extend the proof, we must
+define the state function for the batching phase and use the local batching check to argue that
+the conclusions established on f0 translate to meaningful conclusions about g1, . . . , gb.
+0. Empty transcript. For an empty transcript, we say that Stateθ(g, ∅) = 1 if and only if
+g ∈C0≡b.
+1. Batching phase. At this stage, the transcript tr is empty and the verifier sends a batching
+challenge s. As in the protocol description, we let (β1, . . . , βb) := Gen(s).
+• State function. Suppose that Stateθ(g, ∅) = 0. We say that Stateθ(g, s) = 1 if and only if
+there exists a set S ⊆L0 such that:
+(a) |S| ≥(1 −θ) · |L0|; and
+(b) there exists u′ ∈C0 such that Pb
+i=1 βigi[S] = u′[S]; and
+(c) there exists i ∈[b] such that for all u ∈C0, u[S]̸ = gi[S].
+• Bounding the error. By definition of mutual correlated agreement:
+Pr
+s [Stateθ(g, ∅) = 0 ∧Stateθ(g, s) = 1] ≤εmca
+Gen(C0, b, θ).
+Setting εbatch(δ) := εmca
+Gen(C0, b, θ) completes the proof for the batching phase.
+2. FRI folding. Let StateFRI
+θ
+denote the FRI state function as in Theorem 5.2 and define f0 as
+in Construction A.1. For every folding round i ∈[k], the batched FRI transcript has the form
+tr := (s, f0, tr′),
+where tr′ is a FRI transcript for the i-th folding round as in Equation (8). The verifier then
+sends a message αi ∈F.
+• State function. For every folding round i ∈[k], consider an initial input g and transcript
+tr := (s, f0, tr′) such that Stateθ(g, tr) = 0. Since we are running FRI as a subroutine, we
+say that Stateθ(g, tr||αi) = 1 if and only if both of the following conditions are satisfied:
+(a) StateFRI
+θ
+(f0, tr′) = 0; and
+(b) StateFRI
+θ
+(f0, tr′||αi) = 1.
+• Bounding the error. For every folding round i ∈[k], consider an initial input g and tran-
+script tr := (s, f0, tr′) such that Stateθ(g, tr) = 0. By definition of the state function, it
+holds that
+Pr
+αi
+
+
+Stateθ(g, tr) = 0
+∧
+Stateθ(g, tr||αi) = 1
+
+= Pr
+αi
+
+
+StateFRI
+θ
+(f0, tr′) = 0
+∧
+StateFRI
+θ
+(f0, tr′||αi) = 1
+
+.
+27
+
+[PAGINA 28]
+By our analysis of the folding rounds of FRI, it follows that for all i ∈[k], the batched FRI
+error for folding rounds is εfold
+i
+(δ) = εmca
+Powers(Ci, mi, θ).
+3. FRI query. As above, let StateFRI
+θ
+denote the FRI state function as in Theorem 5.2. A final
+round partial transcript for batched FRI has the form
+tr := (s, f0, tr′),
+where tr′ is a final round partial transcript for the FRI protocol. The final verifier message,
+denoted αk+1 to remain consistent with our FRI analysis, has the form αk+1 = (s1, . . . , st)
+with s1, . . . , st ∈L0.
+• State function. Suppose that Stateθ(g, tr) = 0. We say that Stateθ(g, tr||αk+1) = 1 if and
+only if both of the following conditions are satisfied:
+(a) the FRI state function is satisfied StateFRI
+θ
+(f0, tr′||αk+1) = 1, and
+(b) for all j ∈[t], f0(sj) = Pb
+i=1 βi · gi(sj).
+• Bounding the error. Suppose that Stateθ(g, tr) = 0. The argument to bound the query
+round error is a simple extension of the argument for non-batched FRI. Recall that we
+define the set of accepting queries AccQueries and show that the probability of changing
+states is exactly (|AccQueries|/|L0|)t (see Equation (9)). In batched FRI, the verifier also
+performs a local batching check (as reflect by Item 3b above). Therefore, we additionally
+note that
+f0[AccQueries] =
+b
+X
+i=1
+βi · gi[AccQueries].
+(15)
+The remainder of the proof gives an upper bound for |AccQueries|/|L0|. Recall that we
+define the set W0 := AccQueries and then inductively define Wi for all i ∈[k]. In our
+regular FRI analysis, we distinguish two cases:
+– in the first case, there exists i ∈{0, . . . , k} such that |Wi| < (1−θ)·|Li|. By Claim 5.4,
+we can upper bound |AccQueries|/|L0| by 1 −θ. All this analysis carries over to the
+batched setting identically.
+– in the second case, all sets are “large enough”. Claim 5.5 establishes that there exists
+a codeword u0 ∈C0 such that u0[W0] = f0[W0]. We now extend this claim to g in
+Claim A.3. Given this claim, we can apply the same reasoning as in case 2 of the
+regular FRI analysis to establish that |AccQueries|/|L0| ≤∆
+ g, C0≡b
+.
+Claim A.3. If fk ∈Ck and for all i ∈{0, . . . , k}, |Wi| ≥(1 −θ) · |Li|, then there exists
+v ∈C0≡b such that v[W0] = g[W0].
+Proof. Note first that the premise for the above claim is identical to the premise of Claim 5.5.
+Therefore, by that same claim, it holds that there exists u0 ∈C0 such that
+u0[W0] = f0[W0].
+We will now show that this observation extends to g. First, note that |W0| ≥(1−θ)·|L0| and
+therefore Item 1a of the batching phase state function is satisfied for the set W0. Secondly,
+it holds by Equation (15) and the definition of W0 that
+u0[W0] = f0[W0] =
+b
+X
+i=1
+βi · gi[W0].
+28
+
+[PAGINA 29]
+Therefore Item 1b of the batching phase state function is satisfied for the set W0.
+Since Stateθ(g, tr) = 0, it holds by the Default property of state functions (Definition 3.4)
+that Stateθ(g, s) = 0. Therefore, it must be the case that Item 1c is false (otherwise all three
+items would be satisfied and Stateθ(g, s) = 1, a contradiction). We therefore conclude that
+for all i ∈[b], there exists a codeword vi ∈C0 such that vi[W0] = gi[W0]. Let v = (v1, . . . , vb).
+By definition of interleaved RS codes we have that v[W0] = g[W0], which concludes our
+proof of Claim A.3.
+To conclude our proof for the query phase, we upper bound the query round error by taking
+an upper bound on |AccQueries|/|L0| that is consistent with both of the cases presented
+above
+Pr
+αk+1
+
+
+Stateθ(g, tr) = 0
+∧
+Stateθ(g, tr||αk+1) = 1
+
+≤(max{1 −θ, 1 −δ})t,
+where δ := ∆
+ g, C0≡b
+.
+4. Verifier decision. A full transcript is of the form tr = (s, f0, tr′), where tr′ := (α1, f1, . . . , αk,
+fk, αk+1) is a complete FRI transcript. If we have Stateθ(f0, tr) = 0, then either Item 3a or
+Item 3b is false. These conditions are identical to the checks performed by the verifier, namely
+running the FRI decision phase for (f0, tr′) and the local batching check. Therefore, we have
+Vg,f0,...,fk(s, α1, . . . , αk+1) = 0
+as desired.
+Additional properties.
+As was the case for FRI, we can prove that batched FRI upholds
+additional properties.
+Corollary A.4. Consider batched FRI with parameters as in Construction A.1, a fixed tradeoff
+parameter θ∗∈[0, 1] and let Stateθ∗be the state function defined in the proof of Theorem A.2.
+For every distance parameter δ∗∈[0, 1−ρ]∩[0, θ∗], if g := (g1, . . . , gb) is an initial function
+and tr := (s, f0, α1, f1, . . . , αk, fk) is a transcript such that
+Stateθ∗(g, tr) = 0 ∧
+Pr
+αk+1[Stateθ∗(g, tr||αk+1) = 1] ≥(1 −δ∗)t
+then the following properties are true:
+1. Proximity: g is at least δ∗-close to the code C0≡b, i.e., ∆(g, C0≡b) ≤δ∗.
+2. Binding: there exists a unique codeword v ∈C0≡b such that v[AccQueries] = g[AccQueries],
+where AccQueries ⊆L0 is the set of accepting queries for the pair (g, tr).
+3. Extractability: there exists a deterministic polynomial-time extractor6 E that, given
+(g, tr) as input, returns v as defined in the binding property above.
+4. Erasure detection: let v be defined as in the binding property and αk+1 := (s1, . . . , st)
+be a final round verifier message. If there exists i ∈[t] such that g(si)̸ = v(si), then
+Vg,f1,...,fk(s, α1, . . . , αk+1) = 0. In other words, the verifier detects that si is a position
+where g disagrees with the codeword v (i.e., si is an erasure).
+6Note that this extractor is straightline by definition: there is no algorithm involved that it could rewind. It
+just gets an input and produces an output.
+29
+
+[PAGINA 30]
+Proof. Corollary A.4 follows from Theorem A.2 in the same way Corollary 5.6 follows from
+Theorem 5.2, with the exception that we will also need to use Claim A.3.
+Firstly, note that the results of Equations (10) to (13) all carry over identically in the
+interleaved setting. Similarly to Equation (14), we use Equation (13) and Claim A.3 to establish
+that
+∃v ∈C0≡b, g[AccQueries] = v[AccQueries].
+(16)
+Given these facts, the additional properties follow naturally:
+• Proximity. Proximity in the interleaved setting follows from Equation (10) identically to
+the proof of Corollary 5.6.
+• Binding. The reasoning here extends the reasoning in Corollary 5.6 to account for the
+fact that an interleaved codeword is defined by b polynomials. We copy the proof almost
+verbatim.
+To prove the binding property, it suffices to show that v from Equation (16) is
+unique. Consider v′ ∈C0≡b such that g[AccQueries] = v′[AccQueries]. We will
+show that v = v′. Let v1, . . . , vb and v′
+1, . . . , v′
+b be the individual constituents
+of v and v′ respectively. Fix an arbitrary i ∈[b] and let bvi, bv′
+i ∈F<d[X] denote
+the polynomials of degree less than d that interpolate vi and v′
+i respectively. It
+holds by definition of vi and v′
+i that
+∀x ∈AccQueries, bvi(x) = gi(x) = bv′
+i(x).
+Furthermore, from Equation (11), it holds that |AccQueries| is at least ρ·|L0| =
+d.
+Therefore, since bvi and bv′
+i agree on AccQueries, it holds that bvi = bv′
+i as
+polynomials and vi = v′
+i. Since i was arbitrary, the above applies for all i ∈[b];
+we therefore conclude that v = v′.
+• Extractability. Extractability follows by interpolation, as in Corollary 5.6. Specifically, E
+picks any d points in AccQueries and for all i ∈[b] interpolates the unique polynomial bvi
+of degree less than d that agrees with gi on those values. The codeword v := (v1, . . . , vb)
+is obtained by evaluating the polynomials bv1, . . . , bvb on L0. Notice that E does not run
+an error- or list-decoding algorithm.
+• Erasure detection. Erasure detection follows as in Corollary 5.6, by noting that if there is
+a query si such that v(si)̸ = g(si), then si /∈AccQueries and therefore the verifier rejects.
+30

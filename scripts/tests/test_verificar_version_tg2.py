@@ -54,6 +54,15 @@ class VerificacionVersion(unittest.TestCase):
         self.archivo.with_name('nuevo.md').write_text('nuevo', encoding='utf-8')
         self.assertIn('Sin registrar', verificar(self.raiz, self.manifiesto)['errores'][0])
 
+    def test_temporales_de_word_no_forman_parte_de_la_edicion(self):
+        for extension in ['.docx', '.docm', '.doc', '.dotx', '.dotm']:
+            self.archivo.with_name('~$cumento'+extension).write_bytes(b'propietario temporal')
+        self.assertTrue(verificar(self.raiz, self.manifiesto)['correcto'])
+
+    def test_prefijo_temporal_no_oculta_otros_archivos(self):
+        self.archivo.with_name('~$datos.csv').write_text('datos', encoding='utf-8')
+        self.assertIn('Sin registrar', verificar(self.raiz, self.manifiesto)['errores'][0])
+
     def test_ruta_exterior(self):
         self.datos['archivos'][0]['archivo'] = '../fuera.md'
         self.guardar()

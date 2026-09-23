@@ -8,6 +8,11 @@ import subprocess
 RAIZ = Path(__file__).resolve().parents[1]
 
 
+def es_temporal_word(ruta):
+    """Reconoce archivos de propietario de Word, ajenos a la edición documental."""
+    return ruta.name.startswith('~$') and ruta.suffix.lower() in {'.doc', '.docx', '.docm', '.dotx', '.dotm'}
+
+
 def verificar(raiz, manifiesto):
     datos = json.loads(manifiesto.read_text(encoding='utf-8'))
     if datos.get('esquema') != 1:
@@ -25,7 +30,7 @@ def verificar(raiz, manifiesto):
         elif ruta.stat().st_size != item['bytes'] or hashlib.sha256(ruta.read_bytes()).hexdigest() != item['sha256']:
             errores.append('Contenido diferente: ' + nombre)
     actuales = {p.relative_to(raiz).as_posix() for carpeta in ['Documentos/01-Manuscrito', 'Documentos/06-Evidencia-TG2']
-                for p in (raiz / carpeta).rglob('*') if p.is_file()}
+                for p in (raiz / carpeta).rglob('*') if p.is_file() and not es_temporal_word(p)}
     for nombre in sorted(actuales - rutas):
         errores.append('Sin registrar en la edición: ' + nombre)
     codigo = (raiz / datos['codigo']['directorio']).resolve()

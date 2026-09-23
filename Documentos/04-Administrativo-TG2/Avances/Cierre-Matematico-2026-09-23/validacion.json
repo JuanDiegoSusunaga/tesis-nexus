@@ -1,0 +1,241 @@
+{
+  "fecha_utc": "2026-09-23T16:25:58.153456+00:00",
+  "revisiones": {
+    "documentos_base": "24ca355d35bbfb726fe901b824536c72cef0c953",
+    "codigo": "01dcde960402b6c60a19242b7ae3d6ac3d82a518",
+    "rama_documentos": "investigacion/cierre-matematico-tg2",
+    "rama_codigo": "investigacion/cierre-matematico-tg2"
+  },
+  "estado": "Derivación escrita pendiente de revisión independiente; no garantía del ejecutable",
+  "pruebas_python": 7,
+  "pruebas_rust": 197,
+  "pruebas_manifiesto": 10,
+  "documentos_tg1_preservados": 15,
+  "codigo_sin_cambios": true,
+  "manifiesto_anterior": "Verificado: manuscrito y evidencia histórica preservados",
+  "CARGO_TARGET_DIR": "C:/tmp/nexus-target",
+  "ejecuciones": [
+    {
+      "nombre": "pruebas-python",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_rbr_conjunto_tg2.py",
+        "-v"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "pruebas-manifiesto",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_verificar_version_tg2.py",
+        "-v"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "manifiesto",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/verificar_version_tg2.py"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "cargo-check",
+      "comando": [
+        "cargo",
+        "check",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "cargo-test",
+      "comando": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "cargo-build",
+      "comando": [
+        "cargo",
+        "build",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml"
+      ],
+      "codigo_salida": 0
+    }
+  ],
+  "fuente_nueva": {
+    "url": "https://eprint.iacr.org/2025/1993.pdf",
+    "autores": [
+      "Albert Garreta",
+      "Nicolas Mohnblatt",
+      "Benedikt Wagner"
+    ],
+    "fecha_portada": "2026-03-27",
+    "revision_eprint": "2026-03-31",
+    "consultada": "2026-09-23",
+    "licencia_eprint": "CC BY"
+  },
+  "archivos": [
+    {
+      "ruta": "scripts/analizar_rbr_conjunto_tg2.py",
+      "sha256": "abc12fe059cbdf1bfbd13932a997776b90343ecfb060a007b155a53da9a56344",
+      "bytes": 4843
+    },
+    {
+      "ruta": "scripts/tests/test_rbr_conjunto_tg2.py",
+      "sha256": "dc35e59970fe6d57f673f14f79e72640dd56b4829855d824f0c23bd6d1e4e73f",
+      "bytes": 5895
+    },
+    {
+      "ruta": "scripts/verificar_rbr_conjunto_tg2.py",
+      "sha256": "4c8cfd159d775092847e278b25a4d534f66589762a945bda70244cfee24fa214",
+      "bytes": 6819
+    },
+    {
+      "ruta": "scripts/verificar_version_tg2.py",
+      "sha256": "ca2aa71401a38eb1c5c283443396b02f0e95c7fd245e6c29800a74f7e53c68f5",
+      "bytes": 3027
+    },
+    {
+      "ruta": "scripts/registrar_version_tg2.py",
+      "sha256": "e6d4be820325c05499e85405e8ced6e6dcbff27ba37f31a011448a4724e32d78",
+      "bytes": 2779
+    },
+    {
+      "ruta": "scripts/tests/test_verificar_version_tg2.py",
+      "sha256": "c17dbfecb40d9785e878943080083fe05694fb1eab6e01c6f341da1ac9ceb342",
+      "bytes": 3909
+    },
+    {
+      "ruta": "nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs",
+      "sha256": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f",
+      "bytes": 10024
+    },
+    {
+      "ruta": "nexus/nexus-zk/src/stark/air.rs",
+      "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7",
+      "bytes": 21761
+    },
+    {
+      "ruta": "nexus/nexus-zk/src/stark/channel.rs",
+      "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d",
+      "bytes": 7450
+    },
+    {
+      "ruta": "nexus/nexus-zk/src/stark/field.rs",
+      "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7",
+      "bytes": 8456
+    },
+    {
+      "ruta": "nexus/nexus-zk/src/stark/fri.rs",
+      "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5",
+      "bytes": 12645
+    },
+    {
+      "ruta": "nexus/nexus-zk/src/stark/merkle.rs",
+      "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f",
+      "bytes": 5788
+    },
+    {
+      "ruta": "nexus/nexus-zk/src/stark/mod.rs",
+      "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b",
+      "bytes": 1131
+    },
+    {
+      "ruta": "nexus/nexus-zk/src/stark/ntt.rs",
+      "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3",
+      "bytes": 4327
+    },
+    {
+      "ruta": "nexus/nexus-zk/src/stark/params.rs",
+      "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533",
+      "bytes": 4373
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md",
+      "sha256": "4a5fdc574c8cf5de7fa53e43b544af3dbdfebbf5af21df522c80099d8f311de8",
+      "bytes": 2689
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md",
+      "sha256": "886380857ccab164c6b5300a9bfc736d426c37a4e82ac9af47e54b874d17cb62",
+      "bytes": 18089
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/calculos.json",
+      "sha256": "446ee1b6a68d072a565bef2a59555aa7ebc3f97fea7e0980fde473e0455ff409",
+      "bytes": 24567
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/bibliografia/GMW25.pdf",
+      "sha256": "60e64486e2eaa08c2885926a9711ea3f66c5a47cdddc5cfb3b0b63bfa81e0218",
+      "bytes": 512291
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/bibliografia/GMW25.txt",
+      "sha256": "449ba4f81b46eb1ef526532a2d29fb9da9757cadf7b21ba80fa09aa27be50740",
+      "bytes": 80119
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/pruebas-python.log",
+      "sha256": "7e0dc999c469aaf953472a95df959ff4beb16d621c894b4bb92c8a4ad95237ca",
+      "bytes": 932
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/pruebas-manifiesto.log",
+      "sha256": "26eeae879c4606e5eabe6c11d722a0643fad11411ce7c20c15b5dd85a70a1847",
+      "bytes": 1238
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/manifiesto.log",
+      "sha256": "52b0a70b2fc9b18440e7811d906024f94195a71cb85d1d291b2e387fccb71386",
+      "bytes": 185
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/cargo-check.log",
+      "sha256": "af1c3e397415a53fdace9442c93d8b6db1097fbcd2967b8066dd4e549c7b1891",
+      "bytes": 14143
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/cargo-test.log",
+      "sha256": "59f86c34988e374a20cde89a817618dbfdcbd3614825aa6d7991e7f83c98120b",
+      "bytes": 31228
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/cargo-build.log",
+      "sha256": "b403ecdb40e87aa9da2d41c0a49b69a3bf8a5e1bbc220d3d516d63a596dad973",
+      "bytes": 10542
+    }
+  ]
+}

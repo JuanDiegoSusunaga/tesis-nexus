@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+from verificar_version_tg2 import es_temporal_word
 
 RAIZ = Path(__file__).resolve().parents[1]
 MANIFIESTO = RAIZ / 'Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json'
@@ -20,13 +21,14 @@ def main():
     archivos = []
     for carpeta in ['Documentos/01-Manuscrito', 'Documentos/06-Evidencia-TG2']:
         for ruta in sorted((RAIZ / carpeta).rglob('*')):
-            if not ruta.is_file():
+            if not ruta.is_file() or es_temporal_word(ruta):
                 continue
             archivos.append({'archivo': ruta.relative_to(RAIZ).as_posix(), 'bytes': ruta.stat().st_size,
                              'sha256': hashlib.sha256(ruta.read_bytes()).hexdigest()})
     # Las rutas del manifiesto deben poder incluirse sin forzar las exclusiones.
-    ignorados = git(RAIZ, 'ls-files', '--others', '--ignored', '--exclude-standard', '--',
+    ignorados = git(RAIZ, 'ls-files', '-z', '--others', '--ignored', '--exclude-standard', '--',
                     'Documentos/01-Manuscrito', 'Documentos/06-Evidencia-TG2')
+    ignorados = '\n'.join(p for p in ignorados.split('\0') if p and not es_temporal_word(Path(p)))
     if ignorados:
         raise SystemExit('Hay archivos de la edición ignorados por Git:\n' + ignorados)
     datos = {

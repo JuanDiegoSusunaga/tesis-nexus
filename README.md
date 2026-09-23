@@ -10,6 +10,7 @@
 4. [Ruta de cierre](Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md), [pendientes](PENDIENTES.md) y [bitácora](BITACORA_TG2.md).
 5. [Reproducción y herramientas](scripts/README.md).
 6. [Derivaciones matemáticas en Word](Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-09-23.docx), con hipótesis, argumentos y preguntas para revisión.
+7. [Investigación matemática en la rama actual](Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md): nueva derivación por rondas AIR/FRI y cotas ideales; pendiente de revisión e integración al manuscrito.
 
 ## Estructura
 

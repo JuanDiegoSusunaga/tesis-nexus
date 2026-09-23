@@ -1,5 +1,17 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Investigación de solidez por rondas, 23 de septiembre de 2026
+
+Por solicitud del autor se creó **`investigacion/cierre-matematico-tg2` en los dos repositorios**, desde documentos `24ca355d35bbfb726fe901b824536c72cef0c953` y código `01dcde960402b6c60a19242b7ae3d6ac3d82a518`. Se inicia el intento de resolver la brecha matemática AIR/FRI; no se publica ni fusiona la rama.
+
+Se escribió una [demostración conjunta por rondas](Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md): lema elemental de acuerdo para dos funciones, conservación de conjuntos de acuerdo en FRI, tratamiento de los tres coeficientes AIR separados y función de estado para traza, composición y consulta común. Se consultó y conservó la revisión de marzo de 2026 de Garreta, Mohnblatt y Wagner; su estructura de estado sirve como referencia. La demostración propuesta requiere revisión independiente.
+
+Para los umbrales 1/8 y 40 parejas, la nueva cota ordinaria ideal es `H(4T,40,1/8)+(8T−3)/p²`, con extremos superiores redondeados **0,000166165 y 0,004757331**. Se obtiene también una cota por ronda y un corolario de reinicios del experimento ideal. La mejora es analítica: no se alteró el protocolo ni se atribuyen esas cifras a SHA3, Merkle, Fiat–Shamir, QROM o ataques observados. La extracción de oráculos y la correspondencia del canal concreto, incluida su consulta en cadena y los nonces, siguen pendientes; R1-A–D de ML-DSA también.
+
+**Comprobaciones:** siete pruebas matemáticas Python y diez del manifiesto pasan; cargo check, las **197 pruebas Rust** y cargo build pasan. Se verificaron los 897 archivos de la edición anterior, los 15 documentos TG1 y la ausencia de cambios en el código. Los contrastes incluyen 390.625 pares de funciones, 6.056 prefijos de cancelación, 4.352 casos FRI pequeños y 328 escenarios de muestreo. [Resultados y hashes](Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/validacion.json).
+
+La primera comprobación detectó un archivo de propietario de Word `~$sis-NEXUS-completa.docx` como entrega adicional. Se corrigieron el registro y la verificación del manifiesto para excluir solamente temporales `~$` con extensión Word; dos nuevas pruebas comprueban esa excepción y la detección de otros archivos. Se conservaron los logs del intento inicial. El archivo temporal no se eliminó ni se cerró Word. El manuscrito y el Word de derivaciones conservan su edición previa, enlazada al nuevo complemento de investigación. No se atribuye aprobación del director a este avance.
+
 ## Documento de derivaciones para revisión, 23 de septiembre de 2026
 
 Se reunieron S1, el contraejemplo de proximidad, la variante vinculada, la cota ideal S2 y la auditoría S3 en un [documento Word independiente](Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-09-23.docx), con [fuente editable](Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-09-23.md). Expone hipótesis, argumentos, evidencia, referencias y preguntas M1–M6. La sección 1.1 aclara la diferencia entre argumentos escritos pendientes de revisión y la transferencia al ejecutable que aún no está demostrada.

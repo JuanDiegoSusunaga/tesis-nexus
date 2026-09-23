@@ -80,3 +80,15 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/actualizar_deriv
 ```
 
 El generador verifica contenido de tablas y cantidad de ecuaciones nativas antes de publicar el documento. Sus temporales quedan en `.tools/derivaciones/`. Este proceso solo genera el documento independiente; la fuente y las salidas del manuscrito principal conservan su edición. La inspección visual y los hashes de la copia revisada se registran en el archivo `.revision.json` junto al Word.
+
+## 8. Investigación de solidez por rondas
+
+La rama `investigacion/cierre-matematico-tg2` añade una [derivación conjunta AIR/FRI](../Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md). Los cálculos usan exclusivamente la biblioteca estándar de Python:
+
+```powershell
+python -m unittest discover -s scripts/tests -p test_rbr_conjunto_tg2.py -v
+python scripts/analizar_rbr_conjunto_tg2.py --salida .tools/cierre-matematico/repeticion.json
+python scripts/verificar_rbr_conjunto_tg2.py --salida .tools/cierre-matematico/verificacion
+```
+
+El último comando conserva logs de las siete pruebas matemáticas, diez pruebas del manifiesto, la verificación histórica y cargo check/test/build, junto con hashes y revisión Git. Requiere Rust y las dependencias locales; usa `C:/tmp/nexus-target`. Las salidas rechazan sobrescrituras. Los contrastes finitos no sustituyen revisión matemática ni prueban seguridad del ejecutable. El manifiesto excluye los archivos temporales de propietario de Word que empiezan por `~$` y tienen extensión de Word, de modo que abrir un documento no se confunde con modificar la edición.
