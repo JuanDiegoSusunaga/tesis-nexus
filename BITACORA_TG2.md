@@ -1,5 +1,9 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Consolidación de pendientes, 23 de septiembre de 2026
+
+Ante la consulta del autor, se cotejó `PENDIENTES.md` con la ruta de cierre y el último informe QROM. El desarrollo de omisión, el dictamen y los parámetros QROM quedan como tareas independientes. Se explicitan el seguimiento F0/E0–E4, la trazabilidad y repetición de mediciones, la integración de los complementos revisados al manuscrito y al Word de derivaciones, la regeneración y revisión de formatos, la actualización del manifiesto y la plantilla institucional si se exige. El ensayo detalla los temas de defensa. Esta actualización es documental; conserva el estado técnico y los resultados registrados en la entrada siguiente.
+
 ## Cota cuántica de la cola de índices, 23 de septiembre de 2026
 
 Se continuó Q2 en `main`. El [nuevo informe](Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/Cola-y-Conteo-QROM.md) separa omisión y cola y propone una demostración para esta última. Una cadena anclada en la absorción del nonce no puede tener ciclos sin colisiones; una cola de R pasos registra R entradas distintas cuyos índices caben en un conjunto de 39 posiciones.
