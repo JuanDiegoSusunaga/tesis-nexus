@@ -1,0 +1,1775 @@
+{
+  "fecha": "2026-09-23",
+  "modelo": "QROM, adversario de Q consultas, una prueba clásica final",
+  "estado": "Cota propuesta basada solo en la condición PoW; transferencia AIR/FRI completa pendiente",
+  "fuente_cota": "DFM20, Theorem 2, arXiv:2003.05207v3, página PDF 5",
+  "perfiles_trabajo": [
+    {
+      "T": 16,
+      "bits": 12,
+      "Q": 0,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 29,
+      "cota": {
+        "numerador": "3481",
+        "denominador": "4096"
+      },
+      "cota_superior": "0.849853515625",
+      "vacia": false
+    },
+    {
+      "T": 16,
+      "bits": 12,
+      "Q": 16,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 45,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 16,
+      "bits": 12,
+      "Q": 64,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 93,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 16,
+      "bits": 12,
+      "Q": 256,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 285,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 16,
+      "bits": 12,
+      "Q": 512,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 541,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 16,
+      "bits": 12,
+      "Q": 1024,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 1053,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 16,
+      "bits": 20,
+      "Q": 0,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 29,
+      "cota": {
+        "numerador": "3481",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.003319740296",
+      "vacia": false
+    },
+    {
+      "T": 16,
+      "bits": 20,
+      "Q": 16,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 45,
+      "cota": {
+        "numerador": "8281",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.007897377015",
+      "vacia": false
+    },
+    {
+      "T": 16,
+      "bits": 20,
+      "Q": 64,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 93,
+      "cota": {
+        "numerador": "34969",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.033349037171",
+      "vacia": false
+    },
+    {
+      "T": 16,
+      "bits": 20,
+      "Q": 256,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 285,
+      "cota": {
+        "numerador": "326041",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.310936927796",
+      "vacia": false
+    },
+    {
+      "T": 16,
+      "bits": 20,
+      "Q": 512,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 541,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 16,
+      "bits": 20,
+      "Q": 1024,
+      "hashes_prefijo": 29,
+      "consultas_reduccion": 1053,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 32,
+      "bits": 12,
+      "Q": 0,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 33,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 32,
+      "bits": 12,
+      "Q": 16,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 49,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 32,
+      "bits": 12,
+      "Q": 64,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 97,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 32,
+      "bits": 12,
+      "Q": 256,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 289,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 32,
+      "bits": 12,
+      "Q": 512,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 545,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 32,
+      "bits": 12,
+      "Q": 1024,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 1057,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 32,
+      "bits": 20,
+      "Q": 0,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 33,
+      "cota": {
+        "numerador": "4489",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.004281044007",
+      "vacia": false
+    },
+    {
+      "T": 32,
+      "bits": 20,
+      "Q": 16,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 49,
+      "cota": {
+        "numerador": "9801",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.009346961976",
+      "vacia": false
+    },
+    {
+      "T": 32,
+      "bits": 20,
+      "Q": 64,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 97,
+      "cota": {
+        "numerador": "38025",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.036263465882",
+      "vacia": false
+    },
+    {
+      "T": 32,
+      "bits": 20,
+      "Q": 256,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 289,
+      "cota": {
+        "numerador": "335241",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.319710731507",
+      "vacia": false
+    },
+    {
+      "T": 32,
+      "bits": 20,
+      "Q": 512,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 545,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 32,
+      "bits": 20,
+      "Q": 1024,
+      "hashes_prefijo": 33,
+      "consultas_reduccion": 1057,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 64,
+      "bits": 12,
+      "Q": 0,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 37,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 64,
+      "bits": 12,
+      "Q": 16,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 53,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 64,
+      "bits": 12,
+      "Q": 64,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 101,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 64,
+      "bits": 12,
+      "Q": 256,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 293,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 64,
+      "bits": 12,
+      "Q": 512,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 549,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 64,
+      "bits": 12,
+      "Q": 1024,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 1061,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 64,
+      "bits": 20,
+      "Q": 0,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 37,
+      "cota": {
+        "numerador": "5625",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.005364418030",
+      "vacia": false
+    },
+    {
+      "T": 64,
+      "bits": 20,
+      "Q": 16,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 53,
+      "cota": {
+        "numerador": "11449",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.010918617249",
+      "vacia": false
+    },
+    {
+      "T": 64,
+      "bits": 20,
+      "Q": 64,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 101,
+      "cota": {
+        "numerador": "41209",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.039299964905",
+      "vacia": false
+    },
+    {
+      "T": 64,
+      "bits": 20,
+      "Q": 256,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 293,
+      "cota": {
+        "numerador": "344569",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.328606605530",
+      "vacia": false
+    },
+    {
+      "T": 64,
+      "bits": 20,
+      "Q": 512,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 549,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 64,
+      "bits": 20,
+      "Q": 1024,
+      "hashes_prefijo": 37,
+      "consultas_reduccion": 1061,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 128,
+      "bits": 12,
+      "Q": 0,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 41,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 128,
+      "bits": 12,
+      "Q": 16,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 57,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 128,
+      "bits": 12,
+      "Q": 64,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 105,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 128,
+      "bits": 12,
+      "Q": 256,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 297,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 128,
+      "bits": 12,
+      "Q": 512,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 553,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 128,
+      "bits": 12,
+      "Q": 1024,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 1065,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 128,
+      "bits": 20,
+      "Q": 0,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 41,
+      "cota": {
+        "numerador": "6889",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.006569862366",
+      "vacia": false
+    },
+    {
+      "T": 128,
+      "bits": 20,
+      "Q": 16,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 57,
+      "cota": {
+        "numerador": "13225",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.012612342835",
+      "vacia": false
+    },
+    {
+      "T": 128,
+      "bits": 20,
+      "Q": 64,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 105,
+      "cota": {
+        "numerador": "44521",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.042458534241",
+      "vacia": false
+    },
+    {
+      "T": 128,
+      "bits": 20,
+      "Q": 256,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 297,
+      "cota": {
+        "numerador": "354025",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.337624549866",
+      "vacia": false
+    },
+    {
+      "T": 128,
+      "bits": 20,
+      "Q": 512,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 553,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 128,
+      "bits": 20,
+      "Q": 1024,
+      "hashes_prefijo": 41,
+      "consultas_reduccion": 1065,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 256,
+      "bits": 12,
+      "Q": 0,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 45,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 256,
+      "bits": 12,
+      "Q": 16,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 61,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 256,
+      "bits": 12,
+      "Q": 64,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 109,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 256,
+      "bits": 12,
+      "Q": 256,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 301,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 256,
+      "bits": 12,
+      "Q": 512,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 557,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 256,
+      "bits": 12,
+      "Q": 1024,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 1069,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 256,
+      "bits": 20,
+      "Q": 0,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 45,
+      "cota": {
+        "numerador": "8281",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.007897377015",
+      "vacia": false
+    },
+    {
+      "T": 256,
+      "bits": 20,
+      "Q": 16,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 61,
+      "cota": {
+        "numerador": "15129",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.014428138733",
+      "vacia": false
+    },
+    {
+      "T": 256,
+      "bits": 20,
+      "Q": 64,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 109,
+      "cota": {
+        "numerador": "47961",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.045739173890",
+      "vacia": false
+    },
+    {
+      "T": 256,
+      "bits": 20,
+      "Q": 256,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 301,
+      "cota": {
+        "numerador": "363609",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.346764564515",
+      "vacia": false
+    },
+    {
+      "T": 256,
+      "bits": 20,
+      "Q": 512,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 557,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 256,
+      "bits": 20,
+      "Q": 1024,
+      "hashes_prefijo": 45,
+      "consultas_reduccion": 1069,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 512,
+      "bits": 12,
+      "Q": 0,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 49,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 512,
+      "bits": 12,
+      "Q": 16,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 65,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 512,
+      "bits": 12,
+      "Q": 64,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 113,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 512,
+      "bits": 12,
+      "Q": 256,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 305,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 512,
+      "bits": 12,
+      "Q": 512,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 561,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 512,
+      "bits": 12,
+      "Q": 1024,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 1073,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 512,
+      "bits": 20,
+      "Q": 0,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 49,
+      "cota": {
+        "numerador": "9801",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.009346961976",
+      "vacia": false
+    },
+    {
+      "T": 512,
+      "bits": 20,
+      "Q": 16,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 65,
+      "cota": {
+        "numerador": "17161",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.016366004944",
+      "vacia": false
+    },
+    {
+      "T": 512,
+      "bits": 20,
+      "Q": 64,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 113,
+      "cota": {
+        "numerador": "51529",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.049141883851",
+      "vacia": false
+    },
+    {
+      "T": 512,
+      "bits": 20,
+      "Q": 256,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 305,
+      "cota": {
+        "numerador": "373321",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.356026649476",
+      "vacia": false
+    },
+    {
+      "T": 512,
+      "bits": 20,
+      "Q": 512,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 561,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 512,
+      "bits": 20,
+      "Q": 1024,
+      "hashes_prefijo": 49,
+      "consultas_reduccion": 1073,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 1024,
+      "bits": 12,
+      "Q": 0,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 53,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 1024,
+      "bits": 12,
+      "Q": 16,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 69,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 1024,
+      "bits": 12,
+      "Q": 64,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 117,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 1024,
+      "bits": 12,
+      "Q": 256,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 309,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 1024,
+      "bits": 12,
+      "Q": 512,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 565,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 1024,
+      "bits": 12,
+      "Q": 1024,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 1077,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 1024,
+      "bits": 20,
+      "Q": 0,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 53,
+      "cota": {
+        "numerador": "11449",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.010918617249",
+      "vacia": false
+    },
+    {
+      "T": 1024,
+      "bits": 20,
+      "Q": 16,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 69,
+      "cota": {
+        "numerador": "19321",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.018425941468",
+      "vacia": false
+    },
+    {
+      "T": 1024,
+      "bits": 20,
+      "Q": 64,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 117,
+      "cota": {
+        "numerador": "55225",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.052666664124",
+      "vacia": false
+    },
+    {
+      "T": 1024,
+      "bits": 20,
+      "Q": 256,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 309,
+      "cota": {
+        "numerador": "383161",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.365410804749",
+      "vacia": false
+    },
+    {
+      "T": 1024,
+      "bits": 20,
+      "Q": 512,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 565,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 1024,
+      "bits": 20,
+      "Q": 1024,
+      "hashes_prefijo": 53,
+      "consultas_reduccion": 1077,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 2048,
+      "bits": 12,
+      "Q": 0,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 57,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 2048,
+      "bits": 12,
+      "Q": 16,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 73,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 2048,
+      "bits": 12,
+      "Q": 64,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 121,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 2048,
+      "bits": 12,
+      "Q": 256,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 313,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 2048,
+      "bits": 12,
+      "Q": 512,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 569,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 2048,
+      "bits": 12,
+      "Q": 1024,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 1081,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 2048,
+      "bits": 20,
+      "Q": 0,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 57,
+      "cota": {
+        "numerador": "13225",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.012612342835",
+      "vacia": false
+    },
+    {
+      "T": 2048,
+      "bits": 20,
+      "Q": 16,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 73,
+      "cota": {
+        "numerador": "21609",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.020607948304",
+      "vacia": false
+    },
+    {
+      "T": 2048,
+      "bits": 20,
+      "Q": 64,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 121,
+      "cota": {
+        "numerador": "59049",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.056313514710",
+      "vacia": false
+    },
+    {
+      "T": 2048,
+      "bits": 20,
+      "Q": 256,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 313,
+      "cota": {
+        "numerador": "393129",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.374917030335",
+      "vacia": false
+    },
+    {
+      "T": 2048,
+      "bits": 20,
+      "Q": 512,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 569,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 2048,
+      "bits": 20,
+      "Q": 1024,
+      "hashes_prefijo": 57,
+      "consultas_reduccion": 1081,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 4096,
+      "bits": 12,
+      "Q": 0,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 61,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 4096,
+      "bits": 12,
+      "Q": 16,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 77,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 4096,
+      "bits": 12,
+      "Q": 64,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 125,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 4096,
+      "bits": 12,
+      "Q": 256,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 317,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 4096,
+      "bits": 12,
+      "Q": 512,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 573,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 4096,
+      "bits": 12,
+      "Q": 1024,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 1085,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 4096,
+      "bits": 20,
+      "Q": 0,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 61,
+      "cota": {
+        "numerador": "15129",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.014428138733",
+      "vacia": false
+    },
+    {
+      "T": 4096,
+      "bits": 20,
+      "Q": 16,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 77,
+      "cota": {
+        "numerador": "24025",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.022912025452",
+      "vacia": false
+    },
+    {
+      "T": 4096,
+      "bits": 20,
+      "Q": 64,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 125,
+      "cota": {
+        "numerador": "63001",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.060082435608",
+      "vacia": false
+    },
+    {
+      "T": 4096,
+      "bits": 20,
+      "Q": 256,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 317,
+      "cota": {
+        "numerador": "403225",
+        "denominador": "1048576"
+      },
+      "cota_superior": "0.384545326233",
+      "vacia": false
+    },
+    {
+      "T": 4096,
+      "bits": 20,
+      "Q": 512,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 573,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    },
+    {
+      "T": 4096,
+      "bits": 20,
+      "Q": 1024,
+      "hashes_prefijo": 61,
+      "consultas_reduccion": 1085,
+      "cota": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_superior": "1.000000000000",
+      "vacia": true
+    }
+  ],
+  "busqueda_cuantica": [
+    {
+      "N": 4,
+      "bits": 2,
+      "iteraciones": 0,
+      "consultas_H": 0,
+      "exito_promedio": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "expresion_lineal": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "cota_cuadratica": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "supera_lineal": false
+    },
+    {
+      "N": 4,
+      "bits": 2,
+      "iteraciones": 1,
+      "consultas_H": 2,
+      "exito_promedio": {
+        "numerador": "17",
+        "denominador": "32"
+      },
+      "expresion_lineal": {
+        "numerador": "3",
+        "denominador": "4"
+      },
+      "cota_cuadratica": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "supera_lineal": false
+    },
+    {
+      "N": 4,
+      "bits": 2,
+      "iteraciones": 2,
+      "consultas_H": 4,
+      "exito_promedio": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "expresion_lineal": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_cuadratica": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "supera_lineal": false
+    },
+    {
+      "N": 4,
+      "bits": 2,
+      "iteraciones": 3,
+      "consultas_H": 6,
+      "exito_promedio": {
+        "numerador": "1",
+        "denominador": "4"
+      },
+      "expresion_lineal": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "cota_cuadratica": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "supera_lineal": false
+    },
+    {
+      "N": 16,
+      "bits": 4,
+      "iteraciones": 0,
+      "consultas_H": 0,
+      "exito_promedio": {
+        "numerador": "1",
+        "denominador": "16"
+      },
+      "expresion_lineal": {
+        "numerador": "1",
+        "denominador": "16"
+      },
+      "cota_cuadratica": {
+        "numerador": "1",
+        "denominador": "16"
+      },
+      "supera_lineal": false
+    },
+    {
+      "N": 16,
+      "bits": 4,
+      "iteraciones": 1,
+      "consultas_H": 2,
+      "exito_promedio": {
+        "numerador": "13073",
+        "denominador": "32768"
+      },
+      "expresion_lineal": {
+        "numerador": "3",
+        "denominador": "16"
+      },
+      "cota_cuadratica": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "supera_lineal": true
+    },
+    {
+      "N": 16,
+      "bits": 4,
+      "iteraciones": 2,
+      "consultas_H": 4,
+      "exito_promedio": {
+        "numerador": "18932327",
+        "denominador": "33554432"
+      },
+      "expresion_lineal": {
+        "numerador": "5",
+        "denominador": "16"
+      },
+      "cota_cuadratica": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "supera_lineal": true
+    },
+    {
+      "N": 16,
+      "bits": 4,
+      "iteraciones": 3,
+      "consultas_H": 6,
+      "exito_promedio": {
+        "numerador": "29738208721",
+        "denominador": "68719476736"
+      },
+      "expresion_lineal": {
+        "numerador": "7",
+        "denominador": "16"
+      },
+      "cota_cuadratica": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "supera_lineal": false
+    },
+    {
+      "N": 64,
+      "bits": 6,
+      "iteraciones": 0,
+      "consultas_H": 0,
+      "exito_promedio": {
+        "numerador": "1",
+        "denominador": "64"
+      },
+      "expresion_lineal": {
+        "numerador": "1",
+        "denominador": "64"
+      },
+      "cota_cuadratica": {
+        "numerador": "1",
+        "denominador": "64"
+      },
+      "supera_lineal": false
+    },
+    {
+      "N": 64,
+      "bits": 6,
+      "iteraciones": 1,
+      "consultas_H": 2,
+      "exito_promedio": {
+        "numerador": "4338497",
+        "denominador": "33554432"
+      },
+      "expresion_lineal": {
+        "numerador": "3",
+        "denominador": "64"
+      },
+      "cota_cuadratica": {
+        "numerador": "25",
+        "denominador": "64"
+      },
+      "supera_lineal": true
+    },
+    {
+      "N": 64,
+      "bits": 6,
+      "iteraciones": 2,
+      "consultas_H": 4,
+      "exito_promedio": {
+        "numerador": "2671122636947",
+        "denominador": "8796093022208"
+      },
+      "expresion_lineal": {
+        "numerador": "5",
+        "denominador": "64"
+      },
+      "cota_cuadratica": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "supera_lineal": true
+    },
+    {
+      "N": 64,
+      "bits": 6,
+      "iteraciones": 3,
+      "consultas_H": 6,
+      "exito_promedio": {
+        "numerador": "2135622663783617341",
+        "denominador": "4611686018427387904"
+      },
+      "expresion_lineal": {
+        "numerador": "7",
+        "denominador": "64"
+      },
+      "cota_cuadratica": {
+        "numerador": "1",
+        "denominador": "1"
+      },
+      "supera_lineal": true
+    }
+  ],
+  "obstaculo_muestreo": [
+    {
+      "T": 16,
+      "M": 64,
+      "buenos": 56,
+      "h_ideal": {
+        "numerador": "4301",
+        "denominador": "25884008"
+      },
+      "salto_terminal": {
+        "numerador": "17",
+        "denominador": "64"
+      },
+      "salto_mayor_que_h": true
+    },
+    {
+      "T": 32,
+      "M": 128,
+      "buenos": 112,
+      "h_ideal": {
+        "numerador": "2284648953",
+        "denominador": "1473036581480"
+      },
+      "salto_terminal": {
+        "numerador": "73",
+        "denominador": "128"
+      },
+      "salto_mayor_que_h": true
+    },
+    {
+      "T": 64,
+      "M": 256,
+      "buenos": 224,
+      "h_ideal": {
+        "numerador": "13206439471784150226714810553",
+        "denominador": "4501081702535380029447599105700"
+      },
+      "salto_terminal": {
+        "numerador": "185",
+        "denominador": "256"
+      },
+      "salto_mayor_que_h": true
+    },
+    {
+      "T": 128,
+      "M": 512,
+      "buenos": 448,
+      "h_ideal": {
+        "numerador": "103645194413708310848241836851433481898523",
+        "denominador": "27245770225710179425289735463090279586747800"
+      },
+      "salto_terminal": {
+        "numerador": "409",
+        "denominador": "512"
+      },
+      "salto_mayor_que_h": true
+    },
+    {
+      "T": 256,
+      "M": 1024,
+      "buenos": 896,
+      "h_ideal": {
+        "numerador": "807747535963740092996835655154329723061911644521701179",
+        "denominador": "188606236168075323196099645378069649585058887099460304136"
+      },
+      "salto_terminal": {
+        "numerador": "857",
+        "denominador": "1024"
+      },
+      "salto_mayor_que_h": true
+    },
+    {
+      "T": 512,
+      "M": 2048,
+      "buenos": 1792,
+      "h_ideal": {
+        "numerador": "40003246199481593478284700535262595053321924613069069760152842464353",
+        "denominador": "8825373293155143432106052083525430836434375478336964613641115146183032"
+      },
+      "salto_terminal": {
+        "numerador": "1753",
+        "denominador": "2048"
+      },
+      "salto_mayor_que_h": true
+    },
+    {
+      "T": 1024,
+      "M": 4096,
+      "buenos": 3584,
+      "h_ideal": {
+        "numerador": "152650413970452889633306104221033881879085309273817481884585164245394805",
+        "denominador": "32754617812724728564608444699623110264481533681700224586508419221504613528"
+      },
+      "salto_terminal": {
+        "numerador": "3545",
+        "denominador": "4096"
+      },
+      "salto_mayor_que_h": true
+    },
+    {
+      "T": 2048,
+      "M": 8192,
+      "buenos": 7168,
+      "h_ideal": {
+        "numerador": "1016894761647218730799524270236886949457403043205615981482600369933610408094494021771",
+        "denominador": "215219510846318843438783747972442764750103042240867913583190033608683677643160625693672"
+      },
+      "salto_terminal": {
+        "numerador": "7129",
+        "denominador": "8192"
+      },
+      "salto_mayor_que_h": true
+    },
+    {
+      "T": 4096,
+      "M": 16384,
+      "buenos": 14336,
+      "h_ideal": {
+        "numerador": "228265697294756327282277052092691799517056493785046559297964778243511719969321031115830266137",
+        "denominador": "47981883394199807287876636658753748638585520102863261975386046239402871646154513216071562028280"
+      },
+      "salto_terminal": {
+        "numerador": "14297",
+        "denominador": "16384"
+      },
+      "salto_mayor_que_h": true
+    }
+  ],
+  "limites": [
+    "La simulación no es un ataque SHA3/NEXUS ni hardware cuántico",
+    "Los saltos pertenecen al modelo abstracto de parejas fijas; no son falsificaciones",
+    "No se introduce un factor h_T en la cota QROM de trabajo"
+  ]
+}

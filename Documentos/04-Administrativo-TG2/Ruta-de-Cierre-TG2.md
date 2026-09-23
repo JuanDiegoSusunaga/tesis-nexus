@@ -4,9 +4,11 @@
 
 **Resultado esperado:** entregar los Objetivos 3 y 4 con correspondencia verificable entre afirmaciones, fuentes, código y experimentos, y preparar la sustentación.
 
-**Última revisión interna:** [argumento de potencial para nonces y controles de premisas ROM](Avances/Revision-Critica-ROM-2026-09-23/README.md). Pasan 40 pruebas Python y 197 Rust, con check/build. La búsqueda exacta de 96 escenarios pequeños no supera la cota; dictamen externo y QROM pendientes.
+**Revisión ROM previa:** [argumento de potencial para nonces y controles de premisas ROM](Avances/Revision-Critica-ROM-2026-09-23/README.md). Pasan 40 pruebas Python y 197 Rust, con check/build. La búsqueda exacta de 96 escenarios pequeños no supera la cota; dictamen externo pendiente.
 
 **Etapa QROM iniciada a solicitud del autor:** [cota parcial del trabajo y correspondencia con teoremas cuánticos](Avances/QROM-2026-09-23/README.md). Doce pruebas adicionales elevan la regresión a 52 Python y 197 Rust, con check/build. La cota usa una condición necesaria y no incorpora AIR/FRI. El siguiente trabajo se concentra en Q1–Q5 del informe: extractor sin orden temporal, tratamiento cuántico de índices y nonces, enlace por rondas, pérdidas y parámetros. QROM completo y dictamen externo permanecen abiertos.
+
+**Avance QROM posterior:** [extractor y eventos algebraicos en la base comprimida](Avances/Extractor-QROM-2026-09-23/README.md). Se escribe y contrasta el lema de estabilidad; 45 escenarios y catorce tests nuevos, con 66 Python y 197 Rust en total. La cota controla un evento intermedio, todavía sin equivalencia con la aceptación real. Se priorizan Q2 y Q4: muestreo encadenado, nonces, cola y paso al juego real.
 
 **Dominio vigente:** sistemas en general, según aclaración expresa del autor registrada el 22 de septiembre en la bitácora. La arquitectura dual, la autenticación de operaciones y el ciclo de vida de claves mantienen su función técnica; cada aplicación debe definir y validar sus reglas de autorización y transición.
 
@@ -172,4 +174,4 @@ Para los cambios de código, ejecutar las comprobaciones requeridas por el proye
 
 La revisión que originó esta ruta fue estática y documental. La primera sesión ejecutó el seguimiento, inventario, correcciones formales y edición indicados arriba. No se modificó Rust ni se ejecutaron pruebas o benchmarks nuevos. Los criterios técnicos de R1–R5 siguen abiertos.
 
-**Siguiente ejecución:** estudiar parámetros declarando presupuesto adversario Q y probabilidad objetivo, con costes y límites; acompañar la transferencia ROM con la revisión interna por potencial al solicitar el dictamen M1–M6. QROM exige su propia reducción. Incorporar los complementos revisados en las salidas documentales, completar las diapositivas y ensayar con los requisitos institucionales. La cota ROM propuesta no acredita 100 bits. R1 conserva sus obligaciones de correspondencia y revisión; las integraciones de R3 y las garantías de memoria/custodia de R5 tienen pendientes propios.
+**Siguiente ejecución:** continuar Q2, construyendo una propiedad o potencial cuántico para los 40 índices distintos, nonces y cola; después completar Q4 y la cobertura de aceptación falsa de Q3. El extractor y la cota de campo propuestos requieren dictamen. Evaluar parámetros solo con el juego y presupuesto declarados. Acompañar la transferencia ROM con la revisión interna por potencial al solicitar M1–M6; integrar los complementos revisados en las salidas documentales y preparar la defensa. R1 mantiene sus obligaciones propias; las integraciones de R3 y las garantías de custodia de R5 siguen delimitadas.

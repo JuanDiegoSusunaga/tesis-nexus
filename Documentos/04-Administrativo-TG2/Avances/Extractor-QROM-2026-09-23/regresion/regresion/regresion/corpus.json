@@ -1,0 +1,238 @@
+{
+  "protocolo": "NEXUS-TG2-LINKED-FRI-v1",
+  "alcance": "Verificación independiente de SHA3, formato, Merkle, AIR y ambos FRI del corpus",
+  "aceptados": 8,
+  "rechazados_fri_traza": 6,
+  "certificados": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/honesto-16.bin",
+      "sha256": "305d9afdbf93719d2d60e1d94c4815bc9a4b88299d1e342d2460ad00ac3b6d37",
+      "T": 16,
+      "bits": 12,
+      "acepta": true,
+      "extracciones_indices": 66,
+      "hashes": 6497,
+      "longitudes_entrada": {
+        "17": 960,
+        "23": 1,
+        "33": 78,
+        "41": 1,
+        "46": 1,
+        "49": 1,
+        "52": 1,
+        "57": 2,
+        "65": 5441,
+        "73": 10,
+        "79": 1
+      }
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/honesto-64.bin",
+      "sha256": "6cff2bc873ed4210d35ceccca81b7faf465cdd3df001ae91cbe2a8e1dd592644",
+      "T": 64,
+      "bits": 12,
+      "acepta": true,
+      "extracciones_indices": 43,
+      "hashes": 10002,
+      "longitudes_entrada": {
+        "17": 1280,
+        "23": 1,
+        "33": 59,
+        "41": 1,
+        "46": 1,
+        "49": 1,
+        "52": 1,
+        "57": 2,
+        "65": 8641,
+        "73": 14,
+        "79": 1
+      }
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/honesto-256.bin",
+      "sha256": "aeb07f212fa949e4a626301c114bc6f7d8975cde0461a6a091c20f34efe4ed84",
+      "T": 256,
+      "bits": 12,
+      "acepta": true,
+      "extracciones_indices": 41,
+      "hashes": 14168,
+      "longitudes_entrada": {
+        "17": 1600,
+        "23": 1,
+        "33": 61,
+        "41": 1,
+        "46": 1,
+        "49": 1,
+        "52": 1,
+        "57": 2,
+        "65": 12481,
+        "73": 18,
+        "79": 1
+      }
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/honesto-4096.bin",
+      "sha256": "0de358d146e90bc21cc4bed44c4ec121732bf3167c6ba7f2af61eefb4b9a9073",
+      "T": 4096,
+      "bits": 12,
+      "acepta": true,
+      "extracciones_indices": 40,
+      "hashes": 24423,
+      "longitudes_entrada": {
+        "17": 2240,
+        "23": 1,
+        "33": 68,
+        "41": 1,
+        "46": 1,
+        "49": 1,
+        "52": 1,
+        "57": 2,
+        "65": 22081,
+        "73": 26,
+        "79": 1
+      }
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/lejano-16.bin",
+      "sha256": "b0af7f9b7f64aa6cc3ad641c37ac71b22233943cfab149e6ad4bba1d4c18e9ba",
+      "T": 16,
+      "bits": 12,
+      "acepta": false,
+      "motivo": "fri_traza",
+      "hashes_hasta_rechazo": 192
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/lejano-32.bin",
+      "sha256": "3ecd514ba6e9f7aa4e28ee18e769e3dd2e3172c28b8bd56a8e7c7c3e6fae3b9d",
+      "T": 32,
+      "bits": 12,
+      "acepta": false,
+      "motivo": "fri_traza",
+      "hashes_hasta_rechazo": 206
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/lejano-64.bin",
+      "sha256": "c864fab01988f5d2d59dc8302a9b91443c92cb0fd86a4401a3367399e65a85a4",
+      "T": 64,
+      "bits": 12,
+      "acepta": false,
+      "motivo": "fri_traza",
+      "hashes_hasta_rechazo": 231
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/honesto-16.bin",
+      "sha256": "b8e9a5bd1cb00320b6499397566ff78c18bd3bd3f04b231b04835e43b467687d",
+      "T": 16,
+      "bits": 20,
+      "acepta": true,
+      "extracciones_indices": 68,
+      "hashes": 6499,
+      "longitudes_entrada": {
+        "17": 960,
+        "23": 1,
+        "33": 80,
+        "41": 1,
+        "46": 1,
+        "49": 1,
+        "52": 1,
+        "57": 2,
+        "65": 5441,
+        "73": 10,
+        "79": 1
+      }
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/honesto-64.bin",
+      "sha256": "fd7028a250c2e0176c8fe3eaf6495921280137fa30d4849050d58faab5be88cb",
+      "T": 64,
+      "bits": 20,
+      "acepta": true,
+      "extracciones_indices": 44,
+      "hashes": 10003,
+      "longitudes_entrada": {
+        "17": 1280,
+        "23": 1,
+        "33": 60,
+        "41": 1,
+        "46": 1,
+        "49": 1,
+        "52": 1,
+        "57": 2,
+        "65": 8641,
+        "73": 14,
+        "79": 1
+      }
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/honesto-256.bin",
+      "sha256": "3d1b622590dca8c625301e170820a8c38444f2261b1c8ea38e6c2b8d89b1fe87",
+      "T": 256,
+      "bits": 20,
+      "acepta": true,
+      "extracciones_indices": 41,
+      "hashes": 14168,
+      "longitudes_entrada": {
+        "17": 1600,
+        "23": 1,
+        "33": 61,
+        "41": 1,
+        "46": 1,
+        "49": 1,
+        "52": 1,
+        "57": 2,
+        "65": 12481,
+        "73": 18,
+        "79": 1
+      }
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/honesto-4096.bin",
+      "sha256": "ed04343cb17d49ec4ccc2829230a9a7cc6ccf494e0af54d3b52822025791e8ac",
+      "T": 4096,
+      "bits": 20,
+      "acepta": true,
+      "extracciones_indices": 40,
+      "hashes": 24423,
+      "longitudes_entrada": {
+        "17": 2240,
+        "23": 1,
+        "33": 68,
+        "41": 1,
+        "46": 1,
+        "49": 1,
+        "52": 1,
+        "57": 2,
+        "65": 22081,
+        "73": 26,
+        "79": 1
+      }
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/lejano-16.bin",
+      "sha256": "18e08e787ae364414003fafb6c3f6f1779a612d8042d30d2a8e8f76ffa6e8bb5",
+      "T": 16,
+      "bits": 20,
+      "acepta": false,
+      "motivo": "fri_traza",
+      "hashes_hasta_rechazo": 195
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/lejano-32.bin",
+      "sha256": "5a097bf26deb75b0d69b3757dbe170a80d1824db63090422bd8f6c4e43be4bb8",
+      "T": 32,
+      "bits": 20,
+      "acepta": false,
+      "motivo": "fri_traza",
+      "hashes_hasta_rechazo": 209
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/lejano-64.bin",
+      "sha256": "ae452860dfd422e6130602b5bede72600043e1e92c8a74ff913d86a2e4251412",
+      "T": 64,
+      "bits": 20,
+      "acepta": false,
+      "motivo": "fri_traza",
+      "hashes_hasta_rechazo": 232
+    }
+  ]
+}

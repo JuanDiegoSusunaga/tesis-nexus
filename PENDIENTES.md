@@ -57,7 +57,8 @@
 - [ ] Revisar independientemente las demostraciones por rondas y ROM, incluyendo el nuevo argumento por potencial y la cola de índices. Registrar decisión de alcance sobre S1–S3 (S3–S5).
 - [ ] Estudiar parámetros fijando presupuesto adversario Q y probabilidad objetivo; distinguir esa probabilidad del trabajo estimado de ataque.
 - [x] Iniciar [QROM para TG2 v1](Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/README.md): reducción parcial basada solo en trabajo, 108 perfiles exactos, doce pruebas nuevas y contraste con CMS19/DFM20.
-- [ ] Completar Q1–Q5 del informe QROM: extractor sobre base sin orden, cadena de índices y nonces, enlace AIR/FRI, pérdidas del verificador y parámetros. La cota parcial llega a uno desde Q=451 para T=4096,g=20; no demuestra un ataque ni acredita 100 bits.
+- [x] Proponer el [extractor sin orden y la cota de escapes AIR/FRI en la base comprimida](Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/README.md): avance Q1 y Q3, 45 escenarios y catorce tests nuevos; dictamen pendiente.
+- [ ] Completar Q2, Q3–Q5: índices/nonces y cola, cobertura de toda aceptación falsa, transferencia al juego real y parámetros. La nueva cota de base no equivale a solidez del verificador; la cota PoW anterior conserva su límite. Revisar también el extractor propuesto antes de declarar cierre QROM.
 - [x] Preservar nueva serie R4: 17 casos Criterion y 40 mediciones STARK, con dispersión, fuentes y metadatos.
 - [x] Completar los dos benchmarks tras el cambio de Windows por el autor; fuentes, configuración y resultados conservados en R4-complemento.
 - [x] Definir el modelo de amenaza y residencia de regiones, inventario de representaciones y sensibilidad; tres pruebas R5 pasan.

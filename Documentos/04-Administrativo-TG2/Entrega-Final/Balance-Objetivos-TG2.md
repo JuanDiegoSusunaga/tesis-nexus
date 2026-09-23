@@ -28,6 +28,8 @@ La [revisión crítica interna posterior](../Avances/Revision-Critica-ROM-2026-0
 
 La [primera etapa QROM](../Avances/QROM-2026-09-23/README.md) añade una reducción explícita basada solo en la condición de trabajo, con 108 perfiles y doce pruebas nuevas; pasan 52 Python y 197 Rust. La cota es débil y no incorpora AIR/FRI. Se identifican las obligaciones Q1–Q5 de extractor, muestreo, composición y pérdidas antes de declarar una garantía cuántica completa.
 
+El [avance posterior de extracción QROM](../Avances/Extractor-QROM-2026-09-23/README.md) propone el extractor sin orden, su lema de estabilidad y una cota de escapes algebraicos en base comprimida. Catorce pruebas adicionales elevan el total a 66 Python y 197 Rust. La nueva cota describe un evento intermedio: falta controlar índices/nonces y demostrar el paso a aceptación falsa real. Ambos suplementos requieren dictamen independiente.
+
 | Tema | Acción concreta | Condición de cierre |
 |---|---|---|
 | Revisión formal R1 | Registrar revisor, observaciones y resolución de las correcciones | Dictamen del director o lector competente |

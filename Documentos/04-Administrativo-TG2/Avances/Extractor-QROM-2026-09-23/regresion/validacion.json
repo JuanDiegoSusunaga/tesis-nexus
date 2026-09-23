@@ -1,0 +1,166 @@
+{
+  "fecha_utc": "2026-09-23T18:10:47.818412+00:00",
+  "revisiones": {
+    "documentos_base": "02e83a1cb6da0305ab57ab85a4e236e10fe3dba9",
+    "codigo": "01dcde960402b6c60a19242b7ae3d6ac3d82a518",
+    "rama_documentos": "main",
+    "rama_codigo": "main"
+  },
+  "estado": "Cota QROM propuesta basada solo en PoW; compilación AIR/FRI y dictamen externo pendientes",
+  "pruebas_python": 52,
+  "pruebas_nuevas": 12,
+  "pruebas_rust": 197,
+  "corpus": {
+    "total": 14,
+    "aceptados": 8,
+    "rechazados_fri_traza": 6
+  },
+  "escenarios_trabajo": 108,
+  "escenarios_busqueda": 12,
+  "tablas_oraculo_enumeradas": 256,
+  "rondas_por_tabla": [
+    0,
+    1,
+    2
+  ],
+  "obstaculos_muestreo": 9,
+  "archivos_protegidos": 107,
+  "codigo_sin_cambios": true,
+  "manifiesto_897": "verificado por la regresión",
+  "CARGO_TARGET_DIR": "C:/tmp/nexus-target",
+  "ejecuciones": [
+    {
+      "nombre": "pruebas-qrom",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_qrom_tg2.py",
+        "-v"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "calculos",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/analizar_qrom_tg2.py",
+        "--salida",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\04-Administrativo-TG2\\Avances\\Extractor-QROM-2026-09-23\\regresion\\calculos-reproducidos.json"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "regresion",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/verificar_revision_rom_tg2.py",
+        "--salida",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\04-Administrativo-TG2\\Avances\\Extractor-QROM-2026-09-23\\regresion\\regresion"
+      ],
+      "codigo_salida": 0
+    }
+  ],
+  "fuentes": [
+    {
+      "original": "scripts/analizar_qrom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/regresion/fuentes/scripts/analizar_qrom_tg2.py",
+      "sha256": "fc1d1fcdc78d50d73306209aca41d0f3d14b4aa894429341e689922d7a1120f3",
+      "bytes": 4525
+    },
+    {
+      "original": "scripts/verificar_qrom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/regresion/fuentes/scripts/verificar_qrom_tg2.py",
+      "sha256": "e1952bf9fa1db545ca6444339ca5bb7ea63c1140a06c4a4e9d2e5c72d2cac967",
+      "bytes": 6372
+    },
+    {
+      "original": "scripts/recopilar_fuentes_qrom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/regresion/fuentes/scripts/recopilar_fuentes_qrom_tg2.py",
+      "sha256": "e1bea4159fbf3144da743926a1001f02b8621f11951678bb9c91df9a94c18573",
+      "bytes": 2501
+    },
+    {
+      "original": "scripts/tests/test_qrom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/regresion/fuentes/scripts/tests/test_qrom_tg2.py",
+      "sha256": "06aec76f26874b30d5b77c35ab0a9e92b9e2abb6151049a05bf5b77b509d2459",
+      "bytes": 8584
+    }
+  ],
+  "archivos": [
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/README.md",
+      "sha256": "dd8ce7781df048711394b4c31db9faeaf924be4b6d06f2a62234d241cf6d6485",
+      "bytes": 3181
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/Primer-Paso-QROM.md",
+      "sha256": "3fd70b00af39c47bffbefd78f5366df3b0da412d492ae069aa10406273422fe8",
+      "bytes": 16993
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/calculos.json",
+      "sha256": "cd7748fb46352482f3f713ef879dcb3623eada88bb542f0afece4e87a469c53b",
+      "bytes": 37614
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/bibliografia/CMS19.pdf",
+      "sha256": "c3258e2faa339bdc441403d73aba9fee7d03687121c3369ef007ccce71cd2b41",
+      "bytes": 653660
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/bibliografia/CMS19.txt",
+      "sha256": "5155865ccf23d95bbefd40ec35798853b8cf4550783b4ba63f3effd6f622c86c",
+      "bytes": 168888
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/bibliografia/DFM20.pdf",
+      "sha256": "73c54083050c9170769ca3cfbe38f05395e4a6db39e4fffa1b8992b59ef824aa",
+      "bytes": 405689
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/bibliografia/DFM20.txt",
+      "sha256": "05fbd036e949c6e8e3313b3448f7ecacc1c873fa5ccb0b5bd297eefc3ad81d20",
+      "bytes": 81367
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/bibliografia/fuentes.json",
+      "sha256": "ad4ccbc1eadaa18125050ae3b48d2faaac04585cb5ee71afefc8c267f5524be4",
+      "bytes": 6916
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/regresion/pruebas-qrom.log",
+      "sha256": "e799ee1a82a608fdcad7f3a6300e6ee70bdf57cbfa179d21440778a7f72fff10",
+      "bytes": 1472
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/regresion/calculos.log",
+      "sha256": "d878105f8dd2eb5b04c7a4fe06e06bc22dcca04f1fef16d1da4491b82040c3be",
+      "bytes": 56
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/regresion/regresion.log",
+      "sha256": "2eeecdec69e766c62b6f72a856b0cfc4fe308f54b1b4f700b28fae0856b3f270",
+      "bytes": 286
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/regresion/calculos-reproducidos.json",
+      "sha256": "cd7748fb46352482f3f713ef879dcb3623eada88bb542f0afece4e87a469c53b",
+      "bytes": 37614
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/regresion/proteccion.json",
+      "sha256": "706e65b7cba372af5a8064c5ca5bed529276be3c8341e351ebb4c6204249e516",
+      "bytes": 23433
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/regresion/regresion/validacion.json",
+      "sha256": "bcde1990bb6dc61e3d3a55bd98d8163510231ea5f2779edef0bbdfaa40a33a6a",
+      "bytes": 5164
+    }
+  ]
+}

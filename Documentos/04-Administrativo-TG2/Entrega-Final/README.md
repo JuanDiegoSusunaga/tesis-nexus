@@ -18,6 +18,7 @@
 | Preparación de sustentación | [Guion](../Presentaciones/Guion-Sustentacion-TG2.md) |
 | Revisión interna posterior de ROM | [Potencial para nonces adaptativos y controles de premisas](../Avances/Revision-Critica-ROM-2026-09-23/README.md); dictamen externo pendiente |
 | Primera etapa QROM | [Cota parcial de PoW y obligaciones Q1–Q5](../Avances/QROM-2026-09-23/README.md); transferencia cuántica completa AIR/FRI pendiente |
+| Extractor QROM y escapes de campo | [Extracción sin orden y estabilidad](../Avances/Extractor-QROM-2026-09-23/README.md); cota en base comprimida, todavía sin transferencia completa a aceptación real |
 
 Se enlaza una sola edición del manuscrito; esta carpeta no duplica los archivos Word/PDF. El manifiesto vincula el commit de código con los hashes del manuscrito y de `06-Evidencia-TG2`. Los complementos posteriores de `Avances/` tienen sus propios registros `validacion.json`; todavía no están incorporados en el Word ni en el manuscrito. La revisión Git documental identifica el conjunto.
 

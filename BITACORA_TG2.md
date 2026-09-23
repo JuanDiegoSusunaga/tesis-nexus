@@ -1,5 +1,15 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Extractor QROM y escapes AIR/FRI, 23 de septiembre de 2026
+
+Se continuó en `main` con Q1 y parte de Q3. El [nuevo suplemento](Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/Extractor-y-Escapes-QROM.md) define un extractor determinista de Merkle y del prefijo AIR/FRI sobre una base de consultas sin orden temporal. La extracción completa regiones ausentes con cero, comprueba gramática, raíces compartidas y valores canónicos, y admite el solapamiento nodo/enunciado de 65 bytes. No presupone registrar clásicamente las consultas de un adversario cuántico.
+
+**Resultado propuesto:** fuera de colisiones, una inserción que cambia la extracción en un estado fijo debe acertar a ese estado o a una ventana de una entrada antigua; cada entrada pertinente aporta como máximo 48 ventanas. Se define una propiedad de escape algebraico, se controlan ambas direcciones de cambio y se aplican los lemas 5.9–5.10 de CMS19. La cota en la base comprimida es `min(1,6L²((N/2)μ+(49L+1)/2^256))`. Su evento es colisión o escape de campo, no aceptación del verificador. El paso al juego real, los índices, los nonces y la cola permanecen pendientes; no se combina esta cota con la de PoW sin demostrar esa relación.
+
+**Evidencia:** 45 escenarios exactos, 14 prefijos reconstruidos independientemente del orden, 236 retos de extensión y 1.974 aperturas AIR con caminos registrados. Catorce tests nuevos incluyen los 18 perfiles, ciclos, entradas ambiguas, 2.688 inserciones sin colisión y controles de las premisas. Pasan **66 Python, 197 Rust, cargo check y cargo build**. El manifiesto de 897 archivos, TG1 y los cuatro paquetes matemáticos anteriores se preservan; Rust sigue limpio. [Registro y fuentes](Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/validacion.json).
+
+La regla AIR/FRI excepcional se define matemáticamente a partir de la demostración por rondas; los scripts no enumeran el espacio de polinomios ni certifican el teorema general. Se actualizan índices, ruta, balance, revisión M1–M6 y brief. Q2 es el siguiente punto de investigación y Q4 sigue abierto. El dictamen independiente no se ha recibido; manuscrito y Word conservan su edición identificada.
+
 ## Primera etapa QROM, 23 de septiembre de 2026
 
 Por solicitud del autor se continuó la investigación en `main`. Se conservaron dos fuentes primarias completas: CMS19, versión de portada del 14 de enero de 2020, y DFM20, arXiv v3 del 7 de marzo de 2022, con extracción por página y SHA-256. Se escribió el [informe QROM](Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/Primer-Paso-QROM.md).

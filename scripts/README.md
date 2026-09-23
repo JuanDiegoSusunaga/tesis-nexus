@@ -131,3 +131,14 @@ python scripts/verificar_qrom_tg2.py --salida .tools/qrom-repeticion/verificacio
 Se calculan 108 perfiles, doce búsquedas cuánticas pequeñas y nueve contrastes del muestreo. Los doce tests nuevos comprueban, entre otros, 14 prefijos del corpus y 256 tablas de un oráculo XOR. La regresión reúne **52 Python, 197 Rust, check/build y manifiesto de 897 archivos**. Se preservan TG1 y los tres paquetes matemáticos anteriores. Las salidas son exclusivas y Cargo requiere escritura en `C:/tmp/nexus-target`.
 
 `recopilar_fuentes_qrom_tg2.py` descarga CMS19 y DFM20 y conserva texto por página, versión y hashes. Solo ese colector requiere red y PyMuPDF 1.28.2; el README del informe documenta el entorno aislado empleado. La cota parcial es débil, no se interpreta como ataque y no completa QROM de AIR/FRI.
+
+## 12. Extractor QROM y escapes de campo
+
+El [suplemento del extractor](../Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/README.md) define la extracción del prefijo y Merkle desde una base sin orden, prueba estabilidad y acota escapes algebraicos en la base comprimida. La cota no es todavía la probabilidad de aceptación del verificador.
+
+```powershell
+python scripts/analizar_extractor_qrom_tg2.py --salida .tools/extractor-qrom-repeticion/calculos.json
+python scripts/verificar_extractor_qrom_tg2.py --salida .tools/extractor-qrom-repeticion/verificacion
+```
+
+Solo usa la biblioteca estándar de Python. El extractor no consulta SHA3; el auditor instrumenta el corpus clásico para contrastarlo. Registra 45 escenarios, 14 certificados, 236 retos y 1.974 aperturas AIR. Los catorce tests incluyen 2.688 inserciones, ambas direcciones de una propiedad artificial y el control de sobrescritura. La regresión reúne **66 Python, 197 Rust, check/build y manifiesto de 897 archivos**, y protege TG1 y los cuatro complementos anteriores. Las salidas deben ser nuevas y Cargo requiere escritura en `C:/tmp/nexus-target`.

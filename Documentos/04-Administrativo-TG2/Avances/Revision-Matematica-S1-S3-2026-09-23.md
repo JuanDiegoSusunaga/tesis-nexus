@@ -4,6 +4,8 @@
 
 ## Material y orden de lectura
 
+**Extractor QROM y componente de campo:** [lema de estabilidad y cota en base comprimida](Extractor-QROM-2026-09-23/README.md). Avanza Q1 y Q3 con catorce tests nuevos, 66 Python y 197 Rust en la regresión. Para M5 se solicita revisar también la unicidad de preimágenes, las dos direcciones de inestabilidad y la aplicación de CMS19. La selección de índices y el paso de base comprimida a aceptación real permanecen abiertos.
+
 **Nueva etapa QROM:** [reducción parcial de PoW y obligaciones Q1–Q5](QROM-2026-09-23/README.md). Se deriva una cota explícita mediante DFM20 y se identifican las diferencias frente al compilador de CMS19. La revisión de M5 debe considerar por separado esta reducción y el paso aún abierto que incorpora AIR/FRI. Se añaden doce tests, con 52 Python y 197 Rust en la regresión; los experimentos no sustituyen el dictamen.
 
 **Suplemento de revisión interna:** [revisión crítica y potencial para nonces adaptativos](Revision-Critica-ROM-2026-09-23/README.md). Refuerza §§5–8 de la transferencia ROM y añade 96 escenarios de estrategias exactas; mantiene la fórmula. No constituye el dictamen independiente solicitado.
@@ -40,7 +42,7 @@ El objeto revisado es una recurrencia AIR demostrativa. La validez de firmas ML-
 - Auditoría de correspondencia Merkle/Fiat–Shamir y distribución exacta bajo sus hipótesis.
 - Nueva demostración propuesta en ROM clásico, con 108 escenarios y verificador independiente completo del corpus; once pruebas nuevas y 28 Python en total.
 
-La demostración ROM propuesta y la nueva cota QROM parcial siguen pendientes de dictamen. La segunda controla solo la condición de trabajo: no acredita una garantía QROM completa de AIR/FRI, seguridad incondicional de SHA3, 100 bits, conocimiento cero ni la validación completa de una blockchain. El análisis se refiere exclusivamente a la variante experimental vinculada TG2 v1 y su AIR demostrativo.
+La demostración ROM y los dos resultados parciales QROM siguen pendientes de dictamen. Uno controla el trabajo; el otro, colisiones y escapes de campo en la base comprimida. Falta una garantía QROM completa de AIR/FRI para el juego de aceptación real. No se acredita seguridad incondicional de SHA3, 100 bits, conocimiento cero ni validación completa de una blockchain. El análisis se refiere exclusivamente a TG2 v1 y su AIR demostrativo.
 
 ## Registro de resolución
 
