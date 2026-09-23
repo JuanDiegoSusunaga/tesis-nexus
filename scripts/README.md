@@ -83,7 +83,7 @@ El generador verifica contenido de tablas y cantidad de ecuaciones nativas antes
 
 ## 8. Investigación de solidez por rondas
 
-La rama `investigacion/cierre-matematico-tg2` añade una [derivación conjunta AIR/FRI](../Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md). Los cálculos usan exclusivamente la biblioteca estándar de Python:
+La [derivación conjunta AIR/FRI](../Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md) se desarrolló en `investigacion/cierre-matematico-tg2` y se integró en `main` el 23 de septiembre. Los cálculos usan exclusivamente la biblioteca estándar de Python:
 
 ```powershell
 python -m unittest discover -s scripts/tests -p test_rbr_conjunto_tg2.py -v
@@ -92,3 +92,17 @@ python scripts/verificar_rbr_conjunto_tg2.py --salida .tools/cierre-matematico/v
 ```
 
 El último comando conserva logs de las siete pruebas matemáticas, diez pruebas del manifiesto, la verificación histórica y cargo check/test/build, junto con hashes y revisión Git. Requiere Rust y las dependencias locales; usa `C:/tmp/nexus-target`. Las salidas rechazan sobrescrituras. Los contrastes finitos no sustituyen revisión matemática ni prueban seguridad del ejecutable. El manifiesto excluye los archivos temporales de propietario de Word que empiezan por `~$` y tienen extensión de Word, de modo que abrir un documento no se confunde con modificar la edición.
+
+## 9. Transferencia clásica ROM al protocolo TG2 v1
+
+El [informe de transferencia](../Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/README.md) modela SHA3 como un único oráculo aleatorio y explicita el presupuesto adversario, el sesgo de campo, Merkle, el canal y los nonces. La derivación está propuesta para revisión independiente; no establece seguridad QROM ni 100 bits.
+
+```powershell
+python -m unittest discover -s scripts/tests -p test_transferencia_rom_tg2.py -v
+python scripts/analizar_transferencia_rom_tg2.py --salida .tools/transferencia-rom/repeticion.json
+python scripts/verificar_transferencia_rom_tg2.py --salida .tools/transferencia-rom/verificacion
+```
+
+La comprobación completa usa la biblioteca estándar de Python y Cargo con las dependencias locales. Ejecuta 28 pruebas Python, 197 Rust, check/build y el manifiesto de 897 archivos; conserva fuentes exactas, logs y hashes. El código debe estar limpio. La salida rechaza sobrescrituras: usar una carpeta nueva para cada repetición. Cargo escribe en `C:/tmp/nexus-target`, que debe ser accesible.
+
+`verificar_certificados_tg2.py` comprueba los 14 certificados preservados con aritmética Python y `hashlib`: formato admitido, transcripción, aperturas Merkle, composición AIR y ambos FRI. Su límite de 512 extracciones protege la herramienta; el Rust v1 no tiene ese corte y la demostración contabiliza su cola. Es una referencia para el corpus, no un decodificador de producción endurecido.

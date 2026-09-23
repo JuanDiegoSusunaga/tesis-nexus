@@ -2,6 +2,8 @@
 
 ## Actualización vigente — 23 de septiembre de 2026
 
+**Último avance matemático, integrado en `main`:** la [derivación AIR/FRI por rondas](Avances/Cierre-Matematico-2026-09-23/README.md) y la [transferencia clásica ROM a TG2 v1](Avances/Transferencia-ROM-2026-09-23/README.md) proponen una demostración con extracción Merkle, canal hash y nonces adaptativos, acompañada de 108 escenarios. Pasan 28 pruebas Python y 197 Rust, con check/build. El verificador independiente reproduce ocho aceptaciones honestas y seis rechazos de oráculos alejados. La demostración requiere dictamen independiente; los parámetros no quedan acreditados con 100 bits y QROM sigue abierto. Los párrafos siguientes describen los antecedentes técnicos de este complemento; el manuscrito y el Word conservan su edición anterior.
+
 El contenido anterior de preparación de reunión se conserva abajo como registro histórico. El estado actual es: 197 pruebas repetidas correctamente el 23 de septiembre y diez casos de FRI vinculada en release el día 22, monitor/gestor/registro local implementados; R4 y complemento con 29 casos Criterion, 40 mediciones STARK y 40 repeticiones multinúcleo; R5 con inventario, modelo de captura y sensibilidad. La reexpansión por firma es experimental y la semilla preserva capacidad de firma.
 
 R1 identifica el perfil ML-DSA puro, hedged y de contexto vacío, comprueba parámetros y explicita las condiciones de los teoremas. La condición examinada de JMW24 no permite su aplicación directa a los tres perfiles. Se conservan cinco fuentes primarias y tres pruebas nuevas de correspondencia. Permanecen las obligaciones de expansión, codificaciones, fuente/KDF, terminación y revisión matemática externa.

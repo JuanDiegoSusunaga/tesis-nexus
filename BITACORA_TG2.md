@@ -1,5 +1,19 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Integración en main y transferencia clásica ROM, 23 de septiembre de 2026
+
+Por solicitud del autor, se integró `investigacion/cierre-matematico-tg2` en **`main` de ambos repositorios**. Documentos avanzó por fast-forward a `0e109fc`; código ya compartía la revisión `01dcde960402b6c60a19242b7ae3d6ac3d82a518`. La integración es local y las ramas de investigación se conservan.
+
+Se escribió la [transferencia al protocolo experimental TG2 v1](Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md), modelando todas sus llamadas a SHA3-256 como un único oráculo aleatorio clásico. La demostración propuesta combina extracción Merkle desde el registro de consultas, estados del canal, masa máxima de retos de extensión, nonces adaptativos y la cola del muestreo de índices. Permite el solapamiento de las entradas de 65 bytes de nodo y enunciado; no presupone separación total de dominios.
+
+Con las definiciones del informe, la cota es `min(1, S(49S+B)/2^256 + (Q+m)(N/2)μ + (Q+1)2^-g(h+τ))`. Se preservan 108 escenarios con fracciones exactas. Para `T=4096`, `g=20` y `Q=2^20`, el límite superior redondeado es **0,004757335454**; para `Q=2^28`, la cota llega a uno. No son tasas observadas ni una demostración de ataque. El resultado propuesto requiere revisión independiente; no acredita QROM ni 100 bits.
+
+El nuevo verificador Python independiente comprueba transcripción, Merkle, composición AIR y ambos FRI: **ocho certificados honestos aceptados y seis alejados rechazados en FRI de traza**, de acuerdo con Rust. Se añadieron once pruebas que cubren cuentas, sesgo, cola, extracción congelada, referencias adelantadas, colisiones, orden de candidatos y mutaciones. Los ejemplos finitos no certifican la demostración general.
+
+**Validación:** **28 pruebas Python y 197 Rust**, cargo check de todos los targets y cargo build correctos. Se comprobaron los 897 archivos del manifiesto, la preservación de TG1 y del paquete matemático anterior, y el código limpio. [Logs, fuentes y hashes](Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/validacion.json). El primer intento falló exclusivamente por acceso denegado a `C:/tmp/nexus-target/debug/.cargo-build-lock`; sus logs se conservaron y se repitió con permiso de escritura.
+
+**Estado documental:** este complemento y la derivación ideal anterior están enlazados desde los índices, la ruta, el balance y las preguntas M1–M6. El manuscrito y el Word de derivaciones conservan su edición identificada; los complementos tienen validaciones propias. Próximos pasos: dictamen de ambas demostraciones, suficiencia de parámetros y reducción QROM si se exige garantía cuántica. R1-A–D de ML-DSA permanece separado. No se atribuye aprobación académica previa a estas derivaciones. Las entradas siguientes son registros históricos.
+
 ## Investigación de solidez por rondas, 23 de septiembre de 2026
 
 Por solicitud del autor se creó **`investigacion/cierre-matematico-tg2` en los dos repositorios**, desde documentos `24ca355d35bbfb726fe901b824536c72cef0c953` y código `01dcde960402b6c60a19242b7ae3d6ac3d82a518`. Se inicia el intento de resolver la brecha matemática AIR/FRI; no se publica ni fusiona la rama.

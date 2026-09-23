@@ -51,7 +51,10 @@
 - [x] Auditar Merkle/Fiat–Shamir: 14 certificados, 560 consultas y 18.880 aperturas reconstruidos; sesgo de campo y condiciones de compilación documentados.
 - [x] Preparar el paquete de revisión matemática S1–S3 con seis preguntas y evidencia enlazada.
 - [x] Abrir `investigacion/cierre-matematico-tg2` en documentos y código; escribir una función de estado por rondas para AIR y ambos FRI, con un lema elemental de acuerdo y nuevas cotas ideales. [Derivación de la rama](Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md).
-- [ ] Revisar independientemente esa derivación y justificar la compilación del protocolo conjunto: extracción de oráculos, canal hash, consulta en cadena, nonces y pérdidas ROM/QROM. Registrar decisión de alcance sobre S1–S3 (S3–S5).
+- [x] Integrar la rama de investigación en `main` de ambos repositorios y escribir la [transferencia al protocolo TG2 v1 en ROM clásico](Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/README.md): extracción por registro hash, canal, nonces adaptativos, pérdidas y 108 escenarios.
+- [x] Completar el verificador Python independiente de AIR y ambos FRI: ocho certificados honestos aceptados y seis alejados rechazados como en Rust; once pruebas nuevas.
+- [ ] Revisar independientemente las demostraciones por rondas y ROM, especialmente extracción, gramática del canal y acoplamiento de candidatos adaptativos. Registrar decisión de alcance sobre S1–S3 (S3–S5).
+- [ ] Desarrollar una reducción QROM si se exige garantía cuántica del protocolo; resolver los parámetros antes de acreditar 100 bits. La cota ROM propuesta puede llegar a uno y no demuestra un ataque.
 - [x] Preservar nueva serie R4: 17 casos Criterion y 40 mediciones STARK, con dispersión, fuentes y metadatos.
 - [x] Completar los dos benchmarks tras el cambio de Windows por el autor; fuentes, configuración y resultados conservados en R4-complemento.
 - [x] Definir el modelo de amenaza y residencia de regiones, inventario de representaciones y sensibilidad; tres pruebas R5 pasan.

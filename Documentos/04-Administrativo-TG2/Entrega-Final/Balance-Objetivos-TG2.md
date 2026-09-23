@@ -17,6 +17,7 @@
 - Contraejemplo de proximidad con enunciado válido y control exhaustivo experimental.
 - Variante TG2 que vincula FRI de traza con AIR mediante una raíz compartida, probada con casos honestos y oráculos alejados.
 - Derivación conservadora en un modelo interactivo ideal y auditoría de correspondencia Merkle/Fiat–Shamir.
+- [Derivación por rondas](../Avances/Cierre-Matematico-2026-09-23/README.md) y [transferencia clásica ROM al protocolo TG2 v1](../Avances/Transferencia-ROM-2026-09-23/README.md), integradas en `main`: demostraciones propuestas, 108 escenarios exactos y verificación independiente completa de 14 certificados. Revisión externa pendiente; QROM y 100 bits no acreditados.
 - Inventario de representaciones y modelo de residencia W; la política de reexpansión se evalúa en un benchmark y no está integrada en el gestor.
 
 Las **197 pruebas** comprueban comportamientos del software en los casos ensayados. Los teoremas citados, las derivaciones y las garantías de despliegue tienen sus propias hipótesis; el conteo de pruebas no las sustituye.
@@ -27,7 +28,7 @@ Las **197 pruebas** comprueban comportamientos del software en los casos ensayad
 |---|---|---|
 | Revisión formal R1 | Registrar revisor, observaciones y resolución de las correcciones | Dictamen del director o lector competente |
 | Argumentos S1–S3 | Resolver las seis preguntas del [paquete M1–M6](../Avances/Revision-Matematica-S1-S3-2026-09-23.md) | Dictamen y decisión sobre suficiencia para el alcance aprobado |
-| Garantía concreta del ejecutable | Si se exige, completar correspondencia R1, revisar la nueva derivación por rondas y justificar la compilación ROM-QROM del protocolo conjunto | Hipótesis y pérdidas verificadas; las cotas ideales no bastan |
+| Garantía concreta del ejecutable | Si se exige, completar correspondencia R1, revisar las demostraciones por rondas y ROM y desarrollar la reducción QROM | Dictamen sobre hipótesis y pérdidas; parámetros suficientes para la garantía declarada |
 | Despliegue de claves | Si se afirma protección operativa completa, integrar fuente, custodia durable, épocas y anclaje | Evidencia de integración y recuperación bajo el modelo declarado |
 | Protección física de residencia | Si se afirma reducción efectiva de exposición, observar copias/residuos y proteger semilla | Medición de la frontera declarada y política implementada |
 | Series históricas | Conciliar revisión, condiciones y cifras donde faltan metadatos | Procedencia identificada o limitación histórica conservada |
