@@ -1,0 +1,89 @@
+{
+  "fecha": "2026-09-22",
+  "registro_local": "2026-09-22T12:43:50.838150-05:00",
+  "alcance": "Gestor de claves y registro público R3; atomicidad en memoria y recuperación del historial público.",
+  "limites": [
+    "Sin anclaje externo L1 ni integración con el sequencer heredado.",
+    "No persiste semillas ni claves privadas; no recupera un firmador tras caída.",
+    "El checkpoint debe custodiarse independientemente y actualizarse.",
+    "Las muestras sintéticas no califican una fuente física; no demuestra borrado de todas las copias en RAM."
+  ],
+  "cargo_target_dir": "C:\\tmp\\nexus-target",
+  "toolchain": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.1\nLLVM version: 22.1.6",
+  "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+  "git_head": "6ec77633951004f37088abcdd41aa78ad290f36f",
+  "git_estado": "M README.md\n M nexus-crypto/Cargo.toml\n M nexus-crypto/src/entropy.rs\n M nexus-crypto/src/keypair.rs\n M nexus-crypto/src/lib.rs\n M nexus-sentinel/src/lib.rs\n M nexus-zk/examples/stark_demo.rs\n?? nexus-crypto/benches/residencia_bench.rs\n?? nexus-crypto/examples/\n?? nexus-crypto/src/registry.rs",
+  "comandos": [
+    {
+      "comando": "cargo check --workspace --all-targets --locked --offline --manifest-path nexus/Cargo.toml",
+      "resultado": "correcto",
+      "registro": "r3-cargo-check-all.log",
+      "sha256": "7d1c255f46b4bb5c6a9a4851082510640df1bae38d5bfc48637bc5a2acd34e9d"
+    },
+    {
+      "comando": "cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "resultado": "correcto",
+      "registro": "r3-cargo-test.log",
+      "sha256": "d1d42b7287edd083893b0af36c4e32ff45e6332805acf34796ce4c4fe8efdca5"
+    },
+    {
+      "comando": "cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "resultado": "correcto",
+      "registro": "r3-cargo-build.log",
+      "sha256": "a20c21933946414b2360d6138339bfb25e0cad56facf0c6e989da2d2bc84e4b3"
+    },
+    {
+      "comando": "cargo run -p nexus-crypto --example rotation_demo --locked --offline --manifest-path nexus/Cargo.toml -- .tools/r3-registry.bin",
+      "resultado": "correcto",
+      "registro": "r3-demo.log",
+      "sha256": "ba773f4e12218eff7f9c3781f41b79b87d016b8da6cad3374b263f72f5578b07"
+    }
+  ],
+  "pruebas_totales": 142,
+  "pruebas_nuevas_r3": 19,
+  "benchmarks_repetidos": false,
+  "demostracion": "identidades=2; epoca=1; registros=3; archivo_bytes=28416; rotacion_bytes=17498\r\nbloqueo_por_fallo=true; bloqueo_antes_de_rotar=true; claves_cambiadas=true\r\nfirma_anterior_vigente=false; firma_anterior_historica=true; firma_nueva_vigente=true\r\ncheckpoint_head=f12278917538d0559d7188f938063c49979e04c4c6f47982ef70148a7add98d9",
+  "archivo_publico": {
+    "archivo": "registro-publico-demo.bin",
+    "bytes": 28416,
+    "sha256": "0e1eb69d4129a7c78f080b57e2a1dab3c63b7bfe8690f0d160fd4715c72f4bf0"
+  },
+  "fuentes": [
+    {
+      "archivo": "Cargo.toml",
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea"
+    },
+    {
+      "archivo": "Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    },
+    {
+      "archivo": "nexus-crypto/Cargo.toml",
+      "sha256": "106f1fff3dd0158804e800bf562eab73359473e5f7afa21769754551aa7c0be3"
+    },
+    {
+      "archivo": "nexus-crypto/src/entropy.rs",
+      "sha256": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f"
+    },
+    {
+      "archivo": "nexus-crypto/src/keypair.rs",
+      "sha256": "c54b41ef0f80a396bbf7a0d0943521fd416b6dd42d933eac090dddba6d995334"
+    },
+    {
+      "archivo": "nexus-crypto/src/registry.rs",
+      "sha256": "c512c6ce48321b8ce0f71bc3c45691f079fa427b018b1d805a6ce97c21467b50"
+    },
+    {
+      "archivo": "nexus-crypto/src/lib.rs",
+      "sha256": "6154dce44c5dc2ec229f3cb47ed7c56293c6b2d4c2227b2066e96deb4d74eec9"
+    },
+    {
+      "archivo": "nexus-crypto/src/dilithium.rs",
+      "sha256": "f414f7970bdda33de52b93ffcb26ff758898697060c639173fa99a0fe4a08d4e"
+    },
+    {
+      "archivo": "nexus-crypto/examples/rotation_demo.rs",
+      "sha256": "20980e891511dcc252e5b628445527022798bb0d4ccc2bb3856380bc1ac16154"
+    }
+  ]
+}

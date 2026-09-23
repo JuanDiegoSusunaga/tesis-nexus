@@ -1,0 +1,133 @@
+{
+  "tablas_con_contenido_identico": 22,
+  "celdas_comparadas": 501,
+  "sha256_contenido_tablas": "41ac22c61907402994024235b9e17ec21faaa536172428d35c3a4c3eb3836037",
+  "paginas_pdf": 77,
+  "paginas_con_tablas": [
+    {
+      "pagina": 11,
+      "rotulos": [
+        "Tabla 1.1"
+      ]
+    },
+    {
+      "pagina": 13,
+      "rotulos": [
+        "Tabla 2.1"
+      ]
+    },
+    {
+      "pagina": 19,
+      "rotulos": [
+        "Tabla 3.1"
+      ]
+    },
+    {
+      "pagina": 21,
+      "rotulos": [
+        "Tabla 3.2"
+      ]
+    },
+    {
+      "pagina": 22,
+      "rotulos": [
+        "Tabla 3.3"
+      ]
+    },
+    {
+      "pagina": 28,
+      "rotulos": [
+        "Tabla 4.1"
+      ]
+    },
+    {
+      "pagina": 31,
+      "rotulos": [
+        "Tabla 4.2"
+      ]
+    },
+    {
+      "pagina": 32,
+      "rotulos": [
+        "Tabla 4.3"
+      ]
+    },
+    {
+      "pagina": 42,
+      "rotulos": [
+        "Tabla 5.1"
+      ]
+    },
+    {
+      "pagina": 48,
+      "rotulos": [
+        "Tabla 6.1"
+      ]
+    },
+    {
+      "pagina": 52,
+      "rotulos": [
+        "Tabla 6.2"
+      ]
+    },
+    {
+      "pagina": 54,
+      "rotulos": [
+        "Tabla 6.3"
+      ]
+    },
+    {
+      "pagina": 55,
+      "rotulos": [
+        "Tabla 6.4"
+      ]
+    },
+    {
+      "pagina": 56,
+      "rotulos": [
+        "Tabla 6.5"
+      ]
+    },
+    {
+      "pagina": 57,
+      "rotulos": [
+        "Tabla 6.6",
+        "Tabla 6.7"
+      ]
+    },
+    {
+      "pagina": 58,
+      "rotulos": [
+        "Tabla 6.8"
+      ]
+    },
+    {
+      "pagina": 59,
+      "rotulos": [
+        "Tabla 6.9"
+      ]
+    },
+    {
+      "pagina": 61,
+      "rotulos": [
+        "Tabla 6.10"
+      ]
+    },
+    {
+      "pagina": 62,
+      "rotulos": [
+        "Tabla 6.11",
+        "Tabla 6.12"
+      ]
+    },
+    {
+      "pagina": 67,
+      "rotulos": [
+        "Tabla 7.1"
+      ]
+    }
+  ],
+  "paginas_vacias": [],
+  "texto_fuera_de_margenes": [],
+  "sha256_pdf": "4e65904572e3b70dc31dbd038b1d334c1d710af5b7b6d7e9eb03cfeaf7dc3ad2"
+}

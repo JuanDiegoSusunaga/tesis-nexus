@@ -1,0 +1,168 @@
+{
+  "fecha": "2026-09-22",
+  "etapa": "R4 cota interactiva ideal",
+  "paginas_word": 106,
+  "paginas_pdf": 93,
+  "tablas": 31,
+  "celdas": 804,
+  "ecuaciones_word": 531,
+  "ecuaciones_bloque": 29,
+  "figuras": 3,
+  "revision_visual": "Inspección del 2026-09-22: sección 6.7.5, Tabla 6.19 y fórmulas 27–29 completas en Word pp. 88–90 y PDF pp. 78–80; láminas finales de ecuaciones revisadas en ambos formatos, sin recortes de las fórmulas observados. Las 31 tablas conservan rótulo y cuerpo en una misma página Word; 804 celdas coinciden con la conversión independiente. PDF sin páginas vacías ni texto fuera de márgenes. Las tres figuras y las 26 fórmulas previas conservan fuentes, dimensiones y ubicaciones registradas; se mantiene su revisión anterior. El peso aparente de las letras en la rasterización EMF de Word no implica negrita global. Se cotejaron visualmente también las páginas 34 y 40 del PDF primario BGK23 conservado.",
+  "imagenes_inspeccionadas": [
+    {
+      "archivo": "revision-visual/word-088.png",
+      "sha256": "d4bdc81d7f25de9644ea8c2e58d2942667c3f9db422e503c0bb4d80d48cc587b"
+    },
+    {
+      "archivo": "revision-visual/word-089.png",
+      "sha256": "8891036da4475ed01e8604c6c752c4eb0b0397164045d2c47b978f97ef458887"
+    },
+    {
+      "archivo": "revision-visual/word-090.png",
+      "sha256": "bafb7a252ea067afb38f8b305f214bb3c89291bfc50e6b1f62f2f0e4e4199cc2"
+    },
+    {
+      "archivo": "revision-visual/pdf-078.png",
+      "sha256": "b5536599b895e16590511f54905eff321608725ae151c919ffb8ae27640f5c0a"
+    },
+    {
+      "archivo": "revision-visual/pdf-079.png",
+      "sha256": "48ce4f99c630b44648168d0b22fe37edfe2aa4d1fac4f6c33db8626be0c0ebb4"
+    },
+    {
+      "archivo": "revision-visual/pdf-080.png",
+      "sha256": "67110f125e17eb79a9d524f008a22401f37444d72420a5bbac58cc8497c063b3"
+    },
+    {
+      "archivo": "revision-visual/bgk-034.png",
+      "sha256": "3de9fb2720fbbe2a5e71fb554019d13a088bb2d6c3d67474ac54025be9a83c50"
+    },
+    {
+      "archivo": "revision-visual/bgk-040.png",
+      "sha256": "51e8cfa27ff2ecc5c04588f49f5621be7371e91ced0691ccc7e61d3d6efe0ee5"
+    },
+    {
+      "archivo": "revision-visual/ecuaciones-word-5.png",
+      "sha256": "65fb4646e7d5da64cc128c7db7da20664e98e7c58f2070c2083e69a2ee532a61"
+    },
+    {
+      "archivo": "revision-visual/ecuaciones-pdf-5.png",
+      "sha256": "d62dadc00197c8dc121e86638256a1bcf3a56c480772d6e328dcd2b795762282"
+    }
+  ],
+  "archivos": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "sha256": "542a701121035c4b8897aec49162b769beeb589c732a69c7cb1f29d86ebc47a7"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "sha256": "85deede6be80fb687de4eb2c0bb4b827bcf25d14377ee203bbc930e04c47d2a7"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "sha256": "492844fb276137e5e93cbcf4ccab0ec179627248d8ee83cbac1e149b7819cbc1"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "sha256": "7696c10a4bf214cae7ba6ebd441ed5ccea0402808c81ef156c69f5884277515d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "sha256": "0b7b11b696057002d69d1bb0ae6ec69c1a4868617357ff954bf1550a345a2749"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "sha256": "6ad22586599a9fbf49a8049b99e62048ce75f595175ec88cb542c14867739066"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "sha256": "0c0189efd88d64927a8c432b3f5c02e1993265b368d4ef981490c60968478116"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "sha256": "c521f5a2c6544f91d285b350d1d30b5420e9c938b8546edb172b0190f0e4558d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "sha256": "9faf44248d2c52334d425940c49ffe7521e83271011c9655a462686f7d99433e"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-1-1-arco.png",
+      "sha256": "f869fdca7061f948391aa8e0248d6bc8c87a2eddf87b4f83dbd9fad94e6e929f"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-1-1-arco.svg",
+      "sha256": "bf2edee3c2ac25aac5149582d2949f53ead5fcf5b968185ae69bded868840729"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-3-1-arquitectura.png",
+      "sha256": "1dbbd8f33f42cb7ccba67c0baca9084375f3207116d35d20adf20bf1103b1c7b"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-3-1-arquitectura.svg",
+      "sha256": "8cc7694895814691a0ae3479febcc84a0bb02b491655cbdd4480d2edfd4b4cb9"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-5-1-ciclo-claves.png",
+      "sha256": "1c8eb541277b0a4dcd45d01ecc421d60dfdc239a6805470fcb0446c6b4674604"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-5-1-ciclo-claves.svg",
+      "sha256": "9549020ac489b16a512b35e9a204a03b5b0c1b4358f3c4f45e7f3a58a5546ecf"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "sha256": "1a7be7f48a9b2820dea86156194c45576a4140a7e1b94e09a16c209ad51d2c34"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "sha256": "800471a42d7f76266b074ae32b0c103428f9e73dca17f5287b50ce20d27aca33"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "sha256": "d02ae8e4a35531de3637a8d0088874f6f196699478e67b308b5ab10fc8c317f2"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/R4-Cota-Interactiva-2026-09-22.md",
+      "sha256": "648865191452b4fce49dacce59ebe0e39da39343556c8743dee4391a5ff86f2c"
+    }
+  ],
+  "seguimiento": [
+    {
+      "archivo": "PENDIENTES.md",
+      "sha256": "d65c3ec33177b311b7903d4daab88fc59ad27423d863211f9748d7a69c90e737"
+    },
+    {
+      "archivo": "BITACORA_TG2.md",
+      "sha256": "8fe8aaf78b2d9c5946d5b8e0b1e00084431e4c501fc74cec8a6c8ef0ebd8e570"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/README.md",
+      "sha256": "24b2997c987b28eb137364e4cd3bbc027ddb001e04fa3285d14c48589265e193"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md",
+      "sha256": "ba07783a5f56cac2f8ec0b0ee480d9b5c7095bdf066140ca2bf9854e5d971f93"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Estado-del-Proyecto-para-Director.md",
+      "sha256": "97cf0f4eafb543c02f104eb5fc22482ecd5b97b93089ba1ba731619dec336f48"
+    },
+    {
+      "archivo": "Documentos/05-Estado-del-Arte/Resumenes-y-Matriz/Matriz-Trazabilidad-TG2.md",
+      "sha256": "3e81e19e7cd258a3ab4cc1aadc79e5756fc937aea5770e93c5acea5fee3447d5"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Graficas-y-Evaluacion-2026-09-22.md",
+      "sha256": "a15bcbfe10d2631e7457e3bdce54599fef880ecf81a9de16d5fbfe0e44b8aae6"
+    },
+    {
+      "archivo": "nexus/README.md",
+      "sha256": "c4f6bd71efed645f185f83d9776fb919d094d4aa26dcdb3a62431fa00fc7d86d"
+    }
+  ],
+  "alcance_enlaces": "Seguimiento e informe completos; en nexus/README.md solo el estado vigente de esta etapa.",
+  "limite": "Derivación conservadora del modelo ideal, pendiente de revisión matemática y compilación Merkle/Fiat–Shamir/ROM/QROM."
+}

@@ -1,0 +1,124 @@
+{
+  "fecha": "2026-09-22",
+  "tablas": [
+    {
+      "rotulo": "Tabla 1.1",
+      "archivo": "Cap1-Introduccion.md",
+      "columnas": 3,
+      "filas": 8
+    },
+    {
+      "rotulo": "Tabla 2.1",
+      "archivo": "Cap2-Marco-Teorico.md",
+      "columnas": 4,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 3.1",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 5,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 3.2",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 5,
+      "filas": 3
+    },
+    {
+      "rotulo": "Tabla 3.3",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 4.1",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 5,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 4.2",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 4,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 4.3",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 2,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 5.1",
+      "archivo": "Cap5-Gestion-Claves.md",
+      "columnas": 2,
+      "filas": 8
+    },
+    {
+      "rotulo": "Tabla 6.1",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 8
+    },
+    {
+      "rotulo": "Tabla 6.2",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 3,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 6.3",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 6,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 6.4",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.5",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 3
+    },
+    {
+      "rotulo": "Tabla 6.6",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.7",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.8",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 5,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 6.9",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 7.1",
+      "archivo": "Cap7-Conclusiones.md",
+      "columnas": 3,
+      "filas": 7
+    }
+  ],
+  "ecuaciones_word": 356,
+  "figuras_word": 3,
+  "tablas_word": 19,
+  "advertencias_pandoc": [],
+  "revision_visual": "Inspección visual realizada el 2026-09-22 tras R3: figuras 1.1, 3.1 y 5.1 en Word/PDF, 18 ecuaciones en bloque en ambos formatos y Tabla 5.1. Sin recortes observados. Figura 5.1 actualizada: bloqueo de derivación y firma, preparación y validación antes de instalar claves. La rasterización EMF de Word acentúa el peso del texto; no se interpreta como negrita de todo el documento."
+}

@@ -1,38 +1,75 @@
-# ✅ Pendientes — Tesis NEXUS (TG2)
+# Pendientes — Tesis NEXUS (TG2)
 
-> Vista consolidada de **qué falta** (la cronología de lo hecho vive en [BITACORA_TG2.md](BITACORA_TG2.md); las fases, en [Plan-de-Trabajo-TG2.md](Documentos/04-Administrativo-TG2/Plan-de-Trabajo-TG2.md)).
-> Actualizado: **2026-08-07**.
+**Actualizado:** 2026-09-23. Seguimiento vigente; el historial se conserva en [BITACORA_TG2.md](BITACORA_TG2.md).
 
-## 🔴 Administrativo (condiciones del comité — bloquea todo lo demás)
+**Accesos:** [Ruta de cierre](Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md) · [Matriz de trazabilidad](Documentos/05-Estado-del-Arte/Resumenes-y-Matriz/Matriz-Trazabilidad-TG2.md) · [Revisión de la bitácora](Documentos/04-Administrativo-TG2/Avances/Revision-Bitacora-2026-09-22.md).
 
-- [ ] **Reunión F0 con Wightman:** presentar el brief (`Documentos/04-Administrativo-TG2/Estado-del-Proyecto-para-Director.md`), acordar el Plan de Trabajo (fijar fechas y cadencia de entregas) → entregable E0.
-- [ ] Enviar la **primera entrega parcial** — **borrador listo** (2026-08-07): `Documentos/04-Administrativo-TG2/Avances/Entrega-Parcial-01-2026-08-07.md`. Falta: revisarlo y enviarlo al director.
+## Acuerdos y evidencia
 
-## 🟡 Decisiones de diseño abiertas
+- [x] Registrar la aprobación del director al plan, entrega y decisiones presentadas, confirmada por el estudiante el 22 de septiembre.
+- [ ] Incorporar fecha exacta, comunicación y calendario acordado cuando estén disponibles.
+- [x] Crear la matriz de trazabilidad de afirmaciones y requisitos TG2.
+- [x] Preservar los resultados Criterion y fuentes de experimentos disponibles: 125 archivos y 29 casos en el inventario.
+- [ ] Conciliar las diferencias entre la caché recuperada y las cifras históricas; identificar revisión, fecha y condiciones de cada corrida.
+- [x] Consolidar los cambios locales de TG2 y experimentos en `nexus`: commit `01dcde960402b6c60a19242b7ae3d6ac3d82a518`, con 197 pruebas, check y build correctos.
+- [x] Corregir las exclusiones de Git para incluir las fuentes de evidencia, crear el índice principal y documentar las dependencias y reproducción.
 
-- [ ] **Decisión 001 (parámetros W/C del APT):** propuesta empírica **lista** — W=512, C=16 (binomial exacta) + lote MCV ≥ 65.536 (`Documentos/02-Investigacion-y-Notas/Decision-001-Parametros-APT.md`). Falta: acuerdo con el director → aplicar el cambio (~15 líneas en `HealthMonitor::new`, la referencia `exact_cutoff` ya está en `apt_sweep.rs`) + test de regresión + párrafo en Cap. 5.
-- [ ] **Decisión 002 (registro auditable de rotaciones en el Key Registry):** **borrador de diseño listo** (2026-08-07): log encadenado por hash en L2 + anclaje Merkle en L1 (`Documentos/02-Investigacion-y-Notas/Decision-002-Registro-Auditable-Rotaciones.md`). Falta: discutirlo con el director e implementar (~1 semana estimada).
-- [ ] **Decisión 003 (suite de benchmarks):** de facto resuelta (Criterion: `dilithium_bench` + `classical_baseline`; harness `stark_demo` + `apt_sweep`); formalizarla como decisión cerrada en la bitácora tras la F0.
+## Objetivo 4 — validación formal (R1)
 
-## 📄 Manuscrito
+- [x] Corregir el argumento de extracción del capítulo 6 y retirar su conclusión injustificada.
+- [x] Documentar la procedencia del término 2^-254 y evitar atribuirlo sin justificación al prototipo.
+- [x] Incorporar las correcciones de pruebas publicadas en 2023 y las restricciones de la reducción QROM revisada en 2024.
+- [x] Separar supuestos, reducciones de peor caso y argumentos sobre Shor.
+- [x] Identificar perfil, parámetros, oráculos y diferencias de ML-DSA; cotejar fuentes completas y reproducir los cálculos de R1.
+- [x] Comprobar que la aplicación directa de JMW24 falla para los tres perfiles; explicitar la pérdida corregida y el alcance ROM/QROM.
+- [x] Incorporar las actualizaciones potenciales NIST de julio de 2026 y ejecutar tres pruebas de correspondencia; total 166.
+- [ ] Resolver R1-A–D si se exige una garantía concreta del código: expansión/hedged, codificaciones/sUF, fuente/KDF y errores extremos del bucle.
+- [ ] Registrar la revisión matemática del texto corregido con el director o un lector competente.
 
-- [x] ~~**Unificar las cifras del perfil H1**~~ — resuelto 2026-08-07: la oficial es la corrida del **README (2026-07-31, rustc 1.97.1)**: D3 = 413/790/232 µs. Tabla 6.2 actualizada (venía de una corrida pre-julio sin fecha); §5.6, bitácora y README ya coinciden. Nota honesta añadida en §6.6.2: en H1, RSA-2048 verificaba marginalmente más rápido que D3 (218 vs 232 µs).
-- [x] ~~**Regenerar `Tesis-NEXUS-completa.docx`**~~ — hecho 2026-08-07 (pandoc 3.10.1 instalado en el portátil nuevo; `.docx` con todos los cambios del día).
-- [ ] **Cap. 5:** incorporar el cuadro de tres capas (RCT ≤4 muestras / APT 10³–10⁶ / MCV 1 lote) y los parámetros acordados, cuando se cierre la Decisión 001.
-- [ ] README de `nexus`: actualizar tablas D2/D5 y STARK con el perfil H2 (opcional, consistencia con el capítulo).
-- [ ] Matriz de trazabilidad afirmación→fuente (`Resumenes-y-Matriz/`) — hueco identificado el 2026-08-03, no urgente.
+## Objetivo 3 — entropía y rotación (R2–R3)
 
-## 🧪 Código y experimentos
+- [x] Aplicar el corte APT aprobado y comprobar conteo de referencia y condición de disparo: C=16, W=512.
+- [x] Implementar lotes de 65.536 muestras, bloqueo inicial, fallo retenido y recuperación explícita seguida de renovación de semilla.
+- [ ] Vincular y calificar una fuente concreta de despliegue; el prototipo evalúa el flujo entregado por la aplicación y no acredita acceso al ruido físico del sistema operativo.
+- [x] Conectar rotación de Sentinel con claves operativas y vigencia de épocas en `KeyManager`; fallo intermedio conserva el estado previo.
+- [x] Implementar y verificar el registro local autenticado, recuperación del historial público y comprobación de firmas históricas con límites explícitos.
+- [ ] Integrar custodia durable, política de épocas en el sequencer y anclaje L1; validar el enlace completo en R4.
+- [x] Verificar la corrección R2: cargo check/build y 123 pruebas del workspace, incluidas 13 nuevas, el 22 de septiembre; capítulo 5 actualizado. R3 pasa check/build y 142 pruebas, incluidas 19 nuevas; evidencia separada en `R3-rotacion/`.
 
-- [x] ~~**Benchmark reproducible de la métrica W (contribución C1)**~~ — hecho 2026-08-07: `benches/residencia_bench.rs`; en H2 el sobrecosto es **+0,12 ms** (cacheada 314 µs → efímera 432 µs); §5.6 actualizada.
-- [x] ~~**Throughput multinúcleo (tps)**~~ — hecho 2026-08-07: `examples/throughput_tps.rs`; D3: 12.485 → **199.218 verif/s** (1→24 hilos); §6.6.1 actualizada.
-- [ ] Aplicar la corrección del corte APT (bloqueada por Decisión 001).
+## Evidencia experimental y contribución (R4–R5)
 
-## 🗃️ Repos (cambios sin commitear del 2026-08-07)
+- [x] Revisar y corregir en una variante experimental el inicio y denominador del ensayo multinúcleo; tres pruebas pasan.
+- [x] Medir el ensayo multinúcleo corregido: cinco repeticiones por punto; mediana de 136.390 verificaciones/s con 24 hilos. La cifra histórica conserva sesgo temporal posible.
+- [x] Reproducir y delimitar aceptación heredada, raíces parciales y recuperación del testigo de 16 filas; variante canónica TG2 evaluada en quince pruebas.
+- [x] Auditar el presupuesto STARK, parámetros efectivos, transcripción y proximidad; siete pruebas nuevas pasan en ambos perfiles.
+- [x] Desarrollar S1 bajo hipótesis explícitas: divisibilidad, cancelación y distancia para una traza polinómica fija; siete pruebas algebraicas pasan en ambos perfiles.
+- [x] Derivar la transferencia condicional de distancia para un oráculo próximo a esa traza (S2).
+- [x] Refutar la premisa propuesta de S2 para el legado: tres pruebas reales aceptadas con trazas a distancia 7/8 del código de grado < T; enunciados válidos.
+- [x] Implementar y probar un control exhaustivo experimental del LDE: rechaza los tres casos por grado y acepta la ejecución honesta.
+- [x] Implementar y probar una variante TG2 con FRI de traza y AIR vinculados por la misma raíz; acepta casos honestos y rechaza los tres oráculos alejados reutilizados, sin recibir el LDE completo.
+- [x] Derivar una cota conservadora de composición interactiva ideal: candidato único fijo, campo base, dos FRI y enlace local; reproducir nueve perfiles y contrastes numéricos.
+- [x] Auditar Merkle/Fiat–Shamir: 14 certificados, 560 consultas y 18.880 aperturas reconstruidos; sesgo de campo y condiciones de compilación documentados.
+- [x] Preparar el paquete de revisión matemática S1–S3 con seis preguntas y evidencia enlazada.
+- [ ] Resolver las propiedades por ronda y la compilación del protocolo conjunto si se requiere garantía del ejecutable; registrar revisión independiente y decisión de alcance sobre S1–S3 (S3–S5).
+- [x] Preservar nueva serie R4: 17 casos Criterion y 40 mediciones STARK, con dispersión, fuentes y metadatos.
+- [x] Completar los dos benchmarks tras el cambio de Windows por el autor; fuentes, configuración y resultados conservados en R4-complemento.
+- [x] Definir el modelo de amenaza y residencia de regiones, inventario de representaciones y sensibilidad; tres pruebas R5 pasan.
+- [ ] Medir todas las copias y residuos bajo una frontera explícita e integrar custodia/política de residencia antes de afirmar protección efectiva.
+- [ ] Integrar el cierre de las decisiones 001–003 al balance técnico cuando exista evidencia.
 
-- [ ] **Commit en `Tesis/`:** `BITACORA_TG2.md`, `Cap5-Gestion-Claves.md`, `Cap6-Validacion-Formal.md`, `Tesis-NEXUS-completa.md` (+ `.docx`), `Decision-001-Parametros-APT.md`, `Decision-002-Registro-Auditable-Rotaciones.md`, `Avances/Entrega-Parcial-01-2026-08-07.md`, este archivo.
-- [ ] **Commit + push en `nexus/`:** `examples/apt_sweep.rs`, `examples/throughput_tps.rs`, `benches/residencia_bench.rs` (nuevos), `examples/stark_demo.rs` (trazas extendidas a 2¹⁸), `Cargo.toml` (target del bench nuevo).
+La [auditoría Merkle/Fiat–Shamir](Documentos/04-Administrativo-TG2/Avances/R4-Merkle-Fiat-Shamir-2026-09-23.md) precisa las condiciones pendientes; el [paquete de revisión](Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md) está preparado, sin envío ni dictamen registrados. La [derivación de composición ideal](Documentos/04-Administrativo-TG2/Avances/R4-Cota-Interactiva-2026-09-22.md) obtiene cotas conservadoras sin atribuirlas al ejecutable. Check/build y las 197 pruebas se repitieron correctamente el 23 de septiembre. La suite vigente pasa **197 pruebas** en desarrollo; los diez casos de FRI vinculada pasaron también en release el 22 de septiembre. Check/build correctos. [Variante vinculada, formato y límites](Documentos/04-Administrativo-TG2/Avances/R4-FRI-Vinculado-2026-09-22.md). [Contraejemplo y control exhaustivo](Documentos/04-Administrativo-TG2/Avances/R4-Proximidad-Traza-2026-09-22.md). [Argumento AIR/FRI y límites](Documentos/04-Administrativo-TG2/Avances/R4-Algebra-AIR-FRI-2026-09-22.md). [Informe STARK](Documentos/04-Administrativo-TG2/Avances/R4-Solidez-STARK-2026-09-22.md). [Informe R1](Documentos/04-Administrativo-TG2/Avances/R1-Correspondencia-Formal-2026-09-22.md). Los informes anteriores conservan sus conteos históricos.
 
-## 🔭 Trabajo futuro ya declarado (no es deuda de TG2)
+[Informe R5 y complemento R4](Documentos/04-Administrativo-TG2/Avances/R5-Residencia-y-Custodia-2026-09-22.md).
 
-Aritmetización completa del AIR + DEEP/out-of-domain del STARK · paralelización del prover · PoC del Deception Engine (C3, explícitamente no comprometido) · KEM post-cuántico (ML-KEM) · registro L1/L2 del Key Registry más allá de la Decisión 002.
+## Manuscrito y entrega (R6)
+
+- [x] Registrar y aplicar la aclaración del autor: NEXUS se presenta para sistemas en general, con arquitectura blockchain dual como modelo de referencia.
+- [x] Conciliar el estado técnico de TG2 en resumen, capítulos 5–7 y conclusiones.
+- [x] Crear ensamblado reproducible y comprobación estructural de tablas entre Markdown y Word.
+- [x] Revisar la edición Word/PDF: tablas y celdas comparadas, rótulos y tablas juntos en Word; PDF sin páginas vacías ni texto fuera de los márgenes. El inventario vigente se conserva en `Documentos/06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/`.
+- [x] Integrar los resultados disponibles de R1–R5 en el [balance de objetivos](Documentos/04-Administrativo-TG2/Entrega-Final/Balance-Objetivos-TG2.md) y preparar el [índice de entrega](Documentos/04-Administrativo-TG2/Entrega-Final/README.md) con manifiesto de archivos y commit de código.
+- [ ] Registrar dictamen y resolver o delimitar las obligaciones del balance antes de declarar entrega definitiva.
+- [x] Preparar el [guion de sustentación](Documentos/04-Administrativo-TG2/Presentaciones/Guion-Sustentacion-TG2.md).
+- [ ] Completar diapositivas y ensayo según duración y requisitos institucionales.
+
+Los documentos administrativos históricos de TG1 se conservan. La edición vigente del manuscrito actualiza su enfoque a sistemas en general por aclaración expresa del autor del 22 de septiembre. Deception Engine, pagos agénticos, consenso y aritmetización completa de la lógica de aplicación conservan el alcance complementario o futuro definido en la ruta.

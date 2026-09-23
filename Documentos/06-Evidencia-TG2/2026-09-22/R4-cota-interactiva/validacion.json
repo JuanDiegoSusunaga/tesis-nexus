@@ -1,0 +1,43 @@
+{
+  "fecha": "2026-09-22",
+  "pruebas_workspace_repetidas": 197,
+  "ejecuciones": [
+    {
+      "comando": "cargo check --workspace --all-targets --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-check.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "ef44cf994384224bbe30307fcf2d8b74d129f8666de66816b551f736ba31ec21"
+    },
+    {
+      "comando": "cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-test.log",
+      "codigo_salida": 0,
+      "pruebas": 197,
+      "sha256": "d869c9dfb606282d22ca5bac53a1c3c354377f83cecc73b584a996c90f82ee70"
+    },
+    {
+      "comando": "cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-build.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "7b33cca0a74f53288661315883bb8ead144ddfb8c2f9baa41f517bdc0237182a"
+    }
+  ],
+  "cargo_target_dir": "C:/tmp/nexus-target",
+  "contrastes_python": {
+    "palabras_unicidad": 625,
+    "polinomios_no_base": 600,
+    "palabras_localidad": 625,
+    "escenarios_muestreo": 328,
+    "identidades_plegado": 117,
+    "limite": "Contrastes finitos de identidades y cuentas; no son pruebas de solidez de Rust."
+  },
+  "analisis_sha256": "c232e20f68021511bc4953142e1175f4b091f93ca3df8d30aee3e7a2a721a390",
+  "release": "No repetido en esta etapa; diez casos pasaron en R4-FRI-vinculado, cuyas fuentes y corpus conservan los hashes.",
+  "referencia_validacion_anterior": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/validacion.json",
+    "sha256": "a1ba39c6cdf1fa79b6bc50d49a41d63069d0ea9c42c3e651e4869701d3964c54"
+  },
+  "limite": "Contrastes finitos y reproducción numérica; no revisión matemática independiente ni prueba de seguridad del ejecutable."
+}

@@ -1,0 +1,40 @@
+{
+  "fecha": "2026-09-22",
+  "pruebas_workspace": 180,
+  "nuevas_r4_algebra": 7,
+  "pruebas_nuevas_release": 7,
+  "cargo_target_dir": "C:/tmp/nexus-target",
+  "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.1\nLLVM version: 22.1.6",
+  "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+  "ejecuciones": [
+    {
+      "comando": "cargo check --workspace --all-targets --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-check.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "e595bdccbe01d3aafae3febbac8e872dc90691f0e30e9e028a4939619ad7a4a0"
+    },
+    {
+      "comando": "cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml -- --nocapture",
+      "log": "cargo-test.log",
+      "codigo_salida": 0,
+      "pruebas": 180,
+      "sha256": "5fbbd6d46b004062421473b13c3fa1a12cda155c6e69a2584410e5382a5c801a"
+    },
+    {
+      "comando": "cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-build.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "45d854938fb2c201c346cd5241d5061dde6935fe9f314c44d6ff15f493001683"
+    },
+    {
+      "comando": "cargo test -p nexus-zk --test tg2_air_algebra --release --locked --offline --manifest-path nexus/Cargo.toml -- --nocapture",
+      "log": "cargo-test-release.log",
+      "codigo_salida": 0,
+      "pruebas": 7,
+      "sha256": "fc64e3c28dd0c0cf799395a37ffae060ee440a34ab46386f507adfb2802576ee"
+    }
+  ],
+  "limite": "Suite completa en desarrollo y siete casos algebraicos en release. Los ejemplos no mecanizan la demostración ni prueban solidez global."
+}

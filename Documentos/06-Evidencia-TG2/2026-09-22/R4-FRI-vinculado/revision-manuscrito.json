@@ -1,0 +1,172 @@
+{
+  "fecha": "2026-09-22",
+  "etapa": "R4 FRI de traza vinculada al AIR",
+  "paginas_word": 104,
+  "paginas_pdf": 91,
+  "tablas": 30,
+  "celdas": 784,
+  "ecuaciones_word": 486,
+  "ecuaciones_bloque": 26,
+  "figuras": 3,
+  "revision_visual": "Inspección del 2026-09-22: sección 6.7.4, Tabla 6.18 y fórmula 26 completas en Word pp. 86–88 y PDF pp. 76–78, sin recortes observados. Las 30 tablas conservan rótulo y cuerpo en la misma página Word; 784 celdas coinciden con la conversión independiente. PDF sin páginas vacías ni texto fuera de márgenes. Las tres figuras se inspeccionaron en sus nuevas páginas Word 11, 23 y 51; fuentes, dimensiones y páginas PDF sin cambios. Las 25 fórmulas previas conservan LaTeX y geometría vertical, con desplazamiento de una página en Word; se mantiene su revisión anterior. Se inspeccionó también la lámina final de ecuaciones 25–26 en ambos formatos. La rasterización EMF acentúa el peso de la tipografía de Word y no implica negrita global.",
+  "imagenes_inspeccionadas": [
+    {
+      "archivo": "revision-visual/word-011.png",
+      "sha256": "3e02aba42dc078f9e731c501b0c3a7a8cbe06fa9a39292a75ec2090734be3ad2"
+    },
+    {
+      "archivo": "revision-visual/word-023.png",
+      "sha256": "024928db9a92ea61b5019a46f97fbb20bba4402aa28db8a661a356963ebd0c02"
+    },
+    {
+      "archivo": "revision-visual/word-051.png",
+      "sha256": "d5d7af420a40ab308e10879b264475f146ebca0e056a7f5f181e1d8dbd6d6037"
+    },
+    {
+      "archivo": "revision-visual/word-086.png",
+      "sha256": "191573630a34a01d03421ff52fc9a93ed118090cd99302ad84fcd938defdd947"
+    },
+    {
+      "archivo": "revision-visual/word-087.png",
+      "sha256": "872da059c9ba63839f51334227128fb02b11db52d95d3b8905e89e5a605ab3f4"
+    },
+    {
+      "archivo": "revision-visual/word-088.png",
+      "sha256": "54a1088658782e30b66a301a2e64f9b9a82b24d0a92f14eb300d40f38c00083f"
+    },
+    {
+      "archivo": "revision-visual/pdf-076.png",
+      "sha256": "0c5fdd312003ff71df0f40c1aa3f55286bf68936b24e5b47a53bfe8225d98d8d"
+    },
+    {
+      "archivo": "revision-visual/pdf-077.png",
+      "sha256": "130ac56444bd33d9d8c79cb00d639345a71761aa0914eac6df01556a50e013e9"
+    },
+    {
+      "archivo": "revision-visual/pdf-078.png",
+      "sha256": "82c221383b4392c2c35e6d20ab2fe894c1c735af1dcdc6c32225df06c8d34d26"
+    },
+    {
+      "archivo": "revision-visual/ecuaciones-word-5.png",
+      "sha256": "250fb5290437ca9f6b25ab53fc5785853a685d3acedb0337bddd6e3413302d01"
+    },
+    {
+      "archivo": "revision-visual/ecuaciones-pdf-5.png",
+      "sha256": "14a35ce5af093a402cba302166931354a168deae8cb1018b97d36cfad51a0298"
+    }
+  ],
+  "archivos": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "sha256": "542a701121035c4b8897aec49162b769beeb589c732a69c7cb1f29d86ebc47a7"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "sha256": "4a9d14d1c587441301b4ab7fd9857995692b1cc62f894e50e1064feab5e18ca9"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "sha256": "492844fb276137e5e93cbcf4ccab0ec179627248d8ee83cbac1e149b7819cbc1"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "sha256": "7696c10a4bf214cae7ba6ebd441ed5ccea0402808c81ef156c69f5884277515d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "sha256": "0b7b11b696057002d69d1bb0ae6ec69c1a4868617357ff954bf1550a345a2749"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "sha256": "6ad22586599a9fbf49a8049b99e62048ce75f595175ec88cb542c14867739066"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "sha256": "0c0189efd88d64927a8c432b3f5c02e1993265b368d4ef981490c60968478116"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "sha256": "fabd6919b6763412bbbd51cd896f38e3228e9969f0ae40ceb77ac212821156e7"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "sha256": "611b4e14d92f35ac7afd32026c058ac383c4471f5e1d32c72228de1fac76c2db"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-1-1-arco.png",
+      "sha256": "f869fdca7061f948391aa8e0248d6bc8c87a2eddf87b4f83dbd9fad94e6e929f"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-1-1-arco.svg",
+      "sha256": "bf2edee3c2ac25aac5149582d2949f53ead5fcf5b968185ae69bded868840729"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-3-1-arquitectura.png",
+      "sha256": "1dbbd8f33f42cb7ccba67c0baca9084375f3207116d35d20adf20bf1103b1c7b"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-3-1-arquitectura.svg",
+      "sha256": "8cc7694895814691a0ae3479febcc84a0bb02b491655cbdd4480d2edfd4b4cb9"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-5-1-ciclo-claves.png",
+      "sha256": "1c8eb541277b0a4dcd45d01ecc421d60dfdc239a6805470fcb0446c6b4674604"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-5-1-ciclo-claves.svg",
+      "sha256": "9549020ac489b16a512b35e9a204a03b5b0c1b4358f3c4f45e7f3a58a5546ecf"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "sha256": "c5a26920b8c21c3a02dfe5ed88c858c9d24f77fe5b19045faf503fe909bbac19"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "sha256": "d3b72b028abacc14c43e8e6fa73e00058bb60ac1fb640422b5932a676126ab47"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "sha256": "2f15248a4609a95351528ad7342ea010364a01c48895cc5ca33adf20c6e3db6d"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/R4-FRI-Vinculado-2026-09-22.md",
+      "sha256": "2d4954156a4e9e2d24343a3e60f05d779f49f63e8af31fbcca873ed8bf41f938"
+    }
+  ],
+  "seguimiento": [
+    {
+      "archivo": "PENDIENTES.md",
+      "sha256": "a60176b6db190094a4ce57ef24fc9c879e414386e625f886e109bc5ac2f60bc4"
+    },
+    {
+      "archivo": "BITACORA_TG2.md",
+      "sha256": "0deec6338091014ba85f619ad1e952e9f1cf489484244355268f091702cee3ac"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/README.md",
+      "sha256": "8dd5f3453f587f5ac706857588074bfb7687425ec6be90b236bfb52310b50ec4"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md",
+      "sha256": "6c2d83a06f75a810f6268dcd96dfe60a5f122dca3f4784b507d1c564fac52fbc"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Estado-del-Proyecto-para-Director.md",
+      "sha256": "7820a08c605b3c78466abd851b17de307454f202473a84e79edef9a1cab533a8"
+    },
+    {
+      "archivo": "Documentos/05-Estado-del-Arte/Resumenes-y-Matriz/Matriz-Trazabilidad-TG2.md",
+      "sha256": "7fb3b7375d988bb550a91dfee0155c382a040268a696e3cbcf70568863fa4e6a"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Graficas-y-Evaluacion-2026-09-22.md",
+      "sha256": "e7e8ab5d079be34a91e8ecc2c7b80c6e47d23982181b52226113ead63645bb93"
+    },
+    {
+      "archivo": "nexus/README.md",
+      "sha256": "2cc5b698d7c8298f57798f9de611568c77fcee31061312627e40b55075bf258e"
+    }
+  ],
+  "alcance_enlaces": "Seguimiento e informe completos; en nexus/README.md solo el estado vigente añadido en esta etapa. Sus enlaces históricos no se validan aquí.",
+  "limite": "Variante experimental con enlace estructural implementado; cota global de solidez, pérdidas y revisión externa pendientes; sin garantía de conocimiento cero."
+}

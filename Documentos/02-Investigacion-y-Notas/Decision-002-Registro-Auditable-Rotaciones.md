@@ -1,9 +1,23 @@
 # Decisión 002 — Registro auditable de eventos de rotación (Key Registry)
 
-**Estado:** borrador de diseño para discutir con el director (sin código).
+**Estado actualizado el 2026-09-22:** diseño aprobado por el director según confirmación del estudiante. Gestor y registro local implementados y probados en R3 (142 pruebas, 19 nuevas); integración durable y L2/L1 pendiente. Fecha exacta de aprobación por incorporar. La propuesta histórica se conserva debajo; sus estimaciones no sustituyen los resultados de R3.
 **Fecha:** 2026-08-07 · **Actividad:** 3.2 (Objetivo 3) · **Antecedente:** `BITACORA_TG2.md`, Decisión 002.
 
 ---
+
+## Precisión de implementación R3 — 22 de septiembre
+
+El [informe R3](../04-Administrativo-TG2/Avances/R3-Rotacion-y-Registro-2026-09-22.md) y la [evidencia](../06-Evidencia-TG2/2026-09-22/R3-rotacion/ejecucion.json) documentan la implementación vigente:
+
+- Módulo `nexus-crypto::registry`, por su dependencia de ML-DSA. Altas, rotaciones conjuntas y retiros con secuencia y enlace SHA3-256 completo.
+- Las claves salientes autorizan la transición y las entrantes prueban posesión. No se añadió una clave extra de nodo; es una precisión técnica de esta implementación, sin atribuir una nueva aprobación del director.
+- La identidad inicial permanece estable. La nueva API autentica época e identidad, rechaza épocas retiradas para operaciones vigentes y conserva la comprobación criptográfica histórica. Esta última no prueba fecha de emisión.
+- Recarga del historial público con verificación completa y comparación contra un checkpoint independiente. Atomicidad en memoria; custodia durable y recuperación de secretos quedan pendientes.
+- No hay anclaje del registro en L2/L1 todavía. El checkpoint debe mantenerse actualizado; uno antiguo no detecta pérdida de eventos posteriores. El enlace local no da por sí solo inmutabilidad global.
+- El evento medido de rotación de dos identidades ML-DSA-65 ocupa **17.498 B**. La cifra histórica de ~150 B omite firmas y claves. No se han medido latencia ni ausencia de bloqueo; el prototipo firma y verifica las transiciones síncronamente.
+- Reexpandir la misma semilla por firma reproduce la misma clave y no es una rotación de época. Se conserva el historial completo; no hay poda implementada.
+
+## Propuesta histórica del 7 de agosto
 
 ## 1. Qué exige la actividad y qué existe hoy
 

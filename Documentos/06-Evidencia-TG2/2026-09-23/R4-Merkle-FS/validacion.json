@@ -1,0 +1,48 @@
+{
+  "fecha": "2026-09-23",
+  "pruebas_workspace_repetidas": 197,
+  "ejecuciones": [
+    {
+      "comando": "cargo check --workspace --all-targets --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-check.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "44745b39fe2d92c1de10ad5032fb88a275939da507a6e8de4fbeb343ed16f5c1"
+    },
+    {
+      "comando": "cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-test.log",
+      "codigo_salida": 0,
+      "pruebas": 197,
+      "sha256": "1f653157a3ccd626a045b83a042e687f76a54a426e4b5a7945505ae8a0829360"
+    },
+    {
+      "comando": "cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-build.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "2c1afd5e4f75d2c7b3fd594b80cfcc1127c3c979deebd048c5a9e22f477bbd95"
+    }
+  ],
+  "cargo_target_dir": "C:/tmp/nexus-target",
+  "auditoria_python": {
+    "certificados": 14,
+    "consultas": 560,
+    "aperturas": 18880,
+    "casos_distribucion": 35,
+    "perfiles": 18,
+    "limite": "Comprueba formato, transcripción, nonce, consultas, Merkle y enlace de aperturas; no revalida plegados FRI ni composición AIR."
+  },
+  "validacion_fechas": {
+    "casos": 7,
+    "archivo": "validacion-fechas.json",
+    "sha256": "2767f8ff58369c58164ea0710d272ae250aef212f3ea9d68bfd3fde972c8ab8b"
+  },
+  "analisis_sha256": "d339b720e4bb81034ec5fcddfd207655c9301f6fa5c525f1ee243168fe6907c7",
+  "release": "No repetido en esta etapa; diez casos pasaron en R4-FRI-vinculado, cuyas fuentes y corpus conservan los hashes.",
+  "referencia_validacion_anterior": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/validacion.json",
+    "sha256": "a1ba39c6cdf1fa79b6bc50d49a41d63069d0ea9c42c3e651e4869701d3964c54"
+  },
+  "limite": "Auditoría de correspondencia y sesgo ideal; no extracción de oráculos, cota RBR conjunta ni garantía ROM/QROM del ejecutable."
+}

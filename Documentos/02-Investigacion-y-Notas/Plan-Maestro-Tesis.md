@@ -2,13 +2,15 @@
 
 ### Torre de control del trabajo de grado · Juan Diego Susunaga Velasquez · Universidad del Rosario
 
+**Alcance actualizado el 2026-09-22:** sistemas en general, conforme a la aclaración expresa del autor. La planificación histórica se contrasta con la [ruta de cierre TG2](../04-Administrativo-TG2/Ruta-de-Cierre-TG2.md) y la [bitácora](../../BITACORA_TG2.md), que recogen los pendientes técnicos vigentes.
+
 > **Cómo usar este documento.** Es el índice vivo de toda la tesis: la idea en una frase, el arco narrativo, la estructura capítulo por capítulo, qué documento alimenta cada capítulo, el mapa de dependencias, la hoja de ruta a la entrega, las **invariantes de consistencia** (cifras/términos que deben ser idénticos en todos los documentos) y los riesgos de defensa con su mitigación. Actualízalo cada vez que avances; si algo no aparece aquí, no está planeado.
 
 ---
 
 ## 1. La tesis en una frase
 
-> **NEXUS formaliza y prototipa cómo asegurar firmas digitales de banca contra la amenaza cuántica con CRYSTALS-Dilithium, demostrando formalmente su seguridad (reducción a Module-LWE) y resolviendo el sobrecosto de datos que la PQC introduce mediante una arquitectura dual-chain con verificación post-cuántica.**
+> **NEXUS formaliza y prototipa cómo asegurar firmas digitales de sistemas en general contra la amenaza cuántica con CRYSTALS-Dilithium, demostrando formalmente su seguridad (reducción a Module-LWE) y resolviendo el sobrecosto de datos que la PQC introduce mediante una arquitectura dual-chain con verificación post-cuántica.**
 
 ### El arco narrativo único (cada capítulo es un eslabón)
 
@@ -32,7 +34,7 @@
 | **2** | Marco teórico y estado del arte | Fundamentos | `Cap2-Marco-Teorico.md` (desarrollado) | — | **desarrollado** |
 | **3** | Diseño de la arquitectura Dual-Chain | Costo + Respuesta + Coherencia | `Cap3-Diseno-Arquitectura.md` (desarrollado), `Analisis-Overhead`, `Ideas-ETH-SOL` | **Obj 1** | **desarrollado** |
 | **4** | Núcleo criptográfico post-cuántico | Solución | `Cap4-Nucleo-Criptografico.md` (desarrollado) | **Obj 2** | **desarrollado** (Dilithium implementado; KDF pendiente) |
-| **5** | Gestión activa del ciclo de vida de claves | (capa operativa) | `Cap5-Gestion-Claves.md` (desarrollado) | **Obj 3** | **desarrollado** (rotación implementada; salud SP 800-90B pendiente) |
+| **5** | Gestión activa del ciclo de vida de claves | (capa operativa) | `Cap5-Gestion-Claves.md` (desarrollado) | **Obj 3** | **prototipo R2–R3 probado** (monitor, rotación efectiva y registro local; fuente concreta y despliegue pendientes) |
 | **6** | Validación formal de seguridad y complejidad | Validación | `Cap6-Validacion-Formal.md` (desarrollado) | **Obj 4** | **desarrollado** (falta solo insertar benchmarks) |
 | **7** | Conclusiones y trabajo futuro | Cierre | `Cap7-Conclusiones.md` (desarrollado) | — | **desarrollado** |
 
@@ -227,7 +229,7 @@ Un capítulo está **listo para defensa** cuando:
 | "Tu cota sUF-CMA está mal / Module-SVP" | Corregido y fijado en invariantes (§6) | Cap. 6 / §6 |
 | "Groth16 no es post-cuántico" | Anticipado: verificador = STARK; paralelo a leanVM de Ethereum | Cap. 3 |
 | "Rotar la clave cambia la dirección" | Modelo de cuenta con abstracción de verificación + Key Registry | Cap. 3 |
-| "¿Novedad? ya existen PQ-blockchains" | Frase de novedad: síntesis formal cuantificada overhead→dual-chain PQ para banca | Cap. 1/3 |
+| "¿Novedad? ya existen PQ-blockchains" | Frase de novedad: síntesis formal cuantificada overhead→dual-chain PQ para sistemas en general | Cap. 1/3 |
 | "Tu DAS no detecta nada" | Rediseño estilo PeerDAS (muestreo entre pares) | Cap. 3 |
 
 ---

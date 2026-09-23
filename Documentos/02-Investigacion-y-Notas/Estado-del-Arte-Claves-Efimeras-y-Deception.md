@@ -1,6 +1,10 @@
 # Estado del Arte: Residencia Efímera de Claves ML-DSA y Deception Engine (Revisión 2026-07-31)
 
-**Contexto:** Tesis NEXUS · Contraste de la propuesta [Dilithium-Multisemilla-Efecto-Observador-V2](../../Lluvia%20de%20ideas/Dilithium-Multisemilla-Efecto-Observador-V2.md) contra la literatura académica, estándares, patentes e industria (corte: julio 2026).
+> **Revisión TG2 del 22 de septiembre de 2026:** el texto de julio se conserva como antecedente. R5 retira las afirmaciones de inexistencia de antecedentes y novedad de bytes×tiempo; corrige la autoría de Sawa y Suzaki y trata Connolly-02 como borrador archivado. La reexpansión no rota claves y conservar la semilla mantiene la capacidad de firma. La comparación actual, las consultas y sus límites están en el [informe R5](../04-Administrativo-TG2/Avances/R5-Residencia-y-Custodia-2026-09-22.md). Las conclusiones históricas siguientes no sustituyen esa revisión.
+
+
+
+**Contexto:** Tesis NEXUS · Contraste de la propuesta preliminar V2 contra la literatura académica, estándares, patentes e industria (corte: julio 2026). El documento preliminar fue retirado por indicación del autor el 23 de septiembre de 2026; este análisis se conserva como antecedente.
 **Metodología:** Tres revisiones paralelas con búsqueda web y verificación por lectura directa de las fuentes primarias más importantes: (1) deception con claves señuelo, (2) derivación determinista desde semilla y residencia en memoria, (3) firmas post-cuánticas en blockchain/L2 y defensa de claves de servidor con TEE.
 
 ---

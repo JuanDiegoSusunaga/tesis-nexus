@@ -1,0 +1,13 @@
+{
+  "alcance": "Instantánea documental de los scripts al cerrar la edición R5.",
+  "archivos": [
+    {
+      "archivo": "scripts/ejecutar_complemento_r4.py",
+      "sha256": "1ac331732c01d550f5968e854a87fe3a3413cadd5390c5201e926bb08ace527e"
+    },
+    {
+      "archivo": "scripts/resumir_complemento_r4.py",
+      "sha256": "190d758491295f7d64365f8a1a2821d4e0f8af82f5cea74a0ec139955265ad14"
+    }
+  ]
+}

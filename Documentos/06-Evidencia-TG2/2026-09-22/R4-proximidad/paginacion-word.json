@@ -1,0 +1,354 @@
+﻿{
+    "paginas_word":  101,
+    "tablas":  [
+                   {
+                       "tabla":  1,
+                       "pagina_inicio":  13,
+                       "pagina_fin":  13,
+                       "pagina_rotulo":  13
+                   },
+                   {
+                       "tabla":  2,
+                       "pagina_inicio":  16,
+                       "pagina_fin":  16,
+                       "pagina_rotulo":  16
+                   },
+                   {
+                       "tabla":  3,
+                       "pagina_inicio":  23,
+                       "pagina_fin":  23,
+                       "pagina_rotulo":  23
+                   },
+                   {
+                       "tabla":  4,
+                       "pagina_inicio":  25,
+                       "pagina_fin":  25,
+                       "pagina_rotulo":  25
+                   },
+                   {
+                       "tabla":  5,
+                       "pagina_inicio":  26,
+                       "pagina_fin":  26,
+                       "pagina_rotulo":  26
+                   },
+                   {
+                       "tabla":  6,
+                       "pagina_inicio":  33,
+                       "pagina_fin":  33,
+                       "pagina_rotulo":  33
+                   },
+                   {
+                       "tabla":  7,
+                       "pagina_inicio":  36,
+                       "pagina_fin":  36,
+                       "pagina_rotulo":  36
+                   },
+                   {
+                       "tabla":  8,
+                       "pagina_inicio":  37,
+                       "pagina_fin":  37,
+                       "pagina_rotulo":  37
+                   },
+                   {
+                       "tabla":  9,
+                       "pagina_inicio":  45,
+                       "pagina_fin":  45,
+                       "pagina_rotulo":  45
+                   },
+                   {
+                       "tabla":  10,
+                       "pagina_inicio":  47,
+                       "pagina_fin":  47,
+                       "pagina_rotulo":  47
+                   },
+                   {
+                       "tabla":  11,
+                       "pagina_inicio":  51,
+                       "pagina_fin":  51,
+                       "pagina_rotulo":  51
+                   },
+                   {
+                       "tabla":  12,
+                       "pagina_inicio":  57,
+                       "pagina_fin":  57,
+                       "pagina_rotulo":  57
+                   },
+                   {
+                       "tabla":  13,
+                       "pagina_inicio":  63,
+                       "pagina_fin":  63,
+                       "pagina_rotulo":  63
+                   },
+                   {
+                       "tabla":  14,
+                       "pagina_inicio":  66,
+                       "pagina_fin":  66,
+                       "pagina_rotulo":  66
+                   },
+                   {
+                       "tabla":  15,
+                       "pagina_inicio":  67,
+                       "pagina_fin":  67,
+                       "pagina_rotulo":  67
+                   },
+                   {
+                       "tabla":  16,
+                       "pagina_inicio":  68,
+                       "pagina_fin":  68,
+                       "pagina_rotulo":  68
+                   },
+                   {
+                       "tabla":  17,
+                       "pagina_inicio":  69,
+                       "pagina_fin":  69,
+                       "pagina_rotulo":  69
+                   },
+                   {
+                       "tabla":  18,
+                       "pagina_inicio":  69,
+                       "pagina_fin":  69,
+                       "pagina_rotulo":  69
+                   },
+                   {
+                       "tabla":  19,
+                       "pagina_inicio":  70,
+                       "pagina_fin":  70,
+                       "pagina_rotulo":  70
+                   },
+                   {
+                       "tabla":  20,
+                       "pagina_inicio":  72,
+                       "pagina_fin":  72,
+                       "pagina_rotulo":  72
+                   },
+                   {
+                       "tabla":  21,
+                       "pagina_inicio":  74,
+                       "pagina_fin":  74,
+                       "pagina_rotulo":  74
+                   },
+                   {
+                       "tabla":  22,
+                       "pagina_inicio":  74,
+                       "pagina_fin":  74,
+                       "pagina_rotulo":  74
+                   },
+                   {
+                       "tabla":  23,
+                       "pagina_inicio":  75,
+                       "pagina_fin":  75,
+                       "pagina_rotulo":  75
+                   },
+                   {
+                       "tabla":  24,
+                       "pagina_inicio":  77,
+                       "pagina_fin":  77,
+                       "pagina_rotulo":  77
+                   },
+                   {
+                       "tabla":  25,
+                       "pagina_inicio":  77,
+                       "pagina_fin":  77,
+                       "pagina_rotulo":  77
+                   },
+                   {
+                       "tabla":  26,
+                       "pagina_inicio":  80,
+                       "pagina_fin":  80,
+                       "pagina_rotulo":  80
+                   },
+                   {
+                       "tabla":  27,
+                       "pagina_inicio":  83,
+                       "pagina_fin":  83,
+                       "pagina_rotulo":  83
+                   },
+                   {
+                       "tabla":  28,
+                       "pagina_inicio":  84,
+                       "pagina_fin":  84,
+                       "pagina_rotulo":  84
+                   },
+                   {
+                       "tabla":  29,
+                       "pagina_inicio":  88,
+                       "pagina_fin":  88,
+                       "pagina_rotulo":  88
+                   }
+               ],
+    "figuras":  [
+                    {
+                        "figura":  1,
+                        "pagina":  10,
+                        "pagina_rotulo":  10,
+                        "ancho_pt":  468,
+                        "alto_pt":  180
+                    },
+                    {
+                        "figura":  2,
+                        "pagina":  22,
+                        "pagina_rotulo":  22,
+                        "ancho_pt":  468,
+                        "alto_pt":  360
+                    },
+                    {
+                        "figura":  3,
+                        "pagina":  50,
+                        "pagina_rotulo":  50,
+                        "ancho_pt":  468,
+                        "alto_pt":  475.2
+                    }
+                ],
+    "ecuaciones_bloque":  [
+                              {
+                                  "ecuacion":  1,
+                                  "pagina":  23,
+                                  "y_inicio_pt":  428.55,
+                                  "y_fin_pt":  428.55
+                              },
+                              {
+                                  "ecuacion":  2,
+                                  "pagina":  24,
+                                  "y_inicio_pt":  98.55,
+                                  "y_fin_pt":  98.55
+                              },
+                              {
+                                  "ecuacion":  3,
+                                  "pagina":  27,
+                                  "y_inicio_pt":  554.8,
+                                  "y_fin_pt":  554.8
+                              },
+                              {
+                                  "ecuacion":  4,
+                                  "pagina":  35,
+                                  "y_inicio_pt":  462.4,
+                                  "y_fin_pt":  462.4
+                              },
+                              {
+                                  "ecuacion":  5,
+                                  "pagina":  40,
+                                  "y_inicio_pt":  363.1,
+                                  "y_fin_pt":  363.1
+                              },
+                              {
+                                  "ecuacion":  6,
+                                  "pagina":  41,
+                                  "y_inicio_pt":  140.55,
+                                  "y_fin_pt":  140.55
+                              },
+                              {
+                                  "ecuacion":  7,
+                                  "pagina":  42,
+                                  "y_inicio_pt":  335.75,
+                                  "y_fin_pt":  335.75
+                              },
+                              {
+                                  "ecuacion":  8,
+                                  "pagina":  43,
+                                  "y_inicio_pt":  147.1,
+                                  "y_fin_pt":  147.1
+                              },
+                              {
+                                  "ecuacion":  9,
+                                  "pagina":  55,
+                                  "y_inicio_pt":  452,
+                                  "y_fin_pt":  452
+                              },
+                              {
+                                  "ecuacion":  10,
+                                  "pagina":  56,
+                                  "y_inicio_pt":  284.55,
+                                  "y_fin_pt":  284.55
+                              },
+                              {
+                                  "ecuacion":  11,
+                                  "pagina":  56,
+                                  "y_inicio_pt":  362.3,
+                                  "y_fin_pt":  362.3
+                              },
+                              {
+                                  "ecuacion":  12,
+                                  "pagina":  57,
+                                  "y_inicio_pt":  72,
+                                  "y_fin_pt":  72
+                              },
+                              {
+                                  "ecuacion":  13,
+                                  "pagina":  57,
+                                  "y_inicio_pt":  191.75,
+                                  "y_fin_pt":  191.75
+                              },
+                              {
+                                  "ecuacion":  14,
+                                  "pagina":  58,
+                                  "y_inicio_pt":  258.35,
+                                  "y_fin_pt":  258.35
+                              },
+                              {
+                                  "ecuacion":  15,
+                                  "pagina":  60,
+                                  "y_inicio_pt":  552.9,
+                                  "y_fin_pt":  552.9
+                              },
+                              {
+                                  "ecuacion":  16,
+                                  "pagina":  62,
+                                  "y_inicio_pt":  329.6,
+                                  "y_fin_pt":  329.6
+                              },
+                              {
+                                  "ecuacion":  17,
+                                  "pagina":  64,
+                                  "y_inicio_pt":  279.55,
+                                  "y_fin_pt":  279.55
+                              },
+                              {
+                                  "ecuacion":  18,
+                                  "pagina":  65,
+                                  "y_inicio_pt":  140.9,
+                                  "y_fin_pt":  140.9
+                              },
+                              {
+                                  "ecuacion":  19,
+                                  "pagina":  65,
+                                  "y_inicio_pt":  493.6,
+                                  "y_fin_pt":  493.6
+                              },
+                              {
+                                  "ecuacion":  20,
+                                  "pagina":  81,
+                                  "y_inicio_pt":  339.2,
+                                  "y_fin_pt":  339.2
+                              },
+                              {
+                                  "ecuacion":  21,
+                                  "pagina":  82,
+                                  "y_inicio_pt":  240.65,
+                                  "y_fin_pt":  240.65
+                              },
+                              {
+                                  "ecuacion":  22,
+                                  "pagina":  83,
+                                  "y_inicio_pt":  121.3,
+                                  "y_fin_pt":  121.3
+                              },
+                              {
+                                  "ecuacion":  23,
+                                  "pagina":  83,
+                                  "y_inicio_pt":  252.95,
+                                  "y_fin_pt":  252.95
+                              },
+                              {
+                                  "ecuacion":  24,
+                                  "pagina":  84,
+                                  "y_inicio_pt":  147.1,
+                                  "y_fin_pt":  147.1
+                              },
+                              {
+                                  "ecuacion":  25,
+                                  "pagina":  84,
+                                  "y_inicio_pt":  397.75,
+                                  "y_fin_pt":  397.75
+                              }
+                          ]
+}

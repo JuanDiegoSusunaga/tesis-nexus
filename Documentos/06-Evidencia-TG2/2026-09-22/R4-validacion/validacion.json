@@ -1,0 +1,43 @@
+{
+  "fecha": "2026-09-22",
+  "etapa": "R4",
+  "pruebas": 160,
+  "nuevas": 18,
+  "verificador": 15,
+  "sincronizacion": 3,
+  "perfil_pruebas": "desarrollo; POW_BITS_RUNTIME=12",
+  "perfil_mediciones_stark": "release; POW_BITS_RUNTIME=20",
+  "comandos": [
+    "cargo check --workspace --all-targets --locked --offline --manifest-path nexus/Cargo.toml",
+    "cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+    "cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml"
+  ],
+  "CARGO_TARGET_DIR": "C:/tmp/nexus-target",
+  "fuentes": [
+    {
+      "archivo": "nexus/nexus-active/experiments/tg2_canonical_verifier.rs",
+      "sha256": "bc543ed1dca51cca940a46bf05edfdc3459b95d2075c8267035b13261609447c"
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/tg2_verification.rs",
+      "sha256": "2d070ff517b73732ffb75e0e6e418db81959e0bf50923a67ee1f9a803ffc5c99"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/experiments/tg2_throughput.rs",
+      "sha256": "4543da19a5a21e1325a6e077b93bf39144c83bd3fc95ef1e75a2e63cc9157dcb"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/tests/tg2_throughput.rs",
+      "sha256": "9c241c7a2166f3bd0c7131c8f8d2dbe1bb00c7bf5c484c07c4f4bd06ee49582c"
+    }
+  ],
+  "componentes_heredados_sin_cambios_respecto_HEAD": [
+    "nexus-active/src/verifier.rs",
+    "nexus-active/src/pq_verifier.rs",
+    "nexus-zk/src/stark"
+  ],
+  "nota": "La prueba de reconstrucción del testigo se añadió después de las mediciones. Sus fuentes finales se preservan aquí; fuentes/ y mediciones.json identifican la instantánea anterior de los benchmarks.",
+  "cargo-check.log": "5f8cc12bd27c60809c42b1b605d8218b36635647eb9f47fecd0013026435457b",
+  "cargo-test.log": "ae7bc04f515640e1e49d81b47be95c4d7ad6a6c2aa6405fe6ed293a94055e66c",
+  "cargo-build.log": "cb5f2ae8d19d15919f9603f9ddd836ec77e862fa7dd99bc0a435b85b0c65cb0e"
+}

@@ -1,0 +1,11 @@
+# Conservar los bytes que identifican las mediciones y sus fuentes.
+/Documentos/06-Evidencia-TG2/** -text -whitespace
+
+# Conservar la edición revisada y sus hashes al clonar en Windows o Linux.
+/Documentos/01-Manuscrito/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Las rutas SVG generadas por Matplotlib conservan espacios y hashes originales.
+/Documentos/01-Manuscrito/Figuras/*.svg -whitespace
+*.docx binary
+*.pdf binary
+*.png binary
+*.bin binary

@@ -1,0 +1,128 @@
+warning: unused import: `NexusError`
+ --> nexus-core\src\merkle.rs:5:22
+  |
+5 | use crate::{Hash256, NexusError, Hashable};
+  |                      ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ----^^^^^^^^^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `current_index`
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_current_index`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-core` (lib) generated 3 warnings (run `cargo fix --lib -p nexus-core` to apply 3 suggestions)
+warning: unused import: `PQSignature`
+ --> nexus-crypto\src\signer.rs:8:35
+  |
+8 |     Address, Hash256, NexusError, PQSignature, SignatureScheme,
+  |                                   ^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `created_at` is never read
+   --> nexus-crypto\src\entropy.rs:233:5
+    |
+225 | pub struct SentinelSeed {
+    |            ------------ field in this struct
+...
+233 |     created_at: Timestamp,
+    |     ^^^^^^^^^^
+    |
+    = note: `SentinelSeed` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-crypto` (lib) generated 2 warnings (run `cargo fix --lib -p nexus-crypto` to apply 1 suggestion)
+   Compiling nexus-crypto v0.1.0 (C:\Users\juand\Desktop\Tesis\nexus\nexus-crypto)
+    Finished `bench` profile [optimized] target(s) in 11.16s
+     Running benches\classical_baseline.rs (C:/tmp/nexus-target\release\deps\classical_baseline-5a5db44c5ede9439.exe)
+Gnuplot not found, using plotters backend
+Benchmarking classical_key_generation/EcdsaP256
+Benchmarking classical_key_generation/EcdsaP256: Warming up for 1.0000 s
+Benchmarking classical_key_generation/EcdsaP256: Collecting 50 samples in estimated 2.0585 s (28k iterations)
+Benchmarking classical_key_generation/EcdsaP256: Analyzing
+classical_key_generation/EcdsaP256
+                        time:   [71.446 µs 72.017 µs 72.632 µs]
+Found 2 outliers among 50 measurements (4.00%)
+  2 (4.00%) high mild
+Benchmarking classical_key_generation/Rsa2048
+Benchmarking classical_key_generation/Rsa2048: Warming up for 1.0000 s
+Benchmarking classical_key_generation/Rsa2048: Collecting 10 samples in estimated 2.7038 s (30 iterations)
+Benchmarking classical_key_generation/Rsa2048: Analyzing
+classical_key_generation/Rsa2048
+                        time:   [87.555 ms 102.38 ms 117.19 ms]
+
+Benchmarking classical_signing/EcdsaP256
+Benchmarking classical_signing/EcdsaP256: Warming up for 1.0000 s
+Benchmarking classical_signing/EcdsaP256: Collecting 50 samples in estimated 2.0501 s (23k iterations)
+Benchmarking classical_signing/EcdsaP256: Analyzing
+classical_signing/EcdsaP256
+                        time:   [88.309 µs 89.897 µs 92.288 µs]
+Found 5 outliers among 50 measurements (10.00%)
+  2 (4.00%) high mild
+  3 (6.00%) high severe
+Benchmarking classical_signing/Rsa2048
+Benchmarking classical_signing/Rsa2048: Warming up for 1.0000 s
+Benchmarking classical_signing/Rsa2048: Collecting 50 samples in estimated 2.0669 s (2550 iterations)
+Benchmarking classical_signing/Rsa2048: Analyzing
+classical_signing/Rsa2048
+                        time:   [791.91 µs 806.01 µs 824.72 µs]
+Found 3 outliers among 50 measurements (6.00%)
+  1 (2.00%) high mild
+  2 (4.00%) high severe
+Benchmarking classical_signing/Rsa3072
+Benchmarking classical_signing/Rsa3072: Warming up for 1.0000 s
+
+Warning: Unable to complete 50 samples in 2.0s. You may wish to increase target time to 3.3s, enable flat sampling, or reduce sample count to 20.
+Benchmarking classical_signing/Rsa3072: Collecting 50 samples in estimated 3.2511 s (1275 iterations)
+Benchmarking classical_signing/Rsa3072: Analyzing
+classical_signing/Rsa3072
+                        time:   [2.4419 ms 2.4792 ms 2.5216 ms]
+Found 3 outliers among 50 measurements (6.00%)
+  1 (2.00%) low mild
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+
+Benchmarking classical_verification/EcdsaP256
+Benchmarking classical_verification/EcdsaP256: Warming up for 1.0000 s
+Benchmarking classical_verification/EcdsaP256: Collecting 50 samples in estimated 2.1510 s (14k iterations)
+Benchmarking classical_verification/EcdsaP256: Analyzing
+classical_verification/EcdsaP256
+                        time:   [146.95 µs 148.08 µs 149.34 µs]
+Found 5 outliers among 50 measurements (10.00%)
+  4 (8.00%) high mild
+  1 (2.00%) high severe
+Benchmarking classical_verification/Rsa2048
+Benchmarking classical_verification/Rsa2048: Warming up for 1.0000 s
+Benchmarking classical_verification/Rsa2048: Collecting 50 samples in estimated 2.0928 s (20k iterations)
+Benchmarking classical_verification/Rsa2048: Analyzing
+classical_verification/Rsa2048
+                        time:   [98.392 µs 100.74 µs 104.37 µs]
+Found 4 outliers among 50 measurements (8.00%)
+  1 (2.00%) low mild
+  1 (2.00%) high mild
+  2 (4.00%) high severe
+Benchmarking classical_verification/Rsa3072
+Benchmarking classical_verification/Rsa3072: Warming up for 1.0000 s
+Benchmarking classical_verification/Rsa3072: Collecting 50 samples in estimated 2.2575 s (10k iterations)
+Benchmarking classical_verification/Rsa3072: Analyzing
+classical_verification/Rsa3072
+                        time:   [220.00 µs 222.24 µs 224.99 µs]
+Found 7 outliers among 50 measurements (14.00%)
+  1 (2.00%) low mild
+  3 (6.00%) high mild
+  3 (6.00%) high severe
+

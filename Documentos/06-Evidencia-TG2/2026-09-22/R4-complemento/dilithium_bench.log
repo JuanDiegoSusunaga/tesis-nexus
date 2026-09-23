@@ -1,0 +1,160 @@
+warning: unused import: `NexusError`
+ --> nexus-core\src\merkle.rs:5:22
+  |
+5 | use crate::{Hash256, NexusError, Hashable};
+  |                      ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ----^^^^^^^^^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `current_index`
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_current_index`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-core` (lib) generated 3 warnings (run `cargo fix --lib -p nexus-core` to apply 3 suggestions)
+warning: unused import: `PQSignature`
+ --> nexus-crypto\src\signer.rs:8:35
+  |
+8 |     Address, Hash256, NexusError, PQSignature, SignatureScheme,
+  |                                   ^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `created_at` is never read
+   --> nexus-crypto\src\entropy.rs:233:5
+    |
+225 | pub struct SentinelSeed {
+    |            ------------ field in this struct
+...
+233 |     created_at: Timestamp,
+    |     ^^^^^^^^^^
+    |
+    = note: `SentinelSeed` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-crypto` (lib) generated 2 warnings (run `cargo fix --lib -p nexus-crypto` to apply 1 suggestion)
+    Finished `bench` profile [optimized] target(s) in 1.51s
+     Running benches\dilithium_bench.rs (C:/tmp/nexus-target\release\deps\dilithium_bench-23c3f6e3ef5200ca.exe)
+Gnuplot not found, using plotters backend
+Benchmarking key_generation/Dilithium2
+Benchmarking key_generation/Dilithium2: Warming up for 1.0000 s
+Benchmarking key_generation/Dilithium2: Collecting 50 samples in estimated 2.0392 s (22k iterations)
+Benchmarking key_generation/Dilithium2: Analyzing
+key_generation/Dilithium2
+                        time:   [92.303 µs 92.465 µs 92.653 µs]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+Benchmarking key_generation/Dilithium3
+Benchmarking key_generation/Dilithium3: Warming up for 1.0000 s
+Benchmarking key_generation/Dilithium3: Collecting 50 samples in estimated 2.0102 s (13k iterations)
+Benchmarking key_generation/Dilithium3: Analyzing
+key_generation/Dilithium3
+                        time:   [155.77 µs 156.27 µs 156.94 µs]
+Found 6 outliers among 50 measurements (12.00%)
+  3 (6.00%) high mild
+  3 (6.00%) high severe
+Benchmarking key_generation/Dilithium5
+Benchmarking key_generation/Dilithium5: Warming up for 1.0000 s
+Benchmarking key_generation/Dilithium5: Collecting 50 samples in estimated 2.1948 s (10k iterations)
+Benchmarking key_generation/Dilithium5: Analyzing
+key_generation/Dilithium5
+                        time:   [212.33 µs 213.37 µs 214.95 µs]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+
+Benchmarking signing/Dilithium2
+Benchmarking signing/Dilithium2: Warming up for 1.0000 s
+Benchmarking signing/Dilithium2: Collecting 50 samples in estimated 2.1401 s (10k iterations)
+Benchmarking signing/Dilithium2: Analyzing
+signing/Dilithium2      time:   [204.55 µs 207.57 µs 211.14 µs]
+Found 2 outliers among 50 measurements (4.00%)
+  2 (4.00%) high mild
+Benchmarking signing/Dilithium3
+Benchmarking signing/Dilithium3: Warming up for 1.0000 s
+Benchmarking signing/Dilithium3: Collecting 50 samples in estimated 2.1159 s (6375 iterations)
+Benchmarking signing/Dilithium3: Analyzing
+signing/Dilithium3      time:   [319.29 µs 324.94 µs 330.75 µs]
+Found 4 outliers among 50 measurements (8.00%)
+  1 (2.00%) low severe
+  1 (2.00%) low mild
+  2 (4.00%) high mild
+Benchmarking signing/Dilithium5
+Benchmarking signing/Dilithium5: Warming up for 1.0000 s
+Benchmarking signing/Dilithium5: Collecting 50 samples in estimated 2.4528 s (6375 iterations)
+Benchmarking signing/Dilithium5: Analyzing
+signing/Dilithium5      time:   [384.48 µs 390.91 µs 398.98 µs]
+Found 4 outliers among 50 measurements (8.00%)
+  1 (2.00%) low severe
+  1 (2.00%) low mild
+  2 (4.00%) high severe
+
+Benchmarking verification/Dilithium2
+Benchmarking verification/Dilithium2: Warming up for 1.0000 s
+Benchmarking verification/Dilithium2: Collecting 50 samples in estimated 2.0191 s (38k iterations)
+Benchmarking verification/Dilithium2: Analyzing
+verification/Dilithium2 time:   [53.045 µs 54.196 µs 55.956 µs]
+Found 8 outliers among 50 measurements (16.00%)
+  3 (6.00%) high mild
+  5 (10.00%) high severe
+Benchmarking verification/Dilithium3
+Benchmarking verification/Dilithium3: Warming up for 1.0000 s
+Benchmarking verification/Dilithium3: Collecting 50 samples in estimated 2.0844 s (24k iterations)
+Benchmarking verification/Dilithium3: Analyzing
+verification/Dilithium3 time:   [84.582 µs 84.745 µs 84.917 µs]
+Found 7 outliers among 50 measurements (14.00%)
+  1 (2.00%) low severe
+  1 (2.00%) low mild
+  5 (10.00%) high mild
+Benchmarking verification/Dilithium5
+Benchmarking verification/Dilithium5: Warming up for 1.0000 s
+Benchmarking verification/Dilithium5: Collecting 50 samples in estimated 2.1708 s (15k iterations)
+Benchmarking verification/Dilithium5: Analyzing
+verification/Dilithium5 time:   [137.02 µs 138.99 µs 143.20 µs]
+Found 7 outliers among 50 measurements (14.00%)
+  3 (6.00%) low mild
+  4 (8.00%) high severe
+
+Benchmarking sign_and_verify/Dilithium2
+Benchmarking sign_and_verify/Dilithium2: Warming up for 1.0000 s
+Benchmarking sign_and_verify/Dilithium2: Collecting 50 samples in estimated 2.0031 s (7650 iterations)
+Benchmarking sign_and_verify/Dilithium2: Analyzing
+sign_and_verify/Dilithium2
+                        time:   [259.69 µs 264.93 µs 271.03 µs]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+Benchmarking sign_and_verify/Dilithium3
+Benchmarking sign_and_verify/Dilithium3: Warming up for 1.0000 s
+Benchmarking sign_and_verify/Dilithium3: Collecting 50 samples in estimated 2.2041 s (5100 iterations)
+Benchmarking sign_and_verify/Dilithium3: Analyzing
+sign_and_verify/Dilithium3
+                        time:   [415.57 µs 424.54 µs 436.04 µs]
+Found 3 outliers among 50 measurements (6.00%)
+  2 (4.00%) high mild
+  1 (2.00%) high severe
+Benchmarking sign_and_verify/Dilithium5
+Benchmarking sign_and_verify/Dilithium5: Warming up for 1.0000 s
+Benchmarking sign_and_verify/Dilithium5: Collecting 50 samples in estimated 2.6562 s (5100 iterations)
+Benchmarking sign_and_verify/Dilithium5: Analyzing
+sign_and_verify/Dilithium5
+                        time:   [518.93 µs 525.72 µs 534.27 µs]
+Found 6 outliers among 50 measurements (12.00%)
+  1 (2.00%) low mild
+  3 (6.00%) high mild
+  2 (4.00%) high severe
+

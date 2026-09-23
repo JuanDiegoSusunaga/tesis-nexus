@@ -1,0 +1,13 @@
+test_alteracion_de_bytes (test_verificar_version_tg2.VerificacionVersion.test_alteracion_de_bytes) ... ok
+test_archivo_adicional (test_verificar_version_tg2.VerificacionVersion.test_archivo_adicional) ... ok
+test_archivo_faltante (test_verificar_version_tg2.VerificacionVersion.test_archivo_faltante) ... ok
+test_codigo_con_archivo_nuevo (test_verificar_version_tg2.VerificacionVersion.test_codigo_con_archivo_nuevo) ... ok
+test_commit_distinto (test_verificar_version_tg2.VerificacionVersion.test_commit_distinto) ... ok
+test_edicion_integra (test_verificar_version_tg2.VerificacionVersion.test_edicion_integra) ... ok
+test_ruta_duplicada (test_verificar_version_tg2.VerificacionVersion.test_ruta_duplicada) ... ok
+test_ruta_exterior (test_verificar_version_tg2.VerificacionVersion.test_ruta_exterior) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.288s
+
+OK

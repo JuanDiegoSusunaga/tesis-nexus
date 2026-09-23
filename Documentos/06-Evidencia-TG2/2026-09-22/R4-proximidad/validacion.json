@@ -1,0 +1,73 @@
+{
+  "fecha": "2026-09-22",
+  "pruebas_workspace": 187,
+  "nuevas_r4_proximidad": 7,
+  "pruebas_nuevas_release": 7,
+  "cargo_target_dir": "C:/tmp/nexus-target",
+  "variable_corpus": "NEXUS_TG2_TRACE_EVIDENCE_DIR",
+  "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.1\nLLVM version: 22.1.6",
+  "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+  "ejecuciones": [
+    {
+      "comando": "cargo check --workspace --all-targets --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-check.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "ccb6d754348dac41b01930e7aeba80c667acd66343e9d66edfa00cb4e48977ea"
+    },
+    {
+      "comando": "cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml -- --nocapture",
+      "log": "cargo-test.log",
+      "codigo_salida": 0,
+      "pruebas": 187,
+      "sha256": "cb7005605188b165db754680a377d3e9b6caca939c69e8d5a06561ecba9eab1b"
+    },
+    {
+      "comando": "cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-build.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "736faefe3e44393ec8df4403ba3f98e8c12ed77524be85b2919c107f5273e539"
+    },
+    {
+      "comando": "cargo test -p nexus-zk --test tg2_trace_proximity --release --locked --offline --manifest-path nexus/Cargo.toml -- --nocapture",
+      "log": "cargo-test-release.log",
+      "codigo_salida": 0,
+      "pruebas": 7,
+      "sha256": "0753b3afcb3a56c03502722ff617240d30fe9d0a5e8d075baa3cabea35476112"
+    }
+  ],
+  "corpus": [
+    {
+      "archivo": "corpus-debug/traza-lejana-16.bin",
+      "bytes": 133128,
+      "sha256": "db046fdd7274740f16d134fb443df253c495130f622d1820ca9a55fb3a8e0eb5"
+    },
+    {
+      "archivo": "corpus-debug/traza-lejana-32.bin",
+      "bytes": 164264,
+      "sha256": "8a496f8c41662fdaf73a96e7d8dcd25c988774d2cee807539bb5b49871617a15"
+    },
+    {
+      "archivo": "corpus-debug/traza-lejana-64.bin",
+      "bytes": 198984,
+      "sha256": "0c2ff42338a7cd95221b623bc2f5ac369f67807fa346e854a4ff7fcfd4c74f42"
+    },
+    {
+      "archivo": "corpus-release/traza-lejana-16.bin",
+      "bytes": 133128,
+      "sha256": "1d2ee6f2aa11b81e70e2cb3531c3b90796c7fb6d7e89cc113774f3c5723ee8d7"
+    },
+    {
+      "archivo": "corpus-release/traza-lejana-32.bin",
+      "bytes": 164264,
+      "sha256": "ce956e0fd08f7f8c6f2ca7c400ff3869da9a188f1bcc81a3af52fcd62257f75b"
+    },
+    {
+      "archivo": "corpus-release/traza-lejana-64.bin",
+      "bytes": 198984,
+      "sha256": "e7ebd99896cf217068d48b8f77bfcf7f7889f6e007a2c28b7f6d7098b4bbca8f"
+    }
+  ],
+  "limite": "Suite completa en desarrollo; siete pruebas nuevas en release. Corpus público, enunciados válidos y trazas alejadas; no contiene una falsificación de enunciado."
+}

@@ -1,0 +1,202 @@
+{
+  "fecha": "2026-09-23",
+  "tablas": [
+    {
+      "rotulo": "Tabla 1.1",
+      "archivo": "Cap1-Introduccion.md",
+      "columnas": 3,
+      "filas": 8
+    },
+    {
+      "rotulo": "Tabla 2.1",
+      "archivo": "Cap2-Marco-Teorico.md",
+      "columnas": 4,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 3.1",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 5,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 3.2",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 5,
+      "filas": 3
+    },
+    {
+      "rotulo": "Tabla 3.3",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 4.1",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 5,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 4.2",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 4,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 4.3",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 2,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 5.1",
+      "archivo": "Cap5-Gestion-Claves.md",
+      "columnas": 3,
+      "filas": 7
+    },
+    {
+      "rotulo": "Tabla 5.2",
+      "archivo": "Cap5-Gestion-Claves.md",
+      "columnas": 4,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 5.3",
+      "archivo": "Cap5-Gestion-Claves.md",
+      "columnas": 2,
+      "filas": 8
+    },
+    {
+      "rotulo": "Tabla 6.1",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 13
+    },
+    {
+      "rotulo": "Tabla 6.2",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 3,
+      "filas": 7
+    },
+    {
+      "rotulo": "Tabla 6.3",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 6,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 6.4",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.5",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 3
+    },
+    {
+      "rotulo": "Tabla 6.6",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.7",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.8",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 5,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 6.9",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.10",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.11",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 10
+    },
+    {
+      "rotulo": "Tabla 6.12",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.13",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 13
+    },
+    {
+      "rotulo": "Tabla 6.14",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.15",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 6,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.16",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 6.17",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 6,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.18",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 5,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 6.19",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 6.20",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 3,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 7.1",
+      "archivo": "Cap7-Conclusiones.md",
+      "columnas": 3,
+      "filas": 7
+    }
+  ],
+  "ecuaciones_word": 541,
+  "figuras_word": 3,
+  "tablas_word": 32,
+  "advertencias_pandoc": [],
+  "revision_visual": "Inspección del 2026-09-23: sección 6.7.6, Tabla 6.20 y fórmula 30 completas en Word pp. 90–92 y PDF pp. 80–82; láminas finales de ecuaciones revisadas en ambos formatos, sin recortes de las fórmulas observados. Las 32 tablas conservan rótulo y cuerpo en una misma página Word; 822 celdas coinciden con la conversión independiente. PDF sin páginas vacías ni texto fuera de márgenes. Las tres figuras y las 29 fórmulas previas conservan fuentes, dimensiones y ubicaciones registradas; se mantiene su revisión anterior. El peso aparente de las letras en la rasterización EMF de Word no implica negrita global. Los cuatro informes raíz del día 22 conservan sus hashes respecto de la etapa R4-cota-interactiva."
+}

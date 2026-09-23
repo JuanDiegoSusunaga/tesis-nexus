@@ -1,0 +1,45 @@
+{
+  "fecha": "2026-09-22",
+  "metodo": "Modelo, no medición de residencia ni probabilidad empírica.",
+  "latencia_us_usada_como_proxy": 478.74407894736845,
+  "origen_sha256": "514194ed509ad118ab8f43c993a872f0378d70de249b37df1c356f6ca5cf087c",
+  "supuestos": [
+    "Una copia de semilla de 32 B retenida en ambas políticas.",
+    "Región de clave codificada de 4032 B; incluye 96 B públicos.",
+    "Operaciones periódicas, secuenciales, duración fija igual a la mediana R4.",
+    "Sin copias adicionales, residuos, interrupciones ni memoria auxiliar.",
+    "No inferir seguridad: un volcado con la semilla permite reconstruir la clave."
+  ],
+  "escenarios": [
+    {
+      "operaciones_s_supuestas": 1,
+      "fraccion_temporal_supuesta": 0.00047874407894736847,
+      "bytes_protegidos_medios_modelados": 33.93029612631579,
+      "razon_cache_reexpansion": 119.77496408727265
+    },
+    {
+      "operaciones_s_supuestas": 10,
+      "fraccion_temporal_supuesta": 0.004787440789473685,
+      "bytes_protegidos_medios_modelados": 51.3029612631579,
+      "razon_cache_reexpansion": 79.2157002234971
+    },
+    {
+      "operaciones_s_supuestas": 100,
+      "fraccion_temporal_supuesta": 0.04787440789473685,
+      "bytes_protegidos_medios_modelados": 225.02961263157897,
+      "razon_cache_reexpansion": 18.059845335349827
+    },
+    {
+      "operaciones_s_supuestas": 1000,
+      "fraccion_temporal_supuesta": 0.4787440789473685,
+      "bytes_protegidos_medios_modelados": 1962.2961263157897,
+      "razon_cache_reexpansion": 2.0710431751349163
+    },
+    {
+      "operaciones_s_supuestas": 2000,
+      "fraccion_temporal_supuesta": 0.957488157894737,
+      "bytes_protegidos_medios_modelados": 3892.5922526315794,
+      "razon_cache_reexpansion": 1.0440343442734186
+    }
+  ]
+}

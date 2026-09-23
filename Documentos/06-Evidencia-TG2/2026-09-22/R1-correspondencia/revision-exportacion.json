@@ -1,0 +1,158 @@
+{
+  "tablas_con_contenido_identico": 26,
+  "celdas_comparadas": 657,
+  "sha256_contenido_tablas": "735415031cda4af85b9c3984c4c12c5a1fd22a4d95514370ed0e18ee338592a5",
+  "paginas_pdf": 85,
+  "paginas_con_tablas": [
+    {
+      "pagina": 11,
+      "rotulos": [
+        "Tabla 1.1"
+      ]
+    },
+    {
+      "pagina": 13,
+      "rotulos": [
+        "Tabla 2.1"
+      ]
+    },
+    {
+      "pagina": 19,
+      "rotulos": [
+        "Tabla 3.1"
+      ]
+    },
+    {
+      "pagina": 21,
+      "rotulos": [
+        "Tabla 3.2"
+      ]
+    },
+    {
+      "pagina": 22,
+      "rotulos": [
+        "Tabla 3.3"
+      ]
+    },
+    {
+      "pagina": 28,
+      "rotulos": [
+        "Tabla 4.1"
+      ]
+    },
+    {
+      "pagina": 31,
+      "rotulos": [
+        "Tabla 4.2"
+      ]
+    },
+    {
+      "pagina": 32,
+      "rotulos": [
+        "Tabla 4.3"
+      ]
+    },
+    {
+      "pagina": 39,
+      "rotulos": [
+        "Tabla 5.1"
+      ]
+    },
+    {
+      "pagina": 41,
+      "rotulos": [
+        "Tabla 5.2"
+      ]
+    },
+    {
+      "pagina": 42,
+      "rotulos": [
+        "Tabla 6.11"
+      ]
+    },
+    {
+      "pagina": 45,
+      "rotulos": [
+        "Tabla 5.3"
+      ]
+    },
+    {
+      "pagina": 51,
+      "rotulos": [
+        "Tabla 6.1"
+      ]
+    },
+    {
+      "pagina": 56,
+      "rotulos": [
+        "Tabla 6.2"
+      ]
+    },
+    {
+      "pagina": 58,
+      "rotulos": [
+        "Tabla 6.3"
+      ]
+    },
+    {
+      "pagina": 59,
+      "rotulos": [
+        "Tabla 6.4"
+      ]
+    },
+    {
+      "pagina": 60,
+      "rotulos": [
+        "Tabla 6.5"
+      ]
+    },
+    {
+      "pagina": 61,
+      "rotulos": [
+        "Tabla 6.6",
+        "Tabla 6.7"
+      ]
+    },
+    {
+      "pagina": 62,
+      "rotulos": [
+        "Tabla 6.8"
+      ]
+    },
+    {
+      "pagina": 64,
+      "rotulos": [
+        "Tabla 6.9"
+      ]
+    },
+    {
+      "pagina": 66,
+      "rotulos": [
+        "Tabla 6.10",
+        "Tabla 6.11"
+      ]
+    },
+    {
+      "pagina": 67,
+      "rotulos": [
+        "Tabla 6.12"
+      ]
+    },
+    {
+      "pagina": 69,
+      "rotulos": [
+        "Tabla 6.13",
+        "Tabla 6.14"
+      ]
+    },
+    {
+      "pagina": 74,
+      "rotulos": [
+        "Tabla 7.1"
+      ]
+    }
+  ],
+  "paginas_vacias": [],
+  "texto_fuera_de_margenes": [],
+  "sha256_pdf": "8e885caffa3e797ca78371511fc893b9d59792b662e310040eebbaf7dcb6574b"
+}

@@ -1,6 +1,10 @@
 # Decisión 001 — Parámetros (W, C) de los tests de salud SP 800-90B
 
-**Estado:** propuesta con validación empírica, lista para acordar con el director.
+**Estado actualizado el 2026-09-22:** propuesta aprobada según confirmación del estudiante. Corte binomial, lotes de 65.536 muestras y recuperación explícita implementados y comprobados; 123 pruebas del workspace pasan, incluidas 13 nuevas. La vinculación y calificación de una fuente concreta de despliegue siguen requeridas. Véase el [informe R2](../04-Administrativo-TG2/Avances/R2-Monitor-Entropia-2026-09-22.md). Se conserva debajo el análisis histórico del 7 de agosto; fecha exacta de aprobación por incorporar.
+
+**Precisión posterior sobre la convención del corte:** con la referencia incluida, se implementa $B=1+\mathrm{Bin}(W-1,p)$ y fallo al alcanzar $C$. Se evalúa directamente $\Pr[B\ge C]\le\alpha$. Si `CRITBINOM` representa el cuantil usual de la CDF, la equivalencia es `C = 2 + CRITBINOM(W-1, p, 1-alpha)`. No se identifica esta expresión con la nota de hoja de cálculo de SP 800-90B, que usa otra expresión. Para el perfil aprobado, C=16 satisface la condición directa: cola 2,764095×10⁻⁷; C=15 produce 1,522690×10⁻⁶.
+
+**Límite del barrido MCV histórico:** `estimate_min_entropy` calcula una estimación puntual por frecuencia máxima; no incorpora el límite de confianza del estimador completo de SP 800-90B §6.3.1. Sus tasas y el margen de 0,2 bits pertenecen al modelo simulado. El lote de 65.536 y un resultado favorable no sustituyen una calificación de fuente ni prueban independencia temporal.
 **Fecha:** 2026-08-07 · **Harness:** `nexus/nexus-crypto/examples/apt_sweep.rs` (nuevo)
 **Hardware:** MSI Vector 16 (Core Ultra 9 275HX, 24 hilos) · corrida completa: ~13 s
 **Reproducir:** `cargo run -p nexus-crypto --example apt_sweep --release` (RNG determinista: las tablas salen idénticas en cualquier máquina)

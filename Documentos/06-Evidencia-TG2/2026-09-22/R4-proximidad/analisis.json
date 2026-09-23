@@ -1,0 +1,116 @@
+{
+  "fecha": "2026-09-22",
+  "familia": "F=f+lambda*(X^T-1), lambda no nulo",
+  "casos": [
+    {
+      "T": 16,
+      "N": 128,
+      "grado_traza": 16,
+      "grado_cociente_transicion": 18,
+      "cota_grado_cp": 18,
+      "cota_fri_exclusiva": 32,
+      "acuerdos_con_testigo_grado_menor_T": 16,
+      "distancia_exacta_RS_T": "7/8",
+      "legado": "Acepta",
+      "control_exhaustivo": "Rechaza por grado"
+    },
+    {
+      "T": 32,
+      "N": 256,
+      "grado_traza": 32,
+      "grado_cociente_transicion": 34,
+      "cota_grado_cp": 34,
+      "cota_fri_exclusiva": 64,
+      "acuerdos_con_testigo_grado_menor_T": 32,
+      "distancia_exacta_RS_T": "7/8",
+      "legado": "Acepta",
+      "control_exhaustivo": "Rechaza por grado"
+    },
+    {
+      "T": 64,
+      "N": 512,
+      "grado_traza": 64,
+      "grado_cociente_transicion": 66,
+      "cota_grado_cp": 66,
+      "cota_fri_exclusiva": 128,
+      "acuerdos_con_testigo_grado_menor_T": 64,
+      "distancia_exacta_RS_T": "7/8",
+      "legado": "Acepta",
+      "control_exhaustivo": "Rechaza por grado"
+    }
+  ],
+  "casos_algebraicos_en_rust": 21,
+  "implicacion_refutada": "Aceptación heredada implica distancia <=1/24 de la traza comprometida a RS de grado <T",
+  "control": {
+    "filas_minimas": 4,
+    "filas_maximas": 256,
+    "grado_exigido": "<T",
+    "costo": "O(N log N)",
+    "memoria": "O(N)",
+    "elementos_adicionales": "N=8T",
+    "conocimiento_cero": false,
+    "integrado_en_produccion": false
+  },
+  "fuentes": [
+    {
+      "archivo": "nexus/nexus-zk/src/stark/air.rs",
+      "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/channel.rs",
+      "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/field.rs",
+      "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/fri.rs",
+      "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/merkle.rs",
+      "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/mod.rs",
+      "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/ntt.rs",
+      "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/params.rs",
+      "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533"
+    },
+    {
+      "archivo": "nexus/nexus-zk/experiments/tg2_air_algebra.rs",
+      "sha256": "c899b7f9a89b00df3a3a6c0fbdfda5b2dada531127de3c74de8a46e09b3f7d55"
+    },
+    {
+      "archivo": "nexus/nexus-zk/experiments/tg2_trace_proximity.rs",
+      "sha256": "fc73af507ce1242667d47b17d37d0b4a9570bc75a1fb49eabdb469be960b2b1f"
+    },
+    {
+      "archivo": "nexus/nexus-zk/tests/tg2_trace_proximity.rs",
+      "sha256": "b3041688851e554e82c2340ff1e24d57017d7c662c11c9f226679717695fbcdc"
+    },
+    {
+      "archivo": "nexus/Cargo.toml",
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea"
+    },
+    {
+      "archivo": "nexus/Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    },
+    {
+      "archivo": "nexus/nexus-zk/Cargo.toml",
+      "sha256": "a186b13cb9292cce8c7a7501d69a90f2f5433649a1d9d361a88fa75f7e78ae2d"
+    },
+    {
+      "archivo": "scripts/analizar_proximidad_traza_r4.py",
+      "sha256": "d718766ce2044952ab273f7e8ca4c15dac13dd429c49d2c6e28eaf1b39bf5718"
+    }
+  ]
+}

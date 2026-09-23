@@ -1,0 +1,191 @@
+{
+  "fecha": "2026-09-22",
+  "parametros": [
+    {
+      "T": 4,
+      "N": 32,
+      "cota_grado_estricta": 8,
+      "capas": 3,
+      "consultas": 16,
+      "perfil_tg2": false,
+      "aritmetica_pg_sin_justificacion": 32,
+      "aritmetica_pg_mas_pow_release_sin_justificacion": 52
+    },
+    {
+      "T": 8,
+      "N": 64,
+      "cota_grado_estricta": 16,
+      "capas": 4,
+      "consultas": 32,
+      "perfil_tg2": false,
+      "aritmetica_pg_sin_justificacion": 64,
+      "aritmetica_pg_mas_pow_release_sin_justificacion": 84
+    },
+    {
+      "T": 16,
+      "N": 128,
+      "cota_grado_estricta": 32,
+      "capas": 5,
+      "consultas": 40,
+      "perfil_tg2": true,
+      "aritmetica_pg_sin_justificacion": 80,
+      "aritmetica_pg_mas_pow_release_sin_justificacion": 100
+    },
+    {
+      "T": 64,
+      "N": 512,
+      "cota_grado_estricta": 128,
+      "capas": 7,
+      "consultas": 40,
+      "perfil_tg2": true,
+      "aritmetica_pg_sin_justificacion": 80,
+      "aritmetica_pg_mas_pow_release_sin_justificacion": 100
+    },
+    {
+      "T": 256,
+      "N": 2048,
+      "cota_grado_estricta": 512,
+      "capas": 9,
+      "consultas": 40,
+      "perfil_tg2": true,
+      "aritmetica_pg_sin_justificacion": 80,
+      "aritmetica_pg_mas_pow_release_sin_justificacion": 100
+    },
+    {
+      "T": 1024,
+      "N": 8192,
+      "cota_grado_estricta": 2048,
+      "capas": 11,
+      "consultas": 40,
+      "perfil_tg2": true,
+      "aritmetica_pg_sin_justificacion": 80,
+      "aritmetica_pg_mas_pow_release_sin_justificacion": 100
+    },
+    {
+      "T": 4096,
+      "N": 32768,
+      "cota_grado_estricta": 8192,
+      "capas": 13,
+      "consultas": 40,
+      "perfil_tg2": true,
+      "aritmetica_pg_sin_justificacion": 80,
+      "aritmetica_pg_mas_pow_release_sin_justificacion": 100
+    },
+    {
+      "T": 262144,
+      "N": 2097152,
+      "cota_grado_estricta": 524288,
+      "capas": 19,
+      "consultas": 40,
+      "perfil_tg2": true,
+      "aritmetica_pg_sin_justificacion": 80,
+      "aritmetica_pg_mas_pow_release_sin_justificacion": 100
+    }
+  ],
+  "muestreo_campo": {
+    "p": 18446744069414584321,
+    "bits_entrada_coordenada": 128,
+    "cociente": 18446744078004518911,
+    "residuo": 18446744065119617025,
+    "variacion_total": "18446744065119617025/1461501636990620551361974531767172749817708281856",
+    "bits_variacion_total": "96.0000000003359036150837360950917558643606013668612984315223169797661137059370635608823548",
+    "probabilidad_maxima_coordenada": "4294967297/79228162514264337593543950336",
+    "probabilidad_maxima_extension": "18446744082299486209/6277101735386680763835789423207666416102355444464034512896",
+    "limite": "Bajo bytes uniformes ideales; no prueba independencia de SHA3 ni una cota global."
+  },
+  "escenario_bt24": {
+    "fuente": "Teorema 1, §3.2 y Lema 1 de BT24",
+    "rho": "1/4",
+    "m": 3,
+    "eta": "1/24",
+    "delta": "5/12",
+    "resultados": [
+      {
+        "T": 16,
+        "bits_termino_algebraico": "99.9334780456461201995053161527275021606504320155737939405386634365927214361917127426441899",
+        "bits_consulta_con_pow": "51.1043031465420829604707850686394280047515112690536110711384372188310951572866230409767790",
+        "bits_error_rbr_referencia": "51.1043031465420829604707850686394280047515112690536110711384372188310951572866230409767790"
+      },
+      {
+        "T": 4096,
+        "bits_termino_algebraico": "83.9334780456461201995053161527275021606504320155737939405386634365927214361917127426441898",
+        "bits_consulta_con_pow": "51.1043031465420829604707850686394280047515112690536110711384372188310951572866230409767790",
+        "bits_error_rbr_referencia": "51.1043031465420829604707850686394280047515112690536110711384372188310951572866230409767790"
+      },
+      {
+        "T": 262144,
+        "bits_termino_algebraico": "71.9334780456461201995053161527275021606504320155737939405386634365927214361917127426441898",
+        "bits_consulta_con_pow": "51.1043031465420829604707850686394280047515112690536110711384372188310951572866230409767790",
+        "bits_error_rbr_referencia": "51.1043031465420829604707850686394280047515112690536110711384372188310951572866230409767790"
+      }
+    ],
+    "limite": "Aritmética de referencia clásica; aplicación al código y composición AIR/Merkle/Fiat-Shamir no demostradas. No es estimación certificada de bits de NEXUS."
+  },
+  "ensayo_proximidad": {
+    "N": 512,
+    "grado_interpolado": 511,
+    "cota": 128,
+    "aceptadas": 28,
+    "rechazadas": 4,
+    "limite": "32 contextos públicos fijos, FRI aislado sin grinding; distancia 1/512 a cero. No es un enunciado AIR falso aceptado ni un ataque de 100 bits."
+  },
+  "probabilidad_ideal_evitar_pareja": "27/32",
+  "fuentes": [
+    {
+      "archivo": "nexus/nexus-zk/src/stark/air.rs",
+      "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/channel.rs",
+      "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/field.rs",
+      "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/fri.rs",
+      "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/merkle.rs",
+      "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/mod.rs",
+      "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/ntt.rs",
+      "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/params.rs",
+      "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533"
+    },
+    {
+      "archivo": "nexus/nexus-core/src/types.rs",
+      "sha256": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492"
+    },
+    {
+      "archivo": "nexus/nexus-zk/tests/tg2_soundness.rs",
+      "sha256": "1655b2f6e24d488329883aeec256595c8a02081419d7f0cb830c2e0435b878b7"
+    },
+    {
+      "archivo": "nexus/nexus-active/experiments/tg2_canonical_verifier.rs",
+      "sha256": "bc543ed1dca51cca940a46bf05edfdc3459b95d2075c8267035b13261609447c"
+    },
+    {
+      "archivo": "nexus/Cargo.toml",
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea"
+    },
+    {
+      "archivo": "nexus/Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    },
+    {
+      "archivo": "scripts/analizar_solidez_stark_r4.py",
+      "sha256": "f371a103bc8d3128f26946d6cb0f68bdc18986822485069b77530bcb58d49906"
+    }
+  ]
+}

@@ -1,0 +1,1023 @@
+{
+  "fecha_inventario": "2026-09-22",
+  "naturaleza": "Copia de evidencia preexistente; no es una nueva ejecución.",
+  "limite": "El HEAD observado no identifica por sí solo la revisión de las corridas históricas. Hay cambios locales.",
+  "documentos_head": "23861ef66fa3a9c116b8e4d58993510fce20317d",
+  "codigo_head": "6ec77633951004f37088abcdd41aa78ad290f36f",
+  "codigo_estado": "M nexus-crypto/Cargo.toml\n M nexus-zk/examples/stark_demo.rs\n?? nexus-crypto/benches/residencia_bench.rs\n?? nexus-crypto/examples/",
+  "archivos": [
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_key_generation\\ecdsap256\\new\\benchmark.json",
+      "archivo": "criterion\\classical_key_generation\\ecdsap256\\new\\benchmark.json",
+      "sha256": "3c2048dd311438224110ecedbd2d6cfe6d888a92a59d93c563867a50bc93888b",
+      "mtime_origen": 1786119377.2269502
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_key_generation\\ecdsap256\\new\\estimates.json",
+      "archivo": "criterion\\classical_key_generation\\ecdsap256\\new\\estimates.json",
+      "sha256": "3f7bcbe05484f829c1ddb12b5caf222797d99a0083ea9e846506595cbe325136",
+      "mtime_origen": 1786119377.0098186
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_key_generation\\ecdsap256\\new\\sample.json",
+      "archivo": "criterion\\classical_key_generation\\ecdsap256\\new\\sample.json",
+      "sha256": "1cd062df8f221be1561b40ed711c732d371e1d96a8207cecc7acd130a28518d4",
+      "mtime_origen": 1786119377.0098186
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_key_generation\\ecdsap256\\new\\tukey.json",
+      "archivo": "criterion\\classical_key_generation\\ecdsap256\\new\\tukey.json",
+      "sha256": "4d817b78f9930213e6fbfe1125de7ae2057de4bbfb82a67217b439e12c9653bd",
+      "mtime_origen": 1786119376.9497812
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_key_generation\\rsa2048\\new\\benchmark.json",
+      "archivo": "criterion\\classical_key_generation\\rsa2048\\new\\benchmark.json",
+      "sha256": "b94924496e25a7ff042ba3960ea178cf84bc58c080d18f20bde51f3e162bcdcd",
+      "mtime_origen": 1786119389.66687
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_key_generation\\rsa2048\\new\\estimates.json",
+      "archivo": "criterion\\classical_key_generation\\rsa2048\\new\\estimates.json",
+      "sha256": "1be33742572845181d9b2a5421629a42ac5483242e2e0bcbe60ec97359ff2d22",
+      "mtime_origen": 1786119389.4570868
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_key_generation\\rsa2048\\new\\sample.json",
+      "archivo": "criterion\\classical_key_generation\\rsa2048\\new\\sample.json",
+      "sha256": "7c5856fc5fe5e4bf5fa67eaaf12a15ba208a15772c85c6d77833514f340dc7fb",
+      "mtime_origen": 1786119389.4560878
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_key_generation\\rsa2048\\new\\tukey.json",
+      "archivo": "criterion\\classical_key_generation\\rsa2048\\new\\tukey.json",
+      "sha256": "33f68f72181e4d4eef8dfd14d524be031ba2f52ebabf5401c6a8c91a45f83808",
+      "mtime_origen": 1786119389.4400895
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\ecdsap256\\new\\benchmark.json",
+      "archivo": "criterion\\classical_signing\\ecdsap256\\new\\benchmark.json",
+      "sha256": "24b2d98a81ad1738511a32b389816c60bdbe1cd15306334684382f11e4b3b20b",
+      "mtime_origen": 1786119400.9572093
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\ecdsap256\\new\\estimates.json",
+      "archivo": "criterion\\classical_signing\\ecdsap256\\new\\estimates.json",
+      "sha256": "3253e83f851aea826ede0933dc3268f24388214f661c7a1608271c1c6df7f186",
+      "mtime_origen": 1786119400.7538204
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\ecdsap256\\new\\sample.json",
+      "archivo": "criterion\\classical_signing\\ecdsap256\\new\\sample.json",
+      "sha256": "307803bbcfe5059b476cfb4a02ffe2b6e4e1ae46b01a5ee4bae3ea2b910daa88",
+      "mtime_origen": 1786119400.7538204
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\ecdsap256\\new\\tukey.json",
+      "archivo": "criterion\\classical_signing\\ecdsap256\\new\\tukey.json",
+      "sha256": "0d62d66c61e202811e41a28478497a484540c5d5fed105a5c2bd43a953e2c64b",
+      "mtime_origen": 1786119400.6921663
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\rsa2048\\new\\benchmark.json",
+      "archivo": "criterion\\classical_signing\\rsa2048\\new\\benchmark.json",
+      "sha256": "9ce0fb98627b063f4b6fcef2095f257751f2b30d71e353c0010ed2f4b33cf66b",
+      "mtime_origen": 1786119411.717005
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\rsa2048\\new\\estimates.json",
+      "archivo": "criterion\\classical_signing\\rsa2048\\new\\estimates.json",
+      "sha256": "6e54742bced8131883ca420dd9003b271429081f7b18adb6c4275ed8ccce2ab4",
+      "mtime_origen": 1786119411.591013
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\rsa2048\\new\\sample.json",
+      "archivo": "criterion\\classical_signing\\rsa2048\\new\\sample.json",
+      "sha256": "e1672ab36178380457f41d9fdf824da81d1caaba880aa5f23658d99aeb1a0077",
+      "mtime_origen": 1786119411.591013
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\rsa2048\\new\\tukey.json",
+      "archivo": "criterion\\classical_signing\\rsa2048\\new\\tukey.json",
+      "sha256": "bf5650730397e102871975a9173a447bd68a5c273fdc8cf51aa759855b850f98",
+      "mtime_origen": 1786119411.5640013
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\rsa3072\\new\\benchmark.json",
+      "archivo": "criterion\\classical_signing\\rsa3072\\new\\benchmark.json",
+      "sha256": "a23de31e097138a6a385bc16bcd276ca2372de20ade521e7ccc6a9750bef31bf",
+      "mtime_origen": 1786119422.4000945
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\rsa3072\\new\\estimates.json",
+      "archivo": "criterion\\classical_signing\\rsa3072\\new\\estimates.json",
+      "sha256": "99f8a4e223086081162dea0104e1c1e6498dadf566cd80781fc6339628a5ce08",
+      "mtime_origen": 1786119422.2479823
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\rsa3072\\new\\sample.json",
+      "archivo": "criterion\\classical_signing\\rsa3072\\new\\sample.json",
+      "sha256": "20f4ad0882803f718415a8db0d761edc13250e30b1b1918a800ff2bda54b6dbb",
+      "mtime_origen": 1786119422.2479823
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_signing\\rsa3072\\new\\tukey.json",
+      "archivo": "criterion\\classical_signing\\rsa3072\\new\\tukey.json",
+      "sha256": "e428bbd90fa4959d0e7d3e24716dbe94219a5310e7c44835a56fd39b1ec250e4",
+      "mtime_origen": 1786119422.1959827
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\ecdsap256\\new\\benchmark.json",
+      "archivo": "criterion\\classical_verification\\ecdsap256\\new\\benchmark.json",
+      "sha256": "648f76aa4b090e3991ebbd1a89950703ab28ece285df36b223ed48352a78b14b",
+      "mtime_origen": 1786119432.6592908
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\ecdsap256\\new\\estimates.json",
+      "archivo": "criterion\\classical_verification\\ecdsap256\\new\\estimates.json",
+      "sha256": "8ccf46be592dda683f0d731a638e95bf1f9bc00f3a00cf9acedfe2809697352e",
+      "mtime_origen": 1786119432.4519486
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\ecdsap256\\new\\sample.json",
+      "archivo": "criterion\\classical_verification\\ecdsap256\\new\\sample.json",
+      "sha256": "f5d8547a6582257da119446eb44c681e2def0a864c292d19cae208e37396bac0",
+      "mtime_origen": 1786119432.4519486
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\ecdsap256\\new\\tukey.json",
+      "archivo": "criterion\\classical_verification\\ecdsap256\\new\\tukey.json",
+      "sha256": "9a319d814118a13eecce4e911acd2f1528f9e065b33868a3cf2aa506fe69f939",
+      "mtime_origen": 1786119432.404238
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\rsa2048\\new\\benchmark.json",
+      "archivo": "criterion\\classical_verification\\rsa2048\\new\\benchmark.json",
+      "sha256": "34ce2320d69798eb467198e6fd772e8f2e2d2d7767b1bfb08c598d655ba955d9",
+      "mtime_origen": 1786119441.1756122
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\rsa2048\\new\\estimates.json",
+      "archivo": "criterion\\classical_verification\\rsa2048\\new\\estimates.json",
+      "sha256": "05b145f3c3661be9a03e4a88a4eaf6538adb1faca221ea87974b2e393684c451",
+      "mtime_origen": 1786119441.0454216
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\rsa2048\\new\\sample.json",
+      "archivo": "criterion\\classical_verification\\rsa2048\\new\\sample.json",
+      "sha256": "b8183a1b65434f2ebe31a6425e35069489c5be72eae0301a0a391d9b2e9a1026",
+      "mtime_origen": 1786119441.0454216
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\rsa2048\\new\\tukey.json",
+      "archivo": "criterion\\classical_verification\\rsa2048\\new\\tukey.json",
+      "sha256": "8bad8ee7c04df8f4c01a1fe21dc90b2ddd3d8e1b604d20a2df06ecf325fabb95",
+      "mtime_origen": 1786119441.0136929
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\rsa3072\\new\\benchmark.json",
+      "archivo": "criterion\\classical_verification\\rsa3072\\new\\benchmark.json",
+      "sha256": "66cd26ddf5c64c4b7960251a3e086dea92fdf6d1c1acbaee05fa086d30ac35c2",
+      "mtime_origen": 1786119449.9215477
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\rsa3072\\new\\estimates.json",
+      "archivo": "criterion\\classical_verification\\rsa3072\\new\\estimates.json",
+      "sha256": "9d79e3f18a9b4ff6e4d61c5aab41b8460a68ce6cdb7faeef17b64092b7c6401f",
+      "mtime_origen": 1786119449.7918506
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\rsa3072\\new\\sample.json",
+      "archivo": "criterion\\classical_verification\\rsa3072\\new\\sample.json",
+      "sha256": "c8fb5f5c828f2880ef7671f955eac77ecd762acfaac24538ad23357927c33133",
+      "mtime_origen": 1786119449.7918506
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\classical_verification\\rsa3072\\new\\tukey.json",
+      "archivo": "criterion\\classical_verification\\rsa3072\\new\\tukey.json",
+      "sha256": "addcdb96959564afe59690fab5aae7cc5556598b221186f51006e8437fbb6851",
+      "mtime_origen": 1786119449.7648501
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium2\\new\\benchmark.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium2\\new\\benchmark.json",
+      "sha256": "18474a03cad1293ffa63228e75f7ab127480ca1d5b87ffe531ecc28c8a97e71d",
+      "mtime_origen": 1786122229.1589952
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium2\\new\\estimates.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium2\\new\\estimates.json",
+      "sha256": "51bc2df53f83c8a7b2d6e2e8cc513ee037d317ed04df02bcb69776c8893daee9",
+      "mtime_origen": 1786122228.9588325
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium2\\new\\sample.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium2\\new\\sample.json",
+      "sha256": "54a51e3043dfa86e0224272136c3c999df8797fc55f57493856436883c737a97",
+      "mtime_origen": 1786122228.9588325
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium2\\new\\tukey.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium2\\new\\tukey.json",
+      "sha256": "1d2f5fcca8c8af927cd2493290cddda7692d43d1c66b5d7c889d36d4c2987393",
+      "mtime_origen": 1786122228.9070265
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium3\\new\\benchmark.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium3\\new\\benchmark.json",
+      "sha256": "25b111cf0cf5aa1884577ddfb93e8d0395f785ed58fb213d079f0d464e6c23c8",
+      "mtime_origen": 1786122240.5750525
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium3\\new\\estimates.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium3\\new\\estimates.json",
+      "sha256": "38b61a307956b871a2cbdd0c01fa99122751a2dee6ff52b1ed63cbdf35a61fb5",
+      "mtime_origen": 1786122240.4150515
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium3\\new\\sample.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium3\\new\\sample.json",
+      "sha256": "9548cfd9224a7709a911ab854c6a50d9dd013a3261dfadd303732adf7e9886bc",
+      "mtime_origen": 1786122240.4150515
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium3\\new\\tukey.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium3\\new\\tukey.json",
+      "sha256": "db75e081618e8a28cdabce3d99176a94751ff48e837ba353fb9a65343f3c1358",
+      "mtime_origen": 1786122240.3760402
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium5\\new\\benchmark.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium5\\new\\benchmark.json",
+      "sha256": "b56986c8477db1255722f4417d993ef433aae4fb312439ada2f1fe0f223b9e20",
+      "mtime_origen": 1786122250.1268773
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium5\\new\\estimates.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium5\\new\\estimates.json",
+      "sha256": "1524824e761704fdb7e3e567691b117a50950eb0d17766ec539f5b733110d4d3",
+      "mtime_origen": 1786122249.886387
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium5\\new\\sample.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium5\\new\\sample.json",
+      "sha256": "85108ca6c30d3c74791ebb8538c3dca440f53fba3a3ae0b8c4f6edff2a0ba863",
+      "mtime_origen": 1786122249.8853858
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_cacheada\\dilithium5\\new\\tukey.json",
+      "archivo": "criterion\\firma_cacheada\\dilithium5\\new\\tukey.json",
+      "sha256": "29365aa3f2323585eb37b103532bd8bd9c79920521fe8bb0f6e57947b4998de3",
+      "mtime_origen": 1786122249.8323934
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium2\\new\\benchmark.json",
+      "archivo": "criterion\\firma_efimera\\dilithium2\\new\\benchmark.json",
+      "sha256": "24292dff96e302efec47744e12be985ec86f99668350180580cd0641e5f30ac4",
+      "mtime_origen": 1786122260.7263136
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium2\\new\\estimates.json",
+      "archivo": "criterion\\firma_efimera\\dilithium2\\new\\estimates.json",
+      "sha256": "439c6c03aa5900fc13cf06fd3ea57f5aff99e332f364719f66e42612dac921d4",
+      "mtime_origen": 1786122260.5335333
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium2\\new\\sample.json",
+      "archivo": "criterion\\firma_efimera\\dilithium2\\new\\sample.json",
+      "sha256": "7523a181255fadc7a7715cbc73bcd00662871a7e7c939557606c0003661cb599",
+      "mtime_origen": 1786122260.5335333
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium2\\new\\tukey.json",
+      "archivo": "criterion\\firma_efimera\\dilithium2\\new\\tukey.json",
+      "sha256": "7114a117a0b541f360854265ed4863d6714be74ecc533fea541b3631e2ebec02",
+      "mtime_origen": 1786122260.4861665
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium3\\new\\benchmark.json",
+      "archivo": "criterion\\firma_efimera\\dilithium3\\new\\benchmark.json",
+      "sha256": "16df4e0f95cd9f8d13a74f163a926b4ac90d8942d1c0b7147adc00195f01eb41",
+      "mtime_origen": 1786122271.0667663
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium3\\new\\estimates.json",
+      "archivo": "criterion\\firma_efimera\\dilithium3\\new\\estimates.json",
+      "sha256": "b7e6f7b58b2644e551c2fe58d0e722634b01a09c22f01fae720ec57023a343c6",
+      "mtime_origen": 1786122270.8641915
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium3\\new\\sample.json",
+      "archivo": "criterion\\firma_efimera\\dilithium3\\new\\sample.json",
+      "sha256": "813ba6f974065f2dcebbf755ae18fe3ae8c4714a825b585d386146057a75c895",
+      "mtime_origen": 1786122270.8641915
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium3\\new\\tukey.json",
+      "archivo": "criterion\\firma_efimera\\dilithium3\\new\\tukey.json",
+      "sha256": "9a57cb62cd5e4862696699a558d9b51502011ba606700ef163fd34648cb8f307",
+      "mtime_origen": 1786122270.8180702
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium5\\new\\benchmark.json",
+      "archivo": "criterion\\firma_efimera\\dilithium5\\new\\benchmark.json",
+      "sha256": "0e10e728657aac0edac8ea08880f7df46a3fbf6041dd42db4900b31282f7a74c",
+      "mtime_origen": 1786122281.570581
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium5\\new\\estimates.json",
+      "archivo": "criterion\\firma_efimera\\dilithium5\\new\\estimates.json",
+      "sha256": "a4c753dde7422183412127c4ec0dade5c521e94e97a84c865419265e183ab4e7",
+      "mtime_origen": 1786122281.3577049
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium5\\new\\sample.json",
+      "archivo": "criterion\\firma_efimera\\dilithium5\\new\\sample.json",
+      "sha256": "dd5f8d670f5fc0ce3d0e3dcd39e7e3d3566752302a737ec395e1eabe7d87bc3f",
+      "mtime_origen": 1786122281.3577049
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\firma_efimera\\dilithium5\\new\\tukey.json",
+      "archivo": "criterion\\firma_efimera\\dilithium5\\new\\tukey.json",
+      "sha256": "2019e6b08884f1eb55dbaa53e54e80e784f7224ded69292f9d24e2629f2718df",
+      "mtime_origen": 1786122281.3097062
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium2\\new\\benchmark.json",
+      "archivo": "criterion\\key_generation\\dilithium2\\new\\benchmark.json",
+      "sha256": "fa4e1afa322140a927d4c61c4d47d76c90e0d16375754674b4a530b24f5deceb",
+      "mtime_origen": 1786119463.6482599
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium2\\new\\estimates.json",
+      "archivo": "criterion\\key_generation\\dilithium2\\new\\estimates.json",
+      "sha256": "64b1965c1075e70df6069b74624b7677ee34370018536bc0826d747353943820",
+      "mtime_origen": 1786119463.4403281
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium2\\new\\sample.json",
+      "archivo": "criterion\\key_generation\\dilithium2\\new\\sample.json",
+      "sha256": "b9bd41397e4116bc41e007fe5db7bf51b5afdfdf7dc332c52fcec57cc4288200",
+      "mtime_origen": 1786119463.4393275
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium2\\new\\tukey.json",
+      "archivo": "criterion\\key_generation\\dilithium2\\new\\tukey.json",
+      "sha256": "71e249ed368db8dd4a62c050c9adac06ac14751132a2dc332e5a9db3e041a11b",
+      "mtime_origen": 1786119463.3868194
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium3\\new\\benchmark.json",
+      "archivo": "criterion\\key_generation\\dilithium3\\new\\benchmark.json",
+      "sha256": "ee16bb8f53f9747993a8aa1a1601905e1a26d7cd785cd0fb58f73365c56bb3ee",
+      "mtime_origen": 1786119473.5297036
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium3\\new\\estimates.json",
+      "archivo": "criterion\\key_generation\\dilithium3\\new\\estimates.json",
+      "sha256": "1d8bce60224584a52db1c2e1b3cb74523c8d3f70ea2f2f424af714c20fb990e1",
+      "mtime_origen": 1786119473.3983567
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium3\\new\\sample.json",
+      "archivo": "criterion\\key_generation\\dilithium3\\new\\sample.json",
+      "sha256": "0e8d9483a1e6c9cef357837c63fcea8452cc255137ce37ba9f4af1a36cfbad48",
+      "mtime_origen": 1786119473.3983567
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium3\\new\\tukey.json",
+      "archivo": "criterion\\key_generation\\dilithium3\\new\\tukey.json",
+      "sha256": "8f1d746c64db5dd1cf15daf6215ce534ea440656f2ca0a7f2b7db058813de095",
+      "mtime_origen": 1786119473.369601
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium5\\new\\benchmark.json",
+      "archivo": "criterion\\key_generation\\dilithium5\\new\\benchmark.json",
+      "sha256": "7abbab97fdaa18dba3633f0732a037a69d21b731653c3a21bee4930d6265a6cb",
+      "mtime_origen": 1786119481.9608274
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium5\\new\\estimates.json",
+      "archivo": "criterion\\key_generation\\dilithium5\\new\\estimates.json",
+      "sha256": "96dafc7ed93b0bdc3c7d612a671e530ce1db8e8f6dc934ed126d821f1d2c484b",
+      "mtime_origen": 1786119481.8365207
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium5\\new\\sample.json",
+      "archivo": "criterion\\key_generation\\dilithium5\\new\\sample.json",
+      "sha256": "662f29c90a36aff214590c05d68ddc38d3516376f011a4e2d3ba3448552b73e0",
+      "mtime_origen": 1786119481.835385
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\key_generation\\dilithium5\\new\\tukey.json",
+      "archivo": "criterion\\key_generation\\dilithium5\\new\\tukey.json",
+      "sha256": "0d12ec81da76a1009b2ac0442030f7d723ad3f6f6c524e7831d982e87401986c",
+      "mtime_origen": 1786119481.807904
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium2\\new\\benchmark.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium2\\new\\benchmark.json",
+      "sha256": "18c3c012a51e66e8cbebe70b9f5b5d0686d8058dd9788d4a6b33f5a6569aa574",
+      "mtime_origen": 1786122292.539808
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium2\\new\\estimates.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium2\\new\\estimates.json",
+      "sha256": "0d84fc681552b437b92797b4d64b73cfff3ade0321d69d723eed1751ad48c1b6",
+      "mtime_origen": 1786122292.3251543
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium2\\new\\sample.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium2\\new\\sample.json",
+      "sha256": "44b0c08321a5d7b2fa9e03764fca7fbfb2d2e3b9dcee2653c563e8c46ebe0500",
+      "mtime_origen": 1786122292.3251543
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium2\\new\\tukey.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium2\\new\\tukey.json",
+      "sha256": "c7a0fc8efc1aea6d19fb31fb0e14e5870d96ebb75e5eafc582a114387bb5106f",
+      "mtime_origen": 1786122292.2755537
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium3\\new\\benchmark.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium3\\new\\benchmark.json",
+      "sha256": "d1f170637e2e3e3a8c71c2ec62873d6b3105e3241208bbcb123afa8f28617987",
+      "mtime_origen": 1786122302.5914056
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium3\\new\\estimates.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium3\\new\\estimates.json",
+      "sha256": "bc856ab21804b99f040d4b190f877726f8772f714c929138d29d5b458d841815",
+      "mtime_origen": 1786122302.3632872
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium3\\new\\sample.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium3\\new\\sample.json",
+      "sha256": "959b02e36b3fdb5898406a039bc0d2e457cea3eec582ceb6efb5d888a3452808",
+      "mtime_origen": 1786122302.3632872
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium3\\new\\tukey.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium3\\new\\tukey.json",
+      "sha256": "2bebbf18f791a4a75e838414c1cb000657b17445570290bd3074644945b7755a",
+      "mtime_origen": 1786122302.3063996
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium5\\new\\benchmark.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium5\\new\\benchmark.json",
+      "sha256": "3291d095e4f82eed4ff152a07ea965efd3372b0cb571242237e239b9d884df38",
+      "mtime_origen": 1786122311.1548934
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium5\\new\\estimates.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium5\\new\\estimates.json",
+      "sha256": "6c465d43f3bf26fb47a0d2b0d9f46625b4faf3bdac15ac62a9ba700a234cbada",
+      "mtime_origen": 1786122310.9602253
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium5\\new\\sample.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium5\\new\\sample.json",
+      "sha256": "7bc7f64f38a58e384d65b3a56f701b26d94e0de674bddc3db2c615e9642ba0b6",
+      "mtime_origen": 1786122310.9602253
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\keygen_desde_semilla\\dilithium5\\new\\tukey.json",
+      "archivo": "criterion\\keygen_desde_semilla\\dilithium5\\new\\tukey.json",
+      "sha256": "5427fdbcb211b66870f9b519e62bade057ef0736b1d4c9fc74b8e3581735558c",
+      "mtime_origen": 1786122310.9142244
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium2\\new\\benchmark.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium2\\new\\benchmark.json",
+      "sha256": "22f78b932a1ab34d7672bc0fb9c235d441fb4339cf957bc57baff32957872ebf",
+      "mtime_origen": 1786119554.0740075
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium2\\new\\estimates.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium2\\new\\estimates.json",
+      "sha256": "0ea5bb24f1c5130ae63a7b6910ce78ade7cc18c4b1296a6ce90752234506a213",
+      "mtime_origen": 1786119553.9408514
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium2\\new\\sample.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium2\\new\\sample.json",
+      "sha256": "18f90225e722b8a288c0d609b7308e25b4053d955ef1b5ef6c6659177972a6b9",
+      "mtime_origen": 1786119553.9408514
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium2\\new\\tukey.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium2\\new\\tukey.json",
+      "sha256": "172fc356722b618bbf70e273d79c6ac55522e972a78fec72a3f89ee52c93819b",
+      "mtime_origen": 1786119553.9128475
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium3\\new\\benchmark.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium3\\new\\benchmark.json",
+      "sha256": "62e02419a03617ad40fd684cb21f443786552af5b10234488fead291245e837e",
+      "mtime_origen": 1786119562.839469
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium3\\new\\estimates.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium3\\new\\estimates.json",
+      "sha256": "e1dad18ed470f08124e3873e5a97762717118a6ef7625e4534d04b610cad1ae0",
+      "mtime_origen": 1786119562.7114816
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium3\\new\\sample.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium3\\new\\sample.json",
+      "sha256": "4487c08bdd17f53edcf1ea8bffe907d521f6ec66f829e3209735664fa10a6e61",
+      "mtime_origen": 1786119562.7114816
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium3\\new\\tukey.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium3\\new\\tukey.json",
+      "sha256": "03897c9f6264c37db89dc381c0a88665c92f7adaa7a5dcf531a49e480807fa99",
+      "mtime_origen": 1786119562.6840675
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium5\\new\\benchmark.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium5\\new\\benchmark.json",
+      "sha256": "85131338c7dc426bd268595d9743fabb9b3fa7f95694826cb7f4251eb58ea3ef",
+      "mtime_origen": 1786119574.1721587
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium5\\new\\estimates.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium5\\new\\estimates.json",
+      "sha256": "098f7f70376358824b37898116f6a2b65007dd77dc3e71d722d6f313ecd0c284",
+      "mtime_origen": 1786119574.0466256
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium5\\new\\sample.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium5\\new\\sample.json",
+      "sha256": "1a3767d99783fc88e6274806f2da114b7ad1e9668e88b2e35e465a8278fdab97",
+      "mtime_origen": 1786119574.0466256
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\sign_and_verify\\dilithium5\\new\\tukey.json",
+      "archivo": "criterion\\sign_and_verify\\dilithium5\\new\\tukey.json",
+      "sha256": "e09972c4df4bedb50625699a0b2e62bdc98267214ffc354ec12a3a523ae1737f",
+      "mtime_origen": 1786119574.018517
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium2\\new\\benchmark.json",
+      "archivo": "criterion\\signing\\dilithium2\\new\\benchmark.json",
+      "sha256": "259eff3e1a188a1ce1fb7601fe02c23043c11f56324d302022d6318f12f9bcaf",
+      "mtime_origen": 1786119493.7073908
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium2\\new\\estimates.json",
+      "archivo": "criterion\\signing\\dilithium2\\new\\estimates.json",
+      "sha256": "19e3946f4604d888ee435259de315cb7efb5f8b1337fae6e9181c1f3161eacb6",
+      "mtime_origen": 1786119493.5795794
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium2\\new\\sample.json",
+      "archivo": "criterion\\signing\\dilithium2\\new\\sample.json",
+      "sha256": "8c8b21efbe746d0aaf4d3a959b906d5368cee4b27d390179d3ef89b855108719",
+      "mtime_origen": 1786119493.5788677
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium2\\new\\tukey.json",
+      "archivo": "criterion\\signing\\dilithium2\\new\\tukey.json",
+      "sha256": "99dee87c58095f95d5bcd0741b0314f00057bdf5dd0315a0a929eafb97e8b4a6",
+      "mtime_origen": 1786119493.5484872
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium3\\new\\benchmark.json",
+      "archivo": "criterion\\signing\\dilithium3\\new\\benchmark.json",
+      "sha256": "f2779b6d83ba563426c00f59dc2dd8096475a9ebe35c7c7b11a65fc5a4ef5a70",
+      "mtime_origen": 1786119504.490511
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium3\\new\\estimates.json",
+      "archivo": "criterion\\signing\\dilithium3\\new\\estimates.json",
+      "sha256": "61a8e6c4c4ab6bea71414dfaf0b822cc0b02c933052d9ca2bb1e4d57fb2ef125",
+      "mtime_origen": 1786119504.3632278
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium3\\new\\sample.json",
+      "archivo": "criterion\\signing\\dilithium3\\new\\sample.json",
+      "sha256": "dbbdf3ce1c8825353ab5642bc699d47c7e8461a3d292500bb93c59ed77d8a9ff",
+      "mtime_origen": 1786119504.3621254
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium3\\new\\tukey.json",
+      "archivo": "criterion\\signing\\dilithium3\\new\\tukey.json",
+      "sha256": "1e1e3ba339753bd4a3b80334432b024c751643063164a3002969160770b439c5",
+      "mtime_origen": 1786119504.3344848
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium5\\new\\benchmark.json",
+      "archivo": "criterion\\signing\\dilithium5\\new\\benchmark.json",
+      "sha256": "6f28e2af67be0e18c9395d2aed4ed7c443eb92f0aa9ecce7df7f17858e3ae5d5",
+      "mtime_origen": 1786119515.541728
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium5\\new\\estimates.json",
+      "archivo": "criterion\\signing\\dilithium5\\new\\estimates.json",
+      "sha256": "bf0de4bd67bcc41c4d3fba6cdb6fffaa5ae85cbb5d9494b32a261d240beff987",
+      "mtime_origen": 1786119515.4136848
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium5\\new\\sample.json",
+      "archivo": "criterion\\signing\\dilithium5\\new\\sample.json",
+      "sha256": "2b4c6d9714e233f68af1c3018ff52f757819fe7a4d16560ff45bdac2e5cfce48",
+      "mtime_origen": 1786119515.4094365
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\signing\\dilithium5\\new\\tukey.json",
+      "archivo": "criterion\\signing\\dilithium5\\new\\tukey.json",
+      "sha256": "7492f796486e5535f76016039bb076efcf37526d3a49dca3a964aa03c13f75be",
+      "mtime_origen": 1786119515.382658
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium2\\new\\benchmark.json",
+      "archivo": "criterion\\verification\\dilithium2\\new\\benchmark.json",
+      "sha256": "3429f3e9f346bfeb2de44721c82a5e17857ff61d70bda5dc67ca2a243376561e",
+      "mtime_origen": 1786119524.1006222
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium2\\new\\estimates.json",
+      "archivo": "criterion\\verification\\dilithium2\\new\\estimates.json",
+      "sha256": "eb0d39328db73490b31e174d7a884f33969eb10eecb316ff8b90caddfef09193",
+      "mtime_origen": 1786119523.966675
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium2\\new\\sample.json",
+      "archivo": "criterion\\verification\\dilithium2\\new\\sample.json",
+      "sha256": "336ba6d3cc5c4deeec72b8b78e96def5471b7ab8f866b872bbd1a76d0b7b6c88",
+      "mtime_origen": 1786119523.966675
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium2\\new\\tukey.json",
+      "archivo": "criterion\\verification\\dilithium2\\new\\tukey.json",
+      "sha256": "9d24c8b39437d7abd4576ff6ba4c8dfa8fb0b9f20263020a94a625d78c40c0bb",
+      "mtime_origen": 1786119523.9377306
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium3\\new\\benchmark.json",
+      "archivo": "criterion\\verification\\dilithium3\\new\\benchmark.json",
+      "sha256": "750bfde5e8d026f72b7c8b3d574cb8fa77902f1beaf726a4db378607b674e845",
+      "mtime_origen": 1786119534.4924529
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium3\\new\\estimates.json",
+      "archivo": "criterion\\verification\\dilithium3\\new\\estimates.json",
+      "sha256": "60fedd3684b16e4aee03b61448d5767e22ab07f8c0eb223cc1f01a8a8eb05dce",
+      "mtime_origen": 1786119534.362296
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium3\\new\\sample.json",
+      "archivo": "criterion\\verification\\dilithium3\\new\\sample.json",
+      "sha256": "45d53cf99e50ed5f14b12d4df3662a21035c3f2d36c7ce4b064e594d578c968d",
+      "mtime_origen": 1786119534.362296
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium3\\new\\tukey.json",
+      "archivo": "criterion\\verification\\dilithium3\\new\\tukey.json",
+      "sha256": "5c016580ff4195a082185d3408d5289f6f236fd24a3d0430f95d307feb0dba34",
+      "mtime_origen": 1786119534.3276231
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium5\\new\\benchmark.json",
+      "archivo": "criterion\\verification\\dilithium5\\new\\benchmark.json",
+      "sha256": "1fb4490ca7cec8113a3b99213f3122fedc60308b479c98b2d2509c983ec4a647",
+      "mtime_origen": 1786119544.091538
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium5\\new\\estimates.json",
+      "archivo": "criterion\\verification\\dilithium5\\new\\estimates.json",
+      "sha256": "bf42bc603ff43206e1a723316235a9f12a38746d1ad3e15a32f465d546ff1ddf",
+      "mtime_origen": 1786119543.964954
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium5\\new\\sample.json",
+      "archivo": "criterion\\verification\\dilithium5\\new\\sample.json",
+      "sha256": "2b9b615fd3d91e89cf8f5d64e9dae0b9f181eace7bc0a1c5b0922378a176fbda",
+      "mtime_origen": 1786119543.96419
+    },
+    {
+      "origen": "C:\\tmp\\nexus-target\\criterion\\verification\\dilithium5\\new\\tukey.json",
+      "archivo": "criterion\\verification\\dilithium5\\new\\tukey.json",
+      "sha256": "4fb480caabc35fa86ea6949b5636217f89d5660d99c013d2e58e5da10ec77c1e",
+      "mtime_origen": 1786119543.9361973
+    },
+    {
+      "origen": "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\Cargo.toml",
+      "archivo": "codigo-observado\\Cargo.toml",
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea",
+      "mtime_origen": 1785517742.5488513
+    },
+    {
+      "origen": "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\Cargo.lock",
+      "archivo": "codigo-observado\\Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c",
+      "mtime_origen": 1785519389.856918
+    },
+    {
+      "origen": "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\nexus-crypto\\Cargo.toml",
+      "archivo": "codigo-observado\\nexus-crypto\\Cargo.toml",
+      "sha256": "106f1fff3dd0158804e800bf562eab73359473e5f7afa21769754551aa7c0be3",
+      "mtime_origen": 1786122183.2048445
+    },
+    {
+      "origen": "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\nexus-crypto\\benches\\dilithium_bench.rs",
+      "archivo": "codigo-observado\\nexus-crypto\\benches\\dilithium_bench.rs",
+      "sha256": "680b8e38c02b371f78951453aa938e4bc9508dbdd1524032c6a22e1c7b691cfc",
+      "mtime_origen": 1769877370.3116336
+    },
+    {
+      "origen": "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\nexus-crypto\\benches\\classical_baseline.rs",
+      "archivo": "codigo-observado\\nexus-crypto\\benches\\classical_baseline.rs",
+      "sha256": "d7bc1b83ba346badf5826a974c2cbc530ec0ca86aecb519cba4c472cbceab896",
+      "mtime_origen": 1785519366.1383662
+    },
+    {
+      "origen": "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\nexus-crypto\\benches\\residencia_bench.rs",
+      "archivo": "codigo-observado\\nexus-crypto\\benches\\residencia_bench.rs",
+      "sha256": "e7a57d72300a3cfb250e3a4e12ea257f2b97d45003262b93d631a97bfc6f982b",
+      "mtime_origen": 1786122141.8686666
+    },
+    {
+      "origen": "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\nexus-crypto\\examples\\apt_sweep.rs",
+      "archivo": "codigo-observado\\nexus-crypto\\examples\\apt_sweep.rs",
+      "sha256": "8b2767cc134a8f7af3bdded556bd62b2ea06df24b589747f966873ea4dbb09b3",
+      "mtime_origen": 1786121241.2033195
+    },
+    {
+      "origen": "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\nexus-crypto\\examples\\throughput_tps.rs",
+      "archivo": "codigo-observado\\nexus-crypto\\examples\\throughput_tps.rs",
+      "sha256": "1ab4200bd4a7ee8bd085dcd9f27fd7fa39fce1396d2d227a5e0d3db483c6df71",
+      "mtime_origen": 1786122181.593127
+    },
+    {
+      "origen": "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\nexus-zk\\examples\\stark_demo.rs",
+      "archivo": "codigo-observado\\nexus-zk\\examples\\stark_demo.rs",
+      "sha256": "ee5beb634ff18619f08513290e0cde91a07340c41a8c0f06e9d7e46e25352b40",
+      "mtime_origen": 1786119669.7986438
+    }
+  ],
+  "medianas_criterion_ns": {
+    "classical_key_generation/ecdsap256": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 67885.50793650793,
+        "upper_bound": 68217.63713080168
+      },
+      "point_estimate": 67984.40699126091,
+      "standard_error": 71.0288185882237
+    },
+    "classical_key_generation/rsa2048": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 96228466.66666667,
+        "upper_bound": 120130775.0
+      },
+      "point_estimate": 103432975.71428572,
+      "standard_error": 7273788.6923237275
+    },
+    "classical_signing/ecdsap256": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 82773.99676881384,
+        "upper_bound": 83672.8125
+      },
+      "point_estimate": 83115.6379976233,
+      "standard_error": 233.2393251461782
+    },
+    "classical_signing/rsa2048": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 739250.3401360544,
+        "upper_bound": 740810.0
+      },
+      "point_estimate": 740008.4615384615,
+      "standard_error": 415.59972866942127
+    },
+    "classical_signing/rsa3072": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 2277927.272727273,
+        "upper_bound": 2387380.1704545426
+      },
+      "point_estimate": 2354290.909090909,
+      "standard_error": 29487.489620836266
+    },
+    "classical_verification/ecdsap256": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 140477.17231222385,
+        "upper_bound": 141284.302737977
+      },
+      "point_estimate": 140796.9696969697,
+      "standard_error": 193.9856716830101
+    },
+    "classical_verification/rsa2048": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 92640.12539184953,
+        "upper_bound": 92727.54969045293
+      },
+      "point_estimate": 92669.8717948718,
+      "standard_error": 26.597829176006236
+    },
+    "classical_verification/rsa3072": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 198697.14285714287,
+        "upper_bound": 199436.36363636365
+      },
+      "point_estimate": 199157.7694235589,
+      "standard_error": 159.90501190710236
+    },
+    "firma_cacheada/dilithium2": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 185758.97435897434,
+        "upper_bound": 190824.35897435897
+      },
+      "point_estimate": 187831.25,
+      "standard_error": 1211.7946308494231
+    },
+    "firma_cacheada/dilithium3": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 303189.6551724138,
+        "upper_bound": 309975.82251082256
+      },
+      "point_estimate": 304921.6997561825,
+      "standard_error": 2004.6776313068178
+    },
+    "firma_cacheada/dilithium5": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 366138.8888888889,
+        "upper_bound": 378243.65079365077
+      },
+      "point_estimate": 373102.81385281385,
+      "standard_error": 3502.30633870631
+    },
+    "firma_efimera/dilithium2": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 275350.40393654525,
+        "upper_bound": 281085.15625
+      },
+      "point_estimate": 278823.61428209033,
+      "standard_error": 1620.0798733190738
+    },
+    "firma_efimera/dilithium3": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 427239.2430722623,
+        "upper_bound": 435452.25225225225
+      },
+      "point_estimate": 430186.6693177801,
+      "standard_error": 2232.7662943135215
+    },
+    "firma_efimera/dilithium5": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 554907.4746008709,
+        "upper_bound": 565511.0389610389
+      },
+      "point_estimate": 559666.0939806462,
+      "standard_error": 2483.148700747786
+    },
+    "key_generation/dilithium2": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 86778.139589169,
+        "upper_bound": 87734.375
+      },
+      "point_estimate": 87294.18614718615,
+      "standard_error": 258.33174487270196
+    },
+    "key_generation/dilithium3": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 142558.30144557822,
+        "upper_bound": 143477.5
+      },
+      "point_estimate": 143343.97683397683,
+      "standard_error": 219.48570186554048
+    },
+    "key_generation/dilithium5": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 195234.0,
+        "upper_bound": 198917.68627450982
+      },
+      "point_estimate": 197787.7626650897,
+      "standard_error": 1134.6409203962278
+    },
+    "keygen_desde_semilla/dilithium2": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 84403.41530054645,
+        "upper_bound": 84585.7843137255
+      },
+      "point_estimate": 84491.4608636977,
+      "standard_error": 54.60869863757439
+    },
+    "keygen_desde_semilla/dilithium3": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 132739.8746200608,
+        "upper_bound": 133022.62552934058
+      },
+      "point_estimate": 132876.45861601084,
+      "standard_error": 70.3071941065094
+    },
+    "keygen_desde_semilla/dilithium5": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 200157.55555555556,
+        "upper_bound": 200461.39534883722
+      },
+      "point_estimate": 200285.82528180355,
+      "standard_error": 80.08366293322369
+    },
+    "sign_and_verify/dilithium2": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 232145.1105182927,
+        "upper_bound": 236545.33333333334
+      },
+      "point_estimate": 234685.6161745828,
+      "standard_error": 1113.078075300485
+    },
+    "sign_and_verify/dilithium3": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 364956.25045637094,
+        "upper_bound": 371863.8418079096
+      },
+      "point_estimate": 368318.7916666667,
+      "standard_error": 1697.5642783809492
+    },
+    "sign_and_verify/dilithium5": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 473357.6909254268,
+        "upper_bound": 482051.90476190473
+      },
+      "point_estimate": 477188.4916581546,
+      "standard_error": 2020.2121888134677
+    },
+    "signing/dilithium2": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 183033.1541218638,
+        "upper_bound": 185592.99728049728
+      },
+      "point_estimate": 184035.24555903865,
+      "standard_error": 690.7961455651769
+    },
+    "signing/dilithium3": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 286881.0256410256,
+        "upper_bound": 291309.67741935485
+      },
+      "point_estimate": 288668.3751578283,
+      "standard_error": 1263.0058396761801
+    },
+    "signing/dilithium5": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 340785.5967078189,
+        "upper_bound": 346806.30630630633
+      },
+      "point_estimate": 344156.30868544604,
+      "standard_error": 1535.7071472351838
+    },
+    "verification/dilithium2": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 49027.333333333336,
+        "upper_bound": 49115.76068278153
+      },
+      "point_estimate": 49063.86599511599,
+      "standard_error": 21.205620756428875
+    },
+    "verification/dilithium3": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 77049.55693815988,
+        "upper_bound": 77525.99067599067
+      },
+      "point_estimate": 77169.65449804433,
+      "standard_error": 133.27341247182815
+    },
+    "verification/dilithium5": {
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower_bound": 129619.37767094017,
+        "upper_bound": 129940.17857142857
+      },
+      "point_estimate": 129768.15104166666,
+      "standard_error": 83.85002558765005
+    }
+  }
+}

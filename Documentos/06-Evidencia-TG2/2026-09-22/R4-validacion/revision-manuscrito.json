@@ -1,0 +1,86 @@
+{
+  "fecha": "2026-09-22",
+  "etapa": "R4",
+  "paginas_word": 87,
+  "paginas_pdf": 77,
+  "tablas": 22,
+  "celdas": 501,
+  "ecuaciones_word": 365,
+  "ecuaciones_bloque": 18,
+  "figuras": 3,
+  "revision_visual": "Inspección visual del 2026-09-22 tras R4: tres figuras y 18 ecuaciones en bloque en Word y PDF; Tablas 6.10–6.12 y 7.1 en ambos formatos, sin recortes observados. Las 22 tablas se comprobaron estructuralmente: 501 celdas coinciden con la conversión independiente del Markdown; rótulos y cuerpos juntos en Word. PDF sin páginas vacías ni texto fuera de márgenes. La rasterización EMF de Word acentúa el peso del texto; no se interpreta como negrita aplicada a todo el documento.",
+  "archivos": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "sha256": "8cf8d6f9328be4ebfd40b3f150e016da71f2e297633f56133eac454a11b6934a"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "sha256": "3918d54b0a55e98d1ff046a8822d4e81daf5a6d65771f7cb0181ea993a66ceff"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "sha256": "492844fb276137e5e93cbcf4ccab0ec179627248d8ee83cbac1e149b7819cbc1"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "sha256": "7696c10a4bf214cae7ba6ebd441ed5ccea0402808c81ef156c69f5884277515d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "sha256": "0b7b11b696057002d69d1bb0ae6ec69c1a4868617357ff954bf1550a345a2749"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "sha256": "6ad22586599a9fbf49a8049b99e62048ce75f595175ec88cb542c14867739066"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "sha256": "d70b920659a36af9434b5385eb196e4edabf63808921efc9390a8e829c39b3c5"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "sha256": "e94ddaaa0d80c513dd6de9afd71bd9efda8936c783f2ba2bc8c28f1d495f889d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "sha256": "d894aa39ab64199bb7e9cb1c3092374e213f5217876e47d62664dad8c4cd9f18"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-1-1-arco.png",
+      "sha256": "f869fdca7061f948391aa8e0248d6bc8c87a2eddf87b4f83dbd9fad94e6e929f"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-1-1-arco.svg",
+      "sha256": "bf2edee3c2ac25aac5149582d2949f53ead5fcf5b968185ae69bded868840729"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-3-1-arquitectura.png",
+      "sha256": "1dbbd8f33f42cb7ccba67c0baca9084375f3207116d35d20adf20bf1103b1c7b"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-3-1-arquitectura.svg",
+      "sha256": "8cc7694895814691a0ae3479febcc84a0bb02b491655cbdd4480d2edfd4b4cb9"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-5-1-ciclo-claves.png",
+      "sha256": "1c8eb541277b0a4dcd45d01ecc421d60dfdc239a6805470fcb0446c6b4674604"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-5-1-ciclo-claves.svg",
+      "sha256": "9549020ac489b16a512b35e9a204a03b5b0c1b4358f3c4f45e7f3a58a5546ecf"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "sha256": "595037aee444f5fea975952397f56b409c7b2c971bbc5f44db9f43c63e31a40d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "sha256": "504c457be37c125c4b82409449cbd06048a1c79c0a60275d713c9fea81512160"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "sha256": "4e65904572e3b70dc31dbd038b1d334c1d710af5b7b6d7e9eb03cfeaf7dc3ad2"
+    }
+  ]
+}

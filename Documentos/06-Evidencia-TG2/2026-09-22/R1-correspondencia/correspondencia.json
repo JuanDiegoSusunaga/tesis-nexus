@@ -1,0 +1,163 @@
+{
+  "fecha": "2026-09-22",
+  "backend": "fips204 0.4.6",
+  "parametros": [
+    {
+      "nivel": "44",
+      "Q": 8380417,
+      "D": 13,
+      "N": 256,
+      "TAU": 39,
+      "LAMBDA": 128,
+      "GAMMA1": 131072,
+      "GAMMA2": 95232,
+      "K": 4,
+      "L": 4,
+      "ETA": 2,
+      "OMEGA": 80,
+      "SK_LEN": 2560,
+      "PK_LEN": 1312,
+      "SIG_LEN": 2420,
+      "BETA": 78
+    },
+    {
+      "nivel": "65",
+      "Q": 8380417,
+      "D": 13,
+      "N": 256,
+      "TAU": 49,
+      "LAMBDA": 192,
+      "GAMMA1": 524288,
+      "GAMMA2": 261888,
+      "K": 6,
+      "L": 5,
+      "ETA": 4,
+      "OMEGA": 55,
+      "SK_LEN": 4032,
+      "PK_LEN": 1952,
+      "SIG_LEN": 3309,
+      "BETA": 196
+    },
+    {
+      "nivel": "87",
+      "Q": 8380417,
+      "D": 13,
+      "N": 256,
+      "TAU": 60,
+      "LAMBDA": 256,
+      "GAMMA1": 524288,
+      "GAMMA2": 261888,
+      "K": 8,
+      "L": 7,
+      "ETA": 2,
+      "OMEGA": 75,
+      "SK_LEN": 4896,
+      "PK_LEN": 2592,
+      "SIG_LEN": 4627,
+      "BETA": 120
+    }
+  ],
+  "contraste_jmw24": [
+    {
+      "nivel": "44",
+      "zeta": 350209,
+      "m_mas_k_teorema": 9,
+      "eta_auxiliar_minima": 1,
+      "lado_izquierdo_minimo": 1613763072,
+      "lado_derecho": 261888,
+      "cumple_desigualdad_estricta": false,
+      "limite": "Descarta esta aplicación directa del Teorema 2; no demuestra un ataque ni imposibilidad de otra reducción."
+    },
+    {
+      "nivel": "65",
+      "zeta": 724481,
+      "m_mas_k_teorema": 12,
+      "eta_auxiliar_minima": 1,
+      "lado_izquierdo_minimo": 4451211264,
+      "lado_derecho": 261888,
+      "cumple_desigualdad_estricta": false,
+      "limite": "Descarta esta aplicación directa del Teorema 2; no demuestra un ataque ni imposibilidad de otra reducción."
+    },
+    {
+      "nivel": "87",
+      "zeta": 769537,
+      "m_mas_k_teorema": 16,
+      "eta_auxiliar_minima": 1,
+      "lado_izquierdo_minimo": 6304047104,
+      "lado_derecho": 261888,
+      "cumple_desigualdad_estricta": false,
+      "limite": "Descarta esta aplicación directa del Teorema 2; no demuestra un ataque ni imposibilidad de otra reducción."
+    }
+  ],
+  "escenario_b23": {
+    "fuente": "B+23, §7, Figura 8, fila QROM NIST3 (PDF p. 31)",
+    "log2_qS": 64,
+    "log2_qH": 192,
+    "p": "103/128",
+    "log2_epsilon": -1180,
+    "log2_delta": -362,
+    "zeta_zk": 0,
+    "log2_L_estrella": "-361.64065570552200337077212358682488593933773228191159466229167618382501699535972",
+    "cumple_cota_publicada_2_menos_360": true,
+    "limite": "Reproducción aritmética del escenario del artículo; p usa su heurística. No es cota de NEXUS ni prueba de sus hipótesis."
+  },
+  "fuentes": [
+    {
+      "archivo": "nexus/nexus-crypto/src/dilithium.rs",
+      "sha256": "f414f7970bdda33de52b93ffcb26ff758898697060c639173fa99a0fe4a08d4e"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/keypair.rs",
+      "sha256": "c54b41ef0f80a396bbf7a0d0943521fd416b6dd42d933eac090dddba6d995334"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/entropy.rs",
+      "sha256": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/tests/tg2_correspondence.rs",
+      "sha256": "74a65eeaa08044f4c5103756648e7cdad85ce67fc988f30f6424643d58d851c1"
+    },
+    {
+      "archivo": "nexus/Cargo.toml",
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea"
+    },
+    {
+      "archivo": "nexus/Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    },
+    {
+      "archivo": "scripts/analizar_correspondencia_r1.py",
+      "sha256": "e46ecbb9f1c6836e963515931342546888ec0399bdd2fd28f49b712ef7a2afb7"
+    },
+    {
+      "archivo": "scripts/recopilar_fuentes_r1.py",
+      "sha256": "8b2f3594363796c449a132fe8e07a98f1e0ecb43c7675c311a3c1f0145775f71"
+    },
+    {
+      "archivo": "backend-fips204-0.4.6/src/lib.rs",
+      "sha256": "fb073c02f39284431c072b587e8f97abe930c4b53fc40e47cd33f2e4c571ea0f"
+    },
+    {
+      "archivo": "backend-fips204-0.4.6/src/traits.rs",
+      "sha256": "1d6fe99ffbc2128629b7965b106145b63cc1e013d976545f9a7f09f321a94f1d"
+    },
+    {
+      "archivo": "backend-fips204-0.4.6/src/ml_dsa.rs",
+      "sha256": "8cd47b247be255f6eb2ea5e1ab9928b1fa3b27f0fafb1b06fa364c50e96013e8"
+    },
+    {
+      "archivo": "backend-fips204-0.4.6/src/types.rs",
+      "sha256": "d811518ef64dbac77e0aead6f33edde8ae1ec89ef641334b6232d2a35bd1cb18"
+    },
+    {
+      "archivo": "backend-fips204-0.4.6/src/hashing.rs",
+      "sha256": "33269eaa1d05b126cc03a8c42e616aefa4a8c001bf92ea0a4a3eeeab18bd45ce"
+    },
+    {
+      "archivo": "backend-fips204-0.4.6/src/conversion.rs",
+      "sha256": "eae808db881d6cb6048d517d34a3987b4e6d40270f6820d8ee6ce88c1e311b19"
+    }
+  ],
+  "alcance": "Auditoría de correspondencia y aritmética reproducible; no verificación formal del binario."
+}

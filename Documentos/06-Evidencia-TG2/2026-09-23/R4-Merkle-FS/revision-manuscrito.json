@@ -1,0 +1,211 @@
+{
+  "fecha": "2026-09-23",
+  "etapa": "R4 auditoría Merkle/Fiat–Shamir",
+  "paginas_word": 108,
+  "paginas_pdf": 95,
+  "tablas": 32,
+  "celdas": 822,
+  "ecuaciones_word": 541,
+  "ecuaciones_bloque": 30,
+  "figuras": 3,
+  "revision_visual": "Inspección del 2026-09-23: sección 6.7.6, Tabla 6.20 y fórmula 30 completas en Word pp. 90–92 y PDF pp. 80–82; láminas finales de ecuaciones revisadas en ambos formatos, sin recortes de las fórmulas observados. Las 32 tablas conservan rótulo y cuerpo en una misma página Word; 822 celdas coinciden con la conversión independiente. PDF sin páginas vacías ni texto fuera de márgenes. Las tres figuras y las 29 fórmulas previas conservan fuentes, dimensiones y ubicaciones registradas; se mantiene su revisión anterior. El peso aparente de las letras en la rasterización EMF de Word no implica negrita global. Los cuatro informes raíz del día 22 conservan sus hashes respecto de la etapa R4-cota-interactiva.",
+  "imagenes_inspeccionadas": [
+    {
+      "archivo": "revision-visual/word-090.png",
+      "sha256": "b296826cbcd015c10cb327710bea790e4ecf2cc5093fee923ccfeec470f907b0"
+    },
+    {
+      "archivo": "revision-visual/word-091.png",
+      "sha256": "18425bc07945847b0e220e83f57e42def0a4d860f976acb9670764a98adffd17"
+    },
+    {
+      "archivo": "revision-visual/word-092.png",
+      "sha256": "396fadd379a0190df06da66bf6eff00519684401ad1b99a02435240ddbdc457f"
+    },
+    {
+      "archivo": "revision-visual/pdf-080.png",
+      "sha256": "55d223c74c801017ef1aac7e89d9072fab9dbc1640236c3e081605fe734741b4"
+    },
+    {
+      "archivo": "revision-visual/pdf-081.png",
+      "sha256": "9bd11908a49c6f8620a2f34e47136697a1d7a1e5e93d6e77d26c9f1c70f2904d"
+    },
+    {
+      "archivo": "revision-visual/pdf-082.png",
+      "sha256": "6157efb34453ad287eb47feeb123080d3fe61214a61cb090cef7465af368a554"
+    },
+    {
+      "archivo": "revision-visual/ecuaciones-word-5.png",
+      "sha256": "f7418ce915305991330231e9e7ca653078c6baf2c65c7e9062610c7666e56cb6"
+    },
+    {
+      "archivo": "revision-visual/ecuaciones-pdf-5.png",
+      "sha256": "f2a99165f005b872460bf2cc62f2b93506340cea69fddda4bad493c04c1f616c"
+    }
+  ],
+  "archivos": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "sha256": "542a701121035c4b8897aec49162b769beeb589c732a69c7cb1f29d86ebc47a7"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "sha256": "6382fa9fe652296cc3eb9d21902c42537dabc998dd9ea65c817daedc5b5caa88"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "sha256": "492844fb276137e5e93cbcf4ccab0ec179627248d8ee83cbac1e149b7819cbc1"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "sha256": "7696c10a4bf214cae7ba6ebd441ed5ccea0402808c81ef156c69f5884277515d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "sha256": "0b7b11b696057002d69d1bb0ae6ec69c1a4868617357ff954bf1550a345a2749"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "sha256": "6ad22586599a9fbf49a8049b99e62048ce75f595175ec88cb542c14867739066"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "sha256": "0c0189efd88d64927a8c432b3f5c02e1993265b368d4ef981490c60968478116"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "sha256": "50cef02bc53f83561aa6b238ff81605f3623708c1b82343633b6db6030b36f3c"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "sha256": "18d3efce0867a9aa2615fdfc33eed22ff1242ca0ec492b5951087b782c4e37af"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-1-1-arco.png",
+      "sha256": "f869fdca7061f948391aa8e0248d6bc8c87a2eddf87b4f83dbd9fad94e6e929f"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-1-1-arco.svg",
+      "sha256": "bf2edee3c2ac25aac5149582d2949f53ead5fcf5b968185ae69bded868840729"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-3-1-arquitectura.png",
+      "sha256": "1dbbd8f33f42cb7ccba67c0baca9084375f3207116d35d20adf20bf1103b1c7b"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-3-1-arquitectura.svg",
+      "sha256": "8cc7694895814691a0ae3479febcc84a0bb02b491655cbdd4480d2edfd4b4cb9"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-5-1-ciclo-claves.png",
+      "sha256": "1c8eb541277b0a4dcd45d01ecc421d60dfdc239a6805470fcb0446c6b4674604"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-5-1-ciclo-claves.svg",
+      "sha256": "9549020ac489b16a512b35e9a204a03b5b0c1b4358f3c4f45e7f3a58a5546ecf"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "sha256": "22da59bac13edb873e4caacfbca8a869642a314245c6935b9bb6d0f14438c0fb"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "sha256": "f0f7b21a9e88a71e05a4870f650a03925cb0d3932bce8f4ff7de9373cbfc3e5f"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "sha256": "e3a9f00796f6113a8e72cda4d85be9caba3b2726cb47e0aa2ef8f31480631800"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/R4-Merkle-Fiat-Shamir-2026-09-23.md",
+      "sha256": "8f7250bd7d575cff7835487841e290ca38c8148bfd9dc954ce0099f456e1ef1c"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md",
+      "sha256": "8d725da85f50bb147e3f6e61e53b880f628fde3f3e68c57f4d0d6e047697f8d5"
+    }
+  ],
+  "seguimiento": [
+    {
+      "archivo": "PENDIENTES.md",
+      "sha256": "0c4d8dfd3cdb79d2c6481c6d9a2750e8e235d777e432f116c516288775e6e8c0"
+    },
+    {
+      "archivo": "BITACORA_TG2.md",
+      "sha256": "7dfcf332f820d8d9324a5e5d997037eb995a5f0586507c10ebb5c6b698d33a21"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/README.md",
+      "sha256": "3dfe8abff879ec5671db5d95eed4c1887cc1c23539ba0ccdfe8d3147510df90e"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md",
+      "sha256": "aea6099480318c4bc85471b9cfb72cb9cf2c1abe5e3da56a470a18b985f8d51f"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Estado-del-Proyecto-para-Director.md",
+      "sha256": "95ff95c6b5b3542002e021d5b0aada48b3596b5a9d4089b5d2508206bf307036"
+    },
+    {
+      "archivo": "Documentos/05-Estado-del-Arte/Resumenes-y-Matriz/Matriz-Trazabilidad-TG2.md",
+      "sha256": "9ccd216e019c8f9b21bf23463d57ac2b94ae2332bb0a0eb142951b321f16f272"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Graficas-y-Evaluacion-2026-09-22.md",
+      "sha256": "0a57104741f3a96fcc8af20c614144a614d6e97ca13283b336bde4c72b1a3244"
+    },
+    {
+      "archivo": "nexus/README.md",
+      "sha256": "ca8c88a897460c16bf8068c259f01baca81a9ded8aef738e6efe56488f6be841"
+    },
+    {
+      "archivo": "RUTA_DE_ESTUDIO.md",
+      "sha256": "49aa4f834cc33f4c47bb900cd52721574405472cef7963876f566b963db4cf9c"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Plan-de-Trabajo-TG2.md",
+      "sha256": "4ce78fdc33bbe6ea6237b7fd8fe516cda2b02d3d7053624e491115d87432e8c5"
+    },
+    {
+      "archivo": "Documentos/02-Investigacion-y-Notas/Estado-del-Arte-Claves-Efimeras-y-Deception.md",
+      "sha256": "767ba1ffd5b54a88e8e13f8c9dce0eefc92a04ce1869490c18516783e311d023"
+    }
+  ],
+  "generadores_y_registro": [
+    {
+      "archivo": "scripts/configuracion_manuscrito.py",
+      "sha256": "74c65f198dac6f84cca064b17620b23cc2bc71359922c7e0d6760c57bc5f64b7"
+    },
+    {
+      "archivo": "scripts/compilar_manuscrito.py",
+      "sha256": "9a35d2af48bfe45b2b4f316ee4097bb85d6267e8e0f74a5268a6f3f68bc76a15"
+    },
+    {
+      "archivo": "scripts/revisar_manuscrito.py",
+      "sha256": "1c8f644f08c4c947fbc86bac21879429d2ce5d9a317c5948981a0a4f2e2dd3fe"
+    },
+    {
+      "archivo": "scripts/revisar_graficas_manuscrito.py",
+      "sha256": "df1a60c1133b471257477c9830ab80a3145a3250b59edce812ceee77c56f58fc"
+    },
+    {
+      "archivo": "scripts/renderizar_manuscrito_word.ps1",
+      "sha256": "8b26118309b667ec4a2a316388b644d84c01709b3ece8565aa35897eb5feb02d"
+    },
+    {
+      "archivo": "scripts/exportar_manuscrito_word.ps1",
+      "sha256": "2bc79ee858cc3c09f2beab706f4bb3339b4fd7997049e8649af94b282281a5f7"
+    },
+    {
+      "archivo": "scripts/exportar_manuscrito_pdf.py",
+      "sha256": "df036e10eed41df6ba2987050432fe7335758cf1e2654644cc1ef418bd0d36ee"
+    },
+    {
+      "archivo": ".tools/registrar_revision_visual_merkle_fs.py",
+      "sha256": "4c41d425969e691fc149471c4901fc88d6e16effab8b1b6c49f8120f8b21546b"
+    }
+  ],
+  "depuracion_documental": "Carpeta Lluvia de ideas y sus dos documentos eliminados por indicación del autor; referencias activas retiradas y antecedente histórico anotado.",
+  "alcance_enlaces": "Seguimiento e informes de esta etapa; en nexus/README.md solo el estado vigente.",
+  "limite": "Pendientes extracción de oráculos, cota RBR del protocolo conjunto, compilación ROM/QROM y revisión matemática independiente."
+}

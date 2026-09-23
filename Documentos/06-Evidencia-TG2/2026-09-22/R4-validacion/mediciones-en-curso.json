@@ -1,0 +1,431 @@
+{
+  "fecha": "2026-09-22",
+  "inicio": "2026-09-22T12:55:11.579809-05:00",
+  "sistema": "Windows-10-10.0.26200-SP0",
+  "maquina": "AMD64",
+  "cpu_logicos": 24,
+  "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.1\nLLVM version: 22.1.6",
+  "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+  "git_head": "6ec77633951004f37088abcdd41aa78ad290f36f",
+  "git_estado": "M README.md\n M nexus-crypto/Cargo.toml\n M nexus-crypto/src/entropy.rs\n M nexus-crypto/src/keypair.rs\n M nexus-crypto/src/lib.rs\n M nexus-sentinel/src/lib.rs\n M nexus-zk/examples/stark_demo.rs\n?? nexus-active/experiments/\n?? nexus-active/tests/\n?? nexus-crypto/benches/residencia_bench.rs\n?? nexus-crypto/examples/\n?? nexus-crypto/experiments/\n?? nexus-crypto/src/registry.rs\n?? nexus-crypto/tests/\n?? nexus-zk/examples/tg2_stark_measure.rs",
+  "entorno": {
+    "CARGO_TARGET_DIR": "C:/tmp/nexus-target",
+    "CRITERION_HOME": "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-09-22\\R4-validacion\\criterion"
+  },
+  "alcance": "Componentes aislados en el equipo actual; no reproduce retrospectivamente H1/H2 ni mide una blockchain completa.",
+  "ejecucion": "Comandos secuenciales; sin afinidad ni control exclusivo del sistema operativo.",
+  "fuentes": [
+    {
+      "archivo": "Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    },
+    {
+      "archivo": "Cargo.toml",
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea"
+    },
+    {
+      "archivo": "nexus-active/Cargo.toml",
+      "sha256": "ff2d8919a22dfaac3c314de1a8dbd9871992e8eebbf47ff4d1a49ee9ec736dc1"
+    },
+    {
+      "archivo": "nexus-active/experiments/tg2_canonical_verifier.rs",
+      "sha256": "bc543ed1dca51cca940a46bf05edfdc3459b95d2075c8267035b13261609447c"
+    },
+    {
+      "archivo": "nexus-active/src/batch.rs",
+      "sha256": "df7a3649148c8290ff0d00d474e3070b93384bebb5992bee7f61e170e87bc3b8"
+    },
+    {
+      "archivo": "nexus-active/src/chain.rs",
+      "sha256": "02b6979e1b13bea8b57fd9128a93a61d5249840054dcdf79d5d513d8e9d5136f"
+    },
+    {
+      "archivo": "nexus-active/src/execution.rs",
+      "sha256": "6f938cc83ba311f9322a327b5bf7292303b9bf14a0bb93fbd73be6f9e1362735"
+    },
+    {
+      "archivo": "nexus-active/src/lib.rs",
+      "sha256": "6b38cacf8a74387ef7a2cad08303bc82d11e11b7af7875f6efeba9598e8ad54c"
+    },
+    {
+      "archivo": "nexus-active/src/pq_verifier.rs",
+      "sha256": "f43ec5b557e7291ae07733d7feac6b2610e4e988d4c2bfaedb305ed4f8f5bd0b"
+    },
+    {
+      "archivo": "nexus-active/src/sequencer.rs",
+      "sha256": "bd85345499d0a0f062fa090762260e26a47efdcc8f024383146b0479ba828c91"
+    },
+    {
+      "archivo": "nexus-active/src/verifier.rs",
+      "sha256": "e0aa48d00d9c79b4695443a48e92b0192b55d44c86a48baf980b1815b3e73f3a"
+    },
+    {
+      "archivo": "nexus-active/tests/tg2_verification.rs",
+      "sha256": "73d5ba2ddb36324ce9597d0aad30797602947411c74b2016714f3c329ed1b7fb"
+    },
+    {
+      "archivo": "nexus-anchor/Cargo.toml",
+      "sha256": "37633d55fc91da6fea733961e84f3f8db1ec1b316689630ba98cbf0619860169"
+    },
+    {
+      "archivo": "nexus-anchor/src/chain.rs",
+      "sha256": "d2a453ed22273d5d05e85bfad6289efff548ed9d2168d5e3a39da7a64f0a58ba"
+    },
+    {
+      "archivo": "nexus-anchor/src/consensus.rs",
+      "sha256": "fc54deaafff2b0f2646bfa8a1e565828b8090a613eb979706bc4f3c0f1ea296f"
+    },
+    {
+      "archivo": "nexus-anchor/src/data_availability.rs",
+      "sha256": "8c0291930cfbdea1b8d5c64a3518e378c2c5d843c9f52a8e4284ebc3e11326d9"
+    },
+    {
+      "archivo": "nexus-anchor/src/finality.rs",
+      "sha256": "7573b8b51b1fb83770ac97952ff715327e55d63545ee651a588654b9e03c8a67"
+    },
+    {
+      "archivo": "nexus-anchor/src/lib.rs",
+      "sha256": "dde092a93b02c139bf5a4d188732bbc84262d0957679bb7f148cf13bb04691c8"
+    },
+    {
+      "archivo": "nexus-anchor/src/validator.rs",
+      "sha256": "88157402703c8668db100ceac7dcbca0fd8e298530b8aa28749e50eeba38d880"
+    },
+    {
+      "archivo": "nexus-cli/Cargo.toml",
+      "sha256": "4f208295a18aacd24afb5b64f9b229afb782e2810d4c269029dd4a2e41372d7d"
+    },
+    {
+      "archivo": "nexus-cli/src/main.rs",
+      "sha256": "b27fd564e3bce132b2c9eadeb985fdd4672630ece06a6a0f1fc89903a26a09fc"
+    },
+    {
+      "archivo": "nexus-core/Cargo.toml",
+      "sha256": "558196ee7e87423f33b976acc8a2b3114bcf5c229ff5c0699fb856acdfb12aae"
+    },
+    {
+      "archivo": "nexus-core/src/block.rs",
+      "sha256": "26e9eb963d1ac61a6714c0a9162dc70f6f1044a6014f690d5bd37aab892396fe"
+    },
+    {
+      "archivo": "nexus-core/src/error.rs",
+      "sha256": "341ec5865031dd923fadafc84056d3e977f5863c858c379532a1a0a93ed73e71"
+    },
+    {
+      "archivo": "nexus-core/src/lib.rs",
+      "sha256": "8eeaf86806e8b783566bf4b111ea4c734604ca0f47392c6df047dcc505876ab5"
+    },
+    {
+      "archivo": "nexus-core/src/merkle.rs",
+      "sha256": "42301fad5a732f43be6faadabc5c9f78d28d27610a616324132c08c60531cddf"
+    },
+    {
+      "archivo": "nexus-core/src/state.rs",
+      "sha256": "650dc1efbdadda21aae90aea1c0deed9da3a77a7ff05585197159ca29f85dcdd"
+    },
+    {
+      "archivo": "nexus-core/src/traits.rs",
+      "sha256": "cf00fb6cf97654350aee9967df7a4292480b9bee64bbdc92b681f54c15e38e8d"
+    },
+    {
+      "archivo": "nexus-core/src/transaction.rs",
+      "sha256": "454897ad4d888913a76fc2ef10a404607835c42c81316b740bed823c72f0231e"
+    },
+    {
+      "archivo": "nexus-core/src/types.rs",
+      "sha256": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492"
+    },
+    {
+      "archivo": "nexus-crypto/benches/classical_baseline.rs",
+      "sha256": "d7bc1b83ba346badf5826a974c2cbc530ec0ca86aecb519cba4c472cbceab896"
+    },
+    {
+      "archivo": "nexus-crypto/benches/dilithium_bench.rs",
+      "sha256": "680b8e38c02b371f78951453aa938e4bc9508dbdd1524032c6a22e1c7b691cfc"
+    },
+    {
+      "archivo": "nexus-crypto/benches/residencia_bench.rs",
+      "sha256": "e7a57d72300a3cfb250e3a4e12ea257f2b97d45003262b93d631a97bfc6f982b"
+    },
+    {
+      "archivo": "nexus-crypto/Cargo.toml",
+      "sha256": "106f1fff3dd0158804e800bf562eab73359473e5f7afa21769754551aa7c0be3"
+    },
+    {
+      "archivo": "nexus-crypto/examples/apt_sweep.rs",
+      "sha256": "0931cdf72cace4abb3abac785682a5959737c450ca375f08a73249d476b3ace8"
+    },
+    {
+      "archivo": "nexus-crypto/examples/rotation_demo.rs",
+      "sha256": "20980e891511dcc252e5b628445527022798bb0d4ccc2bb3856380bc1ac16154"
+    },
+    {
+      "archivo": "nexus-crypto/examples/tg2_throughput.rs",
+      "sha256": "102d51806838c53c4c2db814c16d8fea723e98bc043572931202106028e97db0"
+    },
+    {
+      "archivo": "nexus-crypto/examples/throughput_tps.rs",
+      "sha256": "1ab4200bd4a7ee8bd085dcd9f27fd7fa39fce1396d2d227a5e0d3db483c6df71"
+    },
+    {
+      "archivo": "nexus-crypto/experiments/tg2_throughput.rs",
+      "sha256": "4543da19a5a21e1325a6e077b93bf39144c83bd3fc95ef1e75a2e63cc9157dcb"
+    },
+    {
+      "archivo": "nexus-crypto/src/dilithium.rs",
+      "sha256": "f414f7970bdda33de52b93ffcb26ff758898697060c639173fa99a0fe4a08d4e"
+    },
+    {
+      "archivo": "nexus-crypto/src/entropy.rs",
+      "sha256": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f"
+    },
+    {
+      "archivo": "nexus-crypto/src/keypair.rs",
+      "sha256": "c54b41ef0f80a396bbf7a0d0943521fd416b6dd42d933eac090dddba6d995334"
+    },
+    {
+      "archivo": "nexus-crypto/src/lib.rs",
+      "sha256": "6154dce44c5dc2ec229f3cb47ed7c56293c6b2d4c2227b2066e96deb4d74eec9"
+    },
+    {
+      "archivo": "nexus-crypto/src/registry.rs",
+      "sha256": "c512c6ce48321b8ce0f71bc3c45691f079fa427b018b1d805a6ce97c21467b50"
+    },
+    {
+      "archivo": "nexus-crypto/src/signer.rs",
+      "sha256": "394d8ff0fc95e49db40210b55bce4ede345b88603cb1c4a8f3e3ba946952d539"
+    },
+    {
+      "archivo": "nexus-crypto/tests/tg2_throughput.rs",
+      "sha256": "9c241c7a2166f3bd0c7131c8f8d2dbe1bb00c7bf5c484c07c4f4bd06ee49582c"
+    },
+    {
+      "archivo": "nexus-network/Cargo.toml",
+      "sha256": "f8718d257e43299317d256c127bff773fc7ee225d545ed89e6bfdbfb5d2e40cf"
+    },
+    {
+      "archivo": "nexus-network/src/lib.rs",
+      "sha256": "3d8cd52931d4f4db93909c0d17810b209dde16340968eea2b518f457e1542423"
+    },
+    {
+      "archivo": "nexus-network/src/peer.rs",
+      "sha256": "84a454b4c5c5555d6812e1ac524311d1c59f0810437a1b29e60f579cf5a8713f"
+    },
+    {
+      "archivo": "nexus-network/src/protocol.rs",
+      "sha256": "1c0e23d23e314dd59b39e20616784a6fb55764b70b27b1c7b03aab03fbc6915a"
+    },
+    {
+      "archivo": "nexus-node/Cargo.toml",
+      "sha256": "1452315e1614b65c392770e4c725c09731f943abc1ccf00521945ecb33475726"
+    },
+    {
+      "archivo": "nexus-node/src/config.rs",
+      "sha256": "ebef163af60a07e1f8551bbe96419df67322ed8b0ff25e688dd85e8e5cd0dcfd"
+    },
+    {
+      "archivo": "nexus-node/src/lib.rs",
+      "sha256": "da7eb9df729ca19dbdc1f83286284a18eb8b7c4877cec2b5e5a3354ca575a162"
+    },
+    {
+      "archivo": "nexus-node/src/rpc.rs",
+      "sha256": "442963766bc9f30ee0ef9ca3c328b10f7ce453af810dc42bafb5280e22777b03"
+    },
+    {
+      "archivo": "nexus-sentinel/Cargo.toml",
+      "sha256": "9a17ef57ed874e80ee572f7e02e7e4a8ebe096d3c3d621faba7638b26d9e65af"
+    },
+    {
+      "archivo": "nexus-sentinel/src/lib.rs",
+      "sha256": "31098331af6d890578ccc07da031aea55c8a5b83e0ba160025466904224c6702"
+    },
+    {
+      "archivo": "nexus-zk/Cargo.toml",
+      "sha256": "a186b13cb9292cce8c7a7501d69a90f2f5433649a1d9d361a88fa75f7e78ae2d"
+    },
+    {
+      "archivo": "nexus-zk/examples/stark_demo.rs",
+      "sha256": "ee5beb634ff18619f08513290e0cde91a07340c41a8c0f06e9d7e46e25352b40"
+    },
+    {
+      "archivo": "nexus-zk/examples/tg2_stark_measure.rs",
+      "sha256": "3399edbf42e2cfae2bc8330d499f06b2a0f6acd63a9469f8173a3c0751c69053"
+    },
+    {
+      "archivo": "nexus-zk/src/circuits.rs",
+      "sha256": "fde3f78bb5e20e6be850bbe18f730fda3d815a45d19e906728be83aeac8ab899"
+    },
+    {
+      "archivo": "nexus-zk/src/lib.rs",
+      "sha256": "7c1b7492c122d5bc83ca3bf3e729c1f898aaabba38dfdb49b4a6d421aa29bc63"
+    },
+    {
+      "archivo": "nexus-zk/src/prover.rs",
+      "sha256": "18ab5a8d19a55e554cea62062003c1d1541330d22b085b89496e5d9e49c3866d"
+    },
+    {
+      "archivo": "nexus-zk/src/stark/air.rs",
+      "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7"
+    },
+    {
+      "archivo": "nexus-zk/src/stark/channel.rs",
+      "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d"
+    },
+    {
+      "archivo": "nexus-zk/src/stark/field.rs",
+      "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7"
+    },
+    {
+      "archivo": "nexus-zk/src/stark/fri.rs",
+      "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5"
+    },
+    {
+      "archivo": "nexus-zk/src/stark/merkle.rs",
+      "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f"
+    },
+    {
+      "archivo": "nexus-zk/src/stark/mod.rs",
+      "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b"
+    },
+    {
+      "archivo": "nexus-zk/src/stark/ntt.rs",
+      "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3"
+    },
+    {
+      "archivo": "nexus-zk/src/stark/params.rs",
+      "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533"
+    },
+    {
+      "archivo": "nexus-zk/src/verifier.rs",
+      "sha256": "5f4c8168b6ff86e2712474e2dfc443f056a6091d46c48d662ad90b0ffb0b9a73"
+    }
+  ],
+  "comandos": [
+    {
+      "nombre": "dilithium_bench",
+      "argumentos": [
+        "cargo",
+        "bench",
+        "-p",
+        "nexus-crypto",
+        "--bench",
+        "dilithium_bench",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml",
+        "--",
+        "--noplot",
+        "--sample-size",
+        "50",
+        "--warm-up-time",
+        "1",
+        "--measurement-time",
+        "2",
+        "--save-baseline",
+        "r4"
+      ],
+      "exit_code": 101,
+      "duracion_s": 26.01600000000326,
+      "registro": "dilithium_bench.log"
+    },
+    {
+      "nombre": "classical_baseline",
+      "argumentos": [
+        "cargo",
+        "bench",
+        "-p",
+        "nexus-crypto",
+        "--bench",
+        "classical_baseline",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml",
+        "--",
+        "--noplot",
+        "--sample-size",
+        "50",
+        "--warm-up-time",
+        "1",
+        "--measurement-time",
+        "2",
+        "--save-baseline",
+        "r4"
+      ],
+      "exit_code": 0,
+      "duracion_s": 44.96899999998277,
+      "registro": "classical_baseline.log"
+    },
+    {
+      "nombre": "residencia_bench",
+      "argumentos": [
+        "cargo",
+        "bench",
+        "-p",
+        "nexus-crypto",
+        "--bench",
+        "residencia_bench",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml",
+        "--",
+        "--noplot",
+        "--sample-size",
+        "50",
+        "--warm-up-time",
+        "1",
+        "--measurement-time",
+        "2",
+        "--save-baseline",
+        "r4"
+      ],
+      "exit_code": 0,
+      "duracion_s": 44.594000000011874,
+      "registro": "residencia_bench.log"
+    },
+    {
+      "nombre": "throughput",
+      "argumentos": [
+        "cargo",
+        "run",
+        "-p",
+        "nexus-crypto",
+        "--example",
+        "tg2_throughput",
+        "--release",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml",
+        "--",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-09-22\\R4-validacion"
+      ],
+      "exit_code": 101,
+      "duracion_s": 5.467999999993481,
+      "registro": "throughput.log"
+    },
+    {
+      "nombre": "stark",
+      "argumentos": [
+        "cargo",
+        "run",
+        "-p",
+        "nexus-zk",
+        "--example",
+        "tg2_stark_measure",
+        "--release",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml",
+        "--",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-09-22\\R4-validacion\\stark.csv"
+      ],
+      "exit_code": 0,
+      "duracion_s": 99.625,
+      "registro": "stark.log"
+    }
+  ]
+}

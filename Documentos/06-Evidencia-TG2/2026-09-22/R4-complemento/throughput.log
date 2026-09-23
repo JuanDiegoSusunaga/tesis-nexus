@@ -1,0 +1,90 @@
+warning: unused import: `NexusError`
+ --> nexus-core\src\merkle.rs:5:22
+  |
+5 | use crate::{Hash256, NexusError, Hashable};
+  |                      ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ----^^^^^^^^^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `current_index`
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_current_index`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-core` (lib) generated 3 warnings (run `cargo fix --lib -p nexus-core` to apply 3 suggestions)
+warning: unused import: `PQSignature`
+ --> nexus-crypto\src\signer.rs:8:35
+  |
+8 |     Address, Hash256, NexusError, PQSignature, SignatureScheme,
+  |                                   ^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `created_at` is never read
+   --> nexus-crypto\src\entropy.rs:233:5
+    |
+225 | pub struct SentinelSeed {
+    |            ------------ field in this struct
+...
+233 |     created_at: Timestamp,
+    |     ^^^^^^^^^^
+    |
+    = note: `SentinelSeed` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-crypto` (lib) generated 2 warnings (run `cargo fix --lib -p nexus-crypto` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.18s
+     Running `C:/tmp/nexus-target\release\examples\tg2_throughput.exe C:\Users\juand\Desktop\Tesis\Documentos\06-Evidencia-TG2\2026-09-22\R4-complemento`
+repeticion=1; hilos=1; verif_s=12348.6
+repeticion=1; hilos=2; verif_s=24872.3
+repeticion=1; hilos=4; verif_s=45631.1
+repeticion=1; hilos=8; verif_s=74090.1
+repeticion=1; hilos=12; verif_s=89987.4
+repeticion=1; hilos=16; verif_s=104171.0
+repeticion=1; hilos=20; verif_s=120573.8
+repeticion=1; hilos=24; verif_s=130147.6
+repeticion=2; hilos=24; verif_s=133440.6
+repeticion=2; hilos=20; verif_s=116166.5
+repeticion=2; hilos=16; verif_s=109570.5
+repeticion=2; hilos=12; verif_s=89498.4
+repeticion=2; hilos=8; verif_s=72112.0
+repeticion=2; hilos=4; verif_s=46075.7
+repeticion=2; hilos=2; verif_s=23533.6
+repeticion=2; hilos=1; verif_s=10508.3
+repeticion=3; hilos=1; verif_s=10987.6
+repeticion=3; hilos=2; verif_s=21732.1
+repeticion=3; hilos=4; verif_s=44241.9
+repeticion=3; hilos=8; verif_s=74009.0
+repeticion=3; hilos=12; verif_s=95527.2
+repeticion=3; hilos=16; verif_s=111586.6
+repeticion=3; hilos=20; verif_s=126324.1
+repeticion=3; hilos=24; verif_s=136389.7
+repeticion=4; hilos=24; verif_s=140046.9
+repeticion=4; hilos=20; verif_s=125412.7
+repeticion=4; hilos=16; verif_s=111035.7
+repeticion=4; hilos=12; verif_s=95505.3
+repeticion=4; hilos=8; verif_s=72944.9
+repeticion=4; hilos=4; verif_s=45827.4
+repeticion=4; hilos=2; verif_s=24697.5
+repeticion=4; hilos=1; verif_s=12526.4
+repeticion=5; hilos=1; verif_s=12518.9
+repeticion=5; hilos=2; verif_s=24790.6
+repeticion=5; hilos=4; verif_s=46249.1
+repeticion=5; hilos=8; verif_s=72348.4
+repeticion=5; hilos=12; verif_s=95440.3
+repeticion=5; hilos=16; verif_s=112233.9
+repeticion=5; hilos=20; verif_s=127014.7
+repeticion=5; hilos=24; verif_s=139672.6

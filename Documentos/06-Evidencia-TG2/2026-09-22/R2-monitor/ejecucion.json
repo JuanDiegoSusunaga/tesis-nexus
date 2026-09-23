@@ -1,0 +1,77 @@
+{
+  "fecha": "2026-09-22",
+  "registro_local": "2026-09-22T12:15:19.821679-05:00",
+  "alcance": "Monitor del prototipo R2; flujos sintéticos. No califica una fuente física ni valida R3.",
+  "cargo_target_dir": "C:\\tmp\\nexus-target",
+  "toolchain": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.1\nLLVM version: 22.1.6",
+  "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+  "git_head": "6ec77633951004f37088abcdd41aa78ad290f36f",
+  "git_estado": "M README.md\n M nexus-crypto/Cargo.toml\n M nexus-crypto/src/entropy.rs\n M nexus-crypto/src/keypair.rs\n M nexus-sentinel/src/lib.rs\n M nexus-zk/examples/stark_demo.rs\n?? nexus-crypto/benches/residencia_bench.rs\n?? nexus-crypto/examples/",
+  "archivos_preexistentes_con_cambios": [
+    "nexus-crypto/Cargo.toml",
+    "nexus-zk/examples/stark_demo.rs",
+    "nexus-crypto/benches/residencia_bench.rs",
+    "nexus-crypto/examples/"
+  ],
+  "comandos": [
+    {
+      "comando": "cargo check --workspace --all-targets --locked --offline --manifest-path nexus/Cargo.toml",
+      "resultado": "correcto",
+      "registro": "r2-cargo-check-all.log"
+    },
+    {
+      "comando": "cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "resultado": "correcto",
+      "registro": "r2-cargo-test.log"
+    },
+    {
+      "comando": "cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "resultado": "correcto",
+      "registro": "r2-cargo-build.log"
+    }
+  ],
+  "pruebas_totales": 123,
+  "pruebas_nuevas_r2": 13,
+  "benchmarks_repetidos": false,
+  "parametros": {
+    "H_bits_byte": 7.5,
+    "alpha": 9.5367431640625e-07,
+    "W": 512,
+    "APT_C": 16,
+    "RCT_C": 4,
+    "lote": 65536,
+    "modelo_APT": "B = 1 + Binomial(511, 2^-7.5)",
+    "cola_C15": 1.5226900325474521e-06,
+    "cola_C16": 2.7640953150605826e-07
+  },
+  "fuentes": [
+    {
+      "archivo": "Cargo.toml",
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea"
+    },
+    {
+      "archivo": "Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    },
+    {
+      "archivo": "nexus-crypto/Cargo.toml",
+      "sha256": "106f1fff3dd0158804e800bf562eab73359473e5f7afa21769754551aa7c0be3"
+    },
+    {
+      "archivo": "nexus-crypto/src/entropy.rs",
+      "sha256": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f"
+    },
+    {
+      "archivo": "nexus-crypto/src/keypair.rs",
+      "sha256": "6cb6cc844c1fde793283ce0c95e069bd49f79e620933d1598e8cf7882dcc4a0d"
+    },
+    {
+      "archivo": "nexus-sentinel/src/lib.rs",
+      "sha256": "31098331af6d890578ccc07da031aea55c8a5b83e0ba160025466904224c6702"
+    },
+    {
+      "archivo": "nexus-crypto/examples/apt_sweep.rs",
+      "sha256": "0931cdf72cace4abb3abac785682a5959737c450ca375f08a73249d476b3ace8"
+    }
+  ]
+}

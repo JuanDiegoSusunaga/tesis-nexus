@@ -1,0 +1,139 @@
+{
+  "fecha": "2026-09-22",
+  "pruebas_workspace": 197,
+  "pruebas_nuevas_release": 10,
+  "nuevas_r4_fri_vinculado": 10,
+  "cargo_target_dir": "C:/tmp/nexus-target",
+  "variable_corpus": "NEXUS_TG2_LINKED_EVIDENCE_DIR",
+  "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.1\nLLVM version: 22.1.6",
+  "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+  "ejecuciones": [
+    {
+      "comando": "cargo check --workspace --all-targets --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-check.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "1b8b7766133cf8365bf2ade4121e6b00b392d852d481f75166b696f31cd37f39"
+    },
+    {
+      "comando": "cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml -- --nocapture",
+      "log": "cargo-test.log",
+      "codigo_salida": 0,
+      "pruebas": 197,
+      "sha256": "4e084a598cee44af6ffc001b51545d41ed2e1bb76c64c3284b4af2042baf1556"
+    },
+    {
+      "comando": "cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-build.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "93f9013fa044f4d24a1649caf7ac2ed5c1777ce68f34c7676f020718378ba743"
+    },
+    {
+      "comando": "cargo test -p nexus-zk --test tg2_linked_trace_fri --release --locked --offline --manifest-path nexus/Cargo.toml -- --nocapture",
+      "log": "cargo-test-release.log",
+      "codigo_salida": 0,
+      "pruebas": 10,
+      "sha256": "29f08dd99f18141dc35b93b474a170e3b7632efefe401628951bcd5d1a3924c3"
+    }
+  ],
+  "corpus": [
+    {
+      "archivo": "corpus-debug/honesto-16.bin",
+      "bytes": 196574,
+      "sha256": "305d9afdbf93719d2d60e1d94c4815bc9a4b88299d1e342d2460ad00ac3b6d37"
+    },
+    {
+      "archivo": "corpus-debug/honesto-64.bin",
+      "bytes": 306782,
+      "sha256": "6cff2bc873ed4210d35ceccca81b7faf465cdd3df001ae91cbe2a8e1dd592644"
+    },
+    {
+      "archivo": "corpus-debug/honesto-256.bin",
+      "bytes": 437470,
+      "sha256": "aeb07f212fa949e4a626301c114bc6f7d8975cde0461a6a091c20f34efe4ed84"
+    },
+    {
+      "archivo": "corpus-debug/honesto-4096.bin",
+      "bytes": 760286,
+      "sha256": "0de358d146e90bc21cc4bed44c4ec121732bf3167c6ba7f2af61eefb4b9a9073"
+    },
+    {
+      "archivo": "corpus-debug/lejano-16.bin",
+      "bytes": 196574,
+      "sha256": "b0af7f9b7f64aa6cc3ad641c37ac71b22233943cfab149e6ad4bba1d4c18e9ba"
+    },
+    {
+      "archivo": "corpus-debug/lejano-32.bin",
+      "bytes": 249118,
+      "sha256": "3ecd514ba6e9f7aa4e28ee18e769e3dd2e3172c28b8bd56a8e7c7c3e6fae3b9d"
+    },
+    {
+      "archivo": "corpus-debug/lejano-64.bin",
+      "bytes": 306782,
+      "sha256": "c864fab01988f5d2d59dc8302a9b91443c92cb0fd86a4401a3367399e65a85a4"
+    },
+    {
+      "archivo": "corpus-release/honesto-16.bin",
+      "bytes": 196574,
+      "sha256": "b8e9a5bd1cb00320b6499397566ff78c18bd3bd3f04b231b04835e43b467687d"
+    },
+    {
+      "archivo": "corpus-release/honesto-64.bin",
+      "bytes": 306782,
+      "sha256": "fd7028a250c2e0176c8fe3eaf6495921280137fa30d4849050d58faab5be88cb"
+    },
+    {
+      "archivo": "corpus-release/honesto-256.bin",
+      "bytes": 437470,
+      "sha256": "3d1b622590dca8c625301e170820a8c38444f2261b1c8ea38e6c2b8d89b1fe87"
+    },
+    {
+      "archivo": "corpus-release/honesto-4096.bin",
+      "bytes": 760286,
+      "sha256": "ed04343cb17d49ec4ccc2829230a9a7cc6ccf494e0af54d3b52822025791e8ac"
+    },
+    {
+      "archivo": "corpus-release/lejano-16.bin",
+      "bytes": 196574,
+      "sha256": "18e08e787ae364414003fafb6c3f6f1779a612d8042d30d2a8e8f76ffa6e8bb5"
+    },
+    {
+      "archivo": "corpus-release/lejano-32.bin",
+      "bytes": 249118,
+      "sha256": "5a097bf26deb75b0d69b3757dbe170a80d1824db63090422bd8f6c4e43be4bb8"
+    },
+    {
+      "archivo": "corpus-release/lejano-64.bin",
+      "bytes": 306782,
+      "sha256": "ae452860dfd422e6130602b5bede72600043e1e92c8a74ff913d86a2e4251412"
+    }
+  ],
+  "corpus_anterior_reutilizado": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-16.bin",
+      "sha256": "db046fdd7274740f16d134fb443df253c495130f622d1820ca9a55fb3a8e0eb5"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-32.bin",
+      "sha256": "8a496f8c41662fdaf73a96e7d8dcd25c988774d2cee807539bb5b49871617a15"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-64.bin",
+      "sha256": "0c2ff42338a7cd95221b623bc2f5ac369f67807fa346e854a4ff7fcfd4c74f42"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-16.bin",
+      "sha256": "1d2ee6f2aa11b81e70e2cb3531c3b90796c7fb6d7e89cc113774f3c5723ee8d7"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-32.bin",
+      "sha256": "ce956e0fd08f7f8c6f2ca7c400ff3869da9a188f1bcc81a3af52fcd62257f75b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-64.bin",
+      "sha256": "e7ebd99896cf217068d48b8f77bfcf7f7889f6e007a2c28b7f6d7098b4bbca8f"
+    }
+  ],
+  "limite": "Casos concretos y tamaños de serialización; sin nuevos benchmarks ni cota global de solidez."
+}

@@ -1,0 +1,174 @@
+{
+  "fecha": "2026-09-22",
+  "criterion": [
+    {
+      "caso": "key_generation/dilithium2",
+      "n": 50,
+      "mediana_us": 92.22632352941176,
+      "inferior_us": 92.01157142857143,
+      "superior_us": 92.42369292544605,
+      "origen": "criterion/key_generation/dilithium2/r4-complemento/estimates.json",
+      "sha256": "72da0e48af6c393fab0f6344bac54e9870f8af23873e92aa07d793e9c85ddc50"
+    },
+    {
+      "caso": "key_generation/dilithium3",
+      "n": 50,
+      "mediana_us": 155.87504528985508,
+      "inferior_us": 155.59,
+      "superior_us": 156.54178571428574,
+      "origen": "criterion/key_generation/dilithium3/r4-complemento/estimates.json",
+      "sha256": "59485982a109d1e5c88b3fe6ee184b039a94569553c5d5f8cf52e3da43bb9a15"
+    },
+    {
+      "caso": "key_generation/dilithium5",
+      "n": 50,
+      "mediana_us": 212.23279761904763,
+      "inferior_us": 211.94453125,
+      "superior_us": 213.09761904761905,
+      "origen": "criterion/key_generation/dilithium5/r4-complemento/estimates.json",
+      "sha256": "16309cdfb7110f1915a2b6f3786d2e2da620782d2d2de7541d6a75199d00cb2c"
+    },
+    {
+      "caso": "sign_and_verify/dilithium2",
+      "n": 50,
+      "mediana_us": 262.17291666666665,
+      "inferior_us": 258.7261904761905,
+      "superior_us": 268.6693798449612,
+      "origen": "criterion/sign_and_verify/dilithium2/r4-complemento/estimates.json",
+      "sha256": "b7c4b8aa730a98d1d29d74cfec3d2f1447ffbdb3d087c2ce64c82995866a6eba"
+    },
+    {
+      "caso": "sign_and_verify/dilithium3",
+      "n": 50,
+      "mediana_us": 420.58407043407044,
+      "inferior_us": 412.097,
+      "superior_us": 428.34423076923076,
+      "origen": "criterion/sign_and_verify/dilithium3/r4-complemento/estimates.json",
+      "sha256": "0977c34791c5f37c9cab86c6e95dc85c4772ba1201a0db777760aa03344b24c7"
+    },
+    {
+      "caso": "sign_and_verify/dilithium5",
+      "n": 50,
+      "mediana_us": 522.8984042553192,
+      "inferior_us": 511.95557692307693,
+      "superior_us": 531.2789772727273,
+      "origen": "criterion/sign_and_verify/dilithium5/r4-complemento/estimates.json",
+      "sha256": "4fb20c85f62c19743133088a2d2cf6764d9c1775b6ae7fbb944e3a7ad5751d7d"
+    },
+    {
+      "caso": "signing/dilithium2",
+      "n": 50,
+      "mediana_us": 208.7240738686779,
+      "inferior_us": 205.06693548387096,
+      "superior_us": 212.0625130208333,
+      "origen": "criterion/signing/dilithium2/r4-complemento/estimates.json",
+      "sha256": "ef012d8957395a00f7e8794635bd6e07e1ea6b4acb656cf7551d31953ba96537"
+    },
+    {
+      "caso": "signing/dilithium3",
+      "n": 50,
+      "mediana_us": 326.03644444444444,
+      "inferior_us": 319.83941666666664,
+      "superior_us": 334.22465116279074,
+      "origen": "criterion/signing/dilithium3/r4-complemento/estimates.json",
+      "sha256": "9270ec596fc9d7d319d175b18c2bcd8b8d396b6ea9e841ed97bcefef260d18a1"
+    },
+    {
+      "caso": "signing/dilithium5",
+      "n": 50,
+      "mediana_us": 387.46759906759905,
+      "inferior_us": 381.3633333333333,
+      "superior_us": 394.62593236714974,
+      "origen": "criterion/signing/dilithium5/r4-complemento/estimates.json",
+      "sha256": "5c366bd91ce22be64bc4f4a84d7747de0415a2d059e3094209fb2c896dec1faa"
+    },
+    {
+      "caso": "verification/dilithium2",
+      "n": 50,
+      "mediana_us": 52.96273333333334,
+      "inferior_us": 52.879128787878784,
+      "superior_us": 53.063589743589745,
+      "origen": "criterion/verification/dilithium2/r4-complemento/estimates.json",
+      "sha256": "3fc8a5405d373d442bff1ae5eafa8f33d19f904a662f3c7d859de178b97d81b2"
+    },
+    {
+      "caso": "verification/dilithium3",
+      "n": 50,
+      "mediana_us": 84.61035469107551,
+      "inferior_us": 84.5042388580146,
+      "superior_us": 84.76327537593984,
+      "origen": "criterion/verification/dilithium3/r4-complemento/estimates.json",
+      "sha256": "be8c85d7b49aaedff742d0a685e9b0b52954277bc837feebb2923ac5e482a0b7"
+    },
+    {
+      "caso": "verification/dilithium5",
+      "n": 50,
+      "mediana_us": 137.0667261904762,
+      "inferior_us": 136.83557963354474,
+      "superior_us": 137.287567132116,
+      "origen": "criterion/verification/dilithium5/r4-complemento/estimates.json",
+      "sha256": "4615ba034a2e98a73e0edcc1f00454add33e94003017578cf96bea2ddc9e1282"
+    }
+  ],
+  "throughput": [
+    {
+      "hilos": 1,
+      "mediana": 12348.582383,
+      "min": 10508.277693,
+      "max": 12526.430438,
+      "razon_1_hilo": 1.0
+    },
+    {
+      "hilos": 2,
+      "mediana": 24697.495425,
+      "min": 21732.134175,
+      "max": 24872.281594,
+      "razon_1_hilo": 2.000026777081753
+    },
+    {
+      "hilos": 4,
+      "mediana": 45827.369743,
+      "min": 44241.930272,
+      "max": 46249.128398,
+      "razon_1_hilo": 3.7111441881854756
+    },
+    {
+      "hilos": 8,
+      "mediana": 72944.883111,
+      "min": 72111.984211,
+      "max": 74090.063012,
+      "razon_1_hilo": 5.907146330531146
+    },
+    {
+      "hilos": 12,
+      "mediana": 95440.294734,
+      "min": 89498.377264,
+      "max": 95527.231569,
+      "razon_1_hilo": 7.7288462573153645
+    },
+    {
+      "hilos": 16,
+      "mediana": 111035.749967,
+      "min": 104170.977055,
+      "max": 112233.869642,
+      "razon_1_hilo": 8.991781122978153
+    },
+    {
+      "hilos": 20,
+      "mediana": 125412.656041,
+      "min": 116166.472453,
+      "max": 127014.733961,
+      "razon_1_hilo": 10.156036713465394
+    },
+    {
+      "hilos": 24,
+      "mediana": 136389.689738,
+      "min": 130147.551409,
+      "max": 140046.88517,
+      "razon_1_hilo": 11.044967390407859
+    }
+  ],
+  "corpus_sha256": "a22f4d49c9be620e06a61a8666334abfc313a08cfdb6279ded678e74cb7636b2",
+  "throughput_csv_sha256": "e09c2f10654b01cca412ccc1af80283e5fad27617fd3919078627ae21102a670",
+  "interpretacion": "Verificaciones aisladas de ML-DSA-65, no transacciones/s de una blockchain; rango de cinco repeticiones, no IC."
+}

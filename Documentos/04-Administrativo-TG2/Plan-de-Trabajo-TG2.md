@@ -1,12 +1,12 @@
 # Plan de Trabajo — Trabajo de Grado 2 (TG2)
 
-**Proyecto:** Arquitectura Blockchain Dual NEXUS: Un Modelo Matemático-Computacional para Sistemas Bancarios Seguros y Resilientes Post-Cuántico
+**Proyecto:** Arquitectura Blockchain Dual NEXUS: Un Modelo Matemático-Computacional para Sistemas Seguros y Resilientes Post-Cuánticos
 **Estudiante:** Juan Diego Susunaga Velasquez · Matemáticas Aplicadas y Ciencias de la Computación (MACC), Universidad del Rosario
 **Director:** Pedro Mario Wightman Rojas
-**Fecha:** 2026-08-03 · **Versión:** Borrador v0.1 — **PARA DISCUSIÓN Y ACUERDO CON EL DIRECTOR**
+**Fecha del plan:** 2026-08-03 · **Estado actualizado el 2026-09-22:** aprobación del director confirmada por el estudiante. Fecha exacta y calendario acordado por incorporar.
 **Repositorio:** github.com/JuanDiegoSusunaga/nexus
 
-> ⚠️ Las fechas exactas del cronograma se fijarán en la primera reunión con el director; este borrador usa hitos relativos (semanas) sobre el semestre 2026-2.
+> El dominio de aplicación se actualiza a sistemas en general por aclaración expresa del estudiante el 22 de septiembre. Se conserva el historial de la propuesta aprobada; esta aclaración no se atribuye retroactivamente al director. Los hitos relativos no equivalen a fechas confirmadas. El estado técnico vigente se detalla en la [revisión de la bitácora](Avances/Revision-Bitacora-2026-09-22.md) y la [ruta de cierre](Ruta-de-Cierre-TG2.md); las descripciones de partida siguientes son históricas.
 
 ---
 
@@ -14,7 +14,7 @@
 
 - **TG1 entregado y calificado (4.2)**, evaluado por el prof. Wightman sobre el avance presentado (manuscrito + prototipo Rust).
 - **Condiciones del Comité de Opciones de Grado** (correo 2026-08-03): (i) comunicación permanente con el director, (ii) plan de trabajo de TG2 **acordado con el director**, (iii) **entregas parciales** formalizadas para seguimiento y aprobación por etapas. Este documento responde a la condición (ii); la §5 y la plantilla de entregas responden a la (iii).
-- El alcance vigente es el **v2** (modificación de objetivos formalizada en TG1): modelo formal y prototipo de referencia de firmas post-cuánticas (CRYSTALS-Dilithium/ML-DSA) en una arquitectura dual-chain para banca, con validación formal y de complejidad.
+- La edición vigente conserva los objetivos técnicos de **v2** y presenta el modelo formal y prototipo de firmas post-cuánticas (CRYSTALS-Dilithium/ML-DSA) para **sistemas en general**, mediante una arquitectura dual-chain y su validación formal y de complejidad. Esta formulación del dominio corresponde a la aclaración del estudiante registrada el 22 de septiembre.
 
 ## 2. Objetivos de TG2
 
@@ -82,4 +82,3 @@ TG2 cubre los **Objetivos Específicos 3 y 4** del alcance v2, más una línea d
 - `BITACORA_TG2.md` — bitácora de seguimiento TG2.
 - `Documentos/04-Administrativo-TG2/Estado-del-Proyecto-para-Director.md` — brief para la reunión inicial.
 - `Documentos/02-Investigacion-y-Notas/Estado-del-Arte-Claves-Efimeras-y-Deception.md` y `Estado-del-Arte-Pagos-Agenticos.md` — sustento de novedad.
-- `Lluvia de ideas/Dilithium-Multisemilla-Efecto-Observador-V2.md` — diseño V2 (C1–C3).

@@ -1,6 +1,6 @@
 # Capítulo 4 — Núcleo Criptográfico Post-Cuántico
 
-### (Objetivo 2 · la "solución" del arco)
+*Objetivo 2 · la "solución" del arco*
 
 > **Rol en el arco de la tesis.** Este capítulo desarrolla el **primitivo de firma** que constituye la *solución* a la amenaza cuántica: el esquema CRYSTALS-Dilithium, su integración correcta en las transacciones y la derivación determinística de claves. Es la parte **genuinamente implementada y verificada** del prototipo; su seguridad se prueba formalmente en el **Capítulo 6** y su costo se amortiza en el **Capítulo 3**.
 
@@ -22,10 +22,12 @@ El componente cuya seguridad es necesaria y suficiente para autenticar transacci
 
 NEXUS soporta los tres niveles estandarizados, seleccionables según el compromiso seguridad/tamaño (Cap. 6, §6.2.3):
 
+**Tabla 4.1 — CRYSTALS-Dilithium en NEXUS.**
+
 | Nivel | Seguridad NIST | Clave pública | Firma | Uso recomendado |
 |---|:---:|---:|---:|---|
 | Dilithium2 | 2 | 1312 B | 2420 B | operaciones de alto volumen |
-| **Dilithium3** | **3** | **1952 B** | **3309 B** | **por defecto (banca)** |
+| **Dilithium3** | **3** | **1952 B** | **3309 B** | **por defecto en el prototipo** |
 | Dilithium5 | 5 | 2592 B | 4627 B | activos de máxima criticidad |
 
 Las claves y firmas tienen tamaños fijos por nivel, validados contra los tamaños reportados por la biblioteca antes de cualquier operación criptográfica.
@@ -79,7 +81,11 @@ El Objetivo 2 incluye la **generación determinística de claves a partir de una
 > **FIPS 204 / ML-DSA define una `KeyGen` determinística a partir de una semilla de 32 bytes** $\xi$: toda la aleatoriedad del esquema se deriva expandiendo $\xi$ con una función *XOF* (SHAKE). Por tanto, la generación determinística **no** requiere biometría ni construcciones ad hoc —basta con la `KeyGen` semillada del estándar.
 
 El diseño de NEXUS:
-$$\xi \xleftarrow{\ \text{KDF}\ } \text{material de la fuente de entropía (Cap. 5)}, \qquad (pk, sk) = \mathsf{ML\text{-}DSA.KeyGen}(\xi).$$
+
+$$
+\xi \xleftarrow{\ \text{KDF}\ } \text{material de la fuente de entropía (Cap. 5)}, \qquad (pk, sk) = \mathsf{ML\text{-}DSA.KeyGen}(\xi).
+$$
+
 La semilla $\xi$ se deriva mediante un **KDF con separación de dominio** (SHA3/SHAKE) a partir del material de la fuente monitoreada (Cap. 5). Esto reemplaza por completo la derivación biométrica del alcance original (eliminada en v2): el determinismo se obtiene de una **semilla de alta entropía**, no de un biométrico.
 
 ### 4.5.2 Implementación (verificada)
@@ -94,7 +100,7 @@ La semilla $\xi$ se deriva mediante un **KDF con separación de dominio** (SHA3/
 
 La elección de Dilithium debe justificarse explícitamente, porque el sobrecosto de ~50× (Cap. 3) es **específico de Dilithium** y existen alternativas con perfiles distintos. La estandarización NIST y las decisiones de las cadenas líderes ofrecen anclas reales.
 
-**Tabla 4.1 — Esquemas de firma post-cuántica.**
+**Tabla 4.2 — Esquemas de firma post-cuántica.**
 
 | Esquema (estándar) | Tamaño de firma | Perfil | Adopción real |
 |---|---:|---|---|
@@ -114,6 +120,8 @@ La elección de Dilithium debe justificarse explícitamente, porque el sobrecost
 ---
 
 ## 4.7 Estado de implementación y limitaciones
+
+**Tabla 4.3 — Estado de implementación y limitaciones.**
 
 | Componente | Estado |
 |---|---|

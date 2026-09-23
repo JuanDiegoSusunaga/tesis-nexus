@@ -1,0 +1,368 @@
+{
+  "fecha": "2026-09-22",
+  "figuras": [
+    {
+      "rotulo": "Figura 1.1",
+      "fuente": "Figuras/figura-1-1-arco.png",
+      "pagina_pdf": 9,
+      "figura": 1,
+      "pagina": 9,
+      "pagina_rotulo": 9,
+      "ancho_pt": 468,
+      "alto_pt": 180,
+      "dimensiones_png": [
+        2080,
+        800
+      ],
+      "formatos": [
+        "SVG",
+        "PDF vectorial",
+        "PNG 320 ppp"
+      ]
+    },
+    {
+      "rotulo": "Figura 3.1",
+      "fuente": "Figuras/figura-3-1-arquitectura.png",
+      "pagina_pdf": 18,
+      "figura": 2,
+      "pagina": 21,
+      "pagina_rotulo": 21,
+      "ancho_pt": 468,
+      "alto_pt": 360,
+      "dimensiones_png": [
+        2080,
+        1600
+      ],
+      "formatos": [
+        "SVG",
+        "PDF vectorial",
+        "PNG 320 ppp"
+      ]
+    },
+    {
+      "rotulo": "Figura 5.1",
+      "fuente": "Figuras/figura-5-1-ciclo-claves.png",
+      "pagina_pdf": 44,
+      "figura": 3,
+      "pagina": 49,
+      "pagina_rotulo": 49,
+      "ancho_pt": 468,
+      "alto_pt": 475.2,
+      "dimensiones_png": [
+        2080,
+        2112
+      ],
+      "formatos": [
+        "SVG",
+        "PDF vectorial",
+        "PNG 320 ppp"
+      ]
+    }
+  ],
+  "bloques_codigo_en_manuscrito": 0,
+  "ecuaciones_en_bloque": [
+    {
+      "numero": 1,
+      "latex": "\n\\frac{\\mathrm{TPS}_{\\text{ECDSA}}}{\\mathrm{TPS}_{\\text{Dilithium}}} = \\frac{b+s_q}{b+s_c} = \\frac{3409}{164} \\approx 20{,}8\\times.\n",
+      "ecuacion": 1,
+      "pagina": 22,
+      "y_inicio_pt": 428.55,
+      "y_fin_pt": 428.55
+    },
+    {
+      "numero": 2,
+      "latex": "\nF(M) = d + \\frac{C+\\pi}{M} \\xrightarrow{\\ M\\to\\infty\\ } d,\n",
+      "ecuacion": 2,
+      "pagina": 23,
+      "y_inicio_pt": 98.55,
+      "y_fin_pt": 98.55
+    },
+    {
+      "numero": 3,
+      "latex": "\n\\textbf{Cuenta} = (\\ \\text{id\\_estable},\\ \\ \\text{política\\_de\\_verificación},\\ \\ \\text{epoch}\\ ).\n",
+      "ecuacion": 3,
+      "pagina": 26,
+      "y_inicio_pt": 554.8,
+      "y_fin_pt": 554.8
+    },
+    {
+      "numero": 4,
+      "latex": "\n\\xi \\xleftarrow{\\ \\text{KDF}\\ } \\text{material de la fuente de entropía (Cap. 5)}, \\qquad (pk, sk) = \\mathsf{ML\\text{-}DSA.KeyGen}(\\xi).\n",
+      "ecuacion": 4,
+      "pagina": 34,
+      "y_inicio_pt": 462.4,
+      "y_fin_pt": 462.4
+    },
+    {
+      "numero": 5,
+      "latex": "\nH_\\infty(X) = -\\log_2 \\Big(\\max_x \\Pr[X=x]\\Big).\n",
+      "ecuacion": 5,
+      "pagina": 39,
+      "y_inicio_pt": 363.1,
+      "y_fin_pt": 363.1
+    },
+    {
+      "numero": 6,
+      "latex": "\nC = 1 + \\left\\lceil \\frac{-\\log_2 \\alpha}{H} \\right\\rceil.\n",
+      "ecuacion": 6,
+      "pagina": 40,
+      "y_inicio_pt": 140.55,
+      "y_fin_pt": 140.55
+    },
+    {
+      "numero": 7,
+      "latex": "\n\\xi = \\mathrm{KDF}\\big(\\underbrace{\\text{material de la fuente}}_{\\text{alta min-entropía}},\\ \\text{sal},\\ \\underbrace{\\text{contexto}}_{\\text{dominio} \\,\\|\\, \\text{epoch}}\\big),\n",
+      "ecuacion": 7,
+      "pagina": 41,
+      "y_inicio_pt": 335.75,
+      "y_fin_pt": 335.75
+    },
+    {
+      "numero": 8,
+      "latex": "\n\\xi_{e+1} = H\\big(\\text{dominio} \\,\\|\\, \\xi_{e} \\,\\|\\, \\text{material fresco} \\,\\|\\, e\\big), \\qquad \\text{y se borra } \\xi_{e}.\n",
+      "ecuacion": 8,
+      "pagina": 42,
+      "y_inicio_pt": 147.1,
+      "y_fin_pt": 147.1
+    },
+    {
+      "numero": 9,
+      "latex": "\n\\Lambda = \\mathcal{L}(\\mathbf{B}) = \\Big\\{ \\textstyle\\sum_{i=1}^{m} z_i\\,\\mathbf{b}_i : z_i \\in \\mathbb{Z} \\Big\\}.\n",
+      "ecuacion": 9,
+      "pagina": 54,
+      "y_inicio_pt": 452,
+      "y_fin_pt": 452
+    },
+    {
+      "numero": 10,
+      "latex": "\nR = \\mathbb{Z}[X]/(X^{n}+1), \\qquad R_q = \\mathbb{Z}_q[X]/(X^{n}+1).\n",
+      "ecuacion": 10,
+      "pagina": 55,
+      "y_inicio_pt": 284.55,
+      "y_fin_pt": 284.55
+    },
+    {
+      "numero": 11,
+      "latex": "\nq \\equiv 1 \\pmod{2n}, \\qquad\\text{en efecto}\\quad 8\\,380\\,417 = 512\\cdot 16\\,368 + 1,\\ \\text{con } 2n=512,\n",
+      "ecuacion": 11,
+      "pagina": 55,
+      "y_inicio_pt": 362.3,
+      "y_fin_pt": 362.3
+    },
+    {
+      "numero": 12,
+      "latex": "\n\\big(\\mathbf{A},\\ \\mathbf{A}\\mathbf{s}+\\mathbf{e}\\big) \\qquad\\text{de}\\qquad \\big(\\mathbf{A},\\ \\mathbf{u}\\big),\\quad \\mathbf{u}\\xleftarrow{\\$} R_q^{k}.\n",
+      "ecuacion": 12,
+      "pagina": 56,
+      "y_inicio_pt": 72,
+      "y_fin_pt": 72
+    },
+    {
+      "numero": 13,
+      "latex": "\n\\mathbf{A}\\mathbf{z} = \\mathbf{0} \\pmod q \\qquad\\text{y}\\qquad \\|\\mathbf{z}\\| \\le \\beta.\n",
+      "ecuacion": 13,
+      "pagina": 56,
+      "y_inicio_pt": 191.75,
+      "y_fin_pt": 191.75
+    },
+    {
+      "numero": 14,
+      "latex": "\n\\mathsf{KeyGen}(1^\\lambda)\\to(pk,sk), \\quad \\mathsf{Sign}(sk,\\mu)\\to\\sigma, \\quad \\mathsf{Verify}(pk,\\mu,\\sigma)\\to\\{0,1\\},\n",
+      "ecuacion": 14,
+      "pagina": 57,
+      "y_inicio_pt": 258.35,
+      "y_fin_pt": 258.35
+    },
+    {
+      "numero": 15,
+      "latex": "\n\\begin{aligned}\n\\mathrm{Adv}^{\\mathrm{EF\\text{-}CMA}}(A)\n&\\le \\mathrm{Adv}^{\\mathrm{EF\\text{-}NMA}}(B)+L_Q,\\\\\nL_Q&=\\frac{2q_S\\sqrt{\\epsilon}}{1-p}\n\\sqrt{q_H+1+\\frac{q_S}{1-p}}\\\\\n&\\quad+2(q_H+1)\\sqrt{\\frac{q_S\\epsilon}{1-p}}\n+q_S\\zeta_{\\mathrm{zk}}+\\delta.\n\\end{aligned}\n",
+      "ecuacion": 15,
+      "pagina": 59,
+      "y_inicio_pt": 552.9,
+      "y_fin_pt": 552.9
+    },
+    {
+      "numero": 16,
+      "latex": "\n\\mathrm{Mod\\text{-}SIVP}_{\\gamma}\n\\le_{\\mathrm{red}}\n\\mathrm{M\\text{-}LWE}\n\\quad\\text{o}\\quad\n\\mathrm{Mod\\text{-}SIVP}_{\\gamma}\n\\le_{\\mathrm{red}}\n\\mathrm{M\\text{-}SIS}.\n",
+      "ecuacion": 16,
+      "pagina": 61,
+      "y_inicio_pt": 329.6,
+      "y_fin_pt": 329.6
+    },
+    {
+      "numero": 17,
+      "latex": "\nT_{\\text{mult}}(n) = O(n\\log n)\\ \\text{operaciones en }\\mathbb{Z}_q,\n",
+      "ecuacion": 17,
+      "pagina": 63,
+      "y_inicio_pt": 279.55,
+      "y_fin_pt": 279.55
+    },
+    {
+      "numero": 18,
+      "latex": "\n\\mathbb{E}[N]=\\frac{1}{p_{\\mathrm{acc}}}.\n",
+      "ecuacion": 18,
+      "pagina": 64,
+      "y_inicio_pt": 140.9,
+      "y_fin_pt": 140.9
+    },
+    {
+      "numero": 19,
+      "latex": "\nO\\big((k+\\ell)\\,n\\log n + k\\ell\\,n\\big),\n",
+      "ecuacion": 19,
+      "pagina": 64,
+      "y_inicio_pt": 493.6,
+      "y_fin_pt": 493.6
+    },
+    {
+      "numero": 20,
+      "latex": "\n\\epsilon_{\\mathrm{FS}}\\leq Q\\epsilon_{\\mathrm{RBR}}\n + \\frac{3(Q^2+1)}{2^\\kappa}.\n",
+      "ecuacion": 20,
+      "pagina": 80,
+      "y_inicio_pt": 297.25,
+      "y_fin_pt": 297.25
+    }
+  ],
+  "formulas_pdf": [
+    {
+      "numero": 1,
+      "pagina_pdf": 19,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 204.375
+    },
+    {
+      "numero": 2,
+      "pagina_pdf": 20,
+      "similitud_textual": 0.769,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 144.05859375
+    },
+    {
+      "numero": 3,
+      "pagina_pdf": 23,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 294.1171875
+    },
+    {
+      "numero": 4,
+      "pagina_pdf": 30,
+      "similitud_textual": 0.99,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 429.046875
+    },
+    {
+      "numero": 5,
+      "pagina_pdf": 35,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 173.6015625
+    },
+    {
+      "numero": 6,
+      "pagina_pdf": 35,
+      "similitud_textual": 0.933,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 96.0703125
+    },
+    {
+      "numero": 7,
+      "pagina_pdf": 36,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 261.421875
+    },
+    {
+      "numero": 8,
+      "pagina_pdf": 37,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 352.30078125
+    },
+    {
+      "numero": 9,
+      "pagina_pdf": 49,
+      "similitud_textual": 0.923,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 164.9296875
+    },
+    {
+      "numero": 10,
+      "pagina_pdf": 50,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 236.4140625
+    },
+    {
+      "numero": 11,
+      "pagina_pdf": 50,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 403.98046875
+    },
+    {
+      "numero": 12,
+      "pagina_pdf": 50,
+      "similitud_textual": 0.857,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 225.10546875
+    },
+    {
+      "numero": 13,
+      "pagina_pdf": 50,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 192.4453125
+    },
+    {
+      "numero": 14,
+      "pagina_pdf": 51,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 349.18359375
+    },
+    {
+      "numero": 15,
+      "pagina_pdf": 54,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 252.1875
+    },
+    {
+      "numero": 16,
+      "pagina_pdf": 55,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 270.5390625
+    },
+    {
+      "numero": 17,
+      "pagina_pdf": 57,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 209.2734375
+    },
+    {
+      "numero": 18,
+      "pagina_pdf": 58,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 64.16015625
+    },
+    {
+      "numero": 19,
+      "pagina_pdf": 58,
+      "similitud_textual": 1.0,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 135.140625
+    },
+    {
+      "numero": 20,
+      "pagina_pdf": 73,
+      "similitud_textual": 0.727,
+      "tamano_pt": 12,
+      "ancho_contenido_pt": 130.6875
+    }
+  ],
+  "inspeccion_visual": "Revisión del 2026-09-22 tras la auditoría STARK: Tabla 6.15 y texto de §6.7.1 inspeccionados en Word pp. 79–80 y PDF p. 72; ecuación nueva 20 inspeccionada en Word p. 80 y PDF p. 73, sin recortes. Las 27 tablas conservan sus rótulos y cuerpos juntos en Word; 711 celdas coinciden con la conversión independiente. PDF sin páginas vacías ni texto fuera de márgenes. Se conserva la inspección R1 de las otras 19 ecuaciones y tres figuras: fórmulas sin cambios; fuentes gráficas, dimensiones y ubicaciones comparadas con la instantánea R1. La rasterización EMF de Word acentúa el peso del texto y no implica negrita aplicada a todo el documento."
+}

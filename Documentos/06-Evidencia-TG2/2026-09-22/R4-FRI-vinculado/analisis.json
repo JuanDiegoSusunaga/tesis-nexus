@@ -1,0 +1,123 @@
+{
+  "fecha": "2026-09-22",
+  "dominio": "NEXUS-TG2-LINKED-FRI-v1",
+  "version": 1,
+  "filas_minimas": 16,
+  "filas_maximas": 4096,
+  "codificacion_traza": "Fp2(u,0), 16 bytes; misma raíz que capa 0 de FRI de traza",
+  "orden": [
+    "perfil",
+    "enunciado",
+    "raiz_traza",
+    "tres_alphas",
+    "fase_trace_FRI",
+    "fase_composition_FRI",
+    "nonce",
+    "40_indices_comunes"
+  ],
+  "tamanos": [
+    {
+      "T": 16,
+      "N": 128,
+      "capas_traza": 4,
+      "capas_cp": 5,
+      "consultas": 40,
+      "bytes_tupla": 196574,
+      "bytes_solo_lde": 1024
+    },
+    {
+      "T": 64,
+      "N": 512,
+      "capas_traza": 6,
+      "capas_cp": 7,
+      "consultas": 40,
+      "bytes_tupla": 306782,
+      "bytes_solo_lde": 4096
+    },
+    {
+      "T": 256,
+      "N": 2048,
+      "capas_traza": 8,
+      "capas_cp": 9,
+      "consultas": 40,
+      "bytes_tupla": 437470,
+      "bytes_solo_lde": 16384
+    },
+    {
+      "T": 4096,
+      "N": 32768,
+      "capas_traza": 12,
+      "capas_cp": 13,
+      "consultas": 40,
+      "bytes_tupla": 760286,
+      "bytes_solo_lde": 262144
+    }
+  ],
+  "conteo_serializacion": "126+32*(Lt+Lc)+40*(120+192*D+48*(Lt+Lc)+64*((Lt+Lc)*D-(Lt*(Lt-1)+Lc*(Lc-1))/2))",
+  "escenario_omision_ideal": {
+    "parejas": 256,
+    "parejas_malas": 64,
+    "consultas": 40,
+    "probabilidad_exacta": "108576289954942173526383/34334682543277522843479126700",
+    "cota_superior": "12157665459056928801/1208925819614629174706176",
+    "limite": "No incluye errores FRI, selección adaptativa, Merkle ni Fiat–Shamir; no es una cota del protocolo."
+  },
+  "fuentes": [
+    {
+      "archivo": "nexus/nexus-zk/src/stark/air.rs",
+      "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/channel.rs",
+      "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/field.rs",
+      "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/fri.rs",
+      "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/merkle.rs",
+      "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/mod.rs",
+      "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/ntt.rs",
+      "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/params.rs",
+      "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533"
+    },
+    {
+      "archivo": "nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs",
+      "sha256": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f"
+    },
+    {
+      "archivo": "nexus/nexus-zk/tests/tg2_linked_trace_fri.rs",
+      "sha256": "1270fe7b2a8b843b038db6fa6803975a1448044df1693b86875c20942316707d"
+    },
+    {
+      "archivo": "nexus/Cargo.toml",
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea"
+    },
+    {
+      "archivo": "nexus/Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    },
+    {
+      "archivo": "nexus/nexus-zk/Cargo.toml",
+      "sha256": "a186b13cb9292cce8c7a7501d69a90f2f5433649a1d9d361a88fa75f7e78ae2d"
+    },
+    {
+      "archivo": "scripts/analizar_fri_vinculado_r4.py",
+      "sha256": "e4ca88d0a9467585a2d5bfe2f10158d4f8f5046e6c272d3be3f203fc8921345d"
+    }
+  ]
+}

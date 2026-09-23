@@ -4,7 +4,7 @@
 **Fecha de entrega:** 2026-08-07 · **Período cubierto:** 2026-08-03 a 2026-08-07
 **Fase del plan de trabajo:** F1–F2 (adelantos; F0 pendiente de agenda) · **Objetivo(s)/Contribución(es):** Obj 3, Obj 4, C1
 
-> **Estado: BORRADOR** — pendiente de revisión antes de enviar.
+> **Estado actualizado el 2026-09-22:** aprobación confirmada por el estudiante. Se conserva el contenido histórico de la entrega; la fecha exacta de revisión y el medio de comunicación están por incorporar. La [revisión de septiembre](Revision-Bitacora-2026-09-22.md) precisa el estado técnico actual.
 
 ---
 
@@ -49,4 +49,4 @@ La reunión F0 (acuerdo del plan) aún no se realiza; para no bloquear el semest
 **Fecha de revisión:** · **Medio:** (reunión / correo)
 **Observaciones:**
 
-**Estado de la entrega:** ☐ Aprobada ☐ Aprobada con ajustes ☐ Requiere reentrega
+**Estado de la entrega:** aprobación informada por el estudiante el 2026-09-22; sin desglose adicional de observaciones o condiciones en esta sesión.

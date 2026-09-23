@@ -1,0 +1,439 @@
+{
+  "fecha": "2026-09-22",
+  "modelo": "Interactivo, oráculos ideales fijos y retos uniformes independientes en Fp2",
+  "fuente": "BGK+23, versión de 2024-02-15, Corolario 5.5, p. 34; Algoritmo 1, p. 40",
+  "metodo": "Unión conservadora de k+1 rondas por FRI; cancelación y enlace por muestreo sin reemplazo",
+  "P": 18446744069414584321,
+  "filas": [
+    {
+      "T": 16,
+      "N": 128,
+      "M": 64,
+      "q": 40,
+      "k_traza": 4,
+      "k_cp": 5,
+      "delta_traza": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "delta_cp": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "distancia_enlace": {
+        "numerador": "17",
+        "denominador": "128"
+      },
+      "parejas_malas_minimas": 9,
+      "error_fri_traza": {
+        "numerador": "31834028804545139928707175696120005",
+        "denominador": "1329227995784915872903807060280344576"
+      },
+      "error_fri_cp": {
+        "numerador": "19100417282727083957224305417672003",
+        "denominador": "664613997892457936451903530140172288"
+      },
+      "error_enlace": {
+        "numerador": "4301",
+        "denominador": "90594028"
+      },
+      "cota_ideal": {
+        "numerador": "540237167054720227366171986982658671839735626136785834567685484178483496654862793",
+        "denominador": "10244210712557716531521251936690721620840654366983939354129768845444385143166861312"
+      },
+      "cota_decimal_superior": "0,052736",
+      "menos_log2_solo_cota": 4.2450721255270585
+    },
+    {
+      "T": 32,
+      "N": 256,
+      "M": 128,
+      "q": 40,
+      "k_traza": 5,
+      "k_cp": 6,
+      "delta_traza": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "delta_cp": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "distancia_enlace": {
+        "numerador": "33",
+        "denominador": "256"
+      },
+      "parejas_malas_minimas": 17,
+      "error_fri_traza": {
+        "numerador": "19100417282727083957224305417672003",
+        "denominador": "664613997892457936451903530140172288"
+      },
+      "error_fri_cp": {
+        "numerador": "44567640326363195900190045974568007",
+        "denominador": "1329227995784915872903807060280344576"
+      },
+      "error_enlace": {
+        "numerador": "20561840577",
+        "denominador": "20622512140720"
+      },
+      "cota_ideal": {
+        "numerador": "36882892088007516196923863661919679098178300344855834379535126397266113836987580507807",
+        "denominador": "582989200435528132536002446637813199578575398081636174902702619331442161613881967902720"
+      },
+      "cota_decimal_superior": "0,063266",
+      "menos_log2_solo_cota": 3.982445467553721
+    },
+    {
+      "T": 64,
+      "N": 512,
+      "M": 256,
+      "q": 40,
+      "k_traza": 6,
+      "k_cp": 7,
+      "delta_traza": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "delta_cp": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "distancia_enlace": {
+        "numerador": "65",
+        "denominador": "512"
+      },
+      "parejas_malas_minimas": 33,
+      "error_fri_traza": {
+        "numerador": "44567640326363195900190045974568007",
+        "denominador": "1329227995784915872903807060280344576"
+      },
+      "error_fri_cp": {
+        "numerador": "6366805760909027985741435139224001",
+        "denominador": "166153499473114484112975882535043072"
+      },
+      "error_enlace": {
+        "numerador": "13206439471784150226714810553",
+        "denominador": "5479577724825680035849251085200"
+      },
+      "cota_ideal": {
+        "numerador": "11502936484272752124428550012884480047273875819587741089859291308578442356123961137154664651364039073303",
+        "denominador": "154905213037198960948127655099975211405222648476002966804502442806056780568603834651813094970270888755200"
+      },
+      "cota_decimal_superior": "0,074258",
+      "menos_log2_solo_cota": 3.751311589746508
+    },
+    {
+      "T": 128,
+      "N": 1024,
+      "M": 512,
+      "q": 40,
+      "k_traza": 7,
+      "k_cp": 8,
+      "delta_traza": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "delta_cp": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "distancia_enlace": {
+        "numerador": "129",
+        "denominador": "1024"
+      },
+      "parejas_malas_minimas": 65,
+      "error_fri_traza": {
+        "numerador": "6366805760909027985741435139224001",
+        "denominador": "166153499473114484112975882535043072"
+      },
+      "error_fri_cp": {
+        "numerador": "57301251848181251871672916253016009",
+        "denominador": "1329227995784915872903807060280344576"
+      },
+      "error_enlace": {
+        "numerador": "103645194413708310848241836851433481898523",
+        "denominador": "29916924169407255839533827175157954056036800"
+      },
+      "cota_ideal": {
+        "numerador": "17949082750097927643485923702753477329202283292238406137082089265026106595495226709159629765190022838752941469260087",
+        "denominador": "211434518525201984163502967843460596551272465108647362916856060638026363765510358515904201624717118594936145654579200"
+      },
+      "cota_decimal_superior": "0,084892",
+      "menos_log2_solo_cota": 3.558228903303127
+    },
+    {
+      "T": 256,
+      "N": 2048,
+      "M": 1024,
+      "q": 40,
+      "k_traza": 8,
+      "k_cp": 9,
+      "delta_traza": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "delta_cp": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "distancia_enlace": {
+        "numerador": "257",
+        "denominador": "2048"
+      },
+      "parejas_malas_minimas": 129,
+      "error_fri_traza": {
+        "numerador": "57301251848181251871672916253016009",
+        "denominador": "1329227995784915872903807060280344576"
+      },
+      "error_fri_cp": {
+        "numerador": "31834028804545139928707175696120005",
+        "denominador": "664613997892457936451903530140172288"
+      },
+      "error_enlace": {
+        "numerador": "12346998049731455707237345014501897195374935137688860879",
+        "denominador": "3017699778689205171137594326049114393360942193591364866176"
+      },
+      "cota_ideal": {
+        "numerador": "1014097370514068122221595616459256403092888403938955985478035039462783630386598437632896224042010055287061458353375921983395113523",
+        "denominador": "10663627987753165551747423858201844220175278431241720475108828385100272969369153540224421615922265729356009282970259071022737129472"
+      },
+      "cota_decimal_superior": "0,095099",
+      "menos_log2_solo_cota": 3.3944302691833657
+    },
+    {
+      "T": 512,
+      "N": 4096,
+      "M": 2048,
+      "q": 40,
+      "k_traza": 9,
+      "k_cp": 10,
+      "delta_traza": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "delta_cp": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "distancia_enlace": {
+        "numerador": "513",
+        "denominador": "4096"
+      },
+      "parejas_malas_minimas": 257,
+      "error_fri_traza": {
+        "numerador": "31834028804545139928707175696120005",
+        "denominador": "664613997892457936451903530140172288"
+      },
+      "error_fri_cp": {
+        "numerador": "70034863369999307843155786531464011",
+        "denominador": "1329227995784915872903807060280344576"
+      },
+      "error_enlace": {
+        "numerador": "120009738598444780434854101605787785159965773839207209280458527393059",
+        "denominador": "27080597502284275736873365297393102840565754892431233882953558804726016"
+      },
+      "cota_ideal": {
+        "numerador": "5024847747861361789108872361463922118792829767110450555697295354238153923882242948918937442063864242329166238712962620807276700376087981684181",
+        "denominador": "47847274187075195315878204000804068112889543631363852319149395162475055820077927778895840238458159007259135712898561766801628449548760017534976"
+      },
+      "cota_decimal_superior": "0,105019",
+      "menos_log2_solo_cota": 3.251284949489951
+    },
+    {
+      "T": 1024,
+      "N": 8192,
+      "M": 4096,
+      "q": 40,
+      "k_traza": 10,
+      "k_cp": 11,
+      "delta_traza": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "delta_cp": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "distancia_enlace": {
+        "numerador": "1025",
+        "denominador": "8192"
+      },
+      "parejas_malas_minimas": 513,
+      "error_fri_traza": {
+        "numerador": "70034863369999307843155786531464011",
+        "denominador": "1329227995784915872903807060280344576"
+      },
+      "error_fri_cp": {
+        "numerador": "19100417282727083957224305417672003",
+        "denominador": "332306998946228968225951765070086144"
+      },
+      "error_enlace": {
+        "numerador": "67624133388910630107554604169918009672434792008301144474871227760709898615",
+        "denominador": "14674068780100678396944583225431153398487727089401700614755771811234066860544"
+      },
+      "cota_ideal": {
+        "numerador": "1487876434790292666120595780992182367272802321029981580211757418839192588484919339218102387240093462429072592238082600879211497125432578133002092723",
+        "denominador": "12963417670201943458936933743837349014508729291282495653847819060402573560764190585075762488659494561920319641645521908037533576073367920769700462592"
+      },
+      "cota_decimal_superior": "0,114776",
+      "menos_log2_solo_cota": 3.123119496357897
+    },
+    {
+      "T": 2048,
+      "N": 16384,
+      "M": 8192,
+      "q": 40,
+      "k_traza": 11,
+      "k_cp": 12,
+      "delta_traza": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "delta_cp": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "distancia_enlace": {
+        "numerador": "2049",
+        "denominador": "16384"
+      },
+      "parejas_malas_minimas": 1025,
+      "error_fri_traza": {
+        "numerador": "19100417282727083957224305417672003",
+        "denominador": "332306998946228968225951765070086144"
+      },
+      "error_fri_cp": {
+        "numerador": "82768474891817363814638656809912013",
+        "denominador": "1329227995784915872903807060280344576"
+      },
+      "error_enlace": {
+        "numerador": "33557527134358218116384300917817269332094300425785327388925812207809143467118302718443",
+        "denominador": "7142099322900062360042601414196619156151567623993246317427343337532613895121182245241856"
+      },
+      "cota_ideal": {
+        "numerador": "392592334201493224862174348137229635786649777214654960510480592135132184633418095427179475291852555046629486900732400393435754801050967804270283353127192292681",
+        "denominador": "3154749304786370712311731162711355153719452768940638587267854614245681933146045241728094692464536561926580359043639609803149357008229028401148564916586156130304"
+      },
+      "cota_decimal_superior": "0,124445",
+      "menos_log2_solo_cota": 3.0064214566227108
+    },
+    {
+      "T": 4096,
+      "N": 32768,
+      "M": 16384,
+      "q": 40,
+      "k_traza": 12,
+      "k_cp": 13,
+      "delta_traza": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "delta_cp": {
+        "numerador": "1",
+        "denominador": "8"
+      },
+      "distancia_enlace": {
+        "numerador": "4097",
+        "denominador": "32768"
+      },
+      "parejas_malas_minimas": 2049,
+      "error_fri_traza": {
+        "numerador": "82768474891817363814638656809912013",
+        "denominador": "1329227995784915872903807060280344576"
+      },
+      "error_fri_cp": {
+        "numerador": "44567640326363195900190045974568007",
+        "denominador": "664613997892457936451903530140172288"
+      },
+      "error_enlace": {
+        "numerador": "407910801065729556853429092089640245736979954393878201465463058721155443585176682603988685586819",
+        "denominador": "85983535042406054659874932892486717560345252024330965459891794861009945989908887683200239154677760"
+      },
+      "cota_ideal": {
+        "numerador": "2545986527971660987170150197915217477323195303030409270398009073223796702454736297322584717000409045853909086204991059402202058139462022377323996992342507491612288581283",
+        "denominador": "18989969554775167511510264588115377707945475388987795449068338750699773865299290538374487872578266069253731351340260378906154307726929972940436542437324457507725162577920"
+      },
+      "cota_decimal_superior": "0,134071",
+      "menos_log2_solo_cota": 2.8989409021372192
+    }
+  ],
+  "contrastes": {
+    "palabras_unicidad": 625,
+    "polinomios_no_base": 600,
+    "palabras_localidad": 625,
+    "escenarios_muestreo": 328,
+    "identidades_plegado": 117,
+    "limite": "Contrastes finitos de identidades y cuentas; no son pruebas de solidez de Rust."
+  },
+  "fuentes": [
+    {
+      "archivo": "nexus/nexus-zk/src/stark/air.rs",
+      "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/channel.rs",
+      "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/field.rs",
+      "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/fri.rs",
+      "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/merkle.rs",
+      "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/mod.rs",
+      "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/ntt.rs",
+      "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/params.rs",
+      "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533"
+    },
+    {
+      "archivo": "nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs",
+      "sha256": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f"
+    },
+    {
+      "archivo": "nexus/nexus-zk/tests/tg2_linked_trace_fri.rs",
+      "sha256": "1270fe7b2a8b843b038db6fa6803975a1448044df1693b86875c20942316707d"
+    },
+    {
+      "archivo": "nexus/Cargo.toml",
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea"
+    },
+    {
+      "archivo": "nexus/Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    },
+    {
+      "archivo": "nexus/nexus-zk/Cargo.toml",
+      "sha256": "a186b13cb9292cce8c7a7501d69a90f2f5433649a1d9d361a88fa75f7e78ae2d"
+    },
+    {
+      "archivo": "scripts/analizar_fri_vinculado_r4.py",
+      "sha256": "e4ca88d0a9467585a2d5bfe2f10158d4f8f5046e6c272d3be3f203fc8921345d"
+    },
+    {
+      "archivo": "scripts/analizar_cota_interactiva_r4.py",
+      "sha256": "f36fd1d5c9fa6b083fb0bdac7fb58bd7734183a323e2656f348951c91fa69cee"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-solidez/bibliografia/BGK23.pdf",
+      "sha256": "bb7a7e87b9000c98106de99c9af9d289def2a1b91919a3507ee78bf9bfd16947"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-solidez/bibliografia/BGK23.txt",
+      "sha256": "35fbdadef8c5a74d17e56d71cbf67a2e1f4905aa8c9bb24331714833c8d3d87b"
+    }
+  ],
+  "limite": "Cota superior derivada bajo hipótesis ideales, pendiente de revisión independiente; no probabilidad de ataque observada ni garantía del ejecutable Fiat–Shamir/Merkle/QROM."
+}

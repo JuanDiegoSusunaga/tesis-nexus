@@ -1,0 +1,137 @@
+warning: unused import: `NexusError`
+ --> nexus-core\src\merkle.rs:5:22
+  |
+5 | use crate::{Hash256, NexusError, Hashable};
+  |                      ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ----^^^^^^^^^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `current_index`
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_current_index`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-core` (lib) generated 3 warnings (run `cargo fix --lib -p nexus-core` to apply 3 suggestions)
+warning: unused import: `PQSignature`
+ --> nexus-crypto\src\signer.rs:8:35
+  |
+8 |     Address, Hash256, NexusError, PQSignature, SignatureScheme,
+  |                                   ^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `created_at` is never read
+   --> nexus-crypto\src\entropy.rs:233:5
+    |
+225 | pub struct SentinelSeed {
+    |            ------------ field in this struct
+...
+233 |     created_at: Timestamp,
+    |     ^^^^^^^^^^
+    |
+    = note: `SentinelSeed` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-crypto` (lib) generated 2 warnings (run `cargo fix --lib -p nexus-crypto` to apply 1 suggestion)
+   Compiling nexus-crypto v0.1.0 (C:\Users\juand\Desktop\Tesis\nexus\nexus-crypto)
+    Finished `bench` profile [optimized] target(s) in 10.40s
+     Running benches\residencia_bench.rs (C:/tmp/nexus-target\release\deps\residencia_bench-41b64877fe5475a5.exe)
+Gnuplot not found, using plotters backend
+Benchmarking firma_cacheada/Dilithium2
+Benchmarking firma_cacheada/Dilithium2: Warming up for 1.0000 s
+Benchmarking firma_cacheada/Dilithium2: Collecting 50 samples in estimated 2.0695 s (10k iterations)
+Benchmarking firma_cacheada/Dilithium2: Analyzing
+firma_cacheada/Dilithium2
+                        time:   [200.16 µs 204.95 µs 210.75 µs]
+Found 3 outliers among 50 measurements (6.00%)
+  2 (4.00%) low mild
+  1 (2.00%) high severe
+Benchmarking firma_cacheada/Dilithium3
+Benchmarking firma_cacheada/Dilithium3: Warming up for 1.0000 s
+Benchmarking firma_cacheada/Dilithium3: Collecting 50 samples in estimated 2.0505 s (6375 iterations)
+Benchmarking firma_cacheada/Dilithium3: Analyzing
+firma_cacheada/Dilithium3
+                        time:   [317.93 µs 322.83 µs 327.57 µs]
+Found 5 outliers among 50 measurements (10.00%)
+  4 (8.00%) high mild
+  1 (2.00%) high severe
+Benchmarking firma_cacheada/Dilithium5
+Benchmarking firma_cacheada/Dilithium5: Warming up for 1.0000 s
+Benchmarking firma_cacheada/Dilithium5: Collecting 50 samples in estimated 2.4656 s (6375 iterations)
+Benchmarking firma_cacheada/Dilithium5: Analyzing
+firma_cacheada/Dilithium5
+                        time:   [381.78 µs 389.36 µs 398.23 µs]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+
+Benchmarking firma_efimera/Dilithium2
+Benchmarking firma_efimera/Dilithium2: Warming up for 1.0000 s
+Benchmarking firma_efimera/Dilithium2: Collecting 50 samples in estimated 2.3360 s (7650 iterations)
+Benchmarking firma_efimera/Dilithium2: Analyzing
+firma_efimera/Dilithium2
+                        time:   [293.61 µs 297.85 µs 302.05 µs]
+Found 3 outliers among 50 measurements (6.00%)
+  1 (2.00%) low severe
+  1 (2.00%) low mild
+  1 (2.00%) high mild
+Benchmarking firma_efimera/Dilithium3
+Benchmarking firma_efimera/Dilithium3: Warming up for 1.0000 s
+Benchmarking firma_efimera/Dilithium3: Collecting 50 samples in estimated 2.5094 s (5100 iterations)
+Benchmarking firma_efimera/Dilithium3: Analyzing
+firma_efimera/Dilithium3
+                        time:   [473.31 µs 481.14 µs 489.69 µs]
+Found 1 outliers among 50 measurements (2.00%)
+  1 (2.00%) high mild
+Benchmarking firma_efimera/Dilithium5
+Benchmarking firma_efimera/Dilithium5: Warming up for 1.0000 s
+Benchmarking firma_efimera/Dilithium5: Collecting 50 samples in estimated 2.3681 s (3825 iterations)
+Benchmarking firma_efimera/Dilithium5: Analyzing
+firma_efimera/Dilithium5
+                        time:   [601.67 µs 614.98 µs 634.02 µs]
+Found 4 outliers among 50 measurements (8.00%)
+  2 (4.00%) high mild
+  2 (4.00%) high severe
+
+Benchmarking keygen_desde_semilla/Dilithium2
+Benchmarking keygen_desde_semilla/Dilithium2: Warming up for 1.0000 s
+Benchmarking keygen_desde_semilla/Dilithium2: Collecting 50 samples in estimated 2.0377 s (22k iterations)
+Benchmarking keygen_desde_semilla/Dilithium2: Analyzing
+keygen_desde_semilla/Dilithium2
+                        time:   [90.652 µs 92.794 µs 95.977 µs]
+Found 6 outliers among 50 measurements (12.00%)
+  2 (4.00%) low mild
+  3 (6.00%) high mild
+  1 (2.00%) high severe
+Benchmarking keygen_desde_semilla/Dilithium3
+Benchmarking keygen_desde_semilla/Dilithium3: Warming up for 1.0000 s
+Benchmarking keygen_desde_semilla/Dilithium3: Collecting 50 samples in estimated 2.0362 s (14k iterations)
+Benchmarking keygen_desde_semilla/Dilithium3: Analyzing
+keygen_desde_semilla/Dilithium3
+                        time:   [143.60 µs 145.26 µs 147.54 µs]
+Found 8 outliers among 50 measurements (16.00%)
+  6 (12.00%) high mild
+  2 (4.00%) high severe
+Benchmarking keygen_desde_semilla/Dilithium5
+Benchmarking keygen_desde_semilla/Dilithium5: Warming up for 1.0000 s
+Benchmarking keygen_desde_semilla/Dilithium5: Collecting 50 samples in estimated 2.0249 s (8925 iterations)
+Benchmarking keygen_desde_semilla/Dilithium5: Analyzing
+keygen_desde_semilla/Dilithium5
+                        time:   [215.22 µs 220.92 µs 230.21 µs]
+Found 2 outliers among 50 measurements (4.00%)
+  1 (2.00%) high mild
+  1 (2.00%) high severe
+

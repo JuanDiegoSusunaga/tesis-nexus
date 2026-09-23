@@ -1,0 +1,221 @@
+{
+  "fecha": "2026-09-22",
+  "dominios": [
+    {
+      "T": 4,
+      "N": 32,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 8,
+      "N": 64,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 16,
+      "N": 128,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 32,
+      "N": 256,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 64,
+      "N": 512,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 128,
+      "N": 1024,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 256,
+      "N": 2048,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 512,
+      "N": 4096,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 1024,
+      "N": 8192,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 2048,
+      "N": 16384,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 4096,
+      "N": 32768,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 8192,
+      "N": 65536,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 16384,
+      "N": 131072,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 32768,
+      "N": 262144,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 65536,
+      "N": 524288,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 131072,
+      "N": 1048576,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    },
+    {
+      "T": 262144,
+      "N": 2097152,
+      "ordenes_y_desplazamiento_verificados": true,
+      "coset_disjunto": true
+    }
+  ],
+  "cotas_condicionales": [
+    {
+      "T": 16,
+      "N": 128,
+      "distancia_exacta": "81/128",
+      "distancia_con_delta_1_24": "65/128",
+      "inferior_exacta_6_decimales": "0,632812",
+      "inferior_transferida_6_decimales": "0,507812"
+    },
+    {
+      "T": 64,
+      "N": 512,
+      "distancia_exacta": "321/512",
+      "distancia_con_delta_1_24": "257/512",
+      "inferior_exacta_6_decimales": "0,626953",
+      "inferior_transferida_6_decimales": "0,501953"
+    },
+    {
+      "T": 256,
+      "N": 2048,
+      "distancia_exacta": "1281/2048",
+      "distancia_con_delta_1_24": "1025/2048",
+      "inferior_exacta_6_decimales": "0,625488",
+      "inferior_transferida_6_decimales": "0,500488"
+    },
+    {
+      "T": 4096,
+      "N": 32768,
+      "distancia_exacta": "20481/32768",
+      "distancia_con_delta_1_24": "16385/32768",
+      "inferior_exacta_6_decimales": "0,625030",
+      "inferior_transferida_6_decimales": "0,500030"
+    },
+    {
+      "T": 262144,
+      "N": 2097152,
+      "distancia_exacta": "1310721/2097152",
+      "distancia_con_delta_1_24": "1048577/2097152",
+      "inferior_exacta_6_decimales": "0,625000",
+      "inferior_transferida_6_decimales": "0,500000"
+    }
+  ],
+  "cancelacion": {
+    "T": 16,
+    "alpha0": 10376293027944593777,
+    "alpha1": 1,
+    "alpha2": 1,
+    "residuo_inicial_en_1": 16,
+    "residuo_transicion_en_1": 8177617758457,
+    "grado_cp": 16,
+    "limite": "Traza inválida y coeficientes elegidos; no se fuerzan retos SHA3. El enunciado conserva una traza válida alternativa."
+  },
+  "transferencia": {
+    "errores_traza": 2,
+    "diferencias_cp": 6,
+    "N": 128
+  },
+  "cancelacion_ideal_uniforme": "1/340282366762482138490186164457219031041",
+  "masa_maxima_extension_bytes_uniformes": "18446744082299486209/6277101735386680763835789423207666416102355444464034512896",
+  "limite": "Derivación condicional para f fijo de grado <T o un oráculo próximo a ese f. No prueba que el verificador garantice esa proximidad ni acota Fiat-Shamir adaptativo.",
+  "fuentes": [
+    {
+      "archivo": "nexus/nexus-zk/src/stark/air.rs",
+      "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/channel.rs",
+      "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/field.rs",
+      "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/fri.rs",
+      "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/merkle.rs",
+      "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/mod.rs",
+      "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/ntt.rs",
+      "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3"
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/params.rs",
+      "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533"
+    },
+    {
+      "archivo": "nexus/nexus-zk/experiments/tg2_air_algebra.rs",
+      "sha256": "c899b7f9a89b00df3a3a6c0fbdfda5b2dada531127de3c74de8a46e09b3f7d55"
+    },
+    {
+      "archivo": "nexus/nexus-zk/tests/tg2_air_algebra.rs",
+      "sha256": "fd900251ca0b8363865c847976f618d66c8657993c0a24ad03cd5820eb86865e"
+    },
+    {
+      "archivo": "nexus/Cargo.toml",
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea"
+    },
+    {
+      "archivo": "nexus/Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    },
+    {
+      "archivo": "scripts/analizar_algebra_air_r4.py",
+      "sha256": "903ff070b33a8eb40de1abeadb1acb434766e626a11993f064b045fbd5250fdc"
+    }
+  ]
+}

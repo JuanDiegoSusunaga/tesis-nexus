@@ -1,0 +1,74 @@
+{
+  "fecha": "2026-09-23",
+  "codigo_commit": "01dcde960402b6c60a19242b7ae3d6ac3d82a518",
+  "cargo_target_dir": "C:/tmp/nexus-target",
+  "ejecuciones": [
+    {
+      "comando": "cargo check --workspace --locked --offline --manifest-path nexus/Cargo.toml --all-targets",
+      "codigo_salida": 0,
+      "log": "cargo-check.log",
+      "pruebas": null,
+      "sha256": "7fc90644f58974aea958103f48c26cd73fd3c830b574f091b6e767840944e9e7"
+    },
+    {
+      "comando": "cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "codigo_salida": 0,
+      "log": "cargo-test.log",
+      "pruebas": 197,
+      "sha256": "3c50496f4a573119bcd97b041bdae32fc576caba473623e266ee0c8723085c0d"
+    },
+    {
+      "comando": "cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "codigo_salida": 0,
+      "log": "cargo-build.log",
+      "pruebas": null,
+      "sha256": "2a99ea544bf48c22043386acab29f6a6421ca0b2eb878829d0700cc8eec1d6ba"
+    }
+  ],
+  "pruebas_manifiesto": {
+    "casos": 8,
+    "log": "pruebas-manifiesto.log",
+    "sha256": "d2c1261a59d7557c5ea3c9ae805f74f92572d0ea7d64edb8907629d9d4aeeaf4"
+  },
+  "entorno": {
+    "archivo": "entorno.json",
+    "sha256": "98efa943831033ef47bfc197603bb4738541fd7b93a7a291e31858134ce23f32",
+    "paquetes_identificados": 13,
+    "limite": "Instalacion existente comprobada; no se ejecuta una instalacion nueva de paquetes."
+  },
+  "conservacion": {
+    "evidencia": {
+      "archivos": 866,
+      "sha256_inventario": "f04f61442d5ef0157d5eca7b878c81cce850454d0f446b89f8150282ca0d1e04"
+    },
+    "tg1": {
+      "archivos": 15,
+      "sha256_inventario": "eb04e408c8c2a8012b247cff7196ab19cff3fe950931bd1e498aab59c21a3abd"
+    },
+    "stark": {
+      "archivos": 8,
+      "sha256_inventario": "16bb85d5c91a998701e81887e6246853672adb754a028f70a1ccc390b995c169"
+    },
+    "manuscrito": {
+      "archivos": 23,
+      "sha256_inventario": "967d06a45508cf1cb48f9501b5864d7ebbe1f4bca2c0b02af9da1e301663910c"
+    }
+  },
+  "evidencia_ignorada_antes": 169,
+  "evidencia_ignorada_despues": 0,
+  "enlaces_locales_comprobados": 151,
+  "documentos_comprobados": [
+    "README.md",
+    "RUTA_DE_ESTUDIO.md",
+    "PENDIENTES.md",
+    "scripts/README.md",
+    "Documentos/01-Manuscrito/README.md",
+    "Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md",
+    "Documentos/06-Evidencia-TG2/README.md",
+    "Documentos/04-Administrativo-TG2/Entrega-Final/Balance-Objetivos-TG2.md",
+    "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+    "Documentos/04-Administrativo-TG2/Presentaciones/Guion-Sustentacion-TG2.md",
+    "Documentos/04-Administrativo-TG2/Presentaciones/README.md"
+  ],
+  "limite": "Organizacion y verificacion de una edicion de trabajo; no constituye dictamen ni entrega academica."
+}

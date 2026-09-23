@@ -1,0 +1,40 @@
+{
+  "fecha": "2026-09-22",
+  "pruebas_workspace": 173,
+  "nuevas_r4_solidez": 7,
+  "pruebas_nuevas_release": 7,
+  "cargo_target_dir": "C:/tmp/nexus-target",
+  "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.1\nLLVM version: 22.1.6",
+  "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+  "ejecuciones": [
+    {
+      "comando": "cargo check --workspace --all-targets --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-check.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "0d7abae8effd1b693d86684489229b981e03615fca106c72627d3bb054d1d3de"
+    },
+    {
+      "comando": "cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml -- --nocapture",
+      "log": "cargo-test.log",
+      "codigo_salida": 0,
+      "pruebas": 173,
+      "sha256": "3f5e3c05e44d9941eef9766fb95cf19b901d4e66035b95012d6c1fa30522f636"
+    },
+    {
+      "comando": "cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "log": "cargo-build.log",
+      "codigo_salida": 0,
+      "pruebas": null,
+      "sha256": "d4a40133a5d7e201cd2301d43403a3efe67723a63745b07405e03f010ba00d04"
+    },
+    {
+      "comando": "cargo test -p nexus-zk --test tg2_soundness --release --locked --offline --manifest-path nexus/Cargo.toml -- --nocapture",
+      "log": "cargo-test-release.log",
+      "codigo_salida": 0,
+      "pruebas": 7,
+      "sha256": "ad3212c76b8c3ae6e86bdd3b83fe931ba42116bdbea81b3ce0fdc0f4afecd3f0"
+    }
+  ],
+  "limite": "La suite completa se ejecutó en desarrollo; release se limita a los siete casos nuevos. No es prueba formal de solidez."
+}

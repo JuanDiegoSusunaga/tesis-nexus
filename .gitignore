@@ -1,9 +1,12 @@
 # Prototipo Rust: tiene su propio repositorio (github.com/JuanDiegoSusunaga/nexus)
-nexus/
+/nexus/
 
 # Configuración local de herramientas (no versionar)
-.claude/
-.agents/
+/.claude/
+/.agents/
+/.tools/
+/.venv/
+__pycache__/
 
 # Temporales de Office
 ~$*

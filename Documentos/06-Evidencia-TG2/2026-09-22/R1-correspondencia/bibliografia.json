@@ -1,0 +1,35 @@
+{
+  "consulta": "2026-09-22",
+  "fuentes": [
+    {
+      "archivo": "B23.pdf",
+      "url": "https://ir.cwi.nl/pub/33405/33405.pdf",
+      "paginas": 41,
+      "sha256": "2fa5598eb8689831a7dd7ff88584132ec9da6172015d20e760a93707d4563e9a"
+    },
+    {
+      "archivo": "JMW24.pdf",
+      "url": "https://arxiv.org/pdf/2312.16619v2",
+      "paginas": 23,
+      "sha256": "fa6182c8eaa42997fb452c1c797b9cc1e7d214683b4e324678fc2047b08e580c"
+    },
+    {
+      "archivo": "LS15.pdf",
+      "url": "https://perso.ens-lyon.fr/damien.stehle/downloads/MSIS.pdf",
+      "paginas": 29,
+      "sha256": "ce8acdcb51c80c94fc46b75360b57844078d86fb351186b1cdaa35c02e3840be"
+    },
+    {
+      "archivo": "DIL21.pdf",
+      "url": "https://pq-crystals.org/dilithium/data/dilithium-specification-round3-20210208.pdf",
+      "paginas": 38,
+      "sha256": "3d8c26f44f3b2932b11e6bf05518e78c4d6a0992ae92ebc5d2f390be1d17d458"
+    },
+    {
+      "archivo": "FIPS204.pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf",
+      "paginas": 65,
+      "sha256": "57239b9f84c03227eda3ca0991204dc7764c79af9ce2e6824eda774918d46b6b"
+    }
+  ]
+}

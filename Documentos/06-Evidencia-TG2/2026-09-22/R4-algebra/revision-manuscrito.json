@@ -1,0 +1,91 @@
+{
+  "fecha": "2026-09-22",
+  "etapa": "R4 argumento algebraico condicional AIR/FRI",
+  "paginas_word": 99,
+  "paginas_pdf": 89,
+  "tablas": 28,
+  "celdas": 735,
+  "ecuaciones_word": 443,
+  "ecuaciones_bloque": 23,
+  "figuras": 3,
+  "revision_visual": "Revisión del 2026-09-22 tras el argumento algebraico: §6.7.2, Tabla 6.16 y fórmulas 21–23 inspeccionadas en Word pp. 81–82 y PDF pp. 73–75; también se inspeccionó la continuación en Word p. 83 y las galerías de ecuaciones. No se observaron recortes de las fórmulas ni de la tabla nueva. Las 28 tablas conservan sus rótulos y cuerpos juntos en Word; 735 celdas coinciden con la conversión independiente. PDF sin páginas vacías ni texto fuera de márgenes. Se conserva la inspección previa de las otras 20 ecuaciones y tres figuras: fórmulas sin cambios; fuentes gráficas, dimensiones y ubicaciones comparadas con la instantánea R4-solidez. La rasterización EMF de Word acentúa el peso del texto y no implica negrita global.",
+  "archivos": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "sha256": "542a701121035c4b8897aec49162b769beeb589c732a69c7cb1f29d86ebc47a7"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "sha256": "9734f9c2f3cd8d9afed90b22b8fce614cef64a3cb07f542d46fecc99c57a7980"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "sha256": "492844fb276137e5e93cbcf4ccab0ec179627248d8ee83cbac1e149b7819cbc1"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "sha256": "7696c10a4bf214cae7ba6ebd441ed5ccea0402808c81ef156c69f5884277515d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "sha256": "0b7b11b696057002d69d1bb0ae6ec69c1a4868617357ff954bf1550a345a2749"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "sha256": "6ad22586599a9fbf49a8049b99e62048ce75f595175ec88cb542c14867739066"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "sha256": "e84d42b0468a1273daa367f3e237d0ab2aaf7252caba14896c9c330ef628eb3f"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "sha256": "147b0da9d23fc657534e19e521f9fc591b5946c5d3ba18de244e0a72c2c6781e"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "sha256": "05303b2f0e06ee4a0dfb881e963e6500bdb0107e87d15b5f595a8e30371ed6c3"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-1-1-arco.png",
+      "sha256": "f869fdca7061f948391aa8e0248d6bc8c87a2eddf87b4f83dbd9fad94e6e929f"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-1-1-arco.svg",
+      "sha256": "bf2edee3c2ac25aac5149582d2949f53ead5fcf5b968185ae69bded868840729"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-3-1-arquitectura.png",
+      "sha256": "1dbbd8f33f42cb7ccba67c0baca9084375f3207116d35d20adf20bf1103b1c7b"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-3-1-arquitectura.svg",
+      "sha256": "8cc7694895814691a0ae3479febcc84a0bb02b491655cbdd4480d2edfd4b4cb9"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-5-1-ciclo-claves.png",
+      "sha256": "1c8eb541277b0a4dcd45d01ecc421d60dfdc239a6805470fcb0446c6b4674604"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Figuras/figura-5-1-ciclo-claves.svg",
+      "sha256": "9549020ac489b16a512b35e9a204a03b5b0c1b4358f3c4f45e7f3a58a5546ecf"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "sha256": "a1c1113c15615055c6b74700aa564922ae3a4b776681c18ff0371e13a4323c3f"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "sha256": "3be98a0244e1dfc80c29ce739d03291a977acfcc902de9b9a0e10a4f0d3b880c"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "sha256": "7cf6cfc1f7ee2cfa6089083dfec62f76c65e8c7e93318dbf16723dea3d1c765d"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/R4-Algebra-AIR-FRI-2026-09-22.md",
+      "sha256": "a448e2428fc9edca3b1f7b25caccd5efbaeadc89fde9d18cbd4d4cbbbfad46ac"
+    }
+  ],
+  "limite": "Argumento condicionado a una traza polinómica fija o un oráculo próximo a ella; premisa de proximidad, composición global y revisión independiente pendientes."
+}

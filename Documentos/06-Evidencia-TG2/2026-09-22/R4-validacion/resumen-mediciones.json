@@ -1,0 +1,278 @@
+{
+  "fecha": "2026-09-22",
+  "criterion": [
+    {
+      "caso": "classical_key_generation/ecdsap256",
+      "n": 50,
+      "mediana_us": 72.25264616641383,
+      "inferior_us": 71.41769153225806,
+      "superior_us": 72.97690746753247,
+      "origen": "criterion/classical_key_generation/ecdsap256/r4/estimates.json",
+      "sha256": "73dbb1aee86bb7678c2616796ae59c51d629e371afa5b89f9ad39b0e14f7b1a2"
+    },
+    {
+      "caso": "classical_key_generation/rsa2048",
+      "n": 10,
+      "mediana_us": 101588.03333333333,
+      "inferior_us": 78184.56666666667,
+      "superior_us": 126318.48333333332,
+      "origen": "criterion/classical_key_generation/rsa2048/r4/estimates.json",
+      "sha256": "49f9ed9d3be5fa7737a96d2c2c94d2848efabc6e4cdb191eeb108e65fa8017fc"
+    },
+    {
+      "caso": "classical_signing/ecdsap256",
+      "n": 50,
+      "mediana_us": 88.03067129629629,
+      "inferior_us": 86.72806156806158,
+      "superior_us": 89.0491111111111,
+      "origen": "criterion/classical_signing/ecdsap256/r4/estimates.json",
+      "sha256": "4351ee781371c071e0ff27844b246bf1e9321d75c0bf2f131f4077b33c16a37c"
+    },
+    {
+      "caso": "classical_signing/rsa2048",
+      "n": 50,
+      "mediana_us": 792.9622903225807,
+      "inferior_us": 783.548076923077,
+      "superior_us": 799.45,
+      "origen": "criterion/classical_signing/rsa2048/r4/estimates.json",
+      "sha256": "87bbdf34bc08ff2bb3cce485d26a81c325e79fb5c6af9e790bf682a164c6961b"
+    },
+    {
+      "caso": "classical_signing/rsa3072",
+      "n": 50,
+      "mediana_us": 2433.7628571428572,
+      "inferior_us": 2411.8472826086954,
+      "superior_us": 2456.7531914893616,
+      "origen": "criterion/classical_signing/rsa3072/r4/estimates.json",
+      "sha256": "26fcc6c6b85ff7781574631a091e5e0ff2e53d32bcbf7fc5f4faa369d2f1c13e"
+    },
+    {
+      "caso": "classical_verification/ecdsap256",
+      "n": 50,
+      "mediana_us": 149.0458585858586,
+      "inferior_us": 147.84105571847508,
+      "superior_us": 152.56049431520123,
+      "origen": "criterion/classical_verification/ecdsap256/r4/estimates.json",
+      "sha256": "01e4ab36725f975f5a274115e9e9a76fde1fe829179f6e37bf75053242c0097f"
+    },
+    {
+      "caso": "classical_verification/rsa2048",
+      "n": 50,
+      "mediana_us": 98.06563988095238,
+      "inferior_us": 97.24,
+      "superior_us": 99.89076086956521,
+      "origen": "criterion/classical_verification/rsa2048/r4/estimates.json",
+      "sha256": "9f387ae7b2c7724f9a073b27667e590a09d7cc7011fff44b5b0975a3e8e847a1"
+    },
+    {
+      "caso": "classical_verification/rsa3072",
+      "n": 50,
+      "mediana_us": 221.01215047065338,
+      "inferior_us": 219.06939102564104,
+      "superior_us": 222.21572951505019,
+      "origen": "criterion/classical_verification/rsa3072/r4/estimates.json",
+      "sha256": "b8c37509087eb11e9a1dfbacae9ef940798acc86cdc9c8c132b177f330eba3ee"
+    },
+    {
+      "caso": "firma_cacheada/dilithium2",
+      "n": 50,
+      "mediana_us": 202.27788793103448,
+      "inferior_us": 197.6067490842491,
+      "superior_us": 207.3350543478261,
+      "origen": "criterion/firma_cacheada/dilithium2/r4/estimates.json",
+      "sha256": "5f7e2320f82c946ab14bffff165853595442cc0a8704d7aba81a11d9209a8e62"
+    },
+    {
+      "caso": "firma_cacheada/dilithium3",
+      "n": 50,
+      "mediana_us": 327.4168839427663,
+      "inferior_us": 325.39384615384614,
+      "superior_us": 334.8211111111111,
+      "origen": "criterion/firma_cacheada/dilithium3/r4/estimates.json",
+      "sha256": "93623d797a611c62f613c1e1d8957bc39a02a8f5e1d13bda9c28166e0d8bae83"
+    },
+    {
+      "caso": "firma_cacheada/dilithium5",
+      "n": 50,
+      "mediana_us": 391.06823529411764,
+      "inferior_us": 376.609756097561,
+      "superior_us": 398.6898601398601,
+      "origen": "criterion/firma_cacheada/dilithium5/r4/estimates.json",
+      "sha256": "787caff0e8e66c37f7c47ed2b2af761d88534aeaeebb9e95aab2e4e30d176d56"
+    },
+    {
+      "caso": "firma_efimera/dilithium2",
+      "n": 50,
+      "mediana_us": 295.93599411231884,
+      "inferior_us": 292.3175,
+      "superior_us": 300.21998207885304,
+      "origen": "criterion/firma_efimera/dilithium2/r4/estimates.json",
+      "sha256": "a4553d3607349c239450af9f1d819f1766c90f1abf2cbb62030c5263cb1f0b62"
+    },
+    {
+      "caso": "firma_efimera/dilithium3",
+      "n": 50,
+      "mediana_us": 478.74407894736845,
+      "inferior_us": 466.553125,
+      "superior_us": 490.9583104395604,
+      "origen": "criterion/firma_efimera/dilithium3/r4/estimates.json",
+      "sha256": "d7c890b8adbd6a47cc59a418e3347bdec45b6ec87b629f1b71fd730e48d16efa"
+    },
+    {
+      "caso": "firma_efimera/dilithium5",
+      "n": 50,
+      "mediana_us": 605.0273809523809,
+      "inferior_us": 598.9880952380953,
+      "superior_us": 617.6391666666666,
+      "origen": "criterion/firma_efimera/dilithium5/r4/estimates.json",
+      "sha256": "1528ef55c50a3b18b8f65283f806e40fc5e4460a11b0325f77d659d16f5de0c5"
+    },
+    {
+      "caso": "keygen_desde_semilla/dilithium2",
+      "n": 50,
+      "mediana_us": 90.42402239304813,
+      "inferior_us": 89.58062283737024,
+      "superior_us": 91.90235294117647,
+      "origen": "criterion/keygen_desde_semilla/dilithium2/r4/estimates.json",
+      "sha256": "573150dbac8ac5483262b44e636b2b8c223c82193d0185a620d46e9779b57b01"
+    },
+    {
+      "caso": "keygen_desde_semilla/dilithium3",
+      "n": 50,
+      "mediana_us": 145.02768284347232,
+      "inferior_us": 143.97339466089468,
+      "superior_us": 146.40110671936762,
+      "origen": "criterion/keygen_desde_semilla/dilithium3/r4/estimates.json",
+      "sha256": "a0f0430900a93ac4199fcbd9e98686103fddfbfd7c8a11eaf3eb8321fdc83ae4"
+    },
+    {
+      "caso": "keygen_desde_semilla/dilithium5",
+      "n": 50,
+      "mediana_us": 215.8259696048632,
+      "inferior_us": 212.6837393021725,
+      "superior_us": 219.23333333333335,
+      "origen": "criterion/keygen_desde_semilla/dilithium5/r4/estimates.json",
+      "sha256": "f23164590bf32831f29f799e39093972f1add03d853272d6ad174f5445de42ed"
+    }
+  ],
+  "stark": [
+    {
+      "filas": 16,
+      "prueba_bytes": 132072,
+      "generacion_ms": {
+        "mediana": 111.9733,
+        "min": 4.6405,
+        "max": 738.4021
+      },
+      "verificacion_ms": {
+        "mediana": 1.306255,
+        "min": 1.20575,
+        "max": 1.96062
+      }
+    },
+    {
+      "filas": 64,
+      "prueba_bytes": 194856,
+      "generacion_ms": {
+        "mediana": 337.0007,
+        "min": 56.6126,
+        "max": 579.7911
+      },
+      "verificacion_ms": {
+        "mediana": 1.75841,
+        "min": 1.734065,
+        "max": 2.04802
+      }
+    },
+    {
+      "filas": 256,
+      "prueba_bytes": 267880,
+      "generacion_ms": {
+        "mediana": 339.5086,
+        "min": 143.6145,
+        "max": 1370.4213
+      },
+      "verificacion_ms": {
+        "mediana": 2.453615,
+        "min": 2.256345,
+        "max": 3.17825
+      }
+    },
+    {
+      "filas": 1024,
+      "prueba_bytes": 351144,
+      "generacion_ms": {
+        "mediana": 247.6822,
+        "min": 44.2924,
+        "max": 644.7792
+      },
+      "verificacion_ms": {
+        "mediana": 2.99012,
+        "min": 2.87512,
+        "max": 4.88396
+      }
+    },
+    {
+      "filas": 4096,
+      "prueba_bytes": 444648,
+      "generacion_ms": {
+        "mediana": 221.5681,
+        "min": 171.8455,
+        "max": 413.0556
+      },
+      "verificacion_ms": {
+        "mediana": 3.623345,
+        "min": 3.539445,
+        "max": 4.530525
+      }
+    },
+    {
+      "filas": 16384,
+      "prueba_bytes": 548392,
+      "generacion_ms": {
+        "mediana": 721.4762,
+        "min": 594.7949,
+        "max": 1135.9766
+      },
+      "verificacion_ms": {
+        "mediana": 5.55705,
+        "min": 4.370475,
+        "max": 7.367535
+      }
+    },
+    {
+      "filas": 65536,
+      "prueba_bytes": 662376,
+      "generacion_ms": {
+        "mediana": 3174.1914,
+        "min": 2248.9057,
+        "max": 3600.7243
+      },
+      "verificacion_ms": {
+        "mediana": 6.388535,
+        "min": 5.12648,
+        "max": 8.204335
+      }
+    },
+    {
+      "filas": 262144,
+      "prueba_bytes": 786600,
+      "generacion_ms": {
+        "mediana": 14001.5486,
+        "min": 9674.2256,
+        "max": 14251.9801
+      },
+      "verificacion_ms": {
+        "mediana": 7.78601,
+        "min": 6.04492,
+        "max": 8.64014
+      }
+    }
+  ],
+  "bloqueados": [
+    "dilithium_bench",
+    "throughput"
+  ],
+  "stark_csv_sha256": "db02f884fb9c84456955ac0f918f7b8883d7cf928f1e80de8db8b157bc2cb675",
+  "nota": "Criterion: mediana e IC bootstrap 95%. STARK: mediana y rango de cinco repeticiones; verificación media de 20 operaciones por repetición."
+}

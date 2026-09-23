@@ -1,0 +1,79 @@
+warning: unused import: `NexusError`
+ --> nexus-core\src\merkle.rs:5:22
+  |
+5 | use crate::{Hash256, NexusError, Hashable};
+  |                      ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ----^^^^^^^^^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `current_index`
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_current_index`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-core` (lib) generated 3 warnings (run `cargo fix --lib -p nexus-core` to apply 3 suggestions)
+warning: unused import: `NexusError`
+ --> nexus-zk\src\lib.rs:9:27
+  |
+9 | use nexus_core::{Hash256, NexusError, StateRoot};
+  |                           ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-zk` (lib) generated 1 warning (run `cargo fix --lib -p nexus-zk` to apply 1 suggestion)
+   Compiling nexus-zk v0.1.0 (C:\Users\juand\Desktop\Tesis\nexus\nexus-zk)
+    Finished `release` profile [optimized] target(s) in 1.63s
+     Running `C:/tmp/nexus-target\release\examples\tg2_stark_measure.exe C:\Users\juand\Desktop\Tesis\Documentos\06-Evidencia-TG2\2026-09-22\R4-validacion\stark.csv`
+repeticion=1; filas=16; prueba_bytes=132072; generar_ms=119.477; verificar_ms=1.306
+repeticion=1; filas=64; prueba_bytes=194856; generar_ms=337.001; verificar_ms=1.755
+repeticion=1; filas=256; prueba_bytes=267880; generar_ms=237.852; verificar_ms=2.454
+repeticion=1; filas=1024; prueba_bytes=351144; generar_ms=644.779; verificar_ms=2.990
+repeticion=1; filas=4096; prueba_bytes=444648; generar_ms=189.190; verificar_ms=3.661
+repeticion=1; filas=16384; prueba_bytes=548392; generar_ms=698.984; verificar_ms=4.449
+repeticion=1; filas=65536; prueba_bytes=662376; generar_ms=2647.707; verificar_ms=6.389
+repeticion=1; filas=262144; prueba_bytes=786600; generar_ms=14001.549; verificar_ms=6.523
+repeticion=2; filas=16; prueba_bytes=132072; generar_ms=40.603; verificar_ms=1.206
+repeticion=2; filas=64; prueba_bytes=194856; generar_ms=502.208; verificar_ms=1.734
+repeticion=2; filas=256; prueba_bytes=267880; generar_ms=1023.726; verificar_ms=2.256
+repeticion=2; filas=1024; prueba_bytes=351144; generar_ms=44.292; verificar_ms=2.908
+repeticion=2; filas=4096; prueba_bytes=444648; generar_ms=171.845; verificar_ms=3.577
+repeticion=2; filas=16384; prueba_bytes=548392; generar_ms=594.795; verificar_ms=4.370
+repeticion=2; filas=65536; prueba_bytes=662376; generar_ms=2248.906; verificar_ms=5.126
+repeticion=2; filas=262144; prueba_bytes=786600; generar_ms=9674.226; verificar_ms=6.045
+repeticion=3; filas=16; prueba_bytes=132072; generar_ms=111.973; verificar_ms=1.241
+repeticion=3; filas=64; prueba_bytes=194856; generar_ms=65.954; verificar_ms=1.758
+repeticion=3; filas=256; prueba_bytes=267880; generar_ms=143.614; verificar_ms=2.330
+repeticion=3; filas=1024; prueba_bytes=351144; generar_ms=213.772; verificar_ms=2.875
+repeticion=3; filas=4096; prueba_bytes=444648; generar_ms=413.056; verificar_ms=3.539
+repeticion=3; filas=16384; prueba_bytes=548392; generar_ms=721.476; verificar_ms=5.557
+repeticion=3; filas=65536; prueba_bytes=662376; generar_ms=3361.190; verificar_ms=7.706
+repeticion=3; filas=262144; prueba_bytes=786600; generar_ms=14208.318; verificar_ms=7.786
+repeticion=4; filas=16; prueba_bytes=132072; generar_ms=738.402; verificar_ms=1.961
+repeticion=4; filas=64; prueba_bytes=194856; generar_ms=579.791; verificar_ms=1.785
+repeticion=4; filas=256; prueba_bytes=267880; generar_ms=339.509; verificar_ms=3.178
+repeticion=4; filas=1024; prueba_bytes=351144; generar_ms=247.682; verificar_ms=4.099
+repeticion=4; filas=4096; prueba_bytes=444648; generar_ms=221.568; verificar_ms=3.623
+repeticion=4; filas=16384; prueba_bytes=548392; generar_ms=1061.833; verificar_ms=7.368
+repeticion=4; filas=65536; prueba_bytes=662376; generar_ms=3600.724; verificar_ms=5.239
+repeticion=4; filas=262144; prueba_bytes=786600; generar_ms=13786.398; verificar_ms=7.789
+repeticion=5; filas=16; prueba_bytes=132072; generar_ms=4.641; verificar_ms=1.668
+repeticion=5; filas=64; prueba_bytes=194856; generar_ms=56.613; verificar_ms=2.048
+repeticion=5; filas=256; prueba_bytes=267880; generar_ms=1370.421; verificar_ms=2.472
+repeticion=5; filas=1024; prueba_bytes=351144; generar_ms=288.369; verificar_ms=4.884
+repeticion=5; filas=4096; prueba_bytes=444648; generar_ms=397.104; verificar_ms=4.531
+repeticion=5; filas=16384; prueba_bytes=548392; generar_ms=1135.977; verificar_ms=6.339
+repeticion=5; filas=65536; prueba_bytes=662376; generar_ms=3174.191; verificar_ms=8.204
+repeticion=5; filas=262144; prueba_bytes=786600; generar_ms=14251.980; verificar_ms=8.640

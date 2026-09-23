@@ -1,0 +1,30 @@
+{
+  "fecha": "2026-09-22",
+  "pruebas": 166,
+  "nuevas_r1": 3,
+  "cargo_target_dir": "C:/tmp/nexus-target",
+  "perfil": "desarrollo",
+  "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-pc-windows-msvc\nrelease: 1.97.1\nLLVM version: 22.1.6",
+  "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+  "ejecuciones": [
+    {
+      "log": "cargo-check.log",
+      "comando": "cargo check --workspace --all-targets --locked --offline --manifest-path nexus/Cargo.toml",
+      "codigo_salida": 0,
+      "sha256": "eb5820022f1a64e0c9848d125fbd5dd8495de6b4436d24f3f8091d3407c6d32a"
+    },
+    {
+      "log": "cargo-test.log",
+      "comando": "cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "codigo_salida": 0,
+      "sha256": "a1a901437e64e4edaa845c48e7591f3b41e35e54e9c7a5752f384dc4c2e5ead5"
+    },
+    {
+      "log": "cargo-build.log",
+      "comando": "cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml",
+      "codigo_salida": 0,
+      "sha256": "7efa3aa13428f90650b02385b5d0064628c3b11255d65f0c55553887c8320cc6"
+    }
+  ],
+  "limite": "Correspondencia funcional con el mismo backend; no verificación formal ni certificación independiente."
+}

@@ -1,13 +1,145 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
-**Proyecto:** *Arquitectura Blockchain Dual NEXUS: Un Modelo Matemático-Computacional para Sistemas Bancarios Seguros y Resilientes Post-Cuántico*  
+## Estado vigente — organización y versión de repositorios, 23 de septiembre de 2026
+
+Se corrigió `.gitignore` para limitar las exclusiones locales a la raíz: 169 archivos de evidencia, incluidas fuentes de experimentos, dejaban de aparecer en Git por las reglas anteriores. Se añadió `.gitattributes` para conservar los bytes del manuscrito y de la evidencia. Las instantáneas históricas, los documentos administrativos de TG1 y las fuentes STARK heredadas se preservan.
+
+Se crearon el [README principal](README.md), el índice de evidencia, las dependencias Python fijadas y las instrucciones de reproducción. La ruta de estudio se actualizó a 197 pruebas y al alcance corregido: comparativa clásica ya ejecutada, límites de las reducciones, residencia y STARK. Se prepararon el [balance de objetivos](Documentos/04-Administrativo-TG2/Entrega-Final/Balance-Objetivos-TG2.md), el [índice de entrega](Documentos/04-Administrativo-TG2/Entrega-Final/README.md) y el [guion de sustentación](Documentos/04-Administrativo-TG2/Presentaciones/Guion-Sustentacion-TG2.md).
+
+**Código consolidado:** `01dcde960402b6c60a19242b7ae3d6ac3d82a518`. Check, 197 pruebas y build repetidos correctamente; dependencias instaladas cotejadas con el archivo de requisitos. Ocho pruebas Python comprueban integridad, alteración, ausencia, adición, rutas y revisión de código del manifiesto. El manifiesto enlaza la revisión de código y los hashes del manuscrito y de la evidencia. El commit documental que contiene el manifiesto identifica esta edición de trabajo. La organización no registra envío, nueva aprobación académica ni una presentación final. [Comprobaciones de organización](Documentos/06-Evidencia-TG2/2026-09-23/Organizacion-repositorios/validacion.json).
+
+## Registro de auditoría Merkle/Fiat–Shamir, 23 de septiembre de 2026
+
+**Depuración documental:** por indicación del autor se eliminó la carpeta `Lluvia de ideas` con sus dos documentos preliminares y se retiraron sus referencias en la ruta de estudio y el plan de trabajo. El estado del arte y el registro histórico indican que el documento fue retirado.
+
+Se auditó la vinculación de aperturas, la gramática del canal y la distribución de retos de la variante TG2. Una reconstrucción independiente con Python/hashlib comprueba **14 certificados, 560 consultas y 18.880 aperturas Merkle**, sin sustituir la verificación completa FRI/AIR. Se conserva un lema de vinculación condicionado a colisiones y se distingue de la extracción de un oráculo.
+
+La distancia de variación total de un bloque uniforme reducido al campo es aproximadamente 1,26218 × 10⁻²⁹; la pérdida por hasta 28 retos de extensión es menor que 7,069 × 10⁻²⁸ bajo salidas frescas. No es una pérdida total Fiat–Shamir. Los nonces públicos 904 y 1233 satisfacen 12 bits y generan consultas diferentes. El análisis identifica propiedades por ronda, presupuesto de consultas, grinding y compilación ROM/QROM pendientes; no acredita 100 bits ni conocimiento cero.
+
+**Check, 197 pruebas y build** repetidos correctamente. Rust, corpus y benchmarks se conservan. Se corrigió la fecha fija del generador documental: admite NEXUS_TG2_FECHA_EVIDENCIA, con siete casos de validación, y guarda los informes del día 23 separados de los históricos.
+
+La edición incorpora §6.7.6 y Tabla 6.20: **108 páginas Word, 95 PDF, 32 tablas / 822 celdas**, 3 figuras y 541 objetos matemáticos Word, incluidos 30 bloques. Se preparó el paquete de revisión S1–S3 con seis preguntas; no se registra envío ni aprobación de estas derivaciones. [Auditoría](Documentos/04-Administrativo-TG2/Avances/R4-Merkle-Fiat-Shamir-2026-09-23.md) · [Paquete para revisión](Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md) · [Evidencia](Documentos/06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/analisis.json) · [Edición y revisión](Documentos/06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/revision-manuscrito.json).
+
+## Registro de cota interactiva ideal, 22 de septiembre de 2026
+
+Se desarrolló una derivación de composición para la variante vinculada bajo oráculos ideales y retos uniformes. El candidato próximo es único y queda fijado antes de los coeficientes AIR. Un argumento sobre la componente no base trata los candidatos sobre la extensión. Se contrasta el plegado con BGK+23, Corolario 5.5 y Algoritmo 1, y se suman conservadoramente los errores por ronda de los dos FRI, la cancelación y el enlace local, sin suponer independencia entre sus consultas comunes.
+
+Con umbrales 1/8 y 40 consultas, las cotas superiores ideales tabuladas van de **0,052736 a 0,134071**, redondeadas hacia arriba. Son garantías conservadoras del modelo ideal, no probabilidades de ataques observados ni límites inferiores de vulnerabilidad. El argumento no acredita 100 bits ni seguridad del ejecutable. La compilación Merkle/Fiat–Shamir, grinding y pérdidas ROM/QROM sigue pendiente, junto con la revisión matemática independiente.
+
+Se comprobaron nueve perfiles y contrastes finitos de unicidad, campo base, localidad, muestreo y normalización del plegado. **Check, 197 pruebas y build** volvieron a pasar. Rust y sus corpus se preservan mediante comparación de hashes; no se repitieron pruebas release ni benchmarks en esta etapa. La evidencia release de diez casos corresponde a la implementación anterior.
+
+Edición vigente: **106 páginas Word, 93 PDF, 31 tablas / 804 celdas**, 3 figuras y 531 objetos matemáticos Word, incluidos 29 bloques. Se añadieron §6.7.5 y Tabla 6.19 y se actualizaron resúmenes y conclusiones. [Derivación y límites](Documentos/04-Administrativo-TG2/Avances/R4-Cota-Interactiva-2026-09-22.md) · [Análisis reproducible](Documentos/06-Evidencia-TG2/2026-09-22/R4-cota-interactiva/analisis.json) · [Edición y revisión](Documentos/06-Evidencia-TG2/2026-09-22/R4-cota-interactiva/revision-manuscrito.json). La aprobación anterior del director no se atribuye a esta derivación.
+
+## Registro de FRI de traza vinculada al AIR, 22 de septiembre de 2026
+
+Se implementó una variante experimental TG2 con dos recorridos FRI: traza de grado menor que T y composición de grado menor que 2T. Las aperturas AIR y la primera capa FRI de traza comparten raíz y codificación de hojas en la extensión. La transcripción identifica versión, perfil, enunciado y fases, y deriva 40 consultas comunes después del grinding. El verificador recibe aperturas y caminos, sin el LDE completo. Admite potencias de dos entre 16 y 4096 filas; permanece fuera de producción.
+
+**197 pruebas del workspace pasan en desarrollo; diez nuevas pasan también en release**, con check de todos los targets y build correctos. La variante acepta ejecuciones honestas de 16, 64, 256 y 4096 filas. Se reutilizan los oráculos conservados de 16, 32 y 64 filas y se generan pruebas del protocolo nuevo: las tres se rechazan en FRI de traza. Los certificados originales siguen siendo aceptados por el legado, con enunciados válidos. Se preservan 14 certificados públicos nuevos, seis anteriores reutilizados, fuentes, logs y hashes.
+
+Los tamaños serializados de enunciado y prueba son 196.574, 306.782, 437.470 y 760.286 bytes para los cuatro tamaños honestos ensayados, comprobados mediante una cuenta independiente del formato. El costo de comunicación y verificación es O(q log² N); los caminos Merkle se repiten. En estos tamaños los certificados ocupan más que el vector LDE completo por sí solo. No se midieron nuevas latencias.
+
+Edición consolidada: **104 páginas Word, 91 PDF, 30 tablas / 784 celdas**, 3 figuras y 486 objetos matemáticos nativos en Word, incluidos 26 bloques. §6.7.4 y Tabla 6.18 incorporan protocolo, resultados, tamaños y límites; los resúmenes, capítulos 5–7 y seguimiento concuerdan. [Informe de la variante](Documentos/04-Administrativo-TG2/Avances/R4-FRI-Vinculado-2026-09-22.md) · [Ejecución y corpus](Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/validacion.json) · [Edición y revisión](Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/revision-manuscrito.json).
+
+**Siguiente trabajo técnico:** justificar los errores concretos de ambos FRI y su composición AIR, los supuestos de campo/oráculos y las pérdidas Fiat–Shamir/Merkle/QROM; preparar revisión matemática independiente. El enlace estructural está implementado; las pruebas no acreditan una cota global, 100 bits ni conocimiento cero. Las fuentes STARK de producción se conservan. La aprobación anterior del director no se atribuye a estos cambios. Los apartados siguientes son registros históricos.
+
+## Registro del contraejemplo de proximidad de traza, 22 de septiembre de 2026
+
+La construcción F=f+λ(X^T−1), con λ no nulo y f interpolante de una ejecución válida, conserva las filas del AIR y produce una composición de grado ≤ T+2 < 2T. Su LDE está a distancia exacta **7/8** del código de grado < T. El verificador heredado acepta los casos de 16, 32 y 64 filas con SHA3, Merkle, FRI y grinding reales, en desarrollo y release. Los coeficientes no se eligen ni se fuerzan. Los enunciados son válidos: se refuta una premisa de la demostración, sin presentar una falsificación de enunciado.
+
+La formulación de S2 «aceptación implica proximidad ≤ 1/24 de la traza comprometida» queda refutada para el legado. S1 conserva sus hipótesis y conclusión condicional. Se implementó un control exhaustivo experimental para 4–256 filas que verifica raíz, grado y todas las restricciones del LDE completo, además del STARK. Acepta la ejecución honesta y rechaza por grado los tres casos alejados. Requiere N elementos adicionales y O(N log N) operaciones; revela la traza y no se incorpora a producción.
+
+**187 pruebas del workspace pasan en desarrollo; siete nuevas pasan también en release**, con check de todos los targets y build correctos. Se conservan seis pruebas binarias públicas, fuentes y hashes. El ensayo algebraico cubre 21 casos y Python reproduce de forma independiente interpolación, división y distancia. No se repitieron benchmarks ni se modificaron los módulos STARK heredados.
+
+Edición consolidada: **101 páginas Word, 90 PDF, 29 tablas / 759 celdas**, 3 figuras y 477 objetos matemáticos nativos en Word, incluidos 25 bloques. §6.7.3 y Tabla 6.17 incorporan el hallazgo; resúmenes, capítulos 5–7 y seguimiento reflejan su alcance. [Informe y siguiente diseño](Documentos/04-Administrativo-TG2/Avances/R4-Proximidad-Traza-2026-09-22.md) · [Ejecución y corpus](Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/validacion.json) · [Edición y revisión](Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/revision-manuscrito.json).
+
+**Siguiente trabajo técnico:** especificar y contrastar una variante de proximidad de traza vinculada al AIR; la alternativa para el legado requiere otro argumento de extracción. Las pérdidas Fiat–Shamir/QROM y la revisión externa siguen pendientes. La aprobación anterior del director no se atribuye a estos cambios. Los apartados siguientes conservan sus conclusiones como registros históricos.
+
+## Registro del argumento algebraico AIR/FRI, 22 de septiembre de 2026
+
+Se desarrolló una demostración escrita de divisibilidad, grado y distancia para una traza polinómica fijada antes de los retos (S1), y la transferencia condicional a un oráculo próximo (S2). Se reprodujo una cancelación de errores de una traza inválida con tres coeficientes no nulos: los coeficientes fueron elegidos algebraicamente y el enunciado conserva una traza honesta alternativa. El ejemplo no fuerza SHA3 ni demuestra un enunciado falso aceptado.
+
+Fuera de la cancelación, la composición de una traza polinómica inválida queda a distancia relativa al menos (5T+1)/(8T) del código de grado menor que 2T. Si el oráculo difiere de esa traza en una fracción ε, la cota disminuye a lo sumo 3ε. La premisa de proximidad del oráculo comprometido sigue sin establecerse para el protocolo; las pérdidas Fiat–Shamir/QROM y la revisión externa permanecen abiertas.
+
+Se añadieron siete pruebas, con **180 pruebas del workspace en desarrollo y siete algebraicas en release**, check de todos los targets y build correctos. El oráculo de referencia cubre 4–256 filas; las pruebas incluyen 21 trazas válidas y la correspondencia con aperturas reales del probador. Un script independiente comprueba los 17 dominios del perfil, las fracciones de distancia y el coeficiente de cancelación. Producción STARK y benchmarks se conservan.
+
+Edición consolidada: **99 páginas Word, 89 PDF, 28 tablas / 735 celdas**, 3 figuras y 443 objetos matemáticos nativos en Word, incluidos 23 bloques. Se incorporan §6.7.2, Tabla 6.16 y actualizaciones de resúmenes, conclusiones y seguimiento. [Informe algebraico](Documentos/04-Administrativo-TG2/Avances/R4-Algebra-AIR-FRI-2026-09-22.md) · [Ejecución](Documentos/06-Evidencia-TG2/2026-09-22/R4-algebra/validacion.json) · [Edición y revisión](Documentos/06-Evidencia-TG2/2026-09-22/R4-algebra/revision-manuscrito.json).
+
+**Siguiente trabajo técnico:** justificar la proximidad de la traza y correlación entre los oráculos locales y FRI; evaluar cualquier comprobación adicional como variante TG2. La aprobación anterior del director no se atribuye a estos cambios. Los apartados siguientes conservan los resultados históricos de cada etapa.
+
+## Registro de auditoría de solidez STARK, 22 de septiembre de 2026
+
+Se caracterizaron parámetros, orden de la transcripción, consultas, grinding y proximidad FRI. Siete pruebas nuevas pasan en desarrollo y en release; la suite completa pasa **173 pruebas en desarrollo**, con check de todos los targets y build correctos. Los parámetros heredados devuelven 100 sin considerar tamaño ni perfil; cuatro y ocho filas realizan 16 y 32 consultas. La variante TG2 exige desde 16 filas. La cifra de 100 bits no se acredita para el ejecutable.
+
+El ensayo FRI aislado compromete una palabra a distancia 1/512 de cero, con interpolación de grado 511 y cota 128. Acepta 28 de 32 contextos fijos y rechaza cuatro, según se evite o consulte la pareja inconsistente. Es una comprobación de proximidad, no una transición AIR falsa aceptada. Se conservaron tres publicaciones primarias, cálculo exacto del muestreo del campo y un escenario de referencia separado de cualquier garantía de NEXUS. La producción STARK se conserva; no se repitieron benchmarks.
+
+Edición: **96 páginas Word, 87 PDF, 27 tablas / 711 celdas**, 3 figuras y 391 objetos matemáticos nativos en Word, incluidos 20 bloques. Se añadieron §6.7.1 y Tabla 6.15; resúmenes, capítulos 5–7 y seguimiento quedan sincronizados. [Informe y obligaciones S1–S5](Documentos/04-Administrativo-TG2/Avances/R4-Solidez-STARK-2026-09-22.md) · [Ejecución](Documentos/06-Evidencia-TG2/2026-09-22/R4-solidez/validacion.json) · [Edición y revisión](Documentos/06-Evidencia-TG2/2026-09-22/R4-solidez/revision-manuscrito.json).
+
+**Siguiente trabajo técnico:** demostrar la reducción algebraica del AIR y justificar la proximidad correlacionada entre traza y composición. La garantía completa de solidez y su transferencia QROM siguen abiertas, junto con la revisión matemática externa. La aprobación anterior del director no se atribuye a estos cambios.
+
+## Registro R1 correspondencia formal, 22 de septiembre de 2026
+
+Se auditó la correspondencia entre el perfil implementado y cinco fuentes primarias, con versiones, localizadores, copias y hashes. NEXUS reconstruye claves desde semilla y firma ML-DSA puro con aleatoriedad adicional y contexto vacío. Se añadieron tres pruebas, una por nivel: **166 pruebas pasan**, con cargo check de todos los targets y cargo build correctos. La primitiva se conserva; las pruebas comparten backend y no constituyen certificación independiente.
+
+El capítulo 6 explicita la pérdida CMA→NMA de B+23 y reproduce su escenario de referencia, sin atribuirlo como cota de NEXUS. La condición del Teorema 2 de JMW24 falla en los tres perfiles incluso con el menor ancho auxiliar positivo; se descarta esa aplicación directa, sin inferir un ataque. Se precisan los resultados de LS15, sus distribuciones y los pasos que faltan. La hoja NIST de actualizaciones potenciales se conserva y se identifica como tal; sus estimaciones de iteraciones no son mediciones locales.
+
+Edición consolidada: **94 páginas Word, 85 PDF, 26 tablas / 657 celdas**, 3 figuras y 381 objetos matemáticos nativos en Word, incluidos 19 bloques. Se revisaron visualmente figuras, ecuaciones y tablas modificadas; las 26 tablas coinciden con la conversión independiente y conservan rótulo y cuerpo juntos en Word. Se corrigió un recorte de revisión que ocultaba parte de una fórmula multilineal, completa en el documento. [Informe R1](Documentos/04-Administrativo-TG2/Avances/R1-Correspondencia-Formal-2026-09-22.md) · [Identificación y revisión](Documentos/06-Evidencia-TG2/2026-09-22/R1-correspondencia/revision-manuscrito.json).
+
+**Pendientes:** correspondencia formal de expansión/hedged, codificaciones e inforjabilidad fuerte; hipótesis de fuente/KDF; terminación extrema del backend; revisión matemática externa. El Objetivo 4.1 sigue abierto. El siguiente trabajo independiente es el presupuesto de soundness del PoC STARK. La aprobación anterior del director no se atribuye a estas correcciones.
+
+## Registro R5 y complemento R4, 22 de septiembre de 2026
+
+El autor comunicó que desactivó Smart App Control; se consultó estado 0 y finalizaron los dos benchmarks pendientes. Los fallos originales se conservan. El complemento mide 12 casos Criterion y 40 repeticiones multinúcleo: mediana ML-DSA-65 de 84,61 µs por verificación y 136.390 verificaciones/s con 24 hilos, frente a 12.349 con uno. En conjunto, las dos series nuevas reúnen 29 casos Criterion, 40 mediciones STARK y 40 repeticiones multinúcleo. No son transacciones completas ni validan retrospectivamente los 199.218 históricos.
+
+R5 distingue gestor cacheado y política experimental, corrige 5993 B como longitud serializada con datos públicos/cabeceras y comprueba el objeto PrivateKey ML-DSA-65 de 17536 B. Tres pruebas nuevas verifican representaciones y capacidad de firma desde semilla retenida; **163 pruebas pasan**, check/build correctos. El modelo de W declara regiones, copias y escenarios de captura; no convierte menos bytes por tiempo en menor probabilidad de compromiso. Se retiró la afirmación de prioridad de esa métrica. Custodia, todas las copias físicas e integración de la política siguen pendientes.
+
+Edición consolidada: **92 páginas Word, 83 PDF, 26 tablas / 634 celdas**, 3 figuras y 364 objetos matemáticos nativos en Word, incluidos 18 bloques. La inspección visual detectó y permitió corregir escapes LaTeX en §5.6.3 antes de la exportación definitiva de esta edición. La identificación y revisión se conservan en `R5-residencia/revision-manuscrito.json`. [Informe R5 y complemento R4](Documentos/04-Administrativo-TG2/Avances/R5-Residencia-y-Custodia-2026-09-22.md). La aprobación anterior del director no se atribuye a estos cambios.
+
+
+
+## Registro de la primera ejecución R4, 22 de septiembre de 2026
+
+**Edición documental comprobada:** Word de 87 páginas y PDF de 77, con 22 tablas / 501 celdas coincidentes, 3 figuras y 365 objetos matemáticos nativos en Word (18 bloques). Se inspeccionaron las figuras, fórmulas en bloque y tablas nuevas en ambos formatos. Las tablas y sus rótulos permanecen juntos en Word; el PDF no presenta páginas vacías ni texto fuera de márgenes. La evidencia e identificación de la edición están en `R4-validacion/revision-manuscrito.json`.
+
+Se completó la caracterización del verificador y una variante experimental TG2 restringida a escalares canónicos, preservando los componentes heredados. **160 pruebas pasan**, con `cargo check` y `cargo build` correctos; 18 casos nuevos cubren verificador y sincronización del ensayo multinúcleo. Se reprodujeron la aceptación sin STARK, la pérdida de bytes/reducción de raíces y la recuperación del testigo del ejemplo de 16 filas mediante aperturas públicas. No se acredita conocimiento cero ni enlace de raíces hash arbitrarias.
+
+La serie nueva conserva **17 casos Criterion y 40 mediciones STARK**, fuentes, hashes, comandos, equipo y dispersión. Windows bloqueó los benchmarks optimizados ML-DSA y multinúcleo (Control de aplicaciones, error 4551); no se generaron resultados sustitutivos. El intervalo defectuoso del ensayo multinúcleo histórico queda documentado y su cifra no se usa como escalado validado. Las mediciones de residencia son latencias, no una medida de exposición secreta.
+
+El manuscrito incorpora las Tablas 6.10–6.12, sensibilidad de amortización, límites del PoC y estado de la reproducción. R4 permanece parcial por los experimentos bloqueados y la revisión formal pendiente; R5 es el siguiente trabajo independiente. La aprobación anterior del director no se atribuye a estos cambios. [Informe R4](Documentos/04-Administrativo-TG2/Avances/R4-Verificador-y-Evidencia-2026-09-22.md). Las entradas R2/R3 siguientes conservan sus conteos y paginación históricos.
+
+
+**Proyecto:** *Arquitectura Blockchain Dual NEXUS: Un Modelo Matemático-Computacional para Sistemas Seguros y Resilientes Post-Cuánticos*
+
 **Período:** Semestre Académico TG2 (2026)  
 **Estado General:** En Desarrollo Activo (Objetivos 3 y 4)  
+
+**Último avance — R3, 2026-09-22:** `KeyManager` ahora reemplaza todas las claves al rotar Sentinel, conserva identidad y actualiza metadatos. La firma autentica época/identidad y se bloquea por salud, edad o cupo de derivaciones. `KeyRegistry` registra altas, rotaciones conjuntas y retiros autorizados por las claves; permite reconstruir el historial público y comprobar un checkpoint confiable. Se añadieron y ejecutaron **19 pruebas**, con resultado total **142/142** (core 15, crypto 57, anchor 16, active 20, zk 34); check de todos los targets y build correctos. Dos errores inyectados comprueban que no se instala una transición parcial. La demostración verifica fallo, recuperación, cambio efectivo, rechazo de época anterior y recarga pública. [Informe R3](Documentos/04-Administrativo-TG2/Avances/R3-Rotacion-y-Registro-2026-09-22.md) · [Fuentes y ejecución](Documentos/06-Evidencia-TG2/2026-09-22/R3-rotacion/ejecucion.json).
+
+**Límites vigentes:** atomicidad en memoria y recuperación del historial público; custodia durable y recuperación de secretos pendientes. El registro no está integrado en L2/L1 ni en el formato heredado de transacciones. El checkpoint requiere custodia independiente y actualización. Verificar una firma histórica no demuestra que se emitiera antes del retiro. No se han repetido benchmarks ni demostrado borrado de todas las copias del secreto. El siguiente paso es R4; R1 y R5 conservan sus obligaciones.
+
+**Edición vigente tras R3:** Word de **83 páginas**, PDF de **73**, **3 figuras**, **19 tablas / 389 celdas** y **356 objetos matemáticos nativos**, con 18 ecuaciones en bloque. Resúmenes, capítulo 5 y conclusiones sincronizados. La figura 5.1 incorpora bloqueo de firma y la preparación/validación antes de instalar claves. Las tablas mantienen rótulo y cuerpo en una misma página de Word; el PDF no presenta páginas vacías ni texto fuera de los márgenes revisados.
+
+### Etapa R2 anterior del mismo día
+
+**Avance de la etapa R2, 2026-09-22:** se implementó el corte APT binomial W=512/C=16, el lote de 65.536 muestras, el bloqueo inicial y la recuperación explícita seguida de renovación de semilla. La rotación conserva monitores e historial; la derivación sin comprobaciones quedó interna. Se actualizaron las llamadas de `KeyManager` y el ejemplo `apt_sweep`. Por solicitud expresa del autor se añadieron y ejecutaron 13 pruebas: **123/123 pasan** en el workspace (core 15, crypto 38, anchor 16, active 20, zk 34); `cargo check --all-targets` y `cargo build` también terminaron correctamente. Los benchmarks históricos no se repitieron. [Informe R2](Documentos/04-Administrativo-TG2/Avances/R2-Monitor-Entropia-2026-09-22.md) · [Fuentes, registros y hashes](Documentos/06-Evidencia-TG2/2026-09-22/R2-monitor/ejecucion.json).
+
+**Edición de la etapa R2:** Word de **82 páginas** y PDF de **71**, con índices propios, **3 figuras**, **19 tablas / 389 celdas** y **358 objetos matemáticos nativos en Word**. Se sincronizaron los resúmenes, el capítulo 5 y las conclusiones. La comprobación conserva todas las tablas con su rótulo en una misma página de Word. El flujo observado procede de la aplicación; su vinculación y calificación respecto a una fuente concreta de despliegue siguen requeridas. La rotación efectiva de claves y el registro permanecen en R3. Los apartados siguientes registran las etapas documentales previas del mismo día.
+
+**Estado conciliado al 2026-09-22:** el estudiante confirma la aprobación del director al plan, entrega y decisiones presentadas. La fecha exacta y el calendario están por incorporar. Los Objetivos 3 y 4 siguen abiertos técnicamente según la [matriz de trazabilidad](Documentos/05-Estado-del-Arte/Resumenes-y-Matriz/Matriz-Trazabilidad-TG2.md). La [revisión de la bitácora](Documentos/04-Administrativo-TG2/Avances/Revision-Bitacora-2026-09-22.md) documenta contradicciones, evidencia recuperada y prioridades; los registros fechados siguientes se conservan como historia.
+
+**Alcance vigente — aclaración del autor registrada el 2026-09-22:** NEXUS se plantea para **sistemas en general** que requieren autenticación de operaciones, integridad de registros y gestión del ciclo de vida de claves. El autor precisó: «ya no es para sistemas bancarios, sino sistemas en general». Al contrastar el archivo local, no se encontró una entrada previa que registrara explícitamente esa ampliación y el encabezado aún conservaba el título bancario. Se registra ahora la aclaración sin atribuir una fecha anterior a la decisión ni una aprobación específica del director que no haya sido documentada.
+
+La edición vigente actualiza título, resúmenes, motivación, objetivo general, alcance, referencias de aplicación y conclusiones, incluidos los capítulos 1–4 por instrucción expresa del autor. Se mantienen los cuatro objetivos técnicos y la arquitectura blockchain dual como modelo de referencia. La generalidad del dominio no implica validación experimental en todas las aplicaciones. Los documentos administrativos de TG1 y los registros fechados anteriores se conservan como antecedentes.
+
+**Salidas tras la aclaración, antes de la revisión gráfica:** Word de 78 páginas y PDF de 69, con índices propios. Se comprobaron nuevamente las 19 tablas y sus 389 celdas; en Word cada tabla y su rótulo permanecen en la misma página. La búsqueda en las fuentes del manuscrito y en las salidas no conserva el enfoque bancario anterior. Las referencias a «banco de pruebas» designan el entorno experimental. No se modificó Rust ni se realizaron nuevas mediciones.
+
+**Revisión gráfica posterior — 2026-09-22:** por solicitud del autor se inspeccionaron todos los esquemas y las ecuaciones en bloque. Se sustituyeron dos diagramas de caracteres deformados y una cadena narrativa excesivamente ancha por las Figuras 1.1, 3.1 y 5.1, con originales vectoriales y PNG de 320 ppp. El flujo de salud exige bloqueo y reevaluación antes de derivar claves; la arquitectura y la rotación completa se identifican como diseño con integraciones pendientes. Se retiró una llave decorativa vacía de la fórmula KDF. La presentación del aporte en §1.4 se alineó con los límites de §§5.8 y 6.4–6.7.
+
+**Edición vigente tras esta revisión:** Word de **81 páginas**, PDF de **70**, **3 figuras**, **19 tablas / 389 celdas** y **351 objetos matemáticos nativos en Word**, incluidos **18 bloques**. Se inspeccionaron las 18 fórmulas en Word y PDF y las tres figuras en su ubicación final; el PDF conserva tamaño base de 12 puntos en esas fórmulas. Las celdas coinciden con una conversión independiente y las tablas conservan rótulo y cuerpo en la misma página de Word. Se documentó la [evaluación de la tesis y las correcciones gráficas](Documentos/04-Administrativo-TG2/Avances/Revision-Graficas-y-Evaluacion-2026-09-22.md). Este avance es documental; R2–R5 de la ruta conservan sus pendientes técnicos.
 
 ---
 
 > [!IMPORTANT]  
-> **Regla de Inmutabilidad de TG1:** Todo el trabajo y los registros de esta bitácora están enfocados de manera estricta y exclusiva en **Trabajo de Grado 2 (TG2)** (Objetivos Específicos 3 y 4). El alcance, documentos y entregables aprobados en TG1 permanecen inalterables.
+> **Preservación de antecedentes de TG1:** Los documentos administrativos y entregables históricos aprobados de TG1 se conservan. El trabajo técnico pendiente se concentra en los Objetivos 3 y 4. La edición vigente del manuscrito incorpora la aclaración expresa del autor sobre sistemas en general registrada arriba.
 
 ---
 
@@ -36,7 +168,7 @@
 | *Próximo* | Objetivo 3 (Act 3.2) | `nexus-core` / Key Registry | Rotación por política con *forward secrecy* **ya implementada** en `entropy.rs`. Resta: registro auditable de eventos de rotación en el Key Registry (→ Decisión 002). | 🟡 Parcial |
 | *Próximo* | Objetivo 4 (Act 4.1) | Documento Tesis / Cap 4-5 | Formalización teórica de la cadena de reducciones (\(\text{Dilithium} \to \text{Module-LWE/SIS} \to \text{Mod-SIVP}\)) y argumento de Shor. | ⏳ Pendiente |
 | **2026-07-31** | Objetivo 4 (Act 4.2) | Benchmarking Suite | **Benchmarks empíricos ejecutados** (Criterion, 100 muestras, medianas, rustc 1.97.1): Dilithium3 — keygen 413 µs, firma 790 µs, verificación 232 µs (D2/D5 en README). PoC STARK: traza 16→4.096 pasos (256×) ⇒ prueba 129→434 KB (~3,4×) y verificación 4,5→11,4 ms (~2,6×) — comportamiento polilogarítmico confirmado. Resultados publicados en README (commit + push). | 🟡 Parcial — falta comparativa vs. ECDSA/RSA y análisis \(\mathcal{O}\) en el capítulo |
-| **2026-07-31** | Objetivo 3 / 4 / TG2 | Lluvia de Ideas / Rediseño v2 | **Rediseño V2 "Dilithium 3 + Multisemilla + Deception Engine":** Consolidado en `Dilithium-Multisemilla-Efecto-Observador-V2.md`. Sustituye la inyección de `RDTSC` por un *Honeytoken Deception Engine* (firmas señuelo válidas en L2), *Threshold ML-DSA* (MPC para fragmentación de $s_1$), custodia en TPM/SGX y aislamiento de memoria con `zeroize` y `VirtualLock`. | 🟢 Completado (`.../V2.md`) |
+| **2026-07-31** | Objetivo 3 / 4 / TG2 | Propuesta preliminar / Rediseño v2 | **Rediseño V2 "Dilithium 3 + Multisemilla + Deception Engine":** Proponía sustituir la inyección de `RDTSC` por un *Honeytoken Deception Engine* (firmas señuelo válidas en L2), *Threshold ML-DSA* (MPC para fragmentación de $s_1$), custodia en TPM/SGX y aislamiento de memoria con `zeroize` y `VirtualLock`. | Registro histórico; documento retirado por indicación del autor el 2026-09-23. |
 | **2026-07-31** | Objetivo 3 / 4 / TG2 | Estado del Arte (Cap. 2 / 5 / 7) | **Revisión de estado del arte de la V2** (3 frentes paralelos con fuentes verificadas): (1) el formato *seed-only* ya es estándar (FIPS 204 §3.6.3, **RFC 9881** lo declara RECOMENDADO, OpenSSL 3.5 por defecto) — no es reclamable como novedad; (2) **sí son huecos reales**: KeyGen-por-firma como política de seguridad (draft-connolly sugiere lo contrario), métrica $W=\text{bytes}\times\Delta t$, y el Deception Engine PQ (prior art más cercano: patente Amazon US 10,521,584 B1, sin PQC ni disparador anti-debug); (3) ningún sistema 2024-2026 cierra el triángulo semilla sellada + detección de compromiso + respuesta L2 (parciales: Puffer Secure-Signer, Rollup-Boost/Unichain). Incluye 5 advertencias de diseño (indistinguibilidad del señuelo, matiz Storm-0558, restricción NIST sobre derivar ξ vía KDF). | 🟢 Completado (`Documentos/02-Investigacion-y-Notas/Estado-del-Arte-Claves-Efimeras-y-Deception.md`) |
 | **2026-08-03** | General / TG2 | Dirección y comité | **Cambio de director aprobado:** Pedro Mario Wightman Rojas asume la dirección del trabajo de grado; **TG1 calificado 4.2** (evaluado por el prof. Wightman). Condiciones del comité para TG2: plan de trabajo acordado con el director, entregas parciales formalizadas y comunicación permanente por escrito. | 🟢 Registrado (correo del comité, 2026-08-03) |
 | **2026-08-03** | C4 / TG2 | Estado del Arte / Bibliografía | **Estado del arte de pagos agénticos** (3 frentes con fuentes primarias verificadas, corte ago. 2026): protocolos AP2/x402 (AP2 donado a FIDO Alliance; x402 ~130M txns, cifra académica), redes de tarjetas (Visa IC/TAP, Mastercard Agent Pay; **retiro de Instant Checkout de OpenAI, mar-2026** = evidencia de inmadurez), OWASP agéntico (Top 10 2026, T1–T15) y papers x402 2026 — el **SoK arXiv:2604.03733 declara abiertas exactamente las brechas que C1–C3 atacan** (*weak intent binding*, *misuse under valid authorization*, *limited accountability*), sin PQC en ese espacio. **+18 entradas** en `_tesis-bibliografia.md` (incl. nueva sección OWASP). | 🟢 Completado (`Documentos/02-Investigacion-y-Notas/Estado-del-Arte-Pagos-Agenticos.md`) |
@@ -53,7 +185,27 @@
 
 ---
 
-## 🔬 Detalle Técnico por Módulo de TG2
+## Actualización 2026-09-22 — Ruta de cierre de TG2
+
+Se realizó una revisión estática y documental del proyecto y se creó la [Ruta de acción para cerrar TG2](Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md), enlazada desde `PENDIENTES.md`. Organiza el trabajo en seguimiento académico, revisión formal del Objetivo 4, monitor de entropía, rotación y auditoría del Objetivo 3, evidencia experimental, métrica W y consolidación final.
+
+Los puntos a resolver incluyen el argumento de extracción y la cota estadística del Cap. 6, el umbral APT, la recuperación de salud tras rotación, la actualización efectiva de claves, el registro de épocas, la aceptación heredada de pruebas y la codificación parcial de raíces del PoC, y la interpretación de la métrica de residencia. La ruta distingue resultados de componentes y garantías del sistema completo, preserva los entregables aprobados de TG1 y establece criterios de cierre verificables.
+
+**Estado:** planificación documentada; ejecución pendiente. No se modificó código ni se ejecutaron pruebas o benchmarks en esta revisión. Los acuerdos académicos posteriores al 7 de agosto deben incorporarse si existen; no se presume su ausencia fuera del repositorio.
+
+## Ejecución 2026-09-22 — Trazabilidad, revisión formal y edición del manuscrito
+
+Se inició R0 con la confirmación de aprobación del director comunicada por el estudiante, la matriz de 23 afirmaciones/requisitos y la preservación de 125 archivos de evidencia local, incluidos 29 resultados Criterion. La caché contiene medianas parcialmente distintas de las transcritas en agosto; se registra esa diferencia sin atribuirla a una réplica ni cambiar silenciosamente las tablas históricas. El inventario conserva hashes, origen y estado Git.
+
+Se revisó §6.4 contra las fuentes: el término `2^-254` sí está publicado en la especificación de Dilithium, pero no se justifica como cota del ML-DSA implementado con el argumento anterior. Se retiró la extracción inválida a partir de dos firmas arbitrarias del mismo mensaje, se añadieron las correcciones de Barbosa et al. y las condiciones del trabajo de Jackson–Miller–Wang, y se distinguieron los supuestos de dureza de la no aplicabilidad directa de Shor. La instanciación completa y la revisión matemática externa siguen pendientes.
+
+Se conciliaron el resumen, los capítulos 5–7 y el balance de objetivos. Por solicitud del estudiante, se normalizaron títulos, ecuaciones, listas y tablas de la edición ensamblada; los capítulos de TG1 reciben únicamente cambios de presentación. El ensamblado se genera desde las fuentes mediante `scripts/compilar_manuscrito.py`; `scripts/exportar_manuscrito_word.ps1` actualiza el índice de Word y `scripts/exportar_manuscrito_pdf.py` genera el PDF localmente desde la misma fuente.
+
+**Primera revisión editorial, anterior a la aclaración de alcance:** 19 tablas y 389 celdas coinciden entre Markdown y Word, incluida la notación matemática tras normalizar su representación equivalente. Se conservaron 352 objetos matemáticos en la generación. Se revisaron las páginas renderizadas de Word y PDF y las tablas de resultados; los 19 rótulos permanecen junto a sus tablas y cada tabla cabe en una página de Word. El PDF no tiene páginas vacías ni texto fuera de los márgenes. Word: 78 páginas; PDF: 68, con índices propios. La exportación PDF nativa de Word se bloqueó incluso con un documento mínimo; se utilizó conversión local HTML/MathML con Chrome. Los informes y hashes están en `Documentos/06-Evidencia-TG2/2026-09-22/`. Se conserva una única salida vigente por formato en `01-Manuscrito/`, con instrucciones de regeneración en su README.
+
+**Validación realizada:** lectura de fuentes, inventario con hashes y comprobaciones documentales. No se modificó el prototipo Rust ni se ejecutaron tests o benchmarks nuevos. El cierre técnico de R1–R5 no se declara por estas correcciones editoriales. La versión ensamblada es la edición de trabajo vigente, no una entrega académica final aprobada.
+
+## 🔬 Detalle Técnico por Módulo de TG2 — notas históricas de julio/agosto
 
 ### 1. Módulo de Seguridad Activa del Ciclo de Vida de Claves (Objetivo 3)
 
@@ -87,7 +239,9 @@
 
 ---
 
-## 📌 Pendientes y Decisiones de Diseño
+## 📌 Pendientes y Decisiones de Diseño — registro histórico de agosto
+
+El estado vigente está en [PENDIENTES.md](PENDIENTES.md). La aprobación comunicada el 22 de septiembre actualiza el estado administrativo de estas notas; su ejecución técnica sigue los criterios de la ruta de cierre.
 
 - [ ] **Decisión 001:** Determinar los parámetros exactos de ventana (\(W\)) y corte (\(C\)) para la prueba APT según las especificaciones del TRNG/PRNG seleccionado. → **Propuesta empírica lista (2026-08-07):** W=512, C=16 (binomial exacta, no aprox. normal) + lote MCV ≥ 65.536; ver `Documentos/02-Investigacion-y-Notas/Decision-001-Parametros-APT.md`. Falta el acuerdo con el director.
 - [ ] **Decisión 002:** Definir la estructura de almacenamiento eficiente de los eventos de rotación en el *Key Registry* para mantener latencia baja en la L2.

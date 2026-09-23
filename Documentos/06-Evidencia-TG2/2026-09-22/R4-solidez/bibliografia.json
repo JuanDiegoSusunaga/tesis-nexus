@@ -1,0 +1,23 @@
+{
+  "consulta": "2026-09-22",
+  "fuentes": [
+    {
+      "archivo": "BT24.pdf",
+      "url": "https://eprint.iacr.org/2024/1161.pdf",
+      "paginas": 28,
+      "sha256": "b53ba954d224d8eb632f07c6c570fcecba0cfc4ab29a621a47e8c8a9fad0c891"
+    },
+    {
+      "archivo": "BGK23.pdf",
+      "url": "https://eprint.iacr.org/2023/1071.pdf",
+      "paginas": 87,
+      "sha256": "bb7a7e87b9000c98106de99c9af9d289def2a1b91919a3507ee78bf9bfd16947"
+    },
+    {
+      "archivo": "FRI18.pdf",
+      "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol107-icalp2018/LIPIcs.ICALP.2018.14/LIPIcs.ICALP.2018.14.pdf",
+      "paginas": 17,
+      "sha256": "e244896fb6e7fcab7fe4de00e31a36003b941b6550e062fdb5ee66d78641498d"
+    }
+  ]
+}

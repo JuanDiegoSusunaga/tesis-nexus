@@ -1,0 +1,172 @@
+{
+  "fecha": "2026-09-22",
+  "tablas": [
+    {
+      "rotulo": "Tabla 1.1",
+      "archivo": "Cap1-Introduccion.md",
+      "columnas": 3,
+      "filas": 8
+    },
+    {
+      "rotulo": "Tabla 2.1",
+      "archivo": "Cap2-Marco-Teorico.md",
+      "columnas": 4,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 3.1",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 5,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 3.2",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 5,
+      "filas": 3
+    },
+    {
+      "rotulo": "Tabla 3.3",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 4.1",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 5,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 4.2",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 4,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 4.3",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 2,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 5.1",
+      "archivo": "Cap5-Gestion-Claves.md",
+      "columnas": 3,
+      "filas": 7
+    },
+    {
+      "rotulo": "Tabla 5.2",
+      "archivo": "Cap5-Gestion-Claves.md",
+      "columnas": 4,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 5.3",
+      "archivo": "Cap5-Gestion-Claves.md",
+      "columnas": 2,
+      "filas": 8
+    },
+    {
+      "rotulo": "Tabla 6.1",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 13
+    },
+    {
+      "rotulo": "Tabla 6.2",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 3,
+      "filas": 7
+    },
+    {
+      "rotulo": "Tabla 6.3",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 6,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 6.4",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.5",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 3
+    },
+    {
+      "rotulo": "Tabla 6.6",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.7",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.8",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 5,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 6.9",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.10",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.11",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 10
+    },
+    {
+      "rotulo": "Tabla 6.12",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.13",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 13
+    },
+    {
+      "rotulo": "Tabla 6.14",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.15",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 6,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 7.1",
+      "archivo": "Cap7-Conclusiones.md",
+      "columnas": 3,
+      "filas": 7
+    }
+  ],
+  "ecuaciones_word": 391,
+  "figuras_word": 3,
+  "tablas_word": 27,
+  "advertencias_pandoc": [],
+  "revision_visual": "Revisión del 2026-09-22 tras la auditoría STARK: Tabla 6.15 y texto de §6.7.1 inspeccionados en Word pp. 79–80 y PDF p. 72; ecuación nueva 20 inspeccionada en Word p. 80 y PDF p. 73, sin recortes. Las 27 tablas conservan sus rótulos y cuerpos juntos en Word; 711 celdas coinciden con la conversión independiente. PDF sin páginas vacías ni texto fuera de márgenes. Se conserva la inspección R1 de las otras 19 ecuaciones y tres figuras: fórmulas sin cambios; fuentes gráficas, dimensiones y ubicaciones comparadas con la instantánea R1. La rasterización EMF de Word acentúa el peso del texto y no implica negrita aplicada a todo el documento."
+}

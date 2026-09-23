@@ -1,0 +1,166 @@
+{
+  "fecha": "2026-09-22",
+  "tablas": [
+    {
+      "rotulo": "Tabla 1.1",
+      "archivo": "Cap1-Introduccion.md",
+      "columnas": 3,
+      "filas": 8
+    },
+    {
+      "rotulo": "Tabla 2.1",
+      "archivo": "Cap2-Marco-Teorico.md",
+      "columnas": 4,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 3.1",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 5,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 3.2",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 5,
+      "filas": 3
+    },
+    {
+      "rotulo": "Tabla 3.3",
+      "archivo": "Cap3-Diseno-Arquitectura.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 4.1",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 5,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 4.2",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 4,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 4.3",
+      "archivo": "Cap4-Nucleo-Criptografico.md",
+      "columnas": 2,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 5.1",
+      "archivo": "Cap5-Gestion-Claves.md",
+      "columnas": 3,
+      "filas": 7
+    },
+    {
+      "rotulo": "Tabla 5.2",
+      "archivo": "Cap5-Gestion-Claves.md",
+      "columnas": 4,
+      "filas": 6
+    },
+    {
+      "rotulo": "Tabla 5.3",
+      "archivo": "Cap5-Gestion-Claves.md",
+      "columnas": 2,
+      "filas": 8
+    },
+    {
+      "rotulo": "Tabla 6.1",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 13
+    },
+    {
+      "rotulo": "Tabla 6.2",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 3,
+      "filas": 7
+    },
+    {
+      "rotulo": "Tabla 6.3",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 6,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 6.4",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.5",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 3
+    },
+    {
+      "rotulo": "Tabla 6.6",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.7",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 4
+    },
+    {
+      "rotulo": "Tabla 6.8",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 5,
+      "filas": 5
+    },
+    {
+      "rotulo": "Tabla 6.9",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.10",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.11",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 10
+    },
+    {
+      "rotulo": "Tabla 6.12",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 6.13",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 13
+    },
+    {
+      "rotulo": "Tabla 6.14",
+      "archivo": "Cap6-Validacion-Formal.md",
+      "columnas": 4,
+      "filas": 9
+    },
+    {
+      "rotulo": "Tabla 7.1",
+      "archivo": "Cap7-Conclusiones.md",
+      "columnas": 3,
+      "filas": 7
+    }
+  ],
+  "ecuaciones_word": 381,
+  "figuras_word": 3,
+  "tablas_word": 26,
+  "advertencias_pandoc": [],
+  "revision_visual": "Inspección visual del 2026-09-22 tras R1: las tres figuras y las 19 ecuaciones en bloque se revisaron en Word y PDF; Tablas 6.1, 6.2 y 6.3 y el contraste numérico JMW24, en ambos formatos, sin recortes observados en los documentos. La fórmula multilineal nueva se comprobó también en la página completa 59 de Word. Se amplió su recorte de revisión, que ocultaba la última línea; el documento ya contenía la fórmula completa. Las 26 tablas se comprobaron estructuralmente: 657 celdas coinciden con la conversión independiente del Markdown, con rótulos y cuerpos juntos en Word. Los parámetros nuevos y las cifras JMW24 coinciden con la evidencia reproducible. PDF sin páginas vacías ni texto fuera de márgenes. La rasterización EMF de Word acentúa el peso del texto; no representa negrita aplicada a todo el documento."
+}
