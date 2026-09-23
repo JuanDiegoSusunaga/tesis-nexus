@@ -4,6 +4,8 @@
 
 ## Material y orden de lectura
 
+**Cota QROM de cola:** [conteo y recurrencia de amplitudes](Cola-QROM-2026-09-23/README.md). Se propone un límite para Tcola mediante ausencia de ciclos anclados, capacidad local, escalera de niveles y unión sobre conjuntos de 39 índices. Para M5 revisar esos pasos y la extensión analítica de R. Los 144 perfiles incluyen 16 cotas no triviales; pasan 96 Python y 197 Rust. La omisión S continúa sin cota útil y los exponentes de cola no acreditan seguridad global.
+
 **Muestreo QROM y cambio de juego:** [reducción condicional al verificador](Muestreo-QROM-2026-09-23/README.md). Propone la cobertura de aceptación falsa, un verificador auxiliar acotado y la aplicación del lema 4.9 de CMS19. Para M5 se solicita revisar esos tres pasos, el tamaño del conjunto local G y el presupuesto Q+V. La probabilidad de omisión o cola se define mediante β, sin cota útil demostrada. Pasan 80 Python y 197 Rust; el corpus contiene enunciados válidos y la herramienta no decide falsedad ni demuestra β.
 
 **Extractor QROM y componente de campo:** [lema de estabilidad y cota en base comprimida](Extractor-QROM-2026-09-23/README.md). Avanza Q1 y Q3 con catorce tests nuevos, 66 Python y 197 Rust en esa regresión. Para M5 se solicita revisar también la unicidad de preimágenes, las dos direcciones de inestabilidad y la aplicación de CMS19. El suplemento de muestreo incorpora su cota a una reducción todavía condicional.
@@ -32,7 +34,7 @@ El objeto revisado es una recurrencia AIR demostrativa. La validez de firmas ML-
 | M2 | Unicidad y selección previa del candidato próximo | Distancia mínima RS; caso de coeficientes fuera del campo base | Pendiente |
 | M3 | FRI ideal local y nueva derivación elemental | Corolario 5.5; lema A de acuerdo, elevación de conjuntos en FRI, constante final y muestreo sin reemplazo | Pendiente |
 | M4 | Composición AIR/FRI ordinaria y por rondas | Historia adaptativa, coeficiente AIR crítico, estado absorbente, consulta compartida y una sola contribución de omisión | Pendiente |
-| M5 | Teorema ROM y desarrollos QROM propuestos para el canal concreto | En ROM: extracción congelada y potencial de nonces/cola. En QROM: extracción sin orden, escapes de campo, conjunto G, cobertura de aceptación y lema 4.9; β sigue sin demostrar. Revisar presupuestos y constantes | Pendiente |
+| M5 | Teorema ROM y desarrollos QROM propuestos para el canal concreto | En ROM: extracción y potencial. En QROM: extractor, campo, conjunto G, cobertura, lema 4.9 y nueva escalera de conteo para la cola. β^S de omisión sigue abierto; revisar constantes y cortes | Pendiente |
 | M6 | Suficiencia para el alcance aprobado de TG2 | Afirmaciones que pueden quedar como resultados condicionales y obligaciones que requieren trabajo adicional antes de la entrega | Pendiente |
 
 ## Afirmaciones que la edición conserva
@@ -44,7 +46,7 @@ El objeto revisado es una recurrencia AIR demostrativa. La validez de firmas ML-
 - Auditoría de correspondencia Merkle/Fiat–Shamir y distribución exacta bajo sus hipótesis.
 - Nueva demostración propuesta en ROM clásico, con 108 escenarios y verificador independiente completo del corpus; once pruebas nuevas y 28 Python en total.
 
-La demostración ROM y los tres complementos QROM siguen pendientes de dictamen: trabajo del nonce, extractor con escapes de campo, y muestreo con reducción condicional al juego real. Falta demostrar una cota útil de β para obtener una garantía QROM completa de AIR/FRI mediante esa reducción. No se acredita seguridad incondicional de SHA3, 100 bits, conocimiento cero ni validación completa de una blockchain. El análisis se refiere exclusivamente a TG2 v1 y su AIR demostrativo.
+La demostración ROM y los cuatro complementos QROM siguen pendientes de dictamen: trabajo del nonce, extractor con escapes de campo, muestreo con reducción condicional y cota de cola. Falta una cota útil β^S de omisión para obtener una garantía QROM completa de AIR/FRI mediante esa reducción. No se acredita seguridad incondicional de SHA3, 100 bits, conocimiento cero ni validación completa de una blockchain. El análisis se refiere exclusivamente a TG2 v1 y su AIR demostrativo.
 
 ## Registro de resolución
 

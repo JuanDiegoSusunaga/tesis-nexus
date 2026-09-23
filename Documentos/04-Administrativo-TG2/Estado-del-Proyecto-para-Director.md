@@ -2,7 +2,9 @@
 
 ## Actualización vigente — 23 de septiembre de 2026
 
-**Avance QROM vigente:** [muestreo y reducción condicional al verificador](Avances/Muestreo-QROM-2026-09-23/README.md). Se reconstruyen los índices y nonces, se propone la cobertura de aceptación falsa y se explicitan las pérdidas del paso al juego real. Pasan 80 Python y 197 Rust, check/build; se reproducen 72 cuentas de presupuesto y 28 recorridos del corpus. **Falta demostrar la cota β de omisión o cola.** La reducción requiere dictamen y todavía no da una garantía QROM completa. Los párrafos siguientes registran los avances anteriores.
+**Avance QROM vigente:** [cota cuántica de la cola de índices](Avances/Cola-QROM-2026-09-23/README.md). Se propone una demostración por conteo de respuestas y recurrencia de amplitudes. Hay 144 perfiles, 16 con cota de cola menor que uno usando cortes mayores del análisis; pasan 96 Python y 197 Rust, check/build. **La omisión de parejas incorrectas sigue abierta**, junto con el dictamen de las demostraciones. Los exponentes de cola no representan seguridad global; Rust conserva su comportamiento. Los párrafos siguientes registran antecedentes.
+
+**Antecedente del cambio de juego:** [muestreo y reducción condicional al verificador](Avances/Muestreo-QROM-2026-09-23/README.md). Reconstruye índices/nonces y propone la cobertura de aceptación falsa con pérdidas explícitas. Esa regresión reunió 80 Python y 197 Rust, check/build, 72 presupuestos y 28 recorridos. La nueva etapa separa la obligación de cola de la de omisión.
 
 **Antecedente del extractor QROM:** [extractor sin orden y escapes AIR/FRI](Avances/Extractor-QROM-2026-09-23/README.md). Propone estabilidad y una cota de colisión o escape de campo en la base comprimida; contrasta 14 prefijos, 236 retos, 1.974 aperturas AIR y 2.688 inserciones. Su regresión reunió 66 Python y 197 Rust, check/build. Dictamen pendiente.
 

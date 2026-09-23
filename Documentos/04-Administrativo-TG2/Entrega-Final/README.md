@@ -20,6 +20,7 @@
 | Primera etapa QROM | [Cota parcial de PoW y obligaciones Q1–Q5](../Avances/QROM-2026-09-23/README.md); transferencia cuántica completa AIR/FRI pendiente |
 | Extractor QROM y escapes de campo | [Extracción sin orden y estabilidad](../Avances/Extractor-QROM-2026-09-23/README.md); cota en base comprimida, todavía sin transferencia completa a aceptación real |
 | Muestreo QROM y paso al verificador | [Expansión y reducción condicional](../Avances/Muestreo-QROM-2026-09-23/README.md); cota β de omisión o cola aún pendiente, 80 pruebas Python y 197 Rust |
+| Cota cuántica de cola | [Demostración propuesta por conteo](../Avances/Cola-QROM-2026-09-23/README.md); 144 perfiles y 96 Python/197 Rust. Omisión y dictamen pendientes |
 
 Se enlaza una sola edición del manuscrito; esta carpeta no duplica los archivos Word/PDF. El manifiesto vincula el commit de código con los hashes del manuscrito y de `06-Evidencia-TG2`. Los complementos posteriores de `Avances/` tienen sus propios registros `validacion.json`; todavía no están incorporados en el Word ni en el manuscrito. La revisión Git documental identifica el conjunto.
 

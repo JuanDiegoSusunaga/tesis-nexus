@@ -155,3 +155,16 @@ python scripts/verificar_muestreo_qrom_tg2.py --salida .tools/muestreo-qrom-repe
 Solo usa la biblioteca estándar de Python. Se registran 72 presupuestos y 28 recorridos con cortes de 40 y 512; catorce tests nuevos incluyen 256 secuencias pequeñas, repetición con SHA3 bloqueado y una cola bajo un oráculo artificial. La regresión reúne **80 Python, 197 Rust, check/build y manifiesto de 897 archivos**. Protege TG1 y los cinco paquetes matemáticos anteriores. Las salidas deben ser nuevas y Cargo requiere escritura en `C:/tmp/nexus-target`.
 
 El corte pertenece al experimento auxiliar del análisis y no modifica Rust. Los cálculos dejan β y la cota completa en `null`; el calculador condicional requiere una cota externa demostrada y no la certifica. La herramienta no decide si un enunciado es falso ni reproduce al adversario cuántico general.
+
+## 14. Cota cuántica de la cola de índices
+
+El [informe de cola](../Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/README.md) propone una cota mediante contador de respuestas, capacidad local y escalera de amplitudes. La omisión permanece abierta.
+
+```powershell
+python scripts/analizar_cola_qrom_tg2.py --salida .tools/cola-qrom-repeticion/calculos.json
+python scripts/verificar_cola_qrom_tg2.py --salida .tools/cola-qrom-repeticion/verificacion
+```
+
+Se calculan 144 perfiles, 16 no triviales, mediante enteros y redondeos superiores. Dieciséis tests nuevos contrastan 1.792 bloques, 20 matrices unitarias y las hipótesis del conteo. La regresión reúne **96 Python, 197 Rust, check/build y manifiesto de 897 archivos**; protege TG1 y los seis paquetes matemáticos anteriores. Las salidas deben ser nuevas y Cargo requiere escritura en `C:/tmp/nexus-target`.
+
+El análisis y las pruebas usan la biblioteca estándar. Solo `recopilar_fuentes_cola_qrom_tg2.py` requiere red y PyMuPDF 1.28.2 en el entorno aislado; conserva CFHL21 v4 con versión y hashes. Los cortes mayores que 512 son una extensión matemática del análisis, no ejecuciones nuevas del expansor completo. Se contrasta una cadena artificial registrada de 1.024 pasos. La demostración requiere revisión; las cotas de cola no son tasas de falsificación.

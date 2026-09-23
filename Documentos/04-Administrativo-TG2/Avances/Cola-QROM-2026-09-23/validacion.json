@@ -1,0 +1,153 @@
+{
+  "fecha_utc": "2026-09-23T20:37:24.864401+00:00",
+  "revisiones": {
+    "documentos_base": "ee90f773e51713440a752013a71ddacb3e087dcf",
+    "codigo": "01dcde960402b6c60a19242b7ae3d6ac3d82a518",
+    "rama_documentos": "main",
+    "rama_codigo": "main"
+  },
+  "estado": "Cota de cola propuesta; omisión y dictamen pendientes",
+  "pruebas_python": 96,
+  "pruebas_nuevas": 16,
+  "pruebas_rust": 197,
+  "corpus": {
+    "total": 14,
+    "aceptados": 8,
+    "rechazados_fri_traza": 6
+  },
+  "perfiles_cola": 144,
+  "perfiles_cola_no_vacios": 16,
+  "bloques_contrastados": 1792,
+  "matrices_unitarias": 20,
+  "omision_demostrada": false,
+  "dictamen_recibido": false,
+  "archivos_protegidos": 290,
+  "codigo_sin_cambios": true,
+  "manifiesto_897": "verificado por la regresión",
+  "CARGO_TARGET_DIR": "C:/tmp/nexus-target",
+  "ejecuciones": [
+    {
+      "nombre": "pruebas-cola",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_cola_qrom_tg2.py",
+        "-v"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "calculos",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/analizar_cola_qrom_tg2.py",
+        "--salida",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\04-Administrativo-TG2\\Avances\\Cola-QROM-2026-09-23\\calculos-reproducidos.json"
+      ],
+      "codigo_salida": 0
+    },
+    {
+      "nombre": "regresion",
+      "comando": [
+        "C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/verificar_muestreo_qrom_tg2.py",
+        "--salida",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\04-Administrativo-TG2\\Avances\\Cola-QROM-2026-09-23\\regresion"
+      ],
+      "codigo_salida": 0
+    }
+  ],
+  "fuentes": [
+    {
+      "original": "scripts/analizar_cola_qrom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/fuentes/scripts/analizar_cola_qrom_tg2.py",
+      "sha256": "f4b1cf9cf11ced11143a00ada9ec0606c7a38098d57e72ebf163c6412a1ea661",
+      "bytes": 5730
+    },
+    {
+      "original": "scripts/recopilar_fuentes_cola_qrom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/fuentes/scripts/recopilar_fuentes_cola_qrom_tg2.py",
+      "sha256": "712d46ba750dcceba1d4c2f6d64dc820b723570fd3b782f91c92657dac2851e4",
+      "bytes": 2261
+    },
+    {
+      "original": "scripts/verificar_cola_qrom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/fuentes/scripts/verificar_cola_qrom_tg2.py",
+      "sha256": "b54f8f18f45310017f25aa2c462ef29be62d0f39a0936d3908fca8b205eb761a",
+      "bytes": 6440
+    },
+    {
+      "original": "scripts/tests/test_cola_qrom_tg2.py",
+      "copia": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/fuentes/scripts/tests/test_cola_qrom_tg2.py",
+      "sha256": "fd4c6e99428ab7907c1ac1ee849cdd5dc3ba43611db27f15c93acdbf1623f90b",
+      "bytes": 7299
+    }
+  ],
+  "archivos": [
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/README.md",
+      "sha256": "05d8ea30534d6b111d4f7f27ceaaae7cd7c40609ab1acbb75d79574208c7a5f0",
+      "bytes": 2511
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/Cola-y-Conteo-QROM.md",
+      "sha256": "ffda72e538d7634c834351240b7a2c635e098dfa85f171fa2ea3de5bffacc3ff",
+      "bytes": 12611
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/calculos.json",
+      "sha256": "8135b658d8014fb857bd09a7526085ccacb5943edf771b5eb92cea63eb4225ca",
+      "bytes": 75299
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/bibliografia/CFHL21-v4.pdf",
+      "sha256": "56d61bc03606feec8d76ec0ee65f1ea3d63e975a1ef4007cf8daeff23efa3fb1",
+      "bytes": 785798
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/bibliografia/CFHL21-v4.txt",
+      "sha256": "7f814425123f1dd680fcc5dde494f74557e27e34f5d09e656cfe6f3431490bd8",
+      "bytes": 117300
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/bibliografia/fuentes.json",
+      "sha256": "fa1a4c4d0d529ed25c51fbb894f30d26d9fdca21d04df52a7862a9f28fb69e4c",
+      "bytes": 4748
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/pruebas-cola.log",
+      "sha256": "1e7c76f680314d10ccfeb55cc6a3ab120018cb94c222643eb5c7da1e23f2c780",
+      "bytes": 1772
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/calculos.log",
+      "sha256": "80e86db6f89ff40c45ed19acb07596b64a71ef3da6e27379855f500b6ee39ada",
+      "bytes": 36
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/regresion.log",
+      "sha256": "800a1802f628e50155f8fe2d5b61b4cd8b1bb39dbdcf40fc3ded948ca3671f06",
+      "bytes": 252
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/calculos-reproducidos.json",
+      "sha256": "8135b658d8014fb857bd09a7526085ccacb5943edf771b5eb92cea63eb4225ca",
+      "bytes": 75299
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/proteccion.json",
+      "sha256": "5321485e9542726c25d12545d27365cd9fd75c639a23235408e4349be4f2a1bf",
+      "bytes": 64913
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/regresion/validacion.json",
+      "sha256": "08821bde4cb7fe9e8e42fec60afbcb42feb73f387a87e1fc169036bf55a2dd5b",
+      "bytes": 5541
+    }
+  ]
+}

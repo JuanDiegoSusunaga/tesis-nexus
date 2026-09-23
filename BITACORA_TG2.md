@@ -1,5 +1,17 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Cota cuántica de la cola de índices, 23 de septiembre de 2026
+
+Se continuó Q2 en `main`. El [nuevo informe](Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/Cola-y-Conteo-QROM.md) separa omisión y cola y propone una demostración para esta última. Una cadena anclada en la absorción del nonce no puede tener ciclos sin colisiones; una cola de R pasos registra R entradas distintas cuyos índices caben en un conjunto de 39 posiciones.
+
+Para un conjunto fijo se define un contador de respuestas. La capacidad de subir un nivel es a lo sumo `sqrt(min(1,234/M))`, por CMS19 y un cálculo directo de la matriz local de CFHL21. Una recurrencia de amplitudes y la unión sobre conjuntos dan `η(M,R,L)=min(1,C(M,39)C(L,R)²min(1,234/M)^R)`. La fórmula acota el evento de cola sin colisiones en la base comprimida, no toda aceptación falsa. Se conservó CFHL21 arXiv v4, 33 páginas, con texto y SHA-256. La descarga inicial fue bloqueada por la restricción de red; se completó con la autorización del comando.
+
+**Resultados:** 144 perfiles exactos, 16 con cota de cola menor que uno. Con R=512 todos los perfiles tabulados dan uno; cortes mayores del análisis permiten cotas útiles en algunos perfiles. Aumentar R incrementa también el presupuesto total Q+V y las pérdidas de campo. Los exponentes no representan bits de seguridad del protocolo. La extensión del corte es analítica: el expansor anterior sigue limitado a 512 y Rust conserva su comportamiento.
+
+Dieciséis tests nuevos contrastan 1.792 bloques, 20 matrices unitarias, la recurrencia, redondeos, ancla/ciclos y una cadena artificial de 1.024 pasos. Pasan **96 pruebas Python y 197 Rust, cargo check y cargo build**, junto con el manifiesto de 897 archivos. Se preservan TG1 y los seis paquetes matemáticos anteriores. [Registro y fuentes](Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/validacion.json).
+
+El siguiente pendiente es `β^S`, la probabilidad cuántica de completar los 40 índices omitiendo las parejas incorrectas. La nueva cota no lo resuelve; la aceptación completa sigue sin valor numérico en los cálculos. Se actualizan índices, ruta, balance, brief y M5. La demostración general requiere dictamen independiente; no se atribuye aprobación académica nueva. Manuscrito y Word conservan su edición identificada. Las entradas siguientes son históricas.
+
 ## Muestreo QROM y reducción al verificador, 23 de septiembre de 2026
 
 Se continuó en `main` con la reconstrucción del trabajo, absorción del nonce y cadena de 40 índices distintos desde una base sin orden. El [nuevo informe](Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/Muestreo-y-Puente-QROM.md) define el conjunto de parejas localmente aceptables y propone la cobertura de toda aceptación falsa por colisión, escape de campo, omisión o cola.

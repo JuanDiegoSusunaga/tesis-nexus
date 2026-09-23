@@ -1,0 +1,19 @@
+test_256_secuencias_con_distintos_y_duplicados (test_muestreo_qrom_tg2.MuestreoQrom.test_256_secuencias_con_distintos_y_duplicados) ... ok
+test_28_recorridos_y_72_presupuestos_archivados (test_muestreo_qrom_tg2.MuestreoQrom.test_28_recorridos_y_72_presupuestos_archivados) ... ok
+test_ciclo_y_ausencia_tienen_resultados_distintos (test_muestreo_qrom_tg2.MuestreoQrom.test_ciclo_y_ausencia_tienen_resultados_distintos) ... ok
+test_cola_512_con_oraculo_artificial_no_es_aceptacion_rust (test_muestreo_qrom_tg2.MuestreoQrom.test_cola_512_con_oraculo_artificial_no_es_aceptacion_rust) ... ok
+test_parametros_invalidos_no_se_extrapolan (test_muestreo_qrom_tg2.MuestreoQrom.test_parametros_invalidos_no_se_extrapolan) ... ok
+test_presupuestos_y_parametro_pendiente (test_muestreo_qrom_tg2.MuestreoQrom.test_presupuestos_y_parametro_pendiente) ... ok
+test_raiz_superior_y_calculo_condicional (test_muestreo_qrom_tg2.MuestreoQrom.test_raiz_superior_y_calculo_condicional) ... ok
+test_rechazo_previo_tiene_relleno_acotado (test_muestreo_qrom_tg2.MuestreoQrom.test_rechazo_previo_tiene_relleno_acotado) ... ok
+test_repeticion_no_consulta_sha3 (test_muestreo_qrom_tg2.MuestreoQrom.test_repeticion_no_consulta_sha3) ... ok
+test_respuesta_ausente_impide_repeticion (test_muestreo_qrom_tg2.MuestreoQrom.test_respuesta_ausente_impide_repeticion) ... ok
+test_respuestas_inconsistentes_rechazan (test_muestreo_qrom_tg2.MuestreoQrom.test_respuestas_inconsistentes_rechazan) ... ok
+test_sufijo_exige_trabajo_y_semilla_distintos (test_muestreo_qrom_tg2.MuestreoQrom.test_sufijo_exige_trabajo_y_semilla_distintos) ... ok
+test_sufijo_orden_y_consultas_locales (test_muestreo_qrom_tg2.MuestreoQrom.test_sufijo_orden_y_consultas_locales) ... ok
+test_terminar_en_el_corte_no_es_cola (test_muestreo_qrom_tg2.MuestreoQrom.test_terminar_en_el_corte_no_es_cola) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 3.261s
+
+OK

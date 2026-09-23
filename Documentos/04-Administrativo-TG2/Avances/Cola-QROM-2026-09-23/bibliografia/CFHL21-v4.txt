@@ -1,0 +1,3542 @@
+
+[PÁGINA PDF 1]
+On the Compressed-Oracle Technique, and Post-Quantum
+Security of Proofs of Sequential Work*
+Kai-Min Chung1, Serge Fehr2, Yu-Hsuan Huang3, and Tai-Ning Liao4
+1Academia Sinica, Taiwan (kmchung@iis.sinica.edu.tw)
+2CWI Cryptology Group and Leiden University, The Netherlands (serge.fehr@cwi.nl)
+3National Chiao-Tung University, Taiwan (asd00012334.cs04@nctu.edu.tw)
+4National Taiwan University, Taiwan (tonyliao8631@gmail.com)
+Abstract
+We revisit the so-called compressed oracle technique, introduced by Zhandry for analyzing quantum algo-
+rithms in the quantum random oracle model (QROM). This technique has proven to be very powerful for reprov-
+ing known lower bound results, but also for proving new results that seemed to be out of reach before. Despite
+being very useful, it is however still quite cumbersome to actually employ the compressed oracle technique.
+To start off with, we offer a concise yet mathematically rigorous exposition of the compressed oracle tech-
+nique. We adopt a more abstract view than other descriptions found in the literature, which allows us to keep
+the focus on the relevant aspects. Our exposition easily extends to the parallel-query QROM, where in each
+query-round the considered quantum oracle algorithm may make several queries to the QROM in parallel. This
+variant of the QROM allows for a more ﬁne-grained query-complexity analysis of quantum oracle algorithms.
+Our main technical contribution is a framework that simpliﬁes the use of (the parallel-query generalization
+of) the compressed oracle technique for proving query complexity results. With our framework in place, when-
+ever applicable, it is possible to prove quantum query complexity lower bounds by means of purely classical
+reasoning. More than that, we show that, for typical examples, the crucial classical observations that give rise to
+the classical bounds are sufﬁcient to conclude the corresponding quantum bounds.
+We demonstrate this on a few examples, recovering known results (like the optimality of parallel Grover),
+but also obtaining new results (like the optimality of parallel BHT collision search). Our main application is to
+prove hardness of ﬁnding a q-chain, i.e., a sequence x0, x1, . . . , xq with the property that xi = H(xi−1) for all
+1 ≤i ≤q, with fewer than q parallel queries.
+The above problem of producing a hash chain is of fundamental importance in the context of proofs of
+sequential work. Indeed, as a concrete cryptographic application, we prove that the “Simple Proofs of Sequential
+Work” proposed by Cohen and Pietrzak remains secure against quantum attacks. Such proof is not simply a
+matter of plugging in our new bound; the entire protocol needs to be analyzed in the light of a quantum attack,
+and substantial additional work is necessary. Thanks to our framework, this can now be done with purely classical
+reasoning.
+1
+Introduction
+Background.
+The random oracle methodology [3] has proven to be a successful way to design very efﬁcient
+cryptographic protocols and to argue them secure in a rigorous yet idealized manner. The considered idealization
+treats a cryptographic hash function H : {0, 1}n →{0, 1}m as an external oracle that the adversary needs to
+query on x ∈{0, 1}n in order to learn H(x). Furthermore, this oracle, called random oracle (RO) then, answers
+these queries by means of a uniformly random function H : {0, 1}n →{0, 1}m. Even though it is known that in
+principle the methodology can break down [8] and a “proven secure” protocol may become insecure in the actual
+(non-idealized) setting, experience has shown that for natural protocols this does not seem to happen.
+In case of a quantum adversary that may locally run a quantum computer, the RO needs to be modeled as
+a quantum operation that is capable of answering queries in superposition, in order to reasonably reﬂect the
+*This is the full version of an article submitted by the authors to the IACR and to Springer Verlag in March 2021. The published version is
+available from the proceedings of Advances in Cryptology – EUROCRYPT 2021.
+1
+arXiv:2010.11658v4  [quant-ph]  9 Jul 2021
+
+
+[PÁGINA PDF 2]
+capabilities of an attacker in the non-idealized setting [6]. This is then referred to as the quantum random oracle
+model (QROM). Unfortunately, this change in the model renders typical RO-security proofs invalid. One reason
+is that in the ordinary RO model the security reduction can inspect the queries that the adversary makes to the RO,
+while this is not possible anymore in the quantum setting when the queries are quantum states in superposition — at
+least not without disturbing the query state signiﬁcantly and, typically, uncontrollably.
+The Compressed Oracle.
+A very powerful tool to deal with the QROM is the so-called compressed oracle
+technique, introduced by Zhandry [20]. On a conceptual level, the technique very much resembles the classical
+”lazy sampling” technique; on a technical level, the idea is to consider a quantum puriﬁcation of the random
+choice of the function H, and to analyze the internal state of the RO then in the Fourier domain.
+This idea has proven to be very powerful. On the one hand, it gives rise to new and shorter proofs for known
+lower bound results on the query complexity of quantum algorithms (like Grover [13, 4]); on the other hand, it
+allows for proving new cryptographic security results that seemed to be out of reach before, like in the context of
+indifferentiability [20, 11], or, more recently, the Fiat-Shamir transformation [17], when considering a quantum
+adversary. Despite being very useful, it is however still quite cumbersome to actually employ the compressed
+oracle technique. Proofs tend to be hard to read, and they require a good understanding of quantum information
+science.
+Our Results.
+We ﬁrst present a concise yet mathematically rigorous exposition of the compressed oracle
+technique. Our exposition differs from other descriptions found in the literature (e.g. [20, 15, 11, 9, 14]) in that we
+adopt a more abstract view in terms of Fourier transform for arbitrary ﬁnite Abelian groups, i.e., by considering
+the range of H to be an arbitrary ﬁnite Abelian group. Some readers may, to start with, feel uncomfortable with
+this approach, but it allows us to keep the focus on the relevant aspects, and, on the long run, abstraction simpliﬁes
+matters and improves the understanding.
+We also consider a generalization of the compressed-oracle technique to the parallel-query QROM. In this
+variation of the standard QROM, the considered quantum oracle algorithm may make several queries to the QROM
+in parallel in each query-round. The main difference between parallel and sequential queries is of course that
+sequential queries may be adaptive, i.e., the queried value x may depend on the hash learned in a previous query,
+while parallel queries are limited to be non-adaptive, i.e., the queries are independent of the hash values that
+are to be learned. This variation of the QROM allows for a more ﬁne-grained query-complexity analysis that
+distinguishes between the number q of query rounds, and the number k of queries made per round; the total
+number of queries made is then obviously given by Q = kq. This way of studying the query complexity of
+quantum oracle algorithms is in particular suited for analyzing how well a computational task can or cannot be
+parallelized (some more on this below).
+As our ﬁrst main technical contribution, we propose an abstract framework that simpliﬁes the use of (our
+generalized version of) the compressed oracle technique in certain cases. In particular, with our new framework
+in place and whenever it is applicable, it is possible to prove quantum query complexity lower bounds by means
+of purely classical reasoning: all the quantum aspects are abstracted away by our framework. This means that no
+knowledge about quantum information science is actually necessary in order to apply our framework. If applicable,
+the reasoning is purely by means of identifying some classical property of the problem at hand and applying our
+meta-theorems. More than that, the necessary classical property can typically be extracted from the — typically
+much simpler — proof for the classical query complexity bound.
+We demonstrate the workings and the power of our framework on a few examples, recovering known and
+ﬁnding new bounds. For example, with q, k, m as above, we show that the success probability of ﬁnding a
+preimage is upper bounded by O(kq2/2m), compared to the coarse-grained bound O(Q2/2m) [4] that does not
+distinguish between sequential and parallel queries; this recovers the known fact that the naive way to parallelize
+a preimage search (by doing several executions of Grover [13] in parallel) is optimal [19].1 We also show that
+the success probability of ﬁnding a collision is bounded by O(k2q3/2m), compared to the coarse-grained bound
+O(Q3/2m) [1] that does not distinguish between sequential and parallel queries. Like for Grover, this shows
+optimality for the obvious parallelization of the BHT collision ﬁnding algorithm [7], which makes k-parallel
+queries in the ﬁrst phase to collect kq/2 function values and then runs a parallel Grover in the second phase,
+which gives a factor k2 improvement. We are not aware of any prior optimality result on parallel collision search;
+[16] shows a corresponding bound for element distinctness, but that bound does not apply here when considering
+a hash function with many collisions. Finally, our main example application is to the problem of ﬁnding a q-chain,
+1This parallel lower bound can be improved for “unbalanced” algorithms for which k varies from query to query; see e.g. [2, Lemma 2].
+2
+
+
+[PÁGINA PDF 3]
+i.e., a sequence x0, x1, . . . , xq with the property that xi = H(xi−1) for all 1 ≤i ≤q (or, more generally, that
+H(xi−1) is a substring of xi, or yet satisﬁes some other relation). While classically it is well known and not too
+hard to show that q parallel queries are necessary to ﬁnd a q-chain, there has been no proven bound in the quantum
+setting — at least not until very recently (see the recent-related-work paragraph below).2 Here, we show that the
+same does hold in the quantum setting. Formally, we prove that the success probability of ﬁnding a q-chain using
+fewer than q queries is upper bounded by O(k3q3/2m). The proof is by means of recycling an observation that is
+crucial to the classical proof, and plugging it into the right theorem(s) of our framework.
+The problem of producing a hash chain is of fundamental importance in the context of proofs of sequential
+work (PoSW); indeed, a crucial ingredient of a PoSW is a computational problem that is hard/impossible to
+parallelize. Following up on this, our second main technical contribution is to show that the “Simple Proofs of
+Sequential Work” proposed by Cohen and Pietrzak [10] remain secure against quantum attacks. One might hope
+that this is simply a matter of plugging in our bound on the chain problem; unfortunately, it is more complicated
+than that: the entire protocol needs to be analyzed in the light of a quantum attack, and substantial additional work
+is necessary to reduce the security of the protocol to the hardness of ﬁnding a chain. As a matter of fact, we enrich
+our framework with a “calculus” that facilitates the latter. In return, relying on our framework, the proof of the
+quantum security of the PoSW scheme is purely classical, with no need to understand anything about quantum
+information science.
+Related Work.
+Independently and concurrently to the preparation of our work, the hardness of ﬁnding a q-
+chain with fewer than q queries and the security of the Cohen and Pietrzak PoSW scheme [10] against quantum
+attacks have also been analyzed and tackled by Blocki, Lee and Zhou in [5].3 Their bounds are comparable to
+ours, and both works are exploiting the compressed oracle idea; however, the actual derivations and the conceptual
+contributions are quite different. Indeed, Blocki et al.’s work is very speciﬁc to the q-chain problem and the PoSW
+scheme, and verifying the proofs requires a deep understanding of quantum information science in general and of
+the compressed oracle technique in particular. In contrast, in our work we provide a general framework for proving
+quantum query complexity bounds by means of classical reasoning. Verifying our framework also requires a deep
+understanding of quantum information science and of the compressed oracle, but once our framework is place,
+the proofs become purely classical and thus accessible to a much broader audience. Furthermore, even though
+our original targets were the q-chain problem and the PoSW scheme, our framework provides means to tackle
+other quantum query complexity bounds as well, as is demonstrated with our new collision ﬁnding bound. Thus,
+our framework opens the door for non-quantum-experts to derive quantum query complexity bounds for their
+problems of merit.
+In the same spirit, Chiesa, Manohar and Spooner [9] also offer means to apply the compressed oracle technique
+using purely classical combinatorial reasoning. A major difference is that in our work we allow parallel queries
+(which is crucial for our PoSW application), which confronted us with the main technical challenges in our work.
+Our framework easily applies to the main application of the Chiesa et al. paper (post-quantum secure SNARGs),
+but not vice versa.
+2
+Warm-up: Proving Classical Query Complexity Lower Bounds
+In this section, we discuss lower bounds on the classical query complexity in the classical ROM for a few example
+problems. This serves as a warm-up and as a reminder of how such classical bounds are (or can be) rigorously
+proven. Additionally, it demonstrates that, when it then comes to analyzing the quantum query complexity of
+these problems, it is simply a matter of recycling certain observations from the classical proofs and plugging them
+into our framework.
+2.1
+The Lazy-Sampling Technique
+First, let us brieﬂy recall the lazy sampling technique, which allows us to efﬁciently simulate the random oracle.
+Instead of choosing a uniformly random function H : X →Y and answering each query x to random oracle as
+2The problem of ﬁnding a q-chain looks very similar to the iterated hashing studied by Unruh in [18]; however, a crucial difference is that
+the start of the chain, x0, can be freely chosen here.
+3An early version of [5] with weaker results (a weaker bound on the q-chain problem and no PoSW proof) appeared before our work, a
+newer version with results comparable to ours then appeared almost simultaneously to our work, and an update of the newer version that ﬁxed
+certain technical issues appeared after our work.
+3
+
+
+[PÁGINA PDF 4]
+y = H(x), one can build up the hash function H “on the ﬂy”. Introduce a special symbol ⊥, which stands for
+“not deﬁned (yet)”, and initiate D0 to be the constant-⊥function. Then, inductively for i = 1, 2, . . ., on receiving
+the i-th query xi, check if this query has been made before, i.e., if xi = xj for some j < i. If this is the case then
+set Di := Di−1; else, do the following: choose a uniformly random yi ∈Y and set Di to Di := Di−1[xi 7→yi],
+where in general D[x 7→y] is deﬁned by D[x 7→y](x) = y and D[x 7→y](¯x) = D(¯x) for ¯x̸ = x.4 In either case,
+answer the query then with yi = Di(xi). We refer to such a function Di : X →Y ∪{⊥} as a database.
+As it is easy to see, the lazy-sampling only affects the “internal workings” of the random oracle; any algorithm
+making queries to the standard random oracle (which samples H as a random function at the beginning of time),
+or to the lazy-sampled variant (which builds up D0, D1, . . . as explained above), cannot see any difference.
+For below, it will be convenient to write Di, the “update” of Di−1 in response to query xi, as Di = D⟲xi
+i−1 .
+Note that since Di(x) = yi is chosen in a randomized way, D⟲xi
+i−1 is a random variable, strictly speaking.
+2.2
+Efﬁcient Representation
+One important feature of the lazy-sampling technique is that it allows for an efﬁcient simulation of the random
+oracle. Indeed, compared to a uniformly random function H : X →Y, the databases D0, D1, . . . can be efﬁciently
+represented by means of an encoding function enc that maps any database D : X →Y ∪{⊥} to (a suitable
+representation of) the list of pairs
+ x, D(x)
+
+for which D(x)̸ = ⊥.5 Obviously, for a bounded number of queries,
+the list enc(Di) remains bounded in size. Furthermore, the update enc(Di) 7→enc(Di+1) = enc(Di[xi 7→yi])
+can be efﬁciently computed (for any choice of yi).
+2.3
+Proving Classical Lower Bounds
+In the work here, we are more interested in the fact that the lazy sampling idea is useful for showing lower bounds
+on the query complexity for certain tasks. Our goal here is to show on a few examples that the well-understood
+classical reasoning is very close to the reasoning that our framework will admit for proving bounds in the quantum
+setting. In order to align the two, certain argumentation below may appear overkill given the simplicity of the
+classical case.
+Finding a Preimage.
+We ﬁrst consider the example of ﬁnding a preimage of the random oracle, say, without
+loss of generality, ﬁnding x ∈X with H(x) = 0. Thus, let A be an algorithm making q queries to the random
+oracle and outputting some x at the end, with the goal of x being a zero-preimage. A ﬁrst simple observation is
+the following: if in the lazy-sampling picture after q queries the built-up database Dq : X →Y ∪{⊥} does not
+map A’s output x to 0, then H(x) is unlikely to vanish, where H(x) is understood to be obtained by making one
+more query to the oracle, i.e., H(x) = Dq+1(x). More formally, if p is the probability that H(x) = 0 when A
+is interacting with the standard oracle, and p′ is the probability that Dq(x) = 0 when A is interacting with the
+lazy-sampled oracle, then p ≤p′ + 1/|Y|. Looking ahead, this trivial observation is the classical counterpart of
+Corollary 4.2 (originally by Zhandry) that we encounter later.
+The above observation implies that it is sufﬁcient to show that P[∃x : Dq(x) = 0] is small. Furthermore,
+writing PRMG := {D : X →Y ∪{⊥} | ∃x : D(x) = 0}, we can write and decompose
+P[∃x : Dq(x)=0] = P[Dq ∈PRMG ] ≤
+X
+i
+P[Di ∈PRMG | Di−1̸ ∈PRMG ] .
+In order to align the reasoning here with our framework, which relies on the notion of a quantum transition
+capacity, we introduce here the classical transition capacity
+
+¬PRMG →PRMG
+
+:= max
+D̸∈PRMG
+x∈X
+P[D⟲x ∈PRMG ]
+as the maximal probability that a database D : X →Y ∪{⊥} with no zero-preimage will be turned into a database
+with a zero-preimage as a result of a query. Combining the above observations, we obtain that
+p ≤q ·
+
+¬PRMG →PRMG
+
++ 1
+|Y| .
+(1)
+4We stress that we deﬁne D[x7→y] also for x with D(x)̸ = ⊥, which then means that D is redeﬁned at point x; this will be useful later.
+5This representation as a list of pairs somewhat justiﬁes the terminology ”database” for D.
+4
+
+
+[PÁGINA PDF 5]
+Looking ahead, this is the classical counterpart to Theorem 5.7 (with Ps set to PRMG), which is in terms of the
+(appropriately deﬁned) quantum transition capacity
+q
+· →·
+y
+.
+The reader probably already sees that
+
+¬PRMG →PRMG
+
+= 1/|Y|, leading to the (well-known) bound
+p ≤(q + 1)/|Y|. However, in order to better understand the general reasoning, we take a more careful look at
+bounding this transition capacity. For every D̸ ∈PRMG and x ∈X, we identify a “local” property LD,x ⊆Y
+that satisﬁes
+D[x7→y] ∈PRMG ⇐⇒y ∈LD,x ;
+therefore, P[D⟲x ∈PRMG ] ≤P
+
+D[x 7→U] ∈PRMG
+
+= P[U ∈LD,x] where U is deﬁned to be uniformly
+random in Y. Here, we can simply set LD,x := {0} and thus obtain
+
+¬PRMG →PRMG
+
+= P[U =0] = 1/|Y|
+as claimed.
+The point of explicitly introducing LD,x is that our framework will offer similar connections between the
+quantum transition capacity
+q
+· →·
+y
+and the purely classically deﬁned probability P[U ∈LD,x]. Indeed, by means
+of the very same choice of local property LD,x, but then applying Theorem 5.17, we obtain
+q
+¬PRMG →PRMG
+y
+≤max
+D,x
+q
+10P
+
+U ∈LD,x
+≤
+s
+10
+|Y| .
+By Theorem 5.7, this implies that the success probability p of a quantum algorithm to ﬁnd a preimage is bounded
+by
+p ≤
+ 
+q
+q
+¬PRMG →PRMG
+y
++
+1
+p
+|Y|
+!2
+≤
+ 
+q
+s
+10
+|Y| +
+1
+p
+|Y|
+!2
+= O
+ q2
+|Y|
+
+,
+conﬁrming the optimality of the quadratic speed-up of Grover.
+Finding a Preimage with Parallel Queries.
+The above (classical and quantum) reasoning can be extended
+to the parallel query model, where with each interaction with the random oracle, a query algorithm can make
+k queries in one go. The lazy-sampling technique then works in the obvious way, with the function update
+Di := D⟲xi
+i−1 now involving a query vector xi ∈X k. This then gives rise to
+
+¬PRMG
+k→PRMG
+
+, and (1)
+generalizes accordingly. For D̸ ∈PRMG and x = (x1, . . . , xk) ∈X k, we then identify a family of k local
+properties LD,x
+1
+, . . . , LD,x
+k
+⊆Y so that
+D[x7→y] ∈PRMG ⇐⇒∃i : yi ∈LD,x
+i
+,
+(2)
+and therefore, by the union bound, P[D⟲x ∈PRMG ] ≤P
+i P[U ∈LD,x
+i
+]. Setting LD,x
+1
+= . . . = LD,x
+k
+:= {0}, we
+now obtain
+
+¬PRMG
+k→PRMG
+
+= kP[U =0] = k/|Y|, showing a factor-k increase in the bound as expected.
+More interesting is that Theorem 5.17 still applies, implying that for the quantum version we have
+q
+¬PRMG
+k→PRMG
+y
+≤max
+D,x
+s
+10
+X
+i
+P
+
+U ∈LD,x
+i
+
+≤
+s
+10k
+|Y| .
+Plugging this into Theorem 5.7, we then get the bound
+p ≤
+ 
+q
+s
+10k
+|Y| +
+1
+p
+|Y|
+!2
+= O
+q2k
+|Y|
+
+,
+showing optimality of running k parallel executions of Grover.
+Finding a Chain (with Parallel Queries).
+Another example we want to discuss here, where we now stick
+to the parallel query model, is the problem of ﬁnding a (q + 1)-chain, i.e., a sequence x0, x1, . . . , xq+1 with
+H(xi−1) ◁xi, with no more than q (parallel) queries. Here, ◁refers to an arbitrary relation among the elements
+of X and Y; typical examples are: y ◁x if x = y, or if y is a preﬁx of y, or if y is an arbitrary continuous substring
+of x. Below, we set Y◁x := {y ∈Y | y ◁x} and T := maxx |Y◁x|.
+Using the same kind of reasoning as above, we can argue that
+p ≤
+q
+X
+s=1
+
+¬CHNs
+k→CHNs+1 
++ 2
+|Y| ,
+5
+
+
+[PÁGINA PDF 6]
+where CHNs = {D | ∃x0, x1, . . . , xs ∈X : D(xi−1) ◁xi ∀i}. Here, it will be useful to exploit that after s
+(parallel) queries, Ds ∈SZ≤ks := {D | |{x|D(x)̸=⊥}| ≤ks}, i.e., that the size of the database Ds, measured as
+the number of x’s for which Ds(x)̸ = ⊥, is at most ks . Thus, the above extends to
+p ≤
+q
+X
+s=1
+
+SZ≤k(s−1)\CHNs
+k→CHNs+1 
++ 2
+|Y| ,
+(3)
+with the (classical) transition capacity here given by max P[D⟲x ∈CHNs+1 ], maximized over all x ∈X k and
+D ∈SZ≤k(s−1) \ CHNs. To control the considered (classical and quantum) transition capacity, for any D and any
+x = (x1, . . . , xk) ∈X k, we introduce the following local properties LD,x
+i
+⊆Y with i = 1, . . . , k:
+LD,x
+i
+=
+[
+x∈X
+D(x)̸=⊥
+Y◁x ∪
+k[
+j=1
+Y◁xj ,
+(4)
+so that yi ∈LD,x
+i
+if yi ◁x for some x ∈X with D(x)̸ = ⊥or x ∈{x1, . . . , xk}. They satisfy the following
+condition, which is slightly weaker than (2) used above.
+Lemma 2.1. D[x7→r]̸ ∈CHNs ∧D[x7→u] ∈CHNs+1 =⇒∃i : ri̸ = ui ∧ui ∈LD,x
+i
+.
+Proof. Write D◦for D[x7→r] and D′ for D[x7→u]. Assume that D′ ∈CHNs+1, and let ˆx0, ˆx1, . . . , ˆxs+1 ∈X
+be such a chain, i.e., so that D′(ˆxj) ◁ˆxj+1 for j = 0, . . . , s. Let s◦be the smallest j so that D◦(ˆxj)̸ = D′(ˆxj); if
+s◦≥s (or no such j exists) then D◦(ˆxj) = D′(ˆxj) ◁ˆxj+1 for j = 0, . . . , s −1, and thus D◦∈CHNs and we
+are done. Therefore, we may assume s◦< s. Furthermore, since D◦(¯x) = D′(¯x) for ¯x̸ ∈{x1, . . . , xk}, we must
+have that ˆxs◦= xi for some i ∈{1, . . . , k}, and therefore ri = D◦(xi) = D◦(ˆxs◦)̸ = D′(ˆxs◦) = D′(xi) = ui.
+Also, we have that ui = D′(xi) = D′(ˆxs◦) ◁ˆxs◦+1 where ˆxs◦+1 is such that D′(ˆxs◦+1) ◁ˆxs◦+2 and thus̸ = ⊥.
+The latter means that either D(ˆxs◦+1)̸ = ⊥or ˆxs◦+1 ∈{x1, . . . , xk} (or both). In either case we have that
+ui ∈LD,x
+i
+.
+Applied to r := D(x) so that D[x 7→r] = D, we obtain P[D⟲x ∈CHNs+1 ] ≤P
+i P[ U ∈LD,x
+i
+]. Given
+that, for D ∈SZ≤k(s−1), the set {x|D(x)̸ = ⊥} is bounded in size by k(s −1), and |Y◁x|, |Y◁xj| ≤T, we
+can bound the relevant probability P[U ∈LD,x
+i
+] ≤ksT/|Y|. Hence, the considered classical transition capacity
+is bounded by k2sT/|Y|. By (3), we thus have p = O(k2q2T/|Y|), which is in line with the bound given by
+Cohen-Pietrzak [10].
+Also here, our framework allows us to lift the above reasoning to the quantum setting, simply by plugging the
+core elements of the above reasoning for the classical case into our framework. Concretely, choosing the local
+properties LD,x
+i
+as above whenever D ∈SZ≤k(s−1), and to be constant-false otherwise, Lemma 2.1 ensures that
+we can apply Theorem 5.23 to bound the quantum transition capacity as
+q
+SZ≤k(s−1)\CHNs
+k→CHNs+1y
+≤e max
+x,D
+X
+i
+q
+10P
+
+U ∈LD,x
+i
+
+≤ek
+s
+10k(q + 1)T
+|Y|
+,
+where e is Euler’s number. Plugging this into Theorem 5.7, we then get the bound
+p ≤
+ 
+qek
+s
+10k(q + 1)T
+|Y|
++ q + 2
+|Y|
+!2
+= O
+q3k3T
+|Y|
+
+on the success probability of a quantum oracle algorithm in ﬁnding a (q+1)-chain with no more than q k-parallel
+queries. Recall, T depends on the considered relation y ◁x; T = 1 if y is required to be equal to x, or a preﬁx of
+x, and T = m −n if y and x are n- and m-bit strings, respectively, and y is required to be a continuous substring
+of x.
+Finding a Collision (with Parallel Queries).
+In the same spirit, for the query complexity of ﬁnding a collision,
+it is sufﬁcient to control the transition capacity for CL := {D | ∃x̸ = x′ : D(x) = D(x′)̸ = ⊥}. Indeed, using the
+same kind of reasoning as above, we can argue that
+p ≤
+q
+X
+s=1
+
+SZ≤k(s−1)\CL
+k→CL
+
++ 2
+|Y| ,
+6
+
+
+[PÁGINA PDF 7]
+with the (classical) transition capacity here given by max P[D⟲x ∈CL ], maximized over all D ∈SZ≤k(s−1) \CL
+and x ∈X k. In order to analyze this transition capacity, for given D and x = (x1, . . . , xk) ∈X k, we consider
+the following family of 1-local and 2-local properties:
+CLi,j = {(y, y) | y ∈Y} ⊆Y × Y
+and
+CLi = {D(¯x) | ¯x̸ ∈{x1, . . . , xk} : D(¯x)̸ = ⊥} ⊆Y ,
+indexed by i̸ = j ∈{1, . . . , k} and i ∈{1, . . . , k}, respectively, and where were we leave the dependency on D
+and x implicit. Similar to (2), here we have that for any x ∈X k and D ∈SZ≤k(s−1) \ CL
+D[x7→y] ∈CL ⇐⇒
+ ∃i̸=j : (yi, yj) ∈CLi,j
+
+∨
+ ∃i : yi ∈CLi
+
+,
+i.e., a collision can only happen for D[x7→y] if yi = yj for i̸ = j, or yi = D(¯x) for some i and some ¯x outside
+of x. It then follows that
+
+SZ≤k(s−1)\CL
+k→CL
+
+=
+X
+i̸=j
+P[(U, U ′)∈CLi,j] +
+X
+i
+P[U ∈CLi] ≤k(k −1)
+|Y|
++ k2(s −1)
+|Y|
+,
+where we exploited that CLi is bounded in size by assumption on D. This then amounts to the classical bound
+p ≤O
+q2k2
+|Y|
+
+on the success probability of ﬁnding a collision with no more than q k-parallel queries.
+Here, due to the 2-locality of CLi,j, there is an additional small complication for deriving the corresponding
+quantum bound, since in such a case our framework does not relate the corresponding quantum transition capacity
+to the probability P[(U, U ′)∈CLi,j] of a random pair in Y × Y satisfying the 2-local property CLi,j. Instead, we
+have to consider the following derived 1-local properties. For any i̸ = j and D′, let
+CLi,j|D′|xi := CLi,j ∩
+ (Y ∪{⊥}) × {D′(xj)}
+
+= {D′(xj)}
+and
+CLi|D′|xi := CLi .
+Then, the considered quantum transition capacity is given in terms of
+P
+
+U ∈CLi,j|D′|xi
+
+=
+1
+|Y|
+and
+P
+
+U ∈CLi|D′|xi
+
+≤kq
+|Y| .
+Namely, by Theorem 5.26,
+q
+SZ≤ks\CL
+k→CL
+y
+≤2e
+v
+u
+u
+t10
+ X
+i̸=j
+P
+
+U ∈CLi,j|D′|xi
+
++
+X
+i
+P
+
+U ∈CLi|D′|xi
+
+≤2ek
+s
+10 q + 1
+|Y| .
+By Theorem 5.7, this then amounts to the bound
+p ≤O
+q3k2
+|Y|
+
+on the success probability of a quantum oracle algorithm in ﬁnding a collision with no more than q k-parallel
+queries.
+3
+Notation
+3.1
+Operators and Their Norms
+Let H be a ﬁnite-dimensional complex Hilbert space; by default, H = Cd for some dimension d. We use the
+standard bra-ket notation for covariant and contravariant vectors in H, i.e., for column and row vectors Cd. We
+write L(H, H′) for the linear maps, i.e., operators (or matrices), A : H →H′, and we use L(H) as a short hand
+for L(H, H). We write I for the identity operator in L(H). It is understood that pure states are given by norm-1
+ket vectors |ψ⟩∈H and mixed states by density operators ρ ∈L(H).
+7
+
+
+[PÁGINA PDF 8]
+A (possibly) mixed state ρ ∈L(H) is said to be supported by subspace H◦⊆H if the support of the operator
+ρ lies in H◦, or, equivalently, if any puriﬁcation |Ψ⟩∈H ⊗H of ρ lies in H◦⊗H. A state is said to be supported
+by a family of (orthonormal) vectors if it is supported by the span of these vectors.
+We write ∥A∥for the operator norm of A ∈L(H, H′) and recall that it is upper bounded by the Frobenius
+norm. Special choices of operators in L(H) are projections and unitaries. We assume familiarity with these
+notions, as well as with the notion of an isometry in L(H, H′).
+If H◦is a subspace of H and A ∈L(H◦) then we can naturally understand A as a map A ∈L(H) by letting
+A act as zero-map on any |ψ⟩∈H that is orthogonal to H◦. We point out that this does not cause any ambiguity
+in ∥A∥. Vice versa, for any A ∈L(H) we can consider its restriction to H◦. Here, we have the following. If
+H = H1 ⊕. . . ⊕Hm is a decomposition of H into orthogonal subspaces Hi ⊆H, and A ∈L(H) is such that its
+restriction to Hi is a map Hi →Hi and coincides with Bi ∈L(Hi) for any i ∈{1, . . . , m}, then
+∥A∥= max
+1≤i≤m ∥Bi∥.
+This is a property we are exploiting multiple times, typically making a reference then to “basic properties” of the
+operator norm.
+3.2
+The Computational and the Fourier Basis
+Let Y be a ﬁnite Abelian group of cardinality M, and let {|y⟩}y∈Y be an (orthonormal) basis of H = CM, where
+the basis vectors are labeled by the elements of Y. We refer to this basis as the computational basis, and we also
+write C[Y] for H = CM to emphasize that the considered space is spanned by basis vectors that are labeled by the
+elements in Y. Let ˆY be the dual group of Y, which consists of all group homomorphisms Y →{ω ∈C | |ω| = 1}
+and is known to be isomorphic to Y, and thus to have cardinality M as well. Up to some exceptions, we consider
+ˆY to be an additive group; the neutral element is denoted ˆ0. We stress that we treat Y and ˆY as disjoint sets, even
+though in certain (common) cases they are naturally isomorphic and thus considered to be equal. The Fourier
+basis {|ˆy⟩}ˆy∈ˆ
+Y of H is deﬁned by the basis transformations
+|ˆy⟩=
+1
+√
+M
+X
+y
+ˆy(y)∗|y⟩
+and
+|y⟩=
+1
+√
+M
+X
+ˆy
+ˆy(y)|ˆy⟩,
+(5)
+where (·)∗denotes complex conjugation.6 With the above convention on the notation, we have C[Y] = C[ ˆY] =
+H.7 An elementary property of the Fourier basis is that the operator in L(C[Y] ⊗C[Y]) deﬁned by |y⟩|y′⟩7→
+|y+y′⟩|y′⟩for y, y′ ∈Y acts as |ˆy⟩|ˆy′⟩7→|y⟩|ˆy−ˆy′⟩for ˆy, ˆy′ ∈ˆY.
+We will also consider extensions Y ∪{⊥} and ˆY ∪{⊥} of the sets Y and ˆY by including a special symbol
+⊥. We will then ﬁx a norm-1 vector |⊥⟩∈CM+1 that is orthogonal to C[Y] = C[ ˆY], given a ﬁxed embedding of
+C[Y] = CM into CM+1. In line with our notation, CM+1 is then referred to as C[Y ∪{⊥}] = C[ ˆY ∪{⊥}].
+3.3
+Functions and Their (Quantum) Representations
+For an arbitrary but ﬁxed non-empty ﬁnite set X, we let H be the set of functions H : X →Y. Similarly, ˆH
+denotes the set of all functions ˆH : X →ˆY. Given that we can represent H by its function table {H(x)}x∈X ,
+and |y⟩∈C[Y] is understood as a “quantum representation” of y ∈Y, we consider |H⟩= N
+x |H(x)⟩to be the
+“quantum representation” of H, where in such a tensor product we implicitly consider the different registers to
+be labeled by x ∈X in the obvious way. By our naming convention, the space N
+x C[Y] spanned by all vectors
+|H⟩= N
+x |H(x)⟩with H ∈H is denoted C[H]. Similarly, | ˆH⟩= N
+x | ˆH(x)⟩is the “quantum representation”
+of ˆH ∈ˆH. By applying (5) register-wise, any |H⟩decomposes into a linear combination of vectors | ˆH⟩with
+ˆH ∈ˆH, and vice versa. Thus, C[H] = C[ˆH].
+Extending Y to ¯Y := Y ∪{⊥}, we also consider the set D of functions (referred to as databases) D : X →¯Y.
+In line with the above, the “quantum representation” of a database D is given by |D⟩= N
+x |D(x)⟩∈N
+x C[ ¯Y] =
+C[D]. We also consider the set ˆD of functions ˆD : X →ˆY ∪{⊥} and have C[D] = C[ ˆD].
+6By ﬁxing an isomorphism Y →ˆY, y 7→ˆy we obtain a unitary map |y⟩7→|ˆy⟩, called quantum Fourier transform (QFT). However, we
+point out that in general there is no natural choice for the isomorphism, and thus for the QFT — but in the common cases there is. We note
+that in this work we do not ﬁx any such isomorphism and do not make use of a QFT; we merely consider the two bases.
+7The reader that feels uncomfortable with this abstract approach to the Fourier basis may stick to Y = {0, 1}m and replace |ˆy⟩by H⊗m|y⟩
+with y ∈{0, 1}m and H the Hadamard matrix.
+8
+
+
+[PÁGINA PDF 9]
+For D ∈D and x = (x1, . . . , xk) ∈X k, we write D(x) for
+ D(x1), . . . , D(xk)
+
+∈¯Yk; similarly for H ∈H.
+Furthermore, if x has pairwise distinct entries and r = (r1, . . . , rk) ∈¯Yk, we deﬁne D[x 7→r] ∈D to be the
+database
+D[x7→r](xi) = ri
+and
+D[x7→r](¯x) = D(¯x) ∀¯x̸ ∈{x1, . . . , xk} .
+4
+Zhandry’s Compressed Oracle - Refurbished
+We give a concise yet self-contained and mathematically rigorous introduction to the compressed-oracle technique.
+For the reader familiar with the compressed oracle, we still recommend to browse over the section to familiarize
+with the notation we are using, and for some important observations, but some of the proofs can well be skipped
+then.
+4.1
+The Compressed Oracle
+The core ideas of Zhandry’s compressed oracle are, ﬁrst, to consider a superposition P
+H |H⟩of all possible
+functions H ∈H, rather than a uniformly random choice; this puriﬁed oracle is indistinguishable from the original
+random oracle for any (quantum) query algorithm since the queries commute with measuring the superposition.
+Second, to then analyze the behavior of this puriﬁed oracle in the Fourier basis. Indeed, the initial state of the
+oracle is given by
+|Π0⟩=
+X
+H
+|H⟩=
+O
+x
+X
+y
+|y⟩
+
+=
+O
+x
+|ˆ0⟩= |ˆ0⟩∈C[H] ,
+(6)
+with ˆ0 ∈ˆH the constant-ˆ0 function. Furthermore, an oracle query invokes the unitary map O given by
+O : |x⟩|y⟩⊗|H⟩7→|x⟩|y + H(x)⟩⊗|H⟩
+in the computational basis; in the Fourier basis, this becomes
+O : |x⟩|ˆy⟩⊗| ˆH⟩7→|x⟩|ˆy⟩⊗Oxˆy| ˆH⟩= |x⟩|ˆy⟩⊗| ˆH −ˆy · δx⟩,
+(7)
+where the equality is the deﬁnition of Oxˆy, and δx : X →{0, 1} satisﬁes δx(x) = 1 and δx(x′) = 0 for all
+x′̸ = x. Note that Oxˆy acts on register x only, and OxˆyOxˆy′ = Ox,ˆy+ˆy′; thus, Oxˆy and Ox′ ˆy′ all commute. As
+an immediate consequence of (6) and (7) above, it follows that the internal state of the oracle after q queries is
+supported by state vectors of the form | ˆH⟩= |ˆy1δx1 + · · · + ˆyqδxq⟩.
+The actual compressed oracle (respectively some version of it) is now obtained by applying the isometry
+Compx = |⊥⟩⟨ˆ0| +
+X
+ˆz̸=ˆ0
+|ˆz⟩⟨ˆz| : C[Y] →C[ ¯Y], |ˆy⟩7→
+(
+|⊥⟩
+if ˆy = ˆ0
+|ˆy⟩
+if ˆy̸ = ˆ0
+to register x for all x ∈X (and then viewing the result in the computational basis). This “compression” operator
+Comp := N
+x Compx : C[H] →C[D] maps |Π0⟩to
+|∆0⟩:= Comp |Π0⟩=
+ O
+x
+Compx
+ O
+x
+|ˆ0⟩
+
+=
+O
+x
+Compx|ˆ0⟩=
+O
+x
+|⊥⟩= |⊥⟩,
+which is the quantum representation of the trivial database ⊥that maps any x ∈X to ⊥. More generally, for
+any ˆH ∈ˆH, Comp | ˆH⟩= | ˆD⟩where ˆD ∈ˆD is such that ˆD(x) = ˆH(x) whenever ˆH(x)̸ = 0, and ˆD(x) = ⊥
+whenever ˆH(x) = 0. As a consequence, the internal state of the compressed oracle after q queries is supported
+by state vectors |D⟩in the computational basis (respectively | ˆD⟩in the Fourier basis) for which D(x) = ⊥
+(respectively ˆD(x) = ⊥) for all but (at most) q choices of x.
+This representation of the internal state of the puriﬁed random oracle is referred to as the compressed oracle
+because, for a bounded number of queries, these state vectors |D⟩can be efﬁciently represented in terms of the
+number of qubits, i.e., can be compressed, as |enc(D)⟩, i.e., by employing a classical efﬁcient representation,
+similar to the one mentioned in Section 2.2. Furthermore, the unitary that implements an oracle call (see cO
+below) can then be efﬁciently computed by a quantum circuit. In this work, we are not concerned with such
+computational efﬁciency aspect; nevertheless, for completeness, we formally discuss this in Appendix A.
+9
+
+
+[PÁGINA PDF 10]
+4.2
+Linking the Compressed and the Original Oracle
+The following result (originally by Zhandry [20]) links the compressed oracle with the original standard oracle.
+Intuitively, it ensures that one can extract useful information from the compressed oracle. Recall that M = |Y|.
+Lemma 4.1. Consider an arbitrary (normalized) |Π⟩∈C[H] , and let |∆⟩= Comp |Π⟩in C[D] be the
+corresponding “compressed database”. Let x = (x1, . . . , xℓ) consist of pairwise distinct xi ∈X, let y =
+(y1, . . . , yℓ) ∈Yℓ, and set Px := |y1⟩⟨y1| ⊗· · · ⊗|yℓ⟩⟨yℓ| with the understanding that |yi⟩⟨yi| acts on register xi.
+Then
+∥Px|Π⟩∥≤∥Px|∆⟩∥+
+r
+ℓ
+M .
+This somewhat technical statement directly translates to the following statement in terms of algorithmic lan-
+guage.
+Corollary 4.2 (Zhandry). Let R ⊆X ℓ× Yℓbe a relation. Let A be an oracle quantum algorithm that outputs
+x ∈X ℓand y ∈X ℓ. Let p be the probability that y = H(x) and (x, y) ∈R when A has interacted with
+the standard random oracle, initialized with a uniformly random function H. Similarly, let p′ be the probability
+that y = D(x) and (x, y) ∈R when A has interacted with the compressed oracle instead and D is obtained by
+measuring its internal state (in the computational basis). Then
+√p ≤
+p
+p′ +
+r
+ℓ
+M .
+Proof (of Corollary 4.2). Consider an execution of A when interacting with the puriﬁed oracle. For technical
+reasons, we assume that, after having measured and output x, y, A measures its internal state in the computational
+basis to obtain a string w, which he outputs as well. We ﬁrst observe that
+p =
+X
+x,y,w
+(x,y)∈R
+qx,y,w px,y,w
+and
+p′ =
+X
+x,y,w
+(x,y)∈R
+qx,y,w p′
+x,y,w
+where qx,y,w is the probability that A outputs the triple x, y, w, and px,y,w is the probability that y = H(x)
+conditioned on the considered output of A, and correspondingly for p′
+x,y,w. More technically, using the notation
+from Lemma 4.1, px,y,w = ∥Px|Π⟩∥2 with |Π⟩the internal state of the puriﬁed oracle, post-selected on x, y and
+w. Similarly, p′
+x,y,w = ∥PxComp |Π⟩∥2. Thus, applying Lemma 4.1 and squaring, we obtain
+px,y,w ≤
+q
+p′x,y,w + ε
+2
+= p′
+x,y,w + 2
+q
+p′x,y,w ε + ε2 .
+Averaging with the qx,y,w’s, applying Jensen’s inequality, and taking square-roots, then implies the claim.
+Proof (of Lemma 4.1). We set Compx := N
+i Compxi; the subscript x again emphasizing that Compx acts on the
+registers x1, . . . , xℓonly. In line with this, we write I¯x for the identity acting on the registers x̸ ∈{x1, . . . , xℓ}.
+Then8
+∥Px|Π⟩∥−∥PxComp|Π⟩∥= ∥Px|Π⟩∥−∥PxCompx|Π⟩∥
+(since the Compx’s are isometries)
+≤∥(Px −PxCompx)|Π⟩∥
+(by triangle inequality)
+≤∥(Px −PxCompx) ⊗I¯x∥
+(by deﬁnition of the operator norm)
+= ∥Px −PxCompx∥
+(by basic property of the operator norm)
+We will work out the above operator norm. For this, recall that in the Fourier basis
+Px =
+O
+i
+ 
+1
+M
+X
+ˆy∈ˆ
+Y
+ˆz∈ˆ
+Y
+ωˆz/ˆy(yi)|ˆz⟩⟨ˆy|
+!
+and
+Compx =
+O
+i
+ 
+|⊥⟩⟨0| +
+X
+0̸=ˆy∈ˆ
+Y
+|ˆy⟩⟨ˆy|
+!
+,
+8In line with the discussion in Section 3.1, since it maps any |⊥⟩-component to 0, Px can be understood to have domain C[Y]⊗ℓor
+C[ ¯Y]⊗ℓ; the same for its range. Thus, below, in Px|Π⟩it is understood as C[Y]⊗ℓ→C[Y]⊗ℓ⊆C[ ¯Y]⊗ℓ, while in PxCompx|Π⟩as
+C[ ¯Y]⊗ℓ→C[ ¯Y]⊗ℓ.
+10
+
+
+[PÁGINA PDF 11]
+with the understanding that in the above respective tensor products the i-th component acts on register xi, and
+where the ωˆz/ˆy(yi) are suitable phases, i.e., norm-1 scalars, which will be irrelevant though.9 By multiplying the
+two, we get
+PxCompx =
+O
+i
+ 
+1
+M
+X
+0̸=ˆy∈ˆ
+Y
+ˆz∈ˆ
+Y
+ωˆz/ˆy(yi)|ˆz⟩⟨ˆy|
+!
+.
+Multiplying out the respective tensor products in Px and PxCompx, and subtracting the two expressions, we
+obtain
+Px −PxCompx =
+1
+M ℓ
+X
+ˆy1,...,ˆzℓ∈ˆ
+Y
+∃i:ˆyi=0
+O
+i
+ωˆzi/ˆyi(yi)|ˆzi⟩⟨ˆyi| =
+1
+M ℓ
+X
+ˆy,ˆz
+∃i:ˆyi=0
+ωˆz/ˆy|ˆz⟩⟨ˆy| ,
+where the sum is over all ˆy = (ˆy1, . . . , ˆyℓ) and ˆz = (ˆz1, . . . , ˆzℓ) in ˆYℓsubject to that at least one ˆyi is 0, and where
+ωˆz/ˆy is the phase ωˆz/ˆy := Q
+i ωˆzi/ˆyi(yi). Bounding the operator norm by the Frobenius norm, we thus obtain that
+∥Px −PxCompx∥2 ≤
+X
+ˆy,ˆz
+|⟨ˆz|(Px −PxCompx)|ˆy⟩|2
+=
+1
+M 2ℓ
+X
+ˆy,ˆz
+∃i:ˆyi=0
+|ωˆz/ˆy|2 ≤
+1
+M 2ℓℓM 2ℓ−1 = ℓ
+M ,
+where the inequality is a standard counting argument: there are ℓchoices for i, and for each i there are M ℓ−1
+choices for ˆy ∈ˆYℓwith ˆyi = 0 (however, ˆy’s with multiple zeros are counted multiple times this way).
+4.3
+Working Out the Transition Matrix
+Here, we explicitly work out the matrix (in the computational basis) that describes the evolution that the com-
+pressed oracle undergoes as a result of an oracle query. For this, it is necessary to extend the domain C[Y] of
+Compx to C[ ¯Y] by declaring that Compx|⊥⟩= |ˆ0⟩. This turns Compx into a unitary on C[ ¯Y], and correspond-
+ingly then for Comp. Formally, we are then interested in the unitary
+cO := Comp ◦O ◦Comp† ∈L
+ C[X] ⊗C[Y] ⊗C[D]
+
+,
+which maps |x⟩|ˆy⟩⊗|D⟩to |x⟩|ˆy⟩⊗cOxˆy|D⟩for any D ∈D, where cOxˆy := Compx ◦Oxˆy ◦Comp†
+x ∈L(C[ ¯Y])
+acts on the x-register only. In the form of a commuting diagram, we thus have
+C[H]
+Comp
+−−−−→
+C[D]
+Oxˆy
+y
+y cOxˆy
+C[H]
+Comp
+−−−−→
+C[D]
+Lemma 4.3. For any ˆy̸ = 0, in the computational basis the unitary cOxˆy on CM+1 is represented by the matrix
+given in Figure 1; i.e, for all r, u ∈¯Y := Y ∪{⊥} it holds that ⟨u|cOxˆy|r⟩= γ ˆy
+u,r. Furthermore, cOx,ˆ0 = I.
+Proof. From simple but somewhat tedious manipulations, using basic properties of the Fourier transform, we
+obtain the following. For any r̸ = ⊥(and ˆy̸ = ˆ0), we have
+√
+M |r⟩=
+X
+ˆr
+ˆr(r)|ˆr⟩= |0⟩+
+X
+ˆr̸=ˆ0
+ˆr(r)|ˆr⟩,
+which gets mapped to
+Comp†
+7−−−→|⊥⟩+
+X
+ˆr̸=ˆ0
+ˆr(r)|ˆr⟩,
+9For the record, switching back to multiplicative notation for the elements in the dual group ˆY, we have ωˆz/ˆy(yi) = (ˆz/ˆy)(yi).
+11
+
+
+[PÁGINA PDF 12]
+⊥
+r ∈Y
+⊥
+γ ˆy
+⊥,⊥=0
+γ ˆy
+⊥,r = ˆy∗(r)
+√
+M
+u ∈Y
+ˆy(u)
+√
+M
+γ ˆy
+u,r =
+
+
+
+
+
+
+
+
+1 −2
+M
+
+ˆy(u) + 1
+M
+if u = r ∈Y
+1 −ˆy(r) −ˆy(u)
+M
+if u̸ = r, both in Y
+Figure 1: The matrix describing the evolution of the compressed oracle in the computational basis.
+which gets mapped to
+Oxˆy
+7−−→|⊥⟩+
+X
+ˆr̸=ˆ0
+ˆr(r)|ˆr−ˆy⟩= |⊥⟩−|−ˆy⟩+
+X
+ˆr
+ˆr(r)|ˆr−ˆy⟩
+= |⊥⟩−|−ˆy⟩+ ˆy(r)
+X
+ˆr
+ˆr(r) |ˆr⟩= |⊥⟩−|−ˆy⟩+ ˆy(r)|ˆ0⟩+ ˆy(r)
+X
+ˆr̸=ˆ0
+ˆr(r) |ˆr⟩,
+which gets mapped to
+Comp
+7−−−→|ˆ0⟩−|−ˆy⟩+ ˆy(r)|⊥⟩+ ˆy(r)
+X
+ˆr̸=ˆ0
+ˆr(r)|ˆr⟩
+= |ˆ0⟩−|−ˆy⟩+ ˆy(r)|⊥⟩−ˆy(r)|ˆ0⟩+ ˆy(r)
+X
+ˆr
+ˆr(r) |ˆr⟩
+=
+1
+√
+M
+X
+u
+|u⟩−
+1
+√
+M
+X
+u
+ˆy(u)|u⟩+ ˆy(r)|⊥⟩−ˆy(r)
+√
+M
+X
+u
+|u⟩+
+√
+M ˆy(r)|r⟩.
+From this expression, one can now easily read out the coefﬁcients γ ˆy
+u,r for r̸ = ⊥. Finally, from
+|⊥⟩
+Comp†
+7−−−→|ˆ0⟩
+Oxˆy
+7−−→|−ˆy⟩
+Comp
+7−−−→|−ˆy⟩=
+1
+√
+M
+X
+u
+ˆy(u)|u⟩
+we obtain the coefﬁcients for r = ⊥(with ˆy̸ = 0). The case ˆy = 0 follows from the fact that Ox,ˆ0 = I.
+Since, for any ﬁxed ˆy, this matrix is unitary, the squares of the absolute values of each column add up to
+1. Thus, for any ˆy and r we can consider the (conditional) probability distribution deﬁned by ˜P[U = u|r, ˆy] :=
+|γ ˆy
+u,r|2. This offers us a convenient notation, like ˜P[U ∈S|r, ˆy] for P
+u∈S |γ ˆy
+u,r|2 or ˜P[U̸ =r|r, ˆy] for P
+u̸=r |γ ˆy
+u,r|2.
+For later purposes, it is useful to observe that, for any L ⊆Y (i.e., ⊥̸ ∈L),
+X
+r
+˜P[r̸=U ∈L|r, ˆy] ≤˜P[U ∈L|⊥, ˆy] +
+X
+r̸=⊥
+˜P[r̸=U ∈L|r, ˆy] ≤|L| 1
+M + M|L| 9
+M 2 = 10P[U ∈L]
+(8)
+where P[U ∈L] = |L|
+M is the probability for a uniformly random U in Y to be in L.
+4.4
+The Parallel-Query (Compressed) Oracle
+Here, we extend the above compressed-oracle technique to the setting where a quantum algorithm may make
+several queries to the random oracle in parallel. We recall that distinguishing between parallel and sequential
+queries allows for a more ﬁne-grained query-complexity analysis of quantum algorithms. In particular, by showing
+a lower bound on the number of necessary sequential queries (with each sequential query possibly consisting of
+a large number of parallel queries), one can show the impossibility (or bound the possibility) of parallelizing
+computational tasks.
+12
+
+
+[PÁGINA PDF 13]
+Formally, for any positive integer k, a k-parallel query is given by k parallel applications of O, with the
+understanding that each application acts on a different input/output register pair. More explicitly, but slightly
+abusing notation of writing a k-th power, a k-parallel query is given by
+Ok : |x⟩|y⟩⊗|H⟩7→|x⟩|y+H(x)⟩⊗|H⟩
+for any x = (x1, . . . , xk) ∈X k and y = (y1, . . . , yk) ∈Yk. The operator cOk := Comp ◦Ok ◦Comp†, which
+described the evolution of the compressed oracle under such a k-parallel query, then acts as
+cOk : |x⟩|ˆy⟩⊗|∆⟩7→|x⟩|ˆy⟩⊗cOxˆy|∆⟩
+for any |∆⟩∈C[D], where cOxˆy is the product cOx1 ˆy1 · · · cOxk ˆyk. We recall that cOxi ˆyi acts on register xi
+(only), and cOxi ˆyi and cOxj ˆyj commute (irrespectively of xi and xj being different or not).
+5
+A Framework for Proving Quantum Query Lower Bounds
+In this section, we set up a framework for proving lower-bounds on the query complexity (actually, equivalently,
+upper bounds on the success probability) of quantum algorithms in the quantum random oracle model. Our
+framework closely mimics the reasoning for classical algorithms and allows to easily “lift” the typical kind of
+reasoning to the quantum setting.
+5.1
+Setting Up the Framework
+Deﬁnition 5.1. A database property on D is a subset P ⊆D of the set of databases D.
+Remark 5.2. As the naming suggests, we think of P as a property that is either true or false for any D ∈D; we
+thus also write P(D) to denote that D ∈P, i.e., to express that “D satisﬁes P”. Furthermore, by convention, for any
+database property P ∈D, we overload notation and use P also to refer to the projection P
+D∈P |D⟩⟨D| ∈L(C[D]).
+Examples that we will later consider are
+PRMG := {D |∃x : D(x) = 0}
+and
+CL := {D | ∃x, x′ : D(x) = D(x′)̸ = ⊥} ,
+as well as
+CHNq := {D | ∃x0, x1, . . . , xq ∈X : D(xi−1) ◁xi ∀i} ,
+where ◁denotes an arbitrary relation, e.g., y ◁x if y is a preﬁx of x.
+We introduce the following notation. For any tuple x = (x1, . . . , xk) of pairwise distinct xi ∈X and for any
+D : X →¯Y we let
+D|x :=
+
+D[x7→r] | r ∈¯Yk	
+⊆D
+be the set of databases that coincide with D outside of x. Furthermore, for any database property P ⊆D, we then
+let
+P|D|x := P ∩D|x
+be the restriction of P to the databases in D|x. We then typically think of P|D|x as a property of functions
+D′ ∈D|x.
+Remark 5.3. For ﬁxed choices of x and D, we can, and often will, identify D|x with ¯Yk by means of the obvious
+identiﬁcation map r 7→D[x 7→r]. The property P|D|x can then be considered to be a property/subset of ¯Yk,
+namely {r ∈¯Yk | D[x7→r] ∈P}. Accordingly, we do not distinguish between the projections
+X
+D′∈P|D|x
+|D′⟩⟨D′| ∈L(C[D|x]) ⊆L(C[D])
+and
+X
+r∈¯
+Yk
+D[x7→r]∈P
+|r⟩⟨r| ∈L(C[ ¯Yk])
+but refer to both as P|D|x, using our convention to use the same variable for a property and the corresponding
+projection. This is justiﬁed by the fact that on the space spanned by |D[x7→r]⟩with r ∈¯Yk, both act identically
+(with the understanding that the latter acts on the registers labeled by x). In particular, they have the same operator
+norm.
+13
+
+
+[PÁGINA PDF 14]
+Example 5.4. For a given x and D, as a subset of ¯Yk, we have
+PRMG|D|x =
+ ¯Yk
+if D(¯x) = 0 for some ¯x̸ ∈{x1, . . . , xk}
+{r | ∃i : ri = 0}
+else
+In words: if D has a zero outside of x then D[x7→r] has a zero for any r ∈¯Yk; otherwise, D[x7→r] has a zero
+if and only if one of the coordinates of r is zero.
+The following deﬁnition is the ﬁrst main ingredient of our framework. Theorem 5.7 below, which relates
+the success probability of a quantum algorithm to the quantum transition capacity, then forms the second main
+ingredient.
+Deﬁnition 5.5 (Quantum transition capacity). Let P, P′ be two database properties. Then, the quantum transition
+capacity (of order k) is deﬁned as
+q
+P
+k→P′y
+:= max
+x,ˆy,D ∥P′|D|x cOxˆy P|D|x∥.
+Furthermore, we deﬁne
+q
+P
+k,q
+=⇒P′y
+:=
+sup
+U1,...,Uq−1
+∥P′cOk Uq−1 cO · · · cOk U1 cOk P∥.
+where the supremum is over all positive d ∈Z and all unitaries U1, . . . , Uq−1 acting on C[X] ⊗C[Y] ⊗Cd.
+By deﬁnition, the notion
+q
+P
+k,q
+=⇒P′y
+equals the square-root of the maximal probability that the internal state
+of the compressed oracle, when supported by databases D ∈P, turns into a database D′ ∈P′ by means of a
+quantum query algorithm that performs q k-parallel queries, and when we then measure the internal state to obtain
+D′. In particular, for p′ as in Corollary 4.2 and PR as below in Theorem 5.7, it holds that
+q
+⊥
+k,q
+=⇒PRy
+= √p′.
+In a similar manner,
+q
+P
+k→P′y
+represents a measure of how likely it is that, as a result of one k-parallel query,
+a database D ∈D that satisﬁes P turns into a database D′ that satisﬁes P′. In the context of these two notations,
+⊥is understood to be the database property that is satisﬁed by ⊥∈D only, and ¬P is the complement of P, i.e.,
+¬P = I −P (as projections). We also write P →P′ and refer to this as a database transition when considering
+two database properties P and P′ in the context of the above two notions. Formally, they are related as follows.
+Lemma 5.6. For any sequence of database properties P0, P1, . . . , Pq,
+q
+¬P0
+k,q
+=⇒Pq
+y
+≤
+q
+X
+s=1
+q
+¬Ps−1
+k→Ps
+y
+.
+Proof. By means of inserting I = Pq + (I −Pq) before Uq−1 and using properties of the norm and the fact that
+Uq−1 and Pq−1 commute (as they act on different subsystems) , we obtain
+∥Pq cOk Uq−1 cOk · · · cOk (I −P0)∥≤∥Pq−1 cOk Uq−2 cOk · · · cOk (I −P0)∥+ ∥Pq cOk (I −Pq−1)∥.
+To the ﬁrst term, we apply induction; so it remains to bound the second term by
+q
+¬Pq−1
+k→Pq
+y
+. Setting
+P = ¬Pq−1 and P′ = Pq, this follows from10
+∥P′cOk P∥≤max
+x,ˆy ∥P′cOxˆy P∥≤max
+x,ˆy,D ∥P′|D|x cOxy (I −P|D|x)∥,
+where for the ﬁrst inequality we observe that P′cOkP maps |x⟩|ˆy⟩⊗|Γ⟩to |x⟩|ˆy⟩⊗P′cOxˆyP|Γ⟩, and so the ﬁrst
+inequality holds by basic properties of the operator norm. Similarly for the second inequality: For any ﬁxed D,
+consider the subspace of C[D] spanned by |D[x 7→r]⟩with r ∈¯Yk. On this subspace, P and P|D|x are identical
+projections (and similarly for P′). Also, cOxy is a unitary on this subspace. The claim then again follows again
+by basic properties of the operator norm.
+10In line with Remark 5.3, we consider P|D|x to be a projection acting on C[ ¯Yk], and thus I in the last term is the identity in L(C[ ¯Yk]).
+14
+
+
+[PÁGINA PDF 15]
+The following is now an direct consequence of Corollary 4.2, the deﬁnition of
+q
+⊥
+k,q
+=⇒PRy
+, and the above
+lemma.
+Theorem 5.7. Let R be a relation, and let A be a k-parallel q-query quantum oracle algorithm outputting x ∈X ℓ
+and y ∈Yℓand with success probability p, as considered in Corollary 4.2. Consider the database property
+PR =
+
+D ∈D | ∃x ∈X ℓ:
+ x, D(x)
+
+∈R
+	
+induced by R. Then, for any database properties P0, . . . , Pq with P0 = ¬⊥and Pq = PR:
+√p ≤
+q
+⊥
+k,q
+=⇒PRy
++
+r
+ℓ
+M ≤
+q
+X
+s=1
+q
+¬Ps−1
+k→Ps
+y
++
+r
+ℓ
+M .
+Remark 5.8. This result implies that in order to bound p, it is sufﬁcient to ﬁnd a sequence ⊥̸ ∈P0, . . . , Pq = PR
+of properties for which all quantum transition capacities
+q
+¬Ps−1 →Ps
+y
+are small. Often, it is good to keep track
+of the (growing but bounded) size of the database and instead bound the capacities
+q
+SZ≤k(s−1)\Ps−1 →Ps
+y
+=
+q
+SZ≤k(s−1)\Ps−1 →Ps ∪¬SZ≤ks
+y
+,
+where the equality is due to the fact that the size of a database cannot grow by more than k with one k-parallel
+query. Formally, we would then consider the database properties P′
+s = ¬(SZ≤ks \ Ps) = Ps ∪¬SZ≤ks.
+We note that Theorem 5.7 assumes that algorithm A not only outputs x, but also y, which is supposed to be
+H(x). Most of the time, this can be assumed without loss of generality, by letting A make a few more queries to
+obtain and then output y = H(x). This increases the parameter q by at most ⌈ℓ/k⌉. However, this is problematic
+when the relation R of interest actually depends on q, as is the case for the hash chain problem. There, we will then
+use the following variant, which does not require A to output y, but requires some additional quantum transition
+capacity to be analyzed.
+Theorem 5.9. Let R be a relation. Let A be a k-parallel q-query oracle quantum algorithm that outputs x ∈X ℓ,
+and let p◦be the probability that (x, H(x)) ∈R when A has interacted with the standard random oracle,
+initialized with a uniformly random function H. Then, for any database properties P0, . . . , Pq with P0 = ¬⊥and
+Pq = PR:
+√p◦≤
+q
+⊥
+k,q
+=⇒PRy
++ max
+x
+q
+¬PR
+x
+ℓ→PR
+x
+y
++
+r
+ℓ
+M ≤
+q
+X
+s=1
+q
+¬Ps−1
+k→Ps
+y
++ max
+x
+q
+¬PR
+x
+ℓ→PR
+x
+y
++
+r
+ℓ
+M ,
+where PR
+x := {D ∈D | (x, D(x)) ∈R}.
+Proof. Let ˜
+A be the algorithm that runs A and then makes ℓmore classical queries to obtain y = H(x), which it
+then outputs along with x. Furthermore, let
+• ˜p be the probability (x, y) ∈R and y = H(x) when ˜
+A interacts with the standard random oracle,
+• ˜p′ be the probability that (x, y) ∈R and y = D(x) when ˜
+A interacts with the compressed oracle instead,
+and
+• ˜p′
+◦be the probability that (x, D(x)) ∈R when ˜
+A interacts with the compressed oracle.
+We trivially have that p◦= ˜p and ˜p′ ≤˜p′
+◦. Also, applying Corollary 4.2 to ˜
+A, we see that
+p
+˜p ≤
+p
+˜p′ +
+r
+ℓ
+M .
+It remains to bound ˜p′
+◦. For that purpose, we write cOx for the the evolution of the compressed oracle upon
+classical queries to the components of x. Formally, cOx is a unitary acting on C[D] ⊗C[Y]⊗ℓ.11 Also, we let
+11We emphasize that the components cOxi of cOx act on different response registers. Also, for these queries to be purely classical, the
+response registers have to be initialized in state |0⟩; however, we do not exploit this.
+15
+
+
+[PÁGINA PDF 16]
+{|x⟩⟨x|} be the measurement acting on A’s output register to produce the output x. Then, with the supremum over
+all 0 < d ∈Z and all unitaries U1, . . . , Uq acting on C[X] ⊗C[Y] ⊗Cd,
+p
+˜p′◦≤
+sup
+U1,...,Uq
+
+X
+x
+(PR
+x cOx ⊗|x⟩⟨x|) Uq cOk Uq−1 cOk · · · U1 cOk⊥
+
+≤
+
+X
+x
+(PR
+x cOx ⊗|x⟩⟨x|)(I −PR)
+ +
+sup
+U1,...,Uq
+PR Uq cOk Uq−1 cOk · · · U1 cOk⊥
+
+≤
+
+X
+x
+PR
+x cOx(I −PR) ⊗|x⟩⟨x|
+ +
+sup
+U1,...,Uq−1
+PR cOk Uq−1 cOk · · · U1 cOk⊥
+
+≤max
+x
+PR
+x cOx(I −PR)
+ +
+q
+⊥
+k,q
+=⇒PRy
+≤max
+x
+PR
+x cOx(I −PR
+x )
+ +
+q
+⊥
+k,q
+=⇒PRy
+.
+Using the same reasoning as in the proof of Lemma 5.6,
+PR
+x cOx(I −PR
+x )
+ ≤max
+D,ˆy
+PR
+x |D|x cOxˆy(I −PR
+x |D|x)
+ ≤
+q
+¬PR
+x
+ℓ→PR
+x
+y
+,
+which concludes the proof.
+In the following section, we offer techniques to bound the quantum transition capacities (in typical cases)
+using classical reasoning. Together with Theorem 5.7 or 5.9, this then provides means to prove lower bounds
+on the quantum query complexity (for certain computational problems in the random oracle model) using purely
+classical reasoning.
+5.2
+Bounding Quantum Transition Capacities Using Classical Reasoning Only
+The general idea is to “recognize” a database transition ¬P →P in terms of local properties L, for which the
+truth value L(D) only depends on the function value D(x) at one single point x (or at few points), and then to
+exploit that the behavior of the compressed oracle at a single point x is explicitly given by Lemma 4.3. In the
+following two sections, we consider two possible ways to do this, but ﬁrst we provide the formal deﬁnition for
+local properties.
+Deﬁnition 5.10. A database property L ⊆D is ℓ-local if ∃x = (x1, . . . , xℓ) ∈X ℓso that
+1. the truth value of L(D) is uniquely determined by D(x), and
+2. if D ∈L ∧(∃i ∈{1, . . . , ℓ} : D(xi) = ⊥) then D[xi 7→ri] ∈L ∀ri ∈Y.
+The set {x1, . . . , xℓ} is then called the support of L, and denoted by Supp(L).
+Remark 5.11. We observe that, as deﬁned above, the support of an ℓ-local property is not necessarily uniquely
+deﬁned: if ℓis not minimal with the required property then there are different choices. A natural way to have
+a unique deﬁnition for Supp(L) is to require it to have minimal size. For us, it will be more convenient to
+instead consider the choice of the support to be part of the speciﬁcation of L.12 Furthermore, we then declare
+that Supp(L ∪M) = Supp(L) ∪Supp(M), and Supp(L|D|x) = Supp(L) ∩{x1, . . . , xk} for any D ∈D and
+x = (x1, . . . , xk).13
+Remark 5.12. Condition 2 captures that ⊥is a dummy symbol with no more “value” than any other r ∈Y.
+For example, for any database property P, and for any x = (x1, . . . , xℓ) and D, the property P|D|x satisﬁes
+requirement 1. of Deﬁnition 5.10. In line with this, Remark 5.3 applies here as well: we may identify an ℓ-local
+property L with a subset of ¯Yℓ.
+12E.g., we may consider the constant-true property L with support Supp(L) = ∅, in which case it is ℓ-local for any ℓ≥0, or we may
+consider the same constant-true property L but now with the support set to Supp(L) = {x◦} for some x◦∈X, which then is ℓ-local for
+ℓ≥1.
+13The above mentioned alternative approach would give ⊆.
+16
+
+
+[PÁGINA PDF 17]
+5.2.1
+Reasoning via Strong Recognizability
+Deﬁnition 5.13. A database transition ¬P →P′ is said be (uniformly) strongly recognizable by ℓ-local properties
+if there exists a family of ℓ-local properties {Li}i so that
+P′ ⊆
+[
+i
+Li ⊆P .
+(9)
+We also consider the following weaker but somewhat more intricate version.
+Deﬁnition 5.14. A database transition ¬P →P′ is said be k-non-uniformly strongly recognizable by ℓ-local
+properties if for every x = (x1, . . . , xk) ∈X k with disjoint entries, and for every D ∈D, there exist a family
+{Lx,D
+i
+}i of ℓ-local properties Lx,D
+i
+with supports in {x1, . . . , xk} so that
+P′|D|x ⊆
+[
+i
+Lx,D
+i
+⊆P|D|x .
+(10)
+It is easiest to think about these deﬁnitions for the case P = P′, where (9) and (10) become equalities.
+Requirement (9) then means that for D to satisfy P it is necessary and sufﬁcient that D satisﬁes one of the local
+properties.
+Remark 5.15. In the above deﬁnitions, as long as the support-size remains bounded by ℓ, one can always replace
+two properties by their union without affecting (9), respectively (10). Thus, we may — and by default do — assume
+the Li’s to have distinct (though not necessarily disjoint) supports in Deﬁnition 5.13, and the same we may assume
+for the Lx,D
+i
+’s for every x and D in Deﬁnition 5.14.
+Remark 5.16. It is easy to see that Deﬁnition 5.13 implies Deﬁnition 5.14 with Lx,D
+i
+:= Li|D|x.
+Theorem 5.17. Let ¬P →P′ be k-non-uniformly strongly recognizable by 1-local properties {Lx,D
+1
+, . . . , Lx,D
+k
+},
+where, without loss of generality, the support of Lx,D
+i
+is {xi}. Then
+q
+¬P
+k→P′y
+≤max
+x,D
+s
+10
+X
+i
+P
+
+U ∈Lx,D
+i
+
+with the convention that P
+
+U ∈Lx,D
+i
+
+= 0 if Lx,D
+i
+is trivial (i.e. constant true or false).
+Before doing the proof, let us show how the above can be used to bound the probability of ﬁnding a 0-preimage.
+Example 5.18. P′ = P = PRMG is uniformly strongly recognized by the 1-local properties Lx = {D|D(x)=0}.
+Furthermore, as a subset of ¯Y, the property Lx,D
+x
+:= Lx|D|x is either {0} or trivial.14 In the non-trivial case, we
+obviously have P
+
+U ∈Lx,D
+i
+
+= P[U =0] = 1/M. It then follows from Theorem 5.17 that
+q
+¬PRMG
+k→PRMG
+y
+≤
+r
+10k
+M ,
+and thus from Theorem 5.7, setting Pi = PRMG for all i, that the probability p of any k-parallel q-query algorithm
+outputting a 0-preimage x is bounded by
+p ≤
+
+q
+r
+10k
+M +
+1
+√
+M
+2
+= O
+kq2
+M
+
+.
+Proof (of Theorem 5.17).
+Consider arbitrary x and D. To simplify notation, we then write Li for Lx,D
+i
+. We
+introduce the properties Mi := Li \ (S
+j<i Lj) for i ∈{1, . . . , k}. By assumption (10), as projectors they satisfy
+P′|D|x ≤
+X
+i
+Mi ≤
+X
+i
+Li
+and
+∀i : Mi ≤Li ≤P|D|x ,
+14In more detail, Lx|D|x = {0} whenever x ∈{x1, . . . , xk}, and otherwise it is constant true if D(x) = 0 and constant false if
+D(x)̸ = 0.
+17
+
+
+[PÁGINA PDF 18]
+where, additionally, the Mi’s are mutually orthogonal. Then, exploiting the various properties, for any ˆy we have
+∥P′|D|x cOxˆy (I −P|D|x)∥2 ≤
+
+X
+i
+Mi cOxˆy (I −P|D|x)
+
+2
+=
+X
+i
+∥Mi cOxˆy (I −P|D|x)∥2
+≤
+X
+i
+∥Li cOxˆy (I −Li)∥2 =
+X
+i
+∥Li cOxi ˆyi (I −Li)∥2 ,
+where, by considering the map as a map on C[ ¯Y] and bounding operator norm by the Frobenius norm,
+∥Li cOxi ˆyi (I −Li)∥2 ≤
+X
+ri,ui∈¯
+Y
+|⟨ui|Li cOxi ˆyi (I −Li)|ri⟩|2 =
+X
+ri̸∈Li
+ui∈Li
+|⟨ui|cOxi ˆyi|ri⟩|2 =
+X
+ri̸∈Li
+˜P[U ∈Li|ri, ˆyi] .
+The claim now follows from (8), with the additional observations that if ⊥∈Li (in which case (8) does not apply)
+then Li is constant-true (by property 2 of Deﬁnition 5.10), and that the sum vanishes if Li is constant-true.
+5.2.2
+Reasoning via Weak Recognizability
+Here, we consider a weaker notion of recognizability, which is wider applicable but results in a slightly worse
+bound. Note that it will be more natural here to speak of a transition P →P′ instead of ¬P →P′, i.e., we now
+write P for what previously was its complement.
+Deﬁnition 5.19. A database transition P →P′ is said be (uniformly) weakly recognizable by ℓ-local properties
+if there exists a family of ℓ-local properties {Li}i so that
+D ∈P ∧D′ ∈P′ =⇒∃i : D′ ∈Li ∧
+ ∃x∈Supp(Li) : D(x)̸ = D′(x)
+
+.
+Also here, we have a non-uniform version (see below). Furthermore, Remarks 5.15 and 5.16 apply correspond-
+ingly;15 in particular, we may assume the supports in the considered families of local properties to be distinct.
+Deﬁnition 5.20. A database transition P →P′ is said be k-non-uniformly weakly recognizable by ℓ-local prop-
+erties if for every x = (x1, . . . , xk) ∈X k with disjoint entries, and for every D ∈D, there exist a family of
+ℓ-local properties {Lx,D
+i
+}i with supports in {x1, . . . , xk} so that
+D◦∈P|D|x ∧D′ ∈P′|D|x =⇒∃i : D′ ∈Lx,D
+i
+∧
+ ∃x∈Supp(Lx,D
+i
+) : D◦(x)̸ = D′(x)
+
+.
+(11)
+Remark 5.21. Viewing Lx,D
+i
+as subset of ¯Yk, and its support Lx,D
+i
+= {xi1, . . . , xiℓ} then as subset {i1, . . . , iℓ}
+of {1, . . . , k}, (11) can equivalently be written as follows, which is in line with Lemma 2.1 (where Supp(Lx,D
+i
+) =
+{i}):
+D[x 7→r] ∈P ∧D[x 7→u] ∈P′ =⇒∃i : u ∈Lx,D
+i
+∧
+ ∃j ∈Supp(Lx,D
+i
+) : rj̸ = uj
+
+.
+Example 5.22. Consider CHNq = {D | ∃x0, x1, . . . , xq ∈X : D(xi−1) ◁xi ∀i} for an arbitrary positive integer
+q. For any x and D, we let Li = Lx,D
+i
+be the 1-local property that has support {xi} and, as a subset of ¯Y, is deﬁned
+as (4), i.e., so that u ∈Li if and only if u ◁x for some x with D(x)̸ = ⊥or x ∈{x1, . . . , xk}. Lemma 2.1 from
+the classical analysis shows that condition (11) is satisﬁed for the database transition ¬CHNq →CHNq+1. This
+in particular implies that (11) is satisﬁed for the database transition SZ≤k(q−1) \ CHNq →CHNq+1; in this latter
+case however, whenever D is not in SZ≤kq, which then means that the left hand side of (11) is never satisﬁed, we
+may simply pick the constant-false property as family of local properties satisfying (11).
+Theorem 5.23. Let P →P′ be k-non-uniformly weakly recognizable by 1-local properties Lx,D
+i
+, where the
+support of Lx,D
+i
+is {xi} or empty. Then
+q
+P
+k→P′y
+≤max
+x,D e
+X
+i
+q
+10P
+
+U ∈Lx,D
+i
+
+,
+where e is Euler’s number.16
+15We point out that this is thanks to our convention on the deﬁnition of the support, as discussed in Remark 5.11.
+16Unlike Theorem 5.17, here is no convention that P
+
+U ∈Lx,D
+i
+
+= 0 if Lx,D
+i
+is constant-true. This has little relevance since Lx,D
+i
+being
+constant-true can typically be avoided via Remark 5.15.
+18
+
+
+[PÁGINA PDF 19]
+Example 5.24. In the above example regarding CHNq with the considered Li’s for D ∈SZ≤kq, as in the derivation
+of the classical bound in Section 2.3, it holds that P[U ∈Li] ≤kqT/M, where T denotes the maximal number of
+y ∈Y with y ◁x (for any x).17 Thus,
+q
+SZ≤k(q−1)\CHNq
+k→CHNq+1y
+≤ek
+r
+10kqT
+M
+.
+In order to conclude hardness of ﬁnding a (q +1)-chain for a q-query algorithm in the general case where xi is not
+necessarily uniquely determined by the next element in the chain, i.e., when T > 1, we have to use Theorem 5.9
+instead of Theorem 5.7. In order to apply Theorem 5.9, we also need to bound
+q
+¬CHNq+1
+x′
+→CHNq+1
+x′
+y
+for an
+arbitrary x′. This works along the same lines: Consider arbitrary D and x. For the purpose of showing (non-
+uniform) weak recognizability, we note that if D[x 7→r]̸ ∈CHNq+1
+x′
+yet D[x 7→u] ∈CHNq+1
+x′
+then there must
+exist a coordinate xi of x, which is also a coordinate x′
+j of x′, so that ui̸ = ri and ui ∈Lx,D
+i
+:= {y | ∃i : y ◁x′
+i},
+and so
+q
+¬CHNq+1
+x′
+q+2
+→CHNq+1
+x′
+y
+≤e(q + 2)
+r
+10T(q + 2)
+M
+.
+Applying Theorem 5.9, we obtain the following bound.
+Theorem 5.25. Let ◁be a relation over Y and X. The probability p of any k-parallel q-query oracle algorithm
+A outputting x0, x1, . . . , xq+1 ∈X with the property that H(xi) ◁xi+1 for all i ∈{0, . . . , q} is bounded by
+p ≤
+
+qke
+r
+10qkT
+M
++ e(q + 2)
+r
+10T(q + 2)
+M
++
+r
+q + 2
+M
+2
+= O
+q3k3T
+M
+
+,
+where T := maxx |{y ∈Y | y ◁x}|, and M is the size of the range Y of H : X →Y.
+Proof (of Theorem 5.23).
+We consider ﬁxed choices of x and D, and we then write Li for Lx,D
+i
+. For arbitrary but
+ﬁxed ˆy, we introduce
+Ai :=
+X
+ui,ri s.t.
+ui∈Li∧ri̸=ui
+|ui⟩⟨ui| cOxi ˆyi|ri⟩⟨ri|
+and
+Bi := cOxi ˆyi −Ai =
+X
+ui,ri s.t.
+ui̸∈Li∨ri=ui
+|ui⟩⟨ui| cOxiyi|ri⟩⟨ri|
+and observe that, taking it as understood that the operators cOx1 ˆy1, . . . , cOxk ˆyk act on different subsystems,18
+cOxˆy =
+k
+Y
+j=1
+cOxj ˆyj =
+k−1
+Y
+j=1
+cOxj ˆyjAk +
+k−1
+Y
+j=1
+cOxj ˆyjBk
+=
+k−1
+Y
+j=1
+cOxj ˆyjAk +
+k−2
+Y
+j=1
+cOxj ˆyjAk−1Bk +
+k−2
+Y
+j=1
+cOxj ˆyjBk−1Bk
+= · · · =
+k
+X
+i=0
+ Y
+j<k−i
+cOxj ˆyj
+
+Ak−i
+ Y
+j>k−i
+Bj
+
+with the convention that A0 = I. Furthermore, by assumption on the Li’s, it follows that
+Q := P′|D|x
+ Y
+j>0
+Bj
+
+P|D|x = 0 .
+Indeed, by deﬁnition of P′|D|x and P|D|x (considering them as subsets of ¯Yk now), for ⟨u|Q|r⟩not to vanish,
+it is necessary that r ∈P|D|x and u ∈P′|D|x. But then, by assumption, for such r and u there exists i so that
+ui ∈Li and ri̸ = ui, and thus for which ⟨ui|Bi|ri⟩= 0. Therefore, ⟨u|Q|r⟩= ⟨u| Q
+j Bj|r⟩= Q
+j⟨uj|Bj|rj⟩
+still vanishes. As a consequence, we obtain
+∥P′|D|x cOxˆy P|D|x∥≤
+
+k−1
+X
+i=0
+ Y
+j<k−i
+cOxj ˆyj
+
+Ak−i
+ Y
+j>k−i
+Bj
+ ≤
+k−1
+X
+i=0
+
+∥Ak−i∥
+Y
+j>k−i
+∥Bj∥
+
+.
+17For D̸ ∈SZ≤kq we get the trivial bound 0 since we may then choose Li to be constant false.
+18I.e., strictly speaking, we have cOxˆy = Nk
+j=1 cOxj ˆyj .
+19
+
+
+[PÁGINA PDF 20]
+Using that ∥Bi∥= ∥cOxi ˆyi −Ai∥≤1 + ∥Ai∥, this is bounded by
+≤
+k
+X
+i=1
+∥Ai∥
+k
+Y
+j=1
+(1 + ∥Aj∥) ≤
+X
+i
+∥Ai∥e
+P
+j ln(1+∥Aj∥) ≤
+X
+i
+∥Ai∥e
+P
+j ∥Aj∥≤
+X
+i
+∥Ai∥e
+where the last inequality holds if P
+j ∥Aj∥≤1, while the ﬁnal term is trivially an upper bound on the ﬁgure of
+merit otherwise. Using the fact that the operator norm is upper bounded by the Frobenius norm, we observe that
+∥Ai∥2 ≤
+X
+ri,ui
+|⟨ui|Ai|ri⟩|2 =
+X
+ui,ri s.t.
+ui∈Li∧ri̸=ui
+|⟨ui|cOxiyi|ri⟩|2 =
+X
+ri
+˜P[ri̸ =U ∈Li|ri, yi] ≤10P[U ∈Li] ,
+where the last inequality is due to (8), here with the additional observation that if ⊥∈Li (and so (8) does not
+apply) then, by condition 2 of Deﬁnition 5.10, Li = ¯Y, and hence the bound holds trivially.
+5.2.3
+General ℓ-Locality and Collision Finding
+We now remove the limitation on the locality being ℓ= 1. The bound then becomes a bit more intricate, and we
+only have a version for strong recognizability.
+Theorem 5.26. Let P →P′ be a database transition that is k-non-uniformly strongly recognizable by ℓ-local
+properties Lt, where we leave the dependency of Lt = Lx,D
+t
+on x and D implicit. Then
+q
+P
+k→P′y
+≤max
+x,D eℓ
+s
+10
+X
+t
+max
+x∈Supp(Lt)
+max
+D′∈D|Supp(Lt) P
+
+U ∈Lt|D′|x
+.
+with the convention that P
+
+U ∈Lt|D′|x
+vanishes if Lt|D′|x is trivial.
+In case of uniform recognizability, where there is no dependency of Lt on x and D, the quantiﬁcation over ﬁrst
+D and then over D′ ∈D|Supp(Lt) collapses to a single quantiﬁcation over D, simplifying the statement again a bit.
+Corollary 5.27. Let P →P′ be a database transition that is uniformly strongly recognizable by ℓ-local properties
+Lt. Then
+q
+P
+k→P′y
+≤max
+x,D eℓ
+s
+10
+X
+t
+max
+x∈Supp(Lt) P
+
+U ∈Lt|D|x
+.
+with the convention that P
+
+U ∈Lt|D|x
+vanishes if Lt|D|x is trivial.
+Example 5.28. Consider CL = {D | ∃x, x′ : D(x) = D(x′)̸ = ⊥}. For any D ∈D and x = (x1, . . . , xk),
+consider the family of 2-local properties consisting of
+CLi,j := {D◦∈D|x | D◦(xi) = D◦(xj)̸ = ⊥}
+and
+CLi := {D◦∈D|x | ∃¯x̸ ∈{x1, . . . , xk} : D◦(xi) = D(¯x)̸ = ⊥}
+for i̸ = j ∈{1, . . . , k}, with respective supports {xi, xj} and {xi}.
+It is easy to see that this family of 2-local properties satisﬁes (10) for the database transition ¬CL →CL.
+Indeed, if D and D′ are identical outside of x, and D has no collision while D′ has one, then D′’s collision must
+be for xi, xj inside x, or for one xi inside and one ¯x outside. As an immediate consequence, the family also
+satisﬁes (10) for the database transition (SZ≤ks \ CL) →CL. In this case though, whenever D̸ ∈SZ≤k(s+1) the
+left hand side of (10) is never satisﬁed and so we may replace the family of local properties to consist of (only)
+the constant-false property.
+Consider x = (x1, . . . , xk) and D ∈SZ≤k(s+1) with s ≤q −1. Then, for i̸ = j, as subsets of ¯Y we have that
+CLi,j|D′|xi = {D′(xj)}
+and
+CLi|D′|xi = {D′(¯x) | ¯x̸ ∈{x1, . . . , xk} : D′(¯x)̸ = ⊥}
+for any D′ ∈D|(xi,xj) and D′ ∈D|xi, respectively, and therefore
+P
+
+U ∈CLi,j|D′|xi
+
+= 1
+M
+and
+P
+
+U ∈CLi|D′|xi
+
+≤k(q −1)
+M
+.
+20
+
+
+[PÁGINA PDF 21]
+So, by Theorem 5.26,
+q
+SZ≤ks\CL
+k→CL
+y
+≤2e
+s
+10
+ k2
+M + k2(q −1)
+M
+
+. = 2ek
+r
+10 q
+M
+Hence, by Theorem 5.7, increasing q by 1 to allow for the additionally query for A to learn (what he claims to be)
+H(x1) = H(x2), we obtain the following bound.
+Theorem 5.29. The probability p of any k-parallel q-query algorithm outputting a collision is bounded by
+p ≤
+
+2(q + 1)ek
+r
+10 q + 1
+M
++
+r
+2
+M
+2
+= O
+k2q3
+M
+
+.
+The above easily generalizes to a more general notion of collision, where the goal is to ﬁnd x and x′ for which
+f
+ x, H(x)
+
+= f
+ x′, H(x′)
+
+for a given function f : X × Y →Z. Here, writing fD(x) as a shorthand of
+f
+ x, D(x)
+
+with fD(x) = ⊥if D(x) = ⊥, one would then consider
+CLi,j := {D◦∈D|x fD◦(xi) = fD◦(xj)̸ = ⊥}
+and
+CLi := {D◦∈D|x | ∃¯x̸ ∈{x1, . . . , xk} : fD◦(xi) = fD(¯x)̸ = ⊥}
+where then, as subsets of ¯Y,
+CLi,j|D′|xi = {yi ∈Y | f(xi, yi) = fD′(xj)}
+and
+CLi|D′|xi =
+[
+¯x̸∈{x1,...,xk}
+{yi ∈Y | f(xi, yi) = fD′(¯x)}
+for any D′ ∈D|(xi,xj) and D′ ∈D|xi, respectively, and therefore
+P
+
+U ∈CLi,j|D′|xi
+
+= Γ
+M
+and
+P
+
+U ∈CLi|D′|xi
+
+≤k(q −1)Γ
+M
+with Γ := maxx̸=x′,y′ |{y ∈Y | f(x, y) = f(x′, y′)}|. So, by Theorem 5.26, with the obvious generalization of
+CL,
+q
+SZ≤ks\CL
+k→CL
+y
+≤2e
+s
+10
+k2Γ
+M + k2(q −1)Γ
+M
+
+= 2ek
+r
+10Γ q
+M
+and so we obtain the following generalization of the collision ﬁnding bound.
+Theorem 5.30. For any function f : X ×Y →Z, the probability p of any k-parallel q-query algorithm outputting
+x, x′ ∈X with f
+ x, H(x)
+
+= f
+ x′, H(x′)
+
+is bounded by
+p ≤
+
+2(q + 1)ek
+r
+10Γ q + 1
+M
++
+2
+√
+M
+2
+= O
+k2q3Γ
+M
+
+for Γ := maxx̸=x′,y′ |{y ∈Y | f(x, y) = f(x′, y′)}|.
+Proof (of Theorem 5.26) . We ﬁrst observe that one can recycle the proof of Theorem 5.17 to bound
+∥P′|D,x cOxˆy P|D,x∥2 ≤
+X
+t
+∥Lt cOxtˆyt (I −Lt)∥2 ,
+where xt is the restriction of x to those coordinates that are in Supp(Lt), and the same for ˆyt.
+We now consider an arbitrary but ﬁxed choice of t and write L for Lt. We write {x1, . . . , xℓ} for its support
+and set x′ := (x1, . . . , xℓ). In order to control ∥L cOx′ˆy′ (I −L)∥, we use a similar technique as in the proof of
+Theorem 5.23.19
+For any xi ∈Supp(L), we set
+Ai := L cOxi ˆyi(I −L)
+and
+Bi := cOxi ˆyi −Ai .
+19We point out that L(D′) is determined by D′(x′); thus, we may consider L as a property of functions D′ ∈D|x′ ⊆D|x.
+21
+
+
+[PÁGINA PDF 22]
+By means of the same generic manipulations as in the proof of Theorem 5.23, we have
+cOx′ˆy′ =
+ℓ
+Y
+i=1
+cOxi ˆyi =
+ℓ
+X
+i=0
+ Y
+j<ℓ−i
+cOxj ˆyj
+
+Aℓ−i
+ Y
+j>ℓ−i
+Bj
+
+with the convention that A0 = I. Furthermore, using Bi(I −Lt) = (I −Lt)cOxλi ˆyλi(I −Lt), we see that
+Lt
+ Y
+j>0
+Bj
+
+(I −Lt) = 0 .
+As a consequence, verbatim as in the proof of Theorem 5.23, we obtain
+∥L cOx′ˆy′ (I −L)∥≤
+ℓ−1
+X
+i=0
+
+∥Aℓ−i∥
+Y
+j>ℓ−i
+∥Bj∥
+
+≤
+ℓ
+X
+i=1
+∥Ai∥e .
+Furthermore, for any D′ ∈D|x and i ∈{1, . . . , ℓ}, on the subspace spanned by D′|xi, the map Ai acts identically
+to L|D′|xi cOxi ˆyi (I−L|D′|xi), and thus, by basic properties of the operator norm, the norm of Ai equals the largest
+norm of these restrictions:
+∥Ai∥≤
+L|D′|xi cOxλi ˆyi (I −L|D′|xi)
+ .
+Bounding the operator norm by the Frobenius norm, we then obtain
+∥Ai∥2 ≤
+X
+r̸∈L|D′|xi
+u∈L|D′|xi
+|⟨u|cOxi ˆyi|r⟩|2 ≤
+X
+r
+˜P[r̸=U ∈L|D′|xi|r, yi] ≤10P
+
+U ∈L|D′|xi
+
+.
+where the last inequality is due to (8), with the additional observation that if ⊥∈Li then, by condition 2 of
+Deﬁnition 5.10, L|D′|xi = ¯Y, and thus the sum vanishes.
+Putting things together, we obtain
+∥P′|D,x cOxˆy P|D,x∥≤
+v
+u
+u
+tX
+t
+
+ℓ
+X
+i=1
+∥Ai∥e
+2
+≤e
+sX
+t
+10ℓ2P
+
+U ∈L|D′|xi
+
+which proves the claimed bound.
+5.3
+Some Rules for the Quantum Transition Capacity
+As we have seen, certain “simple” lower bounds on the query complexity (respectively upper bound on the success
+probability) can be obtained rather directly by bounding the quantum transition capacity by the means discussed
+above. In more complex scenarios, as we will encounter in the next section, it will be convenient to ﬁrst manipulate
+the quantum transition capacity, e.g., to decompose it into different cases that can then be analyzed individually.
+We thus show some useful manipulation rules here.
+To start with, since cO†
+xˆy = cOxˆy∗, we note that the quantum transition capacity is symmetric:
+q
+P
+k→P′y
+=
+q
+P′
+k→P
+y
+.
+Therefore, the following bounds hold correspondingly also for
+q
+P
+k→P′ ∩Q
+y
+etc.
+Lemma 5.31. For any database properties P, P′ and Q,
+q
+P ∩Q
+k→P′y
+≤min
+q
+P
+k→P′y
+,
+q
+Q
+k→P′y	
+and
+max
+q
+P
+k→P′y
+,
+q
+Q
+k→P′y	
+≤
+q
+P ∪Q
+k→P′y
+≤
+q
+P
+k→P′y
++
+q
+Q
+k→P′y
+.
+In particular, we have the following intuitive rule.
+22
+
+
+[PÁGINA PDF 23]
+Corollary 5.32. If P ⊆Q then
+q
+P
+k→P′y
+≤
+q
+Q
+k→P′y
+and
+q
+P′
+k→P
+y
+≤
+q
+P′
+k→Q
+y
+.
+Proof (of Lemma 5.31). As subsets, (P ∩Q)|D|x = (P ∩Q) ∩D|x = (P ∩D|x) ∩(Q ∩D|x) = P|D|x ∩Q|D|x,
+and, as projections, P|D|x and Q|D|x commute, and P|D|x ∩Q|D|x = P|D|xQ|D|x = Q|D|xP|D|xQ|D|x ≤P|D|x
+and similarly ≤Q|D|x. This implies that
+∥P′|D|x cOxˆy (P ∩Q)|D|x∥≤min
+
+∥P′|D|x cOxˆy P|D|x∥, ∥P′|D|x cOxˆy Q|D|x∥
+	
+,
+and thus proves the ﬁrst claim. Similarly, but now using that, as projections,
+P|D|x, Q|D|x ≤P|D|x ∪Q|D|x ≤P|D|x + Q|D|x ,
+we obtain the second claim.
+In the following, we extend the deﬁnition of the quantum transition capacity as follows, which captures a
+restriction of the query vector x = (x1, . . . , xk) to entries xi in X ⊆X.
+q
+P
+k→P′X
+y
+:= max
+x∈Xk
+ˆy,D
+∥P′|D|x cOxˆy P|D|x∥.
+(12)
+where the max is restricted to x ∈Xk. Obviously,
+q
+P
+k→P′y
+=
+q
+P
+k→P′X
+y
+.
+Lemma 5.33. Let X = X′ ∪X′′ ⊆X and k = k′ +k′′. Furthermore, let P, P′, P′′ and Q be database properties.
+Then
+q
+P
+k→P′′X
+y
+≤
+q
+P
+k→P′′\Q
+X
+y
++
+q
+P
+k→Q ∩P′′X
+y
+,
+(13)
+where furthermore
+q
+P
+k→Q ∩P′′X
+y
+≤
+q
+P
+k′
+→¬Q
+X
+y
++
+q
+P
+k′
+→Q ∩P′X
+y
++
+q
+Q\P′ k′′
+→Q ∩P′′X
+y
+(14)
+as well as
+q
+P
+k→Q ∩P′′X
+y
+≤
+q
+P
+k→¬Q
+X′y
++
+q
+P
+k→Q ∩P′X′y
++
+q
+Q\P′
+k→Q ∩P′′X′′y
+.
+(15)
+Proof. The ﬁrst inequality follows immediately from Lemma 5.31, using that (P′′ \ Q) ∪(Q ∩P′′) = P′′. For
+the other two, let x ∈Xk, ˆy ∈ˆYk, D ∈D be the choices that achieve the maximal value in the deﬁnition of
+q
+P
+k→Q ∩P′′X
+y
+. We may assume without loss of generality that x consists of pairwise distinct entries. For
+proving the ﬁrst inequality, we split up x into (x′, x′′) ∈Xk′ × Xk′′, and correspondingly then for ˆy ∈ˆYk. For
+proving the second inequality, we let x′ consist of all coordinates of x that lie in X′, and we let x′′ consist of all
+coordinates of x that lie in X′′ but not in X′, and ˆy′ and ˆy′′ consists of the corresponding coordinates of ˆy; in this
+case, (x′, x′′) ∈X′ℓ′ × X′′ℓ′′
+with ℓ′ + ℓ′′ = k. In both cases, we have cOxˆy = cOx′ˆy′cOx′′ˆy′′, and, writing Px
+for P|D|x etc., we obtain
+q
+P
+k→Q ∩P′′X
+y
+= ∥P′′
+xQx cOx′′ˆy′′cOx′ˆy′ Px∥
+≤∥P′′
+xQx cOx′′ˆy′′QxcOx′ˆy′ Px∥+ ∥(I −Qx)cOx′ˆy′ Px∥
+≤∥P′
+xQxcOx′ˆy′ Px∥+ ∥P′′
+xQx cOx′′ˆy′′(I −P′
+x)Qx∥+ ∥(I −Qx)cOx′ˆy′ Px∥
+≤∥P′
+x′Qx′cOx′ˆy′ Px′∥+ ∥P′′
+x′′Qx′′ cOx′′ˆy′′(I −P′
+x′′)Qx′′∥+ ∥(I −Qx′)cOx′ˆy′ Px′∥,
+where the last equality follows from basic properties of the operator norm. The ﬁrst of the two remaining bounds
+is now obtained by maximizing the individual terms on the right hand side over x′ ∈Xk′ and x′′ ∈Xk′′ (as well
+as over ˆy′, ˆy′′ and D). For the other case, we maximize over x′ ∈X′ℓ′ and x′′ ∈X′′ℓ′′
+and exploit that, for
+instance,
+q
+P
+ℓ′
+→¬Q
+X′y
+≤
+q
+P
+k→¬Q
+X′y
+, given that ℓ′ ≤k.
+By recursive application of Lemma 5.33, we obtain the following.
+23
+
+
+[PÁGINA PDF 24]
+Corollary 5.34 (Parallel Conditioning). Let X = X1∪. . .∪Xh ⊆X and k = k1+· · ·+kh, and let P0, P1, . . . , Ph
+and ¬P0 ⊆Q be database properties. Then
+q
+¬P0
+k→Ph
+X
+y
+≤
+h
+X
+i=1
+q
+¬P0
+¯ki
+→¬Q
+X
+y
++
+h
+X
+i=1
+q
+Q\Pi−1
+ki
+→Q ∩Pi
+X
+y
+and
+q
+¬P0
+k→Ph
+X
+y
+≤
+h
+X
+i=1
+q
+¬P0
+k→¬Q
+ ¯Xi
+y
++
+h
+X
+i=1
+q
+Q\Pi−1
+k→Q ∩Pi
+Xi
+y
+,
+where ¯ki = k1 + · · · + ki and ¯Xi = X1 ∪. . . ∪Xi.
+Proof. Applying (13) and (14) with P := ¬P0, P′ := Ph−1 and P′′ := Ph, and omitting the “conditioning” on X
+for simplicity, we get
+q
+¬P0
+k→Ph
+y
+≤
+q
+¬P0
+k→¬Q
+y
++
+q
+¬P0
+¯kh−1
+−→¬Q
+y
++
+q
+¬P0
+¯kh−1
+−→Q ∩Ph−1
+y
++
+q
+Q\Ph−1
+kh
+−→Q ∩Ph
+y
+.
+Recursively applying (14) to
+q
+¬P0
+¯kh−1
+−→Q ∩Ph−1
+y
+gives the ﬁrst claim. The second is argued correspondingly.
+The quantum transition capacity with restricted input, deﬁned in (12), is just the original deﬁnition of the
+quantum transition capacity (Deﬁnition 5.5) but with the considered set X replaced by X. As a consequence,
+properties for
+q
+P →P′y
+carry over to
+q
+P →P′X
+y
+. For instance, it is still symmetric, and Lemma 5.31 carries
+over to
+q
+P ∩Q
+k→P′X
+y
+≤min
+q
+P
+k→P′X
+y
+,
+q
+Q
+k→P′X
+y	
+etc. For completeness we spell out here the deﬁnition of non-uniform recognizability as well as Theorem 5.23
+for such input-restricted database transitions P →P′ | X (the other types of recognizability can be generalized
+similarly).
+Deﬁnition 5.35. A database transition P →P′ with input restricted in X ⊆X is said to be k-non-uniformly
+weakly recognizable by ℓ-local properties if for every x = (x1, . . . , xk) ∈Xk with disjoint entries, and for every
+D ∈D, there exist a family of ℓ-local properties {Lx,D
+i
+}i with supports in {x1, . . . , xk} so that
+D◦∈P|D|x ∧D′ ∈P′|D|x =⇒∃i: D′ ∈Lx,D
+i
+∧
+ ∃x∈Supp(Lx,D
+i
+) : D◦(x)̸=D′(x)
+
+Theorem 5.36. Let P →P′ with input restricted in X be k-non-uniformly weakly recognizable by 1-local prop-
+erties Lx,D
+i
+, where the support of Lx,D
+i
+is {xi} or empty. Then
+q
+P
+k→P′X
+y
+≤max
+x,D e
+X
+i
+q
+10P
+
+U ∈Lx,D
+i
+
+,
+where the max now is over all x = (x1, . . . , xk) ∈Xk.
+6
+Post-Quantum Proof of Sequential Works
+In this section, we prove post-quantum security of the proof of sequential work (PoSW) construction by Cohen and
+Pietrzak [10] (referred to as Simple PoSW) using our framework developed in the last section. As a matter of fact,
+we directly analyze the non-interactive variant of their construction after applying the Fiat-Shamir transformation
+[12]. As we shall see, the proof is by means of purely classical reasoning, recycling observations that are relevant
+for arguing classical security and combining them with results provided by our framework.
+6.1
+Simple Proof of Sequential Works
+For readers not familiar with PoSW, we review the deﬁnition in Appendix B. Typically, underlying the construction
+of a PoSW is a directed acyclic graph (DAG) G with certain “depth-robust” properties, and a graph labeling that
+the prover P is required to compute using a hash function H. We proceed to describe the DAG used in Simple
+PoSW and the graph labeling.
+24
+
+
+[PÁGINA PDF 25]
+Simple PoSW DAG and Graph Labeling.
+Let n ∈N and N = 2n+1 −1. Consider the (directed) complete
+binary tree Bn = (Vn, E′
+n) of depth n, where Vn := {0, 1}≤n and E′
+n consists of the edges directed towards the
+root (black edges in Fig. 2). The Simple PoSW DAG, denoted by GPoSW
+n
+, is obtained by adding some additional
+edges to Bn (red edges in Fig. 2). Before giving the formal deﬁnition of GPoSW
+n
+(Deﬁnition 6.2), we recall some
+basic terminology and notation in the context of the complete binary tree Bn, which we will then also use in the
+context of GPoSW
+n
+.
+Deﬁnition 6.1. We write rt := ϵ for the root, and we write leaves(Vn) := {0, 1}n for the leaves in Vn. For
+T ⊆Vn, we set leaves(T) := T ∩{0, 1}n. For v /∈leaves(Vn), let left(v) := v∥0 and right(v) := v∥1. For
+b ∈{0, 1} and v ∈{0, 1}<n, let par(v∥b) := v and sib(v∥b) := v∥¬b (see Fig. 2, right).
+Finally, for a leaf v ∈leaves(Vn), we deﬁne the ancestors of v as anc(v) = {pari(v) | 0 ≤i ≤n} and the
+authentication path of v (as in the Merkle tree) as ap(v) = (anc(v)\{rt}) ∪{sib(u) | rt̸ = u ∈anc(v)}.
+Figure 2: Illustration of the Simple PoSW DAG GPoSW
+n
+for n = 3.
+Deﬁnition 6.2. For n ∈N, deﬁne the Simple PoSW DAG GPoSW
+n
+:= (Vn, E′
+n ∪E′′
+n) with vertex set Vn and edges
+E′
+n := {(left(v), v), (right(v), v) | v ∈Vn \ leaves(Vn)}
+and
+E′′
+n := {(sib(u), v) | v ∈Vn, u ∈anc(v) s.t. u = right(par(u))} .
+For v ∈Vn, we write in(v) := {u ∈Vn | (u, v) ∈E′
+n ∪E′′
+n} to denote the inward neighborhood of v. We
+consider a ﬁxed ordering of the vertices (e.g. lexicographic), so that for any set {v1, . . . , vd} ∈Vn of vertices, the
+corresponding ordered list (v1, . . . , vd) is well deﬁned.
+We proceed to deﬁne the graph labeling for GPoSW
+n
+with respect to a hash function H : {0, 1}≤B →{0, 1}w,
+were w is a security parameter, and B is arbitrary large (and sufﬁciently large for everything below being well
+deﬁned).
+Deﬁnition 6.3 (Graph Labeling). A function ℓ: Vn →{0, 1}w, v 7→ℓv is a labeling of GPoSW
+n
+with respect to H
+if
+ℓv = H(v, ℓin(v))
+(16)
+for all v ∈Vn, were ℓin(v) is shorthand for (ℓv1, . . . , ℓvd) with {v1, . . . , vd} = in(v). Similarly, for a subtree20 T
+of GPoSW
+n
+, a function ℓ: T →{0, 1}w, v 7→ℓv is a called a labeling of T with respect to H if ℓv = H(v, ℓin(v))
+for all v ∈Vn for which in(v) ⊆T.
+By the structure of the graph, GPoSW
+n
+admits a unique labeling, which can be computed by making N =
+2n+1 −1 sequential queries to H, starting with the leftmost leaf. We sometimes speak of a consistent labeling (of
+GPoSW
+n
+or T) when we want to emphasize the distinction from an arbitrary function ℓ. The deﬁnition also applies
+when replacing the function H by a database D : {0, 1}≤B →{0, 1}w ∪{⊥}, where the requirement (16) then
+in particular means that H(v, ℓin(v))̸ = ⊥.
+We also make the following important remark.
+20By a subtree of GPoSW
+n
+we mean a subgraph of GPoSW
+n
+that is a subtree of the complete binary tree Bn when restricted to edges in E′
+n.
+We are also a bit sloppy with not distinguishing between the graph T and the vertices of T.
+25
+
+
+[PÁGINA PDF 26]
+Remark 6.4. Let T be a subtree of GPoSW
+n
+with a consistent labeling ℓ. Then, any path P = (v0, . . . , vr) of
+length |P| = r in T induces an r-chain (x0, . . . , xr), where xi = (vi, ℓv′
+1, . . . , ℓv′
+d) with {v′
+1, . . . , v′
+d} = in(vi),
+and where the relation ◁is deﬁned as follows. y ◁x if and only if x is of form (v, ℓ1, ℓ2, . . . , ℓd) with v ∈Vn, ℓj ∈
+{0, 1}w, |d| = |in(v)| ≤n, and y = ℓj for some j.
+Simple PoSW Construction.
+We are ready to describe the (non-interactive) Simple PoSW construction, which
+amounts to asking the prover P to compute the root label of GPoSW
+n
+with respect to the hash function Hχ deﬁned
+by Hχ(·) := H(χ, ·) for a random χ ∈{0, 1}w sampled by the veriﬁer V, and open the labels of the authentication
+paths of the challenge leaves.
+Speciﬁcally, given parameters w, t and N = 2n+1 −1, and a random oracel H : {0, 1}≤B →{0, 1}w, the
+Simple PoSW protocol is deﬁned as follows.
+• (φ, φP) := PoSWH(χ, N): P computes the unique consistent labeling ℓof GPoSW
+n
+with respect to hash
+function Hχ deﬁned by Hχ(·) := H(χ, ·), and stores it in φP. P sets φ = ℓrt as the root label.
+• The opening challenge: γ := HChQ
+χ
+(φ) :=
+ Hχ(φ, 1), . . . , Hχ(φ, d)
+
+∈{0, 1}dw for sufﬁciently large d,
+parsed as t leaves {v1, . . . , vt} ⊆leaves(Vn).
+• τ := openH(χ, N, φP, γ) : For challenge γ = {v1, . . . , vt}, the opening τ consists of the labels of vertices
+in the authentication path ap(vi) of vi for i ∈[t], i.e., τ = {ℓap(vi)}i∈[t].
+• verifyH(χ, N, φ, γ, τ): V veriﬁes if the ancestors of every vi are consistently labeled by τ. Speciﬁcally, for
+each i ∈[t], V checks if ℓu = Hχ(u, ℓin(u)) for all u ∈anc(vi). V outputs accept iff all the consistency
+checks pass.
+Note that since we consider the non-interactive version of Simple PoSW after applying the Fair-Shamir trans-
+formation, the random oracle H is used to compute both the labels (as Hχ(v, ℓin(v))) and the challenge (as
+HChQ
+χ
+(φ)). We silently assume that the respective inputs are specially formatted so as to distinguish a label
+query from a challenge query. E.g., a label query comes with a preﬁx 0 and a challenge query with preﬁx 1. We
+then denote the set of inputs for label and challenge queries by LbQ and ChQ ⊆{0, 1}≤B, respectively. Also,
+for simplicity, we will treat HChQ
+χ
+(φ) as one oracle query, i.e., “charge” only one query for a challenge query;
+however, we keep the superscript ChQ to remind that the query response is (understood as) a set of leaves.
+Classical Security Analysis of Simple PoSW.
+Before presenting our proof of post-quantum security for Simple
+PoSW, we ﬁrst review the classical security analysis in [10]. For simplicity, here we consider the original (in-
+teractive) Simple PoSW (i.e., P ﬁrst sends φ, receives random γ from V, and then sends τ to V). Also, to start
+with, we assume that P does not make further oracle queries after sending φ. We review the argument of [10] for
+bounding the probability that a k-parallel q-query classical oracle algorithm A with q < N makes V accept, using
+the terminology we introduced in Section 2.
+Let D : {0, 1}≤B →{0, 1}w ∪{⊥} be the database at the point that A sends φ to V (after having made the q
+k-parallel queries). Following the argument in Section 2, we can bound the success probability of A by bounding
+the probability that a random challenge γ = {vi}i∈[t] can be opened based on the information in the database D.
+As argued in Section 2 , the probability that the database D contains collisions, or a (q + 1)-chain with respect to
+the relation deﬁned in Remark 6.4, is small. Thus, by a union bound, we can assume that D contains no collisions
+nor (q + 1)-chains.
+Next, given the database D and the “commitment” φ, claimed to be the root label ℓrt, we need to analyze the
+set of leaves v that A can open. One of the key observations in [10] is that, for a database D with no collisions,
+there exists a maximal subtree T of GPoSW
+n
+that contains rt and admits a consistent labeling ℓwith ℓrt = φ. As
+observed in [10], this subtree T then contains all leaves that one can open given D. Thus, A can correctly answer
+a challenge γ = {v1, . . . , vt} if γ ⊆leaves(T), while otherwise it is unlikely that he succeeds.
+The subtree T, together with the labeling ℓof T, can be extracted using ExtractD
+n (φ), described in Algorithm 1
+in the Appendix C. Roughly speaking, starting with T := {rt}, consider v := rt and ℓrt := φ, and add left(v)
+and right(v) to T if (and only if) there exist ℓleft(v) and ℓright(v) such that ℓv = D
+ v, ℓleft(v), ℓright(v)
+
+, and repeat
+inductively with the newly added elements in T. In the end, for the leaves v ∈T check if ℓv = D(v, ℓin(v)) and
+remove v from T if this is not the case; we note here that v ∈leaves(T) ⇒in(v) ⊆T.
+In summary:
+26
+
+
+[PÁGINA PDF 27]
+Lemma 6.5. Let D : {0, 1}≤B →{0, 1}w ∪{⊥} be a database with no collisions (beyond ⊥). Then, for any
+φ ∈{0, 1}w, the subtree T and the labeling ℓproduced by ExtractD
+n (φ) are such that ℓis a consistent labeling of T
+with respect to D, having root label ℓrt = φ. Furthermore, for any leave v of Vn, if v ∈T then ℓu = D(u, ℓin(u))
+for all u ∈anc(vi), and if v̸ ∈T then there exists no labeling ℓ′ with ℓ′
+rt = φ and ℓ′
+u = D(u, ℓ′
+in(u)) for all
+u ∈anc(vi).
+The last step is to bound the number of leaves in T. Another key argument in [10] uses a certain “depth-
+robust” property of GPoSW
+n
+to show that for any subtree T ⊆Vn with rt ∈T, there exists a path P in T with
+length |P| ≥2 · |leaves(T)| −2. Recall we argued above that the graph labeling of a path P ∈GPoSW
+n
+induces
+a |P|-chain in H. The same argument applies here to show that there exists a |P|-chain in D since the extracted
+labels in P ⊆T are consistent (i.e., satisfying D(v, ℓin(v)) = ℓv). Combining these with the assumption that D
+contains no q + 1-chain, we have |leaves(T)| ≤(q + 2)/2. Therefore, the probability that A can open labels for a
+random challenge γ = {vi}i∈[t] is at most
+|leaves(T)|
+2n
+t
+≤
+q + 2
+2n+1
+t
+.
+Lemma 6.6. Let D : {0, 1}≤B →{0, 1}w ∪{⊥} be a database with no (q + 1)-chain. Let T be a subtree of
+GPoSW
+n
+admitting a consistent labeling with respect to D. Then, |leaves(T)| ≤(q + 2)/2.
+Finally, we brieﬂy discuss here how to handle the case that A can make additional queries after sending φ, as
+a similar argument is required in the analysis of the non-interactive Simple PoSW in the next section. As before,
+let D be the database right after A has sent φ = ℓrt, but now A can make additional queries after seeing γ, which
+adds new entries to D and may help A to open labels for more challenges γ.
+The main observation to analyze whether additional queries are helpful is as follows. Recall that T contains all
+leaves v that admit consistently labeled ancestors. Thus for the additional queries to be helpful, they must enlarge
+the extracted subtree T. More precisely, let D′ be the database after the additional queries and let T ′ and ℓ′ be
+extracted by ExtractD′
+n (φ). It must be that T ⊊T ′ and ℓ′|T = ℓ, and there must exist x with D(x) = ⊥while
+D′(x) = ℓv for some v ∈T. This happens with probability at most O(qk/2w) for each query since ℓhas support
+size at most O(qk). We capture the above crucial observation by means of the following formal statement, which,
+in this form, will then be useful in the security proof against quantum attacks.
+Lemma 6.7. Let D : {0, 1}≤B →{0, 1}w ∪{⊥} be a database with no collisions (beyond ⊥). Let φ ∈{0, 1}w
+and (T, ℓ) = ExtractD
+n (φ). Furthermore, let D′ = D[x7→u] and (T ′, ℓ′) = ExtractD′
+n (φ), and let v be a leave of
+Vn. If v ∈T ′ \ T then there exist j ∈{1, . . . , k} and z ∈anc(v) so that D(xj)̸ = D′(xj) = ℓ′
+z.
+Proof. Given that v ∈T ′, the labeling ℓ′ labels the ancestors of v consistently with respect to D′, i.e., ℓ′
+z =
+D′(z, ℓ′
+in(z)) for all z ∈anc(v). On another hand, since v is not in T, it must be that ℓ′ does not label the ancestors
+of v consistently with respect to D, i.e., there must exist z ∈anc(v) such that D(z, ℓ′
+in(z))̸ = ℓ′
+z = D′(z, ℓ′
+in(z)).
+Since D and D′ differ only within x, there exists j ∈{1, . . . , k} with xj = (z, ℓ′
+in(z)).
+6.2
+Post-Quantum Security of Simple PoSW
+In this section, we prove post-quantum security of the (non-interactive) Simple PoSW protocol. As we shall see,
+relying on the framework we developed in Section 5, the proof uses purely classical reasoning only, and somewhat
+resembles the arguments in the classical analysis.
+Theorem 6.8 (Post-Quantum Simple PoSW Security). Consider the Simple PoSW protocol with parameters w, t
+and N = 2n+1 −1 with w ≥tn. Let ˜P be a k-parallel q-query quantum oracle algorithm acting as a prover. The
+probability p that ˜P can make the veriﬁer V accept is at most
+p = O
+ 
+k2q2
+q + 2
+2n+1
+t
++ k3q3n
+2w
++ tn
+2w
+!
+.
+The ﬁrst step towards the proof is to invoke Corollary 4.2 (using the notation from Theorem 5.7), which, in
+the case here, bounds the success probability p of a dishonest prover ˜P by
+√p ≤
+q
+⊥
+k,q
+=⇒PRy
++
+r
+t · (n + 1) + 1
+2w
+,
+27
+
+
+[PÁGINA PDF 28]
+where R is the relation that checks correctness of ˜P’s output according to the scheme. In the following, we write
+Suc := PR and Fail = ¬Suc. Also, recall the database properties CL, SZ≤s and CHNs deﬁned previously, where
+the latter is with respect to the hash chain relation ◁considered in Remark 6.4. By the properties of (the subtree
+extracted with) ExtractD
+n (·), we have
+Suc \ CL =
+
+D ∈¬CL
+ ∃ℓrt ∈{0, 1}w s.t. DChQ(ℓrt) ⊆ExtractD
+n (ℓrt)
+	
+.
+(17)
+To bound
+q
+⊥
+k,q
+=⇒PRy
+=
+q
+⊥
+k,q
+=⇒Suc
+y
+, we consider database properties P0, . . . , Pq with P0 = ⊥and
+Ps = Suc ∪CL ∪CHNs+1 for 1 ≤s ≤q. Using Lemma 5.6, Remark 5.8 and Corollary 5.32,
+q
+⊥
+k,q
+=⇒Suc
+y
+≤
+X
+1≤s≤q
+q
+SZ≤k(s−1)\Ps−1
+k→Ps
+y
+.
+Thus, the proof of Theorem 6.8 follows immediately from the following bound on the considered transition ca-
+pacity.
+Proposition 6.9. For integers 0 ≤s ≤q, and for the database properties P0, . . . , Pq as deﬁned above
+q
+SZ≤k(s−1)\Ps−1
+k→Ps
+y
+≤4ek
+r
+10q + 1
+2w
++ 3ek
+r
+10kqn
+2w
++ ek
+s
+10
+q + 2
+2n+1
+t
+.
+Intuitively, we consider the transition from a database that is bounded in size, has no collision, no s-chain and
+does not have a successful output for ˜P, into one that contains a collision or an (s+1)-chain or a successful output
+for ˜P.
+Proof. Applying Corollary 5.34 with h := 2, X1 := LbQ and X2 := ChQ, and with P0, P1, P2 and Q in
+Corollary 5.34 set to21
+¬P0 := SZ≤k(s−1) \ Ps−1 ,
+P1 := Suc ,
+P2 := Suc ∪CL ∪CHNs+1 = Ps
+and
+Q := ¬(CL ∪CHNs+1) ,
+we can bound
+q
+SZ≤k(s−1)\Ps−1
+k→Ps
+y
+=
+q
+¬P0
+k→P2
+y
+by
+≤
+q
+¬P0
+k→¬Q
+LbQ
+y
++
+q
+¬P0
+k→¬Q
+ChQ ∪LbQ
+y
++
+q
+Q\P0
+k→Q ∩P1
+LbQ
+y
++
+q
+Q\P1
+k→Q ∩P2
+ChQ
+y
+≤2
+q
+¬P0
+k→¬Q
+y
++
+q
+Q\P0
+k→Q ∩P1
+LbQ
+y
++
+q
+Q\P1
+k→Q ∩P2
+ChQ
+y
+= 2
+q
+SZ≤k(s−1)\Ps−1
+k→CL ∪CHNs+1y
++
+q
+SZ≤k(s−1)\Ps−1\CL\CHNs+1
+k→Suc\CL\CHNs+1LbQ
+y
++
+q
+¬(Suc ∪CL ∪CHNs+1)
+k→Suc\CL\CHNs+1ChQ
+y
+≤2
+q
+SZ≤k(s−1)\Ps−1
+k→CL ∪CHNs+1y
++
+q
+SZ≤k(s−1)\Ps−1
+k→Suc\CL
+LbQ
+y
++
+q
+¬Ps
+k→Suc\CL
+ChQ
+y
+.
+By means of Lemma 5.31 (and Corollary 5.32), and recalling that Ps−1 = Suc∪CL∪CHNs, the ﬁrst capacity
+in the term can be controlled as
+q
+SZ≤k(s−1)\Ps−1
+k→CL ∪CHNs+1y
+≤
+q
+SZ≤k(s−1)\Ps−1
+k→CL
+y
++
+q
+SZ≤k(s−1)\Ps−1
+k→CHNs+1y
+≤
+q
+SZ≤k(s−1)\CL
+k→CL
+y
++
+q
+SZ≤k(s−1)\CHNs
+k→CHNs+1y
+≤2ek
+r
+10q + 1
+2w
++ ek
+r
+10kqn
+2w
+using earlier derived bounds. It remains to bound the remaining two capacities appropriately, which we do below.
+Intuitively,
+q
+¬Ps
+k→Suc\CL
+ChQ
+y
+captures the likelihood that a database D̸ ∈Suc (and with no collision
+and chain) is turned into one that does satisfy Suc by (re)deﬁning D on k values that correspond to challenge
+queries. For this to happen, one of the newly deﬁned function values of D, corresponding to a challenge query
+and thus specifying a set of leaves, must “hit” the set of leaves that can be answered, which is bounded in size.
+21Note that we have slight collision of notation here: P0, P1, P2 correspond to the choice of properties for applying Corollary 5.34, and
+should not be confused with Ps with s set to 0, 1, 2, respectively.
+28
+
+
+[PÁGINA PDF 29]
+Lemma 6.10. For any positive integer q, it holds that
+q
+¬Pq
+k→Suc\CL
+ChQ
+y
+≤ek ·
+q
+10
+  q+2
+2n+1
+t.
+Proof. For convenience, we will denote D[x 7→y] by Dx,y. In order to bound the above capacity, we deﬁne
+1-local properties Lx,D
+j
+and show that Lx,D
+j
+(weakly) recognize the considered transition (with input restricted to
+ChQ).
+For any D and x = (ℓ1
+rt, . . . , ℓk
+rt) ∈ChQk, we set
+Lx,D
+j
+:=
+n
+D◦∈D|x  DChQ
+◦
+(xj) ⊆leaves
+
+ExtractDx,⊥
+n
+(ℓj
+rt)
+o
+Suppose Dx,r ∈¬Pq = Fail \ CL \ CHNq+1 but Dx,u ∈Suc \ CL. Thus, by (17), there exists ℓrt ∈{0, 1}w with
+DChQ
+x,u (ℓrt) ⊆leaves
+
+ExtractDx,u
+n
+(ℓrt)
+
+,
+(18)
+while
+DChQ
+x,r (ℓrt)̸ ⊆leaves
+
+ExtractDx,r
+n
+(ℓrt)
+
+.
+(19)
+Since the output of the extraction procedure ExtractD
+n (·) only depends on those function values of D that corre-
+spond to label queries (x here consists of challenge queries), we have
+ExtractDx,r
+n
+(ℓrt) = ExtractDx,⊥
+n
+(ℓrt) = ExtractDx,u
+n
+(ℓrt).
+If ℓrt is different from all ℓj
+rt, then equations (18) and (19) contradict. So there is some j such that ℓj
+rt = ℓrt.
+Equations (18) and (19) thus become
+uj ⊆leaves
+
+ExtractDx,⊥
+n
+(ℓrt)
+
+and
+rj̸ ⊆leaves
+
+ExtractDx,⊥
+n
+(ℓrt)
+
+,
+understanding that uj and rj represent lists/sets of t (challenge) leaves. Hence rj̸ = uj. This concludes that Lx,D
+j
+indeed weakly recognizes the considered database transition.
+We note that, for each x ∈ChQk and D ∈Fail \ CL \ CHNq+1, since the longest hash chain in D is of length
+no more than q and T := ExtractDx,⊥
+n
+(ℓj
+rt) admits a consistent labeling (Lemma 6.5), it follows from Lemma 6.6
+that
+leaves
+
+ExtractDx,⊥
+n
+(ℓj
+rt)
+ ≤q + 2
+2
+.
+Therefore,
+P
+
+U ∈Lx,D
+j
+
+≤
+ 
+leaves
+ ExtractDx,⊥
+n
+(ℓj
+rt)
+
+2n
+!t
+≤
+q + 2
+2n+1
+t
+,
+and so the claimed bound follows by applying Theorem 5.36.
+Similarly here, the intuition is that
+q
+¬Ps
+k→Suc\CL
+LbQ
+y
+captures the likelihood that a database D̸ ∈Suc
+(and with no collision and chain) is tuned into one that does satisfy Suc by (re)deﬁning D on k values that
+correspond to label queries. For this to happen, one of the newly deﬁned function values of D, corresponding to a
+label, must “match up” with the other labels.
+Lemma 6.11. For any positive integer q, it holds that
+q
+SZ≤k(q−1)\Pq−1
+k→Suc\CL
+LbQ
+y
+≤ek
+q
+10nkq
+2w .
+Proof. Deﬁne the notion of labeling support LSupp(D) of a database D ∈D as follows.
+LSupp(D) :=
+
+λ ∈{0, 1}w
+
+∃0≤i≤d≤n, v∈Vn, ℓ1, . . . , ℓd ∈{0, 1}w
+s.t. D(v, ℓ1, . . . , ℓi−1, λ, ℓi+1, . . . ℓd)̸ = ⊥
+
+∪
+n
+ℓrt ∈{0, 1}w  DChQ(ℓrt)̸ = ⊥
+o
+.
+We note that since LSupp is deﬁned only in terms of where D is deﬁned, but does not depend on the actual
+function values (beyond being non-⊥), LSupp(D) ⊆LSupp(Dx,0) for any x ∈X k, where 0 ∈{0, 1}k is the
+all-0 string.
+In order to bound above capacity, we deﬁne 1-local properties and show that they (weakly) recognize the
+considered transition (with input restricted to LbQ). For any D and x ∈LbQk, consider the local properties
+Lx,D
+j
+:=
+
+D◦∈D|x  D◦(xj) ∈LSupp(Dx,0)
+	
+.
+29
+
+
+[PÁGINA PDF 30]
+Let Dx,r ∈¬Pq−1 = Fail \ CL \ CHNq yet Dx,u ∈Suc \ CL. By (17), there exists ℓrt so that DChQ
+x,u (ℓrt) ⊆
+ExtractDx,u
+n
+(ℓrt), while, on the other hand, there exists some v ∈DChQ
+x,r (ℓrt) \ leaves
+ ExtractDx,r
+n
+(ℓrt)
+
+. Given
+that here x ∈LbQk, we have Dx,r(ℓrt) = Dx,u(ℓrt), and thus, by (18), we have
+v ∈leaves
+
+ExtractDx,u
+n
+(ℓrt)
+
+\ leaves
+
+ExtractDx,r
+n
+(ℓrt)
+
+.
+Writing ℓ′ for the labeling extracted by ExtractDx,u
+n
+(ℓrt), it then follows from Lemma 6.7 that there exist
+j ∈{1, . . . , k} and z ∈anc(v) such that uj = Dx,u(xj) = ℓ′
+z̸ = Dx,r(xj) = rj. Furthermore, since DChQ
+x,u (ℓ′
+z) =
+DChQ
+x,u (ℓrt)̸ = ⊥in case z = rt, and ℓ′
+z is part of the input that is mapped to ℓ′
+par(z) under Dx,u in all other cases,
+we also have uj = ℓ′
+z ∈LSupp(Dx,u) ⊆LSupp(Dx,0). Therefore, the local properties Lx,D
+j
+do indeed weakly
+recognize the considered transition for input restricted to LbQ.
+For D ∈SZ≤k(q−1) \ Pq−1, since there are only k(q −1) entries in D, we have
+P[U ∈Lx,D
+j
+] ≤|LSupp(Dx,0)|
+2w
+≤nkq
+2w . ,
+and thus the claimed bound follows from applying Theorem 5.36.
+Acknowledgements
+We thank Jeremiah Blocki, Seunghoon Lee, and Samson Zhou for the open discussion regarding their work [5],
+which achieves comparable results for the hash-chain problem and the Simple PoSW scheme.
+References
+[1] Andris Ambainis. Polynomial degree and lower bounds in quantum complexity: Collision and element distinctness with
+small range. Theory of Computing, 1(1):37–46, 2005.
+[2] Andris Ambainis, Mike Hamburg, and Dominique Unruh. Quantum security proofs using semi-classical oracles. In
+Boldyreva A. and Micciancio D., editors, Advances in Cryptology - CRYPTO 2019, volume 11693 of Lecture Notes in
+Computer Science, pages 269–295. Springer, 2019.
+[3] Mihir Bellare and Phillip Rogaway. Random oracles are practical: A paradigm for designing efﬁcient protocols. In First
+ACM Conference on Computer and Communications Security, pages 62–73. ACM, 1993.
+[4] Charles H Bennett, Ethan Bernstein, Gilles Brassard, and Umesh Vazirani. Strengths and weaknesses of quantum com-
+puting. SIAM journal on Computing, 26(5):1510–1523, 1997.
+[5] Jeremiah Blocki, Seunghoon Lee, and Samson Zhou. On the security of proofs of sequential work in a post-quantum
+world. In 2nd Conference on Information-Theoretic Cryptography (ITC 2021). Schloss Dagstuhl-Leibniz-Zentrum f¨ur
+Informatik, 2021.
+[6] Dan Boneh, ¨Ozg¨ur Dagdelen, Marc Fischlin, Anja Lehmann, Christian Schaffner, and Mark Zhandry. Random oracles
+in a quantum world. In Lee D.H. and Wang X., editors, Advances in Cryptology – ASIACRYPT 2011, volume 7073 of
+Lecture Notes in Computer Science, pages 41–69. Springer, 2011.
+[7] Gilles Brassard, Peter Hoyer, and Alain Tapp. Quantum algorithm for the collision problem. arXiv/quant-ph, Report
+9705002, 1997. https://arxiv.org/abs/quant-ph/9705002.
+[8] Ran Canetti, Oded Goldreich, and Shai Halevi. The random oracle methodology, revisited. Journal of the ACM (JACM),
+51(4):557–594, 2004.
+[9] Alessandro Chiesa, Peter Manohar, and Nicholas Spooner. Succinct arguments in the quantum random oracle model.
+In Dennis Hofheinz and Alon Rosen, editors, Theory of Cryptography - TCC 2019, volume 11892 of Lecture Notes in
+Computer Science. Springer, 2019.
+[10] Bram Cohen and Krzysztof Pietrzak. Simple proofs of sequential work. In Annual International Conference on the
+Theory and Applications of Cryptographic Techniques, pages 451–467. Springer, 2018.
+[11] Jan Czajkowski, Christian Majenz, Christian Schaffner, and Sebastian Zur. Quantum lazy sampling and game-playing
+proofs for quantum indifferentiability.
+arXiv/quant-ph, Report 1904.11477, 2019.
+https://arxiv.org/abs/
+1904.11477.
+[12] Amos Fiat and Adi Shamir. How to prove yourself: Practical solutions to identiﬁcation and signature problems. In
+Conference on the Theory and Application of Cryptographic Techniques, pages 186–194. Springer, 1986.
+30
+
+
+[PÁGINA PDF 31]
+[13] Lov K Grover. A fast quantum mechanical algorithm for database search. In Proceedings of the twenty-eighth annual
+ACM symposium on Theory of computing, pages 212–219, 1996.
+[14] Yassine Hamoudi and Fr´ed´eric Magniez. Quantum time-space tradeoffs by recording queries. arXiv/quant-ph, Report
+2002.08944, 2020. https://arxiv.org/abs/2002.08944.
+[15] Akinori Hosoyamada and Tetsu Iwata. 4-round luby-rackoff construction is a qprp. In Steven D. Galbraith and Shiho
+Moriai, editors, Advances in Cryptology - ASIACRYPT 2019, volume 11921 of Lecture Notes in Computer Science, pages
+145–174. Springer, 2019.
+[16] Stacey Jeffery, Fr´ed´eric Magniez, and Ronald de Wolf. Optimal parallel quantum query algorithms. Algorithmica,
+79(2):509–529, 2017.
+[17] Qipeng Liu and Mark Zhandry. Revisiting post-quantum Fiat-Shamir. In Alexandra Boldyreva and Daniele Micciancio,
+editors, Advances in Cryptology - CRYPTO 2019, volume 11693 of Lecture Notes in Computer Science, pages 326–355.
+Springer, 2019.
+[18] Dominique Unruh. Revocable quantum timed-release encryption. In Phong Q. Nguyen and Elisabeth Oswald, editors,
+Advances in Cryptology - EUROCRYPT 2014, volume 8441 of Lecture Notes in Computer Science, pages 129–146.
+Springer, 2014.
+[19] Christof Zalka. Grover’s quantum searching algorithm is optimal. Phys. Rev. A, 60:2746–2751, Oct 1999.
+[20] Mark Zhandry. How to record quantum queries, and applications to quantum indifferentiability. In Alexandra Boldyreva
+and Daniele Micciancio, editors, Advances in Cryptology - CRYPTO 2019, volume 11693 of Lecture Notes in Computer
+Science, pages 239–268. Springer, 2019.
+A
+Efﬁcient Simulation of the Compressed Oracle
+In order to complete our exposition of the compressed oracle, we show here another aspect of the technique,
+which is not relevant in our context but an important feature in other applications: similarly to the classical lazy-
+sampling technique, the evolution of the compressed oracle can be efﬁciently computed, and useful information
+can be efﬁciently extracted from the compressed oracle.
+For concreteness, we assume here that Y = {0, 1}m. This in particular means that ˆY = Y, and that there
+is a designated and efﬁciently computable quantum Fourier transform QFT : |y⟩7→|ˆy⟩= H⊗m|y⟩. This then
+also means that D = ˆD, but we still distinguish between |D⟩= N
+x |D(x)⟩and | ˆD⟩= N
+x QFT|D(x)⟩for any
+D ∈D. Additionally, we assume that X comes with an efﬁciently computable total order, say X = {0, 1}n.
+Consider the classical encoding function Enc : D →L := ((X × Y) ∪{⊥})|X| that maps D ∈D to the
+list L =
+
+(x1, y1), . . . , (xs, ys), ⊥, . . . , ⊥
+
+of pairs (xi, yi) for which yi = D(xi)̸ = ⊥, sorted as x1 < · · · < xs
+and padded with ⊥’s. Recall the unitary cO, deﬁned in Section 4.3 and which describes the evolution of the
+compressed oracle, and consider the corresponding “update function” Upd : X × Y × L →X × Y × L, deﬁned
+to satisfy
+Upd
+ x, y, Enc(D)
+
+=
+ x, y, Enc(D′)
+
+⇐⇒|x⟩|ˆy⟩| ˆ
+D′⟩= cO|x⟩|ˆy⟩| ˆD⟩= |x⟩|ˆy⟩⊗cOxˆy| ˆD⟩
+for any x ∈X, y ∈Y and D ∈D. By construction, and exploiting (7), it turns out that Upd is a rather simple
+function. Applied to x ∈X, y ∈Y and L = [(x1, y1), . . . , (xs, ys), ⊥, . . . , ⊥] ∈L, it acts as follows. If yi = 0
+for some i then it acts as identity,22 otherwise, the following two cases are distinguished: if x̸ ∈{x1, . . . , xs} and
+y̸ = 0 then Upd inserts the pair (x, y) to the list, while if x = xi and y̸ = yi for some i then Upd replaces (xi, yi)
+by (xi, yi ⊕y). In particular, for lists L of bounded size s ≤Q, the classical function Upd can be efﬁciently
+computed, i.e., in time polynomial in Q and in the size of the bit representations of the elements of X and Y.
+Formally, for a ﬁxed Q, let D≤Q := {D ∈D : |{x ∈X : D(x)=⊥}| ≤Q}, and let enc : D≤Q →L≤Q :=
+((X × Y) ∪{⊥})Q be deﬁned in the obvious way, i.e., so that enc(D) is obtained from Enc(D) by removing the
+rightmost ⊥-paddings. Similarly, upd : X ×Y ×L≤Q →X ×Y ×L≤Q is deﬁned in the obvious way to coincide
+with Upd except for the shorter ⊥-padding, and except for the following additional modiﬁcation: upd is declared
+to act as identity on (x, y, L) whenever s = Q and x̸ = {x1, . . . , xs}, i.e., when there would be an “overﬂow”.
+It then follows that upd is an efﬁciently computable permutation. Thus, by basic theory of quantum computation,
+22This is the “artiﬁcial” case, which was introduced to have cO deﬁned on the entire space C[X] ⊗C[Y] ⊗C[D]
+31
+
+
+[PÁGINA PDF 32]
+the corresponding unitary |x, y, L⟩7→|upd(x, y, L)⟩can be efﬁciently computed by means of a polynomial sized
+quantum circuit. Hence, by means of the encoding
+ˆenc : | ˆD⟩7→|enc(D)⟩= |x1⟩|y1⟩· · · |xs⟩|ys⟩|⊥⟩· · · |⊥⟩,
+the unitary cO can be efﬁciently computed, as long as it acts on C[X] ⊗C[Y] ⊗C[D<Q], i.e., as long as fewer
+than Q queries are being made.
+Alternatively, we can also consider the following variant, where |D⟩, rather than | ˆD⟩, is encoded as |enc(D)⟩:
+enc : |D⟩7→|enc(D)⟩= |x1⟩|y1⟩· · · |xs⟩|ys⟩|⊥⟩· · · |⊥⟩
+This encoding offer the following useful property. Consider a unitary Uf on C[D], plus an ancilla, that computes
+a classical function f, meaning that Uf : |D⟩|w⟩7→|D⟩|w ⊕f(D)⟩, and for which the classical function f
+is efﬁciently computable for D ∈D≤Q and given that D is represented by enc(D). Then, the unitary Uf is
+efﬁciently computable with the considered encoding enc. This allows for efﬁcient extraction of useful information
+from the compressed oracle. Typical examples would be to check whether a certain preimage x◦∈X is in
+the database, i.e., whether D(x◦)̸ = ⊥, or to check whether there is a 0-preimage in the database, i.e. whether
+∃x : D(x) = 0, etc.
+The ﬁnal, simple yet crucial, observation is that one can efﬁciently switch between these two encodings.
+Indeed, it is easy to see that, say, enc commutes with applying the quantum Fourier transform QFT in the obvious
+way, i.e.,
+enc| ˆD⟩= |x1⟩|ˆy1⟩· · · |xs⟩|ˆys⟩|⊥⟩· · · |⊥⟩.
+Thus, enc equals ˆenc up to some QFT’s to be applied (controlled by the corresponding register not being ⊥),
+which can be efﬁciently done. Hence, by a suitable encoding, both the evolution of the compressed oracle as well
+as efﬁciently computable classical functions on the (suitably encoded) database D, can be efﬁciently computed by
+a quantum circuit.
+B
+PoSW Deﬁnition
+Informally, a (non-interactive) PoSW allows a prover P to generate an efﬁciently veriﬁable proof showing that
+some computation was going on for N sequential steps since some “statement” χ was received, in the sense that
+even a powerful adversary with parallel computation power cannot compute a valid proof with much less than N
+steps. PoSW is typically constructed in the random oracle model. We recall its formal deﬁnition from [10] (after
+applying the Fiat-Shamir transformation) as follows (see Figure 3 for an illustration).
+H : {0, 1}≤B →{0, 1}w
+Prover P(N, t, w)
+Veriﬁer V(N, t, w)
+statement χ ←{0, 1}w
+(φ, φP) := PoSW(χ, N)
+γ := Hχ(φ)
+τ := open(χ, N, φP, γ)
+π := (φ, τ)
+verify authentication path
+If both succeed,
+verify(χ,N,φ,γ,τ)=accept
+Figure 3: Non-interactive PoSW.
+• Common Inputs: The prover P and the veriﬁer V get as common input two statistical security parameters
+w, t ∈N and a time parameter N ∈N. They have access to a random oracle H : {0, 1}≤B →{0, 1}w,
+32
+
+
+[PÁGINA PDF 33]
+where B is sufﬁciently large but otherwise arbitrary.23
+• Statement: V samples a random χ ←{0, 1}w and sends it to P.
+• Compute PoSW: P computes (φ, φP) := PoSWH(χ, N), where φ is a proof and φP is a state P uses to
+compute the opening.
+• Opening Challenge: The opening challenge γ is determined by γ := H(χ, φ) ∈{0, 1}w.
+• Open: P computes τ := openH(χ, N, φP, γ). P sends π := (φ, τ) to V.
+• Verify: V computes and outputs verify(χ, N, φ, γ, τ) ∈{accept, reject}.
+Since our goal is to analyze post-quantum security of Simple PoSW [10], we will not present the formal
+security properties for PoSW here. Instead, we will prove concrete upper bounds on the probability that a k-
+parallel q-query quantum oracle algorithm A with q < N can generate a valid proof.
+C
+The Extraction Algorithm
+Algorithm 1 ExtractD
+n (ℓrt)
+Input: ℓrt ∈{0, 1}w
+Output: a subtree T ⊆Vn
+Initialize:
+Set ℓext : Vn →{0, 1}w ∪{⊥} with ℓext
+rt ←ℓrt and ℓext
+v
+←⊥for all v ∈Vn \ {rt};
+Set all vertex v ∈Vn as unmarked;
+Notation: Deﬁne the support of a labeling as Supp(ℓext) := {v ∈Vn : ℓext
+v̸
+=⊥}
+Labeling extraction:
+while there is an unmarked v ∈Supp(ℓext) \ leaves(Vn) do
+mark the vertex v;
+if there exists some x, y ∈{0, 1}w such that ℓext
+v
+= D(v, x, y) then
+ℓext
+left(v) ←x;
+ℓext
+right(v) ←y;
+end
+end
+Consistency check:
+T ←Supp(ℓext);
+for v ∈leaves(T) do
+if ℓext
+v̸
+= D(v, ℓext
+in(v)) then
+T ←T \ {v};
+end
+end
+output T;
+23The original paper [10] considers X = {0, 1}∗; however, we want X to be ﬁnite so that our results from the previous sections apply.
+Thus, we simply choose B large enough, so that the scheme is well deﬁned, but also larger than any query that an arbitrary but ﬁxed attacker
+will make.
+33

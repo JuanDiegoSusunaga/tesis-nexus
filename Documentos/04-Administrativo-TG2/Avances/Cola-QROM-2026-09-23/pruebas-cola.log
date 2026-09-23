@@ -1,0 +1,21 @@
+test_144_perfiles_reproducidos (test_cola_qrom_tg2.ColaQrom.test_144_perfiles_reproducidos) ... ok
+test_1792_bloques_con_suma_directa (test_cola_qrom_tg2.ColaQrom.test_1792_bloques_con_suma_directa) ... ok
+test_anclar_el_ciclo_crea_colision (test_cola_qrom_tg2.ColaQrom.test_anclar_el_ciclo_crea_colision) ... ok
+test_ausencia_no_es_cola (test_cola_qrom_tg2.ColaQrom.test_ausencia_no_es_cola) ... ok
+test_bloque_coherente_no_es_probabilidad_clasica (test_cola_qrom_tg2.ColaQrom.test_bloque_coherente_no_es_probabilidad_clasica) ... ok
+test_ciclo_sin_ancla_no_satisface_hipotesis (test_cola_qrom_tg2.ColaQrom.test_ciclo_sin_ancla_no_satisface_hipotesis) ... ok
+test_cola_anclada_de_1024_respuestas (test_cola_qrom_tg2.ColaQrom.test_cola_anclada_de_1024_respuestas) ... ok
+test_completar_en_el_corte_no_es_cola (test_cola_qrom_tg2.ColaQrom.test_completar_en_el_corte_no_es_cola) ... ok
+test_escalera_binomial (test_cola_qrom_tg2.ColaQrom.test_escalera_binomial) ... ok
+test_formula_de_conteo (test_cola_qrom_tg2.ColaQrom.test_formula_de_conteo) ... ok
+test_fuente_identificada_y_huellas (test_cola_qrom_tg2.ColaQrom.test_fuente_identificada_y_huellas) ... ok
+test_matriz_compresion_unitaria_20_fases (test_cola_qrom_tg2.ColaQrom.test_matriz_compresion_unitaria_20_fases) ... ok
+test_parametros_invalidos (test_cola_qrom_tg2.ColaQrom.test_parametros_invalidos) ... ok
+test_presupuesto_y_limite_a_512 (test_cola_qrom_tg2.ColaQrom.test_presupuesto_y_limite_a_512) ... ok
+test_redondeo_superior_exacto (test_cola_qrom_tg2.ColaQrom.test_redondeo_superior_exacto) ... ok
+test_soporte_insuficiente (test_cola_qrom_tg2.ColaQrom.test_soporte_insuficiente) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.865s
+
+OK

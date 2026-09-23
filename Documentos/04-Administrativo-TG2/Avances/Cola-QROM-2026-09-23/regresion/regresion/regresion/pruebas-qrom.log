@@ -1,0 +1,17 @@
+test_bad_cronologico_no_es_propiedad_de_la_tabla (test_qrom_tg2.QromTg2.test_bad_cronologico_no_es_propiedad_de_la_tabla) ... ok
+test_busqueda_extremos_y_un_marcado (test_qrom_tg2.QromTg2.test_busqueda_extremos_y_un_marcado) ... ok
+test_calculos_archivados (test_qrom_tg2.QromTg2.test_calculos_archivados) ... ok
+test_circuito_xor_y_promedio_de_256_oraculos (test_qrom_tg2.QromTg2.test_circuito_xor_y_promedio_de_256_oraculos) ... ok
+test_cota_exacta_monotona_y_umbral (test_qrom_tg2.QromTg2.test_cota_exacta_monotona_y_umbral) ... ok
+test_cuenta_prefijo_en_nueve_perfiles (test_qrom_tg2.QromTg2.test_cuenta_prefijo_en_nueve_perfiles) ... ok
+test_doce_busquedas_respetan_cota_cuadratica (test_qrom_tg2.QromTg2.test_doce_busquedas_respetan_cota_cuadratica) ... ok
+test_medir_el_registro_destruye_esta_amplificacion (test_qrom_tg2.QromTg2.test_medir_el_registro_destruye_esta_amplificacion) ... ok
+test_prefijo_real_y_trabajo_en_catorce_certificados (test_qrom_tg2.QromTg2.test_prefijo_real_y_trabajo_en_catorce_certificados) ... ok
+test_promedios_superan_expresion_clasica (test_qrom_tg2.QromTg2.test_promedios_superan_expresion_clasica) ... ok
+test_rechaza_perfiles_fuera_del_modelo (test_qrom_tg2.QromTg2.test_rechaza_perfiles_fuera_del_modelo) ... ok
+test_salto_terminal_por_enumeracion (test_qrom_tg2.QromTg2.test_salto_terminal_por_enumeracion) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.158s
+
+OK
