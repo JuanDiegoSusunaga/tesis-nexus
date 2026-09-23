@@ -4,9 +4,11 @@
 
 **Resultado esperado:** entregar los Objetivos 3 y 4 con correspondencia verificable entre afirmaciones, fuentes, código y experimentos, y preparar la sustentación.
 
+**Decisión vigente del autor, 23 de septiembre:** QROM completo del protocolo AIR/FRI es trabajo futuro y deja de ser requisito del cierre activo. Se preservan sus avances parciales sin afirmar seguridad cuántica completa. Las obligaciones R1 de ML-DSA mantienen su alcance. Los párrafos QROM siguientes describen el historial de esa investigación.
+
 **Revisión ROM previa:** [argumento de potencial para nonces y controles de premisas ROM](Avances/Revision-Critica-ROM-2026-09-23/README.md). Pasan 40 pruebas Python y 197 Rust, con check/build. La búsqueda exacta de 96 escenarios pequeños no supera la cota; dictamen externo pendiente.
 
-**Etapa QROM iniciada a solicitud del autor:** [cota parcial del trabajo y correspondencia con teoremas cuánticos](Avances/QROM-2026-09-23/README.md). Doce pruebas adicionales elevan la regresión a 52 Python y 197 Rust, con check/build. La cota usa una condición necesaria y no incorpora AIR/FRI. El siguiente trabajo se concentra en Q1–Q5 del informe: extractor sin orden temporal, tratamiento cuántico de índices y nonces, enlace por rondas, pérdidas y parámetros. QROM completo y dictamen externo permanecen abiertos.
+**Etapa QROM iniciada a solicitud del autor:** [cota parcial del trabajo y correspondencia con teoremas cuánticos](Avances/QROM-2026-09-23/README.md). Doce pruebas adicionales elevan la regresión a 52 Python y 197 Rust, con check/build. La cota usa una condición necesaria y no incorpora AIR/FRI. El informe identificó Q1–Q5: extractor sin orden, índices/nonces, enlace por rondas, pérdidas y parámetros. Las obligaciones aún abiertas se conservan como trabajo futuro.
 
 **Antecedente QROM del extractor:** [extractor y eventos algebraicos en la base comprimida](Avances/Extractor-QROM-2026-09-23/README.md). Se escribe y contrasta el lema de estabilidad; 45 escenarios y catorce tests nuevos, con 66 Python y 197 Rust en esa etapa. La cota controla un evento intermedio.
 
@@ -121,7 +123,7 @@ Las fechas se fijarán con la disponibilidad real y los acuerdos del director. E
 - [x] Preparar el paquete de revisión S1–S3 y sus seis preguntas.
 - [x] Escribir una función de estado y nuevas cotas por ronda del IOP conjunto en la rama de investigación, con lemas y contrastes finitos identificados.
 - [x] Integrar la rama en `main` y escribir la transferencia clásica ROM para los bytes de TG2 v1, con pérdidas explícitas y 108 escenarios; completar la verificación Python de AIR/FRI del corpus.
-- [ ] Revisar ambas demostraciones, resolver los parámetros de la garantía pretendida y desarrollar QROM si forma parte del cierre; registrar dictamen independiente y decisión de alcance (S3–S5).
+- [ ] Revisar las demostraciones ideal y ROM, resolver o delimitar los parámetros de la garantía declarada y registrar dictamen independiente (S3–S5). QROM completo se conserva como trabajo futuro por decisión del autor.
 - [x] Presentar la amortización como resultado condicionado al modelo, incluyendo disponibilidad de datos y costo del prover, con análisis de sensibilidad para los valores asumidos.
 
 **Avance R4:** 160 pruebas pasan. Quince casos delimitan el verificador y tres comprueban la sincronización; 17 casos Criterion y 40 mediciones STARK se preservan con dispersión. La primera ejecución bloqueó ML-DSA y multinúcleo; el complemento terminó tras el cambio de Windows por el autor. Totales nuevos: 29 casos Criterion, 40 mediciones STARK y 40 repeticiones multinúcleo. La revisión de soundness y conciliación histórica sigue abierta. [Informe](Avances/R4-Verificador-y-Evidencia-2026-09-22.md).
@@ -178,4 +180,4 @@ Para los cambios de código, ejecutar las comprobaciones requeridas por el proye
 
 La revisión que originó esta ruta fue estática y documental. La primera sesión ejecutó el seguimiento, inventario, correcciones formales y edición indicados arriba. No se modificó Rust ni se ejecutaron pruebas o benchmarks nuevos. Los criterios técnicos de R1–R5 siguen abiertos.
 
-**Siguiente ejecución:** acotar β^S, la omisión de parejas incorrectas, usando la cadena y los nonces bajo consultas en superposición. Revisar la cota propuesta de cola, el extractor, la cobertura y el cambio de juego; evaluar el corte R junto con todas las pérdidas, sin interpretar los exponentes de cola como seguridad global. Acompañar M1–M6 con los complementos; integrar las derivaciones revisadas en las salidas documentales y preparar la defensa. R1 mantiene sus obligaciones propias; las integraciones de R3 y las garantías de custodia de R5 siguen delimitadas.
+**Siguiente ejecución:** revisar y delimitar las afirmaciones que entrarán en la entrega, integrar los complementos revisados en manuscrito y derivaciones, comprobar Word/PDF y preparar la defensa. Presentar QROM como resultados parciales y trabajo futuro. Su investigación se retomará por solicitud expresa del autor. R1 mantiene sus obligaciones propias; las integraciones de R3 y las garantías de custodia de R5 siguen delimitadas.

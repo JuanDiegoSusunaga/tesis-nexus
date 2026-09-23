@@ -1,5 +1,11 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Decisión de alcance: QROM como trabajo futuro, 23 de septiembre de 2026
+
+El autor indicó expresamente: «Deja en memoria QROM como trabajo futuro». Se registra como decisión vigente para la transferencia QROM completa del protocolo AIR/FRI de TG2 v1. La cota de omisión β^S, el dictamen de esa línea y sus parámetros conjuntos quedan como investigación futura y dejan de ser requisitos del plan de cierre activo. No se reanudará esa investigación por defecto al continuar el cierre; se retomará cuando el autor lo solicite expresamente.
+
+Se conservan los cuatro paquetes QROM, sus demostraciones propuestas, pruebas y límites. La cota de cola no resuelve la omisión ni acredita seguridad QROM completa. La decisión no altera las obligaciones de correspondencia y revisión R1 de ML-DSA, ni constituye un nuevo dictamen del director. Se actualizan memoria local, pendientes, ruta, balance, brief, índice y paquete de revisión. La prioridad pasa a revisar y delimitar las afirmaciones incluidas, consolidar el manuscrito y preparar la sustentación. Los apartados siguientes conservan el historial de investigación.
+
 ## Consolidación de pendientes, 23 de septiembre de 2026
 
 Ante la consulta del autor, se cotejó `PENDIENTES.md` con la ruta de cierre y el último informe QROM. El desarrollo de omisión, el dictamen y los parámetros QROM quedan como tareas independientes. Se explicitan el seguimiento F0/E0–E4, la trazabilidad y repetición de mediciones, la integración de los complementos revisados al manuscrito y al Word de derivaciones, la regeneración y revisión de formatos, la actualización del manifiesto y la plantilla institucional si se exige. El ensayo detalla los temas de defensa. Esta actualización es documental; conserva el estado técnico y los resultados registrados en la entrada siguiente.

@@ -2,6 +2,8 @@
 
 **Fecha:** 23 de septiembre de 2026. Balance técnico para revisar el cierre académico de TG2; conserva las obligaciones abiertas y el enfoque en sistemas en general.
 
+**Decisión vigente del autor:** la transferencia QROM completa del protocolo AIR/FRI queda como trabajo futuro. Su conclusión no es un requisito de esta ruta de cierre; se conservan los resultados parciales y se declara el límite. R1 de ML-DSA mantiene sus obligaciones propias.
+
 ## Actividades y evidencia
 
 | Actividad | Resultado disponible | Evidencia | Estado y límite |
@@ -35,8 +37,9 @@ El [avance posterior de extracción QROM](../Avances/Extractor-QROM-2026-09-23/R
 | Tema | Acción concreta | Condición de cierre |
 |---|---|---|
 | Revisión formal R1 | Registrar revisor, observaciones y resolución de las correcciones | Dictamen del director o lector competente |
-| Argumentos S1–S3 | Resolver las seis preguntas del [paquete M1–M6](../Avances/Revision-Matematica-S1-S3-2026-09-23.md) | Dictamen y decisión sobre suficiencia para el alcance aprobado |
-| Garantía concreta del ejecutable | Si se exige, completar correspondencia R1, revisar las demostraciones por rondas y ROM y desarrollar la reducción QROM | Dictamen sobre hipótesis y pérdidas; parámetros suficientes para la garantía declarada |
+| Argumentos S1–S3 | Resolver M1–M6 para las afirmaciones incluidas; la extensión QROM de M5 queda en trabajo futuro | Dictamen y decisión sobre suficiencia para el alcance aprobado |
+| Garantía concreta del ejecutable | Si se exige, completar correspondencia R1 y revisar las demostraciones por rondas y ROM | Dictamen sobre hipótesis y pérdidas; parámetros suficientes para la garantía declarada, sin atribuir QROM completo |
+| Transferencia QROM de AIR/FRI | Conservar avances y obligaciones de omisión, revisión y parámetros como investigación futura | Fuera del cierre activo por decisión del autor; retomar cuando lo solicite |
 | Despliegue de claves | Si se afirma protección operativa completa, integrar fuente, custodia durable, épocas y anclaje | Evidencia de integración y recuperación bajo el modelo declarado |
 | Protección física de residencia | Si se afirma reducción efectiva de exposición, observar copias/residuos y proteger semilla | Medición de la frontera declarada y política implementada |
 | Series históricas | Conciliar revisión, condiciones y cifras donde faltan metadatos | Procedencia identificada o limitación histórica conservada |

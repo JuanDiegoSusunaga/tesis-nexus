@@ -4,6 +4,8 @@
 
 ## Por dónde empezar
 
+**Alcance vigente:** por decisión del autor del 23 de septiembre, completar QROM del protocolo AIR/FRI queda como **trabajo futuro**. La ruta activa prioriza revisión de resultados, consolidación del manuscrito y sustentación; los avances QROM se conservan con sus límites.
+
 1. [Manuscrito vigente y formatos](Documentos/01-Manuscrito/README.md).
 2. [Balance de los Objetivos 3 y 4](Documentos/04-Administrativo-TG2/Entrega-Final/Balance-Objetivos-TG2.md).
 3. [Índice de entrega e identificación de la versión](Documentos/04-Administrativo-TG2/Entrega-Final/README.md).

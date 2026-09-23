@@ -2,6 +2,8 @@
 
 ## Actualización vigente — 23 de septiembre de 2026
 
+**Decisión de alcance del autor:** QROM completo del protocolo AIR/FRI queda como trabajo futuro. Se prioriza revisar y delimitar las afirmaciones de la entrega, consolidar el manuscrito y preparar la sustentación. Los avances QROM siguientes se conservan como resultados parciales; no se presenta su finalización como requisito de esta ruta. Esta decisión no constituye dictamen académico ni modifica R1 de ML-DSA.
+
 **Avance QROM vigente:** [cota cuántica de la cola de índices](Avances/Cola-QROM-2026-09-23/README.md). Se propone una demostración por conteo de respuestas y recurrencia de amplitudes. Hay 144 perfiles, 16 con cota de cola menor que uno usando cortes mayores del análisis; pasan 96 Python y 197 Rust, check/build. **La omisión de parejas incorrectas sigue abierta**, junto con el dictamen de las demostraciones. Los exponentes de cola no representan seguridad global; Rust conserva su comportamiento. Los párrafos siguientes registran antecedentes.
 
 **Antecedente del cambio de juego:** [muestreo y reducción condicional al verificador](Avances/Muestreo-QROM-2026-09-23/README.md). Reconstruye índices/nonces y propone la cobertura de aceptación falsa con pérdidas explícitas. Esa regresión reunió 80 Python y 197 Rust, check/build, 72 presupuestos y 28 recorridos. La nueva etapa separa la obligación de cola de la de omisión.

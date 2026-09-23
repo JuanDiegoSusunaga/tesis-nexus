@@ -2,6 +2,8 @@
 
 **Estado:** edición de trabajo organizada el 23 de septiembre de 2026, preparada para revisión. La aprobación académica de cierre y la fecha de entrega definitiva siguen por registrar.
 
+**Alcance vigente:** completar QROM del protocolo AIR/FRI queda como trabajo futuro por decisión del autor del 23 de septiembre. Los suplementos se conservan como investigación parcial y su conclusión deja de bloquear esta ruta de entrega.
+
 ## Contenido de la edición
 
 | Elemento | Ubicación |

@@ -2,6 +2,8 @@
 
 **Fecha:** 23 de septiembre de 2026. **Estado:** preparado; revisión independiente y envío no registrados. La aprobación previa del director no se atribuye a estas derivaciones posteriores.
 
+**Decisión posterior del autor:** la transferencia QROM completa del protocolo AIR/FRI queda como trabajo futuro. La parte QROM de M5 y sus desarrollos pendientes se conservan para esa investigación. El cierre activo revisa las afirmaciones que se incluyan en la entrega y sus límites, sin exigir completar QROM. La presentación de resultados parciales debe identificarlos como propuestas pendientes de dictamen.
+
 ## Material y orden de lectura
 
 **Cota QROM de cola:** [conteo y recurrencia de amplitudes](Cola-QROM-2026-09-23/README.md). Se propone un límite para Tcola mediante ausencia de ciclos anclados, capacidad local, escalera de niveles y unión sobre conjuntos de 39 índices. Para M5 revisar esos pasos y la extensión analítica de R. Los 144 perfiles incluyen 16 cotas no triviales; pasan 96 Python y 197 Rust. La omisión S continúa sin cota útil y los exponentes de cola no acreditan seguridad global.
@@ -34,7 +36,7 @@ El objeto revisado es una recurrencia AIR demostrativa. La validez de firmas ML-
 | M2 | Unicidad y selección previa del candidato próximo | Distancia mínima RS; caso de coeficientes fuera del campo base | Pendiente |
 | M3 | FRI ideal local y nueva derivación elemental | Corolario 5.5; lema A de acuerdo, elevación de conjuntos en FRI, constante final y muestreo sin reemplazo | Pendiente |
 | M4 | Composición AIR/FRI ordinaria y por rondas | Historia adaptativa, coeficiente AIR crítico, estado absorbente, consulta compartida y una sola contribución de omisión | Pendiente |
-| M5 | Teorema ROM y desarrollos QROM propuestos para el canal concreto | En ROM: extracción y potencial. En QROM: extractor, campo, conjunto G, cobertura, lema 4.9 y nueva escalera de conteo para la cola. β^S de omisión sigue abierto; revisar constantes y cortes | Pendiente |
+| M5 | Teorema ROM y desarrollos QROM propuestos para el canal concreto | En ROM: extracción y potencial. En QROM: extractor, campo, conjunto G, cobertura, lema 4.9 y cola; β^S permanece abierto | ROM: dictamen pendiente. QROM: trabajo futuro |
 | M6 | Suficiencia para el alcance aprobado de TG2 | Afirmaciones que pueden quedar como resultados condicionales y obligaciones que requieren trabajo adicional antes de la entrega | Pendiente |
 
 ## Afirmaciones que la edición conserva

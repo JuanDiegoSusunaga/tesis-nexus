@@ -4,6 +4,8 @@
 
 **Accesos:** [Ruta de cierre](Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md) · [Matriz de trazabilidad](Documentos/05-Estado-del-Arte/Resumenes-y-Matriz/Matriz-Trazabilidad-TG2.md) · [Revisión de la bitácora](Documentos/04-Administrativo-TG2/Avances/Revision-Bitacora-2026-09-22.md).
 
+**Decisión del autor, 23 de septiembre:** la transferencia QROM completa del protocolo AIR/FRI queda como **trabajo futuro**. Su demostración no bloquea esta ruta de cierre de TG2. Se conservan los resultados parciales y sus límites; el trabajo activo se concentra en revisión, consolidación documental y sustentación.
+
 ## Acuerdos y evidencia
 
 - [x] Registrar la aprobación del director al plan, entrega y decisiones presentadas, confirmada por el estudiante el 22 de septiembre.
@@ -61,9 +63,6 @@
 - [x] Proponer el [extractor sin orden y la cota de escapes AIR/FRI en la base comprimida](Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/README.md): avance Q1 y Q3, 45 escenarios y catorce tests nuevos; dictamen pendiente.
 - [x] Formular el [muestreo QROM y la reducción condicional al verificador](Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/README.md): sufijo de índices/nonces, cobertura de eventos, expansión acotada y pérdida del lema 4.9 de CMS19. Se registran 72 presupuestos y 28 recorridos; pasan 80 Python y 197 Rust.
 - [x] Proponer una [cota cuántica de cola](Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/README.md) por conteo de respuestas y recurrencia de amplitudes: 144 perfiles, 16 no triviales con cortes mayores del análisis; 16 tests nuevos y regresión de 96 Python/197 Rust. Dictamen pendiente.
-- [ ] Demostrar una cota útil β^S para omitir las parejas incorrectas bajo consultas cuánticas (Q2). La cota nueva solo cubre cola y sigue siendo trivial con R=512 en los perfiles tabulados. QROM completo continúa abierto.
-- [ ] Revisar independientemente la cota de cola, el extractor, la cobertura de aceptación falsa y el cambio de juego (Q1, Q3–Q4); registrar observaciones y resolución en [M1–M6](Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md).
-- [ ] Evaluar conjuntamente los parámetros QROM (Q5) cuando exista una cota de omisión: presupuesto Q, corte R, costo Q+V, pérdidas de campo y de salida, y probabilidad objetivo.
 - [x] Preservar nueva serie R4: 17 casos Criterion y 40 mediciones STARK, con dispersión, fuentes y metadatos.
 - [x] Completar los dos benchmarks tras el cambio de Windows por el autor; fuentes, configuración y resultados conservados en R4-complemento.
 - [x] Definir el modelo de amenaza y residencia de regiones, inventario de representaciones y sensibilidad; tres pruebas R5 pasan.
@@ -82,9 +81,17 @@ La [auditoría Merkle/Fiat–Shamir](Documentos/04-Administrativo-TG2/Avances/R4
 - [x] Revisar la edición Word/PDF: tablas y celdas comparadas, rótulos y tablas juntos en Word; PDF sin páginas vacías ni texto fuera de los márgenes. El inventario vigente se conserva en `Documentos/06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/`.
 - [x] Integrar los resultados disponibles de R1–R5 en el [balance de objetivos](Documentos/04-Administrativo-TG2/Entrega-Final/Balance-Objetivos-TG2.md) y preparar el [índice de entrega](Documentos/04-Administrativo-TG2/Entrega-Final/README.md) con manifiesto de archivos y commit de código.
 - [ ] Registrar dictamen y resolver o delimitar las obligaciones del balance antes de declarar entrega definitiva.
-- [ ] Integrar los complementos matemáticos revisados de `Avances/` en el documento de derivaciones y el manuscrito; regenerar Word/PDF y comprobar fórmulas, tablas, gráficas, referencias y congruencia entre formatos. Actualizar el manifiesto de la nueva edición.
+- [ ] Integrar los complementos matemáticos revisados de `Avances/` en el documento de derivaciones y el manuscrito; presentar QROM como resultados parciales y trabajo futuro, sin exigir completarlo. Regenerar Word/PDF y comprobar fórmulas, tablas, gráficas, referencias y congruencia entre formatos. Actualizar el manifiesto de la nueva edición.
 - [ ] Contrastar la entrega definitiva con la plantilla institucional específica si el programa la exige.
 - [x] Preparar el [guion de sustentación](Documentos/04-Administrativo-TG2/Presentaciones/Guion-Sustentacion-TG2.md).
 - [ ] Completar diapositivas y ensayo según duración y requisitos institucionales, incluyendo respuestas sobre QROM, supuestos de dureza, fuente de entropía, rotación, alcance del STARK y significado de W.
+
+## Trabajo futuro — QROM del protocolo AIR/FRI
+
+Por decisión del autor, estas tareas quedan fuera del cierre activo de TG2. Se retomarán cuando lo solicite expresamente. Los avances conservados no acreditan una garantía QROM completa; esta decisión no modifica las obligaciones R1 sobre ML-DSA ni sus fuentes.
+
+- [ ] Demostrar una cota útil β^S para omitir las parejas incorrectas bajo consultas cuánticas (Q2). La cota disponible solo cubre cola y sigue siendo trivial con R=512 en los perfiles tabulados.
+- [ ] Revisar independientemente la cota de cola, el extractor, la cobertura de aceptación falsa y el cambio de juego (Q1, Q3–Q4); registrar el dictamen de esa investigación en [M1–M6](Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md).
+- [ ] Evaluar conjuntamente los parámetros QROM (Q5) cuando exista una cota de omisión: presupuesto Q, corte R, costo Q+V, pérdidas de campo y de salida, y probabilidad objetivo.
 
 Los documentos administrativos históricos de TG1 se conservan. La edición vigente del manuscrito actualiza su enfoque a sistemas en general por aclaración expresa del autor del 22 de septiembre. Deception Engine, pagos agénticos, consenso y aritmetización completa de la lógica de aplicación conservan el alcance complementario o futuro definido en la ruta.
