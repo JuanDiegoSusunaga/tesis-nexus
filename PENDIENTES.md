@@ -53,7 +53,9 @@
 - [x] Abrir `investigacion/cierre-matematico-tg2` en documentos y código; escribir una función de estado por rondas para AIR y ambos FRI, con un lema elemental de acuerdo y nuevas cotas ideales. [Derivación de la rama](Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md).
 - [x] Integrar la rama de investigación en `main` de ambos repositorios y escribir la [transferencia al protocolo TG2 v1 en ROM clásico](Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/README.md): extracción por registro hash, canal, nonces adaptativos, pérdidas y 108 escenarios.
 - [x] Completar el verificador Python independiente de AIR y ambos FRI: ocho certificados honestos aceptados y seis alejados rechazados como en Rust; once pruebas nuevas.
-- [ ] Revisar independientemente las demostraciones por rondas y ROM, especialmente extracción, gramática del canal y acoplamiento de candidatos adaptativos. Registrar decisión de alcance sobre S1–S3 (S3–S5).
+- [x] Completar una [revisión crítica interna de ROM](Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/README.md): potencial para nonces adaptativos, controles negativos de premisas y 96 escenarios exactos; doce pruebas nuevas.
+- [ ] Revisar independientemente las demostraciones por rondas y ROM, incluyendo el nuevo argumento por potencial y la cola de índices. Registrar decisión de alcance sobre S1–S3 (S3–S5).
+- [ ] Estudiar parámetros fijando presupuesto adversario Q y probabilidad objetivo; distinguir esa probabilidad del trabajo estimado de ataque.
 - [ ] Desarrollar una reducción QROM si se exige garantía cuántica del protocolo; resolver los parámetros antes de acreditar 100 bits. La cota ROM propuesta puede llegar a uno y no demuestra un ataque.
 - [x] Preservar nueva serie R4: 17 casos Criterion y 40 mediciones STARK, con dispersión, fuentes y metadatos.
 - [x] Completar los dos benchmarks tras el cambio de Windows por el autor; fuentes, configuración y resultados conservados en R4-complemento.

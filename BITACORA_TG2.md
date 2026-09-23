@@ -1,5 +1,15 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Revisión crítica interna de ROM, 23 de septiembre de 2026
+
+Se revisó la transferencia contra el código `01dcde9` y se escribió un [suplemento matemático](Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/Revision-Critica-ROM.md). El contraste anterior de nonces solo comparaba órdenes fijos; se añadió una búsqueda de estrategias adaptativas y una demostración por potencial que cobra cada candidato antes de su primera respuesta. Contempla intercalación, abandono, restauración, duplicados y una verificación final que completa un candidato parcialmente explorado.
+
+**Resultado:** no apareció un contraejemplo a la cota bajo las hipótesis revisadas. Se conservan la fórmula y sus parámetros. Los controles negativos muestran la necesidad de raíz marcada antes del reto y la diferencia entre probabilidad conjunta de éxito y probabilidad condicionada a un nonce ganador. Una asignación artificial de oráculo reproduce el solapamiento nodo/enunciado de 65 bytes sin evento excepcional; la prueba ya lo admite y no debe asumir separación global de roles.
+
+**Evidencia nueva:** 96 escenarios pequeños de Bellman, 6.318 estados sumados por ejecución y 60 órdenes de extracción; doce tests nuevos. Pasan **40 pruebas Python y 197 Rust**, cargo check y cargo build. Se verifican los 897 archivos del manifiesto, el corpus de 14 certificados, TG1 y los dos paquetes matemáticos previos. Rust se conserva limpio. [Ejecuciones, protección y fuentes](Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/validacion.json).
+
+Esta es una revisión interna del desarrollo, sin dictamen externo ni aprobación académica nueva. La siguiente etapa es estudiar parámetros con presupuesto adversario Q y probabilidad objetivo explícitos; QROM permanece como reducción distinta. Los índices, la ruta y M1–M6 enlazan el suplemento. El manuscrito y el Word conservan sus ediciones identificadas.
+
 ## Integración en main y transferencia clásica ROM, 23 de septiembre de 2026
 
 Por solicitud del autor, se integró `investigacion/cierre-matematico-tg2` en **`main` de ambos repositorios**. Documentos avanzó por fast-forward a `0e109fc`; código ya compartía la revisión `01dcde960402b6c60a19242b7ae3d6ac3d82a518`. La integración es local y las ramas de investigación se conservan.

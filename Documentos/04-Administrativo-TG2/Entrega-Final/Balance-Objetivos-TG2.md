@@ -24,6 +24,8 @@ Las **197 pruebas** comprueban comportamientos del software en los casos ensayad
 
 ## Pendientes que requieren decisión de alcance
 
+La [revisión crítica interna posterior](../Avances/Revision-Critica-ROM-2026-09-23/README.md) amplía la prueba de nonces mediante potencial y añade 96 escenarios pequeños. Pasan 40 pruebas Python y 197 Rust. La fórmula ROM se conserva; el resultado sigue pendiente de revisión externa y del estudio de parámetros para una garantía cuantitativa.
+
 | Tema | Acción concreta | Condición de cierre |
 |---|---|---|
 | Revisión formal R1 | Registrar revisor, observaciones y resolución de las correcciones | Dictamen del director o lector competente |

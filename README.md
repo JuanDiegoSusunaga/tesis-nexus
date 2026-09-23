@@ -12,6 +12,8 @@
 6. [Derivaciones matemáticas en Word](Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-09-23.docx), con hipótesis, argumentos y preguntas para revisión.
 7. [Transferencia matemática al protocolo TG2 v1](Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/README.md): derivación clásica ROM con pérdidas de Merkle, Fiat–Shamir y nonces, cálculos y verificador independiente. Integrada en `main` junto con la [derivación ideal por rondas](Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md); pendiente de revisión e integración al manuscrito.
 
+**Último complemento matemático:** [revisión crítica interna de ROM](Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/README.md), con demostración ampliada de nonces adaptativos, 96 escenarios exactos y 40 pruebas Python. La cota se conserva y el dictamen independiente sigue pendiente.
+
 ## Estructura
 
 | Ubicación | Contenido y uso |

@@ -4,6 +4,8 @@
 
 **Resultado esperado:** entregar los Objetivos 3 y 4 con correspondencia verificable entre afirmaciones, fuentes, código y experimentos, y preparar la sustentación.
 
+**Última revisión interna:** [argumento de potencial para nonces y controles de premisas ROM](Avances/Revision-Critica-ROM-2026-09-23/README.md). Pasan 40 pruebas Python y 197 Rust, con check/build. La búsqueda exacta de 96 escenarios pequeños no supera la cota; dictamen externo y QROM pendientes.
+
 **Dominio vigente:** sistemas en general, según aclaración expresa del autor registrada el 22 de septiembre en la bitácora. La arquitectura dual, la autenticación de operaciones y el ciclo de vida de claves mantienen su función técnica; cada aplicación debe definir y validar sus reglas de autorización y transición.
 
 Esta ruta complementa el [Plan de Trabajo](Plan-de-Trabajo-TG2.md). Se concentra en TG2 y mantiene los documentos administrativos históricos de TG1 conforme al alcance aprobado. Las observaciones sobre componentes de TG1 se documentarán como límites de la validación de TG2, preservando la versión aprobada.
@@ -168,4 +170,4 @@ Para los cambios de código, ejecutar las comprobaciones requeridas por el proye
 
 La revisión que originó esta ruta fue estática y documental. La primera sesión ejecutó el seguimiento, inventario, correcciones formales y edición indicados arriba. No se modificó Rust ni se ejecutaron pruebas o benchmarks nuevos. Los criterios técnicos de R1–R5 siguen abiertos.
 
-**Siguiente ejecución:** revisar las demostraciones por rondas y ROM, especialmente el acoplamiento de nonces adaptativos; resolver los parámetros antes de prometer una garantía cuantitativa. QROM exige su propia reducción. Usar el balance de los Objetivos 3 y 4 para registrar el dictamen M1–M6 y precisar qué obligaciones condicionan la entrega. Incorporar los complementos revisados en las salidas documentales, completar las diapositivas y ensayar con los requisitos institucionales. La cota ROM propuesta no acredita 100 bits. R1 conserva sus obligaciones de correspondencia y revisión; las integraciones de R3 y las garantías de memoria/custodia de R5 tienen pendientes propios.
+**Siguiente ejecución:** estudiar parámetros declarando presupuesto adversario Q y probabilidad objetivo, con costes y límites; acompañar la transferencia ROM con la revisión interna por potencial al solicitar el dictamen M1–M6. QROM exige su propia reducción. Incorporar los complementos revisados en las salidas documentales, completar las diapositivas y ensayar con los requisitos institucionales. La cota ROM propuesta no acredita 100 bits. R1 conserva sus obligaciones de correspondencia y revisión; las integraciones de R3 y las garantías de memoria/custodia de R5 tienen pendientes propios.

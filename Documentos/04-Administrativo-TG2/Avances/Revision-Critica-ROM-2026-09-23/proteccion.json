@@ -1,0 +1,282 @@
+{
+  "carpetas": [
+    "Documentos/03-Administrativo-TG1",
+    "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23",
+    "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23"
+  ],
+  "sin_cambios": true,
+  "archivos": [
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Cartas-y-Aceptaciones/Carta de aceptación de trabajo de grado Juan Diego Susunaga.docx",
+      "sha256": "2c3909183b00871fe749483fb3db75f881e6b987c3187459fcc2618cb1498030"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Cartas-y-Aceptaciones/Carta de aceptación de trabajo de grado Juan Diego Susunaga.pdf",
+      "sha256": "7487c43bd0eda2947628ca3cd753f15ca53b1915a5cad11faa8d81fc8d4ac17a"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Cartas-y-Aceptaciones/Carta de aceptación de trabajo de grado.docx",
+      "sha256": "646a919d5cc0dc4fcf2cce37d513f6e0605d2bbb236da700b7336a0157ee0007"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Formatos/Formato entrega de avance Trabajo de Grado 1.docx",
+      "sha256": "cede637d0727ab501cd02946ca22b0123273f9ea453f8f0ad1416d275b254729"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Formatos/Formato-Modificacion-Objetivos-NEXUS.docx",
+      "sha256": "a2d36760d67b300f1ef6d4339242bb118241372f409b24d2da966e53dd73b554"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Formatos/Formato-Modificacion-Objetivos-NEXUS.md",
+      "sha256": "38463c0c28258bc0fad2fa074f1512a4a61e588ace5126ada784424d760bd243"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Formatos/Formato-TG1-NEXUS-lleno.docx",
+      "sha256": "581cc5494a56012c02f72906e38ea6eaa33eab20660dc2ba3e979890f75e0f77"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Formatos/Formato-TG1-NEXUS-lleno.md",
+      "sha256": "f298bd42842d48f1f7e9fb31eb424483365482225f9c3105b5758f8d6e014ba8"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Formatos/Formato-TG1-NEXUS-lleno.pdf",
+      "sha256": "5af5aa060a15a956f18f493d9fd5146749c3d0253786c6e506e04a225ad0fe20"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Formatos/Formato-TG1-NEXUS.tex",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Propuestas-y-Entregas/EBSCO-Metadata-07_05_2026.pdf",
+      "sha256": "afc48a95a0075c38bcdadb9d820156db7801fe85613e277be813af8f245e2547"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Propuestas-y-Entregas/Primera_Entrega_Trabajo_Grado_Juan_Diego_Susunaga.pdf",
+      "sha256": "b407964a9de0114ea59904e5eb931ba376ca431c9fd9ff497fd2b580e27cf53b"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Propuestas-y-Entregas/Propuesta de trabajo de grado Juan Diego Susunaga - v2.docx",
+      "sha256": "ad025bbd0d7acc34f8b80245b23743df542e4d6fa243ba085e5b548102577048"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Propuestas-y-Entregas/Propuesta de trabajo de grado Juan Diego Susunaga.pdf",
+      "sha256": "945ee56093ee99402ec23ac4dc96c2ed99ff4710822a3c10b15724ebca7fe528"
+    },
+    {
+      "ruta": "Documentos/03-Administrativo-TG1/Propuestas-y-Entregas/Propuesta-de-trabajo-de-grado-v2.md",
+      "sha256": "33c7417d506c04df16dc3c79fb31558f5a27a73ec99f67d96bb33e42be217630"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/bibliografia/GMW25.pdf",
+      "sha256": "60e64486e2eaa08c2885926a9711ea3f66c5a47cdddc5cfb3b0b63bfa81e0218"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/bibliografia/GMW25.txt",
+      "sha256": "449ba4f81b46eb1ef526532a2d29fb9da9757cadf7b21ba80fa09aa27be50740"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/calculos.json",
+      "sha256": "446ee1b6a68d072a565bef2a59555aa7ebc3f97fea7e0980fde473e0455ff409"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/cargo-build.log",
+      "sha256": "b403ecdb40e87aa9da2d41c0a49b69a3bf8a5e1bbc220d3d516d63a596dad973"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/cargo-check.log",
+      "sha256": "af1c3e397415a53fdace9442c93d8b6db1097fbcd2967b8066dd4e549c7b1891"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/cargo-test.log",
+      "sha256": "59f86c34988e374a20cde89a817618dbfdcbd3614825aa6d7991e7f83c98120b"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/intento-inicial/manifiesto.log",
+      "sha256": "8c2cd7ecf000044552e0a00be232704b0ddb2a265412bf36408ae43e82a661e1"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/intento-inicial/pruebas-python.log",
+      "sha256": "3a1bf920a14d9d039e043b4743304f681b78a1c71625f4ed37f4a26961ed7334"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/intento-inicial/README.md",
+      "sha256": "68ed8969cf3ccaed5898d061eb43fb823d558d405338c8c881785559e272c5ce"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/manifiesto.log",
+      "sha256": "52b0a70b2fc9b18440e7811d906024f94195a71cb85d1d291b2e387fccb71386"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/pruebas-manifiesto.log",
+      "sha256": "26eeae879c4606e5eabe6c11d722a0643fad11411ce7c20c15b5dd85a70a1847"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/pruebas-python.log",
+      "sha256": "7e0dc999c469aaf953472a95df959ff4beb16d621c894b4bb92c8a4ad95237ca"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md",
+      "sha256": "886380857ccab164c6b5300a9bfc736d426c37a4e82ac9af47e54b874d17cb62"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md",
+      "sha256": "4a5fdc574c8cf5de7fa53e43b544af3dbdfebbf5af21df522c80099d8f311de8"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/validacion.json",
+      "sha256": "1b0cac418949279d8973a7972dda90aba3ff0cca939ee98789413a79a35d7eee"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/bibliografia/BCS16.pdf",
+      "sha256": "a2dc9bd042665081664287281b9bcf64735be2c818ce9207cce57cc43939fa2f"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/calculos.json",
+      "sha256": "7862ef41bcd712e6fb8dd03be89c538ff81b113e921e4f733c68d96b9b808e8b"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/cargo-build.log",
+      "sha256": "fafa69a460751423c1e015e389bb8743e8f288e0276ed7370b98ae698798d9c5"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/cargo-check.log",
+      "sha256": "f153b84a0c8048c61f0aea499f2927c0fd9ad198b35da5924a75029758940b35"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/cargo-test.log",
+      "sha256": "260fceded6fdf79669324f0ec3e0b436dd9ef7ef91ae75819990403d94187f0c"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/corpus.json",
+      "sha256": "0d74fe1300cdae66bbecf5955ba4855a0b2046f3ce39f1cedb6a6ff8c05268ed"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-core/src/types.rs",
+      "sha256": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs",
+      "sha256": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/air.rs",
+      "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/channel.rs",
+      "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/field.rs",
+      "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/fri.rs",
+      "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/merkle.rs",
+      "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/mod.rs",
+      "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/ntt.rs",
+      "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/params.rs",
+      "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/tests/tg2_linked_trace_fri.rs",
+      "sha256": "1270fe7b2a8b843b038db6fa6803975a1448044df1693b86875c20942316707d"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/analizar_rbr_conjunto_tg2.py",
+      "sha256": "00543637f6d9d4284b7a1950ed1f48a5b74673e49995a2b5494c91fc2c9a7dd4"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/analizar_transferencia_rom_tg2.py",
+      "sha256": "c675e16983ca7951057981d33675755a3ea129c552848c00bdfb8811b9c8e002"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/auditar_merkle_fs_r4.py",
+      "sha256": "4c94854c4fd44899633b7e8a572853e5096978c5068b3125a594acf6cdbdee53"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/tests/test_transferencia_rom_tg2.py",
+      "sha256": "df3fa8a063dddcaa66f1da06b1e2a93a019fcc866b006d9c770a665fa2247f31"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/verificar_certificados_tg2.py",
+      "sha256": "f10440dc9e87ef414042ea3e6e09974c1fa2224571f7008de7d3659c5e0551da"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/verificar_transferencia_rom_tg2.py",
+      "sha256": "bf1f54c0fab2de8f56c4af28d3b68a11e5100506f78796b6b63a25cd7316aa73"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/verificar_version_tg2.py",
+      "sha256": "b18e605bcd2fb2778527a5107fb26f1cd151bcece9481b06cbe00442ce3b56da"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/cargo-check.log",
+      "sha256": "12d492ed142ff0cd018976c6587df618a99ba76f2e63a258e8fe62c1e6abc0de"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/corpus.json",
+      "sha256": "0d74fe1300cdae66bbecf5955ba4855a0b2046f3ce39f1cedb6a6ff8c05268ed"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/manifiesto.log",
+      "sha256": "e85eac6e29f951144e2e32cfa67135ca55e7ffa670c93f5dd03d53f00b726cc2"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/pruebas-manifiesto.log",
+      "sha256": "71c49b1f57c02f1e868274c4bbf7d807706bc8effa5036a38d66f01f201cccdd"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/pruebas-rbr.log",
+      "sha256": "957554752173e544776aeafb29d6a7b2698d9a4dbe8df556f6210acaa1ecf0cc"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/pruebas-rom.log",
+      "sha256": "864d4f4047b061773d884c55618fd380c1a7395c10e5cefd948e5805ac2342f8"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/README.md",
+      "sha256": "d5512aa335ec79f44b23e517fe24e588b8b614f009d7da974743cebe176c12a1"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/manifiesto.log",
+      "sha256": "52b0a70b2fc9b18440e7811d906024f94195a71cb85d1d291b2e387fccb71386"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/pruebas-manifiesto.log",
+      "sha256": "41d7f1e38273a50f3a688ce4ae3b21bc73bed551e9d932b4d571241af0b5bfe2"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/pruebas-rbr.log",
+      "sha256": "a6a2e118480d31ec8ce53ae46c64ee116fb7d8155d5859a73c22e01699c64f61"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/pruebas-rom.log",
+      "sha256": "b88f3561a327bd9fc231e00f30b863c64b359aa64c340080a6a2fa03b749f47e"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/README.md",
+      "sha256": "525bdf236bcae1e59b361be49542c1b8be71936378d0125a1c96461eed5cc8be"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md",
+      "sha256": "2336aa9548b2820b844834b4c29ef1648930f41435458d3c2cee45a86d945524"
+    },
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/validacion.json",
+      "sha256": "78e621feac694e8e4ea99bb46111e5cee8bce523bf2cd2767fcd9437206d0d13"
+    }
+  ]
+}

@@ -106,3 +106,15 @@ python scripts/verificar_transferencia_rom_tg2.py --salida .tools/transferencia-
 La comprobación completa usa la biblioteca estándar de Python y Cargo con las dependencias locales. Ejecuta 28 pruebas Python, 197 Rust, check/build y el manifiesto de 897 archivos; conserva fuentes exactas, logs y hashes. El código debe estar limpio. La salida rechaza sobrescrituras: usar una carpeta nueva para cada repetición. Cargo escribe en `C:/tmp/nexus-target`, que debe ser accesible.
 
 `verificar_certificados_tg2.py` comprueba los 14 certificados preservados con aritmética Python y `hashlib`: formato admitido, transcripción, aperturas Merkle, composición AIR y ambos FRI. Su límite de 512 extracciones protege la herramienta; el Rust v1 no tiene ese corte y la demostración contabiliza su cola. Es una referencia para el corpus, no un decodificador de producción endurecido.
+
+## 10. Revisión crítica interna de ROM
+
+La [ampliación de la demostración](../Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/README.md) usa potencial para decisiones adaptativas y comprueba premisas de extracción/canal.
+
+```powershell
+python -m unittest discover -s scripts/tests -p test_revision_rom_tg2.py -v
+python scripts/analizar_revision_rom_tg2.py --salida .tools/revision-rom/repeticion.json
+python scripts/verificar_revision_rom_tg2.py --salida .tools/revision-rom/verificacion
+```
+
+El analizador calcula 96 escenarios de Bellman con fracciones exactas. El registro ejecuta doce tests nuevos y la regresión anterior: **40 Python, 197 Rust, check/build y manifiesto de 897 archivos**. Sus fuentes, cálculos reproducidos y hashes se guardan junto con `regresion/`. Protege TG1 y los dos paquetes matemáticos anteriores. Requiere salida nueva, código limpio y escritura de Cargo en `C:/tmp/nexus-target`. Es revisión interna; no sustituye dictamen externo ni reducción QROM.
