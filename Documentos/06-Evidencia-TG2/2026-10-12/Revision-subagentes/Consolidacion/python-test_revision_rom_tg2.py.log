@@ -1,0 +1,17 @@
+test_anticipar_un_estado_de_indices_activa_el_evento (test_revision_rom_tg2.RevisionRom.test_anticipar_un_estado_de_indices_activa_el_evento) ... ok
+test_ciclo_y_reutilizacion_de_consultas (test_revision_rom_tg2.RevisionRom.test_ciclo_y_reutilizacion_de_consultas) ... ok
+test_cola_exacta_por_enumeracion_y_cota (test_revision_rom_tg2.RevisionRom.test_cola_exacta_por_enumeracion_y_cota) ... ok
+test_condicionar_al_nonce_ganador_no_es_cobrar_su_inicio (test_revision_rom_tg2.RevisionRom.test_condicionar_al_nonce_ganador_no_es_cobrar_su_inicio) ... ok
+test_estrategias_adaptativas_bellman (test_revision_rom_tg2.RevisionRom.test_estrategias_adaptativas_bellman) ... ok
+test_formas_invalidas_rechazan_antes_de_hash (test_revision_rom_tg2.RevisionRom.test_formas_invalidas_rechazan_antes_de_hash) ... ok
+test_identidad_del_potencial_en_cada_accion (test_revision_rom_tg2.RevisionRom.test_identidad_del_potencial_en_cada_accion) ... ok
+test_nodo_y_enunciado_pueden_coincidir_sin_evento_hash (test_revision_rom_tg2.RevisionRom.test_nodo_y_enunciado_pueden_coincidir_sin_evento_hash) ... ok
+test_ordenes_merkle_con_raiz_previa (test_revision_rom_tg2.RevisionRom.test_ordenes_merkle_con_raiz_previa) ... ok
+test_premisa_de_raiz_marcada_es_necesaria (test_revision_rom_tg2.RevisionRom.test_premisa_de_raiz_marcada_es_necesaria) ... ok
+test_probabilidad_restante_por_enumeracion (test_revision_rom_tg2.RevisionRom.test_probabilidad_restante_por_enumeracion) ... ok
+test_un_intento_y_verificacion_gratuita_formula_cerrada (test_revision_rom_tg2.RevisionRom.test_un_intento_y_verificacion_gratuita_formula_cerrada) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.369s
+
+OK

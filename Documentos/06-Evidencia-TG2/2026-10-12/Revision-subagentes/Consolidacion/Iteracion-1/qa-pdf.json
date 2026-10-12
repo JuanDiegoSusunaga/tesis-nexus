@@ -1,0 +1,42 @@
+{
+  "fecha": "2026-10-12",
+  "revisor": "subagente revision_ml_dsa",
+  "documento": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+  "sha256_pdf_inspeccionado": "1a3d5a7a78e14303c0140fc1c2c6b9400dad0a38f4d95aa979b002e7005639fc",
+  "paginas_totales": 98,
+  "metodo": "Inspección directa con view_image detail original de todas las 30 láminas PDF del inventario. Renders de páginas a 1,5x agrupados sin reescalar. Las páginas con hash de imagen idéntico heredan la inspección anterior según comparacion-visual.json.",
+  "inventario": ".tools/revision-subagentes-2026-10-12/inspeccion/inventario.json",
+  "comparacion": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/comparacion-visual.json",
+  "laminas_abiertas": [
+    "pdf-002-003.png", "pdf-021-022.png", "pdf-023-024.png", "pdf-025-026.png", "pdf-028-029.png", "pdf-030-031.png",
+    "pdf-032-035.png", "pdf-036-037.png", "pdf-038-039.png", "pdf-040-041.png", "pdf-042-047.png", "pdf-048-049.png",
+    "pdf-050-051.png", "pdf-052-053.png", "pdf-054-055.png", "pdf-056-057.png", "pdf-058-059.png", "pdf-060-061.png",
+    "pdf-062-063.png", "pdf-064-065.png", "pdf-066-067.png", "pdf-068-069.png", "pdf-070-080.png", "pdf-081-085.png",
+    "pdf-086-088.png", "pdf-089-090.png", "pdf-091-092.png", "pdf-093-094.png", "pdf-095-096.png", "pdf-097-098.png"
+  ],
+  "paginas_inspeccionadas": [2,3,21,22,23,24,25,26,28,29,30,31,32,35,36,37,38,39,40,41,42,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,80,81,85,86,88,89,90,91,92,93,94,95,96,97,98],
+  "numero_paginas_inspeccionadas": 60,
+  "numero_paginas_identicas_con_revision_heredada": 38,
+  "resultado": "Maquetación aceptable; una errata textual menor localizada y comunicada al coordinador.",
+  "controles_visuales": {
+    "margenes_y_recortes": "Sin texto o fórmulas visiblemente recortados fuera del cuerpo de página.",
+    "tablas": "Bordes, encabezados, columnas y cifras legibles; sin celdas superpuestas ni filas truncadas.",
+    "formulas_y_glifos": "Sin cuadrados de reemplazo ni pérdidas visibles de glifos; letras griegas, índices, radicales y alineación legibles.",
+    "kdf_nueva": "Páginas 29 y 36: expresión SHA3-256 con LE64(e), LE64(j), semilla retenida y contexto completa. Página 29: segunda línea KeyGen_internal dentro del margen. Página 36: fórmula del modelo de diseño y underbraces completos.",
+    "cifras_corregidas": "151,33 µs legible en páginas 41 y 67; tablas R4 sin truncamiento.",
+    "portada_indice_y_final": "Índice cambiado legible en páginas 2–3; última página 98 contiene dos referencias completas. Páginas idénticas heredan QA anterior."
+  },
+  "defectos": [
+    {
+      "id": "PDF-ORT-1",
+      "pagina": 31,
+      "localizador": "Capítulo 4, §4.6, viñeta Hash-based",
+      "tipo": "Errata de concordancia gramatical",
+      "severidad": "menor",
+      "observado": "donde la conservadurismo",
+      "correccion_sugerida": "donde el conservadurismo",
+      "estado": "Comunicado al coordinador; no se editó el documento ni se presume corregido."
+    }
+  ],
+  "limite": "Esta inspección evalúa la presentación visible y las correcciones localizadas; no es dictamen matemático ni auditoría exhaustiva de todas las afirmaciones. El resultado se vincula exclusivamente al SHA-256 indicado."
+}

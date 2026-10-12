@@ -62,15 +62,25 @@ Si un mismo valor aparece $\ge C$ veces **consecutivas**, la prueba **falla** (l
 
 ## 5.4 Derivación de claves por KDF
 
-Entre la fuente de entropía y la clave Dilithium se interpone una **función de derivación de claves (KDF) con separación de dominio**, que cumple dos funciones: (i) "condensar" el material de la fuente en una semilla uniforme de longitud fija, y (ii) **separar dominios** para que claves derivadas en contextos distintos (firma, identificación, época) sean independientes.
+El modelo de diseño separa el acondicionamiento del material de una fuente caracterizada, la derivación contextual y la expansión ML-DSA. Una KDF debe analizarse bajo una distribución de entrada y un supuesto criptográfico precisos: la separación de dominio organiza contextos, pero no demuestra por sí sola extracción uniforme ni independencia de claves.
 
-NEXUS emplea **HKDF** (RFC 5869, paradigma *Extract-then-Expand*) o, equivalentemente, **SHAKE256** como *XOF* con un prefijo de dominio:
+HKDF (RFC 5869, *Extract-then-Expand*) y construcciones basadas en SHAKE256 son posibles alternativas de diseño con hipótesis distintas; no se consideran equivalentes automáticamente. La expresión siguiente describe el modelo propuesto, **no la función ejecutada por Sentinel**:
 
 $$
 \xi = \mathrm{KDF}\big(\underbrace{\text{material de la fuente}}_{\text{alta min-entropía}},\ \text{sal},\ \underbrace{\text{contexto}}_{\text{dominio} \,\|\, \text{epoch}}\big),
 $$
 
-y la semilla $\xi$ alimenta la `KeyGen` determinística de ML-DSA (Cap. 4, §4.5). La separación de dominio (parámetro `info` de HKDF / prefijo SHAKE) garantiza que rotar la *epoch* produzca una semilla —y por tanto una clave— independiente de las anteriores.
+y la semilla $\xi$ alimentaría `KeyGen_internal` de ML-DSA (Cap. 4, §4.5). Justificar ese modelo requiere caracterizar la fuente, el acondicionamiento, los dominios y las pérdidas de la construcción seleccionada.
+
+**Implementación observada.** `SentinelSeed::derive_key_unchecked` emplea SHA3-256, sin ejecutar HKDF ni SHAKE256 en esta etapa:
+
+$$
+\xi_{e,j}=\mathrm{SHA3\text{-}256}\big(D\parallel\operatorname{LE64}(e)\parallel\operatorname{LE64}(j)\parallel s_e\parallel\mathrm{contexto}\big).
+$$
+
+$D$ es `NEXUS_SENTINEL_DERIVE`, $e$ la época, $j$ el contador de derivaciones y $s_e$ la semilla retenida. `derive_key` comprueba primero la política de salud, edad y uso; `NexusKeypair::from_sentinel_seed` entrega después $\xi_{e,j}$ a `keygen_from_seed`. La semilla inicial procede de ChaCha20 inicializado desde el generador del sistema operativo; la rotación mezcla la semilla anterior con 32 bytes frescos de `OsRng` mediante SHA3-256 (§5.5). `from_bytes` permite además suministrar una semilla, cuya calidad queda a cargo del consumidor.
+
+**Relación con el monitor.** Las muestras entregadas a `ingest_source` afectan la compuerta de salud; no se incorporan como material de entrada a la derivación anterior. El despliegue debe justificar la relación entre ese flujo observado y el generador que suministra semillas, así como su calificación y protección. Pasar RCT/APT o la barra de frecuencia máxima no demuestra que $s_e$ tenga alta min-entropía ni que sus derivados sean uniformes. La transición de época cambia las entradas; su separación criptográfica y la secrecia hacia adelante permanecen condicionadas por los supuestos y la eliminación de copias de §5.5.
 
 ---
 
@@ -162,7 +172,7 @@ A diez operaciones/s, el modelo reduce la residencia media de las regiones elegi
 
 ### 5.6.4 Mediciones y controles pendientes
 
-H1 y H2 conservan sus latencias históricas. La serie R4 mide 327,42 µs de firma cacheada, 478,74 µs de reexpansión con firma y 145,03 µs de expansión aislada para ML-DSA-65; sus intervalos y procedencia están en la Tabla 6.11. La diferencia de medianas de firma, 151,32 µs, es descriptiva; no constituye una medición pareada de sobrecosto ni de residencia secreta.
+H1 y H2 conservan sus latencias históricas. La serie R4 mide 327,42 µs de firma cacheada, 478,74 µs de reexpansión con firma y 145,03 µs de expansión aislada para ML-DSA-65; sus intervalos y procedencia están en la Tabla 6.11. La diferencia de medianas de firma, calculada antes del redondeo, es 151,33 µs y tiene carácter descriptivo; no constituye una medición pareada de sobrecosto ni de residencia secreta.
 
 El envoltorio y los objetos del backend invocan `zeroize` al descartarse, pero existen arreglos temporales y posibles copias por compilador, biblioteca y sistema. No se ha demostrado la eliminación de todos ellos. La lectura de un buffer borrado o la presencia de un destructor tampoco basta para demostrar borrado de todas las representaciones. Medir esa propiedad requeriría instrumentación sobre claves exclusivamente de ensayo, un inventario de copias, condiciones de salida y una frontera de observación explícita; queda pendiente como evaluación de despliegue.
 

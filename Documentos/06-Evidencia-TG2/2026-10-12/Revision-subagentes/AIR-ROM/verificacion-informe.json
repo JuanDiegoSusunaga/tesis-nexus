@@ -1,0 +1,50 @@
+{
+  "fecha": "2026-10-12",
+  "alcance": "Enlaces e integridad del informe interno AIR/ROM",
+  "enlaces_locales": [
+    "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/contrastes-exactos.json",
+    "../R4-Algebra-AIR-FRI-2026-09-22.md",
+    "../Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md",
+    "../Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md",
+    "../Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md",
+    "../Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md",
+    "../Revision-Critica-ROM-2026-09-23/Revision-Critica-ROM.md",
+    "../Revision-Critica-ROM-2026-09-23/Revision-Critica-ROM.md",
+    "../Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md",
+    "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/fuentes-web.json"
+  ],
+  "archivos": [
+    {
+      "ruta": "Documentos/04-Administrativo-TG2/Avances/Revision-Subagentes-2026-10-12/Revision-AIR-ROM.md",
+      "sha256": "4c5d9a814b573a12cffbdec8ddff3874c58084e55623138aad7b18f15b6ec21e",
+      "bytes": 19274
+    },
+    {
+      "ruta": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/contrastes-exactos.json",
+      "sha256": "4d4085cee7783e4d7948c619c51ca770bc8c6b87b2aac9cc5f227157ff76c583",
+      "bytes": 64411
+    },
+    {
+      "ruta": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/contrastes_exactos.py",
+      "sha256": "7958d386850c30405468c79d01fd723be05e2dfd724c56dc3e9eacee2b1a3e93",
+      "bytes": 4608
+    },
+    {
+      "ruta": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/descargar_fuentes.py",
+      "sha256": "55046e1032f87e9c4ee1aa52a86211f40216b11d518ac9cd32948b7e897a3037",
+      "bytes": 1601
+    },
+    {
+      "ruta": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/fuentes-web.json",
+      "sha256": "f11b3248c6f1303482e2e7ced766102938c718764e3dd35ad83437aa7e1f6510",
+      "bytes": 694
+    },
+    {
+      "ruta": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/verificar_informe.py",
+      "sha256": "22a9c0fe76159bb8c85b95c2cabebe5f94644df04ae58852d6a6fb921a923a26",
+      "bytes": 1442
+    }
+  ],
+  "dictamen_externo": false,
+  "reabre_QROM": false
+}

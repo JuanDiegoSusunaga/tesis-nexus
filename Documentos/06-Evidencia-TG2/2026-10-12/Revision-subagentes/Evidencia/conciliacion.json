@@ -1,0 +1,2739 @@
+{
+  "fecha_revision": "2026-10-12",
+  "naturaleza": "Conciliación de evidencia conservada; ninguna nueva medición",
+  "versiones": {
+    "criterion": "0.5.1",
+    "fips204": "0.4.6",
+    "p256": "0.13.2",
+    "rsa": "0.9.10",
+    "zeroize": "1.8.2"
+  },
+  "series": [
+    {
+      "serie": "R4-validacion",
+      "inicio": "2026-09-22T12:55:11.579809-05:00",
+      "fin": "2026-09-22T13:01:34.517134-05:00",
+      "git_head": "6ec77633951004f37088abcdd41aa78ad290f36f",
+      "git_sucio": true,
+      "casos_criterion": 17,
+      "comandos": [
+        {
+          "nombre": "dilithium_bench",
+          "argumentos": [
+            "cargo",
+            "bench",
+            "-p",
+            "nexus-crypto",
+            "--bench",
+            "dilithium_bench",
+            "--locked",
+            "--offline",
+            "--manifest-path",
+            "nexus/Cargo.toml",
+            "--",
+            "--noplot",
+            "--sample-size",
+            "50",
+            "--warm-up-time",
+            "1",
+            "--measurement-time",
+            "2",
+            "--save-baseline",
+            "r4"
+          ],
+          "exit_code": 101,
+          "duracion_s": 26.01600000000326,
+          "registro": "dilithium_bench.log"
+        },
+        {
+          "nombre": "classical_baseline",
+          "argumentos": [
+            "cargo",
+            "bench",
+            "-p",
+            "nexus-crypto",
+            "--bench",
+            "classical_baseline",
+            "--locked",
+            "--offline",
+            "--manifest-path",
+            "nexus/Cargo.toml",
+            "--",
+            "--noplot",
+            "--sample-size",
+            "50",
+            "--warm-up-time",
+            "1",
+            "--measurement-time",
+            "2",
+            "--save-baseline",
+            "r4"
+          ],
+          "exit_code": 0,
+          "duracion_s": 44.96899999998277,
+          "registro": "classical_baseline.log"
+        },
+        {
+          "nombre": "residencia_bench",
+          "argumentos": [
+            "cargo",
+            "bench",
+            "-p",
+            "nexus-crypto",
+            "--bench",
+            "residencia_bench",
+            "--locked",
+            "--offline",
+            "--manifest-path",
+            "nexus/Cargo.toml",
+            "--",
+            "--noplot",
+            "--sample-size",
+            "50",
+            "--warm-up-time",
+            "1",
+            "--measurement-time",
+            "2",
+            "--save-baseline",
+            "r4"
+          ],
+          "exit_code": 0,
+          "duracion_s": 44.594000000011874,
+          "registro": "residencia_bench.log"
+        },
+        {
+          "nombre": "throughput",
+          "argumentos": [
+            "cargo",
+            "run",
+            "-p",
+            "nexus-crypto",
+            "--example",
+            "tg2_throughput",
+            "--release",
+            "--locked",
+            "--offline",
+            "--manifest-path",
+            "nexus/Cargo.toml",
+            "--",
+            "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-09-22\\R4-validacion"
+          ],
+          "exit_code": 101,
+          "duracion_s": 5.467999999993481,
+          "registro": "throughput.log"
+        },
+        {
+          "nombre": "stark",
+          "argumentos": [
+            "cargo",
+            "run",
+            "-p",
+            "nexus-zk",
+            "--example",
+            "tg2_stark_measure",
+            "--release",
+            "--locked",
+            "--offline",
+            "--manifest-path",
+            "nexus/Cargo.toml",
+            "--",
+            "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-09-22\\R4-validacion\\stark.csv"
+          ],
+          "exit_code": 0,
+          "duracion_s": 99.625,
+          "registro": "stark.log"
+        }
+      ],
+      "meta_sha256": "efef098ffa9184af58efd98986e9c373203937bb1b8fc243bcde7350fd2d6bf9"
+    },
+    {
+      "serie": "R4-complemento",
+      "inicio": "2026-09-22T13:32:30.808441-05:00",
+      "fin": "2026-09-22T13:33:59.124529-05:00",
+      "git_head": "6ec77633951004f37088abcdd41aa78ad290f36f",
+      "git_sucio": true,
+      "casos_criterion": 12,
+      "comandos": [
+        {
+          "nombre": "dilithium_bench",
+          "argumentos": [
+            "cargo",
+            "bench",
+            "-p",
+            "nexus-crypto",
+            "--bench",
+            "dilithium_bench",
+            "--locked",
+            "--offline",
+            "--manifest-path",
+            "nexus/Cargo.toml",
+            "--",
+            "--noplot",
+            "--sample-size",
+            "50",
+            "--warm-up-time",
+            "1",
+            "--measurement-time",
+            "2",
+            "--save-baseline",
+            "r4-complemento"
+          ],
+          "exit_code": 0,
+          "duracion_s": 45.609000000025844
+        },
+        {
+          "nombre": "throughput",
+          "argumentos": [
+            "cargo",
+            "run",
+            "-p",
+            "nexus-crypto",
+            "--example",
+            "tg2_throughput",
+            "--release",
+            "--locked",
+            "--offline",
+            "--manifest-path",
+            "nexus/Cargo.toml",
+            "--",
+            "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-09-22\\R4-complemento"
+          ],
+          "exit_code": 0,
+          "duracion_s": 42.546999999991385
+        }
+      ],
+      "meta_sha256": "09ada67981dccf20ccaa90feb50905e63668437d90e570fb010ac47baf082b05"
+    }
+  ],
+  "historica": {
+    "mediana_recuperada_us": 77.16965449804432,
+    "H2_publicada_us": 77.6,
+    "diferencia_us": -0.4303455019556708,
+    "diferencia_porcentaje": -0.5545689458191672,
+    "mtime_origen_bogota": "2026-08-07T11:18:54.362296-05:00",
+    "mtime_no_es_fecha_autenticada_de_corrida": true,
+    "revision_historica_no_identificada": true
+  },
+  "H2_contraste": [
+    {
+      "operacion": "key_generation",
+      "nivel": 2,
+      "publicada_H2_us": 92.5,
+      "recuperada_us": 87.29418614718615,
+      "origen": "Documentos/06-Evidencia-TG2/2026-09-22/criterion/key_generation/dilithium2/new/estimates.json",
+      "sha256": "64b1965c1075e70df6069b74624b7677ee34370018536bc0826d747353943820",
+      "misma_corrida_no_acreditada": true
+    },
+    {
+      "operacion": "key_generation",
+      "nivel": 3,
+      "publicada_H2_us": 142.1,
+      "recuperada_us": 143.34397683397682,
+      "origen": "Documentos/06-Evidencia-TG2/2026-09-22/criterion/key_generation/dilithium3/new/estimates.json",
+      "sha256": "1d8bce60224584a52db1c2e1b3cb74523c8d3f70ea2f2f424af714c20fb990e1",
+      "misma_corrida_no_acreditada": true
+    },
+    {
+      "operacion": "key_generation",
+      "nivel": 5,
+      "publicada_H2_us": 198.1,
+      "recuperada_us": 197.78776266508967,
+      "origen": "Documentos/06-Evidencia-TG2/2026-09-22/criterion/key_generation/dilithium5/new/estimates.json",
+      "sha256": "96dafc7ed93b0bdc3c7d612a671e530ce1db8e8f6dc934ed126d821f1d2c484b",
+      "misma_corrida_no_acreditada": true
+    },
+    {
+      "operacion": "signing",
+      "nivel": 2,
+      "publicada_H2_us": 183.0,
+      "recuperada_us": 184.03524555903866,
+      "origen": "Documentos/06-Evidencia-TG2/2026-09-22/criterion/signing/dilithium2/new/estimates.json",
+      "sha256": "19e3946f4604d888ee435259de315cb7efb5f8b1337fae6e9181c1f3161eacb6",
+      "misma_corrida_no_acreditada": true
+    },
+    {
+      "operacion": "signing",
+      "nivel": 3,
+      "publicada_H2_us": 290.0,
+      "recuperada_us": 288.66837515782834,
+      "origen": "Documentos/06-Evidencia-TG2/2026-09-22/criterion/signing/dilithium3/new/estimates.json",
+      "sha256": "61a8e6c4c4ab6bea71414dfaf0b822cc0b02c933052d9ca2bb1e4d57fb2ef125",
+      "misma_corrida_no_acreditada": true
+    },
+    {
+      "operacion": "signing",
+      "nivel": 5,
+      "publicada_H2_us": 343.3,
+      "recuperada_us": 344.15630868544605,
+      "origen": "Documentos/06-Evidencia-TG2/2026-09-22/criterion/signing/dilithium5/new/estimates.json",
+      "sha256": "bf0de4bd67bcc41c4d3fba6cdb6fffaa5ae85cbb5d9494b32a261d240beff987",
+      "misma_corrida_no_acreditada": true
+    },
+    {
+      "operacion": "verification",
+      "nivel": 2,
+      "publicada_H2_us": 48.8,
+      "recuperada_us": 49.063865995116,
+      "origen": "Documentos/06-Evidencia-TG2/2026-09-22/criterion/verification/dilithium2/new/estimates.json",
+      "sha256": "eb0d39328db73490b31e174d7a884f33969eb10eecb316ff8b90caddfef09193",
+      "misma_corrida_no_acreditada": true
+    },
+    {
+      "operacion": "verification",
+      "nivel": 3,
+      "publicada_H2_us": 77.6,
+      "recuperada_us": 77.16965449804432,
+      "origen": "Documentos/06-Evidencia-TG2/2026-09-22/criterion/verification/dilithium3/new/estimates.json",
+      "sha256": "60fedd3684b16e4aee03b61448d5767e22ab07f8c0eb223cc1f01a8a8eb05dce",
+      "misma_corrida_no_acreditada": true
+    },
+    {
+      "operacion": "verification",
+      "nivel": 5,
+      "publicada_H2_us": 129.2,
+      "recuperada_us": 129.76815104166667,
+      "origen": "Documentos/06-Evidencia-TG2/2026-09-22/criterion/verification/dilithium5/new/estimates.json",
+      "sha256": "bf42bc603ff43206e1a723316235a9f12a38746d1ad3e15a32f465d546ff1ddf",
+      "misma_corrida_no_acreditada": true
+    }
+  ],
+  "diferencia_firma": {
+    "cacheada_us": 327.4168839427663,
+    "efimera_us": 478.74407894736845,
+    "diferencia_us": 151.32719500460217,
+    "diferencia_redondeada_us": 151.33,
+    "resta_de_cifras_redondeadas_us": 151.32,
+    "no_es_estimacion_pareada": true
+  },
+  "stark": [
+    {
+      "filas": 16,
+      "repeticiones": 5,
+      "prueba_KiB": 128.9765625,
+      "generacion_ms": {
+        "mediana": 111.9733,
+        "min": 4.6405,
+        "max": 738.4021
+      },
+      "verificacion_ms": {
+        "mediana_de_medias": 1.306255,
+        "min": 1.20575,
+        "max": 1.96062
+      }
+    },
+    {
+      "filas": 64,
+      "repeticiones": 5,
+      "prueba_KiB": 190.2890625,
+      "generacion_ms": {
+        "mediana": 337.0007,
+        "min": 56.6126,
+        "max": 579.7911
+      },
+      "verificacion_ms": {
+        "mediana_de_medias": 1.75841,
+        "min": 1.734065,
+        "max": 2.04802
+      }
+    },
+    {
+      "filas": 256,
+      "repeticiones": 5,
+      "prueba_KiB": 261.6015625,
+      "generacion_ms": {
+        "mediana": 339.5086,
+        "min": 143.6145,
+        "max": 1370.4213
+      },
+      "verificacion_ms": {
+        "mediana_de_medias": 2.453615,
+        "min": 2.256345,
+        "max": 3.17825
+      }
+    },
+    {
+      "filas": 1024,
+      "repeticiones": 5,
+      "prueba_KiB": 342.9140625,
+      "generacion_ms": {
+        "mediana": 247.6822,
+        "min": 44.2924,
+        "max": 644.7792
+      },
+      "verificacion_ms": {
+        "mediana_de_medias": 2.99012,
+        "min": 2.87512,
+        "max": 4.88396
+      }
+    },
+    {
+      "filas": 4096,
+      "repeticiones": 5,
+      "prueba_KiB": 434.2265625,
+      "generacion_ms": {
+        "mediana": 221.5681,
+        "min": 171.8455,
+        "max": 413.0556
+      },
+      "verificacion_ms": {
+        "mediana_de_medias": 3.623345,
+        "min": 3.539445,
+        "max": 4.530525
+      }
+    },
+    {
+      "filas": 16384,
+      "repeticiones": 5,
+      "prueba_KiB": 535.5390625,
+      "generacion_ms": {
+        "mediana": 721.4762,
+        "min": 594.7949,
+        "max": 1135.9766
+      },
+      "verificacion_ms": {
+        "mediana_de_medias": 5.55705,
+        "min": 4.370475,
+        "max": 7.367535
+      }
+    },
+    {
+      "filas": 65536,
+      "repeticiones": 5,
+      "prueba_KiB": 646.8515625,
+      "generacion_ms": {
+        "mediana": 3174.1914,
+        "min": 2248.9057,
+        "max": 3600.7243
+      },
+      "verificacion_ms": {
+        "mediana_de_medias": 6.388535,
+        "min": 5.12648,
+        "max": 8.204335
+      }
+    },
+    {
+      "filas": 262144,
+      "repeticiones": 5,
+      "prueba_KiB": 768.1640625,
+      "generacion_ms": {
+        "mediana": 14001.5486,
+        "min": 9674.2256,
+        "max": 14251.9801
+      },
+      "verificacion_ms": {
+        "mediana_de_medias": 7.78601,
+        "min": 6.04492,
+        "max": 8.64014
+      }
+    }
+  ],
+  "throughput": [
+    {
+      "hilos": 1,
+      "mediana": 12348.582383,
+      "min": 10508.277693,
+      "max": 12526.430438
+    },
+    {
+      "hilos": 2,
+      "mediana": 24697.495425,
+      "min": 21732.134175,
+      "max": 24872.281594
+    },
+    {
+      "hilos": 4,
+      "mediana": 45827.369743,
+      "min": 44241.930272,
+      "max": 46249.128398
+    },
+    {
+      "hilos": 8,
+      "mediana": 72944.883111,
+      "min": 72111.984211,
+      "max": 74090.063012
+    },
+    {
+      "hilos": 12,
+      "mediana": 95440.294734,
+      "min": 89498.377264,
+      "max": 95527.231569
+    },
+    {
+      "hilos": 16,
+      "mediana": 111035.749967,
+      "min": 104170.977055,
+      "max": 112233.869642
+    },
+    {
+      "hilos": 20,
+      "mediana": 125412.656041,
+      "min": 116166.472453,
+      "max": 127014.733961
+    },
+    {
+      "hilos": 24,
+      "mediana": 136389.689738,
+      "min": 130147.551409,
+      "max": 140046.88517
+    }
+  ],
+  "comprobaciones": [
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_key_generation\\ecdsap256\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_key_generation\\ecdsap256\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_key_generation\\ecdsap256\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_key_generation\\ecdsap256\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_key_generation\\rsa2048\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_key_generation\\rsa2048\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_key_generation\\rsa2048\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_key_generation\\rsa2048\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\ecdsap256\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\ecdsap256\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\ecdsap256\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\ecdsap256\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\rsa2048\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\rsa2048\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\rsa2048\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\rsa2048\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\rsa3072\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\rsa3072\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\rsa3072\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_signing\\rsa3072\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\ecdsap256\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\ecdsap256\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\ecdsap256\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\ecdsap256\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\rsa2048\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\rsa2048\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\rsa2048\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\rsa2048\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\rsa3072\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\rsa3072\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\rsa3072\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\classical_verification\\rsa3072\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium2\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium2\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium2\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium2\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium3\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium3\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium3\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium3\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium5\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium5\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium5\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_cacheada\\dilithium5\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium2\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium2\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium2\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium2\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium3\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium3\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium3\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium3\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium5\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium5\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium5\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\firma_efimera\\dilithium5\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium2\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium2\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium2\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium2\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium3\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium3\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium3\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium3\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium5\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium5\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium5\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\key_generation\\dilithium5\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium2\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium2\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium2\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium2\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium3\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium3\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium3\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium3\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium5\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium5\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium5\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\keygen_desde_semilla\\dilithium5\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium2\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium2\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium2\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium2\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium3\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium3\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium3\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium3\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium5\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium5\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium5\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\sign_and_verify\\dilithium5\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium2\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium2\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium2\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium2\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium3\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium3\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium3\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium3\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium5\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium5\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium5\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\signing\\dilithium5\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium2\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium2\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium2\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium2\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium3\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium3\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium3\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium3\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium5\\new\\benchmark.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium5\\new\\estimates.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium5\\new\\sample.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: criterion\\verification\\dilithium5\\new\\tukey.json",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: codigo-observado\\Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: codigo-observado\\Cargo.lock",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: codigo-observado\\nexus-crypto\\Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: codigo-observado\\nexus-crypto\\benches\\dilithium_bench.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: codigo-observado\\nexus-crypto\\benches\\classical_baseline.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: codigo-observado\\nexus-crypto\\benches\\residencia_bench.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: codigo-observado\\nexus-crypto\\examples\\apt_sweep.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: codigo-observado\\nexus-crypto\\examples\\throughput_tps.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Inventario recuperado: codigo-observado\\nexus-zk\\examples\\stark_demo.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente Cargo.lock",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-active/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-active/experiments/tg2_canonical_verifier.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-active/src/batch.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-active/src/chain.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-active/src/execution.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-active/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-active/src/pq_verifier.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-active/src/sequencer.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-active/src/verifier.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-active/tests/tg2_verification.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-anchor/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-anchor/src/chain.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-anchor/src/consensus.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-anchor/src/data_availability.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-anchor/src/finality.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-anchor/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-anchor/src/validator.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-cli/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-cli/src/main.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-core/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-core/src/block.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-core/src/error.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-core/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-core/src/merkle.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-core/src/state.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-core/src/traits.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-core/src/transaction.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-core/src/types.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/benches/classical_baseline.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/benches/dilithium_bench.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/benches/residencia_bench.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/examples/apt_sweep.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/examples/rotation_demo.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/examples/tg2_throughput.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/examples/throughput_tps.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/experiments/tg2_throughput.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/src/dilithium.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/src/entropy.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/src/keypair.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/src/registry.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/src/signer.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-crypto/tests/tg2_throughput.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-network/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-network/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-network/src/peer.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-network/src/protocol.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-node/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-node/src/config.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-node/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-node/src/rpc.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-sentinel/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-sentinel/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/examples/stark_demo.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/examples/tg2_stark_measure.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/circuits.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/prover.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/stark/air.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/stark/channel.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/stark/field.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/stark/fri.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/stark/merkle.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/stark/mod.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/stark/ntt.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/stark/params.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: fuente nexus-zk/src/verifier.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana classical_key_generation/ecdsap256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen classical_key_generation/ecdsap256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC classical_key_generation/ecdsap256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana classical_key_generation/rsa2048",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen classical_key_generation/rsa2048",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC classical_key_generation/rsa2048",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana classical_signing/ecdsap256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen classical_signing/ecdsap256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC classical_signing/ecdsap256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana classical_signing/rsa2048",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen classical_signing/rsa2048",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC classical_signing/rsa2048",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana classical_signing/rsa3072",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen classical_signing/rsa3072",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC classical_signing/rsa3072",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana classical_verification/ecdsap256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen classical_verification/ecdsap256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC classical_verification/ecdsap256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana classical_verification/rsa2048",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen classical_verification/rsa2048",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC classical_verification/rsa2048",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana classical_verification/rsa3072",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen classical_verification/rsa3072",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC classical_verification/rsa3072",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana firma_cacheada/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen firma_cacheada/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC firma_cacheada/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana firma_cacheada/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen firma_cacheada/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC firma_cacheada/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana firma_cacheada/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen firma_cacheada/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC firma_cacheada/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana firma_efimera/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen firma_efimera/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC firma_efimera/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana firma_efimera/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen firma_efimera/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC firma_efimera/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana firma_efimera/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen firma_efimera/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC firma_efimera/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana keygen_desde_semilla/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen keygen_desde_semilla/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC keygen_desde_semilla/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana keygen_desde_semilla/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen keygen_desde_semilla/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC keygen_desde_semilla/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: mediana keygen_desde_semilla/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: resumen keygen_desde_semilla/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-validacion: IC keygen_desde_semilla/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/Cargo.lock",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-active/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-cli/src/main.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-cli/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-network/src/protocol.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-network/src/peer.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-network/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-network/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-active/tests/tg2_verification.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/verifier.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-sentinel/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-sentinel/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-active/src/verifier.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-active/src/sequencer.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-active/src/pq_verifier.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-active/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-active/src/execution.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-active/src/chain.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-active/src/batch.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-anchor/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-anchor/src/validator.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-anchor/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-anchor/src/finality.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-anchor/src/data_availability.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-anchor/src/consensus.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-anchor/src/chain.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/stark/params.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/stark/ntt.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/stark/mod.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/stark/merkle.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/stark/fri.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/stark/field.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/stark/channel.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/stark/air.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/prover.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/src/circuits.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-active/experiments/tg2_canonical_verifier.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/experiments/tg2_throughput.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/tests/tg2_throughput.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/tests/tg2_residence.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/examples/tg2_stark_measure.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/examples/stark_demo.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-zk/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-core/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-node/Cargo.toml",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-node/src/rpc.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-node/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-node/src/config.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/examples/throughput_tps.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/examples/tg2_throughput.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/examples/rotation_demo.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/examples/apt_sweep.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/src/keypair.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/src/entropy.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/src/dilithium.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/src/registry.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/src/signer.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/benches/residencia_bench.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/benches/dilithium_bench.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-crypto/benches/classical_baseline.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-core/src/error.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-core/src/block.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-core/src/lib.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-core/src/merkle.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-core/src/types.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-core/src/transaction.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-core/src/traits.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: fuente nexus/nexus-core/src/state.rs",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana key_generation/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen key_generation/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC key_generation/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana key_generation/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen key_generation/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC key_generation/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana key_generation/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen key_generation/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC key_generation/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana sign_and_verify/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen sign_and_verify/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC sign_and_verify/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana sign_and_verify/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen sign_and_verify/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC sign_and_verify/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana sign_and_verify/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen sign_and_verify/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC sign_and_verify/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana signing/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen signing/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC signing/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana signing/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen signing/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC signing/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana signing/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen signing/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC signing/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana verification/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen verification/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC verification/dilithium2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana verification/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen verification/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC verification/dilithium3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: mediana verification/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: resumen verification/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R4-complemento: IC verification/dilithium5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK repeticiones: 16",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK repeticiones: 64",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK repeticiones: 256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK repeticiones: 1024",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK repeticiones: 4096",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK repeticiones: 16384",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK repeticiones: 65536",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK repeticiones: 262144",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK tamaño: 16",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK generación: 16",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK verificación: 16",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK tamaño: 64",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK generación: 64",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK verificación: 64",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK tamaño: 256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK generación: 256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK verificación: 256",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK tamaño: 1024",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK generación: 1024",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK verificación: 1024",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK tamaño: 4096",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK generación: 4096",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK verificación: 4096",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK tamaño: 16384",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK generación: 16384",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK verificación: 16384",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK tamaño: 65536",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK generación: 65536",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK verificación: 65536",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK tamaño: 262144",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK generación: 262144",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK verificación: 262144",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "STARK CSV",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 1",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 3",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 4",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 5",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 6",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 7",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 8",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 9",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 10",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 11",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 12",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 13",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 14",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 15",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 16",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 17",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 18",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 19",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 20",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 21",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 22",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 23",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 24",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 25",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 26",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 27",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 28",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 29",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 30",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 31",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 32",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 33",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 34",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 35",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 36",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 37",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 38",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 39",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput cuenta y reloj: 40",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput repeticiones: 1",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput repeticiones: 2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput repeticiones: 4",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput repeticiones: 8",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput repeticiones: 12",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput repeticiones: 16",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput repeticiones: 20",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput repeticiones: 24",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput resumen: 1",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput resumen: 2",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput resumen: 4",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput resumen: 8",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput resumen: 12",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput resumen: 16",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput resumen: 20",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Throughput resumen: 24",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "Corpus público",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "CSV throughput",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R5 escenario: 1",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R5 escenario: 10",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R5 escenario: 100",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R5 escenario: 1000",
+      "pasa": true,
+      "detalle": null
+    },
+    {
+      "nombre": "R5 escenario: 2000",
+      "pasa": true,
+      "detalle": null
+    }
+  ],
+  "total": 451,
+  "fallos": 0
+}

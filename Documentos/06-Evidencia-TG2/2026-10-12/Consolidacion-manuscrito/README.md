@@ -1,5 +1,7 @@
 # Evidencia de la consolidación TG2 del 12 de octubre
 
+**Actualización posterior del mismo día:** [revisión web y local con subagentes](../Revision-subagentes/Consolidacion/README.md). La identificación del manuscrito se actualiza allí; los demás informes de esta carpeta conservan la primera consolidación y sus recuentos históricos. Una copia de su identificación original está en `../Revision-subagentes/Consolidacion/Edicion-anterior/`.
+
 La edición integra la revisión de antecedentes y los complementos por rondas y ROM. Las demostraciones propuestas conservan su dictamen pendiente y QROM completo AIR/FRI es trabajo futuro.
 
 - [Identificación de manuscrito y suplemento](revision-manuscrito.json).

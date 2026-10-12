@@ -1,0 +1,23 @@
+[
+  {
+    "nombre": "GMW25-2026-09-25",
+    "url": "https://eprint.iacr.org/2025/1993.pdf",
+    "consultado_utc": "2026-10-12T18:43:32.429952+00:00",
+    "estado": "no_descargado",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "nombre": "BCS16-vigente",
+    "url": "https://eprint.iacr.org/2016/116.pdf",
+    "consultado_utc": "2026-10-12T18:43:32.717781+00:00",
+    "estado": "no_descargado",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "nombre": "BGK23-vigente",
+    "url": "https://eprint.iacr.org/2023/1071.pdf",
+    "consultado_utc": "2026-10-12T18:43:32.930940+00:00",
+    "estado": "no_descargado",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

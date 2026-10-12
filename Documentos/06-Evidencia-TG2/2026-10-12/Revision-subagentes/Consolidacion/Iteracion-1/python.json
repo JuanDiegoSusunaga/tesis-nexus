@@ -1,0 +1,75 @@
+[
+  {
+    "nombre": "python-test_rbr_conjunto_tg2.py",
+    "comando": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/tests",
+      "-p",
+      "test_rbr_conjunto_tg2.py",
+      "-v"
+    ],
+    "salida": 0,
+    "log": "python-test_rbr_conjunto_tg2.py.log"
+  },
+  {
+    "nombre": "python-test_transferencia_rom_tg2.py",
+    "comando": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/tests",
+      "-p",
+      "test_transferencia_rom_tg2.py",
+      "-v"
+    ],
+    "salida": 0,
+    "log": "python-test_transferencia_rom_tg2.py.log"
+  },
+  {
+    "nombre": "python-test_revision_rom_tg2.py",
+    "comando": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/tests",
+      "-p",
+      "test_revision_rom_tg2.py",
+      "-v"
+    ],
+    "salida": 0,
+    "log": "python-test_revision_rom_tg2.py.log"
+  },
+  {
+    "nombre": "python-test_verificar_version_tg2.py",
+    "comando": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/tests",
+      "-p",
+      "test_verificar_version_tg2.py",
+      "-v"
+    ],
+    "salida": 0,
+    "log": "python-test_verificar_version_tg2.py.log"
+  },
+  {
+    "nombre": "catalogo",
+    "comando": [
+      "python",
+      "scripts/verificar_catalogo_validacion.py"
+    ],
+    "salida": 0,
+    "log": "catalogo.log"
+  }
+]

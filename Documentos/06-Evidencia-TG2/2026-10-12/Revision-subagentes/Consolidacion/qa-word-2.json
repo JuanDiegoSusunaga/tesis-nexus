@@ -1,0 +1,49 @@
+{
+  "fecha": "2026-10-12",
+  "revisor": "subagente revision_evidencia",
+  "formato": "Word renderizado nativamente",
+  "inventario": ".tools/revision-subagentes-2026-10-12/inspeccion/inventario.json",
+  "criterio_asignacion": "Todas las láminas de formato word con mínimo de páginas mayor que 64",
+  "metodo": "Inspección efectiva mediante view_image con detail original; 22 láminas en tres lotes de 8, 7 y 7",
+  "paginas_revisadas": [66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 98, 99, 100, 101, 103, 104, 105, 106, 107, 108, 109, 110],
+  "total_paginas_revisadas": 43,
+  "laminas_revisadas": [
+    "word-066-067.png",
+    "word-068-069.png",
+    "word-070-071.png",
+    "word-072-073.png",
+    "word-074-075.png",
+    "word-076-077.png",
+    "word-078-079.png",
+    "word-080-081.png",
+    "word-082-083.png",
+    "word-084-085.png",
+    "word-086-087.png",
+    "word-088-089.png",
+    "word-090-091.png",
+    "word-092-093.png",
+    "word-094-095.png",
+    "word-096-098.png",
+    "word-099-100.png",
+    "word-101-103.png",
+    "word-104-105.png",
+    "word-106-107.png",
+    "word-108-109.png",
+    "word-110-110.png"
+  ],
+  "resultado": "Sin defectos visuales que requieran corrección en las páginas asignadas",
+  "defectos": [],
+  "comprobaciones_visuales": {
+    "tablas": "Tablas 6.5–6.22 completas, con rótulo y cuerpo juntos, celdas dentro de márgenes; el valor largo de generación en Tabla 6.12 se distribuye en dos líneas dentro de su celda",
+    "formulas": "Fórmulas en línea y bloque legibles, con numeradores, denominadores, exponentes y delimitadores visibles; la cota ROM de página 93 ocupa dos líneas y permanece dentro de los márgenes",
+    "margenes": "Texto, tablas, separadores y pies dentro de la caja de página; sin recortes u objetos superpuestos observados",
+    "glyphs": "Sin sustituciones visibles, cuadros vacíos o caracteres ausentes en símbolos matemáticos y texto revisados",
+    "continuidades": "Continuaciones entre páginas contiguas coherentes; páginas 97 y 102 no están en las láminas asignadas y no se atribuye su revisión a este subagente",
+    "conclusiones_bibliografia": "Conclusiones y bibliografía legibles; última página 110 contiene referencias y espacio final normal, sin página vacía"
+  },
+  "observaciones": [
+    "El peso aparente fuerte de la letra es consistente con las capturas Word nativas previas; no se interpreta como prueba de negrita global del documento.",
+    "La inspección visual verifica presentación y no constituye dictamen matemático ni auditoría exhaustiva del contenido bibliográfico.",
+    "No se modificaron fuentes, manuscrito, formato ni artefactos durante esta revisión."
+  ]
+}

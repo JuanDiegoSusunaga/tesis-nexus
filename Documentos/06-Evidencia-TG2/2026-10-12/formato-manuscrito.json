@@ -206,9 +206,9 @@
       "filas": 7
     }
   ],
-  "ecuaciones_word": 560,
+  "ecuaciones_word": 565,
   "figuras_word": 3,
   "tablas_word": 34,
   "advertencias_pandoc": [],
-  "revision_visual": "Completada: 110 páginas Word y 97 PDF; ver Consolidacion-manuscrito/inspeccion-visual.json."
+  "revision_visual": "Pendiente de renderizado de Word/PDF."
 }

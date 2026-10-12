@@ -1,0 +1,46 @@
+{
+  "fecha": "2026-10-12",
+  "estado": "Edición consolidada para revisión académica",
+  "codigo_commit": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "codigo_commit_derivaciones": "01dcde960402b6c60a19242b7ae3d6ac3d82a518",
+  "entregables": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "bytes": 212667,
+      "sha256": "86f0ebca0d039709254ae03d91004a20736deb52398027e6077116507cf3537c"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 644224,
+      "sha256": "721fb7dbcf28ff89c976f8d461d1b2256d4ae8333f5541ae518050b6aa16e535"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2678996,
+      "sha256": "9d5d2c566e7b8dbad4c49d7e1a1960aa117e52d90ee7f7f8586f7c890b7e78b4"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-10-12.md",
+      "bytes": 94403,
+      "sha256": "cdd1b4f06ce4a2dee1fb5ed92d3206a3d7fef631298446d23c614c9dc617da07"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-10-12.docx",
+      "bytes": 105473,
+      "sha256": "0f69212e5458864c5ef610aba4b425e2b0d461ee715029e07c0227d6c2dcf192"
+    }
+  ],
+  "paginas": {
+    "word": 110,
+    "derivaciones": 54,
+    "pdf": 97
+  },
+  "tablas_manuscrito": 34,
+  "celdas_manuscrito_comparadas": 848,
+  "ecuaciones_nativas_manuscrito": 560,
+  "figuras_manuscrito": 3,
+  "tablas_suplemento": 14,
+  "ecuaciones_nativas_suplemento": 673,
+  "revision_visual": "Completada en Word nativo y PDF renderizado.",
+  "limite": "Derivaciones propuestas y dictamen independiente pendiente; QROM completo AIR/FRI como trabajo futuro."
+}

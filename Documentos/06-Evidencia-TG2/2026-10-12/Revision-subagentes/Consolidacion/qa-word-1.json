@@ -1,0 +1,232 @@
+{
+  "fecha": "2026-10-12",
+  "revisor": "subagente AIR-ROM",
+  "alcance": "Laminas Word del inventario con pagina minima <=64; no revision del resto en esta pasada",
+  "metodo": "view_image, detail original; apertura efectiva de todas las laminas seleccionadas en tres lotes de 8,8,4",
+  "estado": "Inspeccion realizada; observacion menor de tabla pendiente de correccion o resolucion por el coordinador",
+  "paginas_inspeccionadas": [
+    2,
+    3,
+    23,
+    24,
+    25,
+    26,
+    27,
+    29,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "laminas_inspeccionadas": 20,
+  "inventario_sha256": "956d15d437c4d012f201eaf9ed87daa7a4d2edd068f2968ab2dba54d65d6090d",
+  "docx_sha256": "b5598b68a1e3a48236e009c088359556141c3b913dc9077884355f68c036c467",
+  "defectos": [
+    {
+      "pagina": 34,
+      "elemento": "Tabla 4.2, Winternitz OTS, columna Tamano de firma",
+      "severidad": "menor",
+      "descripcion": "La palabra parametros se divide dejando su s final sola en una linea; no hay clipping ni solapamiento.",
+      "recomendacion": "Acortar a segun perfil, sin cambiar el estilo general.",
+      "estado": "Comunicado al coordinador antes de editar; este subagente no modifica el manuscrito."
+    }
+  ],
+  "defectos_materiales": [],
+  "observaciones": [
+    "Margenes y numeros de pagina visibles; no observe texto fuera del area util.",
+    "Tablas 3.2,3.3,4.2,4.3,5.1,5.2,5.3,6.1,6.2,6.3 y6.4 legibles, sin clipping.",
+    "Ecuaciones KDF de paginas33 y40, definiciones reticulares, formula multilineal B23 de pagina58 y complejidad visibles y sin glifos ausentes apreciables.",
+    "Figura5.1 de pagina48 conserva flechas, etiquetas y leyenda legibles.",
+    "El aspecto grueso del texto en el render es preexistente; no se propone cambiar el estilo."
+  ],
+  "laminas": [
+    {
+      "paginas": [
+        2,
+        3
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-002-003.png",
+      "sha256": "2eb8e6c17bb64eaae9f685dad790176084c710e1030d325d84c8a124998fe663"
+    },
+    {
+      "paginas": [
+        23,
+        24
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-023-024.png",
+      "sha256": "ec6a6adad52091604fdb0370d90a3abe93b4790f8cb1d73acfbf0810e295a280"
+    },
+    {
+      "paginas": [
+        25,
+        26
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-025-026.png",
+      "sha256": "4e6d0bb9713c84bbb5b3a29edf50eb7e5a19481555db4e4ffb2f40fa13e8e0d0"
+    },
+    {
+      "paginas": [
+        27,
+        29
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-027-029.png",
+      "sha256": "a797f7b2a4707aebc8632474570b57ee8630b01fb35749e72bb6c66c9205e8d2"
+    },
+    {
+      "paginas": [
+        31,
+        32
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-031-032.png",
+      "sha256": "da83bac7af0d17e170425215f0b07bcc207032c2b604b8a80c5bef2e7156e130"
+    },
+    {
+      "paginas": [
+        33,
+        34
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-033-034.png",
+      "sha256": "13bbfa919b0e343773472160b4f461bb78c73cabc9b636907738f2e35211090d"
+    },
+    {
+      "paginas": [
+        35,
+        36
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-035-036.png",
+      "sha256": "6da62f9fee666e425450a126dbba22635e8c795cf5754027bea39acf30ff6a49"
+    },
+    {
+      "paginas": [
+        40,
+        41
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-040-041.png",
+      "sha256": "dc6d40160ee72598c4105e7af861b5f6b119c0185fd0e47ae470181731e2fdd9"
+    },
+    {
+      "paginas": [
+        42,
+        43
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-042-043.png",
+      "sha256": "8ca5cc06c7f1029cdffa69ef31785ff65e07442fe3a27e4f8dd2de79e18aedff"
+    },
+    {
+      "paginas": [
+        44,
+        45
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-044-045.png",
+      "sha256": "0ca6da9ec8c7619f6d38a9c6b394dfbc68d9f3367c135aa317109e4c82fc6404"
+    },
+    {
+      "paginas": [
+        46,
+        47
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-046-047.png",
+      "sha256": "876ff60ea2729b3c4f08ebfa3ab790d0bdd7a5936b53f92c7f646edb433fd729"
+    },
+    {
+      "paginas": [
+        48,
+        49
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-048-049.png",
+      "sha256": "ed823a1cc360621884df8b112ca289894d40f61329284aa547d9b4993fbf879b"
+    },
+    {
+      "paginas": [
+        50,
+        51
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-050-051.png",
+      "sha256": "714969bf902fdf94a6eaa9da322b28938f194d96b5a43be43fcf835c771fa55f"
+    },
+    {
+      "paginas": [
+        52,
+        53
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-052-053.png",
+      "sha256": "dbe0ce81e166bf85e6c5c781fcdf207f84b847a57589934da374fc0c784c662d"
+    },
+    {
+      "paginas": [
+        54,
+        55
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-054-055.png",
+      "sha256": "7647912bce16e0e19698060d9d6e781ba1d128a1f0b8f3654b3dd9864fa3c2db"
+    },
+    {
+      "paginas": [
+        56,
+        57
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-056-057.png",
+      "sha256": "03b02cc043a6f6cde606de44e1d65f3d59c91439cbf6c8e63bc819e8aefdba3d"
+    },
+    {
+      "paginas": [
+        58,
+        59
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-058-059.png",
+      "sha256": "05fdb579a2b858bfcd5bda36c72b4424c389dcef7716de1e0bf01d965cbcfc4e"
+    },
+    {
+      "paginas": [
+        60,
+        61
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-060-061.png",
+      "sha256": "860c5dbab89e0528466db03485ebb80190b53893abbab3c3ace64f83758ff449"
+    },
+    {
+      "paginas": [
+        62,
+        63
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-062-063.png",
+      "sha256": "b43d229b9117153f0a3e32427ae126ce19f5f71f0a18d7e04db89ec6e7da600c"
+    },
+    {
+      "paginas": [
+        64,
+        65
+      ],
+      "imagen": ".tools\\revision-subagentes-2026-10-12\\inspeccion\\word-064-065.png",
+      "sha256": "aa80817e840a83a92f17ed5bc8d4920a687e622d82a2757ff1b0e7f8fc687308"
+    }
+  ]
+}

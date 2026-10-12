@@ -5,7 +5,7 @@
   "estado": "Edición de trabajo preparada para revisión",
   "documentos": {
     "repositorio": "https://github.com/JuanDiegoSusunaga/tesis-nexus.git",
-    "commit_anterior": "931aa36613375c12388abefe51c7b21207468c8a",
+    "commit_anterior": "912bb69798f5dcc44a601384d3dc381d137075a3",
     "identificacion": "El commit que contiene este manifiesto identifica la edición documental."
   },
   "codigo": {
@@ -16,8 +16,8 @@
   "archivos": [
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
-      "bytes": 15243,
-      "sha256": "57b04431ff0e0945bf41bf419d49b8bdaef271403924ec6c58a643177d1d8164"
+      "bytes": 15811,
+      "sha256": "ac83e5155b519c2543393414b022b72cf231708acf12c166c5f24ad482753abe"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
@@ -36,28 +36,28 @@
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
-      "bytes": 18395,
-      "sha256": "e40c32efcaf7bec7d841407b39c58f98c1493fe5fdad2812ac95388440ce37cd"
+      "bytes": 18668,
+      "sha256": "b68c41082d10531cd11888283a524ddb9c421cbac3e8d7e61ea37ee01dc9ce9d"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
-      "bytes": 13698,
-      "sha256": "9f489e6d787405a3d1e141f17fb728fdf89025db97f00475979b3da64739ebf0"
+      "bytes": 15602,
+      "sha256": "aac14761229724fa43d438ae0ee783432c78db409797c5009c9d5267672b567a"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
-      "bytes": 28859,
-      "sha256": "0c0189efd88d64927a8c432b3f5c02e1993265b368d4ef981490c60968478116"
+      "bytes": 30477,
+      "sha256": "892037a264f2ef65e4e22fe6c4be703f66aaa0fd83bbf7bf0f65c6bdc45244e5"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
-      "bytes": 96370,
-      "sha256": "d9ffc7fbfd5bfc05f2c1d9b65fcd6d2b6d9d0857e4a4b5329e16b0e6121149eb"
+      "bytes": 98776,
+      "sha256": "61cb25022db03d3897b090ce30173541e5b3230fe8077647a125055d881cad3d"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
-      "bytes": 12622,
-      "sha256": "c80a15f661a0744fd1f66fb3eec6de55d62668ad4e6b43a1b422977a02c156e1"
+      "bytes": 12892,
+      "sha256": "f807dea85d3a443f7010378d9c6b1e302afaddd95f8dcc956d0fe11aad1234d4"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Figuras/figura-1-1-arco.pdf",
@@ -112,27 +112,27 @@
     {
       "archivo": "Documentos/01-Manuscrito/plantilla-referencia.docx",
       "bytes": 11079,
-      "sha256": "ef18a24a14df35ea5846dbc7d7d50549db7b36f7b137fae7b8e11fc94b345259"
+      "sha256": "2aaac1061c4c15fcce714c1c4f809775780e481f4fa1ef9ef87d54f05cb6ffce"
     },
     {
       "archivo": "Documentos/01-Manuscrito/README.md",
-      "bytes": 8057,
-      "sha256": "af7474514478a0728b8a1fcfe759b43f416926be4fc44e7580fa6a77772a0040"
+      "bytes": 8401,
+      "sha256": "7317ed4d5e28e5700a0eedbe9bfb216a58986d9566510472c097acd2a09de081"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
-      "bytes": 644224,
-      "sha256": "721fb7dbcf28ff89c976f8d461d1b2256d4ae8333f5541ae518050b6aa16e535"
+      "bytes": 647847,
+      "sha256": "15e94cc141742c9969a3607696e4c810444e33080b1230aa10d66c570346439d"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
-      "bytes": 212667,
-      "sha256": "86f0ebca0d039709254ae03d91004a20736deb52398027e6077116507cf3537c"
+      "bytes": 219706,
+      "sha256": "6b05e17956b8cba57632a990542ee9afdad3c6e1686f2246eefeec57c513bba9"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
-      "bytes": 2678996,
-      "sha256": "9d5d2c566e7b8dbad4c49d7e1a1960aa117e52d90ee7f7f8586f7c890b7e78b4"
+      "bytes": 2713955,
+      "sha256": "6f275237aeeccc49f73ea406581e2bc3a5a26a4b2f5ae421454c8564335d9bfa"
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/codigo-observado/Cargo.lock",
@@ -4586,8 +4586,8 @@
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Consolidacion-manuscrito/README.md",
-      "bytes": 1728,
-      "sha256": "7d6cc6f170815c59c82a590b05f305e4d62b65d96dfcdcc93349f23d879ecccf"
+      "bytes": 2127,
+      "sha256": "8cd6024aae70fd8c7cd139c12d59f235bcede747d82d59d99806240b8c7b131f"
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Consolidacion-manuscrito/render-derivaciones.log",
@@ -4611,8 +4611,8 @@
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Consolidacion-manuscrito/revision-manuscrito.json",
-      "bytes": 1775,
-      "sha256": "90eb9586b9099acb77d5177caeed014b2c247ac3b3eed7b8e01f33bf2c5fe41b"
+      "bytes": 2125,
+      "sha256": "1d7373699217016535d6ad6a50e4258121f3c23390cafab179d38ea4485c560f"
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Consolidacion-manuscrito/validacion.json",
@@ -4626,8 +4626,8 @@
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/formato-manuscrito.json",
-      "bytes": 4766,
-      "sha256": "7a648657f99cde78611417d0218050906e77659c63306837e84806723dc58dc9"
+      "bytes": 4711,
+      "sha256": "c1be5826038bba756773a4df50d41f189f0b32a76d357b2a01610d4619236b88"
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/paginacion-derivaciones.json",
@@ -4636,18 +4636,413 @@
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/paginacion-word.json",
-      "bytes": 18154,
-      "sha256": "8755dac6223d1578faa46ae728a269e7057d27e1177b97e8987c3609e135c45f"
+      "bytes": 18425,
+      "sha256": "70f926c1769b1426bebf4537e7aec59441844872d90969feae1b8599edfae0dd"
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/revision-exportacion.json",
-      "bytes": 3274,
-      "sha256": "3f1a88df4731428b9daf63c101cdf6dfe1ada7944289c88e6be2b9496ef83f93"
+      "bytes": 3210,
+      "sha256": "5be03bfbf28242b0f082a2736ddc04c3a601eda27c51a91eeeb1f7e22d84b3f9"
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/revision-graficas.json",
-      "bytes": 16159,
-      "sha256": "738b476899ffeec002658d785a05b0f1da2fc23b808e5a08644859c7a4d8d272"
+      "bytes": 16746,
+      "sha256": "c2546a6afa81a9540398313e92f1006db2604d0acc99a7d85d4617e034eed724"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/contrastes-exactos.json",
+      "bytes": 64411,
+      "sha256": "4d4085cee7783e4d7948c619c51ca770bc8c6b87b2aac9cc5f227157ff76c583"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/contrastes_exactos.py",
+      "bytes": 4608,
+      "sha256": "7958d386850c30405468c79d01fd723be05e2dfd724c56dc3e9eacee2b1a3e93"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/descargar_fuentes.py",
+      "bytes": 1601,
+      "sha256": "55046e1032f87e9c4ee1aa52a86211f40216b11d518ac9cd32948b7e897a3037"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/fuentes-web.json",
+      "bytes": 694,
+      "sha256": "f11b3248c6f1303482e2e7ced766102938c718764e3dd35ad83437aa7e1f6510"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/verificacion-informe.json",
+      "bytes": 2242,
+      "sha256": "29729e9bc0719d212c6b938463483ecf65a89e0d93c38ede9f64f84fbd83f31a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/verificar_informe.py",
+      "bytes": 1442,
+      "sha256": "22a9c0fe76159bb8c85b95c2cabebe5f94644df04ae58852d6a6fb921a923a26"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/archivos-protegidos.json",
+      "bytes": 47,
+      "sha256": "f315a691bdf58a7239453aa35dcea0dc8a1efbe7bf4915a013edbdf0f5fed82a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/cargo-build.log",
+      "bytes": 10542,
+      "sha256": "536b1ed1aca303d278a2d3f35b67df5d50f19ef9b60b7bf947abc8dd6224d97a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/cargo-check.log",
+      "bytes": 14143,
+      "sha256": "2d06d2bfa20221fb1302102b5ca2f8664c3afe6e3716122c214152ae1df014e1"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/cargo-test.log",
+      "bytes": 31228,
+      "sha256": "53ec0bdb09533fe27c531cf34ae2ce9b6d1f008aca7f8d8c88af694cc9194330"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/catalogo.log",
+      "bytes": 283,
+      "sha256": "363e2a39f130e2122d3604827f9e0d9f752ba277fe4c19aea9842faba6c549a6"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/codigo.json",
+      "bytes": 806,
+      "sha256": "f71fb312c775743d4f77ce4a8397ba914e043f7651d49789ff5bc0a48473ab62"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/comparacion-visual.json",
+      "bytes": 21692,
+      "sha256": "5f1e003c290175f77eb6f0eca6fd7ac1f0ab6d1ef97cf86b10465a1850564c9f"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/contenido.log",
+      "bytes": 3210,
+      "sha256": "5be03bfbf28242b0f082a2736ddc04c3a601eda27c51a91eeeb1f7e22d84b3f9"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Edicion-anterior/archivos-protegidos.json",
+      "bytes": 33250,
+      "sha256": "e4e746e518cb86123ab9e6bac205b6f8fdfdb6e905b320357c51d1ffb71bcbb7"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Edicion-anterior/codigo.json",
+      "bytes": 709,
+      "sha256": "d35893310d877893cd808db72d2313e910e5cd4fdb70be0c67902e23e36784fa"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Edicion-anterior/enlaces-locales.json",
+      "bytes": 44,
+      "sha256": "c4cff76988c8286b17053c11e8b6b232880c690f89a15528bbbb2baef34fa264"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Edicion-anterior/inspeccion-visual.json",
+      "bytes": 38584,
+      "sha256": "d0e7261637f5382492ccae1230f4fa894c17713644776aa031b3a9596ba3c838"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Edicion-anterior/python.json",
+      "bytes": 900,
+      "sha256": "27dd7718e6e0f8bb701a542d6f375bbd1392fda6a164a2cf8e3885076e4c6454"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Edicion-anterior/revision-derivaciones.json",
+      "bytes": 941,
+      "sha256": "731017fd97021b0252bd7f0390e66630d0c0bb484c8b5c6a2c474da679dc3b08"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Edicion-anterior/revision-manuscrito.json",
+      "bytes": 1775,
+      "sha256": "90eb9586b9099acb77d5177caeed014b2c247ac3b3eed7b8e01f33bf2c5fe41b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Edicion-anterior/validacion.json",
+      "bytes": 6455,
+      "sha256": "fb520d42ca03862a5691bd44a89b6b773a6e6decfabfc3f86cbdfaaffc14cd3a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Edicion-anterior/version-tg2-anterior.json",
+      "bytes": 210761,
+      "sha256": "86d4a30a83a3ae7661dc08a652736787da2bd958d12116cdbe56642a559b1987"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/enlaces-locales.json",
+      "bytes": 48,
+      "sha256": "28362ec2024edffc58b437a9299a1c0c257909eafbb0d4bf257e5501b36bb837"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/ensamblado.log",
+      "bytes": 66,
+      "sha256": "ea9dc37ff91bcefc65d50833ad65c6bd09317e2179ad87e7a795f35166e74190"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/formatos.json",
+      "bytes": 1212,
+      "sha256": "7539f06ca07902a5d74eea7d737b42e84c3c8cb15dcc9644ba88cb75722d7f9d"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/graficas.log",
+      "bytes": 815,
+      "sha256": "471ddfce25c548500d3402d1ab50eed7c7b17e7e95b985006f913685f63b499a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/indice-word.log",
+      "bytes": 161,
+      "sha256": "1722eab3900cb268cb6335494c1596e635bf064a6c02c5baaa9e8261307d6996"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/inspeccion-visual.json",
+      "bytes": 5613,
+      "sha256": "a6ee7c57b85f87834e811afb44f893eca14aaf33eb17ee94ed57b752ed0536a6"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/archivos-protegidos.json",
+      "bytes": 47,
+      "sha256": "f315a691bdf58a7239453aa35dcea0dc8a1efbe7bf4915a013edbdf0f5fed82a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/cargo-build.log",
+      "bytes": 10542,
+      "sha256": "536b1ed1aca303d278a2d3f35b67df5d50f19ef9b60b7bf947abc8dd6224d97a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/cargo-check.log",
+      "bytes": 14143,
+      "sha256": "2d06d2bfa20221fb1302102b5ca2f8664c3afe6e3716122c214152ae1df014e1"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/cargo-test.log",
+      "bytes": 31228,
+      "sha256": "53ec0bdb09533fe27c531cf34ae2ce9b6d1f008aca7f8d8c88af694cc9194330"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/catalogo.log",
+      "bytes": 283,
+      "sha256": "363e2a39f130e2122d3604827f9e0d9f752ba277fe4c19aea9842faba6c549a6"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/codigo.json",
+      "bytes": 806,
+      "sha256": "f71fb312c775743d4f77ce4a8397ba914e043f7651d49789ff5bc0a48473ab62"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/comparacion-visual.json",
+      "bytes": 21692,
+      "sha256": "bc2639df584ea516cd2ed79ff078cf572f75605bc0b1ece9fdb0b925b2c80931"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/contenido.log",
+      "bytes": 3210,
+      "sha256": "4fd2420dcac4d2f4eff173f183ac064dccde714be29e115924c9117ec35c9443"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/enlaces-locales.json",
+      "bytes": 48,
+      "sha256": "1eda48b937327667585be2f268296865e6d4a3155c190e05461c76d3a73f4f2a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/ensamblado.log",
+      "bytes": 66,
+      "sha256": "ea9dc37ff91bcefc65d50833ad65c6bd09317e2179ad87e7a795f35166e74190"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/formatos.json",
+      "bytes": 1212,
+      "sha256": "7539f06ca07902a5d74eea7d737b42e84c3c8cb15dcc9644ba88cb75722d7f9d"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/graficas.log",
+      "bytes": 815,
+      "sha256": "471ddfce25c548500d3402d1ab50eed7c7b17e7e95b985006f913685f63b499a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/indice-word.log",
+      "bytes": 161,
+      "sha256": "1722eab3900cb268cb6335494c1596e635bf064a6c02c5baaa9e8261307d6996"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/pdf.log",
+      "bytes": 63,
+      "sha256": "0601104e43aa1f53d6a673f2d87d99f7c2fbb55c11c51f7d4e04344fcb08d0e1"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/python-test_rbr_conjunto_tg2.py.log",
+      "bytes": 932,
+      "sha256": "b5fe67218a3bf8dfb8aa41bcd6132b7896c0026456e890cd9523e2ccc115083c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/python-test_revision_rom_tg2.py.log",
+      "bytes": 1728,
+      "sha256": "0369ef2f6a50cb6e170a205f8ef31a6357f8d9db0563d585c569e41a6c5741af"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/python-test_transferencia_rom_tg2.py.log",
+      "bytes": 1548,
+      "sha256": "a9d49c047223cae276f2ef391788ddb2dd485a79edd6bf43f96b2110d0c44d0c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/python-test_verificar_version_tg2.py.log",
+      "bytes": 1238,
+      "sha256": "f79061a61552899c8d38998e7b09323d110e2c4000b26a9cd89c5df9c989b35c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/python.json",
+      "bytes": 1491,
+      "sha256": "1074f6f836a087ce2eb953242b6dfdb03d4689027ee3f35b93708ba381c80254"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/qa-correcciones.json",
+      "bytes": 526,
+      "sha256": "55d4eea489480d7feb0f56305e95ee949d7e78cf89ffad445c3b9086e4d3d103"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/qa-pdf.json",
+      "bytes": 3326,
+      "sha256": "e74f53b7849a358cbad5083c27fdf502711614c9be0a74c0d21fd7893903d59b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/qa-word-1.json",
+      "bytes": 6936,
+      "sha256": "7e5b79be860aedf3300f060fb31a4d4a2a924dc7d9e13c4f50221a5144ef5c1e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/qa-word-2.json",
+      "bytes": 2774,
+      "sha256": "60ce9397221c51960c1f5c4ba3186ea42e7cf33b5d89f566cef34f41a6aa5aac"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/render-word.log",
+      "bytes": 64,
+      "sha256": "f562a3777fa2789c0b6b8b64151aa0ee98d8a4e1e839ce36bd845161cfd268eb"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/Iteracion-1/revision-manuscrito.json",
+      "bytes": 2081,
+      "sha256": "b24eee81295c3c1008527b96da90adb7e1b12c4f099b2f491239ddda99ee8d16"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/pdf.log",
+      "bytes": 63,
+      "sha256": "7a04d66c0e2f199e6ccbe9ff13e2e0c2201cbe23a338063f6a9a097c9433789b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/python-test_rbr_conjunto_tg2.py.log",
+      "bytes": 932,
+      "sha256": "b5fe67218a3bf8dfb8aa41bcd6132b7896c0026456e890cd9523e2ccc115083c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/python-test_revision_rom_tg2.py.log",
+      "bytes": 1728,
+      "sha256": "0369ef2f6a50cb6e170a205f8ef31a6357f8d9db0563d585c569e41a6c5741af"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/python-test_transferencia_rom_tg2.py.log",
+      "bytes": 1548,
+      "sha256": "a9d49c047223cae276f2ef391788ddb2dd485a79edd6bf43f96b2110d0c44d0c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/python-test_verificar_version_tg2.py.log",
+      "bytes": 1238,
+      "sha256": "f79061a61552899c8d38998e7b09323d110e2c4000b26a9cd89c5df9c989b35c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/python.json",
+      "bytes": 1491,
+      "sha256": "1074f6f836a087ce2eb953242b6dfdb03d4689027ee3f35b93708ba381c80254"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/qa-correcciones.json",
+      "bytes": 526,
+      "sha256": "55d4eea489480d7feb0f56305e95ee949d7e78cf89ffad445c3b9086e4d3d103"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/qa-pdf.json",
+      "bytes": 3326,
+      "sha256": "e74f53b7849a358cbad5083c27fdf502711614c9be0a74c0d21fd7893903d59b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/qa-word-1.json",
+      "bytes": 6936,
+      "sha256": "7e5b79be860aedf3300f060fb31a4d4a2a924dc7d9e13c4f50221a5144ef5c1e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/qa-word-2.json",
+      "bytes": 2774,
+      "sha256": "60ce9397221c51960c1f5c4ba3186ea42e7cf33b5d89f566cef34f41a6aa5aac"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/README.md",
+      "bytes": 1979,
+      "sha256": "64b36ca029e3ddc7ae0493aa62d81feba12771c1f4eceb4f3c5e94a8abbfb881"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/render-word.log",
+      "bytes": 64,
+      "sha256": "f562a3777fa2789c0b6b8b64151aa0ee98d8a4e1e839ce36bd845161cfd268eb"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/revision-manuscrito.json",
+      "bytes": 2081,
+      "sha256": "2e1d8938f6e937e2d487e469ca0345a3b83854f5084563607eca32eeda574bb9"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Evidencia/conciliacion.json",
+      "bytes": 73814,
+      "sha256": "28caffff9f3eb3b1380f1e280b81b043107e8e51ba78a4987e497e8a48bdc604"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Evidencia/conciliar.py",
+      "bytes": 8556,
+      "sha256": "a0642a3d219ef14ffb82684cc51ea9dde4668f8d38c4c1430635fcddd6adb365"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Evidencia/fuentes-web.json",
+      "bytes": 2472,
+      "sha256": "a50407239cd20f6c96821e73f4fb6672c0899aaf149918fde8e9354a04dd7e5a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/B23-CWI-actual.pdf",
+      "bytes": 639657,
+      "sha256": "2fa5598eb8689831a7dd7ff88584132ec9da6172015d20e760a93707d4563e9a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/B23-CWI-actual.txt",
+      "bytes": 106273,
+      "sha256": "b3df44921010d6d417abfaabc64c1666392c596b7d61d676e9405aa78615fee4"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/FFH25-CWI.pdf",
+      "bytes": 564671,
+      "sha256": "e43613f427d67ed0ab2f1100cc2b3f4a7ca381c692d27539e30885e8ae0688a8"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/FFH25-CWI.txt",
+      "bytes": 68935,
+      "sha256": "d78a1c4bd01fb3c9e6efe88305f94bc3800689707488d70bbe1618782b4512dc"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/FIPS204-errata-actual.xlsx",
+      "bytes": 23071,
+      "sha256": "5bc93ce63bc647e6d1d456cb2d3a171426c15aca4a7a0e0edd40d08b7a34c793"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/JMW24-v2-actual.pdf",
+      "bytes": 929673,
+      "sha256": "fa6182c8eaa42997fb452c1c797b9cc1e7d214683b4e324678fc2047b08e580c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/JMW24-v2-actual.txt",
+      "bytes": 85852,
+      "sha256": "7bd6cf638335106bb220d2adc777f81cf96750264c37d1c1c7acc2a90c602aac"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/verificacion.json",
+      "bytes": 6377,
+      "sha256": "e9523576beed68f666dbc63083084e75f595fffadd28d2ec75b459c707ce86bb"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/verificar_r1.py",
+      "bytes": 6427,
+      "sha256": "b98322a045f65f86f096e5cd2826784f014e4418f02ddc3cdaaa3a7caf0e1cf5"
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/README.md",

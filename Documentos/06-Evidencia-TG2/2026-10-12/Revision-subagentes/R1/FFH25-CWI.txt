@@ -1,0 +1,2344 @@
+[PAGINA PDF 1]
+Tighter Quantum Security for Fiat-Shamir-with-Aborts and
+Hash-and-Sign-with-Retry Signatures
+Pouria Fallahpour1, Serge Fehr2,3, and Yu-Hsuan Huang2
+1 Sorbonne Universit´e, CNRS and LIP6, France
+2 Centrum Wiskunde & Informatica, The Netherlands
+3 Leiden University, The Netherlands
+pouria.fallahpour@lip6.fr, {serge.fehr, yhh}@cwi.nl
+Abstract. We revisit the quantum security (in the QROM) of digital signature schemes that follow
+the Fiat-Shamir-with-aborts (FSwA) or the probabilistic hash-and-sign with retry/abort (HSwA) design
+paradigm. Important examples of such signature schemes are Dilithium, SeaSign, Falcon+ and UOV.
+In particular, we are interested in the UF-CMA-to-UF-NMA reduction for such schemes. We observe
+that previous such reductions have a reduction loss that is larger than what one would hope for, or
+require a more stringent notion of zero-knowledge than one would hope for.
+We resolve this matter here by means of a novel UF-CMA-to-UF-NMA reduction that applies to FSwA
+and HSwA signature schemes simultaneously, and that offers an improved reduction loss (without
+making the zero-knowledge assumption more stringent).
+1
+Introduction
+Background.
+Fiat-Shamir-with-aborts (FSwA) and probabilistic hash-and-sign with retry/abort (HSwA)
+are important design principles for digital signature schemes (in the random oracle model), in particular
+for constructing quantum-secure signature schemes. Both have in common that the signature generation
+may require several trials until a “good” signature is obtained. Informally speaking, the retrying is typically
+necessary in order to not leak unwanted information about the secret key via a “bad” choice of the signature.
+Examples of signature schemes that follow one or the other design principle are: Lyubashevsky’s signa-
+ture [Lyu09,Lyu12], GLP [GLP12], TESLA [ABB+17], Dilithium [DKL+18], SeaSign [DFG19], and HAETAE
+[CCD+24], which follow the FSwA paradigm, and Hidden Field Equation (HFE) signatures [Pat96], Un-
+balanced Oil and Vinegar (UOV) [KPG99], the Courtois-Finiasz-Sendrier (CFS) signature [CFS01, Dal08],
+GeMSS [CFMR+17], Wave [DST19], MAYO [Beu21], QR-UOV [FIKT21], and Falcon+ [GJK24] (an updated
+version of Falcon), which follow the HSwA paradigm.
+The two design principles, FSwA and HSwA, also have in common that security is typically proven
+in two steps: first, the specific instantiation is exploited in order to show UF-NMA-security, and then an
+argument that is generic for the design principle (and only requires some mild additional properties from
+the instantiation) is used to conclude full-fledged (strong or ordinary) UF-CMA-security, i.e., security against
+chosen-message attacks.
+It turned out that the generic UF-CMA-to-UF-NMA reductions for FSwA and HSwA are quite insidious,
+with several works getting it wrong by overlooking subtle dependencies that are introduced by the retrying,
+which is inherent to the design. Indeed, Barbosa et al. [BBD+23] and Devevey et al. [DFPS23] showed
+(independently) that prior UF-CMA-to-UF-NMA reductions for FSwA, ranging back all the way to [Lyu12]
+and including [KLS18] (which considered the QROM case), are faulty and without simple patches. On
+the positive side, by reconsidering the problem from scratch, both works showed correct such UF-CMA-to-
+UF-NMA reductions for FSwA signatures, in both the classical and the quantum (i.e. QROM) cases, with
+different reduction losses for the two.
+Suppressing less relevant terms, the reduction loss obtained in [BBD+23] scales as qHqSϵ for the classical
+ROM case, and as qH√qSϵ + qS√qHϵ for the QROM case, where qH is the number of (quantum) queries to
+the random oracle, qS is the number of signing queries, and 0 < ϵ < 1 is a (small) number determined by
+
+[PAGINA PDF 2]
+the scheme. Concretely, this means that any UF-CMA attacker can be turned into a UF-NMA attacker with
+similar runtime and a success probability that differs (additively) by no more than the said loss. Since in
+natural settings qH ≫qS, the dominating term in the loss in the QROM case is qH√qSϵ; this is somewhat
+unfortunate as it requires the number of random oracle queries to be bounded in the order of the square root
+of 1/ϵ, for the reduction to be meaningful.
+The approach taken in [DFPS23] avoids the suboptimal qH√qSϵ term in the additive reduction loss, but
+only works if the underlying Σ-protocol is full-fledged honest-verifier zero-knowledge (HVZK), which is a non-
+standard requirement for FSwA (e.g., [BBD+23] merely requires accepting transcripts to be simulateable).
+In that sense, this reduction is less generic and it typically requires substantial additional work to show
+the stronger zero-knowledge property, and/or it may only hold computationally, or not at all.4 If it (only)
+holds computationally then the security loss depends on the runtime of the attacker (and the hardness of a
+computational problem) and so cannot be given as an explicit number, compared to the statistical case where
+the zero-knowledge error is then solely determined by the parameters of the scheme. Another downside of the
+reduction in [DFPS23] is that the computational overhead in the reduction is larger compared to [BBD+23]
+(see Table 1 below).
+Moving on to HSwA signatures, Kosuge and Xagawa [KX24] followed up on the observation from [CDP23]
+that the original analysis of the UF-CMA-to-UF-NMA reduction for HSwA signatures in [SSH11] is incorrect,
+and they provide the first correct such reduction, both in the ROM and in the QROM. However, their QROM
+reduction suffers from the same suboptimal qH√qSϵ term.
+Our Contribution.
+In this work, we consider a certain abstract design for digital signature schemes
+(in the random oracle model) that covers both, FSwA and HSwA signatures, in one go, when considering
+corresponding instantiations. Our main result then is a UF-CMA-to-UF-NMA reduction in the QROM for the
+abstract signature scheme we consider, with a reduction loss that is dominated by qS√qHϵ, while relying on
+the standard assumption that accepting transcript can be simulated (see Table 1).
+Our approach is inspired by [BBD+23], but then deviates significantly in the crucial part. As corollaries
+of our generic result, we obtain such UF-CMA-to-UF-NMA reductions in particular for FSwA signatures and
+for HSwA signatures.
+Reduction loss
+Reduction runtime overhead
+with QRAM
+without QRAM
+[BBD+23, Th. 2]
+qH√qSϵ + qS
+p
+(qS + qH)ϵ
++qSζacHVZK
+qSTacHVZK + qH
+qSTacHVZK + qSqH
++q2
+S
+[DFPS23, Th. 10 & 12]
+λqS
+p
+(λqS + qH)ϵ
++λqSζHVZK
+λqSTHVZK + qH
+λ2q2
+STHVZK + λqSqH
+Corollary 1
+qS√qHϵ + qSζacHVZK
+qSTacHVZK + qH
+qSTacHVZK + qSqH
++q2
+S
+Table 1. Comparison of previous and our new QROM UF-NMA-to-UF-CMA security reduction for FSwA signatures,
+where λ denotes the security parameter, T the runtime of the zero-knowledge simulator, for full-fledged HVZK
+for [DFPS23] and for accepting HVZK in the other cases, and ζ the corresponding statistical simulation error (or
+the computational simulation error, but then it is dependent on the adversary’s runtime). Logarithmic factors and
+constant terms are omitted for the sake of simplicity. Numbering of referred theorems are in terms of the full version.
+4 It is shown in [DFPS23] that full-fledged HVZK is satisfied by (the Σ-protocols underlying) Lyubashevsky’s sig-
+natures, statistically or computationally dependent on some parameter; however, the techniques for showing this
+do not carry over to Dilithium for instance.
+2
+
+[PAGINA PDF 3]
+For FSwA signatures, our result improves on [BBD+23] by offering a loss of order qS√qHϵ, thus avoiding
+the expensive qH√qSϵ term. Assuming that, in practice, the concrete values of qH and qS are considered to be
+up to 2128 and 264, respectively, and ζacHVZK ≈0, our analysis proportionally reduces the loss in [BBD+23]
+by an order of magnitude ≈232. Compared to [DFPS23], we can rely on the weaker notion of accepting
+HVZK, which only requires to simulate accepting transcripts; this is (more) standard for FSwA and typically
+satisfied, statistically, for relevant instantiations. Thus, our work unifies the positive features of [BBD+23]
+and [DFPS23] in one reduction, avoiding the individual drawbacks of the two prior solutions.
+For HSwA signatures, comparing with [KX24], we get the same improvement as above over [BBD+23]
+by offering a loss of order qS√qHϵ, i.e., also here avoiding the qH√qSϵ term.
+Beyond the above quantitative and qualitative improvements, we also would like to emphasize the con-
+ceptual contribution of providing the means to treat FSwA and HSwA signatures simultaneously.
+The Challenge.
+At the core of our result is the following technical challenge (somewhat simplified here
+for the easy of exposition). Let D be a distribution over a set R with the promise that Pr[ r=r◦] ≤ϵ for any
+r◦∈R and r ←D, and let f be an arbitrary (randomized or deterministic) function with domain R × Y
+and with a special symbol ⊥in its range. Consider an arbitrary quantum algorithm AH that gets a sample
+produced by one or the other of the following two procedures:
+1: r ←D
+2: H(r) := y ←Y
+3: z ←f(r, y)
+4:
+5: if z = ⊥then return ⊥
+else return (r, z)
+or
+1: r ←D
+2: y ←Y
+3: z ←f(r, y)
+4: if z̸ = ⊥then H(r) := y
+5: if z = ⊥then return ⊥
+else return (r, z)
+and that can make superposition queries to the random oracle H before and after it gets the sample, say qH
+in total. The goal now is to show that it is hard for AH to decide from which of the two it got the sample.
+We note that the only difference between the two is that the first procedure reprograms H(r) to y no
+matter what, while the latter does so only in case of a non-⊥output. Thus, intuitively it is clear that it
+is hard for AH to distinguish the two: it can notice the difference only when the procedure outputs ⊥and
+AH queries H(r) after having received the sample (thus ⊥); but the latter is unlikely to happen then due
+to the high entropy in r. However, making this a rigorous argument in the case of quantum queries results
+in a hybrid argument over all the queries to H (after having received the sample), where (for the sake of
+the argument) one would then measure for each query if the query is to r or not. This then leads to a
+distinguishing advantage of qH
+√ϵ, where the square-root comes from the Gentle-Measurement Lemma, used
+to argue that the measurements cause little disturbance, and the factor qH by quantifying over all queries.
+Thus, the real challenge is to prove a bound on the distinguishing advantage that scales as √qHϵ instead;
+this is what we aim for and achieve in this work.5
+Impact on Dilithium.
+We show the impact of our improved reduction loss for the Dilithium signature
+scheme, compared to the numbers obtained in [BBD+23]. Working out the loss for Dilithium requires control
+on ϵ (for the different choices of Dilithium parameters considered). This is done in [BBD+23] by means of
+a computer-aided computation, which we reuse here. Additionally, as a small additional contribution, we
+provide a rigorous, analytic bound on ϵ in terms of the different Dilithium parameters. As a matter of fact,
+since ϵ is key-dependent and there may be some bad choices of key-pairs (sk, pk) for which ϵ is large, the
+goal is to find a as-small-as-possible upper bound on Pr[Γ] E[ϵ|Γ] for a suitable subset/event Γ of key-pairs.
+5 One might also be tempted to argue that the two can only be distinguished by AH if AH has queried H(r) before
+it receives the sample (and then use compressed-oracle techniques to get the qH inside the square-root) — but then
+one falls for the same trap as earlier, faulty FSwA proofs: due to the conditional reprogramming of H in the second
+procedure, H may become non-uniformly random there. One expects this non-uniformity to be negligible and hard
+to notice for AH, but giving a concrete (and sufficiently good) bound appears difficult.
+3
+
+[PAGINA PDF 4]
+2
+Preliminaries
+In Sect. 2.1, we recall the (quantum) random oracle model, and we fix a formalism for referring to algorithms
+that may query the random oracle and possibly yet another oracle, and for related concepts.6 In Sect. 2.2,
+we specify the family of signature schemes, to which our result applies, and in Sect. 2.3 we state a variant of
+the adaptive reprogramming lemma from [GHHM21], which we use later.
+2.1
+Oracle algorithms and the (quantum) random oracle model
+Basic notation.
+Throughout this work, we consider the random oracle model, where parties/algorithms
+have oracle access to a uniformly random function H : X →Y, with suitably chosen finite domain X and
+range Y. We also consider quantum algorithms, which can then query H “in superposition”, i.e., in the form
+of the unitary |x, y⟩7→|x, y + H(x)⟩. We write AH to denote a (classical or quantum) algorithm with query
+access to H. Similarly, we write AH,• in case A may additionally make queries to another, possibly unspecified
+oracle, hinted at with a placeholder “•” (or ˛, ‚, Ĳ etc.). Furthermore, in case of such an oracle algorithm
+AH,•, we write AH,O to express that the unspecified oracle is instantiated with the particular algorithm O.
+We note that such an instantiation may also have access to H, i.e., the oracle may be instantiated with an
+algorithm OH, in which case we then naturally write AH,OH.
+We stress that we use the same notation for classical and quantum algorithms with respective classical
+or quantum access to the random oracle H, while the query access to any other oracle is always assumed to
+be classical in this work, and thus so is any oracle instantiation O we consider. Furthermore, by default we
+assume any oracle instantiation O to be at most statically stateful, meaning that the state (if any) is chosen
+at the beginning and then remains fixed.7
+Regarding language and notation, since in the random oracle model by default all algorithms have access
+to H, we reserve the terminology oracle algorithm for those that have access to one (or more) additional
+oracle(s). Also, once we have specified that an oracle algorithm is of the form, say, AH,•, i.e., with access to
+H and to another, unspecified oracle, we may then simply write A in later occurrences, taking the considered
+form as understood.
+We note that even though an oracle algorithm AH,• typically expects a particular instantiation O of the
+oracle, we may consider a run of AH,O′ for any instantiation O′. We may also consider a run of A where
+different calls to the oracle are answered by different instantiations. We then write
+AH,[Oi1
+1 ,Oi2
+2 ,...]
+to capture that the first i1 oracle queries are answered by O1, the following i2 queries by O2, etc. We note
+that in-between these oracle queries, there may be multiple queries to H.
+For proof-technical reasons, we will also consider the case where an (oracle) algorithm may make write
+(a.k.a. reprogramming) queries to the random oracle H. On input (x, y), such a write query will redefine the
+function value of H(x) to y; we will capture this by the command H(x) := y. We only consider classical
+write queries, and we will write A ¯
+H, A ¯
+H,•, A ¯
+H,O
+¯
+H etc. to indicate that A (and O) may also make classical
+write queries to H, next to the ordinary (classical or quantum) read queries.
+For an oracle algorithm A ¯
+H,• and a specific instantiation of the oracle, say, as O ¯
+H, we write
+B
+¯
+H := A
+¯
+H,O
+¯
+H
+6 For the purpose of this work only, Section 2.1 may feel a bit overkill; however, we believe that such a rigorous
+formalism may be useful beyond the scope of this work.
+7 For comparison, the random oracle H with read queries only is statically stateful when instantiated/implemented
+(inefficiently) by choosing a random function at the beginning, while it is adaptively stateful when done using
+lazy sampling. The random oracle ¯H with write queries (see below) is adaptively stateful no matter how it is
+implemented.
+4
+
+[PAGINA PDF 5]
+to specify that the algorithm B runs A and answers all oracle queries by means of running O ¯
+H internally,
+while forwarding all random oracle queries of A and O to H. This indeed makes B an algorithm of the form
+B ¯
+H.
+Pushing this a bit further, B ¯
+H,• := A ¯
+H,[Oi−1,•,P∞] then denotes the oracle algorithm that runs A, answers
+the first i −1 oracle queries with O, forwards the i-th query to B’s oracle, and answers all the remaining
+ones with P. In case A makes at most q oracle queries, we could just as well write Pq−i instead of P∞.
+Equivalences.
+Different (oracle) algorithms may “behave the same way”. We want to formally capture
+the possible meanings of the latter that will be important for us.
+We say that two algorithms B ¯
+H and C ¯
+H are semantically equal, written as equality B ¯
+H = C ¯
+H, if the joint
+distribution of: (1) the output of the considered algorithm, and (2) the (possibly reprogrammed) random
+oracle H at the end of the execution of the algorithm, are the same, for any initial choice of H and any joint
+input. This is for instance satisfied when C is a purely syntactic rewriting of the defining code of B.
+Another natural, but weaker, equivalence relation, which we call output equivalent, is B ¯
+H ≃C ¯
+H, which
+(by our definition) expresses that the two distributions of the respective outputs only are equal, on average
+over the random choice of H and for any joint input.
+We stress that the assignment B ¯
+H := A ¯
+H,O
+¯
+H implies semantical equivalence B ¯
+H = A ¯
+H,O
+¯
+H. Furthermore,
+O
+¯
+H = P
+¯
+H =⇒A
+¯
+H,O
+¯
+H = A
+¯
+H,P
+¯
+H
+for any A ¯
+H,•, while O ¯
+H ≃P ¯
+H is in general not sufficient to conclude A ¯
+H,O
+¯
+H ≃A ¯
+H,P
+¯
+H.8
+Output equivalence sometimes only holds approximately, informally denoted as B ¯
+H ≈C ¯
+H then. This is
+commonly quantified via the distinguishing advantage
+ Pr
+
+1 ←B
+¯
+H 
+−Pr
+
+1 ←C
+¯
+H  ,
+where B and C are then typically assumed to have a binary output, and where the probability is over the
+randomness of the algorithms (B and C) and the random choice of the random oracle H. We note that
+for simplicity, we consider here algorithms with no input, but the same quantities can also be considered
+for any choice of input, of course. In case of binary outputs, the above distinguishing advantage coincides
+with the statistical distance SD
+ B ¯
+H, C ¯
+H
+between the two output distributions, and so we then use the
+two expressions interchangeably.9 In case of non-binary outputs, the statistical distance upper bounds the
+distinguishing advantage.
+Conditioning.
+The run of an algorithm A ¯
+H defines the (distribution of the) output of the algorithm,
+but also various internal variables, like the local randomness of A in case of a classical algorithm or the
+measurement outcomes of measurements performed by A in case of a quantum algorithm, the (classical)
+write queries to H, etc. For any event Λ defined by these random variables, we can then consider a run of A ¯
+H
+conditioned on Λ, which we will denote by A ¯
+H[Λ]. We may use the variation A[Λ] ¯
+H on the notation to indicate
+that Λ does not depend on H. We mainly use the latter in case of a classical algorithm A, where it then means
+that Λ is determined by A’s local randomness (and its input). In this case, the assignment B ¯
+H := A[Λ] ¯
+H is
+well-defined as the oracle algorithm that runs A but samples the local randomness conditioned on Λ.
+This notation extends naturally to A ¯
+H,O
+¯
+H[Λ] for any oracle algorithm A ¯
+H,• and instantiation O ¯
+H, as
+well as to the variations A[Λ] ¯
+H,• and A ¯
+H[Λ] •, when Λ does not depend on (H and) the oracle.
+The above notation will mainly be useful in the following context. Consider two algorithms B ¯
+H and C ¯
+H, as
+well as an event Λ that is well-defined for either of the two executions. Then the equivalences B ¯
+H[Λ] = C ¯
+H[Λ]
+and B ¯
+H[Λ] ≃C ¯
+H[Λ] are naturally defined by means of the equality of the respective conditional distributions.
+Furthermore, if Λ has the same probability Pr[Λ] in a run of B ¯
+H and in a run of C ¯
+H, then
+SD
+ B
+¯
+H, C
+¯
+H
+≤Pr[Λ] · SD
+ B
+¯
+H[Λ], C
+¯
+H[Λ]
+
++ Pr[¬Λ] · SD
+ B
+¯
+H[¬Λ], C
+¯
+H[¬Λ]
+
+.
+8 Even if O and P are restricted to read access only, still OH ≃PH̸ ⇒A
+¯
+H,OH ≃A
+¯
+H,PH .
+9 The former is more common in the cryptography literature, while the advantage of the latter is its succinctness.
+5
+
+[PAGINA PDF 6]
+In particular, if B ¯
+H[Λ] ≃C ¯
+H[Λ] then SD
+ B ¯
+H, C ¯
+H
+≤Pr[¬Λ].
+We conclude by noting that in case of an oracle algorithm A ¯
+H,•, an instantiation O ¯
+H of the oracle, and an
+event Λ defined by the local randomness of O (for any fixed input to O), if A ¯
+H,• is promised to make precisely
+one query to the oracle then the event Λ is also well-defined by a run of A ¯
+H,O
+¯
+H, and A ¯
+H,O[Λ]
+¯
+H = A ¯
+H,O
+¯
+H[Λ].
+Simulating the write access.
+It is not too hard to see that write queries to H can always be simulated
+internally, in the sense that there exists an (adaptively stateful) algorithm SH, which makes one H-query
+whenever it is invoked with a read request (and no query upon any write request), and such that A ¯
+H ≃ASH
+for every A ¯
+H. S simply simulates any write query to H by bookkeeping the reprogramming requests and
+properly adjusting the future read queries to H, which it relays. It is obvious how this works in case A
+makes classical read queries to H, but it can also be done in case of quantum read queries, where S then is
+a suitable quantum algorithm; the details of the latter are in Appendix A.
+By default, we then write ¯
+AH := ASH for the algorithm that simulates A’s write queries internally, and
+thus is such that ¯
+AH ≃A ¯
+H.10 We note that in case of an oracle algorithm A ¯
+H,• and setting ¯
+AH,• := ASH,•,
+the equality ¯
+AH,O
+¯
+H ≃A ¯
+H,O
+¯
+H of the output distributions holds (only) conditioned on the event that O
+makes no (read or write) query to H on a point that has previously been reprogrammed by A. Thus,
+¯
+AH,O
+¯
+H[Ω] ≃A ¯
+H,O
+¯
+H[Ω] with Ωbeing the said event.
+2.2
+Generalized Fiat-Shamir with Aborts signatures
+Let M, R, Y and Z be arbitrary non-empty finite sets, and fix the domain and the range of the random
+oracle as R × M and Y, respectively, i.e. H : R × M →Y. Furthermore, let ⊥be some special symbol not
+contained in Z. These sets may depend on a security parameter, but we leave this dependency — and the
+security parameter itself — implicit throughout most of the document.
+We consider signature schemes
+ KeyGen, SignH, VerifyH
+in the random oracle model of the following
+form. On input the security parameter, the key-generation algorithm KeyGen produces a key pair (sk, pk),
+which in turn specifies a distribution D over a set R and an ensemble {f(r, y)}r∈R,y∈Y of distributions over
+Z ∪{⊥}. Signing of a message m ∈M works as specified in Fig. 1 below, and a claimed signature σ = (r, z)
+for a message m ∈M is accepted by Verify if and only if z is in the support of the distribution f(r, H(r, m)).
+SignH(sk, m):
+1: repeat
+2:
+r ←D
+3:
+y := H(r, m)
+4:
+z ←f(r, y)
+5: until z̸ = ⊥
+6: return (r, z)
+Fig. 1. The signing procedure, where the hash function H in step 3 is modeled as a random oracle. The dependency
+of D and f on sk is left implicit.
+Obviously, for signing to be efficient, it is necessary that D is efficiently samplable when given the secret
+key sk, and f(r, y) is efficiently samplable (for any r and y) when given sk and the randomness used to
+sample r ←D. For verification to be efficient, it needs to be efficiently testable given the public key (only) if
+z is in the support of f(r, y), for any r, y, z. Similarly, for the scheme to be secure (against key-only attacks)
+it is necessary that signing should be computationally hard when only given the public key pk. However,
+10 Here the respective output distributions of the two algorithms are actually equal for any choice of H; thus, we
+have an equivalence that lies in-between = and ≃, but this is not important to us.
+6
+
+[PAGINA PDF 7]
+these (in)efficiency aspects are not our concern; our security reductions also apply for non-efficient or insecure
+schemes (though they become somewhat pointless then). Therefore, we keep the public key pk and the secret
+key sk implicit — unless specified otherwise, we consider them arbitrary but fixed — and so we also keep the
+dependency of D and f on (pk, sk), implicit; the same for the parameters p and ϵ below.
+Two important parameters for such a signature scheme are
+p :=
+Pr
+r←D,y←Y
+z←f(r,y)
+[ z = ⊥] ,
+(1)
+referred to as the abort probability, and
+ϵ := max
+r◦D(r◦) = max
+r◦
+Pr
+r←D[ r = r◦] ,
+(2)
+which is the guessing probability of the distribution D.
+The above abstract signature scheme design is well motivated by the fact that it covers both Fiat-Shamir-
+with-aborts (FSwA) signatures, as well as probabilistic hash-and-sign with retry/abort (HSwA) signatures. In
+the case of FSwA signatures, f is usually a deterministic function, which can be efficiently computed given
+the secret key and the randomness used to sample r (the “first message” in the Σ-protocol); in the case
+of HSwA signatures, D is typically the uniform distribution over strings of a certain length, and f is the
+preimage-sampling algorithm of a so-called weak preimage-samplable function.
+As a matter of fact, a HSwA signature can be understood as the FSwA signature obtained from the Σ-
+protocol that chooses a random bit string r as the “first message”, and samples the response z as a preimage
+of the (random) challenge under the weak preimage-samplable function. We therefore call the general class
+of signature schemes specified above (covering FSwA and HSwA signatures) generalized FSwA signature
+schemes.
+Motivated by the case of (ordinary) Fiat-Shamir with aborts and the definition of acHVZK in [BBD+23],
+we define the following.
+Definition 1 (Accepting (Statistical) Honest-Verifier Zero-Knowledge). Let ζ and T be functions
+of the security parameter. A generalized FSwA signature scheme is called (ζ, T)-acHVZK if there exists an
+algorithm acSim with runtime T, such that on input a public key pk it outputs a triple (ˆr, ˆy, ˆz) that (on
+average over the choice of pk generated by KeyGen) is ζ-close in statistical distance to (r, y, z) conditioned
+on z̸ = ⊥, where r ←D, y ←Y and z ←f(r, y).
+The above definition of acHVZK matches up with the definition in [BBD+23] for the FSwA instantiation
+of the generic signature scheme; for the HSwA instantiation, it matches up with the requirement on the
+advantage of the “Preimage Sampling Game”, as defined in [KX24, Def. 2.5], being at most ζ (for an algorithm
+SampDom with runtime T). Thus, our work covers both the FSwA schemes considered in [BBD+23] as well
+as the HSwA schemes from [KX24].
+For simplicity, we consider the statistical version of the above zero-knowledge properly only, but our
+results naturally extend to a computational variant (where we then need to require polynomially many
+accepted transcripts (r, y, z) to be computationally indistinguishable from the simulated ones).
+2.3
+A variant of the Adaptive Reprogramming Lemma
+We consider the following, slightly extended variant of the Adaptive Reprogramming Lemma from [GHHM21].
+It differs from the original variant in that, next to the quantum read queries, we allow the distinguisher to
+make (classical) write queries to H (with a bound on the expected number of write queries).
+Lemma 1. Let H : X →Y be the random oracle. Let ϵ > 0, and let {Di}i∈I be a family of distributions
+over X indexed by a finite set I, such that
+max
+x◦∈X Di(x◦) = max
+x◦∈X
+Pr
+x←Di [ x = x◦] ≤ϵ
+7
+
+[PAGINA PDF 8]
+OH
+0 (i):
+1: x ←Di
+2: y := H(x)
+3: return (x, y)
+O
+¯
+H
+1 (i):
+1: x ←Di
+2: H(x) := y ←Y
+3: return (x, y)
+Fig. 2. Reprogramming or not reprogramming, that is the question.
+for all i ∈I. Let A ¯
+H,‚ be an oracle algorithm that makes one query to an oracle ( ‚), which is to be
+instantiated by OH
+0
+or O ¯
+H
+1
+as specified in Fig. 2; furthermore, prior to that query, A makes at most qr
+quantum read queries to H, and in expectation at most qw classical write queries to H, for given positive
+numbers qr, qw ∈Z.11 Then
+ Pr
+h
+1 ←A
+¯
+H,OH
+0
+i
+−Pr
+h
+1 ←A
+¯
+H,O
+¯
+H
+1
+i  ≤
+
+2qw + qr
+2
+
+ϵ + √qrϵ .
+The proof for this extended variant is a reduction to the original version [GHHM21], exploiting that we
+can simulate the write queries.
+Proof. Consider ¯
+AH,OH
+0
+= ASH,OH
+0
+and ¯
+AH,O
+¯
+H
+1
+= ASH,O
+¯
+H
+1 , which run A and simulate the write queries
+locally, and let Ωbe the event that A has not made a write query (prior to the oracle call) for the value x
+sampled by the oracle then. This event is well-defined and has the same probability in any of the executions
+of A ¯
+H,O0, ¯
+AH,O0, ¯
+AH,O1, A ¯
+H,O1. Furthermore,
+¯
+AH,OH
+0 [Ω] ≃A
+¯
+H,OH
+0 [Ω]
+and
+¯
+AH,O
+¯
+H
+1 [Ω] ≃A
+¯
+H,O
+¯
+H
+1 [Ω] .
+It thus follows that
+SD(A
+¯
+H,OH
+0 , A
+¯
+H,O
+¯
+H
+1 ) ≤SD(A
+¯
+H,OH
+0 , ¯
+AH,OH
+0 ) + SD( ¯
+AH,OH
+0 , ¯
+AH,O
+¯
+H
+1 ) + SD( ¯
+AH,O
+¯
+H
+1 , A
+¯
+H,O
+¯
+H
+1 )
+≤2 Pr[¬Ω] + SD( ¯
+AH,OH
+0 , ¯
+AH,O
+¯
+H
+1 ) ≤2qwϵ + qr
+2 ϵ + √qrϵ .
+where the bound on SD( ¯
+AH,OH
+0 , ¯
+AH,O
+¯
+H
+1 ) follows from the standard adaptive reprogramming lemma (see
+Proposition 2 in [GHHM21]).
+3
+A Tighter UF-CMA-to-UF-NMA Reduction
+Throughout the entirety of this section, let S = (KeyGen, SignH, VerH) be a generalized FSwA signature
+scheme as introduced in Sect. 2.2, with parameters ϵ and p defined as in (1) and (2). We assume S to be
+(ζ, T)-acHVZK for given ζ and T.
+Following standard notation, we write AdvCMA
+S
+(A) for the advantage of an attacker A of winning the
+standard UF-CMA-security game (in the QROM) for the scheme S, and similarly AdvNMA
+S
+(B) for the advantage
+of an attacker B of winning the standard UF-NMA-security game.
+3.1
+Main result
+Our main result is an improved UF-CMA-to-UF-NMA reduction. The reductions loss is in terms of (bounds
+on) the parameters p and ϵ. Since these parameters are in general key-dependent, we first state the improved
+reduction loss for a fixed choice of key pair (sk, pk), and we write psk and ϵsk when we want to make
+the dependency on the choice of the key explicit (where we assume without loss of generality that pk is
+determined by sk).
+11 We allow arbitrary many read/write H-queries after the query to O0 or O1.
+8
+
+[PAGINA PDF 9]
+Similarly, we write ζsk for the statistical distance of the simulated transcript to the actual accepted
+transcript for the specific choice sk of the key pair; it then obviously holds that E[ζsk] = ζ, with the
+expectation taken over (sk, pk) ←KeyGen. Finally, we write AdvCMA
+S
+(A, sk) and AdvNMA
+S
+(B, sk) for the
+respective advantages when the key is chosen to be sk.
+The proof of the following main theorem is presented in the subsequent subsections.
+Theorem 1. Let S = (KeyGen, SignH, VerH) be (ζ, T)-acHVZK. Then for every UF-CMA attacker AH,•
+making at most qH quantum queries to H and qS classical queries to the signing oracle, there exists an NMA
+attacker BH making at most qH quantum queries to H such that for every fixed choice of key sk with psk < 1,
+we have
+AdvCMA
+S
+(A, sk) ≤AdvNMA
+S
+(B, sk) + 8qS
+p
+(qH + 1)ϵsk
+1 −psk
++ qS · ζsk .
+Moreover, if we count runtime in terms of the number of gates, except that each arithmetic operation on
+X and Y and every comparison among them (with respect to a strict total ordering) are counted as unit
+runtime, then TIME(B) ≤TIME(A) + O
+ qST + qHqS + q2
+S
+
+.
+Remark 1. Suppose B is allowed to use a QRAM, where each cell may contain an element of X × Y, up
+to O(1) many memory pointers and up to O(1) many auxiliary bits. If we count each arithmetic operation
+and each comparison of the memory pointers as being unit runtime, then B can further achieve the runtime
+TIME(B) ≤TIME(A) + O
+ qST + (qS + qH) log qS
+
+using only O(qS) many cells.
+When taking the expectation over sk on both sides, in order to get the average reduction loss for a
+random key-pair, one can apply Jensen’s inequality to E[√ϵsk] get a bound in terms of the expectation of ϵsk
+(over the choice of sk). Unfortunately, this does not work for the parameter psk, where Jensen’s inequality
+goes the wrong way round. Hence, we need to have a bound ¯p on psk that holds for all sk, or holds except
+with small probability (over the choice of sk).
+Towards optimizing the bound, it may also make sense to avoid some bad, yet unlikely, choices of (sk, pk)
+that make ϵsk large, i.e. to consider a bound ¯ϵ on the sub-normalized conditional expectation Pr[sk ∈
+Γϵ]E[ϵsk|sk∈Γϵ], where Γϵ is a subset of the keys for which Pr[sk̸∈Γϵ] is small.
+Altogether, this then gives the following statement.
+Corollary 1. Let S = (KeyGen, SignH, VerH) be (ζ, T)-acHVZK. Furthermore, let Γϵ and Γp be subset of
+keys sk such that psk ≤¯p for all sk ∈Γp and Pr[sk ∈Γϵ]E[ϵsk|sk ∈Γϵ] ≤¯ϵ, for parameters for 0 < ¯ϵ, ¯p < 1.
+Then for every UF-CMA attacker A making at most qH quantum queries to H and qS classical queries to
+the signing oracle, the UF-NMA attacker B (dependent on A) as defined in Theorem 1 is such that
+AdvCMA
+S
+(A) ≤AdvNMA
+S
+(B) + 8qS
+p
+(qH + 1)¯ϵ
+1 −¯p
++ qSζ + Pr[sk̸∈Γp] + Pr[sk̸∈Γϵ] .
+3.2
+Our proof strategy
+Towards proving the above claim, we consider an arbitrary UF-CMA attacker AH,•, where by default the
+queries to the oracle • are answered by the signing algorithm/oracle Sign in the obvious way.12 It will be
+convenient to assume that A makes one more query to H in order to check himself if the forged signature is
+valid under a new message that has not been queried, and then aborts (i.e. outputs ⊥) if the check fails.
+Our goal is to show that
+AH,SignH(sk,·)(pk) ≈AH,Sim
+¯
+H(pk,·)(pk)
+(3)
+with an upper bound on the distance that is in line with the security loss in the theorem statement. Here,
+Sim simulates the signing oracle by exploiting the non-abort ZK property and the ability to reprogram H,
+as specified in Fig. 3 below.
+12 I.e., using the secret key that corresponds to the public key that is given to A as input.
+9
+
+[PAGINA PDF 10]
+Sim
+¯
+H(pk, m):
+1: (ˆr, ˆy, ˆz) ←acSim(pk)
+2: H(ˆr, m) := ˆy
+3: return (ˆr, ˆz)
+Fig. 3. Simulating the signing oracle by means of the acHVZK simulator and reprogramming H.
+This then implies that the UF-NMA attacker ¯BH(pk) = BSH(pk) obtained by running B ¯
+H(pk) :=
+AH,Sim
+¯
+H(pk,·)(pk) but simulating the write queries to H internally as in Lemma 4, is similarly successful
+in forging a signature as the original UF-CMA attacker A. The crucial property of Sim is of course that it
+does not need the secret key, and so can indeed be simulated by B itself.
+By assumption on A (to verify the forged signature before outputting it), we know that B ¯
+H(pk) outputs
+a forgery σ∗for a message m∗that correctly verifies under the reprogrammed oracle H (or else outputs ⊥).
+However, since H gets reprogrammed only at places (ˆr, m) for m∗̸ = m, σ∗also verifies under the original
+(unreprogrammed) choice of H. Consequently, whenever ¯B outputs non-⊥, it outputs a valid forgery. Thus,
+we have
+AdvNMA( ¯B) = Pr
+ ¯BH(pk)̸ = ⊥
+
+= Pr
+h
+B
+¯
+H(pk)̸ = ⊥
+i
+= Pr
+h
+AH,Sim
+¯
+H(pk,·)(pk)̸ = ⊥
+i
+≥AdvCMA(A) −SD
+
+AH,SignH(sk,·)(pk), AH,Sim
+¯
+H(sk,·)(pk)
+
+,
+where the second and third equality follows ¯BH(pk) ≃B ¯
+H(pk) = AH,Sim
+¯
+H(sk,·)(pk).
+Remark 2. If we aim for strong unforgeability, similar argument applies, but we additionally require what
+is known as the computational unique-responses property, which prevents an efficient attacker to come up
+with two valid triples (r, y, z1), (r, y, z2) with the same first message r and the same challenge y but distinct
+responses z1̸ = z2
+Loop˛(sk, m)
+1: repeat
+2:
+out ←˛(sk, m)
+3: until out̸ = ⊥
+4: return out
+BH
+S (sk, m)
+1: r ←D
+2: y := H(r, m)
+3: z ←f(r, y)
+4:
+5: if z = ⊥then
+return ⊥
+6: return (r, z)
+B
+¯
+H
+P (sk, m)
+1: r ←D
+2: H(r, m) := y ←Y
+3: z ←f(r, y)
+4: if z̸ = ⊥then
+H(r, m) := y
+5: if z = ⊥then
+return ⊥
+6: else return (r, z)
+B
+¯
+H
+T (sk, m)
+1: r ←D
+2: y ←Y
+3: z ←f(r, y)
+4: if z̸ = ⊥then
+H(r, m) := y
+5: if z = ⊥then
+return ⊥
+6: else return (r, z)
+Fig. 4. The repetition loop Loop˛ (top), and different instantiations of the body of the loop (bottom). The greyed
+out line 4 in BP is irrelevant and can be ignored.
+Towards showing the closeness (3), we first observe that SignH = LoopBH
+S , where Loop˛ is as in in Fig. 4
+(top) and BS as in Fig. 4 (bottom left). The closeness (3) is to be shown by means of the following sequence
+10
+
+[PAGINA PDF 11]
+of closeness results:
+AH,SignH(sk,·)(pk)
+(a)
+≈AH,Prog
+¯
+H(sk,·)(pk)
+(b)
+≈AH,Trans
+¯
+H(sk,·)(pk)
+(c)
+≈AH,Sim
+¯
+H
+pk(pk)
+where Prog
+¯
+H := LoopB
+¯
+H
+P and Trans
+¯
+H := LoopB
+¯
+H
+T , with BP and BT given in Fig. 4.
+The closeness claim (c) follows directly from the defining properties of the non-abort ZK simulator; with
+distance ζk for a fixed choice k of the key, and with distance ζ on average. The closeness claim (a) is proven
+in [BBD+23].13 The formal statement is recalled in Lemma 2 below. The challenging part is to show the
+closeness claim (b) with the right upper bound on the distance. Indeed, (b) was also shown in [BBD+23], but
+with a distance of the order qH√qS ϵ, while the objective here is to get a bound on the distance in the order
+of qS√qH ϵ. As discussed, this is a significant quantitative improvement, since in realistic scenarios qH ≫qS.
+The closeness claim (b) with the claimed distance bound is proven in the upcoming Section 3.3.
+Since (a) and (b) hold for any fixed choices of sk and pk, we now consider them arbitrary but fixed in
+the remainder of this work, and we do not write them explicitly anymore as input to A, Sign etc., and we
+leave the dependency of p and ϵ on the key implicit again.
+Lemma 2 ( [BBD+23, Corollary 1] with a slightly improved bound). Let A be given qH quantum
+queries to H and qS queries to Sign. Then
+SD
+
+AH,SignH, AH,Prog
+¯
+H
+≤
+2q2
+Sϵ
+(1 −p)2 + 3qS√qHϵ
+2(1 −p) ≤3qS√qHϵ
+1 −p
+,
+where the last inequality holds as long as qH > 0 and the right-hand side is at most 1.
+Proof. Let G
+¯
+H,•
+i
+:= AH,[(Prog
+¯
+H)i−1,•,(SignH)qS −i] be a run of A such that the first i −1 signing queries are
+answered by Prog, the ith signing query is answered by an unspecified oracle (which will later be instantiated
+either by Sign or by Prog), and all remaining signing queries are answered by Sign. Our goal here, is to prove
+the closeness of G
+¯
+H,Sign
+i
+≈G
+¯
+H,Prog
+i
+. For that purpose, we consider the following sequence of intermediate
+oracles O˛
+j := Loop[(BP)j−1,˛,(BS)∞] for every j ∈Z>0, where OBS
+1
+= LoopBS = Sign and O˛
+∞= LoopBP = Prog
+regardless of the instantiation of ˛, and so we might just denote the latter as O∞. Moreover, for every
+j ∈Z>0, let Ej be the (local) classical event for the loop in O˛
+j (or in O∞) to reach the jth iteration, then
+we have
+SD
+
+G
+¯
+H,O˛
+j
+i
+, G
+¯
+H,O∞
+i
+
+≤Pr[Ej] ≤pj−1 ,
+where the inequalities hold regardless of the instantiation of ˛. It remains to control the closeness between
+G
+¯
+H,O
+BS
+j
+i
+≈G
+¯
+H,O
+BP
+j
+i
+= G
+¯
+H,O
+BS
+j+1
+i
+,
+where the last equality follows from the fact that OBP
+j
+= OBS
+j+1. We do so via
+SD
+
+G
+¯
+H,O
+BS
+j
+i
+, G
+¯
+H,O
+BP
+j
+i
+
+≤Pr[Ej] · SD
+
+G
+¯
+H,O
+BS
+j [Ej]
+i
+, G
+¯
+H,O
+BP
+j [Ej]
+i
+
+≤pj−1 ·
+2(i −1)
+1 −p
++ 2(j −1) + qH
+2
+
+ϵ + √qHϵ
+
+,
+where the second inequality is by a direct application of our variant of the adaptive reprogramming lemma
+(Lemma 1). We stress that the event Ej is determined by the local randomness (concretely, the choices of y
+is the first j −1 executions of BP) and thus independent of H (before reprogramming); therefore, Lemma 1
+is indeed applicable when conditioning of Ej.
+13 The proof in [BBD+23] is tailored to FSwA signature schemes, but it carries over one-to-one to the slightly more
+abstract/general signature scheme considered here.
+11
+
+[PAGINA PDF 12]
+Collecting the numbers, we obtain
+SD
+
+G
+¯
+H,Sign
+i
+, G
+¯
+H,Prog
+i+1
+
+≤SD
+
+G
+¯
+H,O
+BS
+k+1
+i
+, G
+¯
+H,O∞
+i
+
++
+X
+j∈[k]
+SD
+
+G
+¯
+H,O
+BS
+j
+i
+, G
+¯
+H,O
+BS
+j+1
+i
+
+≤pk +
+X
+j∈[k]
+pj−1
+2(i −1)
+1 −p
++ 2(j −1) + qH
+2
+
+ϵ + √qHϵ
+
+≤pk +
+2qSϵ
+(1 −p)2 +
+qHϵ
+2(1 −p) +
+√qHϵ
+1 −p ,
+where the last inequality is via p < 1 and i ≤qS and the pk term vanishes as k →∞. Summing the above
+over i ∈[qH], the proof is concluded.
+3.3
+Closeness of AH,Prog
+¯
+H and AH,Trans
+¯
+H
+Our strategy for proving closeness of AH,Prog
+¯
+H and AH,Trans
+¯
+H is to replace, query by query and iteration
+by iteration, the body B ¯
+H
+P of the repeat loop of Prog
+¯
+H = LoopB
+¯
+H
+P by the body B ¯
+H
+T of the repeat loop of
+Trans
+¯
+H = LoopB
+¯
+H
+T .
+In order to capture the corresponding hybrid game and hybrid step, we introduce the following game,
+played by an oracle algorithm C ¯
+H,˛ with the following features (see Fig. 5). During its run, C is allowed to
+make multiple quantum read and classical write queries to H, and moreover one single query to an unspecified
+oracle that is to be instantiated by BP or BT.
+H
+BP
+C
+H
+BT
+C
+Fig. 5. The oracle algorithm C, which makes an fixed number of (at most) qr quantum read queries to H, an expected
+number of (at most) qw classical write queries to H, and one query to either BP or BT.
+For parameters qr, qw, we then define adv(qr, qw) to be the maximal advantage of distinguishing the two
+games from Fig. 5, i.e.,
+adv(qr, qw) := max
+C
+Pr
+h
+1 ←C
+¯
+H,BP
+i
+−Pr
+h
+1 ←C
+¯
+H,BT
+i ,
+(4)
+maximized over all C ¯
+H,˛ as above that make at most qr quantum read queries to H in the worst case and at
+most qw classical write queries on average, regardless of how the unspecified oracle (˛) is instantiated.
+The following allows us to control the closeness of AH,Prog
+¯
+H and AH,Trans
+¯
+H in terms of adv(qr, qw).
+Lemma 3. Let AH,• be given qH (read) queries to H and qS signing queries. Then for p as in (1), it holds
+that
+SD
+
+AH,Prog
+¯
+H, AH,Trans
+¯
+H
+≤
+qS
+1 −p · adv
+
+qH,
+qS
+1 −p
+
+.
+12
+
+[PAGINA PDF 13]
+At first glance, this is a straightforward hybrid argument, where we switch, one by one, the body of the
+jth iteration of the repeat loop in the ith signing query from BP to BT; however, one needs to be careful since
+there is no fixed upper bound on the number of times the loop in Prog and Trans is repeated. However, via
+similar reasoning as in [BBD+23], we can exploit that it becomes less and less likely that the loop where we
+switch from BP to BT is reached, and so we can bound the distinguishing advantage by an infinite geometric
+series, which can be controlled. For this to work it is crucial that A cannot influence the number of loop
+repetitions (by the way of choosing m); whether the loop is repeated or not depends solely on the random
+choice of r.
+Proof of Lemma 3. Let
+G
+¯
+H,•
+i
+:= AH,[(Trans
+¯
+H)i−1,•,(Prog
+¯
+H)qS −i]
+be a run of A such that the first i−1 signing queries are answered by Trans, the ith signing query is answered
+by an unspecified oracle (which will later be instantiate either by Trans or by Prog), and all remaining signing
+queries are answered by Prog. By construction, G
+¯
+H,•
+i
+makes qH quantum read queries to H, an expected
+number of at most qS/(1 −p) classical write queries to H (the ones made by the runs of Trans and Prog),
+and one query to the unspecified oracle. Furthermore,
+AH,Prog
+¯
+H = G
+¯
+H,Prog
+¯
+H
+1
+,
+G
+¯
+H,Trans
+¯
+H
+i
+= G
+¯
+H,Prog
+¯
+H
+i+1
+and
+G
+¯
+H,Trans
+¯
+H
+qS
+= AH,Trans
+¯
+H .
+Our goal is to show the closeness of G
+¯
+H,Trans
+¯
+H
+i
+and G
+¯
+H,Prog
+¯
+H
+i
+for every i ∈{1, . . . , qS}, with error at most
+adv
+ qH,
+qS
+1−p
+
+/(1 −p), which then implies the claim via
+AH,Prog
+¯
+H = G
+¯
+H,Prog
+¯
+H
+1
+≈G
+¯
+H,Trans
+¯
+H
+1
+= G
+¯
+H,Prog
+¯
+H
+2
+≈· · · ≈G
+¯
+H,Trans
+¯
+H
+qS
+= AH,Trans
+¯
+H .
+To show the claimed closeness, we do a similar hybrid argument as above, but now over the different
+iterations of the repeat loop in Trans and Prog. Concretely, we consider
+Loop
+¯
+H,˛
+j
+:= Loop[(B
+¯
+H
+T )j−1,˛,(B
+¯
+H
+P )∞]
+and observe that
+Loop
+¯
+H,BP
+1
+= Prog
+¯
+H ,
+Loop
+¯
+H,BT
+j
+= Loop
+¯
+H,BP
+j+1 ,
+and
+Loop
+¯
+H,BP
+∞
+= Loop
+¯
+H,BT
+∞
+= Trans
+¯
+H .
+Therefore, it suffices to show the following closeness claims:
+G
+¯
+H,Prog
+¯
+H
+i
+= G
+¯
+H,Loop
+¯
+H,BP
+1
+i
+≈G
+¯
+H,Loop
+¯
+H,BT
+1
+i
+= G
+¯
+H,Loop
+¯
+H,BP
+2
+i
+≈· · · ≈G
+¯
+H,Loop
+¯
+H,BP
+k
+i
+≈G
+¯
+H,Loop
+¯
+H,BP
+∞
+i
+= G
+¯
+H,Trans
+¯
+H
+i
+(5)
+as k tends to infinity.
+The last closeness claim is rather straightforward. Indeed, Loop
+¯
+H,BP
+∞
+and Loop
+¯
+H,BP
+k
+behave (potentially)
+differently only if the repeat loop, which is at the core of the two algorithms, is repeated at least k times,
+which happens only if all the k prior calls to BT produce ⊥.14 Formally, we write Ek for this event that the
+loop is repeated at least k times, and we observe that it happens with probability Pr[Ek] = pk−1 only. Then
+Loopk[¬Ek] = Loop∞[¬Ek], and therefore, exploiting that Gi makes only one call to (whatever version of)
+Loop,
+SD
+
+G
+¯
+H,Loop
+¯
+H,BP
+k
+i
+, G
+¯
+H,Loop
+¯
+H,BP
+∞
+i
+
+≤SD
+
+G
+¯
+H,Loop
+¯
+H,BP
+k
+[Ek]
+i
+, G
+¯
+H,Loop
+¯
+H,BP
+∞
+[Ek]
+i
+
+Pr[Ek]
+≤Pr[Ek]
+≤pk−1 .
+14 It is actually necessary to loop for k + 1 iterations for the two to behave differently, but we do not need to be tight
+here.
+13
+
+[PAGINA PDF 14]
+It remains to show that G
+¯
+H,Loop
+¯
+H,BP
+j
+i
+≈G
+¯
+H,Loop
+¯
+H,BT
+j
+i
+for every j. Similar to above, we note and exploit that
+Loop
+¯
+H,BP
+j
+[¬Ej] = Loop
+¯
+H,BT
+j
+[¬Ej] ,
+i.e., the two behave identically if the jth iteration is not reached. Thus,
+SD
+
+G
+¯
+H,Loop
+¯
+H,BP
+j
+i
+, G
+¯
+H,Loop
+¯
+H,BT
+j
+i
+
+≤SD
+
+G
+¯
+H,Loop
+¯
+H,BP
+j
+[Ej]
+i
+, G
+¯
+H,Loop
+¯
+H,BT
+j
+[Ej]
+i
+
+Pr[Ej]
+≤SD
+
+C
+¯
+H,BP
+i,j
+, C
+¯
+H,BT
+i,j
+
+pj−1
+≤adv
+
+qH,
+qS
+1−p
+
+pj−1 ,
+where the second inequality is obtained by letting C
+¯
+H,˛
+i,j
+to be the oracle algorithm G
+¯
+H,Loop
+¯
+H,˛
+j
+[Ej]
+i
+, which
+performs the run of Loopj[Ej] (which is promised to reach the jth iteration) internally, but forwards the
+oracle query. Noting that C
+¯
+H,˛
+i,j
+is as required, with at most qH quantum read queries to H and an average of
+at most qS/(1 −p) classical write queries, the final upper bound applies. Also here, we emphasize that Ej is
+independent of H, and so in this definition of Ci,j the random oracle H remains uniformly random and thus
+the upper bound indeed applies.
+Adding up all the error terms in (5), we get that
+SD
+
+G
+¯
+H,Prog
+¯
+H
+i
+, G
+¯
+H,Trans
+¯
+H
+i
+
+≤adv
+
+qH,
+qS
+1 −p
+ k−1
+X
+j=1
+pj−1 + pk−1 .
+By letting k →∞, the right hand side converges to
+1
+1 −padv
+
+qH,
+qS
+1 −p
+
+,
+which concludes the proof.
+The main technical challenge, and so the main innovation of this work, lies in establishing the following.
+Proposition 1. For any positive qr, qw ∈Z and for adv as specified in (4)
+adv(qr, qw) ≤(5qw + qr)ϵ + 2√qrϵ .
+We note that the only difference between BP and BT is whether H gets reprogrammed or not in case
+z = ⊥(in which case r remains unknown). This difference can only be detected when C makes a future
+query to H on input r; but due to the assumed high entropy in r, this is unlikely to happen. Turning this
+intuition into a proof when C can make quantum queries to H results in a hybrid argument over the qr
+queries to H, which in turn results in a bound on the distinguishing advantage of the order qr
+√ϵ. Thus,
+the actual challenge lies in finding a hybrid argument that shows that the advantage actually scales as √qrϵ
+(plus negligible terms).
+Proof of Proposition 1. For the sake of the analysis, we introduce the following aborting variants of BP and
+BT, defined in Fig. 6. The only different to the non-aborting variants is line 6., where aBP and aBT instruct to
+abort instead of returning (r, z) in case z̸ = ⊥. We stress that the abort command is a global abort, causing
+the ambient game (C ¯
+H,aBP or C ¯
+H,aBT) to abort if z̸ = ⊥, instead of returning (r, z) to the ambient game then.
+14
+
+[PAGINA PDF 15]
+aB
+¯
+H
+P (m):
+1: r ←D
+2: H(r, m) := y ←Y
+3: z ←f(r, y)
+4: if z̸ = ⊥then H(r, m) := y
+5: if z = ⊥then return ⊥
+6: else abort
+aBT(m):
+1: r ←D
+2: y ←Y
+3: z ←f(r, y)
+4: if z̸ = ⊥then H(r, m) := y
+5: if z = ⊥then return ⊥
+6: else abort
+Fig. 6. Aborting variants of BP and BT, which cause the ambient game to abort if z̸ = ⊥, instead of returning (r, z).
+Note that Line 4 is irrelevant for aBT.
+Since B ¯
+H
+P and B ¯
+H
+T behave identically anyway if z̸ = ⊥(both have reprogrammed H(r, m) and return
+(r, m)), asking to abort in that a case does not affect the distinguishing advantage, i.e.,
+Pr
+h
+1 ←C
+¯
+H,B
+¯
+H
+P
+i
+−Pr
+h
+1 ←C
+¯
+H,B
+¯
+H
+T
+i
+= Pr
+h
+1 ←C
+¯
+H,aB
+¯
+H
+P
+i
+−Pr
+h
+1 ←C
+¯
+H,aBT
+i
+.
+In order to show that the right hand side is small, we proceed through the following sequence of hybrid
+games G0 to G5, given in Fig. 7. We refer to the Gi’s as “games” but after all these are just algorithms G ¯
+H
+i
+with write access to H, and so the concepts from Sect. 2.1 readily apply.
+We also note that G ¯
+H
+0 is semantically equal to C ¯
+H,aB
+¯
+H
+P , i.e. G ¯
+H
+0 = C ¯
+H,aB
+¯
+H
+P ; we merely have split C into two
+parts, which respectively captures C’s behavior before and after the call to aB ¯
+H
+P , and we have spelled out
+aB ¯
+H
+P . Correspondingly for G ¯
+H
+5 and C ¯
+H,aB
+¯
+H
+T .
+G0:
+1: (m, st) ←C
+¯
+H
+0
+2:
+3: r ←D
+4: H(r, m) := y ←Y
+5: z ←f(r, y)
+6: if z̸ = ⊥then abort
+7: b ←C
+¯
+H
+1 (st, ⊥)
+8: return b
+G3:
+1: (m, st) ←C
+¯
+H
+0
+2: b ←C
+¯
+H
+1 (st, ⊥)
+3: r ←D
+4: H(r, m) := y ←Y
+5: z ←f(r, y)
+6: if z̸ = ⊥then abort
+7:
+8: return b
+G1:
+1: (m, st) ←C
+¯
+H
+0
+2:
+3: r ←D
+4: y := H(r, m)
+5: z ←f(r, y)
+6: if z̸ = ⊥then abort
+7: b ←C
+¯
+H
+1 (st, ⊥)
+8: return b
+G4:
+1: (m, st) ←C
+¯
+H
+0
+2: b ←C
+¯
+H
+1 (st, ⊥)
+3: r ←D
+4: y ←Y
+5: z ←f(r, y)
+6: if z̸ = ⊥then abort
+7:
+8: return b
+G2:
+1: (m, st) ←C
+¯
+H
+0
+2: b ←C
+¯
+H
+1 (st, ⊥)
+3: r ←D
+4: y := H(r, m)
+5: z ←f(r, y)
+6: if z̸ = ⊥then abort
+7:
+8: return b
+G5:
+1: (m, st) ←C
+¯
+H
+0
+2:
+3: r ←D
+4: y ←Y
+5: z ←f(r, y)
+6: if z̸ = ⊥then abort
+7: b ←C
+¯
+H
+1 (st, ⊥)
+8: return b
+Fig. 7. The hybrid games.
+Game hop G0 to G1. The game G1 is obtained from G0 by replacing the reprogramming step H(r, m) := y ←Y
+to the hash evaluation y := H(r, m) in line 4. Therefore, recalling the bound qr on the number of quantum
+read queries to H and the bound qw on the expected number of (classical) write queries of C, from directly
+15
+
+[PAGINA PDF 16]
+applying our variant of the adaptive reprogramming lemma (Lemma 1) we obtain
+ Pr [1 ←G0] −Pr [1 ←G1]
+ ≤
+
+2qw + qr
+2
+
+ϵ + √qrϵ .
+As a quick remark, considering the bigger context, we note that y is now computed as in the original signing
+oracle; thus, at first glance it seems that we are making a step back again, towards AH,Sign instead of AH,Trans.
+However, it is a crucial step in this delicate sequence of hybrids.
+Game hop G1 to G2. The game G2 is identical to G1 except that the run of aBP (including the decision to
+abort) is delayed to the very end of the game. Conditioned on the event that the execution of C ¯
+H
+1 (st, ⊥)
+does not reprogram H at the point (r, m), for the r sampled in step 3., the two games G1 and G2 behave
+identically. I.e., using our formalism,
+G1
+
+C
+¯
+H
+1 (st, ⊥) does not reprogram H(r, m)
+
+= G2[ C
+¯
+H
+1 (st, ⊥) does not reprogram H(r, m) ] .
+Due to the min-entropy requirement (2) on r, and due to the bound qw on the expected number of write
+queries that C performs, the probability that C ¯
+H
+1 (st, ⊥) does reprogram H(r, m) is at most qwϵ (and it is the
+same probability in both games). Therefore,
+ Pr [1 ←G1] −Pr [1 ←G2]
+ ≤qwϵ .
+Game hop G2 to G3. The game G3 is defined from G2 by replacing the hash evaluation y := H(r, m) in line
+4 to reprogramming H(r, m) := y ←Y. This is again a direct application of the adaptive reprogramming
+lemma, and so
+ Pr [1 ←G2] −Pr [1 ←G3]
+ ≤
+
+2qw + qr
+2
+
+ϵ + √qrϵ .
+Game hop G3 to G4. The game G4 is obtained from G3 by dropping the reprogramming H(r, m) := y in line
+4. Since there are no further queries to H after that point, this change has no effect on the output b, and so
+Pr [1 ←G3] = Pr [1 ←G4] .
+Game hop G4 to G5. The game G5 is the same as G4, but the run of C ¯
+H
+1 (st, ⊥) is moved to the end again.
+This is just a syntactic change, which only affects when the abort decision is made, but does not affect the
+actual outcome of the game. Hence
+Pr [1 ←G4] = Pr [1 ←G5] .
+Collecting the upperbounds, the proof is concluded.
+4
+Concrete Analysis of Dilithium
+We note that Dilithium
+ KeyGenDilithium, SignH
+Dilithium, VerH
+Dilithium
+
+, as detailed in [BBD+23], is captured as an
+instance of our previously defined generalized Fiat-Shamir with aborts signature scheme. Therefore, in this
+section, we apply our main result and obtain a better CMA-to-NMA reduction for Dilithium.
+In order to apply our main result, we need to control the distributions of psk and ϵsk over the random
+choice of (sk, pk) ←KeyGenH
+Dilithium. For psk, we take the existing heuristic as in [BBD+23] that provides
+an upperbound ¯p of psk for all keys simultaneously, i.e. Pr[psk ≤¯p] = 1. For ϵsk we provide a numerical
+upperbound in Section 4.1 that is worked out via the similar approach as in Appendix A of the full version
+of [BBD+23]. In addition, we also provide an analytic bound for ϵsk in Section 4.2.
+16
+
+[PAGINA PDF 17]
+4.1
+Controlling ϵsk numerically
+Each key pair (sk, pk) of the Dilithium scheme contains an k × ℓmatrix A for k ≥ℓ. Each component of A
+is chosen uniformly and independently from the cyclotomic ring Rq := Fq[X]/(Xn + 1), where Xn + 1 splits
+completely in the finite field Fq of order q. Let A□∈Rℓ×ℓ
+q
+be the top-most square sub-matrix of A. It has
+been shown in Section A.1 of the full version of [BBD+23], that the matrix A□gives an upperbound of the
+corresponding ϵsk as follows:
+ϵsk ≤
+2γ2 + 1
+2γ1 −1
+nℓ
+· qnℓ−rank(A□) ,
+(6)
+where γ1, γ2 ∈Z>0 are relevant parameters such that 0 < γ2 < γ1 < q/2, as described in Table 2. For a
+suitable a ∈Z>0 (which is determined via computer optimization), let Γϵ be the event that rank(A□) ≥nℓ−a.
+Aided by computer again, we numerically compute an upperbound ¯ϵ of Pr[Γϵ]·E[ϵsk | Γϵ] and an upperbound
+of Pr[¬Γϵ] via the similar approach as in Appendix A of the full version of [BBD+23], and then plug the
+numbers into Corollary 1 with n, ℓ, q, γ1, γ2 as specified in Fig. 10 of the full version of [BBD+23], which we
+duplicate below.
+n
+ℓ
+q
+γ1
+γ2
+NIST2
+256
+4
+8380417
+217
+(q −1)/88
+NIST3
+256
+5
+8380417
+219
+(q −1)/32
+NIST5
+256
+7
+8380417
+219
+(q −1)/32
+Table 2. NIST{2, 3, 5} parameters for Dilithium as in [BBD+23, Fig. 10]
+We compare the obtained (quantum) security loss in Corollary 1 with the corresponding one in [BBD+23]
+as follows (taking Γp as always satisfied, and a heuristic choice for ¯p, as in [BBD+23]):
+¯p
+qS
+qH
+a
+Pr[¬Γϵ]
+Pr[Γϵ] · E[ϵsk | Γϵ]
+our loss
+[BBD+23]
+NIST2
+≤49
+64
+264
+2128
+5
+≤2−99
+≤1.53924 · 10−132
+2−85
+2−62
+264
+6
+≤2−117
+≤4.99773 · 10−131
+2−114
+2−115
+1
+8
+≤2−153
+≤5.11022 · 10−128
+2−141
+2−115
+NIST3
+≤103
+128
+264
+2192
+23
+≤2−440
+≤9.38300 · 10−354
+2−421
+2−365
+NIST5
+≤
+759
+1024
+264
+2256
+33
+≤2−641
+≤4.82293 · 10−499
+2−641
+2−543
+Table 3. Concrete security loss of Dilithium, worked out via numeric calculation as in [BBD+23].
+4.2
+Controlling ϵsk analytically
+Next, we give an analytic bound controlling rank(A□) and hence ϵsk via (6). Crucially, by Lemma 8 in the
+full version of [BBD+23], over the random choice of the key pair (sk, pk), the distribution of rank(A□) is
+identical to that of P
+i∈[n] rank(Di) where D1, . . . , Dn ←Fℓ×ℓ
+q
+are sampled uniformly and independently,
+which we bound below.
+Theorem 2. Let ℓ, n ≥1 and q be a prime. Then for D1, . . . , Dn ←Fℓ×ℓ
+q
+and for every a ≥0,
+Pr
+
+X
+i∈[n]
+rank(Di) ≤nℓ−a
+
+≤e4/3
+n
+q
+a
+·
+
+1 −1
+q
+−nℓ
+.
+17
+
+[PAGINA PDF 18]
+Proof. Informally speaking, our analysis relies on the observation that the co-rank distribution of the random
+square matrices Di ←Fℓ×ℓ
+q
+is almost independent of ℓfor large q, i.e. there is an approximation function
+f(q, r) independent of ℓ(which turns out to be q−r2), such that for every r ≤ℓ,
+Pr [corank(Di) = r] = f(q, r) · (1 + o(1)) ,
+as q →∞, where corank(Di) := ℓ−rank(Di) and the underlying constants of the asymptotic bound may
+depend on r, ℓ. In fact, as has been presented in Equation (0-2), page 38 of [Bel93] (see [FG15, Equation (1)]
+for a simpler phrasing), there is a concrete bound on the residue o(1) term as below
+Pr [corank(Di) = r] = q−r2 ·
+Q
+1≤i≤ℓ(1 −1
+qi ) Q
+r<i≤n(1 −1
+qi )
+Q
+1≤i≤ℓ−r(1 −1
+qi ) Q
+1≤i≤r(1 −1
+qi )
+≤q−r2 ·
+
+1 −1
+q
+−ℓ
+.
+(7)
+We notice that, for corank(A□) := nℓ−rank(A□) and for every t > 0
+Pr
+h
+corank(A□) ≥a
+i
+≤e−at · E
+h
+ecorank(A□)·ti
+= e−at Y
+i∈[n]
+E
+h
+ecorank(Di)·ti
+≤e−at ·
+
+X
+r≥0
+ert · q−r2
+
+
+n
+·
+
+1 −1
+q
+−nℓ
+≤e−at · exp
+ X
+r>0
+n · ert · q−r2
+!
+·
+
+1 −1
+q
+−nℓ
+,
+(8)
+where the first inequality is via Markov’s bound, the first equality is via noticing that corank(A□) being
+identically distributed as P
+i corank(Di), and that D1, . . . , Dn are mutually independent, the second in-
+equality is via (7), and the last inequality is via the fact that 1 + x ≤exp(x) for every x ∈R. Plugging in
+t = ln(q) −ln(n), we immediately obtain
+(8) ≤
+n
+q
+a
+· exp
+ X
+r>0
+n−(r−1) · q−r(r−1)
+!
+·
+
+1 −1
+q
+−nℓ
+≤
+n
+q
+a
+· exp
+
+X
+r≥0
+n−r · q−2r
+
+·
+
+1 −1
+q
+−nℓ
+≤
+n
+q
+a
+· exp
+
+1
+1 −1/(nq2)
+
+·
+
+1 −1
+q
+−nℓ
+≤
+n
+q
+a
+· e4/3 ·
+
+1 −1
+q
+−nℓ
+,
+where the last inequality is via the fact that q ≥2. This concludes the proof.
+Combining the above and (6) with Γϵ : corank(A□) ≤a, we get
+Pr [Γϵ] · E[ϵsk | Γϵ] ≤
+X
+0≤r≤a
+Pr
+
+corank(A□) = r
+
+· E
+
+ϵsk
+ corank(A□) = r
+
+≤
+X
+0≤r≤a
+e4/3
+n
+q
+r
+·
+
+1 −1
+q
+−nℓ
+·
+2γ2 + 1
+2γ1 −1
+nℓ
+· qr
+≤a · e4/3 · na ·
+2γ2 + 1
+2γ1 −1
+nℓ
+·
+
+1 −1
+q
+−nℓ
+.
+18
+
+[PAGINA PDF 19]
+Corollary 2. Let Dilithium with relevant parameters n, q, ℓ, γ1, γ2 be as described in [BBD+23], and in
+addition q ≥nℓ. Then for every a ∈Z>0 there is an event Γϵ of the key sk such that Pr [¬Γϵ] ≤e7/3(n/q)a+1,
+and
+Pr [Γϵ] · E[ϵsk | Γϵ] ≤a · e7/3 · na ·
+2γ2 + 1
+2γ1 −1
+nℓ
+.
+Combining the above bound with Corollary 1 yields following concrete reduction, and Table 4 (taking Γp
+as always satisfied, and a heuristic choice for ¯p, as in [BBD+23]).
+Corollary 3. Let Dilithium with relevant parameters n, q, ℓ, γ1, γ2 be as described in [BBD+23] and above,
+and in addition q ≥nℓ. Let 0 < ¯p < 1 and Γp be an event on (sk, pk) ←KeyGen that implies psk ≤¯p.
+Then for every UF-CMA attacker A making at most qH quantum queries to H and qS classical queries to
+the signing oracle, the UF-NMA attacker B (dependent on A) as defined in Theorem 1 is such that
+AdvCMA
+Dilithium(A) ≤AdvNMA
+Dilithium(B) + 37 · qS
+1 −¯p
+s
+a · na(qH + 1)
+2γ2 + 1
+2γ1 −1
+nℓ
++ Pr[¬Γp] ,
+whenever
+a :=
+
+
+nℓ· lg
+
+2γ1−1
+2γ2+1
+
++ lg( q
+n) −lg
+ q2
+SqH
+
+2 lg q −lg n
+
+
+≥1 .
+p
+qS
+qH
+a
+Pr[Γϵ] · E[ϵsk | Γϵ]
+loss
+NIST2
+≤49
+64
+264
+2128
+7
+≤2−409
+2−71
+264
+8
+≤2−401
+2−99
+1
+10
+≤2−385
+2−122
+NIST3
+≤103
+128
+264
+2192
+26
+≤2−1065
+2−366
+NIST5
+≤
+759
+1024
+264
+2256
+38
+≤2−1481
+2−543
+Table 4. Concrete security loss of Dilithium from Corollary 3.
+References
+ABB+17.
+Erdem Alkim, Nina Bindel, Johannes Buchmann, ¨Ozg¨ur Dagdelen, Edward Eaton, Gus Gutoski, Juliane
+Kr¨amer, and Filip Pawlega. Revisiting tesla in the quantum random oracle model. In Tanja Lange and
+Tsuyoshi Takagi, editors, Post-Quantum Cryptography, 2017.
+BBD+23.
+Manuel Barbosa, Gilles Barthe, Christian Doczkal, Jelle Don, Serge Fehr, Benjamin Gr´egoire, Yu-Hsuan
+Huang, Andreas H¨ulsing, Yi Lee, and Xiaodi Wu. Fixing and mechanizing the security proof of Fiat-
+Shamir with aborts and Dilithium. In Advances in Cryptology – CRYPTO 2023, 2023.
+Bel93.
+Eric David Belsley.
+Rates of convergence of Markov chains related to association schemes.
+Harvard
+University, 1993.
+Beu21.
+Ward Beullens. Mayo: Practical post-quantum signatures from oil-and-vinegar maps. In Selected Areas
+in Cryptography: 28th International Conference, 2021.
+CCD+24.
+Jung Hee Cheon, Hyeongmin Choe, Julien Devevey, Tim G¨uneysu, Dongyeon Hong, Markus Krausz,
+Georg Land, Marc M¨oller, Damien Stehl´e, and MinJune Yi. Haetae: Shorter lattice-based Fiat-Shamir
+signatures. IACR Transactions on Cryptographic Hardware and Embedded Systems, 2024, 2024.
+CDP23.
+Sanjit Chatterjee, M. Prem Laxman Das, and Tapas Pandit.
+Revisiting the security of salted uov
+signature. In Progress in Cryptology – INDOCRYPT 2022, 2023.
+19
+
+[PAGINA PDF 20]
+CFMR+17. Antoine Casanova, Jean-Charles Faug`ere, Gilles Macario-Rat, Jacques Patarin, Ludovic Perret, and
+Jocelyn Ryckeghem. GeMSS: A Great Multivariate Short Signature. Research report, December 2017.
+CFS01.
+Nicolas T. Courtois, Matthieu Finiasz, and Nicolas Sendrier. How to achieve a McEliece-based digital
+signature scheme. In Colin Boyd, editor, Advances in Cryptology — ASIACRYPT 2001, 2001.
+Dal08.
+L´eonard Dallot. Towards a concrete security proof of courtois, finiasz and sendrier signature scheme. In
+Research in Cryptology, 2008.
+DFG19.
+Luca De Feo and Steven D. Galbraith. Seasign: Compact isogeny signatures from class group actions.
+In Yuval Ishai and Vincent Rijmen, editors, Advances in Cryptology – EUROCRYPT 2019, 2019.
+DFPS23.
+Julien Devevey, Pouria Fallahpour, Alain Passel`egue, and Damien Stehl´e. A detailed analysis of Fiat-
+Shamir with aborts. In Advances in Cryptology – CRYPTO 2023, 2023.
+DKL+18.
+L´eo Ducas, Eike Kiltz, Tancr`ede Lepoint, Vadim Lyubashevsky, Peter Schwabe, Gregor Seiler, and
+Damien Stehl´e. Crystals-dilithium: A lattice-based digital signature scheme. IACR Trans. Cryptogr.
+Hardw. Embed. Syst., 2018.
+DST19.
+Thomas Debris-Alazard, Nicolas Sendrier, and Jean-Pierre Tillich. Wave: A new family of trapdoor one-
+way preimage sampleable functions based on codes. In Steven D. Galbraith and Shiho Moriai, editors,
+Advances in Cryptology – ASIACRYPT 2019, 2019.
+FG15.
+Jason Fulman and Larry Goldstein. Stein’s method and the rank distribution of random matrices over
+finite fields. The Annals of Probability, 43(3):1274 – 1314, 2015.
+FIKT21.
+Hiroki Furue, Yasuhiko Ikematsu, Yutaro Kiyomura, and Tsuyoshi Takagi. A new variant of unbalanced
+oil and vinegar using quotient ring: Qr-uov. In Advances in Cryptology – ASIACRYPT 2021, 2021.
+GHHM21.
+Alex B. Grilo, Kathrin H¨ovelmanns, Andreas H¨ulsing, and Christian Majenz. Tight adaptive reprogram-
+ming in the QROM. In Advances in Cryptology – ASIACRYPT 2021, 2021.
+GJK24.
+Phillip Gajland, Jonas Janneck, and Eike Kiltz. A closer look at Falcon. Cryptology ePrint Archive,
+Paper 2024/1769, 2024.
+GLP12.
+Tim G¨uneysu, Vadim Lyubashevsky, and Thomas P¨oppelmann. Practical lattice-based cryptography:
+A signature scheme for embedded systems.
+In Workshop on Cryptographic Hardware and Embedded
+Systems, 2012.
+KLS18.
+Eike Kiltz, Vadim Lyubashevsky, and Christian Schaffner. A concrete treatment of fiat-shamir signatures
+in the quantum random-oracle model. In Advances in Cryptology – EUROCRYPT 2018, 2018.
+KPG99.
+Aviad Kipnis, Jacques Patarin, and Louis Goubin. Unbalanced oil and vinegar signature schemes. In
+Advances in Cryptology — EUROCRYPT ’99, 1999.
+KX24.
+Haruhisa Kosuge and Keita Xagawa. Probabilistic hash-and-sign with retry in the quantum random
+oracle model. In Public-Key Cryptography – PKC 2024, 2024.
+Lyu09.
+Vadim Lyubashevsky. Fiat-shamir with aborts: Applications to lattice and factoring-based signatures.
+In Mitsuru Matsui, editor, Advances in Cryptology – ASIACRYPT 2009, 2009.
+Lyu12.
+Vadim Lyubashevsky. Lattice signatures without trapdoors. In David Pointcheval and Thomas Johans-
+son, editors, Advances in Cryptology – EUROCRYPT 2012, 2012.
+Pat96.
+Jacques Patarin. Hidden fields equations (HFE) and isomorphisms of polynomials (IP): Two new families
+of asymmetric algorithms. In Ueli Maurer, editor, Advances in Cryptology — EUROCRYPT ’96, 1996.
+SSH11.
+Koichi Sakumoto, Taizo Shirai, and Harunaga Hiwatari. On provable security of UOV and HFE signature
+schemes against chosen-message attack. In Post-Quantum Cryptography, 2011.
+Appendix
+A
+Simulating Write Queries
+Lemma 4. There exists a stateful oracle algorithm SH, which makes 1 read query per each read-query
+invocation, and such that A ¯
+H = ASH for every A ¯
+H.
+Proof. The oracle algorithm SH operates by bookkeeping a list of classical write queries of A. Upon receiving
+a write query (x, y), it first removes any occurrences of the form (x, ·) from the list (if there exists any) and
+then inserts (x, y) into the list. Answering a read query then can be performed by SH, by invoking one single
+query to H, as follows. Given a list {(x1, y1), . . . , (xL, yL)} ⊂X × Y of classical write queries with pairwise
+20
+
+[PAGINA PDF 21]
+distinct xi’s, SH (efficiently) computes the unitary |x, y⟩7→|x, y + H′(x)⟩by means of a quantum algorithm
+that makes a single quantum query to H, i.e. to the unitary |x, y⟩7→|x, y + H(x)⟩, for H′ defined as
+H′(x) =
+(
+yi
+if ∃i : x = xi ,
+H(x)
+otherwise .
+This is trivial if S is given control access to H, i.e., access to the unitary |b, x, y⟩7→|b, x, y + bH(x)⟩.
+Furthermore, control access to H can be simulated using a single ordinary quantum access to H as follows:
+S first prepares a uniform superposition of elements in Y in an auxiliary register |z⟩, applies a control swap
+to |y, z⟩with |b⟩being the control bit, makes the quantum query to H, and finally applies a control swap
+again. One can conclude by noting that SH perfectly simulates the view of the attacker A.
+21

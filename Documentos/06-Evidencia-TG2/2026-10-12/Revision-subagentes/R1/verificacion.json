@@ -1,0 +1,165 @@
+{
+  "fecha": "2026-10-12",
+  "fuentes_web": [
+    {
+      "archivo": "FFH25-eprint-actual.pdf",
+      "url": "https://eprint.iacr.org/2025/985.pdf",
+      "fecha_consulta": "2026-10-12",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "archivo": "FFH25-CWI.pdf",
+      "url": "https://ir.cwi.nl/pub/35239/35239.pdf",
+      "fecha_consulta": "2026-10-12",
+      "url_final": "https://ir.cwi.nl/pub/35239/35239.pdf",
+      "bytes": 564671,
+      "sha256": "e43613f427d67ed0ab2f1100cc2b3f4a7ca381c692d27539e30885e8ae0688a8",
+      "paginas": 21
+    },
+    {
+      "archivo": "B23-CWI-actual.pdf",
+      "url": "https://ir.cwi.nl/pub/33405/33405.pdf",
+      "fecha_consulta": "2026-10-12",
+      "url_final": "https://ir.cwi.nl/pub/33405/33405.pdf",
+      "bytes": 639657,
+      "sha256": "2fa5598eb8689831a7dd7ff88584132ec9da6172015d20e760a93707d4563e9a",
+      "paginas": 41,
+      "sha256_preservado": "2fa5598eb8689831a7dd7ff88584132ec9da6172015d20e760a93707d4563e9a",
+      "bytes_iguales_instantanea": true
+    },
+    {
+      "archivo": "JMW24-v2-actual.pdf",
+      "url": "https://arxiv.org/pdf/2312.16619v2",
+      "fecha_consulta": "2026-10-12",
+      "url_final": "https://arxiv.org/pdf/2312.16619v2",
+      "bytes": 929673,
+      "sha256": "fa6182c8eaa42997fb452c1c797b9cc1e7d214683b4e324678fc2047b08e580c",
+      "paginas": 23,
+      "sha256_preservado": "fa6182c8eaa42997fb452c1c797b9cc1e7d214683b4e324678fc2047b08e580c",
+      "bytes_iguales_instantanea": true
+    },
+    {
+      "archivo": "FIPS204-errata-actual.xlsx",
+      "url": "https://csrc.nist.gov/files/pubs/fips/204/final/docs/fips-204-potential-updates.xlsx",
+      "fecha_consulta": "2026-10-12",
+      "url_final": "https://csrc.nist.gov/files/pubs/fips/204/final/docs/fips-204-potential-updates.xlsx",
+      "bytes": 23071,
+      "sha256": "5bc93ce63bc647e6d1d456cb2d3a171426c15aca4a7a0e0edd40d08b7a34c793",
+      "sha256_preservado": "5bc93ce63bc647e6d1d456cb2d3a171426c15aca4a7a0e0edd40d08b7a34c793",
+      "bytes_iguales_instantanea": true
+    }
+  ],
+  "backend": [
+    {
+      "archivo": "lib.rs",
+      "sha256_actual": "fb073c02f39284431c072b587e8f97abe930c4b53fc40e47cd33f2e4c571ea0f",
+      "sha256_preservado": "fb073c02f39284431c072b587e8f97abe930c4b53fc40e47cd33f2e4c571ea0f",
+      "identico": true
+    },
+    {
+      "archivo": "traits.rs",
+      "sha256_actual": "1d6fe99ffbc2128629b7965b106145b63cc1e013d976545f9a7f09f321a94f1d",
+      "sha256_preservado": "1d6fe99ffbc2128629b7965b106145b63cc1e013d976545f9a7f09f321a94f1d",
+      "identico": true
+    },
+    {
+      "archivo": "ml_dsa.rs",
+      "sha256_actual": "8cd47b247be255f6eb2ea5e1ab9928b1fa3b27f0fafb1b06fa364c50e96013e8",
+      "sha256_preservado": "8cd47b247be255f6eb2ea5e1ab9928b1fa3b27f0fafb1b06fa364c50e96013e8",
+      "identico": true
+    },
+    {
+      "archivo": "hashing.rs",
+      "sha256_actual": "33269eaa1d05b126cc03a8c42e616aefa4a8c001bf92ea0a4a3eeeab18bd45ce",
+      "sha256_preservado": "33269eaa1d05b126cc03a8c42e616aefa4a8c001bf92ea0a4a3eeeab18bd45ce",
+      "identico": true
+    },
+    {
+      "archivo": "conversion.rs",
+      "sha256_actual": "eae808db881d6cb6048d517d34a3987b4e6d40270f6820d8ee6ce88c1e311b19",
+      "sha256_preservado": "eae808db881d6cb6048d517d34a3987b4e6d40270f6820d8ee6ce88c1e311b19",
+      "identico": true
+    },
+    {
+      "archivo": "types.rs",
+      "sha256_actual": "d811518ef64dbac77e0aead6f33edde8ae1ec89ef641334b6232d2a35bd1cb18",
+      "sha256_preservado": "d811518ef64dbac77e0aead6f33edde8ae1ec89ef641334b6232d2a35bd1cb18",
+      "identico": true
+    }
+  ],
+  "entradas_codigo": [
+    {
+      "archivo": "nexus/nexus-crypto/src/dilithium.rs",
+      "sha256": "f414f7970bdda33de52b93ffcb26ff758898697060c639173fa99a0fe4a08d4e"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/entropy.rs",
+      "sha256": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/keypair.rs",
+      "sha256": "c54b41ef0f80a396bbf7a0d0943521fd416b6dd42d933eac090dddba6d995334"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/signer.rs",
+      "sha256": "394d8ff0fc95e49db40210b55bce4ede345b88603cb1c4a8f3e3ba946952d539"
+    },
+    {
+      "archivo": "nexus/nexus-core/src/transaction.rs",
+      "sha256": "454897ad4d888913a76fc2ef10a404607835c42c81316b740bed823c72f0231e"
+    },
+    {
+      "archivo": "nexus/nexus-core/src/types.rs",
+      "sha256": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492"
+    },
+    {
+      "archivo": "nexus/Cargo.toml",
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea"
+    },
+    {
+      "archivo": "nexus/Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    }
+  ],
+  "perfiles": [
+    {
+      "nivel": "44",
+      "zeta": 350209,
+      "jmw_lhs_eta_1": 1613763072,
+      "jmw_rhs": 261888,
+      "jmw_aplica": false,
+      "L": 4,
+      "intentos_mascara_completos_antes_desborde": 16384,
+      "siguiente_intento": 16385,
+      "tipo_desborde": "incremento tras rechazo"
+    },
+    {
+      "nivel": "65",
+      "zeta": 724481,
+      "jmw_lhs_eta_1": 4451211264,
+      "jmw_rhs": 261888,
+      "jmw_aplica": false,
+      "L": 5,
+      "intentos_mascara_completos_antes_desborde": 13107,
+      "siguiente_intento": 13108,
+      "tipo_desborde": "mu+r dentro de ExpandMask"
+    },
+    {
+      "nivel": "87",
+      "zeta": 769537,
+      "jmw_lhs_eta_1": 6304047104,
+      "jmw_rhs": 261888,
+      "jmw_aplica": false,
+      "L": 7,
+      "intentos_mascara_completos_antes_desborde": 9362,
+      "siguiente_intento": 9363,
+      "tipo_desborde": "mu+r dentro de ExpandMask"
+    }
+  ],
+  "perdidas": {
+    "B23_log2": "-361.6406557055220033707721235868248859393377322819115946622916761838250169953597271070896855223752879",
+    "FFH25_mismos_datos_B23_log2": "-361.9999999999999999997997858435115676446397734440988297522150340782666537911396818027513452227623115",
+    "limite": "Mismas hipótesis y mismo evento del artículo B23; no tabla optimizada FFH25, no cota del ejecutable."
+  },
+  "alcance": "Revisión interna de fuentes y aritmética; sin dictamen académico, sin ensayo de desborde real."
+}

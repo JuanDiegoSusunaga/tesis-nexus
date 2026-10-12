@@ -15,6 +15,7 @@
 
 ## Resultados complementarios que acompañan el balance
 
+- [Revisión web con tres subagentes](../Avances/Revision-Subagentes-2026-10-12/README.md): límites de composición y conformidad, distinción fuente/semilla, terminación extrema, actualización FFH y 451 comprobaciones de evidencia. R4 queda conciliado; la identidad exacta de H1/H2 y el dictamen formal siguen pendientes. La referencia Lean encontrada conserva hipótesis y no mecaniza NEXUS. Sustentación aplazada por el autor.
 - Caracterización de aceptación heredada y recuperación del testigo del PoC; no se acredita conocimiento cero.
 - Contraejemplo de proximidad con enunciado válido y control exhaustivo experimental.
 - Variante TG2 que vincula FRI de traza con AIR mediante una raíz compartida, probada con casos honestos y oráculos alejados.

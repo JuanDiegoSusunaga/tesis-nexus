@@ -1,0 +1,45 @@
+[
+  {
+    "nombre": "cargo-check",
+    "comando": [
+      "cargo",
+      "check",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--offline",
+      "--manifest-path",
+      "nexus/Cargo.toml"
+    ],
+    "salida": 0,
+    "log": "cargo-check.log"
+  },
+  {
+    "nombre": "cargo-test",
+    "comando": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--locked",
+      "--offline",
+      "--manifest-path",
+      "nexus/Cargo.toml"
+    ],
+    "salida": 0,
+    "log": "cargo-test.log"
+  },
+  {
+    "nombre": "cargo-build",
+    "comando": [
+      "cargo",
+      "build",
+      "--workspace",
+      "--locked",
+      "--offline",
+      "--manifest-path",
+      "nexus/Cargo.toml"
+    ],
+    "salida": 0,
+    "log": "cargo-build.log"
+  }
+]

@@ -2,7 +2,9 @@
 
 **Fecha:** 2026-10-12. **Estado:** R2 y gestor/registro local de R3 probados; R4 y complemento medidos; variante FRI de traza vinculada al AIR probada. La derivación por rondas y la transferencia clásica ROM propuesta al protocolo TG2 v1 están integradas en `main`, con revisión matemática pendiente; QROM permanece abierto. R5 cuenta con modelo e inventario; R1 documenta correspondencias y límites, con revisión y garantías de despliegue pendientes. Aprobación del plan, entrega y decisiones previas confirmada por el estudiante; no se extiende a las nuevas derivaciones. Fecha exacta y calendario académico por incorporar.
 
-**Resultado esperado:** entregar los Objetivos 3 y 4 con correspondencia verificable entre afirmaciones, fuentes, código y experimentos, y preparar la sustentación.
+**Resultado esperado:** preparar los Objetivos 3 y 4 con correspondencia verificable entre afirmaciones, fuentes, código y experimentos. La sustentación queda aplazada por indicación del autor el 12 de octubre.
+
+**Revisión web y local del 12 de octubre:** [tres informes y registro de integración](Avances/Revision-Subagentes-2026-10-12/README.md). Se precisan la composición SHA3-256/ML-DSA, la semilla realmente usada y las afirmaciones heredadas. R4 y complemento concilian en 451 comprobaciones; siguen pendientes la identidad exacta de H1/H2, las obligaciones R1-A–E y el dictamen M1–M6. La revisión interna y el conteo exacto de cola de nueve perfiles no constituyen aprobación académica. No se requieren nuevos benchmarks para las afirmaciones de componentes conservadas.
 
 **Decisión vigente del autor, 23 de septiembre:** QROM completo del protocolo AIR/FRI es trabajo futuro y deja de ser requisito del cierre activo. Se preservan sus avances parciales sin afirmar seguridad cuántica completa. Las obligaciones R1 de ML-DSA mantienen su alcance. Los párrafos QROM siguientes describen el historial de esa investigación.
 

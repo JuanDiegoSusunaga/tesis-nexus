@@ -1,0 +1,706 @@
+[
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Cartas-y-Aceptaciones/Carta de aceptación de trabajo de grado Juan Diego Susunaga.docx",
+    "sha256": "2c3909183b00871fe749483fb3db75f881e6b987c3187459fcc2618cb1498030"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Cartas-y-Aceptaciones/Carta de aceptación de trabajo de grado Juan Diego Susunaga.pdf",
+    "sha256": "7487c43bd0eda2947628ca3cd753f15ca53b1915a5cad11faa8d81fc8d4ac17a"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Cartas-y-Aceptaciones/Carta de aceptación de trabajo de grado.docx",
+    "sha256": "646a919d5cc0dc4fcf2cce37d513f6e0605d2bbb236da700b7336a0157ee0007"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Formatos/Formato entrega de avance Trabajo de Grado 1.docx",
+    "sha256": "cede637d0727ab501cd02946ca22b0123273f9ea453f8f0ad1416d275b254729"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Formatos/Formato-Modificacion-Objetivos-NEXUS.docx",
+    "sha256": "a2d36760d67b300f1ef6d4339242bb118241372f409b24d2da966e53dd73b554"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Formatos/Formato-Modificacion-Objetivos-NEXUS.md",
+    "sha256": "38463c0c28258bc0fad2fa074f1512a4a61e588ace5126ada784424d760bd243"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Formatos/Formato-TG1-NEXUS-lleno.docx",
+    "sha256": "581cc5494a56012c02f72906e38ea6eaa33eab20660dc2ba3e979890f75e0f77"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Formatos/Formato-TG1-NEXUS-lleno.md",
+    "sha256": "f298bd42842d48f1f7e9fb31eb424483365482225f9c3105b5758f8d6e014ba8"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Formatos/Formato-TG1-NEXUS-lleno.pdf",
+    "sha256": "5af5aa060a15a956f18f493d9fd5146749c3d0253786c6e506e04a225ad0fe20"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Formatos/Formato-TG1-NEXUS.tex",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Propuestas-y-Entregas/EBSCO-Metadata-07_05_2026.pdf",
+    "sha256": "afc48a95a0075c38bcdadb9d820156db7801fe85613e277be813af8f245e2547"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Propuestas-y-Entregas/Primera_Entrega_Trabajo_Grado_Juan_Diego_Susunaga.pdf",
+    "sha256": "b407964a9de0114ea59904e5eb931ba376ca431c9fd9ff497fd2b580e27cf53b"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Propuestas-y-Entregas/Propuesta de trabajo de grado Juan Diego Susunaga - v2.docx",
+    "sha256": "ad025bbd0d7acc34f8b80245b23743df542e4d6fa243ba085e5b548102577048"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Propuestas-y-Entregas/Propuesta de trabajo de grado Juan Diego Susunaga.pdf",
+    "sha256": "945ee56093ee99402ec23ac4dc96c2ed99ff4710822a3c10b15724ebca7fe528"
+  },
+  {
+    "archivo": "Documentos/03-Administrativo-TG1/Propuestas-y-Entregas/Propuesta-de-trabajo-de-grado-v2.md",
+    "sha256": "33c7417d506c04df16dc3c79fb31558f5a27a73ec99f67d96bb33e42be217630"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/calculos.json",
+    "sha256": "446ee1b6a68d072a565bef2a59555aa7ebc3f97fea7e0980fde473e0455ff409"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/cargo-build.log",
+    "sha256": "b403ecdb40e87aa9da2d41c0a49b69a3bf8a5e1bbc220d3d516d63a596dad973"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/cargo-check.log",
+    "sha256": "af1c3e397415a53fdace9442c93d8b6db1097fbcd2967b8066dd4e549c7b1891"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/cargo-test.log",
+    "sha256": "59f86c34988e374a20cde89a817618dbfdcbd3614825aa6d7991e7f83c98120b"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/manifiesto.log",
+    "sha256": "52b0a70b2fc9b18440e7811d906024f94195a71cb85d1d291b2e387fccb71386"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/pruebas-manifiesto.log",
+    "sha256": "26eeae879c4606e5eabe6c11d722a0643fad11411ce7c20c15b5dd85a70a1847"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/pruebas-python.log",
+    "sha256": "7e0dc999c469aaf953472a95df959ff4beb16d621c894b4bb92c8a4ad95237ca"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md",
+    "sha256": "886380857ccab164c6b5300a9bfc736d426c37a4e82ac9af47e54b874d17cb62"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md",
+    "sha256": "4a5fdc574c8cf5de7fa53e43b544af3dbdfebbf5af21df522c80099d8f311de8"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/validacion.json",
+    "sha256": "1b0cac418949279d8973a7972dda90aba3ff0cca939ee98789413a79a35d7eee"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/bibliografia/GMW25.pdf",
+    "sha256": "60e64486e2eaa08c2885926a9711ea3f66c5a47cdddc5cfb3b0b63bfa81e0218"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/bibliografia/GMW25.txt",
+    "sha256": "449ba4f81b46eb1ef526532a2d29fb9da9757cadf7b21ba80fa09aa27be50740"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/intento-inicial/manifiesto.log",
+    "sha256": "8c2cd7ecf000044552e0a00be232704b0ddb2a265412bf36408ae43e82a661e1"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/intento-inicial/pruebas-python.log",
+    "sha256": "3a1bf920a14d9d039e043b4743304f681b78a1c71625f4ed37f4a26961ed7334"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/intento-inicial/README.md",
+    "sha256": "68ed8969cf3ccaed5898d061eb43fb823d558d405338c8c881785559e272c5ce"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/calculos.json",
+    "sha256": "7862ef41bcd712e6fb8dd03be89c538ff81b113e921e4f733c68d96b9b808e8b"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/cargo-build.log",
+    "sha256": "fafa69a460751423c1e015e389bb8743e8f288e0276ed7370b98ae698798d9c5"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/cargo-check.log",
+    "sha256": "f153b84a0c8048c61f0aea499f2927c0fd9ad198b35da5924a75029758940b35"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/cargo-test.log",
+    "sha256": "260fceded6fdf79669324f0ec3e0b436dd9ef7ef91ae75819990403d94187f0c"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/corpus.json",
+    "sha256": "0d74fe1300cdae66bbecf5955ba4855a0b2046f3ce39f1cedb6a6ff8c05268ed"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/manifiesto.log",
+    "sha256": "52b0a70b2fc9b18440e7811d906024f94195a71cb85d1d291b2e387fccb71386"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/pruebas-manifiesto.log",
+    "sha256": "41d7f1e38273a50f3a688ce4ae3b21bc73bed551e9d932b4d571241af0b5bfe2"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/pruebas-rbr.log",
+    "sha256": "a6a2e118480d31ec8ce53ae46c64ee116fb7d8155d5859a73c22e01699c64f61"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/pruebas-rom.log",
+    "sha256": "b88f3561a327bd9fc231e00f30b863c64b359aa64c340080a6a2fa03b749f47e"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/README.md",
+    "sha256": "525bdf236bcae1e59b361be49542c1b8be71936378d0125a1c96461eed5cc8be"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md",
+    "sha256": "2336aa9548b2820b844834b4c29ef1648930f41435458d3c2cee45a86d945524"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/validacion.json",
+    "sha256": "78e621feac694e8e4ea99bb46111e5cee8bce523bf2cd2767fcd9437206d0d13"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/bibliografia/BCS16.pdf",
+    "sha256": "a2dc9bd042665081664287281b9bcf64735be2c818ce9207cce57cc43939fa2f"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-core/src/types.rs",
+    "sha256": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs",
+    "sha256": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/air.rs",
+    "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/channel.rs",
+    "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/field.rs",
+    "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/fri.rs",
+    "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/merkle.rs",
+    "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/mod.rs",
+    "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/ntt.rs",
+    "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/src/stark/params.rs",
+    "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/nexus/nexus-zk/tests/tg2_linked_trace_fri.rs",
+    "sha256": "1270fe7b2a8b843b038db6fa6803975a1448044df1693b86875c20942316707d"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/analizar_rbr_conjunto_tg2.py",
+    "sha256": "00543637f6d9d4284b7a1950ed1f48a5b74673e49995a2b5494c91fc2c9a7dd4"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/analizar_transferencia_rom_tg2.py",
+    "sha256": "c675e16983ca7951057981d33675755a3ea129c552848c00bdfb8811b9c8e002"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/auditar_merkle_fs_r4.py",
+    "sha256": "4c94854c4fd44899633b7e8a572853e5096978c5068b3125a594acf6cdbdee53"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/verificar_certificados_tg2.py",
+    "sha256": "f10440dc9e87ef414042ea3e6e09974c1fa2224571f7008de7d3659c5e0551da"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/verificar_transferencia_rom_tg2.py",
+    "sha256": "bf1f54c0fab2de8f56c4af28d3b68a11e5100506f78796b6b63a25cd7316aa73"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/verificar_version_tg2.py",
+    "sha256": "b18e605bcd2fb2778527a5107fb26f1cd151bcece9481b06cbe00442ce3b56da"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/fuentes/scripts/tests/test_transferencia_rom_tg2.py",
+    "sha256": "df3fa8a063dddcaa66f1da06b1e2a93a019fcc866b006d9c770a665fa2247f31"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/cargo-check.log",
+    "sha256": "12d492ed142ff0cd018976c6587df618a99ba76f2e63a258e8fe62c1e6abc0de"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/corpus.json",
+    "sha256": "0d74fe1300cdae66bbecf5955ba4855a0b2046f3ce39f1cedb6a6ff8c05268ed"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/manifiesto.log",
+    "sha256": "e85eac6e29f951144e2e32cfa67135ca55e7ffa670c93f5dd03d53f00b726cc2"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/pruebas-manifiesto.log",
+    "sha256": "71c49b1f57c02f1e868274c4bbf7d807706bc8effa5036a38d66f01f201cccdd"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/pruebas-rbr.log",
+    "sha256": "957554752173e544776aeafb29d6a7b2698d9a4dbe8df556f6210acaa1ecf0cc"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/pruebas-rom.log",
+    "sha256": "864d4f4047b061773d884c55618fd380c1a7395c10e5cefd948e5805ac2342f8"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/intento-inicial/README.md",
+    "sha256": "d5512aa335ec79f44b23e517fe24e588b8b614f009d7da974743cebe176c12a1"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/calculos-reproducidos.json",
+    "sha256": "e5d5ff4d1c72117a3ab8a5ba1a82e1c9aad12a90181b8843242d728169d320e9"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/calculos.json",
+    "sha256": "e5d5ff4d1c72117a3ab8a5ba1a82e1c9aad12a90181b8843242d728169d320e9"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/calculos.log",
+    "sha256": "54dded5254a4134069622d80351c0c9345eaccaab365751d7dee2c81bcfaa234"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/proteccion.json",
+    "sha256": "54f6112edcf8f9dbe485764992cb3d5ac6e06a61de14f9d2a3e4786860287e7e"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/pruebas-revision.log",
+    "sha256": "f4035557e3b1f6ba3d55706df63be5a238d3b7c9f655dd716649b6b68344fb51"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/README.md",
+    "sha256": "18bf73bfd882059286da6eef2fa75176807837e5b2ba910daee0ce810d5a7b0e"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion.log",
+    "sha256": "b07a9e24b33623c446477744981935d43d3d336b7e771b9928fa9e8e02eb4ac3"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/Revision-Critica-ROM.md",
+    "sha256": "fb89056e602571f20bb9438fcb1e6fba415b43db30352399977188f57616fc7a"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/validacion.json",
+    "sha256": "ad4f0ebc027aca93e7e7925c68c3b96323355d2ce34653087e8e2dc33a97f4d8"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/fuentes/scripts/analizar_revision_rom_tg2.py",
+    "sha256": "4a23ee2bf9f758d2ab561ae184f95e0d117da4588b28ae473b08e535d30836b7"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/fuentes/scripts/verificar_revision_rom_tg2.py",
+    "sha256": "9aa64db58cf5fec449c6602623250fe3fd90a5c5afb87a40e28f081e451de06f"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/fuentes/scripts/tests/test_revision_rom_tg2.py",
+    "sha256": "bf42682140aa2176ffaed289648ba5cf9a74a40d5dbd14d3468249b1bc3b4b46"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/cargo-build.log",
+    "sha256": "05f44f44781ba3d8904726af2d9576959a184d3fb2531218790a25e9aaaffdf4"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/cargo-check.log",
+    "sha256": "6d848c4e988cbe3f213ed8c83ecba770a6355157b56c69fd027967dea2e34923"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/cargo-test.log",
+    "sha256": "8f98ccf89bdb7207e9d4d0b00367852d6871357eee62eb21ea53d989546f6b5f"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/corpus.json",
+    "sha256": "0d74fe1300cdae66bbecf5955ba4855a0b2046f3ce39f1cedb6a6ff8c05268ed"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/manifiesto.log",
+    "sha256": "52b0a70b2fc9b18440e7811d906024f94195a71cb85d1d291b2e387fccb71386"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/pruebas-manifiesto.log",
+    "sha256": "6d3bc6b9b84afb10d7d6319f8056539cce7393178d31ec91fff4a0fe203c7cb4"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/pruebas-rbr.log",
+    "sha256": "80afd3c09cb48ef467e11871966cecd5d97723182f22d5d8050b9a5bfbd7d1b8"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/pruebas-rom.log",
+    "sha256": "0166cc1262e02b091228ab510bfe6da00f587a9c621a173f772d3c6ae1cb9d98"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/validacion.json",
+    "sha256": "74299a48e4db8fea4a2e7892b1d416618643443e7535e65ea1e178c4d49d15c9"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/nexus/nexus-core/src/types.rs",
+    "sha256": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs",
+    "sha256": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/nexus/nexus-zk/src/stark/air.rs",
+    "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/nexus/nexus-zk/src/stark/channel.rs",
+    "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/nexus/nexus-zk/src/stark/field.rs",
+    "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/nexus/nexus-zk/src/stark/fri.rs",
+    "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/nexus/nexus-zk/src/stark/merkle.rs",
+    "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/nexus/nexus-zk/src/stark/mod.rs",
+    "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/nexus/nexus-zk/src/stark/ntt.rs",
+    "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/nexus/nexus-zk/src/stark/params.rs",
+    "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/nexus/nexus-zk/tests/tg2_linked_trace_fri.rs",
+    "sha256": "1270fe7b2a8b843b038db6fa6803975a1448044df1693b86875c20942316707d"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/scripts/analizar_rbr_conjunto_tg2.py",
+    "sha256": "00543637f6d9d4284b7a1950ed1f48a5b74673e49995a2b5494c91fc2c9a7dd4"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/scripts/analizar_transferencia_rom_tg2.py",
+    "sha256": "c675e16983ca7951057981d33675755a3ea129c552848c00bdfb8811b9c8e002"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/scripts/auditar_merkle_fs_r4.py",
+    "sha256": "4c94854c4fd44899633b7e8a572853e5096978c5068b3125a594acf6cdbdee53"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/scripts/verificar_certificados_tg2.py",
+    "sha256": "f10440dc9e87ef414042ea3e6e09974c1fa2224571f7008de7d3659c5e0551da"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/scripts/verificar_transferencia_rom_tg2.py",
+    "sha256": "bf1f54c0fab2de8f56c4af28d3b68a11e5100506f78796b6b63a25cd7316aa73"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/scripts/verificar_version_tg2.py",
+    "sha256": "b18e605bcd2fb2778527a5107fb26f1cd151bcece9481b06cbe00442ce3b56da"
+  },
+  {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/regresion/fuentes/scripts/tests/test_transferencia_rom_tg2.py",
+    "sha256": "df3fa8a063dddcaa66f1da06b1e2a93a019fcc866b006d9c770a665fa2247f31"
+  },
+  {
+    "archivo": "nexus/nexus-active/experiments/tg2_canonical_verifier.rs",
+    "sha256": "bc543ed1dca51cca940a46bf05edfdc3459b95d2075c8267035b13261609447c"
+  },
+  {
+    "archivo": "nexus/nexus-active/src/batch.rs",
+    "sha256": "df7a3649148c8290ff0d00d474e3070b93384bebb5992bee7f61e170e87bc3b8"
+  },
+  {
+    "archivo": "nexus/nexus-active/src/chain.rs",
+    "sha256": "02b6979e1b13bea8b57fd9128a93a61d5249840054dcdf79d5d513d8e9d5136f"
+  },
+  {
+    "archivo": "nexus/nexus-active/src/execution.rs",
+    "sha256": "6f938cc83ba311f9322a327b5bf7292303b9bf14a0bb93fbd73be6f9e1362735"
+  },
+  {
+    "archivo": "nexus/nexus-active/src/lib.rs",
+    "sha256": "6b38cacf8a74387ef7a2cad08303bc82d11e11b7af7875f6efeba9598e8ad54c"
+  },
+  {
+    "archivo": "nexus/nexus-active/src/pq_verifier.rs",
+    "sha256": "f43ec5b557e7291ae07733d7feac6b2610e4e988d4c2bfaedb305ed4f8f5bd0b"
+  },
+  {
+    "archivo": "nexus/nexus-active/src/sequencer.rs",
+    "sha256": "bd85345499d0a0f062fa090762260e26a47efdcc8f024383146b0479ba828c91"
+  },
+  {
+    "archivo": "nexus/nexus-active/src/verifier.rs",
+    "sha256": "e0aa48d00d9c79b4695443a48e92b0192b55d44c86a48baf980b1815b3e73f3a"
+  },
+  {
+    "archivo": "nexus/nexus-active/tests/tg2_verification.rs",
+    "sha256": "2d070ff517b73732ffb75e0e6e418db81959e0bf50923a67ee1f9a803ffc5c99"
+  },
+  {
+    "archivo": "nexus/nexus-anchor/src/chain.rs",
+    "sha256": "d2a453ed22273d5d05e85bfad6289efff548ed9d2168d5e3a39da7a64f0a58ba"
+  },
+  {
+    "archivo": "nexus/nexus-anchor/src/consensus.rs",
+    "sha256": "fc54deaafff2b0f2646bfa8a1e565828b8090a613eb979706bc4f3c0f1ea296f"
+  },
+  {
+    "archivo": "nexus/nexus-anchor/src/data_availability.rs",
+    "sha256": "8c0291930cfbdea1b8d5c64a3518e378c2c5d843c9f52a8e4284ebc3e11326d9"
+  },
+  {
+    "archivo": "nexus/nexus-anchor/src/finality.rs",
+    "sha256": "7573b8b51b1fb83770ac97952ff715327e55d63545ee651a588654b9e03c8a67"
+  },
+  {
+    "archivo": "nexus/nexus-anchor/src/lib.rs",
+    "sha256": "dde092a93b02c139bf5a4d188732bbc84262d0957679bb7f148cf13bb04691c8"
+  },
+  {
+    "archivo": "nexus/nexus-anchor/src/validator.rs",
+    "sha256": "88157402703c8668db100ceac7dcbca0fd8e298530b8aa28749e50eeba38d880"
+  },
+  {
+    "archivo": "nexus/nexus-cli/src/main.rs",
+    "sha256": "b27fd564e3bce132b2c9eadeb985fdd4672630ece06a6a0f1fc89903a26a09fc"
+  },
+  {
+    "archivo": "nexus/nexus-core/src/block.rs",
+    "sha256": "26e9eb963d1ac61a6714c0a9162dc70f6f1044a6014f690d5bd37aab892396fe"
+  },
+  {
+    "archivo": "nexus/nexus-core/src/error.rs",
+    "sha256": "341ec5865031dd923fadafc84056d3e977f5863c858c379532a1a0a93ed73e71"
+  },
+  {
+    "archivo": "nexus/nexus-core/src/lib.rs",
+    "sha256": "8eeaf86806e8b783566bf4b111ea4c734604ca0f47392c6df047dcc505876ab5"
+  },
+  {
+    "archivo": "nexus/nexus-core/src/merkle.rs",
+    "sha256": "42301fad5a732f43be6faadabc5c9f78d28d27610a616324132c08c60531cddf"
+  },
+  {
+    "archivo": "nexus/nexus-core/src/state.rs",
+    "sha256": "650dc1efbdadda21aae90aea1c0deed9da3a77a7ff05585197159ca29f85dcdd"
+  },
+  {
+    "archivo": "nexus/nexus-core/src/traits.rs",
+    "sha256": "cf00fb6cf97654350aee9967df7a4292480b9bee64bbdc92b681f54c15e38e8d"
+  },
+  {
+    "archivo": "nexus/nexus-core/src/transaction.rs",
+    "sha256": "454897ad4d888913a76fc2ef10a404607835c42c81316b740bed823c72f0231e"
+  },
+  {
+    "archivo": "nexus/nexus-core/src/types.rs",
+    "sha256": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/benches/classical_baseline.rs",
+    "sha256": "d7bc1b83ba346badf5826a974c2cbc530ec0ca86aecb519cba4c472cbceab896"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/benches/dilithium_bench.rs",
+    "sha256": "680b8e38c02b371f78951453aa938e4bc9508dbdd1524032c6a22e1c7b691cfc"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/benches/residencia_bench.rs",
+    "sha256": "4ff93c7794118936e310a333847fd9787a8a1bdb6e11fc0e9779602a98ca251e"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/examples/apt_sweep.rs",
+    "sha256": "0931cdf72cace4abb3abac785682a5959737c450ca375f08a73249d476b3ace8"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/examples/rotation_demo.rs",
+    "sha256": "20980e891511dcc252e5b628445527022798bb0d4ccc2bb3856380bc1ac16154"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/examples/tg2_throughput.rs",
+    "sha256": "102d51806838c53c4c2db814c16d8fea723e98bc043572931202106028e97db0"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/examples/throughput_tps.rs",
+    "sha256": "1ab4200bd4a7ee8bd085dcd9f27fd7fa39fce1396d2d227a5e0d3db483c6df71"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/experiments/tg2_throughput.rs",
+    "sha256": "4543da19a5a21e1325a6e077b93bf39144c83bd3fc95ef1e75a2e63cc9157dcb"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/src/dilithium.rs",
+    "sha256": "f414f7970bdda33de52b93ffcb26ff758898697060c639173fa99a0fe4a08d4e"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/src/entropy.rs",
+    "sha256": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/src/keypair.rs",
+    "sha256": "c54b41ef0f80a396bbf7a0d0943521fd416b6dd42d933eac090dddba6d995334"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/src/lib.rs",
+    "sha256": "6154dce44c5dc2ec229f3cb47ed7c56293c6b2d4c2227b2066e96deb4d74eec9"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/src/registry.rs",
+    "sha256": "c512c6ce48321b8ce0f71bc3c45691f079fa427b018b1d805a6ce97c21467b50"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/src/signer.rs",
+    "sha256": "394d8ff0fc95e49db40210b55bce4ede345b88603cb1c4a8f3e3ba946952d539"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/tests/tg2_correspondence.rs",
+    "sha256": "74a65eeaa08044f4c5103756648e7cdad85ce67fc988f30f6424643d58d851c1"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/tests/tg2_residence.rs",
+    "sha256": "9d280cc114eee3da61d446d4d69e1b5697e7d1a442c496ed2bb5de1e24743628"
+  },
+  {
+    "archivo": "nexus/nexus-crypto/tests/tg2_throughput.rs",
+    "sha256": "9c241c7a2166f3bd0c7131c8f8d2dbe1bb00c7bf5c484c07c4f4bd06ee49582c"
+  },
+  {
+    "archivo": "nexus/nexus-network/src/lib.rs",
+    "sha256": "3d8cd52931d4f4db93909c0d17810b209dde16340968eea2b518f457e1542423"
+  },
+  {
+    "archivo": "nexus/nexus-network/src/peer.rs",
+    "sha256": "84a454b4c5c5555d6812e1ac524311d1c59f0810437a1b29e60f579cf5a8713f"
+  },
+  {
+    "archivo": "nexus/nexus-network/src/protocol.rs",
+    "sha256": "1c0e23d23e314dd59b39e20616784a6fb55764b70b27b1c7b03aab03fbc6915a"
+  },
+  {
+    "archivo": "nexus/nexus-node/src/config.rs",
+    "sha256": "ebef163af60a07e1f8551bbe96419df67322ed8b0ff25e688dd85e8e5cd0dcfd"
+  },
+  {
+    "archivo": "nexus/nexus-node/src/lib.rs",
+    "sha256": "da7eb9df729ca19dbdc1f83286284a18eb8b7c4877cec2b5e5a3354ca575a162"
+  },
+  {
+    "archivo": "nexus/nexus-node/src/rpc.rs",
+    "sha256": "442963766bc9f30ee0ef9ca3c328b10f7ce453af810dc42bafb5280e22777b03"
+  },
+  {
+    "archivo": "nexus/nexus-sentinel/src/lib.rs",
+    "sha256": "31098331af6d890578ccc07da031aea55c8a5b83e0ba160025466904224c6702"
+  },
+  {
+    "archivo": "nexus/nexus-zk/examples/stark_demo.rs",
+    "sha256": "ee5beb634ff18619f08513290e0cde91a07340c41a8c0f06e9d7e46e25352b40"
+  },
+  {
+    "archivo": "nexus/nexus-zk/examples/tg2_stark_measure.rs",
+    "sha256": "3399edbf42e2cfae2bc8330d499f06b2a0f6acd63a9469f8173a3c0751c69053"
+  },
+  {
+    "archivo": "nexus/nexus-zk/experiments/tg2_air_algebra.rs",
+    "sha256": "c899b7f9a89b00df3a3a6c0fbdfda5b2dada531127de3c74de8a46e09b3f7d55"
+  },
+  {
+    "archivo": "nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs",
+    "sha256": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f"
+  },
+  {
+    "archivo": "nexus/nexus-zk/experiments/tg2_trace_proximity.rs",
+    "sha256": "fc73af507ce1242667d47b17d37d0b4a9570bc75a1fb49eabdb469be960b2b1f"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/circuits.rs",
+    "sha256": "fde3f78bb5e20e6be850bbe18f730fda3d815a45d19e906728be83aeac8ab899"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/lib.rs",
+    "sha256": "7c1b7492c122d5bc83ca3bf3e729c1f898aaabba38dfdb49b4a6d421aa29bc63"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/prover.rs",
+    "sha256": "18ab5a8d19a55e554cea62062003c1d1541330d22b085b89496e5d9e49c3866d"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/verifier.rs",
+    "sha256": "5f4c8168b6ff86e2712474e2dfc443f056a6091d46c48d662ad90b0ffb0b9a73"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/stark/air.rs",
+    "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/stark/channel.rs",
+    "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/stark/field.rs",
+    "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/stark/fri.rs",
+    "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/stark/merkle.rs",
+    "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/stark/mod.rs",
+    "sha256": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/stark/ntt.rs",
+    "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3"
+  },
+  {
+    "archivo": "nexus/nexus-zk/src/stark/params.rs",
+    "sha256": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533"
+  },
+  {
+    "archivo": "nexus/nexus-zk/tests/tg2_air_algebra.rs",
+    "sha256": "fd900251ca0b8363865c847976f618d66c8657993c0a24ad03cd5820eb86865e"
+  },
+  {
+    "archivo": "nexus/nexus-zk/tests/tg2_linked_trace_fri.rs",
+    "sha256": "1270fe7b2a8b843b038db6fa6803975a1448044df1693b86875c20942316707d"
+  },
+  {
+    "archivo": "nexus/nexus-zk/tests/tg2_soundness.rs",
+    "sha256": "1655b2f6e24d488329883aeec256595c8a02081419d7f0cb830c2e0435b878b7"
+  },
+  {
+    "archivo": "nexus/nexus-zk/tests/tg2_trace_proximity.rs",
+    "sha256": "b3041688851e554e82c2340ff1e24d57017d7c662c11c9f226679717695fbcdc"
+  }
+]

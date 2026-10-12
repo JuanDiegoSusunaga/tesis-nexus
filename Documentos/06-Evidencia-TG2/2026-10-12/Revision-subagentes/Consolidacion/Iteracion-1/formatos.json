@@ -1,0 +1,64 @@
+[
+  {
+    "nombre": "ensamblado",
+    "comando": [
+      "python",
+      "scripts/compilar_manuscrito.py"
+    ],
+    "salida": 0,
+    "log": "ensamblado.log"
+  },
+  {
+    "nombre": "indice-word",
+    "comando": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "scripts/exportar_manuscrito_word.ps1"
+    ],
+    "salida": 0,
+    "log": "indice-word.log"
+  },
+  {
+    "nombre": "pdf",
+    "comando": [
+      "python",
+      "scripts/exportar_manuscrito_pdf.py"
+    ],
+    "salida": 0,
+    "log": "pdf.log"
+  },
+  {
+    "nombre": "contenido",
+    "comando": [
+      "python",
+      "scripts/revisar_manuscrito.py"
+    ],
+    "salida": 0,
+    "log": "contenido.log"
+  },
+  {
+    "nombre": "render-word",
+    "comando": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "scripts/renderizar_manuscrito_word.ps1"
+    ],
+    "salida": 0,
+    "log": "render-word.log"
+  },
+  {
+    "nombre": "graficas",
+    "comando": [
+      "python",
+      "scripts/revisar_graficas_manuscrito.py"
+    ],
+    "salida": 0,
+    "log": "graficas.log"
+  }
+]

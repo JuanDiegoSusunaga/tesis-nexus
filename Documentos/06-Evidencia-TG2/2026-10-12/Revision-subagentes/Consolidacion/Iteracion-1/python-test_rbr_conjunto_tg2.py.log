@@ -1,0 +1,12 @@
+test_consulta_completa_y_parametros_invalidos (test_rbr_conjunto_tg2.CotasRbr.test_consulta_completa_y_parametros_invalidos) ... ok
+test_estado_fri_con_oraculos_binarios_en_f17 (test_rbr_conjunto_tg2.CotasRbr.test_estado_fri_con_oraculos_binarios_en_f17) ... ok
+test_mca_todos_los_pares_de_funciones_f5 (test_rbr_conjunto_tg2.CotasRbr.test_mca_todos_los_pares_de_funciones_f5) ... ok
+test_muestreo_por_enumeracion (test_rbr_conjunto_tg2.CotasRbr.test_muestreo_por_enumeracion) ... ok
+test_nueve_perfiles_y_sumas_geometricas (test_rbr_conjunto_tg2.CotasRbr.test_nueve_perfiles_y_sumas_geometricas) ... ok
+test_redondeo_siempre_superior (test_rbr_conjunto_tg2.CotasRbr.test_redondeo_siempre_superior) ... ok
+test_ultima_coordenada_de_cancelacion (test_rbr_conjunto_tg2.CotasRbr.test_ultima_coordenada_de_cancelacion) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.583s
+
+OK

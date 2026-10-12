@@ -1,0 +1,13 @@
+{
+  "fecha": "2026-10-12",
+  "revisor": "coordinador",
+  "estado": "Verificado visualmente a resolución original",
+  "paginas": {"word": [34, 35], "pdf": [30, 31]},
+  "laminas": ["word-034-035.png", "pdf-030-031.png"],
+  "correcciones": [
+    "Tabla 4.2: según perfil, sin palabra partida ni letra aislada",
+    "Conservadurismo con artículo el en ambos formatos"
+  ],
+  "defectos_pendientes": [],
+  "integridad": "Las demás imágenes son idénticas a la primera iteración por SHA-256, según comparacion-visual.json."
+}

@@ -15,6 +15,7 @@
 | Evidencia y fuentes por etapa | [Índice de evidencia](../../06-Evidencia-TG2/README.md) |
 | Código y reproducción | [Instrucciones](../../../scripts/README.md) |
 | Revisión matemática pendiente | [Preguntas M1–M6](../Avances/Revision-Matematica-S1-S3-2026-09-23.md) |
+| Revisión web y conciliación con subagentes | [Tres informes, fuentes y estado de integración](../Avances/Revision-Subagentes-2026-10-12/README.md) |
 | Derivaciones matemáticas reunidas | [Word consolidado para revisión](../Avances/Derivaciones-Matematicas-TG2-2026-10-12.docx) y [fuente](../Avances/Derivaciones-Matematicas-TG2-2026-10-12.md) |
 | Complementos posteriores integrados en main | [Solidez por rondas](../Avances/Cierre-Matematico-2026-09-23/README.md) y [transferencia clásica ROM al protocolo](../Avances/Transferencia-ROM-2026-09-23/README.md), pendientes de dictamen |
 | Preparación de sustentación | [Guion](../Presentaciones/Guion-Sustentacion-TG2.md) |
@@ -43,7 +44,7 @@ Los hashes permiten detectar archivos modificados o faltantes. Las copias de fue
 - [ ] Incorporar el dictamen del director/lector sobre las correcciones formales y el alcance del cierre.
 - [ ] Resolver o delimitar con ese dictamen las obligaciones del balance.
 - [ ] Registrar la fecha y los requisitos institucionales de entrega y sustentación.
-- [ ] Completar diapositivas y ensayo a partir del guion preparado.
+- [ ] Retomar diapositivas y ensayo cuando el autor lo solicite; la sustentación quedó aplazada el 12 de octubre.
 - [ ] Registrar envío y recepción cuando ocurran.
 
 La aprobación anterior comunicada por el autor se mantiene en la bitácora. No se atribuye automáticamente a las derivaciones y correcciones posteriores.

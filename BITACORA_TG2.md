@@ -1,5 +1,13 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Revisión con subagentes y fuentes web, 12 de octubre de 2026
+
+Por solicitud del autor se delegaron tres revisiones: R1/ML-DSA, AIR/ROM y evidencia experimental. Los informes conservan fuentes primarias, localizadores, versiones y contrastes reproducibles en [el paquete de revisión](Documentos/04-Administrativo-TG2/Avances/Revision-Subagentes-2026-10-12/README.md). Se corrigen el hash externo de transacciones, la semilla retenida frente a la fuente monitoreada, la conformidad no certificada y las afirmaciones causales/asintóticas de las mediciones. Se contextualiza la mejora de Fallahpour–Fehr–Huang sin atribuirla automáticamente al ejecutable. La terminación extrema del contador de máscaras conserva su obligación R1-D.
+
+La conciliación experimental pasa 451 comprobaciones sin nuevos benchmarks: R4 y complemento respaldados; H1/H2 y caché permanecen separados. La diferencia de medianas se calcula desde precisión completa: 151,33 µs. El conteo exacto de ocupación confirma la cola conservadora en nueve perfiles; no representa seguridad global ni tasa de ataques. La formalización Lean de FRI encontrada es una referencia futura con hipótesis, sin compilación ni mecanización de NEXUS.
+
+Se repiten cargo check/build y 197 pruebas Rust, junto con 40 pruebas Python y el catálogo documental. El manuscrito se regenera y su registro de formato e integridad queda en [la nueva consolidación](Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/). Se preservan los 176 archivos protegidos, el código Rust, TG1 aprobado y los paquetes matemáticos originales. La revisión interna no sustituye el dictamen del director. Por indicación expresa del autor, la sustentación se aplaza; QROM completo AIR/FRI continúa como trabajo futuro.
+
 ## Consolidación del manuscrito y revisión de antecedentes, 12 de octubre de 2026
 
 Por solicitud del autor, se consolidó la revisión de las afirmaciones heredadas en la edición TG2. Se precisan el presupuesto histórico de 100 bits, conocimiento cero, alcance del AIR, condiciones de firma, protección de semillas y amortización. Se integran §§6.7.7–6.7.10: lectura crítica de antecedentes, solidez ideal por rondas, transferencia ROM y potencial para nonces, y alcance QROM como trabajo futuro. Las derivaciones propuestas y R1-A–E conservan el dictamen pendiente; no se atribuye la aprobación previa del director a esta edición.

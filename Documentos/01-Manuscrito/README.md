@@ -10,7 +10,7 @@
 - [PDF de lectura](Tesis-NEXUS-completa.pdf): índice con páginas y enlaces internos.
 - [Markdown ensamblado](Tesis-NEXUS-completa.md): contenido generado desde las fuentes.
 
-Las tres salidas corresponden a los mismos capítulos, resumen y bibliografía. Se conserva un único nombre por formato. Tras integrar la revisión y los complementos por rondas y ROM, el Word tiene 110 páginas y el PDF 97: usan motores de maquetación distintos y cada índice corresponde a su propio archivo. La exportación PDF de Word se bloqueó también con un documento mínimo; el PDF se generó localmente desde el mismo Markdown, con MathML y Chrome, sin enviar el manuscrito a servicios externos.
+Las tres salidas corresponden a los mismos capítulos, resumen y bibliografía. Se conserva un único nombre por formato. Tras integrar la revisión y los complementos por rondas y ROM, el Word tiene 110 páginas y el PDF 98: usan motores de maquetación distintos y cada índice corresponde a su propio archivo. La exportación PDF de Word se bloqueó también con un documento mínimo; el PDF se generó localmente desde el mismo Markdown, con MathML y Chrome, sin enviar el manuscrito a servicios externos.
 
 ## Fuente de edición
 
@@ -34,9 +34,11 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/renderizar_manus
 python scripts/revisar_graficas_manuscrito.py
 ```
 
-El ensamblador normaliza las fuentes y comprueba filas, columnas y conversión matemática. La revisión compara las 848 celdas con una conversión independiente desde Markdown; reconoce la representación equivalente de `ℓ` que Word guarda como una `l` con estilo matemático script. La edición conserva 560 objetos matemáticos nativos en Word, incluidos 35 bloques. Las imágenes temporales quedan en `.tools/`.
+El ensamblador normaliza las fuentes y comprueba filas, columnas y conversión matemática. La revisión compara las 848 celdas con una conversión independiente desde Markdown; reconoce la representación equivalente de `ℓ` que Word guarda como una `l` con estilo matemático script. La edición conserva 565 objetos matemáticos nativos en Word, incluidos 36 bloques. Las imágenes temporales quedan en `.tools/`.
 
 ## Revisión registrada
+
+**Revisión web vigente:** [tres informes, integración y asuntos abiertos](../04-Administrativo-TG2/Avances/Revision-Subagentes-2026-10-12/README.md); [identificación y verificación de esta edición](../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/revision-manuscrito.json). La sustentación queda aplazada por el autor.
 
 **Consolidación vigente:** [revisión de los antecedentes y complementos](../04-Administrativo-TG2/Avances/Consolidacion-Manuscrito-TG2-2026-10-12.md), con las demostraciones propuestas de §§6.7.8–6.7.9 y el alcance QROM de §6.7.10. [Suplemento de derivaciones](../04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-10-12.docx). Las entradas fechadas siguientes conservan la historia de las etapas anteriores.
 

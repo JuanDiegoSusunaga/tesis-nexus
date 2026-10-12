@@ -1,0 +1,77 @@
+{
+  "fecha": "2026-10-12",
+  "alcance": "Integridad y enlaces locales del paquete interno de subagentes",
+  "dictamen_externo": false,
+  "aprobacion_academica": false,
+  "integracion_final": "registrada: Word/PDF verificados; dictamen externo pendiente",
+  "archivos": [
+    {
+      "archivo": "README.md",
+      "sha256": "443c5dfb10c414bfdf7e5dfd9cefc7d1fb499a21ade806f9abea8e41663c0a5f",
+      "enlaces_locales": [
+        "Revision-R1.md",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/verificacion.json",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/verificar_r1.py",
+        "Revision-AIR-ROM.md",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/contrastes-exactos.json",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/contrastes_exactos.py",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/fuentes-web.json",
+        "Revision-Evidencia.md",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Evidencia/conciliacion.json",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Evidencia/conciliar.py",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/codigo.json",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/python.json",
+        "Registro-Cierre-Integracion.md"
+      ]
+    },
+    {
+      "archivo": "Registro-Cierre-Integracion.md",
+      "sha256": "3f3a564f35c50acbc7c7498c04e031b8a730c41504c53cfc4d2f92b4c5d5cf45",
+      "enlaces_locales": [
+        "Revision-R1.md",
+        "Revision-AIR-ROM.md",
+        "Revision-Evidencia.md",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Evidencia/conciliacion.json",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/contrastes-exactos.json",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/codigo.json",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/python.json",
+        "../Revision-Matematica-S1-S3-2026-09-23.md",
+        "../R1-Correspondencia-Formal-2026-09-22.md",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/revision-manuscrito.json",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/inspeccion-visual.json"
+      ]
+    },
+    {
+      "archivo": "Revision-AIR-ROM.md",
+      "sha256": "4c5d9a814b573a12cffbdec8ddff3874c58084e55623138aad7b18f15b6ec21e",
+      "enlaces_locales": [
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/contrastes-exactos.json",
+        "../R4-Algebra-AIR-FRI-2026-09-22.md",
+        "../Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md",
+        "../Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md",
+        "../Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md",
+        "../Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md",
+        "../Revision-Critica-ROM-2026-09-23/Revision-Critica-ROM.md",
+        "../Revision-Critica-ROM-2026-09-23/Revision-Critica-ROM.md",
+        "../Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/AIR-ROM/fuentes-web.json"
+      ]
+    },
+    {
+      "archivo": "Revision-Evidencia.md",
+      "sha256": "cd9f3c599460111aaa1c63fedf8a5a03cca399c2e9380660010600cbdab512fa",
+      "enlaces_locales": [
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Evidencia/conciliacion.json",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Evidencia/conciliar.py"
+      ]
+    },
+    {
+      "archivo": "Revision-R1.md",
+      "sha256": "58720c0ba4c125c7b14f97e16648c1b2de8c554c866b88eb413cca235ee3f518",
+      "enlaces_locales": [
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/verificar_r1.py",
+        "../../../06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/verificacion.json"
+      ]
+    }
+  ]
+}

@@ -1,23 +1,23 @@
 {
   "fecha": "2026-10-12",
-  "estado": "Edición consolidada para revisión académica",
+  "estado": "Revisión web y local con subagentes integrada; dictamen académico pendiente",
   "codigo_commit": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
   "codigo_commit_derivaciones": "01dcde960402b6c60a19242b7ae3d6ac3d82a518",
   "entregables": [
     {
       "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
-      "bytes": 212667,
-      "sha256": "86f0ebca0d039709254ae03d91004a20736deb52398027e6077116507cf3537c"
+      "bytes": 219706,
+      "sha256": "6b05e17956b8cba57632a990542ee9afdad3c6e1686f2246eefeec57c513bba9"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
-      "bytes": 644224,
-      "sha256": "721fb7dbcf28ff89c976f8d461d1b2256d4ae8333f5541ae518050b6aa16e535"
+      "bytes": 647847,
+      "sha256": "15e94cc141742c9969a3607696e4c810444e33080b1230aa10d66c570346439d"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
-      "bytes": 2678996,
-      "sha256": "9d5d2c566e7b8dbad4c49d7e1a1960aa117e52d90ee7f7f8586f7c890b7e78b4"
+      "bytes": 2713955,
+      "sha256": "6f275237aeeccc49f73ea406581e2bc3a5a26a4b2f5ae421454c8564335d9bfa"
     },
     {
       "archivo": "Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-10-12.md",
@@ -33,14 +33,23 @@
   "paginas": {
     "word": 110,
     "derivaciones": 54,
-    "pdf": 97
+    "pdf": 98
   },
   "tablas_manuscrito": 34,
   "celdas_manuscrito_comparadas": 848,
-  "ecuaciones_nativas_manuscrito": 560,
+  "ecuaciones_nativas_manuscrito": 565,
   "figuras_manuscrito": 3,
   "tablas_suplemento": 14,
   "ecuaciones_nativas_suplemento": 673,
-  "revision_visual": "Completada en Word nativo y PDF renderizado.",
-  "limite": "Derivaciones propuestas y dictamen independiente pendiente; QROM completo AIR/FRI como trabajo futuro."
+  "revision_visual": "../Revision-subagentes/Consolidacion/inspeccion-visual.json",
+  "limite": "Derivaciones propuestas y dictamen independiente pendiente; QROM completo AIR/FRI como trabajo futuro.",
+  "edicion_anterior": "../Revision-subagentes/Consolidacion/Edicion-anterior/revision-manuscrito.json",
+  "ecuaciones_en_bloque_manuscrito": 36,
+  "verificaciones": {
+    "rust": 197,
+    "python": 40,
+    "conciliacion_evidencia": 451,
+    "perfiles_cola_exacta": 9,
+    "protegidos": 176
+  }
 }

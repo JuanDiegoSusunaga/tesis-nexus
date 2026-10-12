@@ -1,8 +1,8 @@
 {
   "tablas_con_contenido_identico": 34,
   "celdas_comparadas": 848,
-  "sha256_contenido_tablas": "09f46420020a43136a26d26044ff93066401d17e5ea6d266bff0c0a04a0c27d2",
-  "paginas_pdf": 97,
+  "sha256_contenido_tablas": "03fbd4dff8dd20a5dcb88162ac8b17034f00c5b917ba6daabd9fd43e3c706eb1",
+  "paginas_pdf": 98,
   "paginas_con_tablas": [
     {
       "pagina": 11,
@@ -48,20 +48,15 @@
       ]
     },
     {
-      "pagina": 38,
+      "pagina": 39,
       "rotulos": [
         "Tabla 5.1"
       ]
     },
     {
-      "pagina": 40,
-      "rotulos": [
-        "Tabla 5.2"
-      ]
-    },
-    {
       "pagina": 41,
       "rotulos": [
+        "Tabla 5.2",
         "Tabla 6.11"
       ]
     },
@@ -78,38 +73,38 @@
       ]
     },
     {
-      "pagina": 55,
+      "pagina": 56,
       "rotulos": [
         "Tabla 6.2"
       ]
     },
     {
-      "pagina": 57,
+      "pagina": 58,
       "rotulos": [
         "Tabla 6.3"
       ]
     },
     {
-      "pagina": 58,
+      "pagina": 59,
       "rotulos": [
         "Tabla 6.4"
       ]
     },
     {
-      "pagina": 59,
+      "pagina": 60,
       "rotulos": [
         "Tabla 6.5"
       ]
     },
     {
-      "pagina": 60,
+      "pagina": 61,
       "rotulos": [
         "Tabla 6.6",
         "Tabla 6.7"
       ]
     },
     {
-      "pagina": 61,
+      "pagina": 62,
       "rotulos": [
         "Tabla 6.8"
       ]
@@ -123,13 +118,13 @@
     {
       "pagina": 65,
       "rotulos": [
-        "Tabla 6.10",
-        "Tabla 6.11"
+        "Tabla 6.10"
       ]
     },
     {
       "pagina": 66,
       "rotulos": [
+        "Tabla 6.11",
         "Tabla 6.12"
       ]
     },
@@ -204,6 +199,6 @@
   ],
   "paginas_vacias": [],
   "texto_fuera_de_margenes": [],
-  "sha256_pdf": "9d5d2c566e7b8dbad4c49d7e1a1960aa117e52d90ee7f7f8586f7c890b7e78b4",
+  "sha256_pdf": "6f275237aeeccc49f73ea406581e2bc3a5a26a4b2f5ae421454c8564335d9bfa",
   "fecha": "2026-10-12"
 }

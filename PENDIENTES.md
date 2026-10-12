@@ -4,7 +4,7 @@
 
 **Accesos:** [Ruta de cierre](Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md) · [Matriz de trazabilidad](Documentos/05-Estado-del-Arte/Resumenes-y-Matriz/Matriz-Trazabilidad-TG2.md) · [Revisión de la bitácora](Documentos/04-Administrativo-TG2/Avances/Revision-Bitacora-2026-09-22.md).
 
-**Decisión del autor, 23 de septiembre:** la transferencia QROM completa del protocolo AIR/FRI queda como **trabajo futuro**. Su demostración no bloquea esta ruta de cierre de TG2. Se conservan los resultados parciales y sus límites; el trabajo activo se concentra en revisión, consolidación documental y sustentación.
+**Decisión del autor, 23 de septiembre:** la transferencia QROM completa del protocolo AIR/FRI queda como **trabajo futuro**. Su demostración no bloquea esta ruta de cierre de TG2. Se conservan los resultados parciales y sus límites; el trabajo activo se concentra en revisión y consolidación documental. La sustentación queda aplazada por indicación del autor del 12 de octubre.
 
 ## Acuerdos y evidencia
 
@@ -12,13 +12,15 @@
 - [ ] Incorporar fecha exacta, comunicación y calendario acordado cuando estén disponibles; actualizar F0, fechas E0–E4 y revisión de la entrega parcial, distinguiendo preparación, envío y aprobación.
 - [x] Crear la matriz de trazabilidad de afirmaciones y requisitos TG2.
 - [x] Preservar los resultados Criterion y fuentes de experimentos disponibles: 125 archivos y 29 casos en el inventario.
-- [ ] Conciliar las diferencias entre la caché recuperada y las cifras históricas; asociar cada tabla con revisión, fecha, equipo, sistema, toolchain, dependencias, comando, configuración y resultados originales. Marcar los resultados históricos sin respaldo conservado.
-- [ ] Repetir las mediciones afectadas por cambios o sin evidencia suficiente y reportar repeticiones y dispersión, conforme a R4 de la ruta.
+- [x] Conciliar y clasificar R4 y complemento mediante 451 comprobaciones; separar las nueve cifras H2 publicadas de la caché recuperada y rotular sus límites. [Revisión con fuentes web](Documentos/04-Administrativo-TG2/Avances/Revision-Subagentes-2026-10-12/Revision-Evidencia.md).
+- [ ] Recuperar la identidad exacta de las corridas históricas H1/H2 donde faltan revisión y resultados originales; conservar su limitación hasta que exista evidencia, sin sustituirla por la caché.
+- [ ] Medir de nuevo solo si se amplían las afirmaciones al rendimiento TG2 v1, capacidad de la aplicación, comparación causal de equipos o residencia física. La conciliación disponible no exige repetir R4.
 - [x] Consolidar los cambios locales de TG2 y experimentos en `nexus`: commit `01dcde960402b6c60a19242b7ae3d6ac3d82a518`, con 197 pruebas, check y build correctos.
 - [x] Corregir las exclusiones de Git para incluir las fuentes de evidencia, crear el índice principal y documentar las dependencias y reproducción.
 
 ## Objetivo 4 — validación formal (R1)
 
+- [x] Revisar con tres subagentes y fuentes web primarias; integrar límites del hash externo SHA3-256/ML-DSA, fuente retenida y compuerta de salud, conformidad no certificada, literatura FFH y terminación extrema. [Paquete de revisión](Documentos/04-Administrativo-TG2/Avances/Revision-Subagentes-2026-10-12/README.md).
 - [x] Complementar M1–M6 y la matriz con el [catálogo verificable de afirmaciones](Documentos/04-Administrativo-TG2/Avances/Catalogo-Validacion-2026-10-12/README.md): hipótesis, dependencias, localizadores y huellas de evidencia. La comprobación documental no cierra las demostraciones ni el dictamen.
 - [x] Corregir el argumento de extracción del capítulo 6 y retirar su conclusión injustificada.
 - [x] Documentar la procedencia del término 2^-254 y evitar atribuirlo sin justificación al prototipo.
@@ -85,7 +87,7 @@ La [auditoría Merkle/Fiat–Shamir](Documentos/04-Administrativo-TG2/Avances/R4
 - [x] Integrar los complementos por rondas, ROM y potencial en el manuscrito y en las derivaciones del 12 de octubre, identificándolos como propuestas pendientes de dictamen. Regenerar y revisar Word/PDF, ecuaciones, tablas y figuras, y registrar la nueva edición. QROM de AIR/FRI permanece como trabajo futuro.
 - [ ] Contrastar la entrega definitiva con la plantilla institucional específica si el programa la exige.
 - [x] Preparar el [guion de sustentación](Documentos/04-Administrativo-TG2/Presentaciones/Guion-Sustentacion-TG2.md).
-- [ ] Completar diapositivas y ensayo según duración y requisitos institucionales, incluyendo respuestas sobre QROM, supuestos de dureza, fuente de entropía, rotación, alcance del STARK y significado de W.
+- [ ] Sustentación aplazada por indicación del autor el 12 de octubre; retomar diapositivas y ensayo cuando lo solicite. El guion histórico se conserva.
 
 ## Trabajo futuro — QROM del protocolo AIR/FRI
 

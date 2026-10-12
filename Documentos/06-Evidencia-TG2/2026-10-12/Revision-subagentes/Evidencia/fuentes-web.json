@@ -1,0 +1,46 @@
+{
+  "fecha_consulta": "2026-10-12",
+  "alcance": "Fuentes primarias metodológicas; no acreditan ejecuciones locales de NEXUS",
+  "fuentes": [
+    {
+      "titulo": "Criterion.rs: Analysis Process",
+      "url": "https://bheisler.github.io/criterion.rs/book/analysis.html",
+      "localizadores": ["Measurement", "Analysis", "Outlier Classification", "Comparison"],
+      "uso": "Diferencia entre muestras e iteraciones, bootstrap de mediana, permanencia de atípicos y ruido de entorno. Guía web sin versionar; la versión local conservada es 0.5.1."
+    },
+    {
+      "titulo": "Criterion.rs: Command-Line Options",
+      "url": "https://bheisler.github.io/criterion.rs/book/user_guide/command_line_options.html",
+      "localizadores": ["Baselines"],
+      "uso": "Conservación e interpretación de baselines con nombre; --save-baseline puede sobrescribir mientras --baseline compara sin escribir. No se ejecutó ninguna de esas operaciones."
+    },
+    {
+      "titulo": "zeroize 1.8.2",
+      "url": "https://docs.rs/zeroize/1.8.2/zeroize/",
+      "localizadores": ["What guarantees does this crate provide?", "Stack/Heap Zeroing Notes", "What about: clearing registers, mlock, mprotect, etc?"],
+      "uso": "Borrado que no se elimina por optimización y límites sobre copias, registros y canales microarquitecturales. Versión coincide con Cargo.lock conservado."
+    },
+    {
+      "titulo": "NIST SP 800-90B, January 2018",
+      "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90B.pdf",
+      "localizadores": ["3.1.1 Data Collection", "4.3 Requirements for Health Tests"],
+      "uso": "Calificación de fuente concreta y datos crudos; no confundir con pruebas de salud sobre datos sintéticos o acondicionados."
+    },
+    {
+      "titulo": "NIST CSRC: SP 800-90B",
+      "url": "https://csrc.nist.gov/pubs/sp/800/90/b/final",
+      "localizadores": ["Planning Note (05/29/2025)"],
+      "uso": "Registro oficial de erratas potenciales; revisar al concretar la fuente."
+    }
+  ],
+  "consultas_no_utilizadas_como_respaldo": [
+    {
+      "url": "https://docs.rs/fips204/0.4.6/fips204/",
+      "resultado": "La herramienta web no pudo acceder; se usó código local conservado, no esta página."
+    },
+    {
+      "url": "https://docs.rs/criterion/0.5.1/criterion/struct.Criterion.html",
+      "resultado": "La herramienta web no pudo acceder; se usó la guía oficial y se verificaron los datos locales conservados."
+    }
+  ]
+}

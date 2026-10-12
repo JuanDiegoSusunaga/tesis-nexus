@@ -100,13 +100,13 @@ El diseño requiere que los compromisos y el sistema de pruebas sean compatibles
 
 **Tabla 3.3 — Mediciones históricas del AIR ilustrativo.**
 
-| Filas de traza | Tamaño de prueba histórico | Verificación histórica |
+| Filas de traza | Tamaño histórico (KB decimales, redondeado) | Verificación histórica |
 |---:|---:|---:|
 | 16 | 132 KB | 6,0 ms |
 | 256 | 268 KB | 8,9 ms |
 | 4096 | 445 KB | 12,9 ms |
 
-Estas cifras pertenecen a la serie histórica y a una carga ilustrativa. Filas AIR no equivalen a transacciones ML-DSA. Las nuevas mediciones preservan repeticiones y dispersión (§6.6), y las diferencias de procedencia se conservan explícitas. El costo del probador, incluido el trabajo del nonce, forma parte del balance de viabilidad; una curva de verificación no certifica seguridad ni el flujo L2/L1 completo.
+Estas cifras pertenecen a la serie histórica y a una carga ilustrativa. Los tamaños se expresan en KB decimales (1000 B), con cifras históricas redondeadas; las Tablas 6.9 y 6.12 distinguen KiB (1024 B). La coincidencia de magnitudes tras convertir unidades no identifica la misma corrida ni igualdad de bytes de las pruebas. Filas AIR no equivalen a transacciones ML-DSA. Las nuevas mediciones preservan repeticiones y dispersión (§6.6), y las diferencias de procedencia se conservan explícitas. El costo del probador, incluido el trabajo del nonce, forma parte del balance de viabilidad; una curva de verificación no certifica seguridad ni el flujo L2/L1 completo.
 
 Las propuestas poscuánticas de Ethereum y Solana aportan contexto sobre tamaño de firmas y agregación. Sus hojas de ruta no sustituyen la validación de NEXUS ni se presentan como despliegue completo de la arquitectura de esta tesis [EthRoadmap26, Solana-QR26].
 
