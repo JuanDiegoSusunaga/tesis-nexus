@@ -46,7 +46,8 @@ def main():
     referencia = RENDER / 'tablas-referencia.docx'
     subprocess.run(['pandoc', str(CARPETA / 'Tesis-NEXUS-completa.md'),
                     '-f', 'markdown+tex_math_single_backslash-implicit_figures',
-                    '--resource-path=' + str(CARPETA), '-o', str(referencia)], check=True)
+                    '--resource-path=' + str(CARPETA), '-o', str(referencia)], check=True,
+                   creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
     esperado = celdas(referencia)
     observado = celdas(CARPETA / 'Tesis-NEXUS-completa.docx')
     if esperado != observado:

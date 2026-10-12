@@ -1,20 +1,22 @@
 # NEXUS — tesis y evidencia de TG2
 
-**Edición de trabajo:** 23 de septiembre de 2026. NEXUS estudia firmas poscuánticas, gestión de claves y registros verificables para **sistemas en general**, con una arquitectura blockchain dual como modelo de referencia.
+**Edición de trabajo:** 12 de octubre de 2026. NEXUS estudia firmas poscuánticas, gestión de claves y registros verificables para **sistemas en general**, con una arquitectura blockchain dual como modelo de referencia.
 
 ## Por dónde empezar
 
 **Alcance vigente:** por decisión del autor del 23 de septiembre, completar QROM del protocolo AIR/FRI queda como **trabajo futuro**. La ruta activa prioriza revisión de resultados, consolidación del manuscrito y sustentación; los avances QROM se conservan con sus límites.
+
+**Complemento de validación, 12 de octubre:** el [catálogo de afirmaciones](Documentos/04-Administrativo-TG2/Avances/Catalogo-Validacion-2026-10-12/README.md) enlaza doce enunciados con hipótesis, dependencias y nueve archivos de evidencia identificados por SHA-256. `python scripts/verificar_catalogo_validacion.py` comprueba su integridad documental; las demostraciones y el dictamen mantienen sus estados pendientes.
 
 1. [Manuscrito vigente y formatos](Documentos/01-Manuscrito/README.md).
 2. [Balance de los Objetivos 3 y 4](Documentos/04-Administrativo-TG2/Entrega-Final/Balance-Objetivos-TG2.md).
 3. [Índice de entrega e identificación de la versión](Documentos/04-Administrativo-TG2/Entrega-Final/README.md).
 4. [Ruta de cierre](Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md), [pendientes](PENDIENTES.md) y [bitácora](BITACORA_TG2.md).
 5. [Reproducción y herramientas](scripts/README.md).
-6. [Derivaciones matemáticas en Word](Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-09-23.docx), con hipótesis, argumentos y preguntas para revisión.
-7. [Transferencia matemática al protocolo TG2 v1](Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/README.md): derivación clásica ROM con pérdidas de Merkle, Fiat–Shamir y nonces, cálculos y verificador independiente. Integrada en `main` junto con la [derivación ideal por rondas](Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md); pendiente de revisión e integración al manuscrito.
+6. [Derivaciones matemáticas en Word](Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-10-12.docx), con hipótesis, argumentos y preguntas para revisión.
+7. [Transferencia matemática al protocolo TG2 v1](Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/README.md): derivación clásica ROM con pérdidas de Merkle, Fiat–Shamir y nonces, cálculos y verificador independiente. Integrada en `main` junto con la [derivación ideal por rondas](Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/README.md); integradas en §§6.7.8–6.7.9 y en el suplemento consolidado; dictamen independiente pendiente.
 
-**Último complemento matemático:** [cota cuántica de la cola de índices](Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/README.md), con una demostración propuesta mediante conteo y amplitudes. Se registran 144 perfiles; la cota es útil en 16, usando cortes mayores del análisis. Pasan 96 pruebas Python y 197 Rust, con check/build. **Falta acotar la omisión de parejas incorrectas** para completar la [reducción al verificador](Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/README.md). El conjunto requiere dictamen independiente y todavía no acredita seguridad QROM completa.
+**Antecedente QROM conservado como trabajo futuro:** [cota cuántica de la cola de índices](Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/README.md), con una demostración propuesta mediante conteo y amplitudes. Se registran 144 perfiles; la cota es útil en 16, usando cortes mayores del análisis. Pasan 96 pruebas Python y 197 Rust, con check/build. **Falta acotar la omisión de parejas incorrectas** para completar la [reducción al verificador](Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/README.md). El conjunto requiere dictamen independiente y todavía no acredita seguridad QROM completa.
 
 ## Estructura
 
@@ -50,7 +52,7 @@ La disponibilidad de una revisión en el servidor depende de su publicación. La
 
 ## Estado técnico
 
-La edición conserva 197 pruebas del workspace, monitor de entropía y gestor/registro local comprobados, 29 casos Criterion, 40 mediciones STARK y 40 repeticiones multinúcleo. El manuscrito revisado tiene 108 páginas Word, 95 PDF, 32 tablas y 3 figuras.
+La edición conserva 197 pruebas del workspace, monitor de entropía y gestor/registro local comprobados, 29 casos Criterion, 40 mediciones STARK y 40 repeticiones multinúcleo. El manuscrito revisado tiene 110 páginas Word, 97 PDF, 34 tablas y 3 figuras.
 
 Las garantías concretas del ejecutable, las integraciones de despliegue y el dictamen matemático tienen pendientes explícitos en el balance. La organización de esta versión no constituye aprobación académica ni una garantía de 100 bits o conocimiento cero.
 

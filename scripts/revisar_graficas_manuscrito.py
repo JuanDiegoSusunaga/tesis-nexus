@@ -33,7 +33,7 @@ def main():
     ast = json.loads(subprocess.check_output([
         'pandoc', str(CARPETA / 'Tesis-NEXUS-completa.md'), '-f',
         'markdown+tex_math_single_backslash-implicit_figures', '-t', 'json'],
-        text=True, encoding='utf-8'))
+        text=True, encoding='utf-8', creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0)))
     elementos = list(nodos(ast['blocks']))
     imagenes = [n['c'][2][0] for n in elementos if n.get('t') == 'Image']
     ecuaciones = [n['c'][1] for n in elementos if n.get('t') == 'Math'

@@ -1,6 +1,6 @@
 # Balance de cumplimiento — Objetivos 3 y 4
 
-**Fecha:** 23 de septiembre de 2026. Balance técnico para revisar el cierre académico de TG2; conserva las obligaciones abiertas y el enfoque en sistemas en general.
+**Fecha:** 12 de octubre de 2026. Balance técnico para revisar el cierre académico de TG2; conserva las obligaciones abiertas y el enfoque en sistemas en general.
 
 **Decisión vigente del autor:** la transferencia QROM completa del protocolo AIR/FRI queda como trabajo futuro. Su conclusión no es un requisito de esta ruta de cierre; se conservan los resultados parciales y se declara el límite. R1 de ML-DSA mantiene sus obligaciones propias.
 
@@ -47,5 +47,7 @@ El [avance posterior de extracción QROM](../Avances/Extractor-QROM-2026-09-23/R
 Estas obligaciones no se convierten automáticamente en nuevas actividades obligatorias del trabajo de grado. El director debe resolver su relación con el alcance aprobado; hasta entonces las conclusiones mantienen los límites explícitos.
 
 ## Preparación documental
+
+La edición del 12 de octubre integra la revisión de las afirmaciones heredadas, la solidez por rondas, ROM clásico y la revisión de nonces en el manuscrito y en el suplemento consolidado. Resúmenes, conclusiones y guion distinguen esa integración del dictamen pendiente. Pasan 197 pruebas Rust, check/build y 30 pruebas Python de los complementos; diez pruebas adicionales verifican el comprobador de edición. [Cambios y alcance](../Avances/Consolidacion-Manuscrito-TG2-2026-10-12.md).
 
 El manuscrito dispone de una edición por formato, tablas y figuras revisadas y evidencia por etapa. El [índice de entrega](README.md) reúne los accesos y el manifiesto identifica los archivos. El [guion de sustentación](../Presentaciones/Guion-Sustentacion-TG2.md) está preparado; las diapositivas finales, el ensayo y el registro de entrega siguen pendientes.

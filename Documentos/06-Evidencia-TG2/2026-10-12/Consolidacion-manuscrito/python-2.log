@@ -1,0 +1,16 @@
+test_codificaciones_nonce_disjuntas (test_transferencia_rom_tg2.TransferenciaRom.test_codificaciones_nonce_disjuntas) ... ok
+test_cola_por_enumeracion_exhaustiva (test_transferencia_rom_tg2.TransferenciaRom.test_cola_por_enumeracion_exhaustiva) ... ok
+test_colision_y_etiquetas_de_la_prueba (test_transferencia_rom_tg2.TransferenciaRom.test_colision_y_etiquetas_de_la_prueba) ... ok
+test_corpus_completo_coincide_con_rust (test_transferencia_rom_tg2.TransferenciaRom.test_corpus_completo_coincide_con_rust) ... ok
+test_cota_y_dependencia_del_presupuesto (test_transferencia_rom_tg2.TransferenciaRom.test_cota_y_dependencia_del_presupuesto) ... ok
+test_cuentas_de_todos_los_perfiles (test_transferencia_rom_tg2.TransferenciaRom.test_cuentas_de_todos_los_perfiles) ... ok
+test_extraccion_previa_y_repeticion (test_transferencia_rom_tg2.TransferenciaRom.test_extraccion_previa_y_repeticion) ... ok
+test_grinding_ambos_ordenes_de_busqueda (test_transferencia_rom_tg2.TransferenciaRom.test_grinding_ambos_ordenes_de_busqueda) ... ok
+test_masa_maxima_en_extension (test_transferencia_rom_tg2.TransferenciaRom.test_masa_maxima_en_extension) ... ok
+test_mutaciones_rechazadas_antes_de_aceptar (test_transferencia_rom_tg2.TransferenciaRom.test_mutaciones_rechazadas_antes_de_aceptar) ... ok
+test_referencia_futura_no_es_extraccion_gratuita (test_transferencia_rom_tg2.TransferenciaRom.test_referencia_futura_no_es_extraccion_gratuita) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.641s
+
+OK

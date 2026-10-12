@@ -114,7 +114,8 @@ def main():
         'pandoc', str(CARPETA / 'Tesis-NEXUS-completa.md'),
         '-f', 'markdown+tex_math_single_backslash-implicit_figures', '-t', 'html5',
         '--standalone', '--mathml', '--toc', '--toc-depth=2',
-        '--metadata', 'toc-title=Contenido'], text=True, encoding='utf-8')
+        '--metadata', 'toc-title=Contenido'], text=True, encoding='utf-8',
+        creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
     salida = re.sub(r'<style>.*?</style>', '', salida, flags=re.S)
     # El PDF utiliza los originales vectoriales locales de las figuras de Word.
     def imagen_local(coincidencia):

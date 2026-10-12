@@ -11,7 +11,7 @@ MANIFIESTO = RAIZ / 'Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.
 
 
 def git(carpeta, *argumentos):
-    return subprocess.check_output(['git', '-C', str(carpeta), *argumentos], text=True, encoding='utf-8').strip()
+    return subprocess.check_output(['git', '-C', str(carpeta), *argumentos], text=True, encoding='utf-8', creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0)).strip()
 
 
 def main():

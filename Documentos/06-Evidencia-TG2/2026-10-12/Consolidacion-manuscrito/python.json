@@ -1,0 +1,55 @@
+[
+  {
+    "comando": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/tests",
+      "-p",
+      "test_rbr_conjunto_tg2.py",
+      "-v"
+    ],
+    "salida": 0,
+    "log": "python-1.log"
+  },
+  {
+    "comando": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/tests",
+      "-p",
+      "test_transferencia_rom_tg2.py",
+      "-v"
+    ],
+    "salida": 0,
+    "log": "python-2.log"
+  },
+  {
+    "comando": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/tests",
+      "-p",
+      "test_revision_rom_tg2.py",
+      "-v"
+    ],
+    "salida": 0,
+    "log": "python-3.log"
+  },
+  {
+    "comando": [
+      "python",
+      "scripts/verificar_catalogo_validacion.py"
+    ],
+    "salida": 0,
+    "log": "python-4.log"
+  }
+]

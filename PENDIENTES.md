@@ -1,6 +1,6 @@
 # Pendientes — Tesis NEXUS (TG2)
 
-**Actualizado:** 2026-09-23. Seguimiento vigente; el historial se conserva en [BITACORA_TG2.md](BITACORA_TG2.md).
+**Actualizado:** 2026-10-12. Seguimiento vigente; el historial se conserva en [BITACORA_TG2.md](BITACORA_TG2.md).
 
 **Accesos:** [Ruta de cierre](Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md) · [Matriz de trazabilidad](Documentos/05-Estado-del-Arte/Resumenes-y-Matriz/Matriz-Trazabilidad-TG2.md) · [Revisión de la bitácora](Documentos/04-Administrativo-TG2/Avances/Revision-Bitacora-2026-09-22.md).
 
@@ -19,6 +19,7 @@
 
 ## Objetivo 4 — validación formal (R1)
 
+- [x] Complementar M1–M6 y la matriz con el [catálogo verificable de afirmaciones](Documentos/04-Administrativo-TG2/Avances/Catalogo-Validacion-2026-10-12/README.md): hipótesis, dependencias, localizadores y huellas de evidencia. La comprobación documental no cierra las demostraciones ni el dictamen.
 - [x] Corregir el argumento de extracción del capítulo 6 y retirar su conclusión injustificada.
 - [x] Documentar la procedencia del término 2^-254 y evitar atribuirlo sin justificación al prototipo.
 - [x] Incorporar las correcciones de pruebas publicadas en 2023 y las restricciones de la reducción QROM revisada en 2024.
@@ -78,10 +79,10 @@ La [auditoría Merkle/Fiat–Shamir](Documentos/04-Administrativo-TG2/Avances/R4
 - [x] Registrar y aplicar la aclaración del autor: NEXUS se presenta para sistemas en general, con arquitectura blockchain dual como modelo de referencia.
 - [x] Conciliar el estado técnico de TG2 en resumen, capítulos 5–7 y conclusiones.
 - [x] Crear ensamblado reproducible y comprobación estructural de tablas entre Markdown y Word.
-- [x] Revisar la edición Word/PDF: tablas y celdas comparadas, rótulos y tablas juntos en Word; PDF sin páginas vacías ni texto fuera de los márgenes. El inventario vigente se conserva en `Documentos/06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/`.
+- [x] Revisar la edición Word/PDF: tablas y celdas comparadas, rótulos y tablas juntos en Word; PDF sin páginas vacías ni texto fuera de los márgenes. El inventario de la edición del 12 de octubre está en `Documentos/06-Evidencia-TG2/2026-10-12/`; la carpeta anterior R4-Merkle-FS conserva su registro histórico.
 - [x] Integrar los resultados disponibles de R1–R5 en el [balance de objetivos](Documentos/04-Administrativo-TG2/Entrega-Final/Balance-Objetivos-TG2.md) y preparar el [índice de entrega](Documentos/04-Administrativo-TG2/Entrega-Final/README.md) con manifiesto de archivos y commit de código.
 - [ ] Registrar dictamen y resolver o delimitar las obligaciones del balance antes de declarar entrega definitiva.
-- [ ] Integrar los complementos matemáticos revisados de `Avances/` en el documento de derivaciones y el manuscrito; presentar QROM como resultados parciales y trabajo futuro, sin exigir completarlo. Regenerar Word/PDF y comprobar fórmulas, tablas, gráficas, referencias y congruencia entre formatos. Actualizar el manifiesto de la nueva edición.
+- [x] Integrar los complementos por rondas, ROM y potencial en el manuscrito y en las derivaciones del 12 de octubre, identificándolos como propuestas pendientes de dictamen. Regenerar y revisar Word/PDF, ecuaciones, tablas y figuras, y registrar la nueva edición. QROM de AIR/FRI permanece como trabajo futuro.
 - [ ] Contrastar la entrega definitiva con la plantilla institucional específica si el programa la exige.
 - [x] Preparar el [guion de sustentación](Documentos/04-Administrativo-TG2/Presentaciones/Guion-Sustentacion-TG2.md).
 - [ ] Completar diapositivas y ensayo según duración y requisitos institucionales, incluyendo respuestas sobre QROM, supuestos de dureza, fuente de entropía, rotación, alcance del STARK y significado de W.

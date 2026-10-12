@@ -1,0 +1,1322 @@
+{
+  "fecha": "2026-10-12",
+  "estado": "Revisión visual interna completada",
+  "paginas": {
+    "word": 110,
+    "derivaciones": 54,
+    "pdf": 97
+  },
+  "laminas": [
+    {
+      "formato": "word",
+      "paginas": [
+        1,
+        2
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-001-002.png",
+      "bytes": 101883,
+      "sha256": "382ab77f1bee2c1aeee0029e6e8a4cc590cd16de188d08018c04d18497deeacb"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        3,
+        4
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-003-004.png",
+      "bytes": 139165,
+      "sha256": "7e71ff5c23e317f19deeab0a42f756e86511db2fc5d71201a2de58aca4831c95"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        5,
+        6
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-005-006.png",
+      "bytes": 119111,
+      "sha256": "e25196ed36c5867652fe4904d5778e6dc5807a7bd7ee10357596dc15d9d1c8ed"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        7,
+        8
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-007-008.png",
+      "bytes": 164816,
+      "sha256": "3a1d1188f07ae0509c84c8853ba7279702f0f05b643bcd4c8100566edfe3bbcd"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        9,
+        10
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-009-010.png",
+      "bytes": 162348,
+      "sha256": "ddaf64e2b13b851e0ae0bacb979c728536f1bb373bf1d88b345841e9ec92be17"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        11,
+        12
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-011-012.png",
+      "bytes": 116478,
+      "sha256": "277870e4eff802e3b43c9dfabe4ed7050651fb76771b502bdbda0dd03f9ddb87"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        13,
+        14
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-013-014.png",
+      "bytes": 145986,
+      "sha256": "394dbb035531ab755dbcfe32d7d3c4479bbb1d302aca05dd8db0fe77cbc0959f"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        15,
+        16
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-015-016.png",
+      "bytes": 164612,
+      "sha256": "0ac528c668c8ee10d460e8cd4c380f9a15d07b33a5ea7e307892287e9ca7dc0e"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        17,
+        18
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-017-018.png",
+      "bytes": 128394,
+      "sha256": "135592bb0551a5a8f305b0a47ec8f3f5568edfebb4f2bed40d8b7f2066bac4a4"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        19,
+        20
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-019-020.png",
+      "bytes": 194270,
+      "sha256": "919c7577fa3d6152435b8a9c5af9d773b5befc6b87fdb4ffce7e556339ba8bc7"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        21,
+        22
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-021-022.png",
+      "bytes": 158321,
+      "sha256": "04a22b9569132d37fe7ffbe2c8570017a7f4fc4a794b127366033b2a423544f2"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        23,
+        24
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-023-024.png",
+      "bytes": 159992,
+      "sha256": "51738bcdbc8a30b0aab5f5a284f4ddc0217035ed0c0a958ea93b2547828cc7a6"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        25,
+        26
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-025-026.png",
+      "bytes": 161259,
+      "sha256": "bc2724afe396bc01e96d2a20f0e9adf30ff661f2409b742046c4bb602b5f4c11"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        27,
+        28
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-027-028.png",
+      "bytes": 112164,
+      "sha256": "d1e39e196b7b2588e64495859eb90da5d4720231c7f499d017312c4e37bc4933"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        29,
+        30
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-029-030.png",
+      "bytes": 139178,
+      "sha256": "9b7e77120985d02b4a70313098c760bc74ef9efea2ff7f3858c786bc6ad89b9d"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        31,
+        32
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-031-032.png",
+      "bytes": 143703,
+      "sha256": "269f1c90f7a5e04ad3f97f747cb968156b8690af308aa4470b6289b27cc8db23"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        33,
+        34
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-033-034.png",
+      "bytes": 148604,
+      "sha256": "6e478ddc8bf1973cde466fab3d0c764bf86fd3ddf9d2d00babdde4268e23d37a"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        35,
+        36
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-035-036.png",
+      "bytes": 122828,
+      "sha256": "930817ea17642707d8805d281fd60449dc9588cc1587228d3bdeacd30ce6a2f6"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        37,
+        38
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-037-038.png",
+      "bytes": 142408,
+      "sha256": "97281deb328cff0b25b81b6b8ee4fcdaff32ffcac31a22f16946a073d3fe9c7d"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        39,
+        40
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-039-040.png",
+      "bytes": 156025,
+      "sha256": "e1304664c3ce716a7e35213adc66542a79b60a49b6c4669645017597211795ce"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        41,
+        42
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-041-042.png",
+      "bytes": 154114,
+      "sha256": "6c990996fc9942a27b87cba66ca09905cc8ffba6f78a9771b1cbb74aa293a232"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        43,
+        44
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-043-044.png",
+      "bytes": 151852,
+      "sha256": "fd75bd11987a8ff88b0ab75f3ea8f6a9787e181e3a61facac03bce6229bc1293"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        45,
+        46
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-045-046.png",
+      "bytes": 149743,
+      "sha256": "8292eeffac86669b3ef7dd05f5d460f69bd503ee4b7cfddcbb64deb205abf868"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        47,
+        48
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-047-048.png",
+      "bytes": 186792,
+      "sha256": "36191578e9f7476a4c78e54f9ed260154b7ca1663072fd93b1b17aa1bd3cd95e"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        49,
+        50
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-049-050.png",
+      "bytes": 160868,
+      "sha256": "9abcab82be4cd9f536e728d15f7acf6f469f805633257d4e53b1dee37f3c19ba"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        51,
+        52
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-051-052.png",
+      "bytes": 136225,
+      "sha256": "33880f1f324bdb1c969ef85eb871ebbf5732ddde37941d5bcd5c926657729534"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        53,
+        54
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-053-054.png",
+      "bytes": 160742,
+      "sha256": "55ddb98fd2639a526dbee556adeede79e007f75deed9294bae19b289a4a651cd"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        55,
+        56
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-055-056.png",
+      "bytes": 147935,
+      "sha256": "9a511611a67f0631f08b6e679b08ed93b59cd9fb8d8f60d48c4e53ecfc8362dd"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        57,
+        58
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-057-058.png",
+      "bytes": 166329,
+      "sha256": "f583f8c5dbc415f3054f420e98de1a627fffacca5c7686e1e70b11d71c9f64b8"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        59,
+        60
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-059-060.png",
+      "bytes": 165784,
+      "sha256": "9bd656d1e244fcd01b8bbbfbe4c88bffee05c9db19fcde74f37cc5b64c9c5a75"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        61,
+        62
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-061-062.png",
+      "bytes": 169632,
+      "sha256": "db5139f4dc1e31d07562f73e233e33d0fb1ed4dbd2243b7bd2f26b2b9b6ca886"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        63,
+        64
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-063-064.png",
+      "bytes": 141452,
+      "sha256": "6c57b90f552919ccfe9fd6d2e816f09de7a5e59ca94824bb72ccfeb1100c691f"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        65,
+        66
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-065-066.png",
+      "bytes": 150278,
+      "sha256": "76942fc9381fa8f0c617226c548862654214783df5b99f7cf2f76ee206e09385"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        67,
+        68
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-067-068.png",
+      "bytes": 176063,
+      "sha256": "3fa6a47305165feea3ef06d2e8aab88fe184889dede5e2adc3b58b9987bd411d"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        69,
+        70
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-069-070.png",
+      "bytes": 164965,
+      "sha256": "6aafb8250c4362abc6ca10ee146b9e724454776926ea7e1f3c259eaf1ef51091"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        71,
+        72
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-071-072.png",
+      "bytes": 151064,
+      "sha256": "d11715d297ca211888b314ada4ed9a7acdc7fc11498f041ca715c1f369bf15db"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        73,
+        74
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-073-074.png",
+      "bytes": 143654,
+      "sha256": "9a39da1641097d78d37d34d71c168aa36ffed1fdd20b7adb8d07c72245d8ad37"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        75,
+        76
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-075-076.png",
+      "bytes": 150302,
+      "sha256": "07c7343a3b4d18f3d874c17e6bf56ff13c955d14de3dfcd8c496830725c915f2"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        77,
+        78
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-077-078.png",
+      "bytes": 155753,
+      "sha256": "2b073a39f894213462c168919ec8bd434dc4d50c5932e40f50cf6d2ec9a377de"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        79,
+        80
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-079-080.png",
+      "bytes": 173428,
+      "sha256": "caa99fede76428b7097e173ca7f8a1c73c2531b5e9cc0287c30267517d4fbd05"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        81,
+        82
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-081-082.png",
+      "bytes": 147526,
+      "sha256": "a0b5c914fdd594fbeb5bdb4d8fcde7d880bc180237705f4f731415d65331c4a3"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        83,
+        84
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-083-084.png",
+      "bytes": 157659,
+      "sha256": "1c7366d5a650459d86fd1d206507ba2347cabc7d8c6ae32fbc954ebb0d8b6596"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        85,
+        86
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-085-086.png",
+      "bytes": 158949,
+      "sha256": "77ca6a0d31a60cea51f2d4b7665e0347c01ef472898fcf8f9ad4afc017dafec8"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        87,
+        88
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-087-088.png",
+      "bytes": 159856,
+      "sha256": "361504caa22a100edf2b79ad9fbc80ef4b9bbb2e56d77c56e35a67d63b340d1c"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        89,
+        90
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-089-090.png",
+      "bytes": 144393,
+      "sha256": "26d4ae2516768cd619a1b1fb4d35c42d37d1b84643c9f9a04c7b0c6b2cced5ee"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        91,
+        92
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-091-092.png",
+      "bytes": 146459,
+      "sha256": "939fd1494155d7b1a6d04ca2f588337f9b75279cdb3c694e7f0ba51dca8cc2bc"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        93,
+        94
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-093-094.png",
+      "bytes": 154347,
+      "sha256": "972ac4a9392adad6aa9b6c4df6aaf61658a7e90894961f48a985be0bb2745c34"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        95,
+        96
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-095-096.png",
+      "bytes": 140571,
+      "sha256": "a854dcb4432ab51cbf77ec03ace2fcbba09f0b689aaa05fcd5758b2031e3c2bd"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        97,
+        98
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-097-098.png",
+      "bytes": 165459,
+      "sha256": "8b161960a53ee789b4027e428ea2e2cc26b71bb16a18d891580e18f81fc093d6"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        99,
+        100
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-099-100.png",
+      "bytes": 159305,
+      "sha256": "c9017237723fa8862c846937a81c9a88203b4bdf6e55e3163dc4ecf066557933"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        101,
+        102
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-101-102.png",
+      "bytes": 124428,
+      "sha256": "9332da42700b13a25a9efa971c74c252c4f5c97631e319177cb2983b78c30134"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        103,
+        104
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-103-104.png",
+      "bytes": 195547,
+      "sha256": "d0389a91088b5650a2a51d00d5aec9ad472e5bb6ba33cc30c015a1b2e4fdeaf9"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        105,
+        106
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-105-106.png",
+      "bytes": 194024,
+      "sha256": "6b37aca3b508d4e137e2ec2025ccdc9e6326262bb0d20328c650c45f177e1587"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        107,
+        108
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-107-108.png",
+      "bytes": 204472,
+      "sha256": "eb34a7f821b721120e7ba0a8c20bc61339d943d1055e20257fccca76864d4c6a"
+    },
+    {
+      "formato": "word",
+      "paginas": [
+        109,
+        110
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/word-109-110.png",
+      "bytes": 137459,
+      "sha256": "d6e2f38840a9e2634fd8eba267fb084f2e40a48dd87e3765bd8a02e4d4a4b784"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        1,
+        2
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-001-002.png",
+      "bytes": 110862,
+      "sha256": "4f55b4c2f6c2c1867e24478877b4e88c905737f6e5c544902c896c2b2304982b"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        3,
+        4
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-003-004.png",
+      "bytes": 92609,
+      "sha256": "872f6702b421276bc74a5b279ff105aa3f555a688e3449aa2252e94da5fccdb3"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        5,
+        6
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-005-006.png",
+      "bytes": 101790,
+      "sha256": "0023f1c30b351c316d4df3c83dd354fa950fe3f7c9591878bb651233c5f31004"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        7,
+        8
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-007-008.png",
+      "bytes": 94404,
+      "sha256": "f48beebc9ef5f99a6fbf2d12924c3652944704566447aa4691c50975748fa692"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        9,
+        10
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-009-010.png",
+      "bytes": 139153,
+      "sha256": "a2dd7d43f9d3b895822e02af36ef409708b7749d3c960919f4500f66fec3ed01"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        11,
+        12
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-011-012.png",
+      "bytes": 112944,
+      "sha256": "f674719b3e0dc44fb0953750d5f5803e45dd3e544442a1b91daeeb47082b0af6"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        13,
+        14
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-013-014.png",
+      "bytes": 90056,
+      "sha256": "ef5814fa7ba38dc095e6d479b3f69c03037a4abb1eaa2eb12b95b908255507dc"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        15,
+        16
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-015-016.png",
+      "bytes": 126756,
+      "sha256": "d2e814d5edfc83f6ea12b4bd9094f6fabdd75227ba9b8d3efbe78b9e913a9c3f"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        17,
+        18
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-017-018.png",
+      "bytes": 124516,
+      "sha256": "8dbb90c9f4e6f009de304202bf2f228e2fc6583935727762b4477fcef0efe8f5"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        19,
+        20
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-019-020.png",
+      "bytes": 141722,
+      "sha256": "b46f2e82686fcf8ef2f1e8981d1a4d5f7e8da37df23bb71b674374300eff16c8"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        21,
+        22
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-021-022.png",
+      "bytes": 132302,
+      "sha256": "0113a40d2551ee0e8116f460576ab56100598f37fe91db2ef6689a2815f072d4"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        23,
+        24
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-023-024.png",
+      "bytes": 108621,
+      "sha256": "9a2edc5f3e7c5cd207bfc2b6a71c2fd037e54f97a229e0c6999d71e4b8dd6cc0"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        25,
+        26
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-025-026.png",
+      "bytes": 89666,
+      "sha256": "089cf9e12a2cf195e713b25247ca1752a88393af6bd9e3590e900a44b420154b"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        27,
+        28
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-027-028.png",
+      "bytes": 147897,
+      "sha256": "1092700b9951f4ada3c0d730c0b864adf920fc52e4959c9eaa124cc42bb1ee50"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        29,
+        30
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-029-030.png",
+      "bytes": 134624,
+      "sha256": "cf556e1b4964a1e2a6476ac44542108b01bb5fe3fb6cc6bc6d8749b6af654265"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        31,
+        32
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-031-032.png",
+      "bytes": 127258,
+      "sha256": "37f9eebc5b45f9ddc05b6c0c462da36df1ed4e75c5057d124aab8017c40e18bd"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        33,
+        34
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-033-034.png",
+      "bytes": 153573,
+      "sha256": "cf3f403df1904b7e54605f49d441ceebc61f6f14d6ac0d652024c5451be1e284"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        35,
+        36
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-035-036.png",
+      "bytes": 133636,
+      "sha256": "c8999472f6545b4aa35e71ec1fc14354449915c2a27a7e79417aa944f7be257e"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        37,
+        38
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-037-038.png",
+      "bytes": 142742,
+      "sha256": "f118a109a50b6cf09cf137135a8eea87afca44006301d7817d44d4209d06579e"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        39,
+        40
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-039-040.png",
+      "bytes": 135350,
+      "sha256": "44fd8baebb949d9b52989d14b811f9c1f7da48edc958530d505dc6b2358315ef"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        41,
+        42
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-041-042.png",
+      "bytes": 147788,
+      "sha256": "22a8bd38fab0d05fe2b60e2e684ee6d183b3ce36cffc77623da59bc58ab98d9b"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        43,
+        44
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-043-044.png",
+      "bytes": 154304,
+      "sha256": "53abf66744cb159fb00627452c3b448283f4fd5294ede27cd57c0c752f1d7682"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        45,
+        46
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-045-046.png",
+      "bytes": 117746,
+      "sha256": "46fc5ebb71dfde810d9fb025b651caadde5e1bc4963c10f03908122125780f7e"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        47,
+        48
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-047-048.png",
+      "bytes": 150207,
+      "sha256": "910c0bfb1611b6090d82bd7e8f4d94318a83f8c5eeb915d3830c7ab1ce817f83"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        49,
+        50
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-049-050.png",
+      "bytes": 127218,
+      "sha256": "03d38ff0c97f364cce8ec417c4aec96d9e07e5d39bbf780a60e8f7a3ea1d5a05"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        51,
+        52
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-051-052.png",
+      "bytes": 143835,
+      "sha256": "5da276a35b00b342ed72bb145aa6c7854dd8af10ce438e7db4aeffd78802444e"
+    },
+    {
+      "formato": "derivaciones",
+      "paginas": [
+        53,
+        54
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/derivaciones-053-054.png",
+      "bytes": 109515,
+      "sha256": "e0d2f84244092c21cabfef00b90949a36ffdf8f54b60898b1f54d8b457ed8dd6"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        1,
+        2
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-001-002.png",
+      "bytes": 227302,
+      "sha256": "382dcb36ceaea5976b4c8649a4621ccd78675af899062d2b036b1272b3c33ffc"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        3,
+        4
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-003-004.png",
+      "bytes": 311557,
+      "sha256": "ff7cef623742c3bace24a9e50f465dcdbde87868ad788be53676f532aa9b4691"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        5,
+        6
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-005-006.png",
+      "bytes": 288690,
+      "sha256": "1d7641c67a4f4e008b3116cf60d176e7b421a746fac450e3af1d512e8930093e"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        7,
+        8
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-007-008.png",
+      "bytes": 423670,
+      "sha256": "2302bb9a47958c3d159ded661692417954471c07dd4788d5a01132ff1e647104"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        9,
+        10
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-009-010.png",
+      "bytes": 367453,
+      "sha256": "99eb71b9f21918e3398603f19b054419a27be3c0bf4eef92efe842f17c3ffbad"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        11,
+        12
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-011-012.png",
+      "bytes": 330171,
+      "sha256": "ee869f09c16bc898c8738f1115e9a3ecb286329ead31a2321ad0419b6b0847de"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        13,
+        14
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-013-014.png",
+      "bytes": 376464,
+      "sha256": "7028ffa4b956093c5a744a12f951115faff5b53e09b70d4d14177338a26c3d98"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        15,
+        16
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-015-016.png",
+      "bytes": 365974,
+      "sha256": "7fcadea6d8382367887aa7049ff3feddfdf1dcef9a04b2e89f341d5a223bddfe"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        17,
+        18
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-017-018.png",
+      "bytes": 324560,
+      "sha256": "39ce0499e6dde9a06cfad871a6e654beac8fccf188edebc1baaa609905672d08"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        19,
+        20
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-019-020.png",
+      "bytes": 374284,
+      "sha256": "5fa6952d19fabb3ad619fc4fc86be612f394abe1dc27770ffb944f497f41b447"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        21,
+        22
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-021-022.png",
+      "bytes": 396354,
+      "sha256": "2b191dd0e1f5af80baaadf5e16825bc544a6e52bd4c21d796bb5a454d392111f"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        23,
+        24
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-023-024.png",
+      "bytes": 410671,
+      "sha256": "5dfd125bbea69bfa81a7c019d3d51ad58a450f65ee732a2649e91f5b7597fc2a"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        25,
+        26
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-025-026.png",
+      "bytes": 262797,
+      "sha256": "532344c90341db50024a08b8565702c795b186aa6b6bc360b663086c57f0befa"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        27,
+        28
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-027-028.png",
+      "bytes": 389922,
+      "sha256": "3dd0ce6c9087a84db2de2e4bc74579274b666cc982f5a6081c4ae90d71d2aa1c"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        29,
+        30
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-029-030.png",
+      "bytes": 407542,
+      "sha256": "9bc5d6a39c938d577ed840c559ab4966f3733df9bfc605ada797a25f89880c70"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        31,
+        32
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-031-032.png",
+      "bytes": 232543,
+      "sha256": "0cda4697cb2602ad64c21c37174f64c5d57fd3f2d755be96d6fcad0fe716d75c"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        33,
+        34
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-033-034.png",
+      "bytes": 383702,
+      "sha256": "f6b5a1882be3f24e7cf60ece82b7ab1b58556d68ce43a848a9e660e6e8600140"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        35,
+        36
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-035-036.png",
+      "bytes": 408791,
+      "sha256": "2353cfad375603a9d107d04a4a433addc45eab622664f694f7bff9658b99d14a"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        37,
+        38
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-037-038.png",
+      "bytes": 383674,
+      "sha256": "a19e97ac7f26dbfcf7d2dfa7f86ea262383885abe07ed81f4b8ddb659f5c6068"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        39,
+        40
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-039-040.png",
+      "bytes": 390010,
+      "sha256": "7ba1cd1c54eb6072312d8d9e04caf0ce4649920503d3727727932873900e526a"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        41,
+        42
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-041-042.png",
+      "bytes": 272776,
+      "sha256": "d6704b7958e73484cbe9b37c4a2749c687d9038f28ecaa72bec63fc5da66c2b6"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        43,
+        44
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-043-044.png",
+      "bytes": 352364,
+      "sha256": "21d933fc9056bd010aad7e0a7f343fe6b5242b1030735755c562b57b8f52e200"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        45,
+        46
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-045-046.png",
+      "bytes": 265102,
+      "sha256": "863697544e605a057c248864a085c8af9f2ad246bcdae25380c2be1db123f27e"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        47,
+        48
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-047-048.png",
+      "bytes": 391130,
+      "sha256": "4786b62b1509e57b196aa3b94707db07645995f2ca2eff8fc5dbd50e44b38a80"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        49,
+        50
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-049-050.png",
+      "bytes": 328308,
+      "sha256": "6cdfabdd8e5c3cbcc34159e126480fc4c9447bb4970a8fd792212fedf0f412d1"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        51,
+        52
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-051-052.png",
+      "bytes": 459716,
+      "sha256": "7db5a8bf3482c2909358b0355abcc0fbec7f0dc805220067c255329a7eee393b"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        53,
+        54
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-053-054.png",
+      "bytes": 410731,
+      "sha256": "7cb2cf6f8b780664c3d5b7e14c230d5d51630f84e9908809453cf94da3923fe1"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        55,
+        56
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-055-056.png",
+      "bytes": 395470,
+      "sha256": "1f2a3a862d8ea2aac807286c44bd248c50e75ed3d2012061c93c2ae2a2d26084"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        57,
+        58
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-057-058.png",
+      "bytes": 375845,
+      "sha256": "aa6c067bf9662d2aa5a0550f224f62253301a1bf981ef0ef38da9b3c2eb46114"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        59,
+        60
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-059-060.png",
+      "bytes": 405956,
+      "sha256": "394337121cd7fa5b9e36869424f949d6e2756d939dcebec8735c577f8fcd1bf3"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        61,
+        62
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-061-062.png",
+      "bytes": 385665,
+      "sha256": "f3d3c1a008fb250b873637b297410bfd28bdba99bf73c321a059012241371e87"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        63,
+        64
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-063-064.png",
+      "bytes": 388129,
+      "sha256": "9d86f986e9ab2f11dfd34de5f1ddb2833bbc137dbfc4798cdb7dbc7d8539ba81"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        65,
+        66
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-065-066.png",
+      "bytes": 299385,
+      "sha256": "54d3438b38c29b29b00d03a0811a4b1e19cc4c830dc882d3a13fda1a7ce4de5d"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        67,
+        68
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-067-068.png",
+      "bytes": 322715,
+      "sha256": "ddc2321f55aa1455920f5f5c074cc371c669e6f8a4173314c01a5ae071553c0f"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        69,
+        70
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-069-070.png",
+      "bytes": 388236,
+      "sha256": "c61a608f4b5fd3449ba50d34894c99e76b89d84822a68fb98e551ec50c7c5ca9"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        71,
+        72
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-071-072.png",
+      "bytes": 394647,
+      "sha256": "10d5caabbac274e84c9de7b0ffb1cebf249fe7a05a5f1f8608345c446ded864d"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        73,
+        74
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-073-074.png",
+      "bytes": 396913,
+      "sha256": "0f56ba737869b7828022ce0dd5ce6841ae9400782cbd76b37ebb88e13e04f344"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        75,
+        76
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-075-076.png",
+      "bytes": 423370,
+      "sha256": "4f2e2afeca5eec252a61dafef99cab579817161738c3b9467f5d313c38a07880"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        77,
+        78
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-077-078.png",
+      "bytes": 409254,
+      "sha256": "f339374507af4af2b947a42901937e2ba3428333d32629fafb5bea4d4a27d1af"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        79,
+        80
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-079-080.png",
+      "bytes": 419700,
+      "sha256": "ffbac4920826c7a4388b3996e56d5b34e55e987edc3b8df56f047a1cf0728003"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        81,
+        82
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-081-082.png",
+      "bytes": 348227,
+      "sha256": "6255c3bac9b29e8ec81e0289563dc0dbb936adbd84d0b5075af581487370b316"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        83,
+        84
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-083-084.png",
+      "bytes": 380678,
+      "sha256": "9596488c0cbfafba9724e2ca72a2b7c3fe0ee95cba70280b1991c737b4415e1e"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        85,
+        86
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-085-086.png",
+      "bytes": 430953,
+      "sha256": "889a9d75b3fd086ce6621dcaa0e7a3d640eb6d9f81c7c93eb9a9edb7349ea3de"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        87,
+        88
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-087-088.png",
+      "bytes": 438106,
+      "sha256": "703b1555e335b22aab2a8d975a2095139a80e944b74ca84c57dc9740906771d5"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        89,
+        90
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-089-090.png",
+      "bytes": 411724,
+      "sha256": "7cef034eba064c0831c9ea05ec542a321fc3aa4e0e06aa6da387971e574984c6"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        91,
+        92
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-091-092.png",
+      "bytes": 417123,
+      "sha256": "e34f3f9ae6aea3a6d63add4afcf084c80980582f86b180ce236c15495538bc25"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        93,
+        94
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-093-094.png",
+      "bytes": 469632,
+      "sha256": "0f19e580c7412a8429faeeb9366f49b052a47c5b21714dd6fb3ad0dc62496a3c"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        95,
+        96
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-095-096.png",
+      "bytes": 514736,
+      "sha256": "eac2a08b36e9a0ecf9ffc5670d04d18cdabbdbbb4c5e5a864c7ab669b7f2e6d2"
+    },
+    {
+      "formato": "pdf",
+      "paginas": [
+        97
+      ],
+      "archivo": ".tools/consolidacion-tg2-2026-10-12/inspeccion/pdf-097-097.png",
+      "bytes": 238900,
+      "sha256": "9f9049f164c5970a6315ee48509c3c5f5187004a44a4cbe440dfb56f5f7066a1"
+    }
+  ],
+  "metodo": "Inspección de las 131 láminas con dos páginas a resolución original; las imágenes temporales permanecen en .tools.",
+  "limite": "Verificación de presentación y legibilidad; no es dictamen matemático independiente."
+}

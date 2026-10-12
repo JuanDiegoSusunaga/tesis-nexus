@@ -40,10 +40,10 @@ def verificar(raiz, manifiesto):
         if not (carpeta / '.git').exists():
             errores.append('Falta el repositorio Git: ' + carpeta.name)
     if not errores:
-        revision = subprocess.check_output(['git', '-C', str(codigo), 'rev-parse', 'HEAD'], text=True).strip()
+        revision = subprocess.check_output(['git', '-C', str(codigo), 'rev-parse', 'HEAD'], text=True, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0)).strip()
         if revision != datos['codigo']['commit']:
             errores.append('El commit de código difiere del registrado.')
-        estado = subprocess.check_output(['git', '-C', str(codigo), 'status', '--porcelain', '--untracked-files=all'], text=True)
+        estado = subprocess.check_output(['git', '-C', str(codigo), 'status', '--porcelain', '--untracked-files=all'], text=True, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
         if estado.strip():
             errores.append('El código tiene cambios locales o archivos nuevos sin registrar.')
     return {'edicion': datos['edicion'], 'archivos_comprobados': len(rutas),

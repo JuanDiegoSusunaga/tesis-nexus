@@ -1,9 +1,11 @@
-param([switch]$SoloInventario)
+param([switch]$SoloInventario, [string]$Documento, [string]$DestinoImagenes, [string]$Informe)
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $manuscriptPath = Join-Path $projectRoot 'Documentos\01-Manuscrito\Tesis-NEXUS-completa.docx'
 $renderDirectory = Join-Path $projectRoot '.tools\render-word'
+if (-not [string]::IsNullOrWhiteSpace($Documento)) { $manuscriptPath = [IO.Path]::GetFullPath((Join-Path $projectRoot $Documento)) }
+if (-not [string]::IsNullOrWhiteSpace($DestinoImagenes)) { $renderDirectory = [IO.Path]::GetFullPath((Join-Path $projectRoot $DestinoImagenes)) }
 $null = New-Item -ItemType Directory -Path $renderDirectory -Force
 $wordApp = $null
 $wordDocument = $null
@@ -71,6 +73,10 @@ try {
     $null = New-Item -ItemType Directory -Path $evidenceDirectory -Force
     $layoutReport | Add-Member -NotePropertyName fecha -NotePropertyValue $evidenceDate
     $reportPath = Join-Path $evidenceDirectory 'paginacion-word.json'
+    if (-not [string]::IsNullOrWhiteSpace($Informe)) {
+        $reportPath = [IO.Path]::GetFullPath((Join-Path $projectRoot $Informe))
+        $null = New-Item -ItemType Directory -Path (Split-Path -Parent $reportPath) -Force
+    }
     $layoutReport | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $reportPath -Encoding UTF8
     if ($SoloInventario) { Write-Output 'Inventario de maquetacion actualizado.'; return }
     Write-Output "Renderizando $pageCount paginas de Word."

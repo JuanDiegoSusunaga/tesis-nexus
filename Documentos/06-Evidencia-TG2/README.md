@@ -4,6 +4,7 @@ Las carpetas conservan resultados por fecha y etapa. Cada informe explica el alc
 
 | Fecha / carpeta | Contenido |
 |---|---|
+| `2026-10-12/Consolidacion-manuscrito/` | Comprobaciones Rust/Python, protección de antecedentes, fuentes y registro de la edición consolidada |
 | `2026-09-22/inventario.json` y `criterion/` | Recuperación inicial de 125 archivos y 29 casos históricos; no representa una ejecución nueva |
 | `2026-09-22/R1-correspondencia/` | Perfil ML-DSA, fuentes formales y contraste de hipótesis |
 | `2026-09-22/R2-monitor/` | Salud del flujo observado, bloqueo y recuperación |

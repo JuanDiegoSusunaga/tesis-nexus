@@ -45,7 +45,7 @@
 - **[NIST24]** NIST. *FIPS 204: Module-Lattice-Based Digital Signature Standard (ML-DSA)*. 13 de agosto de 2024. [Publicación oficial](https://csrc.nist.gov/pubs/fips/204/final). *(algoritmos 2, 6–8; apéndices C–D)*
 - **[NIST24-E26]** NIST. *FIPS 204 — Potential Updates (Errata)*. Hoja oficial actualizada el 31 de julio de 2026; consulta: 22 de septiembre de 2026. [Hoja de actualizaciones potenciales](https://csrc.nist.gov/files/pubs/fips/204/final/docs/fips-204-potential-updates.xlsx). *(la hoja distingue correcciones potenciales de cambios oficiales del estándar)*
 - **[FIPS205]** NIST. *FIPS 205: Stateless Hash-Based Digital Signature Standard (SLH-DSA)*. 2024.
-- **[FIPS206]** NIST. *FIPS 206: FN-DSA (Falcon)* — borrador (estandarización ~fin 2026).
+- **[FIPS206]** NIST. *FN-DSA (Falcon)* — esquema seleccionado cuya estandarización continúa en desarrollo [NIST-PQC26]. No se fija una fecha de finalización.
 - **[SP800-90B]** M. S. Turan et al. *NIST SP 800-90B: Recommendation for the Entropy Sources Used for Random Bit Generation*. NIST, 2018. *(min-entropía y pruebas de salud RCT/APT; complementan SP 800-90A/C sobre DRBG y construcciones RBG)*
 - **[SP800-108]** NIST. *SP 800-108: Recommendation for Key Derivation Using Pseudorandom Functions*.
 - **[RFC5869]** H. Krawczyk. *Cryptographic Extraction and Key Derivation: The HKDF Scheme*. CRYPTO 2010 (RFC 5869).
@@ -60,7 +60,7 @@
 
 ## Fuentes del estado del arte (industria; estado a mediados de 2026)
 
-- **[EthRoadmap26]** Ethereum Foundation. *Roadmap — Future-proofing: Quantum resistance* (Lean Consensus / leanXMSS; leanVM; abstracción de cuentas EIP-7702, EIP-8141). ethereum.org/roadmap/future-proofing/quantum-resistance. Acceso: jun. 2026.
+- **[EthRoadmap26]** Ethereum Foundation. *Roadmap — Future-proofing: Quantum resistance* (Lean Consensus / leanXMSS; leanVM; abstracción de cuentas EIP-7702, EIP-8141). ethereum.org/roadmap/security/quantum-resistance. Acceso: jun. 2026.
 - **[Fusaka25]** Ethereum Foundation. *Fusaka Mainnet — PeerDAS (EIP-7594)*. Nov. 2025.
 - **[Solana-QR26]** Solana / Anza. *Quantum Readiness* (Falcon; Winternitz Vault) y *Alpenglow* (Votor/Rotor, 2025–2026). Acceso: jun. 2026.
 - **[US10521584]** N. Sharifi Mehr (Amazon Technologies). *Computer Threat Analysis Service*. Patente US 10,521,584 B1, 2019. *(claves criptográficas señuelo detectadas por el backend al verificar la firma — prior art más cercano del Deception Engine)*
@@ -80,3 +80,8 @@
 
 - **[OSSL35]** OpenSSL Project. *EVP_PKEY-ML-DSA*, documentación de OpenSSL 3.5. [Fuente primaria](https://docs.openssl.org/3.5/man7/EVP_PKEY-ML-DSA/). Consulta: 22 de septiembre de 2026.
 - **[A+23]** S. Arranz-Olmos, G. Barthe, R. Gonzalez, B. Grégoire, V. Laporte, J.-C. Léchenet, T. Oliveira, P. Schwabe. *High-assurance zeroization*. IACR ePrint 2023/1713, versión revisada. [Fuente primaria](https://eprint.iacr.org/2023/1713).
+
+- **[GMW26]** A. Garreta, N. Mohnblatt, B. Wagner. *A Simplified Round-by-round Soundness Proof of FRI*. IACR ePrint 2025/1993, revisión publicada el 31 de marzo de 2026, portada fechada el 27 de marzo. [Fuente primaria](https://eprint.iacr.org/2025/1993). Teorema 5.2; copia y versión preservadas en el paquete de derivación por rondas de TG2.
+- **[NIST-PQC26]** NIST. *Post-Quantum Cryptography Project*. Estado de la estandarización de Falcon/FN-DSA y estándares FIPS 203–205. [Fuente primaria](https://csrc.nist.gov/projects/post-quantum-cryptography). Consulta: 12 de octubre de 2026.
+- **[Eth-PQ26]** Ethereum Foundation. *Post-quantum cryptography on Ethereum*. [Fuente primaria](https://ethereum.org/roadmap/security/quantum-resistance/). Consulta: 12 de octubre de 2026; hitos de hoja de ruta, no garantía de despliegue completo.
+- **[Anza-PQ26]** Anza. *Securing Solana Against a Powerful Quantum Adversary*. [Fuente primaria](https://www.anza.xyz/blog/securing-solana-against-a-powerful-quantum-adversary). Consulta: 12 de octubre de 2026; preparación de firmas poscuánticas.

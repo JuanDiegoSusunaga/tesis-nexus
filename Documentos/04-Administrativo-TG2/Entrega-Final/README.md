@@ -1,6 +1,6 @@
 # Índice de entrega TG2
 
-**Estado:** edición de trabajo organizada el 23 de septiembre de 2026, preparada para revisión. La aprobación académica de cierre y la fecha de entrega definitiva siguen por registrar.
+**Estado:** edición de trabajo consolidada el 12 de octubre de 2026, preparada para revisión. La aprobación académica de cierre y la fecha de entrega definitiva siguen por registrar.
 
 **Alcance vigente:** completar QROM del protocolo AIR/FRI queda como trabajo futuro por decisión del autor del 23 de septiembre. Los suplementos se conservan como investigación parcial y su conclusión deja de bloquear esta ruta de entrega.
 
@@ -15,7 +15,7 @@
 | Evidencia y fuentes por etapa | [Índice de evidencia](../../06-Evidencia-TG2/README.md) |
 | Código y reproducción | [Instrucciones](../../../scripts/README.md) |
 | Revisión matemática pendiente | [Preguntas M1–M6](../Avances/Revision-Matematica-S1-S3-2026-09-23.md) |
-| Derivaciones matemáticas reunidas | [Word para revisión](../Avances/Derivaciones-Matematicas-TG2-2026-09-23.docx) y [fuente](../Avances/Derivaciones-Matematicas-TG2-2026-09-23.md) |
+| Derivaciones matemáticas reunidas | [Word consolidado para revisión](../Avances/Derivaciones-Matematicas-TG2-2026-10-12.docx) y [fuente](../Avances/Derivaciones-Matematicas-TG2-2026-10-12.md) |
 | Complementos posteriores integrados en main | [Solidez por rondas](../Avances/Cierre-Matematico-2026-09-23/README.md) y [transferencia clásica ROM al protocolo](../Avances/Transferencia-ROM-2026-09-23/README.md), pendientes de dictamen |
 | Preparación de sustentación | [Guion](../Presentaciones/Guion-Sustentacion-TG2.md) |
 | Revisión interna posterior de ROM | [Potencial para nonces adaptativos y controles de premisas](../Avances/Revision-Critica-ROM-2026-09-23/README.md); dictamen externo pendiente |
@@ -24,7 +24,7 @@
 | Muestreo QROM y paso al verificador | [Expansión y reducción condicional](../Avances/Muestreo-QROM-2026-09-23/README.md); cota β de omisión o cola aún pendiente, 80 pruebas Python y 197 Rust |
 | Cota cuántica de cola | [Demostración propuesta por conteo](../Avances/Cola-QROM-2026-09-23/README.md); 144 perfiles y 96 Python/197 Rust. Omisión y dictamen pendientes |
 
-Se enlaza una sola edición del manuscrito; esta carpeta no duplica los archivos Word/PDF. El manifiesto vincula el commit de código con los hashes del manuscrito y de `06-Evidencia-TG2`. Los complementos posteriores de `Avances/` tienen sus propios registros `validacion.json`; todavía no están incorporados en el Word ni en el manuscrito. La revisión Git documental identifica el conjunto.
+Se enlaza una sola edición vigente del manuscrito; esta carpeta no duplica los archivos Word/PDF. El manifiesto vincula el commit de código con los hashes del manuscrito y de `06-Evidencia-TG2`. La derivación por rondas, la transferencia ROM y el potencial para nonces se incorporan a §§6.7.8–6.7.9 y al suplemento consolidado, como resultados propuestos pendientes de dictamen. Los paquetes originales y el Word del 23 de septiembre se conservan como antecedentes. La [revisión de esta consolidación](../Avances/Consolidacion-Manuscrito-TG2-2026-10-12.md) precisa los cambios y su evidencia.
 
 ## Verificación
 

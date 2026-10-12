@@ -291,7 +291,7 @@ def main():
     markdown = CARPETA / 'Tesis-NEXUS-completa.md'
     markdown.write_text(conjunto, encoding='utf-8')
     formato = 'markdown+tex_math_single_backslash-implicit_figures'
-    ast = json.loads(subprocess.check_output(['pandoc', str(markdown), '-f', formato, '-t', 'json'], text=True, encoding='utf-8'))
+    ast = json.loads(subprocess.check_output(['pandoc', str(markdown), '-f', formato, '-t', 'json'], text=True, encoding='utf-8', creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0)))
     nodos = list(recorrer(ast['blocks']))
     numero_tablas = sum(n.get('t') == 'Table' for n in nodos)
     if numero_tablas != len(tablas):
@@ -305,7 +305,8 @@ def main():
                               '--reference-doc=' + str(plantilla), '--resource-path=' + str(CARPETA),
                               '--toc', '--toc-depth=2',
                               '--metadata', 'lang=es', '--metadata', 'toc-title=Contenido'],
-                             text=True, encoding='utf-8', capture_output=True)
+                             text=True, encoding='utf-8', capture_output=True,
+                             creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
     if proceso.returncode or proceso.stderr.strip():
         raise RuntimeError('Pandoc requiere revisión: ' + proceso.stderr)
     formatear_docx(word)

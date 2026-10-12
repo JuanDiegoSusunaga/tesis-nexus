@@ -2,6 +2,14 @@
 
 Ejecutar desde la raíz de `Tesis`. Los scripts resuelven las rutas del proyecto a partir de su ubicación. El código Rust se clona en `nexus/` según el [README principal](../README.md).
 
+## Catálogo de afirmaciones
+
+```powershell
+python scripts/verificar_catalogo_validacion.py
+```
+
+Comprueba doce afirmaciones, dependencias sin ciclos, localizadores y hashes de nueve archivos de evidencia del [catálogo de validación](../Documentos/04-Administrativo-TG2/Avances/Catalogo-Validacion-2026-10-12/README.md). Solo requiere Python y no escribe archivos ni accede a la red. `--catalogo` permite comprobar otra copia del JSON. Un resultado correcto acredita integridad documental; la verdad matemática, la mecanización y el dictamen tienen estados independientes.
+
 ## 1. Consultar la versión conservada
 
 ```powershell
@@ -168,3 +176,12 @@ python scripts/verificar_cola_qrom_tg2.py --salida .tools/cola-qrom-repeticion/v
 Se calculan 144 perfiles, 16 no triviales, mediante enteros y redondeos superiores. Dieciséis tests nuevos contrastan 1.792 bloques, 20 matrices unitarias y las hipótesis del conteo. La regresión reúne **96 Python, 197 Rust, check/build y manifiesto de 897 archivos**; protege TG1 y los seis paquetes matemáticos anteriores. Las salidas deben ser nuevas y Cargo requiere escritura en `C:/tmp/nexus-target`.
 
 El análisis y las pruebas usan la biblioteca estándar. Solo `recopilar_fuentes_cola_qrom_tg2.py` requiere red y PyMuPDF 1.28.2 en el entorno aislado; conserva CFHL21 v4 con versión y hashes. Los cortes mayores que 512 son una extensión matemática del análisis, no ejecuciones nuevas del expansor completo. Se contrasta una cadena artificial registrada de 1.024 pasos. La demostración requiere revisión; las cotas de cola no son tasas de falsificación.
+
+## Derivaciones consolidadas de octubre
+
+```powershell
+python scripts/generar_derivaciones_docx.py --fuente Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-10-12.md --revision .tools/derivaciones-octubre
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/actualizar_derivaciones_word.ps1 -Documento Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-10-12.docx -CarpetaTrabajo .tools/derivaciones-octubre/render
+```
+
+El generador comprueba celdas y ecuaciones antes de publicar. El script de renderizado acepta `-Documento`, `-DestinoImagenes` e `-Informe` para revisar esa copia. Los valores por defecto preservan el flujo histórico; especificar las rutas de la nueva edición conserva el suplemento anterior.

@@ -709,7 +709,7 @@ Si $u$ está lejos, aceptar requiere el error del FRI de traza. Si está cerca, 
 
 Se eligió $\delta_t=\delta_c=1/8$, por lo que $d=1/8+1/(8T)$. Las rondas incluyen la consulta final; la Tabla 6.18 cuenta solo capas. Los valores se redondean hacia arriba desde fracciones exactas. El script de análisis verifica nueve tamaños, unicidad y campo base en ejemplos exhaustivos pequeños, localidad, muestreo y normalización del plegado. La suite Rust conserva 197 pruebas; esta etapa no altera el protocolo.
 
-**Límite de la conclusión.** Son cotas superiores conservadoras del modelo ideal, no tasas observadas de ataque ni límites inferiores de vulnerabilidad. El argumento no acredita 100 bits y no cuantifica la seguridad del ejecutable. Quedan pendientes la compilación Merkle/Fiat–Shamir, las consultas adaptativas y pérdidas ROM/QROM, el tratamiento de grinding y la revisión independiente. No se demuestra extracción eficiente ni conocimiento cero.
+**Límite de la conclusión.** Son cotas superiores conservadoras del modelo ideal, no tasas observadas de ataque ni límites inferiores de vulnerabilidad. El argumento no acredita 100 bits y no cuantifica la seguridad del ejecutable. La derivación histórica deja esas obligaciones abiertas; §§6.7.8–6.7.10 incorporan los complementos posteriores por rondas y ROM con su estado de revisión, y mantienen QROM como trabajo futuro. No se demuestra extracción eficiente ni conocimiento cero.
 
 ### 6.7.6 Vinculación Merkle y auditoría Fiat–Shamir
 
@@ -739,7 +739,102 @@ En Goldilocks, $r=p-2^{32}$ y $\Delta_F\approx1{,}26218\times10^{-29}$. La varia
 | AIR y dos FRI | Cota ordinaria del modelo ideal | Propiedades y errores del protocolo por ronda |
 | ROM/QROM | Teorema de compilación identificado | Presupuesto de consultas, grinding y pérdidas concretas |
 
-El Teorema 3.15 de [BGK+23, p. 25] exige propiedades por ronda y una transformación BCS determinada. La cota ordinaria $E_{\mathrm{ideal}}$ de §6.7.5 no sustituye automáticamente su error por ronda. El teorema para FRI aislado tampoco valida por sí solo el AIR y ambos recorridos con consulta compartida. La auditoría precisa estas condiciones; no establece una garantía ROM/QROM del ejecutable, 100 bits ni conocimiento cero. Se preparó un paquete para revisión matemática de S1–S3; el dictamen independiente permanece pendiente.
+El Teorema 3.15 de [BGK+23, p. 25] exige propiedades por ronda y una transformación BCS determinada. La cota ordinaria $E_{\mathrm{ideal}}$ de §6.7.5 no sustituye automáticamente su error por ronda. El teorema para FRI aislado tampoco valida por sí solo el AIR y ambos recorridos con consulta compartida. La auditoría por sí sola no establece una garantía ROM/QROM del ejecutable, 100 bits ni conocimiento cero. La transferencia posterior propuesta en ROM clásico se integra en §6.7.9 con sus hipótesis y dictamen pendiente. Se preparó un paquete para revisión matemática de S1–S3; el dictamen independiente permanece pendiente.
+
+---
+
+### 6.7.7 Revisión de las afirmaciones heredadas de TG1
+
+La validación del Objetivo 4 revisa las afirmaciones del prototipo heredado sin modificar el alcance ni los entregables administrativos aprobados de TG1. En esta edición de TG2, el diseño de los capítulos 3 y 4 se interpreta con las condiciones de correspondencia de R1 y los resultados de §6.7. Una decisión de arquitectura, una operación de firma que funciona y una demostración de seguridad son aportes con obligaciones distintas.
+
+La afirmación histórica de aproximadamente 100 bits del STARK combinaba errores de campo, consultas y trabajo del nonce sin una transferencia completa al canal concreto. El campo de extensión amplía el espacio de retos, pero no fija por sí solo la solidez del verificador. El trabajo tampoco impide volver a intentar una transcripción: su efecto depende del presupuesto y del modelo adversario. Por estas razones, esa cifra se conserva como antecedente de diseño y no como garantía vigente.
+
+Las pruebas heredadas aceptan los tres oráculos alejados de §6.7.3; sus enunciados públicos conservan una traza válida. Este resultado refuta la premisa de proximidad utilizada en aquel argumento, sin demostrar una falsificación de un enunciado falso. La variante vinculada TG2 v1 incorpora un FRI de traza y una raíz común con AIR; el corpus comprueba esa diferencia de comportamiento. El AIR evalúa una recurrencia ilustrativa y no la verificación de ML-DSA ni la lógica completa de una aplicación.
+
+**Tabla 6.21 — Afirmaciones heredadas y alcance de la revisión TG2.**
+
+| Afirmación de diseño o del prototipo | Conclusión de validación TG2 | Referencia |
+|---|---|---|
+| STARK endurecido a aproximadamente 100 bits | Garantía no acreditada; cotas específicas de modelo y presupuesto | §§6.7.8–6.7.9 |
+| Aceptación implica proximidad de la traza | Premisa refutada para el legado; variante vinculada comprobada en el corpus | §§6.7.3–6.7.4 |
+| PoC proporciona conocimiento cero | El testigo de 16 filas es recuperable; ocultación pendiente | §6.7.1 |
+| La PoC valida transacciones completas | AIR demostrativo; verificación ML-DSA y lógica de aplicación sin aritmetizar | §§6.6.5 y 6.7.4 |
+| Firma funcional implica garantía concreta de inforjabilidad | Perfil identificado; correspondencia, semillas, codificación y errores requieren R1-A–E | §6.4 |
+| Hash de la clave pública impide toda recuperación | Evita exposición directa mientras la clave no se revele; no demuestra dureza de preimagen ni seguridad integral | §§1.2 y 6.4.3 |
+
+### 6.7.8 Solidez por rondas del protocolo ideal
+
+La derivación posterior desarrolla una función de estado para AIR, FRI de traza, FRI de composición y consulta compartida. Su punto de partida es el enfoque de solidez por rondas de [GMW26, Teorema 5.2]; se utiliza un lema elemental de acuerdo suficiente para los radios de NEXUS, sin atribuir a este trabajo el resultado general del artículo. La demostración escrita propuesta está pendiente de revisión independiente y no está mecanizada en Lean.
+
+**Hipótesis.** Sea $p=2^{64}-2^{32}+1$, $K=F_{p^2}$, $N=8T$, $M=N/2$, con $T$ potencia de dos entre 16 y 4096. El oráculo de traza $u$ se fija antes de los tres coeficientes AIR; cada capa FRI queda fijada antes de su reto uniforme fresco. La composición puede depender de la historia previa, las constantes finales preceden al muestreo y se eligen $q=40$ parejas opuestas distintas, uniformemente y sin reemplazo. Las aperturas son evaluaciones de oráculos completos inmutables. Un enunciado falso carece de traza válida sobre el campo base.
+
+Para los radios $\delta_t=\delta_c=1/8$, se verifica la unicidad $2\delta_t<(N-T+1)/N$ y, en cada plegado, $(1-3\delta_i)n_j>d_{i,j+1}-1$. El lema elemental conserva el mismo conjunto de acuerdo de las dos funciones del plegado, excepto para a lo sumo $n_j$ retos; su error condicional queda acotado por $n_j/p^2$. La ausencia de esas excepciones permite remontar los conjuntos de acuerdo desde la constante final. Una consulta compartida se contabiliza una sola vez, tomando el máximo del caso activo, sin multiplicar errores de ambos FRI.
+
+Definimos, con numerador cero si no hay suficientes parejas,
+
+$$
+H(M,q,x)=\frac{\binom{M-\lceil xM\rceil}{q}}{\binom Mq},\qquad h_T=H(4T,40,1/8).
+$$
+
+La función de estado tiene un evento excepcional absorbente y una cota por ronda. Para este perfil, la cota escogida es $\varepsilon_{\mathrm{rbr}}=h_T$; esta igualdad identifica la cota empleada, no el error óptimo del protocolo. La cuenta ordinaria refinada obtiene
+
+$$
+E_{\mathrm{ideal}}^{\mathrm{nuevo}}\le h_T+\frac{8T-3}{p^2}.
+$$
+
+**Tabla 6.22 — Cotas superiores de la derivación ideal propuesta.**
+
+| Filas $T$ | Cota ideal anterior | Cota ideal refinada |
+|---:|---:|---:|
+| 16 | 0,052736 | 0,000166165 |
+| 64 | 0,074258 | 0,002934060 |
+| 256 | 0,095099 | 0,004282720 |
+| 4096 | 0,134071 | 0,004757331 |
+
+Los decimales se redondean hacia arriba desde fracciones exactas. La mejora procede del argumento por casos; el protocolo y sus parámetros no cambian. Estos límites no son tasas observadas de ataque, ni garantizan SHA3 real. La derivación ideal ordinaria de §6.7.5 conserva su valor como antecedente; la transferencia siguiente desarrolla su propio registro hash y no sustituye automáticamente un error ordinario en un compilador Fiat–Shamir.
+
+### 6.7.9 Transferencia propuesta al protocolo concreto en ROM clásico
+
+El objeto es `NEXUS-TG2-LINKED-FRI-v1`, según el análisis del código `01dcde960402b6c60a19242b7ae3d6ac3d82a518` y las fuentes preservadas. Cada llamada a SHA3-256 se modela como una consulta a un único oráculo aleatorio clásico de 256 bits. El adversario dispone de $Q$ consultas, incluidas preparación, compromisos y búsqueda de nonces; entrega un enunciado y una prueba finales en un perfil fijo. No se admite ayuda correlacionada con el oráculo sin contabilizar. Esta demostración propuesta no establece seguridad incondicional de SHA3 ni una reducción QROM.
+
+El registro hash extrae y congela los vectores cuando cada raíz se marca antes de su reto. Fuera del evento excepcional del grafo, una apertura aceptada coincide con ese vector. La gramática se trata conjuntamente: no se presupone una separación global de roles, pues las entradas de nodo y enunciado pueden coincidir en 65 bytes. La masa puntual máxima de un reto de extensión derivado de bloques ideales es
+
+$$
+\mu=\left(\frac{\lfloor2^{128}/p\rfloor+1}{2^{128}}\right)^2.
+$$
+
+Sea $m=3+\log_2T+\log_2(2T)$, $g$ el trabajo del nonce y $S=Q+V_T$. El análisis fija el corte auxiliar $R=512$ para la selección, con
+
+$$
+\tau_T=\min\left\{1,\binom{M}{39}\left(\frac{39}{M}\right)^{512}\right\}.
+$$
+
+Aquí $V_T$ acota las consultas hash del verificador truncado y $B_T$ las ocurrencias de digests de una prueba con forma admitida. Sus cuentas incluyen aperturas Merkle, canal y extracción de índices, según la derivación preservada. El Rust v1 conserva su selector original; el corte pertenece al análisis y al verificador Python de referencia. La fórmula propuesta es
+
+$$
+\begin{aligned}
+E_{\mathrm{ROM}}(T,g,Q)&\le\min\left\{1,
+\frac{S(49S+B_T)}{2^{256}}\right.\\
+&\left.\quad +(Q+m)\frac{N\mu}{2}
++(Q+1)2^{-g}(h_T+\tau_T)\right\}.
+\end{aligned}
+$$
+
+La revisión interna posterior justifica el término de candidatos mediante potencial. Cada candidato se cobra antes de su primera respuesta, con un conjunto fijo de parejas buenas. Respuestas frescas preservan el potencial en esperanza; abandono, intercalación, duplicados y la verificación final no incrementan gratuitamente la cuenta. Condicionar a haber encontrado un nonce válido elimina de esa probabilidad condicionada el factor $2^{-g}$: el factor se cobra al iniciar el intento. El argumento admite a lo sumo $Q+1$ inicios relevantes y trata la cola con un potencial separado.
+
+Para $T=4096$, $g=20$ y $Q=2^{20}$, la cota superior conservada es 0,004757335454. Con $Q=2^{28}$ llega a uno y deja de ser informativa. Ningún valor constituye una tasa de ataques ni demuestra que el adversario alcance esa probabilidad. Los parámetros actuales no acreditan 100 bits.
+
+El verificador independiente Python evalúa formato, canal, Merkle, composición AIR y ambos FRI sobre los 14 certificados preservados. Coincide con Rust: acepta ocho honestos y rechaza seis alejados. La revisión de nonces añade 96 escenarios pequeños y controles negativos de las premisas. Estas comprobaciones finitas apoyan la correspondencia y detectan errores; no sustituyen la demostración general ni el dictamen externo M1–M6.
+
+### 6.7.10 Alcance QROM y trazabilidad de las afirmaciones
+
+Los suplementos QROM conservan una reducción parcial basada en el trabajo, un extractor sin orden, una reducción condicional al verificador y una cota propuesta para la cola de índices. La omisión de parejas incorrectas $\beta^S$ sigue sin una cota útil demostrada. El límite de cola no resuelve esa omisión y sus exponentes no representan bits de seguridad global de AIR/FRI. Las hipótesis, el cambio de juego y las pérdidas cuánticas requieren revisión propia.
+
+Por decisión del autor del 23 de septiembre, completar QROM de AIR/FRI es trabajo futuro. La consolidación documental no reanuda esa investigación ni convierte sus obligaciones en requisitos nuevos del cierre. R1 sobre ML-DSA mantiene su alcance específico.
+
+El catálogo complementario relaciona doce afirmaciones con sus hipótesis, dependencias y evidencia identificada por SHA-256. Distingue la integridad documental, los contrastes empíricos, una derivación propuesta, una prueba mecanizada y el dictamen académico. Su comprobador valida referencias y archivos; no decide verdad matemática. La ejecución de Lean/Comparator permanece pendiente y el resultado 279 de OpenAI Math conserva su estado de candidato bibliográfico, sin fundamentar garantías de NEXUS.
+
+Los argumentos completos, sus cálculos y el registro de resolución M1–M6 se conservan en los paquetes de derivaciones de TG2. La edición de trabajo integra los resultados disponibles con ese estado de revisión; su inclusión no constituye aprobación del director.
 
 ---
 
@@ -750,6 +845,8 @@ Este capítulo reúne los fundamentos de seguridad, el análisis de complejidad 
 1. **Fundamentos de seguridad (Obj. 4.1).** Se identifican MLWE, SelfTargetMSIS y MSIS, las correcciones de las pruebas citadas y las condiciones de las reducciones de peor caso. R1 identifica el perfil real, reproduce una pérdida de referencia y descarta la aplicación directa de JMW24 a sus parámetros. Se explicitan los pasos restantes entre plantilla y código; no se presenta una prueba concreta nueva ni una demostración general de dureza cuántica.
 2. **Análisis de complejidad (Obj. 4.2).** Las operaciones del esquema tienen costo $O(k\ell\,n\log n)$ (dominado por la NTT, $O(n\log n)$ por multiplicación), con $\mathsf{Sign}$ esperado constante en iteraciones; las constantes medidas y el costo de datos dependen del perfil. La amortización queda condicionada a disponibilidad, prueba de la lógica pertinente y costo del prover (§6.6.5).
 3. **Validación empírica (Obj. 4.2).** Las series históricas H1/H2 se conservan identificadas. R4 y su complemento añaden 29 casos Criterion, 40 mediciones STARK y 40 repeticiones multinúcleo con dispersión y fuentes preservadas. Los dos bloqueos iniciales se resolvieron tras el cambio de Windows por el autor. La cifra multinúcleo histórica conserva su limitación temporal y se presenta una nueva serie corregida. Las 197 pruebas delimitan el perfil de firma, el verificador y la gestión de claves sin acreditar una blockchain completa ni conocimiento cero del PoC.
+
+Las derivaciones por rondas y ROM clásico se incluyen como resultados propuestos bajo hipótesis explícitas. La transferencia QROM completa de AIR/FRI queda como trabajo futuro; R1 mantiene sus obligaciones propias. El catálogo enlaza las afirmaciones y la evidencia sin mecanizar las demostraciones.
 
 El cierre del **Objetivo 4** requiere completar la trazabilidad de las hipótesis formales y preservar la evidencia reproducible de los experimentos. Los resultados medidos corresponden a componentes; su extensión a la arquitectura completa depende de la integración y de los supuestos declarados.
 

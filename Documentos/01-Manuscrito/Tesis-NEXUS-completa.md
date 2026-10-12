@@ -1,25 +1,39 @@
 ---
 title: "Arquitectura Blockchain Dual NEXUS: Un Modelo Matemático-Computacional para Sistemas Seguros y Resilientes Post-Cuánticos"
 author: "Juan Diego Susunaga Velasquez"
-date: "Universidad del Rosario — Escuela de Ciencias e Ingeniería · Programa de Matemáticas Aplicadas y Ciencias de la Computación (MACC) · Director: Pedro Mario Wightman Rojas · 23/09/2026"
+date: "Universidad del Rosario — Escuela de Ciencias e Ingeniería · Programa de Matemáticas Aplicadas y Ciencias de la Computación (MACC) · Director: Pedro Mario Wightman Rojas · 12/10/2026"
 lang: es
 ---
 
 # Resumen {.unnumbered}
 
-La inminente llegada de computadores cuánticos amenaza las firmas digitales (RSA, ECC) que autentican las operaciones de los sistemas digitales: el algoritmo de Shor permitiría recuperar claves privadas a partir de las públicas expuestas y **falsificar firmas**, y el fenómeno *Harvest Now, Decrypt Later* hace urgente la migración a criptografía post-cuántica. Este trabajo presenta **NEXUS**, un **modelo matemático-computacional y prototipo de referencia** que asegura las firmas digitales de sistemas en general mediante el esquema post-cuántico **CRYSTALS-Dilithium** (NIST FIPS 204), sobre una **arquitectura dual-chain** (capa de anclaje L1 + capa de ejecución L2). Se cuantifica el aumento del tamaño de firma y se estudia su amortización mediante pruebas por lote, condicionada a la disponibilidad de datos, al costo del probador y a la validación de la lógica de aplicación. Las series experimentales trazables corresponden a componentes, con repetición y dispersión; no miden una aplicación completa. El PoC STARK utiliza un AIR ilustrativo, sin garantía de conocimiento cero ni enlace de raíces arbitrarias de 256 bits. La auditoría distingue proximidad FRI, parámetros efectivos y obligaciones de composición; no acredita la cifra histórica de 100 bits. Se desarrolla un argumento algebraico condicional y se refuta que la aceptación heredada implique la proximidad de traza propuesta. Un control exhaustivo y una variante experimental con FRI de traza vinculada al AIR detectan los casos construidos. Se deriva una cota conservadora de composición bajo oráculos y retos ideales; la auditoría Merkle/Fiat–Shamir precisa las obligaciones pendientes para la solidez del ejecutable. La validación de TG2 examina los fundamentos de inforjabilidad de Dilithium, las correcciones de sus pruebas en la literatura y las condiciones para aplicarlas a ML-DSA; R1 identifica el perfil implementado, contrasta parámetros y pérdidas y explicita los pasos de prueba todavía pendientes. Se desarrolla además un análisis de complejidad computacional. Se modela además la gestión activa del ciclo de vida de claves mediante min-entropía, pruebas de salud de NIST SP 800-90B y rotación orientada a la secrecia hacia adelante; el gestor del prototipo incorpora monitor, recuperación, rotación efectiva y registro local autenticado, comprobados mediante pruebas de software. La reexpansión por firma se evalúa como política separada: conservar la semilla mantiene la capacidad de firma y reducir residencia no acredita menor riesgo por sí solo. La custodia durable, la vinculación de una fuente concreta y la integración del registro en L2/L1 requieren validación adicional. La comparación con propuestas del estado del arte aporta contexto; la validación del prototipo se apoya en su propia evidencia y límites.
+NEXUS es un modelo matemático-computacional y prototipo de referencia para estudiar la autenticación y la gestión de claves frente a amenazas poscuánticas en sistemas digitales. Emplea ML-DSA, derivado de CRYSTALS-Dilithium y estandarizado en FIPS 204, y una arquitectura blockchain dual como modelo de ejecución y anclaje. La amortización del tamaño de firmas mediante pruebas por lote depende de la disponibilidad de datos, del costo del probador y de la aritmetización de la lógica de aplicación.
+
+La validación TG2 identifica el perfil de firma implementado, contrasta los parámetros y las reducciones citadas, y explicita las obligaciones para obtener una garantía concreta de inforjabilidad. El gestor incorpora min-entropía, pruebas de salud NIST SP 800-90B, recuperación, rotación efectiva y un registro local autenticado. La protección de la semilla, la calificación de una fuente concreta y las integraciones de custodia y anclaje permanecen pendientes.
+
+Las mediciones trazables evalúan componentes con repeticiones y dispersión. La revisión de la PoC STARK refuta una premisa de proximidad de la traza heredada y comprueba una variante que vincula FRI de traza con AIR mediante una raíz común. Se integran una derivación ideal por rondas y una transferencia propuesta en ROM clásico con consultas hash y nonces adaptativos, pendientes de dictamen independiente. La transferencia QROM completa de AIR/FRI queda como trabajo futuro. El catálogo relaciona afirmaciones, hipótesis y evidencia sin mecanizar las demostraciones.
+
+El aporte consiste en el modelo, la implementación de componentes y su evaluación delimitada. El AIR ilustrativo no valida firmas ML-DSA ni aplicaciones completas; los resultados no acreditan 100 bits, conocimiento cero, seguridad incondicional de SHA3 ni una blockchain operativa.
 
 **Palabras clave:** criptografía post-cuántica, blockchain, CRYSTALS-Dilithium, Module-LWE, arquitectura dual-chain, seguridad de sistemas, validación formal.
 
 # Abstract {.unnumbered}
 
-The imminent arrival of quantum computers threatens the digital signatures (RSA, ECC) that authenticate operations in digital systems: Shor's algorithm would recover private keys from exposed public keys and **forge signatures**, and the *Harvest Now, Decrypt Later* threat makes migration to post-quantum cryptography urgent. This work presents **NEXUS**, a **mathematical-computational model and reference prototype** that secures digital signatures for systems across application domains using the post-quantum scheme **CRYSTALS-Dilithium** (NIST FIPS 204) over a **dual-chain architecture** (anchor layer L1 + active execution layer L2). The increase in signature size is quantified and its amortization through batch proofs is studied, subject to data availability, prover cost, and validation of application logic. Traceable experimental series measure individual components with repetitions and dispersion; they do not measure a complete application. The STARK proof of concept uses an illustrative AIR, without a zero-knowledge guarantee or binding of arbitrary 256-bit roots. The audit distinguishes FRI proximity, effective parameters, and composition obligations; it does not establish the historical 100-bit claim. A conditional algebraic argument is developed, and legacy acceptance is shown not to imply the proposed trace proximity. An exhaustive check and an experimental variant with trace FRI bound to the AIR detect the constructed cases. A conservative composition bound is derived under ideal oracles and challenges; a Merkle/Fiat–Shamir audit identifies the outstanding obligations for executable soundness. The TG2 validation examines the foundations of Dilithium unforgeability, subsequent corrections to its security proofs, and the conditions required to apply them to ML-DSA; R1 identifies the implemented profile, checks parameters and reduction losses, and states the remaining proof obligations. A computational-complexity analysis is also developed. Active key-lifecycle management is also modeled using min-entropy, NIST SP 800-90B health tests, and rotation intended to provide forward secrecy; the prototype key manager includes monitoring, health recovery, effective key rotation, and a locally authenticated audit log, checked through software tests. Re-expansion per signature is assessed as a separate policy: retaining the seed preserves signing capability, and reducing residency alone does not establish lower risk. Durable custody, binding to a concrete entropy source, and integration of the registry into L2/L1 require further validation. Comparison with proposals in the literature provides context; validation of the prototype rests on its own evidence and limitations.
+NEXUS is a mathematical-computational model and reference prototype for studying authentication and key management under post-quantum threats in digital systems. It uses ML-DSA, derived from CRYSTALS-Dilithium and standardized in FIPS 204, with a dual blockchain architecture as an execution and anchoring model. Amortizing signature size through batch proofs depends on data availability, prover cost, and arithmetization of application logic.
+
+The TG2 validation identifies the implemented signature profile, checks parameters and cited reductions, and states the obligations for a concrete unforgeability guarantee. The key manager implements min-entropy monitoring, NIST SP 800-90B health tests, recovery, effective key rotation, and a locally authenticated audit log. Seed protection, qualification of a concrete entropy source, and durable custody and anchoring integrations remain pending.
+
+Traceable measurements evaluate individual components with repetitions and dispersion. The STARK proof-of-concept review refutes a proposed proximity premise for the legacy trace and checks a variant that binds trace FRI to AIR through a shared root. An ideal round-by-round derivation and a proposed classical-ROM transfer are integrated, accounting for hash queries and adaptive nonces; both remain subject to independent mathematical review. Full QROM transfer for AIR/FRI remains future work. A catalogue links claims, assumptions, and evidence without mechanizing the proofs.
+
+The contribution comprises the model, component implementation, and evaluation within stated limits. The illustrative AIR does not validate ML-DSA signatures or complete applications. The results do not establish 100-bit security, zero knowledge, unconditional SHA3 security, or an operational blockchain.
 
 **Keywords:** post-quantum cryptography, blockchain, CRYSTALS-Dilithium, Module-LWE, dual-chain architecture, systems security, formal validation.
 
 # Alcance de la edición TG2 {.unnumbered}
 
 Esta edición presenta NEXUS como un modelo para sistemas en general que requieren autenticación de operaciones, integridad de registros y gestión de claves. La arquitectura blockchain dual constituye el modelo y el prototipo de referencia utilizados para estudiar esos requisitos. Se mantienen los cuatro objetivos técnicos; los capítulos 1–4 actualizan el dominio de aplicación conforme a la aclaración del autor y conservan identificados los resultados históricos de TG1. La aplicabilidad a distintos dominios no equivale a haber validado una implementación en cada uno de ellos. Los capítulos 5–7 actualizan el estado técnico de TG2: el gestor de claves y su registro local están implementados y probados, con integración de despliegue pendiente; la validación formal y experimental conserva las obligaciones indicadas en los capítulos respectivos. El presupuesto de seguridad del diseño STARK y las cifras de series anteriores no constituyen una garantía de la implementación completa; los límites vigentes se detallan en §6.7. La aprobación de las propuestas por el director se distingue de su ejecución técnica.
+
+Esta edición de TG2 integra los complementos escritos por rondas y ROM con sus hipótesis y estado de revisión. Las precisiones de los capítulos 1–4 delimitan la interpretación de antecedentes dentro del manuscrito vigente; los documentos administrativos y entregables aprobados de TG1 conservan su contenido. No se atribuye la aprobación previa a estas derivaciones posteriores.
 
 # Capítulo 1 — Introducción
 
@@ -41,21 +55,21 @@ Una validación de seguridad requiere un modelo de amenaza **preciso**. NEXUS di
 
 **(A) Amenaza a la confidencialidad (HNDL en sentido estricto).** Datos cifrados con un esquema clásico y cosechados hoy podrían descifrarse en el futuro. Mitigar esto requiere un **mecanismo de encapsulado de claves (KEM) post-cuántico** (p. ej. ML-KEM / Kyber, FIPS 203). **Esta amenaza queda fuera del alcance** de esta tesis, que se centra en las firmas; se enuncia como trabajo futuro (Cap. 7).
 
-**(B) Amenaza a la autenticación (el foco de NEXUS).** En una blockchain, la **clave pública** de una cuenta queda **expuesta** (almacenada en cadena, o revelada al firmar una transacción). Un adversario cuántico que observe esa clave pública puede, mediante Shor, **recuperar la clave privada** y con ella **falsificar firmas**: autorizar operaciones ilegítimas, suplantar identidades o alterar registros. **Este es el activo crítico que NEXUS protege**, sustituyendo ECDSA por un esquema de firma post-cuántico (CRYSTALS-Dilithium, Cap. 4) cuya in-forjabilidad se valida formalmente (Cap. 6).
+**(B) Amenaza a la autenticación (el foco de NEXUS).** Una clave pública clásica expuesta permite a un adversario con capacidad cuántica suficiente aplicar Shor a los problemas de factorización o logaritmo discreto y falsificar firmas. NEXUS estudia la sustitución de ECDSA por ML-DSA, derivado de CRYSTALS-Dilithium (Cap. 4). La validación de sus fundamentos y las obligaciones para obtener una garantía concreta de la implementación se presentan en §6.4; el funcionamiento de la API no constituye por sí solo una prueba de inforjabilidad.
 
-**Adversario.** Se considera un adversario con capacidad de cómputo cuántico (incluido el acceso al oráculo de hash en superposición, QROM, Cap. 6), capaz de observar todos los datos públicos de la cadena. **No** se consideran (fuera de alcance) los ataques de implementación (canales laterales, fallos) ni la seguridad del consenso (que se asume honesto-mayoritario; Cap. 3, §3.10).
+**Adversario.** El análisis de las firmas considera los modelos clásicos y cuánticos de las reducciones citadas, incluido QROM cuando corresponde a R1. Para AIR/FRI se distingue la derivación interactiva ideal de la transferencia propuesta en ROM clásico (§§6.7.8–6.7.9); su extensión QROM completa permanece como trabajo futuro (§6.7.10). Los canales laterales, fallos de implementación y el consenso operativo quedan fuera de esta validación; el diseño asume las condiciones de consenso de §3.10.
 
-**Mitigación complementaria — revelar-al-firmar.** Como defensa en profundidad frente a la amenaza (B), NEXUS deriva la **dirección como un hash de la clave pública** ($\text{dirección} = H(pk)$). Así, mientras la clave pública de una identidad no se haya revelado, el adversario solo ve un hash y **no puede recuperar la clave** (Shor opera sobre la clave pública, no sobre su hash). Esto **retrasa** la exposición cuántica y reduce la superficie de "harvest now", complementando a la PQC. *(Refinamiento: minimizar la exposición de la clave pública en las transacciones, no solo en la dirección.)*
+**Mitigación complementaria de la exposición.** Derivar la dirección como $H(pk)$ evita mostrar directamente la clave pública mientras no se revele por otro canal. Esta condición deja de cumplirse cuando la transacción transmite la clave. La protección depende también de la resistencia de preimagen del hash y del protocolo de uso; no garantiza que la clave sea irrecuperable ni sustituye una firma post-cuántica. El modelo de identidad estable y claves por época se desarrolla en §3.6.
 
 ## 1.3 El problema: seguridad post-cuántica a un costo tractable
 
-Adoptar firmas post-cuánticas no es gratis. Una firma Dilithium es **~50× más grande** que una firma ECDSA (3 309 B vs. 64 B). Aplicada de forma ingenua sobre una blockchain de cadena única, esa inflación de datos **degrada el rendimiento en ~20×** (Cap. 3, §3.3), reabriendo el **trilema de la blockchain** (escalabilidad, seguridad, descentralización) que se creía en vías de solución.
+Adoptar firmas post-cuánticas no es gratis. Una firma Dilithium es **~50× más grande** que una firma ECDSA (3 309 B vs. 64 B). Aplicada de forma ingenua sobre una blockchain de cadena única, el modelo limitado por ancho de banda estima una reducción de rendimiento de orden 20× bajo sus tamaños y capacidad asumidos (Cap. 3, §3.3); no es una medición de un sistema completo, reabriendo el **trilema de la blockchain** (escalabilidad, seguridad, descentralización) que se creía en vías de solución.
 
 El problema central de esta tesis es, por tanto:
 
 > **¿Cómo proteger las firmas digitales de sistemas en general frente a la amenaza cuántica y gestionar su sobrecosto mediante una arquitectura blockchain dual escalable?**
 
-La respuesta de NEXUS es **arquitectónica**: una estructura **dual-chain** (L1 de anclaje + L2 de ejecución) que **amortiza** el sobrecosto de la PQC —ejecutando y probando las firmas fuera de cadena y publicando en L1 solo un compromiso— hasta volver el tamaño de la firma irrelevante para la capa de anclaje (Cap. 3, §3.4). Como corolario, la capa de verificación debe ser ella misma post-cuántica (STARK, no Groth16; Cap. 3, §3.5).
+La respuesta de NEXUS es un modelo de arquitectura dual: L2 ejecuta operaciones y L1 recibe compromisos y pruebas por lote. La amortización depende de aritmetizar la lógica pertinente, disponer de los datos y asumir el costo de generación de las pruebas (§6.6.5). La PoC actual evalúa una recurrencia ilustrativa y no demuestra todavía la verificación de firmas ML-DSA dentro de ese flujo completo.
 
 ## 1.4 Propuesta y contribución
 
@@ -131,7 +145,7 @@ La respuesta dominante de la industria es la **arquitectura de capas** (*rollup-
 Dos algoritmos cuánticos definen la amenaza:
 
 - **Algoritmo de Shor (1997).** Resuelve la factorización de enteros y el logaritmo discreto en **tiempo polinómico**, rompiendo RSA, Diffie-Hellman y ECC. Para una blockchain, implica que un adversario cuántico puede **recuperar la clave privada** desde la pública expuesta y **falsificar firmas** (Cap. 1, §1.2).
-- **Algoritmo de Grover (1996).** Acelera cuadráticamente la búsqueda no estructurada, debilitando la seguridad de primitivos **simétricos** y **hashes** (efectivamente reduce a la mitad sus bits de seguridad). Esto motiva parámetros mayores en hashes/cifrados simétricos, y es la base de la **cota conservadora** "mitad de bits" para esquemas reticulares (cuya estimación real, por *sieving*, es mucho menos pesimista; Cap. 6, §6.4.3).
+- **Algoritmo de Grover (1996).** Ofrece una aceleración cuadrática para búsqueda no estructurada. Para búsqueda de claves o preimágenes ideales, el costo de consultas pasa de orden $2^b$ a $2^{b/2}$; esta interpretación no se aplica automáticamente a búsqueda de colisiones, al costo físico ni a todos los ataques reticulares. Las estimaciones de retículos y los supuestos específicos se tratan separadamente en §6.4.3.
 
 La combinación de ambos con el fenómeno **HNDL** (Cap. 1) hace que la migración a criptografía post-cuántica sea urgente para infraestructura de larga vida.
 
@@ -144,7 +158,7 @@ La seguridad práctica se apoya en dos problemas promedio sobre **retículos de 
 - **Module-LWE** (*Learning With Errors*): distinguir $(\mathbf{A}, \mathbf{A}\mathbf{s}+\mathbf{e})$ de uniforme, con $\mathbf{s},\mathbf{e}$ "pequeños".
 - **Module-SIS** (*Short Integer Solution*): hallar un vector corto no nulo en el núcleo de $\mathbf{A}$.
 
-Sobre ellos se construye **CRYSTALS-Dilithium** (NIST FIPS 204 / ML-DSA), el esquema de firma que NEXUS adopta, mediante el paradigma **Fiat-Shamir with Aborts** [Lyu09, Lyu12]. La reducción de su seguridad a estos problemas, y de éstos a problemas reticulares de peor caso (Mod-SIVP), se desarrolla formalmente en el **Capítulo 6**.
+CRYSTALS-Dilithium y su estándar ML-DSA emplean Fiat–Shamir con abortos [Lyu09, Lyu12]. El capítulo 6 identifica MLWE, SelfTargetMSIS y MSIS, así como las condiciones de las reducciones de peor caso. La correspondencia de distribuciones y parámetros es parte de la obligación de validación; no se atribuye una cadena concreta completa al prototipo a partir de esas definiciones expositivas.
 
 ## 2.4 El panorama PQC y la estandarización NIST
 
@@ -157,7 +171,7 @@ El NIST estandarizó en 2024 los primeros esquemas post-cuánticos, con un cuart
 | FIPS 203 | ML-KEM (Kyber) | KEM reticular (cifrado) | final (2024) |
 | **FIPS 204** | **ML-DSA (Dilithium)** | **firma reticular** | **final (2024)** — *usado por NEXUS* |
 | FIPS 205 | SLH-DSA (SPHINCS+) | firma hash-based | final (2024) |
-| FIPS 206 | FN-DSA (Falcon) | firma reticular (NTRU) | borrador (~fin 2026) |
+| FIPS 206 | FN-DSA (Falcon) | firma reticular (NTRU) | estandarización en curso [NIST-PQC26] |
 
 Estos esquemas difieren en sus compromisos (tamaño de firma, conservadurismo, facilidad de implementación). El **Capítulo 4, §4.6** desarrolla la comparativa y justifica la elección de Dilithium para NEXUS frente a Falcon (firma menor) y a los esquemas hash-based (más conservadores).
 
@@ -170,23 +184,23 @@ La seguridad de toda clave depende de la calidad de la **aleatoriedad** de la qu
 Las **pruebas de conocimiento cero** (ZK) permiten demostrar la validez de una afirmación sin revelar su contenido, y son el mecanismo que hace que un *ZK-rollup* pueda asentar en L1 una prueba sucinta de que un *batch* de transacciones es correcto (Cap. 3, §3.4). Dos familias son relevantes:
 
 - **SNARKs de emparejamientos** (p. ej. Groth16): pruebas muy pequeñas (~200 B), pero su seguridad descansa en el logaritmo discreto en curvas → **rotas por Shor** (no post-cuánticas).
-- **STARKs** (basados en hashes y FRI): pruebas mayores, pero su seguridad se apoya solo en funciones hash → **post-cuánticas**.
+- **STARKs** (basados en compromisos hash y pruebas de proximidad como FRI): permiten construir argumentos transparentes sin emparejamientos. Su seguridad poscuántica requiere justificar los compromisos, la compilación Fiat–Shamir, las distribuciones de retos y los parámetros en el modelo cuántico. La denominación STARK no acredita por sí sola una implementación, un nivel de seguridad ni conocimiento cero.
 
-Esta distinción es **central** para NEXUS: para que la verificación del L2 no reintroduzca una vulnerabilidad cuántica, el sistema de pruebas debe ser post-cuántico (STARK), no Groth16 (Cap. 3, §3.5).
+La coherencia del diseño exige que la capa de pruebas tenga garantías compatibles con la amenaza poscuántica. Solidez, extracción y conocimiento cero son propiedades distintas: un AIR demostrativo y FRI no prueban automáticamente las tres. La validación de NEXUS las delimita en §6.7.
 
 ## 2.7 Estado del arte y posicionamiento de NEXUS
 
-Los **blockchains post-cuánticos** son un área activa de investigación [Yang23]. Más relevante aún, las cadenas líderes están **migrando a PQC en la práctica** (estado a mediados de 2026):
+Los sistemas blockchain poscuánticos constituyen un área de investigación [Yang23]. Las referencias de diseño comparadas en esta edición incluyen dos líneas de preparación, consultadas en fuentes primarias el 12 de octubre de 2026:
 
-- **Ethereum — "Lean Consensus"** (antes *Beam Chain*): reemplaza las firmas BLS de los validadores por firmas **hash-based (leanXMSS)**, que pesan 20–40× más y carecen de agregación nativa, y lo resuelve con **`leanVM`, un zkVM que las comprime ~250×** mediante agregación SNARK post-cuántica; ethereum.org declara que **«los STARKs ya son resistentes a la cuántica»**. La abstracción de cuentas (EIP-7702, *live*; EIP-8141) habilita la migración por cuenta.
-- **Solana**: sus equipos núcleo (Anza y Firedancer) **convergieron independientemente en Falcon** (abril 2026); la **Winternitz Vault** (hash-based) lleva años en producción. **Alpenglow** lleva la finalidad a ~100–150 ms.
-- **Gestión y defensa de la clave del firmador.** En la custodia de claves ML-DSA, guardar **solo la semilla** de 32 bytes es ya práctica estandarizada (FIPS 204 §3.6.3; el RFC 9881 la declara el formato **recomendado** [RFC9881]; OpenSSL 3.5 la implementa por defecto). En cambio, una revisión con fuentes verificadas (jul. 2026) **no localiza ningún sistema** que combine (a) semilla sellada en hardware, (b) detección de compromiso u observación del servidor de firma y (c) respuesta coordinada con la L2. Los antecedentes son parciales: custodia de claves de validador en enclave SGX con atestación verificada en cadena (Puffer Secure-Signer), un *builder* de L2 en TEE orientado a MEV (Rollup-Boost/Unichain), el patrón *honeychecker* de los honeywords [JR13] y las claves señuelo estáticas de una patente industrial [US10521584] — ninguno con criptografía post-cuántica. NEXUS aborda ese hueco con la **residencia efímera** (Cap. 5, §5.6) y la propuesta de **Deception Engine** (Cap. 7, §7.5).
+- **Ethereum.** Su hoja de ruta plantea firmas hash-based y agregación por pruebas dentro del programa Lean Ethereum. Los hitos publicados son objetivos de migración, no una afirmación de que la transición completa esté operativa [Eth-PQ26].
+- **Solana.** Anza estudia Falcon y las modificaciones necesarias para incorporar firmas poscuánticas. Esa preparación no acredita una adopción completa en producción [Anza-PQ26].
+- **Custodia de claves.** Conservar la semilla permite regenerar claves ML-DSA, por lo que su protección forma parte del modelo. R5 distingue tamaño serializado, representaciones en memoria y política de residencia (§5.6). Las propuestas de atestación y señuelos quedan como trabajo futuro complementario; el corpus bibliográfico no demuestra la inexistencia de otras soluciones ni garantiza indistinguibilidad del sistema propuesto.
 
-**Posicionamiento.** NEXUS no inventa la categoría ni un resultado de frontera; su aporte es la **síntesis formal y cuantificada** para sistemas en general (Cap. 1, §1.4). Crucialmente, la industria **converge independientemente** hacia los mismos principios que NEXUS formaliza —firmas post-cuánticas, agregación por pruebas para domar el overhead, y sistemas de prueba post-cuánticos (STARK)—, lo que **valida** la dirección del trabajo. La divergencia en la elección de esquema (Ethereum→hash-based, Solana→Falcon, NEXUS→Dilithium) evidencia que la decisión debe justificarse según las prioridades de cada sistema, como hace NEXUS (Cap. 4, §4.6).
+**Posicionamiento.** NEXUS aporta una síntesis de arquitectura, firmas y gestión de claves para sistemas en general. La comparación externa contextualiza las decisiones; las garantías del prototipo dependen de la correspondencia, derivaciones y evidencia propias de los capítulos 5 y 6. Coincidir con una hoja de ruta no valida la seguridad ni la ejecución del sistema completo.
 
 ## 2.8 Síntesis del marco
 
-Este capítulo estableció: el contexto de capas L1/L2 (§2.1), la amenaza cuántica concreta (§2.2), los fundamentos reticulares y de Dilithium (§2.3), el panorama de estándares (§2.4), la entropía y derivación de claves (§2.5), el papel y la coherencia post-cuántica de las pruebas ZK (§2.6), y el estado del arte que valida y posiciona a NEXUS (§2.7). Sobre estos fundamentos se construyen el diseño (Cap. 3), el núcleo criptográfico (Cap. 4), la gestión de claves (Cap. 5) y la validación formal (Cap. 6).
+Este capítulo estableció: el contexto de capas L1/L2 (§2.1), la amenaza cuántica concreta (§2.2), los fundamentos reticulares y de Dilithium (§2.3), el panorama de estándares (§2.4), la entropía y derivación de claves (§2.5), el papel y la coherencia post-cuántica de las pruebas ZK (§2.6), y el estado del arte que contextualiza y posiciona a NEXUS (§2.7). Sobre estos fundamentos se construyen el diseño (Cap. 3), el núcleo criptográfico (Cap. 4), la gestión de claves (Cap. 5) y la validación formal (Cap. 6).
 
 ---
 
@@ -198,11 +212,11 @@ Este capítulo estableció: el contexto de capas L1/L2 (§2.1), la amenaza cuán
 - [Sho97] P. Shor. *Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer*. SIAM J. Comput. 1997.
 - [Gro96] L. Grover. *A Fast Quantum Mechanical Algorithm for Database Search*. STOC 1996.
 - [Lyu09] V. Lyubashevsky. *Fiat-Shamir with Aborts*. ASIACRYPT 2009. · [Lyu12] *Lattice Signatures without Trapdoors*. EUROCRYPT 2012.
-- NIST. *FIPS 203 (ML-KEM) / 204 (ML-DSA) / 205 (SLH-DSA)*, 2024; *FIPS 206 (FN-DSA)*, borrador.
+- NIST. *FIPS 203 (ML-KEM) / 204 (ML-DSA) / 205 (SLH-DSA)*, 2024; *FN-DSA (Falcon)*, estandarización en curso [NIST-PQC26].
 - NIST. *SP 800-90B* (fuentes de entropía); H. Krawczyk, *HKDF* (RFC 5869).
 - [Yang23] Z. Yang et al. *A Survey and Comparison of Post-Quantum and Quantum Blockchains*. IEEE Communications Surveys & Tutorials, 2023.
-- [EthRoadmap26] Ethereum Foundation. *Roadmap — Future-proofing: Quantum resistance* (Lean Consensus / leanXMSS; leanVM; EIP-7702, EIP-8141). ethereum.org/roadmap/future-proofing/quantum-resistance. Acceso: jun. 2026.
-- [Solana-QR26] Solana / Anza. *Quantum Readiness* (Falcon; Winternitz Vault) y *Alpenglow* (Votor/Rotor). 2026. Acceso: jun. 2026.
+- [Eth-PQ26] Ethereum Foundation. *Roadmap — Future-proofing: Quantum resistance* (Lean Consensus / leanXMSS; leanVM; EIP-7702, EIP-8141). ethereum.org/roadmap/future-proofing/quantum-resistance. Acceso: jun. 2026.
+- [Anza-PQ26] Solana / Anza. *Quantum Readiness* (Falcon; Winternitz Vault) y *Alpenglow* (Votor/Rotor). 2026. Acceso: jun. 2026.
 - [RFC9881] J. Massimo, P. Kampanakis, S. Turner, B. Westerbaan. *RFC 9881: Internet X.509 PKI — Algorithm Identifiers for ML-DSA*. IETF, 2025.
 - [JR13] A. Juels, R. L. Rivest. *Honeywords: Making Password-Cracking Detectable*. ACM CCS 2013.
 - [US10521584] N. Sharifi Mehr (Amazon Technologies). *Computer Threat Analysis Service*. Patente US 10,521,584 B1, 2019.
@@ -220,7 +234,7 @@ Este capítulo estableció: el contexto de capas L1/L2 (§2.1), la amenaza cuán
 
 Una arquitectura blockchain post-cuántica para sistemas en general enfrenta una tensión que este capítulo resuelve. Por un lado, **debe** usar firmas post-cuánticas (Dilithium) para resistir la amenaza cuántica a la autenticación de transacciones (Cap. 1, Cap. 6). Por otro, esas firmas son **~50× más grandes** que las clásicas, lo que —aplicado de forma ingenua sobre una cadena única— degrada el rendimiento en un orden de magnitud.
 
-La tesis de este capítulo es que **la arquitectura dual-chain no es un complemento opcional, sino la respuesta directa a ese sobrecosto**: al ejecutar y verificar las firmas en una capa L2 y publicar en L1 solo un compromiso respaldado por una prueba, el costo on-chain por transacción post-cuántica se amortiza hasta el de su diferencia de estado clásica. Como corolario, **la capa de verificación del L2 debe ser ella misma post-cuántica**, lo que determina decisiones concretas de diseño (§3.5).
+La arquitectura dual-chain es la respuesta de diseño estudiada para distribuir el sobrecosto de firmas poscuánticas entre ejecución y anclaje. Su amortización se modela bajo condiciones de disponibilidad de datos, prueba de la lógica pertinente y costo del probador (§6.6.5). La validación TG2 distingue esa propuesta de una implementación integral y exige una capa de pruebas cuya seguridad se justifique para el modelo de amenaza considerado.
 
 El capítulo desarrolla el Objetivo 1: especifica los roles de la **Anchor Layer (L1)** y la **Active Layer (L2)**, el camino de la firma post-cuántica a través del sistema, y los componentes clave (Nexus Sequencer, Nitro Verifier), integrando la evidencia de que las cadenas líderes (Ethereum, Solana) convergen hacia el mismo diseño.
 
@@ -287,48 +301,42 @@ $$
 
 donde $d$ es la **diferencia de estado** por transacción —**independiente del esquema de firma**—. El factor $s_q$ **desaparece** del costo on-chain. Con valores modelados ($d\approx40$ B), un rollup de validez reduce el costo por transacción post-cuántica de 3 409 B a $\sim$ 40–140 B (reducción **~24–85×**), con punto de equilibrio en lotes de $\sim$ 10⁴ transacciones (§3.5).
 
-**En la dimensión de cómputo**, la L1 verifica **una** prueba por *batch* (independiente de $M$) en lugar de $M$ firmas, reduciendo el cómputo de verificación on-chain a $\sim$ 0 por transacción. Como el costo de verificar Dilithium ya es bajo (§3.3), este ahorro es secundario frente al de datos.
+**En la dimensión de cómputo**, la L1 verifica **una** prueba por *batch* (independiente de $M$) en lugar de $M$ firmas, distribuyendo el costo de verificación de la prueba entre las operaciones del lote, sin eliminarlo. Como el costo de verificar Dilithium ya es bajo (§3.3), este ahorro es secundario frente al de datos.
 
-> **Conclusión de diseño.** El dual-chain lleva el costo amortizado on-chain de una transacción post-cuántica al de su diferencia de estado clásica: **el tamaño de la firma se vuelve irrelevante para la L1.**
+> **Conclusión de diseño.** El costo por operación puede distribuirse entre el lote y sus diferencias de estado bajo el modelo de disponibilidad y publicación adoptado. Las firmas siguen teniendo costo de almacenamiento, transmisión y verificación en la frontera que las conserva. El modelo no elimina esos costos ni mide por sí solo el rendimiento de una blockchain completa (§6.6.5).
 
 ---
 
-## 3.5 Coherencia post-cuántica del verificador (decisión de diseño crítica)
+## 3.5 Coherencia post-cuántica de la capa de pruebas
 
-La amortización de §3.4 depende de una prueba de validez. Aquí aparece una **inconsistencia latente** que el diseño debe resolver:
+El diseño requiere que los compromisos y el sistema de pruebas sean compatibles con su modelo de amenaza. Los argumentos basados en emparejamientos y logaritmos discretos, como Groth16 sobre curvas clásicas, incorporan supuestos vulnerables a un adversario cuántico suficientemente potente. NEXUS explora una construcción basada en hash y FRI; su ausencia de emparejamientos evita esa dependencia particular, pero no demuestra solidez QROM de la construcción completa.
 
-> Si la prueba que la L1 verifica usa **Groth16 sobre BN254** (basado en emparejamientos / logaritmo discreto), **Shor la rompe**. Un adversario cuántico podría falsificar la prueba que atestigua las transacciones, y la L1 la aceptaría — reintroduciendo la vulnerabilidad cuántica en la capa de verificación, justo la que el sistema pretende eliminar.
+**Tabla 3.2 — Supuestos de las familias de prueba.**
 
-**Decisión:** el verificador (el "Nitro Verifier") debe usar un **sistema de pruebas post-cuántico** —un **STARK** (hash + FRI) o un SNARK reticular—, no Groth16.
+| Familia | Dependencia principal | Condición de validación |
+|---|---|---|
+| Groth16 sobre curvas clásicas | Emparejamientos y logaritmo discreto | No satisface el modelo frente a Shor con recursos suficientes |
+| Argumentos basados en hash y FRI | Compromisos, proximidad y compilación Fiat–Shamir | Requieren prueba de composición, parámetros y modelo ROM/QROM |
 
-**Tabla 3.2 — Sistemas de prueba.**
+**PoC heredada y revisión TG2.** El prototipo usa el campo Goldilocks, NTT, Merkle sobre SHA3-256, retos de extensión y FRI para una recurrencia ilustrativa. Las pruebas del software comprueban casos, pero su aceptación no acredita por sí sola proximidad de la traza ni validez de transacciones completas. La revisión del Objetivo 4 caracteriza la aceptación heredada, el enlace parcial de raíces y la recuperación del testigo pequeño. La variante TG2 v1 vincula un FRI de traza al AIR por una raíz común (§§6.7.1–6.7.4).
 
-| Sistema | Base de seguridad | ¿Post-cuántico? | $\pi$ | Equilibrio de lotes |
-|---|---|:---:|---:|---:|
-| Groth16 (emparejamientos) | log. discreto en curvas | No (Shor) | ~200 B | ~10² tx |
-| **STARK** (hash + FRI) | resistencia de colisión | Sí | ~10²–10³ KB | ~10⁴ tx |
+**Presupuesto histórico de seguridad.** La cifra de aproximadamente 100 bits se conserva como objetivo del diseño anterior. La auditoría no la acredita: el campo de extensión no basta para cerrar composición y consultas, y el trabajo del nonce no impide reinicios de transcripción. Las derivaciones por rondas y ROM de §§6.7.8–6.7.9 explicitan hipótesis y presupuesto adversario; permanecen propuestas pendientes de dictamen y no garantizan 100 bits, conocimiento cero ni QROM completo.
 
-El precio de la coherencia PQ es una prueba mayor → un equilibrio de lotes mayor (~10⁴ tx), perfectamente alcanzable. Esto convierte al Nitro Verifier de adorno opcional en **componente arquitectónico necesario y justificado**.
+**Tabla 3.3 — Mediciones históricas del AIR ilustrativo.**
 
-> **Prototipo de referencia implementado (PoC).** Para sustanciar esta decisión más allá del diseño, se implementó en el repositorio (`nexus-zk::stark`, cableado en `nexus-active::pq_verifier`) un **STARK hash-based propio** que materializa el **motor criptográfico post-cuántico** del Nitro Verifier (no su aritmetización completa): campo de Goldilocks ($p=2^{64}-2^{32}+1$), codificación Reed–Solomon vía **NTT**, compromisos de **Merkle sobre SHA3-256** con separación de dominio hoja/nodo, no interactividad por **Fiat–Shamir** y prueba de bajo grado **FRI**. Una transición de estado se aritmetiza (frontera + transición → polinomio de composición) y su validez se reduce a una afirmación de bajo grado que FRI certifica, atando la traza al compromiso en la fase de consulta. **Ninguna primitiva usa emparejamientos ni curvas elípticas** —solo hash y aritmética de campo—, de modo que **Shor no aplica**, a diferencia del andamiaje Groth16/BN254 que reemplaza.
->
-> **Endurecimiento (soundness ~100 bits).** Los desafíos del verificador (combinación `α`, plegado `β`) se extraen del **campo de extensión** $F_{p^2}\ (\approx 2^{128})$ —no del campo base de 64 bits—, lo que eleva los términos de soundness de la combinación de restricciones y del plegado FRI ($\sim\!\text{grado}/|F|$) por encima de $2^{-100}$; esto es **estructural** (en el campo base el techo caería a ~40 bits para trazas grandes, sin importar el número de consultas). Se añade **grinding** (proof-of-work de 20 bits en Fiat–Shamir, que anula el re-muestreo de la transcripción) y **40 consultas distintas** —muestreadas *sin reemplazo* (una consulta repetida no aporta soundness); las 40 se alcanzan para $T\ge 16$, que cubre todos los tamaños medidos— a *rate* $\rho=1/4$. Presupuesto: $\varepsilon \le \underbrace{2^{-107}}_{\alpha,\ F_{p^2}} + \underbrace{2^{-100}}_{\beta,\ \text{plegado}} + \underbrace{2^{-(80+20)}}_{\text{consulta}+\text{grind}} \approx 2^{-100}$, con tres salvedades que se enuncian con franqueza: (i) el término de consulta (80 bits) usa la convención de *proximity gaps* [BSCIKS20] (2 bits/consulta), **conjetural**; la cota **incondicional provable** por decodificación única da ~47 bits en esa fase, cerrable con DEEP (trabajo futuro); (ii) la cifra corresponde a la **configuración de producción** (build *release*, grinding de 20 bits); (iii) el **techo del campo** ($\varepsilon_\alpha,\varepsilon_\beta$ en $F_{p^2}$) es **>100 bits de forma provable e incondicional** —es lo que el campo base de 64 bits no permitía (su techo caía a ~40 bits)—. Mediciones (portátil modesto, Rust puro, $F_{p^2}$, *blowup* 8, 40 consultas, grinding $2^{20}$):
->
-**Tabla 3.3 — Coherencia post-cuántica del verificador (decisión de diseño crítica).**
+| Filas de traza | Tamaño de prueba histórico | Verificación histórica |
+|---:|---:|---:|
+| 16 | 132 KB | 6,0 ms |
+| 256 | 268 KB | 8,9 ms |
+| 4096 | 445 KB | 12,9 ms |
 
-| Pasos de traza | Tamaño de prueba | Generar | **Verificar** |
-|---:|---:|---:|---:|
-| 16 | 132 KB | — | 6,0 ms |
-| 256 | 268 KB | — | 8,9 ms |
-| 4096 | 445 KB | — | **12,9 ms** |
->
-> El resultado central es la **verificación sucinta**: al multiplicar el cómputo por **256×** (16→4096 pasos), el tiempo de verificación crece solo **~2,2×** (polilogarítmico), mientras el tamaño de prueba crece sub-linealmente. Es justo la propiedad que la L1 necesita: verificar un lote L2 grande con costo casi constante, sin curvas rotas por Shor. *(El tiempo de **generación** está dominado por el grinding —coste fijo $\sim 2^{20}$ hashes— y por la NTT del probador; no es la magnitud relevante para la L1.)* La aritmetización **completa** de la máquina de estado de una aplicación completa (el AIR del PoC es ilustrativo) y la incorporación de DEEP/out-of-domain quedan como trabajo futuro (Cap. 7); el **motor criptográfico post-cuántico**, que es lo que porta la afirmación de coherencia, está implementado, **endurecido a ~100 bits** y verificado por una batería de pruebas (incluida una adversarial que rechaza un probador con composición de bajo grado desligada de la traza).
+Estas cifras pertenecen a la serie histórica y a una carga ilustrativa. Filas AIR no equivalen a transacciones ML-DSA. Las nuevas mediciones preservan repeticiones y dispersión (§6.6), y las diferencias de procedencia se conservan explícitas. El costo del probador, incluido el trabajo del nonce, forma parte del balance de viabilidad; una curva de verificación no certifica seguridad ni el flujo L2/L1 completo.
 
-> **Validación externa contundente.** La hoja de ruta de consenso de Ethereum ("Lean Consensus", antes *Beam Chain*) llega a la **misma conclusión**: reemplaza BLS por firmas hash-based (leanXMSS), que pesan 20–40× más y carecen de agregación nativa, y lo resuelve con **`leanVM`, un zkVM que comprime las firmas ~250× con agregación SNARK post-cuántica**; ethereum.org afirma explícitamente que *«los STARKs ya son resistentes a la cuántica»* y que los compromisos KZG deberán migrar a STARK/reticular. El principio de NEXUS —*el sistema de pruebas debe ser PQ*— es el mismo que adopta la frontera.
+Las propuestas poscuánticas de Ethereum y Solana aportan contexto sobre tamaño de firmas y agregación. Sus hojas de ruta no sustituyen la validación de NEXUS ni se presentan como despliegue completo de la arquitectura de esta tesis [EthRoadmap26, Solana-QR26].
 
 ### 3.5.1 Una tensión de diseño honesta: Dilithium vs. STARK-friendliness
 
-Conviene declarar una tensión técnica que demuestra dominio del problema. **Probar la verificación de una firma Dilithium dentro de un STARK es costoso** (operaciones reticulares, claves públicas grandes); de hecho, **Ethereum eligió firmas hash-based en parte porque son más STARK-friendly** que las reticulares, y **Solana eligió Falcon** (reticular pero de firma pequeña). La elección de NEXUS por **Dilithium** optimiza la **verificación directa** (L1, y la robustez/estandarización de la implementación) a costa de mayor fricción en la **agregación probada** (L2). No es un defecto, sino una **decisión consciente con un trade explícito**: NEXUS prioriza la robustez del primitivo y reconoce la agregación STARK de firmas reticulares como el reto de ingeniería a resolver. La divergencia **Ethereum (hash-based) / Solana (Falcon) / NEXUS (Dilithium)** evidencia que **no existe una respuesta única** — y que la elección debe justificarse, como aquí.
+La tensión técnica es el costo de aritmetizar ML-DSA dentro de un sistema de pruebas. NEXUS selecciona ML-DSA como esquema de firma por su estandarización y por la API semillada del backend, mientras estudia separadamente la agregación por pruebas. El AIR actual no verifica firmas ML-DSA: medirlo no resuelve el costo de esa aritmetización. Las propuestas externas de firmas hash-based o Falcon ilustran alternativas de diseño, con supuestos y costos propios.
 
 ---
 
@@ -346,7 +354,7 @@ $$
 
 Rotar o migrar de esquema actualiza la **política** y el **epoch**, **sin tocar la id_estable**. Un **Registro de Claves (Key Registry)** permite asociar claves post-cuánticas junto a las clásicas, habilitando **firmas híbridas** durante la transición y la **migración por cuenta**.
 
-> **Validación externa.** Ethereum implementa este patrón: **EIP-7702 (smart EOAs, ya live)** permite a una cuenta de dirección estable delegar su lógica de verificación; **EIP-8141 ("signature agility", fork Hegota, H2-2026)** y un **Key Registry** permiten que cada cuenta migre a un esquema PQ de forma independiente, sin hard fork global. El modelo de cuenta de NEXUS adopta este enfoque validado, cerrando el problema identidad↔clave↔rotación↔dirección.
+> **Referencia de diseño.** La abstracción de cuentas permite separar identidad de política de verificación. Las propuestas de agilidad de firmas y registros poscuánticos de Ethereum son antecedentes de esa separación [Eth-PQ26]. En NEXUS, R3 comprueba un registro local y firmas por época; su integración con el sequencer y el anclaje L1 sigue pendiente (§5.8).
 
 ---
 
@@ -393,7 +401,7 @@ El diseño dual-chain de NEXUS responde, pieza por pieza, al problema que la PQC
 
 > **Supuesto explícito (para que las afirmaciones de seguridad estén bien formadas).** La integridad del libro mayor depende, además de la in-falsificabilidad de las firmas (Cap. 6), de la **seguridad del consenso**. En NEXUS el consenso BFT operativo es **diseño de referencia**, no implementación; por tanto, la garantía del sistema se enuncia condicionalmente: *in-falsificabilidad a nivel de transacción bajo el supuesto de consenso honesto-mayoritario*. La realización completa del consenso, la DA y el verificador STARK es trabajo futuro (Cap. 7).
 
-Con ello, el **Objetivo 1 queda atendido**: la arquitectura dual-chain está especificada como modelo de referencia, con su rol —amortizar el sobrecosto post-cuántico manteniendo coherencia PQ— justificado cuantitativamente y validado por la convergencia de la industria.
+Con ello, el **Objetivo 1 queda atendido**: la arquitectura dual-chain está especificada como modelo de referencia, con su rol —amortizar el sobrecosto post-cuántico manteniendo coherencia PQ— justificado cuantitativamente y contextualizado por propuestas externas y sujeto a la validación TG2.
 
 ---
 
@@ -410,15 +418,15 @@ Con ello, el **Objetivo 1 queda atendido**: la arquitectura dual-chain está esp
 
 *Objetivo 2 · la "solución" del arco*
 
-> **Rol en el arco de la tesis.** Este capítulo desarrolla el **primitivo de firma** que constituye la *solución* a la amenaza cuántica: el esquema CRYSTALS-Dilithium, su integración correcta en las transacciones y la derivación determinística de claves. Es la parte **genuinamente implementada y verificada** del prototipo; su seguridad se prueba formalmente en el **Capítulo 6** y su costo se amortiza en el **Capítulo 3**.
+> **Rol en el arco de la tesis.** Este capítulo describe el esquema de firma, su integración de referencia y la generación determinista desde semilla. La validación TG2 identifica el perfil implementado y las condiciones de aplicación de las reducciones en §6.4; las pruebas funcionales y la garantía concreta de inforjabilidad mantienen alcances distintos.
 
 ---
 
 ## 4.1 Introducción
 
-El componente cuya seguridad es necesaria y suficiente para autenticar transacciones frente a un adversario cuántico es el **esquema de firma digital**. NEXUS adopta **CRYSTALS-Dilithium** (NIST FIPS 204 / ML-DSA), un esquema basado en retículos cuya in-forjabilidad se reduce a Module-LWE (Cap. 6). Este capítulo cubre tres aspectos del Objetivo 2:
+La autenticación requiere un esquema de firma y un protocolo de uso: mensaje y dominio correctos, asociación entre identidad y clave, política de vigencia y verificación antes de aplicar cambios. NEXUS emplea ML-DSA, derivado de CRYSTALS-Dilithium, mediante `fips204`. El capítulo 6 identifica MLWE, SelfTargetMSIS y MSIS y las obligaciones de correspondencia para el código. Este capítulo conserva la descripción del núcleo del Objetivo 2 con ese alcance de revisión TG2.
 
-1. La **implementación verificada** de Dilithium (firma y verificación reales sobre una biblioteca auditada), §4.2.
+1. La **implementación verificada** de Dilithium (firma y verificación reales mediante el backend `fips204`), §4.2.
 2. El **enlace criptográfico** de la firma a la transacción y la verificación en la transición de estado —el "uso correcto" que permite pasar de la seguridad del primitivo a la seguridad de la transacción (Cap. 6, §6.7)—, §4.3–4.4.
 3. La **derivación determinística de claves** desde una semilla de alta entropía mediante un KDF, que conecta con la gestión activa de claves (Cap. 5), §4.5; y la **justificación de la elección de Dilithium** frente a esquemas alternativos, §4.6.
 
@@ -442,7 +450,7 @@ Las claves y firmas tienen tamaños fijos por nivel, validados contra los tamañ
 
 ### 4.2.2 Implementación verificada
 
-La implementación (`nexus-crypto/src/dilithium.rs`) **delega en la biblioteca auditada `fips204`** (implementación pura en Rust, *constant-time*, de ML-DSA / FIPS 204), no en código criptográfico propio. Es una decisión de diseño deliberada: la criptografía post-cuántica de bajo nivel es delicada (canales laterales, *rejection sampling*) y debe descansar sobre implementaciones revisadas. Se eligió `fips204` por exponer una **`KeyGen` determinística basada en semilla** (§4.5), necesaria para el Objetivo 2.
+La implementación (`nexus-crypto/src/dilithium.rs`) **delega en `fips204`** (backend Rust de ML-DSA / FIPS 204, versión 0.4.6 en R1), no en código criptográfico propio. Es una decisión de diseño deliberada: la criptografía post-cuántica de bajo nivel es delicada (canales laterales, *rejection sampling*) y debe descansar sobre implementaciones revisadas. Se eligió `fips204` por exponer una **`KeyGen` determinística basada en semilla** (§4.5), necesaria para el Objetivo 2.
 
 - **Generación de claves:** `ml_dsa_N::KG::try_keygen()` (aleatoria) o `keygen_from_seed(ξ)` (determinística, §4.5) producen $(pk, sk)$ reales.
 - **Firma:** `sk.try_sign(mensaje, ctx)` produce una firma genuina; **no** hay bytes de firma fijos o simulados.
@@ -450,13 +458,13 @@ La implementación (`nexus-crypto/src/dilithium.rs`) **delega en la biblioteca a
 
 Una prueba unitaria de ida y vuelta confirma que una firma sobre un mensaje verifica como válida y que sobre un mensaje distinto verifica como inválida.
 
-> **Estado.** Este es el componente **funcional y verificado** del prototipo: la firma post-cuántica de NEXUS es real.
+> **Estado funcional.** La API genera claves y firmas y ejecuta verificación real. R1 contrasta mensajes, contextos y modos, pero sus pruebas comparten backend: no equivalen a KAT/ACVP independientes, una auditoría de canales laterales o una reducción mecanizada de la implementación.
 
 ---
 
 ## 4.3 Enlace criptográfico de la firma a la transacción
 
-La seguridad del primitivo (Cap. 6) solo se traduce en seguridad de la transacción si la firma está **ligada al contenido exacto** de la transacción y se **verifica** antes de aplicar la transición de estado. NEXUS lo garantiza con tres mecanismos:
+La autenticación de transacciones requiere ligar la firma al contenido y comprobarla antes de aplicar cambios. El código de referencia incorpora los controles siguientes; la correspondencia criptográfica y las políticas de autorización conservan las obligaciones de §6.4:
 
 1. **Preimagen de firma (`signing_hash`).** La firma se computa sobre $H(\mathrm{bincode}(tx))$, donde $tx$ incluye `chain_id` (anti-*replay* entre cadenas), `nonce` (anti-*replay* en la cuenta), tipo de transacción y montos. Así, **cualquier alteración del contenido invalida la firma**.
 
@@ -464,7 +472,7 @@ La seguridad del primitivo (Cap. 6) solo se traduce en seguridad de la transacci
 
 3. **Verificación en la transición de estado.** El motor de ejecución (`nexus-active/src/execution.rs`) llama a `verify_signed_transaction` —que recomputa `signing_hash` y ejecuta la verificación Dilithium— **antes** de aplicar el débito/crédito; lo mismo hace la validación de bloques de la Anchor Layer. Una transacción con firma inválida **no** modifica el estado.
 
-> **Conexión con el Cap. 6.** Esta cadena —Dilithium sUF-CMA **+ uso correcto** (firma ligada al contenido y verificada antes de la transición)— es la que sustenta la afirmación *in-falsificabilidad a nivel de transacción* (Cap. 6, §6.7), condicionada al supuesto de consenso honesto.
+> **Conexión con el Cap. 6.** Una garantía de autenticación requiere el supuesto de firma correspondiente y demostrar el puente de la implementación al protocolo de transacción. R1-B conserva la obligación de codificaciones y sUF-CMA, y R3 distingue vigencia de época de validación histórica. El AIR ilustrativo de §6.7 no acredita ese puente ni demuestra verificación ML-DSA dentro de la prueba.
 
 ---
 
@@ -474,7 +482,7 @@ El manejo de claves secretas sigue buenas prácticas, verificadas en el código:
 
 - **Borrado de memoria (`zeroize`).** La clave secreta implementa `ZeroizeOnDrop`: sus bytes se sobrescriben al liberarse, reduciendo la ventana de exposición en memoria.
 - **`Debug` redactado.** Las representaciones de depuración de la clave secreta y del par de claves muestran `[REDACTED]`, evitando filtraciones accidentales por *logs*.
-- **Posesión por valor.** El par de claves mantiene la clave secreta por valor, de modo que su borrado se garantiza al destruirse el par.
+- **Posesión por valor.** El par de claves mantiene una representación de la clave secreta cuyo destructor aplica el mecanismo de borrado. Las copias, temporales, semilla retenida y efectos del compilador requieren el análisis de residencia de §5.6; no se deduce borrado de todo el material secreto del proceso.
 
 > **Pendiente menor (Plan Maestro, Fase A/B).** La clave secreta deriva `Clone`, lo que permite copias transitorias cuyo borrado depende de que cada copia se destruya. Conviene restringir o auditar los usos de `.clone()` sobre material secreto.
 
@@ -513,14 +521,14 @@ La elección de Dilithium debe justificarse explícitamente, porque el sobrecost
 | Esquema (estándar) | Tamaño de firma | Perfil | Adopción real |
 |---|---:|---|---|
 | **Dilithium / ML-DSA** (FIPS 204, final) | 2,4–4,6 KB | Reticular (Module-LWE); **balanceado**, robusto, fácil de implementar | **NEXUS**; estándar de referencia |
-| Falcon / FN-DSA (FIPS 206, **borrador ~fin 2026**) | **~666 B** | Reticular (NTRU); firma **pequeña**, pero usa punto flotante y es sensible a canales laterales | **Solana** (Anza y Firedancer convergieron) |
-| SLH-DSA / SPHINCS+ (FIPS 205, final) | 7–17 KB | *Hash-based*, **ultra-conservador** (solo depende del hash), sin estado | custodia de alta garantía |
-| Winternitz OTS (hash-based, un solo uso) | pequeña, con estado | One-time; conservador | **Solana Winternitz Vault** (live >2 años) |
-| leanXMSS (hash-based, XMSS) | 2–4 KB | Conservador + STARK-friendly; requiere agregación | **Ethereum** (Lean Consensus, validadores) |
+| Falcon / FN-DSA (FIPS 206, **estandarización en curso**) | **~666 B** | Reticular (NTRU); firma **pequeña**, pero usa punto flotante y es sensible a canales laterales | preparación estudiada por Anza [Anza-PQ26] |
+| SLH-DSA / SPHINCS+ (FIPS 205, final) | 7,9–49,9 KB | Firma hash-based sin estado; tamaños según parámetros [FIPS205, Tabla 2] | alternativa de firma con costos propios |
+| Winternitz OTS (hash-based, un solo uso) | depende de parámetros | Requiere respetar el uso único de cada clave | propuesta de custodia a nivel de aplicación |
+| leanXMSS (hash-based, XMSS) | 2–4 KB | Conservador + STARK-friendly; requiere agregación | propuesta de Lean Consensus [Eth-PQ26] |
 
 **Justificación de Dilithium para NEXUS.** Se elige Dilithium por el **equilibrio entre seguridad, tamaño e implementabilidad correcta** (es el esquema reticular más maduro y fácil de implementar sin errores). Las alternativas y sus trade-offs:
 
-- **Falcon** recortaría el sobrecosto de ~50× a **~10×** (firma ~666 B), atacando el problema de tamaño de frente; pero su firma con punto flotante es delicada y FIPS 206 **aún está en borrador** (~fin 2026). Es la apuesta de Solana, que prioriza el tamaño.
+- **Falcon** recortaría el sobrecosto de ~50× a **~10×** (firma ~666 B), atacando el problema de tamaño de frente; pero su firma con punto flotante es delicada y su proceso de estandarización sigue en curso [NIST-PQC26]. Es la apuesta de Solana, que prioriza el tamaño.
 - **Hash-based (SPHINCS+/Winternitz)** maximiza la confianza (seguridad conservadora) a costa de firmas mayores; es la apuesta de Ethereum para los validadores (donde la conservadurismo y la STARK-friendliness importan más), y un buen modelo para **custodia en frío** (la bóveda Winternitz de Solana).
 
 > **Conexión con el Cap. 3.** La elección de Dilithium se compensa con la **amortización dual-chain**: el sobrecosto de tamaño se paga una vez fuera de cadena y se amortiza en L1. La divergencia **Ethereum (hash-based) / Solana (Falcon) / NEXUS (Dilithium)** muestra que no hay una respuesta única; cada sistema elige según sus prioridades, y NEXUS justifica la suya. *(Recuérdese además la tensión Dilithium-vs-STARK-friendliness del Cap. 3, §3.5.1.)*
@@ -545,8 +553,8 @@ La elección de Dilithium debe justificarse explícitamente, porque el sobrecost
 
 Este capítulo desarrolló el núcleo criptográfico (Objetivo 2):
 
-1. **Dilithium está implementado y verificado** sobre una biblioteca auditada, con selección multinivel y verificación real (no *stubs*).
-2. La firma está **correctamente ligada** al contenido de la transacción y se **verifica antes** de la transición de estado, sustentando la in-falsificabilidad a nivel de transacción (Cap. 6).
+1. **Dilithium está implementado y verificado** mediante el backend `fips204`, con selección multinivel y verificación real (no *stubs*).
+2. La firma está **correctamente ligada** al contenido de la transacción y se **verifica antes** de la transición de estado, con las obligaciones de correspondencia y autorización de §6.4.
 3. La **generación determinística desde semilla** está **implementada y verificada** vía la `KeyGen` semillada de `fips204` (FIPS 204 ML-DSA) + el KDF de `SentinelSeed`, reemplazando la derivación biométrica (eliminada).
 4. La **elección de Dilithium** se justifica frente a Falcon (menor tamaño, menor madurez) y a los esquemas hash-based (mayor conservadurismo, mayor tamaño), con anclas reales en Ethereum y Solana y conexión con la amortización del Cap. 3.
 
@@ -558,7 +566,7 @@ Este capítulo desarrolló el núcleo criptográfico (Objetivo 2):
 
 - NIST. *FIPS 204: Module-Lattice-Based Digital Signature Standard (ML-DSA)*. 2024.
 - **[D+18]** Ducas, Kiltz, Lepoint, Lyubashevsky, Schwabe, Seiler, Stehlé. *CRYSTALS-Dilithium: A Lattice-Based Digital Signature Scheme.* IACR ToCHES 2018(1).
-- NIST. *FIPS 205: Stateless Hash-Based Digital Signature Standard (SLH-DSA)*. 2024. · *FIPS 206: FN-DSA (Falcon)* — borrador (~2026).
+- NIST. *FIPS 205: Stateless Hash-Based Digital Signature Standard (SLH-DSA)*. 2024. · *FN-DSA (Falcon)* — estandarización en curso [NIST-PQC26].
 - H. Krawczyk. *Cryptographic Extraction and Key Derivation: The HKDF Scheme*. CRYPTO 2010 (RFC 5869).
 - Solana. *Quantum Readiness* (Falcon; Winternitz Vault). 2026. · Ethereum. *Lean Consensus / leanXMSS* (ethereum.org/roadmap/future-proofing/quantum-resistance). 2026.
 
@@ -1514,7 +1522,7 @@ Si $u$ está lejos, aceptar requiere el error del FRI de traza. Si está cerca, 
 
 Se eligió $\delta_t=\delta_c=1/8$, por lo que $d=1/8+1/(8T)$. Las rondas incluyen la consulta final; la Tabla 6.18 cuenta solo capas. Los valores se redondean hacia arriba desde fracciones exactas. El script de análisis verifica nueve tamaños, unicidad y campo base en ejemplos exhaustivos pequeños, localidad, muestreo y normalización del plegado. La suite Rust conserva 197 pruebas; esta etapa no altera el protocolo.
 
-**Límite de la conclusión.** Son cotas superiores conservadoras del modelo ideal, no tasas observadas de ataque ni límites inferiores de vulnerabilidad. El argumento no acredita 100 bits y no cuantifica la seguridad del ejecutable. Quedan pendientes la compilación Merkle/Fiat–Shamir, las consultas adaptativas y pérdidas ROM/QROM, el tratamiento de grinding y la revisión independiente. No se demuestra extracción eficiente ni conocimiento cero.
+**Límite de la conclusión.** Son cotas superiores conservadoras del modelo ideal, no tasas observadas de ataque ni límites inferiores de vulnerabilidad. El argumento no acredita 100 bits y no cuantifica la seguridad del ejecutable. La derivación histórica deja esas obligaciones abiertas; §§6.7.8–6.7.10 incorporan los complementos posteriores por rondas y ROM con su estado de revisión, y mantienen QROM como trabajo futuro. No se demuestra extracción eficiente ni conocimiento cero.
 
 ### 6.7.6 Vinculación Merkle y auditoría Fiat–Shamir
 
@@ -1544,7 +1552,102 @@ En Goldilocks, $r=p-2^{32}$ y $\Delta_F\approx1{,}26218\times10^{-29}$. La varia
 | AIR y dos FRI | Cota ordinaria del modelo ideal | Propiedades y errores del protocolo por ronda |
 | ROM/QROM | Teorema de compilación identificado | Presupuesto de consultas, grinding y pérdidas concretas |
 
-El Teorema 3.15 de [BGK+23, p. 25] exige propiedades por ronda y una transformación BCS determinada. La cota ordinaria $E_{\mathrm{ideal}}$ de §6.7.5 no sustituye automáticamente su error por ronda. El teorema para FRI aislado tampoco valida por sí solo el AIR y ambos recorridos con consulta compartida. La auditoría precisa estas condiciones; no establece una garantía ROM/QROM del ejecutable, 100 bits ni conocimiento cero. Se preparó un paquete para revisión matemática de S1–S3; el dictamen independiente permanece pendiente.
+El Teorema 3.15 de [BGK+23, p. 25] exige propiedades por ronda y una transformación BCS determinada. La cota ordinaria $E_{\mathrm{ideal}}$ de §6.7.5 no sustituye automáticamente su error por ronda. El teorema para FRI aislado tampoco valida por sí solo el AIR y ambos recorridos con consulta compartida. La auditoría por sí sola no establece una garantía ROM/QROM del ejecutable, 100 bits ni conocimiento cero. La transferencia posterior propuesta en ROM clásico se integra en §6.7.9 con sus hipótesis y dictamen pendiente. Se preparó un paquete para revisión matemática de S1–S3; el dictamen independiente permanece pendiente.
+
+---
+
+### 6.7.7 Revisión de las afirmaciones heredadas de TG1
+
+La validación del Objetivo 4 revisa las afirmaciones del prototipo heredado sin modificar el alcance ni los entregables administrativos aprobados de TG1. En esta edición de TG2, el diseño de los capítulos 3 y 4 se interpreta con las condiciones de correspondencia de R1 y los resultados de §6.7. Una decisión de arquitectura, una operación de firma que funciona y una demostración de seguridad son aportes con obligaciones distintas.
+
+La afirmación histórica de aproximadamente 100 bits del STARK combinaba errores de campo, consultas y trabajo del nonce sin una transferencia completa al canal concreto. El campo de extensión amplía el espacio de retos, pero no fija por sí solo la solidez del verificador. El trabajo tampoco impide volver a intentar una transcripción: su efecto depende del presupuesto y del modelo adversario. Por estas razones, esa cifra se conserva como antecedente de diseño y no como garantía vigente.
+
+Las pruebas heredadas aceptan los tres oráculos alejados de §6.7.3; sus enunciados públicos conservan una traza válida. Este resultado refuta la premisa de proximidad utilizada en aquel argumento, sin demostrar una falsificación de un enunciado falso. La variante vinculada TG2 v1 incorpora un FRI de traza y una raíz común con AIR; el corpus comprueba esa diferencia de comportamiento. El AIR evalúa una recurrencia ilustrativa y no la verificación de ML-DSA ni la lógica completa de una aplicación.
+
+**Tabla 6.21 — Afirmaciones heredadas y alcance de la revisión TG2.**
+
+| Afirmación de diseño o del prototipo | Conclusión de validación TG2 | Referencia |
+|---|---|---|
+| STARK endurecido a aproximadamente 100 bits | Garantía no acreditada; cotas específicas de modelo y presupuesto | §§6.7.8–6.7.9 |
+| Aceptación implica proximidad de la traza | Premisa refutada para el legado; variante vinculada comprobada en el corpus | §§6.7.3–6.7.4 |
+| PoC proporciona conocimiento cero | El testigo de 16 filas es recuperable; ocultación pendiente | §6.7.1 |
+| La PoC valida transacciones completas | AIR demostrativo; verificación ML-DSA y lógica de aplicación sin aritmetizar | §§6.6.5 y 6.7.4 |
+| Firma funcional implica garantía concreta de inforjabilidad | Perfil identificado; correspondencia, semillas, codificación y errores requieren R1-A–E | §6.4 |
+| Hash de la clave pública impide toda recuperación | Evita exposición directa mientras la clave no se revele; no demuestra dureza de preimagen ni seguridad integral | §§1.2 y 6.4.3 |
+
+### 6.7.8 Solidez por rondas del protocolo ideal
+
+La derivación posterior desarrolla una función de estado para AIR, FRI de traza, FRI de composición y consulta compartida. Su punto de partida es el enfoque de solidez por rondas de [GMW26, Teorema 5.2]; se utiliza un lema elemental de acuerdo suficiente para los radios de NEXUS, sin atribuir a este trabajo el resultado general del artículo. La demostración escrita propuesta está pendiente de revisión independiente y no está mecanizada en Lean.
+
+**Hipótesis.** Sea $p=2^{64}-2^{32}+1$, $K=F_{p^2}$, $N=8T$, $M=N/2$, con $T$ potencia de dos entre 16 y 4096. El oráculo de traza $u$ se fija antes de los tres coeficientes AIR; cada capa FRI queda fijada antes de su reto uniforme fresco. La composición puede depender de la historia previa, las constantes finales preceden al muestreo y se eligen $q=40$ parejas opuestas distintas, uniformemente y sin reemplazo. Las aperturas son evaluaciones de oráculos completos inmutables. Un enunciado falso carece de traza válida sobre el campo base.
+
+Para los radios $\delta_t=\delta_c=1/8$, se verifica la unicidad $2\delta_t<(N-T+1)/N$ y, en cada plegado, $(1-3\delta_i)n_j>d_{i,j+1}-1$. El lema elemental conserva el mismo conjunto de acuerdo de las dos funciones del plegado, excepto para a lo sumo $n_j$ retos; su error condicional queda acotado por $n_j/p^2$. La ausencia de esas excepciones permite remontar los conjuntos de acuerdo desde la constante final. Una consulta compartida se contabiliza una sola vez, tomando el máximo del caso activo, sin multiplicar errores de ambos FRI.
+
+Definimos, con numerador cero si no hay suficientes parejas,
+
+$$
+H(M,q,x)=\frac{\binom{M-\lceil xM\rceil}{q}}{\binom Mq},\qquad h_T=H(4T,40,1/8).
+$$
+
+La función de estado tiene un evento excepcional absorbente y una cota por ronda. Para este perfil, la cota escogida es $\varepsilon_{\mathrm{rbr}}=h_T$; esta igualdad identifica la cota empleada, no el error óptimo del protocolo. La cuenta ordinaria refinada obtiene
+
+$$
+E_{\mathrm{ideal}}^{\mathrm{nuevo}}\le h_T+\frac{8T-3}{p^2}.
+$$
+
+**Tabla 6.22 — Cotas superiores de la derivación ideal propuesta.**
+
+| Filas $T$ | Cota ideal anterior | Cota ideal refinada |
+|---:|---:|---:|
+| 16 | 0,052736 | 0,000166165 |
+| 64 | 0,074258 | 0,002934060 |
+| 256 | 0,095099 | 0,004282720 |
+| 4096 | 0,134071 | 0,004757331 |
+
+Los decimales se redondean hacia arriba desde fracciones exactas. La mejora procede del argumento por casos; el protocolo y sus parámetros no cambian. Estos límites no son tasas observadas de ataque, ni garantizan SHA3 real. La derivación ideal ordinaria de §6.7.5 conserva su valor como antecedente; la transferencia siguiente desarrolla su propio registro hash y no sustituye automáticamente un error ordinario en un compilador Fiat–Shamir.
+
+### 6.7.9 Transferencia propuesta al protocolo concreto en ROM clásico
+
+El objeto es `NEXUS-TG2-LINKED-FRI-v1`, según el análisis del código `01dcde960402b6c60a19242b7ae3d6ac3d82a518` y las fuentes preservadas. Cada llamada a SHA3-256 se modela como una consulta a un único oráculo aleatorio clásico de 256 bits. El adversario dispone de $Q$ consultas, incluidas preparación, compromisos y búsqueda de nonces; entrega un enunciado y una prueba finales en un perfil fijo. No se admite ayuda correlacionada con el oráculo sin contabilizar. Esta demostración propuesta no establece seguridad incondicional de SHA3 ni una reducción QROM.
+
+El registro hash extrae y congela los vectores cuando cada raíz se marca antes de su reto. Fuera del evento excepcional del grafo, una apertura aceptada coincide con ese vector. La gramática se trata conjuntamente: no se presupone una separación global de roles, pues las entradas de nodo y enunciado pueden coincidir en 65 bytes. La masa puntual máxima de un reto de extensión derivado de bloques ideales es
+
+$$
+\mu=\left(\frac{\lfloor2^{128}/p\rfloor+1}{2^{128}}\right)^2.
+$$
+
+Sea $m=3+\log_2T+\log_2(2T)$, $g$ el trabajo del nonce y $S=Q+V_T$. El análisis fija el corte auxiliar $R=512$ para la selección, con
+
+$$
+\tau_T=\min\left\{1,\binom{M}{39}\left(\frac{39}{M}\right)^{512}\right\}.
+$$
+
+Aquí $V_T$ acota las consultas hash del verificador truncado y $B_T$ las ocurrencias de digests de una prueba con forma admitida. Sus cuentas incluyen aperturas Merkle, canal y extracción de índices, según la derivación preservada. El Rust v1 conserva su selector original; el corte pertenece al análisis y al verificador Python de referencia. La fórmula propuesta es
+
+$$
+\begin{aligned}
+E_{\mathrm{ROM}}(T,g,Q)&\le\min\left\{1,
+\frac{S(49S+B_T)}{2^{256}}\right.\\
+&\left.\quad +(Q+m)\frac{N\mu}{2}
++(Q+1)2^{-g}(h_T+\tau_T)\right\}.
+\end{aligned}
+$$
+
+La revisión interna posterior justifica el término de candidatos mediante potencial. Cada candidato se cobra antes de su primera respuesta, con un conjunto fijo de parejas buenas. Respuestas frescas preservan el potencial en esperanza; abandono, intercalación, duplicados y la verificación final no incrementan gratuitamente la cuenta. Condicionar a haber encontrado un nonce válido elimina de esa probabilidad condicionada el factor $2^{-g}$: el factor se cobra al iniciar el intento. El argumento admite a lo sumo $Q+1$ inicios relevantes y trata la cola con un potencial separado.
+
+Para $T=4096$, $g=20$ y $Q=2^{20}$, la cota superior conservada es 0,004757335454. Con $Q=2^{28}$ llega a uno y deja de ser informativa. Ningún valor constituye una tasa de ataques ni demuestra que el adversario alcance esa probabilidad. Los parámetros actuales no acreditan 100 bits.
+
+El verificador independiente Python evalúa formato, canal, Merkle, composición AIR y ambos FRI sobre los 14 certificados preservados. Coincide con Rust: acepta ocho honestos y rechaza seis alejados. La revisión de nonces añade 96 escenarios pequeños y controles negativos de las premisas. Estas comprobaciones finitas apoyan la correspondencia y detectan errores; no sustituyen la demostración general ni el dictamen externo M1–M6.
+
+### 6.7.10 Alcance QROM y trazabilidad de las afirmaciones
+
+Los suplementos QROM conservan una reducción parcial basada en el trabajo, un extractor sin orden, una reducción condicional al verificador y una cota propuesta para la cola de índices. La omisión de parejas incorrectas $\beta^S$ sigue sin una cota útil demostrada. El límite de cola no resuelve esa omisión y sus exponentes no representan bits de seguridad global de AIR/FRI. Las hipótesis, el cambio de juego y las pérdidas cuánticas requieren revisión propia.
+
+Por decisión del autor del 23 de septiembre, completar QROM de AIR/FRI es trabajo futuro. La consolidación documental no reanuda esa investigación ni convierte sus obligaciones en requisitos nuevos del cierre. R1 sobre ML-DSA mantiene su alcance específico.
+
+El catálogo complementario relaciona doce afirmaciones con sus hipótesis, dependencias y evidencia identificada por SHA-256. Distingue la integridad documental, los contrastes empíricos, una derivación propuesta, una prueba mecanizada y el dictamen académico. Su comprobador valida referencias y archivos; no decide verdad matemática. La ejecución de Lean/Comparator permanece pendiente y el resultado 279 de OpenAI Math conserva su estado de candidato bibliográfico, sin fundamentar garantías de NEXUS.
+
+Los argumentos completos, sus cálculos y el registro de resolución M1–M6 se conservan en los paquetes de derivaciones de TG2. La edición de trabajo integra los resultados disponibles con ese estado de revisión; su inclusión no constituye aprobación del director.
 
 ---
 
@@ -1555,6 +1658,8 @@ Este capítulo reúne los fundamentos de seguridad, el análisis de complejidad 
 1. **Fundamentos de seguridad (Obj. 4.1).** Se identifican MLWE, SelfTargetMSIS y MSIS, las correcciones de las pruebas citadas y las condiciones de las reducciones de peor caso. R1 identifica el perfil real, reproduce una pérdida de referencia y descarta la aplicación directa de JMW24 a sus parámetros. Se explicitan los pasos restantes entre plantilla y código; no se presenta una prueba concreta nueva ni una demostración general de dureza cuántica.
 2. **Análisis de complejidad (Obj. 4.2).** Las operaciones del esquema tienen costo $O(k\ell\,n\log n)$ (dominado por la NTT, $O(n\log n)$ por multiplicación), con $\mathsf{Sign}$ esperado constante en iteraciones; las constantes medidas y el costo de datos dependen del perfil. La amortización queda condicionada a disponibilidad, prueba de la lógica pertinente y costo del prover (§6.6.5).
 3. **Validación empírica (Obj. 4.2).** Las series históricas H1/H2 se conservan identificadas. R4 y su complemento añaden 29 casos Criterion, 40 mediciones STARK y 40 repeticiones multinúcleo con dispersión y fuentes preservadas. Los dos bloqueos iniciales se resolvieron tras el cambio de Windows por el autor. La cifra multinúcleo histórica conserva su limitación temporal y se presenta una nueva serie corregida. Las 197 pruebas delimitan el perfil de firma, el verificador y la gestión de claves sin acreditar una blockchain completa ni conocimiento cero del PoC.
+
+Las derivaciones por rondas y ROM clásico se incluyen como resultados propuestos bajo hipótesis explícitas. La transferencia QROM completa de AIR/FRI queda como trabajo futuro; R1 mantiene sus obligaciones propias. El catálogo enlaza las afirmaciones y la evidencia sin mecanizar las demostraciones.
 
 El cierre del **Objetivo 4** requiere completar la trazabilidad de las hipótesis formales y preservar la evidencia reproducible de los experimentos. Los resultados medidos corresponden a componentes; su extensión a la arquitectura completa depende de la integración y de los supuestos declarados.
 
@@ -1612,19 +1717,19 @@ Se reporta el grado de cumplimiento de cada objetivo con honestidad, distinguien
 
 **Objetivo 1 — Diseñar la arquitectura Dual-Chain.** *Cumplido como modelo de referencia.* Se especificaron los roles de L1/L2, el camino de la firma post-cuántica, el modelo de cuenta (identidad estable vs. clave rotable), la disponibilidad de datos estilo PeerDAS, la secuenciación con incentivos y la finalidad rápida (Cap. 3). La realización **operativa** del consenso y la DA es trabajo futuro; el verificador post-cuántico (Nitro Verifier) cuenta ya con un **PoC STARK implementado** (Cap. 3, §3.5).
 
-**Objetivo 2 — Núcleo criptográfico PQC.** *Cumplido.* Dilithium (firma/verificación, multinivel) está **implementado y verificado** sobre la biblioteca auditada `fips204` (ML-DSA / FIPS 204), con enlace correcto a la transacción (Cap. 4). La **derivación determinística desde semilla** está **implementada y verificada** (`from_seed` usa la `KeyGen` semillada de `fips204`; test `test_deterministic_from_seed`).
+**Objetivo 2 — Núcleo criptográfico PQC.** *Cumplido.* Dilithium (firma/verificación, multinivel) está **implementado y verificado** mediante el backend `fips204` (ML-DSA / FIPS 204), con enlace correcto a la transacción (Cap. 4). La **derivación determinística desde semilla** está **implementada y verificada** (`from_seed` usa la `KeyGen` semillada de `fips204`; test `test_deterministic_from_seed`).
 
 **Objetivo 3 — Lógica de seguridad activa.** *En ejecución técnica.* El 22 de septiembre se corrigieron el corte APT, la evaluación por lotes y la recuperación con bloqueo hasta reevaluar y renovar la semilla; la suite pasó 142 pruebas en R3 y 163 al integrar los casos de validación R4 y R5; tras R1, las revisiones STARK y la variante FRI vinculada alcanza 197. Las decisiones 001 y 002 fueron aprobadas según la confirmación del estudiante. El gestor renueva efectivamente las claves y registra las transiciones con firmas salientes y entrantes. Se ha probado la recuperación del historial público, el rechazo de épocas retiradas para operaciones vigentes y la detección de retrocesos respecto de un punto de control confiable. Permanecen pendientes la custodia durable, la integración con L2/L1 y la vinculación y calificación de una fuente concreta (Cap. 5, §§5.3 y 5.8).
 
-**Objetivo 4 — Validación formal y empírica.** *En revisión y consolidación.* R1 identifica ML-DSA puro, hedged y de contexto vacío, coteja los parámetros de fips204 0.4.6 y distingue las pruebas ROM/QROM. El contraste numérico impide aplicar directamente el teorema revisado de SelfTargetMSIS a estos parámetros; se mantienen explícitos ese supuesto y los pasos entre plantilla y código. Se conserva el análisis de complejidad $O(k\ell\,n\log n)$ y las mediciones históricas de componentes. R4 y su complemento aportan 29 casos Criterion, 40 mediciones STARK y 40 repeticiones multinúcleo con fuentes y dispersión. Reproduce las limitaciones del verificador y evalúa una variante para escalares canónicos; no acredita raíces arbitrarias ni conocimiento cero. La latencia ML-DSA y el ensayo multinúcleo corregido se completaron después del cambio de Windows por el autor, conservando los fallos previos. La auditoría STARK identifica consultas efectivas, proximidad y composición pendiente; siete casos nuevos pasan también en release. El argumento algebraico condicional delimita cancelación y distancia de la composición; otros siete casos pasan también en release. El ensayo posterior refuta que la aceptación heredada implique la proximidad de traza propuesta: acepta tres casos a distancia 7/8, con enunciados válidos. Un control exhaustivo experimental los rechaza por grado; otros siete casos pasan también en release. La variante posterior comparte la raíz de traza entre AIR y un FRI de cota menor que T; acepta los casos honestos y detecta los tres contraejemplos sin recibir el LDE completo. Sus diez pruebas pasan también en release. La suite completa alcanza 197 pruebas en desarrollo. La vinculación estructural está implementada. Una derivación posterior fija el candidato próximo y obtiene una cota conservadora de composición en el modelo interactivo ideal; la auditoría Merkle/Fiat–Shamir reconstruye el corpus con otro backend, cuantifica el sesgo bajo salidas frescas y delimita las obligaciones por ronda y ROM/QROM pendientes. La revisión matemática externa, las obligaciones concretas de la implementación, la demostración completa de soundness y la conciliación histórica permanecen pendientes.
+**Objetivo 4 — Validación formal y empírica.** *En revisión y consolidación.* R1 identifica ML-DSA puro, hedged y de contexto vacío, coteja los parámetros de fips204 0.4.6 y distingue las pruebas ROM/QROM. El contraste numérico impide aplicar directamente el teorema revisado de SelfTargetMSIS a estos parámetros; se mantienen explícitos ese supuesto y los pasos entre plantilla y código. Se conserva el análisis de complejidad $O(k\ell\,n\log n)$ y las mediciones históricas de componentes. R4 y su complemento aportan 29 casos Criterion, 40 mediciones STARK y 40 repeticiones multinúcleo con fuentes y dispersión. Reproduce las limitaciones del verificador y evalúa una variante para escalares canónicos; no acredita raíces arbitrarias ni conocimiento cero. La latencia ML-DSA y el ensayo multinúcleo corregido se completaron después del cambio de Windows por el autor, conservando los fallos previos. La auditoría STARK identifica consultas efectivas, proximidad y composición pendiente; siete casos nuevos pasan también en release. El argumento algebraico condicional delimita cancelación y distancia de la composición; otros siete casos pasan también en release. El ensayo posterior refuta que la aceptación heredada implique la proximidad de traza propuesta: acepta tres casos a distancia 7/8, con enunciados válidos. Un control exhaustivo experimental los rechaza por grado; otros siete casos pasan también en release. La variante posterior comparte la raíz de traza entre AIR y un FRI de cota menor que T; acepta los casos honestos y detecta los tres contraejemplos sin recibir el LDE completo. Sus diez pruebas pasan también en release. La suite completa alcanza 197 pruebas en desarrollo. La vinculación estructural está implementada. Una derivación posterior fija el candidato próximo y obtiene una cota conservadora de composición en el modelo interactivo ideal; la auditoría Merkle/Fiat–Shamir reconstruye el corpus con aritmética Python y `hashlib`, independientes del verificador Rust, cuantifica el sesgo bajo salidas frescas y delimita las obligaciones por ronda y ROM/QROM pendientes. Los complementos de §§6.7.8–6.7.9 proponen solidez por rondas y transferencia ROM con registro hash y potencial para nonces adaptativos. El catálogo explicita su trazabilidad. La revisión matemática externa, R1-A–E, el estudio de parámetros y la conciliación histórica permanecen pendientes. QROM completo de AIR/FRI se conserva como trabajo futuro, según la decisión de alcance del autor.
 
 ## 7.3 Contribuciones
 
-1. **Un modelo formal y prototipo de referencia** de firmas post-cuánticas (Dilithium) en una arquitectura dual-chain para sistemas en general, con el núcleo de firma genuinamente implementado y verificado.
+1. **Un modelo formal y prototipo de referencia** de firmas post-cuánticas (Dilithium) en una arquitectura dual-chain para sistemas en general, con operaciones de firma implementadas y comprobadas funcionalmente.
 2. **El análisis cuantificado del sobrecosto post-cuántico** (Cap. 3): la cuantificación del aumento de datos y un modelo de amortización sujeto a prueba de la lógica, disponibilidad y costo del prover. La sensibilidad de TG2 (§6.6.5) explicita cómo cambian los resultados con esos supuestos.
-3. **El principio de coherencia post-cuántica del sistema de pruebas** (el verificador L2 debe ser STARK, no Groth16), con la **tensión Dilithium-vs-STARK-friendliness** identificada como decisión de diseño consciente.
+3. **El requisito de coherencia post-cuántica de la capa de pruebas** (su seguridad debe justificarse en el modelo de amenaza), con la **tensión Dilithium-vs-STARK-friendliness** identificada como decisión de diseño consciente.
 4. **La trazabilidad de los fundamentos de seguridad:** identificación de MLWE, SelfTargetMSIS y MSIS, de las condiciones de las reducciones y de los límites para aplicarlas al prototipo (Cap. 6, §6.4).
-5. **La reformulación rigurosa de la gestión activa de claves** (min-entropía + SP 800-90B + rotación forward-secure), que reemplaza un enfoque conceptualmente frágil.
+5. **La gestión activa de claves** mediante min-entropía, pruebas de salud y rotación por épocas, con las condiciones de custodia y destrucción necesarias para evaluar secrecia hacia adelante (§5.8).
 6. **El modelo de cuenta** (identidad estable, política de verificación, *epoch*) + Registro de Claves, que resuelve la coexistencia de rotación/migración PQC con identidad estable.
 7. **La evaluación de residencia efímera de claves:** comparación de clave cacheada y reexpansión por firma, con sobrecostos históricos aproximados de 0,75 ms en H1 y 0,12 ms en H2. R5 incorpora inventario de representaciones, modelo de captura, sensibilidad y tres pruebas. Conservar la semilla mantiene la capacidad de firma. W describe regiones y tiempos bajo hipótesis explícitas; la observación de todas las copias y la custodia protegida siguen pendientes (Cap. 5, §5.6).
 8. **La propuesta del *Deception Engine*** (§7.5): conmutación del firmador a un par señuelo ML-DSA ante detección de observación, con el *sequencer* L2 como *honeychecker*. Es una **propuesta de diseño argumentada frente al estado del arte** (no una implementación): la revisión de jul. 2026 no localiza ningún trabajo que combine señuelos criptográficos con firmas post-cuánticas ni con respuesta coordinada en L2.
@@ -1644,15 +1749,9 @@ Se declaran con franqueza, pues delimitan honestamente el aporte:
 
 Agenda priorizada, derivada de las limitaciones:
 
-1. **Consolidación de evidencia empírica.** La suite actual pasa 163 pruebas. La serie R4 preserva mediciones nuevas de clásicos, residencia y STARK; el complemento registra la ejecución satisfactoria de los dos benchmarks inicialmente bloqueados y su nueva configuración. La caché recuperada y H1/H2 conservan su procedencia histórica.
+1. **Consolidación de evidencia empírica.** La ejecución histórica consolidada alcanza 197 pruebas; los conteos anteriores se conservan como registros de sus etapas. La serie R4 preserva mediciones nuevas de clásicos, residencia y STARK; el complemento registra la ejecución satisfactoria de los dos benchmarks inicialmente bloqueados y su nueva configuración. La caché recuperada y H1/H2 conservan su procedencia histórica.
 2. **Cierre del Objetivo 3.** Tras comprobar monitor, rotación efectiva y registro local, integrar la custodia durable y la política de épocas en L2, y validar el anclaje externo. Para un despliegue concreto debe vincularse el flujo observado con la fuente utilizada y documentar su calificación. La reexpansión de una misma semilla por firma y la rotación de épocas son operaciones diferentes.
-3. **Validación del PoC y extensión futura.** Documentar y tratar las limitaciones de Cap. 6, §6.7. La aritmetización de la lógica de aplicación, el enlace de raíces completas, la ocultación del testigo, la verificación de ML-DSA dentro de la prueba y un análisis completo de soundness forman una línea posterior; su realización no se infiere de la curva de rendimiento del AIR actual.
-4. **Consenso BFT operativo.** Verificación de firmas de voto, quórum ponderado por *stake* ($\lfloor 2N/3\rfloor+1$), detección de equivocación + *slashing*, y difusión en red — para **levantar el supuesto** de consenso honesto y validar la seguridad a nivel de sistema.
-5. **Disponibilidad de datos real.** *Erasure coding* (Reed-Solomon) + muestreo entre pares (estilo PeerDAS) + poda.
-6. **Abstracción de cuentas + Registro de Claves completos**, para cripto-agilidad y migración (firmas híbridas clásica+PQ).
-7. **Confidencialidad post-cuántica.** Integrar un KEM (ML-KEM / Kyber, FIPS 203) para cerrar la amenaza HNDL de confidencialidad, hoy fuera de alcance.
-8. **Exploración de esquemas alternativos.** Evaluar **Falcon** (FN-DSA, FIPS 206) para recortar el sobrecosto de ~50× a ~10×, ponderando su complejidad de implementación, una vez finalizado el estándar (~fin 2026).
-9. **Deception Engine (defensa activa off-chain).** Implementar la conmutación del firmador a un **par señuelo ML-DSA** ante fallo de atestación o detección de depuración/introspección, con el *sequencer* L2 como *honeychecker* que bloquea la transacción y dispara la alerta al reconocer la clave señuelo. Requisitos derivados de la literatura: **indistinguibilidad formal** del señuelo y de sus metadatos —las bóvedas señuelo de NoCrack cayeron por análisis estadístico (CCS 2016) y los *canary tokens* de AWS por metadatos— y conmutación en **tiempo constante**; a favor, un par ML-DSA señuelo generado con la misma `KeyGen` es idéntico en distribución a uno real. Antecedentes parciales: honeywords/*honeychecker* [JR13], claves señuelo estáticas de la patente US 10,521,584 B1, y custodia TEE con atestación on-chain (Puffer Secure-Signer). Nota criptográfica: la respuesta **nunca** altera el nonce de Fiat-Shamir (un nonce sesgado filtra $s_1$ por reducción de retículos); el señuelo es un par legítimo e independiente. Complementos: **Threshold ML-DSA** (fragmentación de $s_1$ por MPC) para que ningún proceso contenga la clave completa.
+3. **Revisión de las derivaciones y extensión futura.** Resolver M1–M6 para las afirmaciones incluidas en la entrega, conservando el estado de demostración propuesta de la composición ideal y ROM. Completar la transferencia QROM de AIR/FRI, incluida la omisión $\beta^S$, queda como investigación futura por decisión del autor. La aritmetización de ML-DSA y de la aplicación, el enlace de raíces completas y la ocultación del testigo constituyen extensiones independientes; su realización no se infiere de la curva del AIR actual.
 
 ## 7.6 Reflexión final
 
@@ -1707,7 +1806,7 @@ NEXUS aporta una síntesis de arquitectura, gestión de claves y evaluación de 
 - **[NIST24]** NIST. *FIPS 204: Module-Lattice-Based Digital Signature Standard (ML-DSA)*. 13 de agosto de 2024. [Publicación oficial](https://csrc.nist.gov/pubs/fips/204/final). *(algoritmos 2, 6–8; apéndices C–D)*
 - **[NIST24-E26]** NIST. *FIPS 204 — Potential Updates (Errata)*. Hoja oficial actualizada el 31 de julio de 2026; consulta: 22 de septiembre de 2026. [Hoja de actualizaciones potenciales](https://csrc.nist.gov/files/pubs/fips/204/final/docs/fips-204-potential-updates.xlsx). *(la hoja distingue correcciones potenciales de cambios oficiales del estándar)*
 - **[FIPS205]** NIST. *FIPS 205: Stateless Hash-Based Digital Signature Standard (SLH-DSA)*. 2024.
-- **[FIPS206]** NIST. *FIPS 206: FN-DSA (Falcon)* — borrador (estandarización ~fin 2026).
+- **[FIPS206]** NIST. *FN-DSA (Falcon)* — esquema seleccionado cuya estandarización continúa en desarrollo [NIST-PQC26]. No se fija una fecha de finalización.
 - **[SP800-90B]** M. S. Turan et al. *NIST SP 800-90B: Recommendation for the Entropy Sources Used for Random Bit Generation*. NIST, 2018. *(min-entropía y pruebas de salud RCT/APT; complementan SP 800-90A/C sobre DRBG y construcciones RBG)*
 - **[SP800-108]** NIST. *SP 800-108: Recommendation for Key Derivation Using Pseudorandom Functions*.
 - **[RFC5869]** H. Krawczyk. *Cryptographic Extraction and Key Derivation: The HKDF Scheme*. CRYPTO 2010 (RFC 5869).
@@ -1722,7 +1821,7 @@ NEXUS aporta una síntesis de arquitectura, gestión de claves y evaluación de 
 
 ## Fuentes del estado del arte (industria; estado a mediados de 2026)
 
-- **[EthRoadmap26]** Ethereum Foundation. *Roadmap — Future-proofing: Quantum resistance* (Lean Consensus / leanXMSS; leanVM; abstracción de cuentas EIP-7702, EIP-8141). ethereum.org/roadmap/future-proofing/quantum-resistance. Acceso: jun. 2026.
+- **[EthRoadmap26]** Ethereum Foundation. *Roadmap — Future-proofing: Quantum resistance* (Lean Consensus / leanXMSS; leanVM; abstracción de cuentas EIP-7702, EIP-8141). ethereum.org/roadmap/security/quantum-resistance. Acceso: jun. 2026.
 - **[Fusaka25]** Ethereum Foundation. *Fusaka Mainnet — PeerDAS (EIP-7594)*. Nov. 2025.
 - **[Solana-QR26]** Solana / Anza. *Quantum Readiness* (Falcon; Winternitz Vault) y *Alpenglow* (Votor/Rotor, 2025–2026). Acceso: jun. 2026.
 - **[US10521584]** N. Sharifi Mehr (Amazon Technologies). *Computer Threat Analysis Service*. Patente US 10,521,584 B1, 2019. *(claves criptográficas señuelo detectadas por el backend al verificar la firma — prior art más cercano del Deception Engine)*
@@ -1742,3 +1841,8 @@ NEXUS aporta una síntesis de arquitectura, gestión de claves y evaluación de 
 
 - **[OSSL35]** OpenSSL Project. *EVP_PKEY-ML-DSA*, documentación de OpenSSL 3.5. [Fuente primaria](https://docs.openssl.org/3.5/man7/EVP_PKEY-ML-DSA/). Consulta: 22 de septiembre de 2026.
 - **[A+23]** S. Arranz-Olmos, G. Barthe, R. Gonzalez, B. Grégoire, V. Laporte, J.-C. Léchenet, T. Oliveira, P. Schwabe. *High-assurance zeroization*. IACR ePrint 2023/1713, versión revisada. [Fuente primaria](https://eprint.iacr.org/2023/1713).
+
+- **[GMW26]** A. Garreta, N. Mohnblatt, B. Wagner. *A Simplified Round-by-round Soundness Proof of FRI*. IACR ePrint 2025/1993, revisión publicada el 31 de marzo de 2026, portada fechada el 27 de marzo. [Fuente primaria](https://eprint.iacr.org/2025/1993). Teorema 5.2; copia y versión preservadas en el paquete de derivación por rondas de TG2.
+- **[NIST-PQC26]** NIST. *Post-Quantum Cryptography Project*. Estado de la estandarización de Falcon/FN-DSA y estándares FIPS 203–205. [Fuente primaria](https://csrc.nist.gov/projects/post-quantum-cryptography). Consulta: 12 de octubre de 2026.
+- **[Eth-PQ26]** Ethereum Foundation. *Post-quantum cryptography on Ethereum*. [Fuente primaria](https://ethereum.org/roadmap/security/quantum-resistance/). Consulta: 12 de octubre de 2026; hitos de hoja de ruta, no garantía de despliegue completo.
+- **[Anza-PQ26]** Anza. *Securing Solana Against a Powerful Quantum Adversary*. [Fuente primaria](https://www.anza.xyz/blog/securing-solana-against-a-powerful-quantum-adversary). Consulta: 12 de octubre de 2026; preparación de firmas poscuánticas.

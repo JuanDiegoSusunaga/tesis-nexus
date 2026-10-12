@@ -1,16 +1,16 @@
 # Manuscrito NEXUS — edición vigente
 
-**Actualización:** 23 de septiembre de 2026. Edición de trabajo consolidada para TG2; el estado técnico y los pendientes se detallan en la [ruta de cierre](../04-Administrativo-TG2/Ruta-de-Cierre-TG2.md).
+**Actualización:** 12 de octubre de 2026. Edición de trabajo consolidada para TG2; el estado técnico y los pendientes se detallan en la [ruta de cierre](../04-Administrativo-TG2/Ruta-de-Cierre-TG2.md).
 
 **Alcance:** sistemas en general que requieren firmas digitales, registros verificables y gestión de claves. El título, los resúmenes, el objetivo general y las conclusiones incorporan la aclaración expresa del autor. La arquitectura blockchain dual es el modelo de referencia de la tesis; cada dominio de aplicación requiere validar sus reglas propias.
 
 ## Archivos de consulta
 
-- [Word editable](Tesis-NEXUS-completa.docx): índice actualizado, ecuaciones nativas, 32 tablas y 3 figuras.
+- [Word editable](Tesis-NEXUS-completa.docx): índice actualizado, ecuaciones nativas, 34 tablas y 3 figuras.
 - [PDF de lectura](Tesis-NEXUS-completa.pdf): índice con páginas y enlaces internos.
 - [Markdown ensamblado](Tesis-NEXUS-completa.md): contenido generado desde las fuentes.
 
-Las tres salidas corresponden a los mismos capítulos, resumen y bibliografía. Se conserva un único nombre por formato. Tras incorporar la auditoría Merkle/Fiat–Shamir, el Word tiene 108 páginas y el PDF 95: usan motores de maquetación distintos y cada índice corresponde a su propio archivo. La exportación PDF de Word se bloqueó también con un documento mínimo; el PDF se generó localmente desde el mismo Markdown, con MathML y Chrome, sin enviar el manuscrito a servicios externos.
+Las tres salidas corresponden a los mismos capítulos, resumen y bibliografía. Se conserva un único nombre por formato. Tras integrar la revisión y los complementos por rondas y ROM, el Word tiene 110 páginas y el PDF 97: usan motores de maquetación distintos y cada índice corresponde a su propio archivo. La exportación PDF de Word se bloqueó también con un documento mínimo; el PDF se generó localmente desde el mismo Markdown, con MathML y Chrome, sin enviar el manuscrito a servicios externos.
 
 ## Fuente de edición
 
@@ -20,7 +20,7 @@ Formato aplicado: papel carta, márgenes de 2,54 cm, Times New Roman de 12 punto
 
 ## Regeneración desde la raíz del proyecto
 
-Los informes se guardan en una carpeta con la fecha de ejecución. Para reproducir esta edición, establecer antes de los comandos `$env:NEXUS_TG2_FECHA_EVIDENCIA="2026-09-23"`; debe ser una fecha válida AAAA-MM-DD.
+Los informes se guardan en una carpeta con la fecha de ejecución. Para reproducir esta edición, establecer antes de los comandos `$env:NEXUS_TG2_FECHA_EVIDENCIA="2026-10-12"`; debe ser una fecha válida AAAA-MM-DD.
 
 Requisitos: Python con `lxml`, Matplotlib, PyMuPDF y Pillow; Pandoc; Microsoft Word para actualizar su índice; Chrome o Edge para el PDF. Las versiones Python están fijadas en [requirements.txt](../../requirements.txt). Las [instrucciones de instalación y reproducción](../../scripts/README.md) usan `.venv`; también se admite la instalación histórica de PyMuPDF en `.tools/pdf`. El [manifiesto de edición](../04-Administrativo-TG2/Entrega-Final/version-tg2.json) identifica los archivos conservados y el commit de código.
 
@@ -34,13 +34,16 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/renderizar_manus
 python scripts/revisar_graficas_manuscrito.py
 ```
 
-El ensamblador normaliza las fuentes y comprueba filas, columnas y conversión matemática. La revisión compara las 822 celdas con una conversión independiente desde Markdown; reconoce la representación equivalente de `ℓ` que Word guarda como una `l` con estilo matemático script. La edición conserva 541 objetos matemáticos nativos en Word, incluidos 30 bloques. Las imágenes temporales quedan en `.tools/`.
+El ensamblador normaliza las fuentes y comprueba filas, columnas y conversión matemática. La revisión compara las 848 celdas con una conversión independiente desde Markdown; reconoce la representación equivalente de `ℓ` que Word guarda como una `l` con estilo matemático script. La edición conserva 560 objetos matemáticos nativos en Word, incluidos 35 bloques. Las imágenes temporales quedan en `.tools/`.
 
 ## Revisión registrada
 
+**Consolidación vigente:** [revisión de los antecedentes y complementos](../04-Administrativo-TG2/Avances/Consolidacion-Manuscrito-TG2-2026-10-12.md), con las demostraciones propuestas de §§6.7.8–6.7.9 y el alcance QROM de §6.7.10. [Suplemento de derivaciones](../04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-10-12.docx). Las entradas fechadas siguientes conservan la historia de las etapas anteriores.
+
 - [Auditoría Merkle/Fiat–Shamir y correspondencia del corpus](../04-Administrativo-TG2/Avances/R4-Merkle-Fiat-Shamir-2026-09-23.md).
 - [Paquete para revisión matemática S1–S3](../04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md).
-- [Identificación de la edición vigente](../06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/revision-manuscrito.json).
+- [Identificación de la edición vigente](../06-Evidencia-TG2/2026-10-12/Consolidacion-manuscrito/revision-manuscrito.json).
+- [Identificación histórica de la auditoría Merkle/Fiat–Shamir](../06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/revision-manuscrito.json).
 
 - [Cota interactiva ideal: derivación, correspondencia, cuentas y límites](../04-Administrativo-TG2/Avances/R4-Cota-Interactiva-2026-09-22.md).
 - [Identificación histórica de la edición de cota interactiva](../06-Evidencia-TG2/2026-09-22/R4-cota-interactiva/revision-manuscrito.json).

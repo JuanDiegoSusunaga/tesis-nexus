@@ -17,7 +17,7 @@ La respuesta dominante de la industria es la **arquitectura de capas** (*rollup-
 Dos algoritmos cuánticos definen la amenaza:
 
 - **Algoritmo de Shor (1997).** Resuelve la factorización de enteros y el logaritmo discreto en **tiempo polinómico**, rompiendo RSA, Diffie-Hellman y ECC. Para una blockchain, implica que un adversario cuántico puede **recuperar la clave privada** desde la pública expuesta y **falsificar firmas** (Cap. 1, §1.2).
-- **Algoritmo de Grover (1996).** Acelera cuadráticamente la búsqueda no estructurada, debilitando la seguridad de primitivos **simétricos** y **hashes** (efectivamente reduce a la mitad sus bits de seguridad). Esto motiva parámetros mayores en hashes/cifrados simétricos, y es la base de la **cota conservadora** "mitad de bits" para esquemas reticulares (cuya estimación real, por *sieving*, es mucho menos pesimista; Cap. 6, §6.4.3).
+- **Algoritmo de Grover (1996).** Ofrece una aceleración cuadrática para búsqueda no estructurada. Para búsqueda de claves o preimágenes ideales, el costo de consultas pasa de orden $2^b$ a $2^{b/2}$; esta interpretación no se aplica automáticamente a búsqueda de colisiones, al costo físico ni a todos los ataques reticulares. Las estimaciones de retículos y los supuestos específicos se tratan separadamente en §6.4.3.
 
 La combinación de ambos con el fenómeno **HNDL** (Cap. 1) hace que la migración a criptografía post-cuántica sea urgente para infraestructura de larga vida.
 
@@ -30,7 +30,7 @@ La seguridad práctica se apoya en dos problemas promedio sobre **retículos de 
 - **Module-LWE** (*Learning With Errors*): distinguir $(\mathbf{A}, \mathbf{A}\mathbf{s}+\mathbf{e})$ de uniforme, con $\mathbf{s},\mathbf{e}$ "pequeños".
 - **Module-SIS** (*Short Integer Solution*): hallar un vector corto no nulo en el núcleo de $\mathbf{A}$.
 
-Sobre ellos se construye **CRYSTALS-Dilithium** (NIST FIPS 204 / ML-DSA), el esquema de firma que NEXUS adopta, mediante el paradigma **Fiat-Shamir with Aborts** [Lyu09, Lyu12]. La reducción de su seguridad a estos problemas, y de éstos a problemas reticulares de peor caso (Mod-SIVP), se desarrolla formalmente en el **Capítulo 6**.
+CRYSTALS-Dilithium y su estándar ML-DSA emplean Fiat–Shamir con abortos [Lyu09, Lyu12]. El capítulo 6 identifica MLWE, SelfTargetMSIS y MSIS, así como las condiciones de las reducciones de peor caso. La correspondencia de distribuciones y parámetros es parte de la obligación de validación; no se atribuye una cadena concreta completa al prototipo a partir de esas definiciones expositivas.
 
 ## 2.4 El panorama PQC y la estandarización NIST
 
@@ -43,7 +43,7 @@ El NIST estandarizó en 2024 los primeros esquemas post-cuánticos, con un cuart
 | FIPS 203 | ML-KEM (Kyber) | KEM reticular (cifrado) | final (2024) |
 | **FIPS 204** | **ML-DSA (Dilithium)** | **firma reticular** | **final (2024)** — *usado por NEXUS* |
 | FIPS 205 | SLH-DSA (SPHINCS+) | firma hash-based | final (2024) |
-| FIPS 206 | FN-DSA (Falcon) | firma reticular (NTRU) | borrador (~fin 2026) |
+| FIPS 206 | FN-DSA (Falcon) | firma reticular (NTRU) | estandarización en curso [NIST-PQC26] |
 
 Estos esquemas difieren en sus compromisos (tamaño de firma, conservadurismo, facilidad de implementación). El **Capítulo 4, §4.6** desarrolla la comparativa y justifica la elección de Dilithium para NEXUS frente a Falcon (firma menor) y a los esquemas hash-based (más conservadores).
 
@@ -56,23 +56,23 @@ La seguridad de toda clave depende de la calidad de la **aleatoriedad** de la qu
 Las **pruebas de conocimiento cero** (ZK) permiten demostrar la validez de una afirmación sin revelar su contenido, y son el mecanismo que hace que un *ZK-rollup* pueda asentar en L1 una prueba sucinta de que un *batch* de transacciones es correcto (Cap. 3, §3.4). Dos familias son relevantes:
 
 - **SNARKs de emparejamientos** (p. ej. Groth16): pruebas muy pequeñas (~200 B), pero su seguridad descansa en el logaritmo discreto en curvas → **rotas por Shor** (no post-cuánticas).
-- **STARKs** (basados en hashes y FRI): pruebas mayores, pero su seguridad se apoya solo en funciones hash → **post-cuánticas**.
+- **STARKs** (basados en compromisos hash y pruebas de proximidad como FRI): permiten construir argumentos transparentes sin emparejamientos. Su seguridad poscuántica requiere justificar los compromisos, la compilación Fiat–Shamir, las distribuciones de retos y los parámetros en el modelo cuántico. La denominación STARK no acredita por sí sola una implementación, un nivel de seguridad ni conocimiento cero.
 
-Esta distinción es **central** para NEXUS: para que la verificación del L2 no reintroduzca una vulnerabilidad cuántica, el sistema de pruebas debe ser post-cuántico (STARK), no Groth16 (Cap. 3, §3.5).
+La coherencia del diseño exige que la capa de pruebas tenga garantías compatibles con la amenaza poscuántica. Solidez, extracción y conocimiento cero son propiedades distintas: un AIR demostrativo y FRI no prueban automáticamente las tres. La validación de NEXUS las delimita en §6.7.
 
 ## 2.7 Estado del arte y posicionamiento de NEXUS
 
-Los **blockchains post-cuánticos** son un área activa de investigación [Yang23]. Más relevante aún, las cadenas líderes están **migrando a PQC en la práctica** (estado a mediados de 2026):
+Los sistemas blockchain poscuánticos constituyen un área de investigación [Yang23]. Las referencias de diseño comparadas en esta edición incluyen dos líneas de preparación, consultadas en fuentes primarias el 12 de octubre de 2026:
 
-- **Ethereum — "Lean Consensus"** (antes *Beam Chain*): reemplaza las firmas BLS de los validadores por firmas **hash-based (leanXMSS)**, que pesan 20–40× más y carecen de agregación nativa, y lo resuelve con **`leanVM`, un zkVM que las comprime ~250×** mediante agregación SNARK post-cuántica; ethereum.org declara que **«los STARKs ya son resistentes a la cuántica»**. La abstracción de cuentas (EIP-7702, *live*; EIP-8141) habilita la migración por cuenta.
-- **Solana**: sus equipos núcleo (Anza y Firedancer) **convergieron independientemente en Falcon** (abril 2026); la **Winternitz Vault** (hash-based) lleva años en producción. **Alpenglow** lleva la finalidad a ~100–150 ms.
-- **Gestión y defensa de la clave del firmador.** En la custodia de claves ML-DSA, guardar **solo la semilla** de 32 bytes es ya práctica estandarizada (FIPS 204 §3.6.3; el RFC 9881 la declara el formato **recomendado** [RFC9881]; OpenSSL 3.5 la implementa por defecto). En cambio, una revisión con fuentes verificadas (jul. 2026) **no localiza ningún sistema** que combine (a) semilla sellada en hardware, (b) detección de compromiso u observación del servidor de firma y (c) respuesta coordinada con la L2. Los antecedentes son parciales: custodia de claves de validador en enclave SGX con atestación verificada en cadena (Puffer Secure-Signer), un *builder* de L2 en TEE orientado a MEV (Rollup-Boost/Unichain), el patrón *honeychecker* de los honeywords [JR13] y las claves señuelo estáticas de una patente industrial [US10521584] — ninguno con criptografía post-cuántica. NEXUS aborda ese hueco con la **residencia efímera** (Cap. 5, §5.6) y la propuesta de **Deception Engine** (Cap. 7, §7.5).
+- **Ethereum.** Su hoja de ruta plantea firmas hash-based y agregación por pruebas dentro del programa Lean Ethereum. Los hitos publicados son objetivos de migración, no una afirmación de que la transición completa esté operativa [Eth-PQ26].
+- **Solana.** Anza estudia Falcon y las modificaciones necesarias para incorporar firmas poscuánticas. Esa preparación no acredita una adopción completa en producción [Anza-PQ26].
+- **Custodia de claves.** Conservar la semilla permite regenerar claves ML-DSA, por lo que su protección forma parte del modelo. R5 distingue tamaño serializado, representaciones en memoria y política de residencia (§5.6). Las propuestas de atestación y señuelos quedan como trabajo futuro complementario; el corpus bibliográfico no demuestra la inexistencia de otras soluciones ni garantiza indistinguibilidad del sistema propuesto.
 
-**Posicionamiento.** NEXUS no inventa la categoría ni un resultado de frontera; su aporte es la **síntesis formal y cuantificada** para sistemas en general (Cap. 1, §1.4). Crucialmente, la industria **converge independientemente** hacia los mismos principios que NEXUS formaliza —firmas post-cuánticas, agregación por pruebas para domar el overhead, y sistemas de prueba post-cuánticos (STARK)—, lo que **valida** la dirección del trabajo. La divergencia en la elección de esquema (Ethereum→hash-based, Solana→Falcon, NEXUS→Dilithium) evidencia que la decisión debe justificarse según las prioridades de cada sistema, como hace NEXUS (Cap. 4, §4.6).
+**Posicionamiento.** NEXUS aporta una síntesis de arquitectura, firmas y gestión de claves para sistemas en general. La comparación externa contextualiza las decisiones; las garantías del prototipo dependen de la correspondencia, derivaciones y evidencia propias de los capítulos 5 y 6. Coincidir con una hoja de ruta no valida la seguridad ni la ejecución del sistema completo.
 
 ## 2.8 Síntesis del marco
 
-Este capítulo estableció: el contexto de capas L1/L2 (§2.1), la amenaza cuántica concreta (§2.2), los fundamentos reticulares y de Dilithium (§2.3), el panorama de estándares (§2.4), la entropía y derivación de claves (§2.5), el papel y la coherencia post-cuántica de las pruebas ZK (§2.6), y el estado del arte que valida y posiciona a NEXUS (§2.7). Sobre estos fundamentos se construyen el diseño (Cap. 3), el núcleo criptográfico (Cap. 4), la gestión de claves (Cap. 5) y la validación formal (Cap. 6).
+Este capítulo estableció: el contexto de capas L1/L2 (§2.1), la amenaza cuántica concreta (§2.2), los fundamentos reticulares y de Dilithium (§2.3), el panorama de estándares (§2.4), la entropía y derivación de claves (§2.5), el papel y la coherencia post-cuántica de las pruebas ZK (§2.6), y el estado del arte que contextualiza y posiciona a NEXUS (§2.7). Sobre estos fundamentos se construyen el diseño (Cap. 3), el núcleo criptográfico (Cap. 4), la gestión de claves (Cap. 5) y la validación formal (Cap. 6).
 
 ---
 
@@ -84,11 +84,11 @@ Este capítulo estableció: el contexto de capas L1/L2 (§2.1), la amenaza cuán
 - [Sho97] P. Shor. *Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer*. SIAM J. Comput. 1997.
 - [Gro96] L. Grover. *A Fast Quantum Mechanical Algorithm for Database Search*. STOC 1996.
 - [Lyu09] V. Lyubashevsky. *Fiat-Shamir with Aborts*. ASIACRYPT 2009. · [Lyu12] *Lattice Signatures without Trapdoors*. EUROCRYPT 2012.
-- NIST. *FIPS 203 (ML-KEM) / 204 (ML-DSA) / 205 (SLH-DSA)*, 2024; *FIPS 206 (FN-DSA)*, borrador.
+- NIST. *FIPS 203 (ML-KEM) / 204 (ML-DSA) / 205 (SLH-DSA)*, 2024; *FN-DSA (Falcon)*, estandarización en curso [NIST-PQC26].
 - NIST. *SP 800-90B* (fuentes de entropía); H. Krawczyk, *HKDF* (RFC 5869).
 - [Yang23] Z. Yang et al. *A Survey and Comparison of Post-Quantum and Quantum Blockchains*. IEEE Communications Surveys & Tutorials, 2023.
-- [EthRoadmap26] Ethereum Foundation. *Roadmap — Future-proofing: Quantum resistance* (Lean Consensus / leanXMSS; leanVM; EIP-7702, EIP-8141). ethereum.org/roadmap/future-proofing/quantum-resistance. Acceso: jun. 2026.
-- [Solana-QR26] Solana / Anza. *Quantum Readiness* (Falcon; Winternitz Vault) y *Alpenglow* (Votor/Rotor). 2026. Acceso: jun. 2026.
+- [Eth-PQ26] Ethereum Foundation. *Roadmap — Future-proofing: Quantum resistance* (Lean Consensus / leanXMSS; leanVM; EIP-7702, EIP-8141). ethereum.org/roadmap/future-proofing/quantum-resistance. Acceso: jun. 2026.
+- [Anza-PQ26] Solana / Anza. *Quantum Readiness* (Falcon; Winternitz Vault) y *Alpenglow* (Votor/Rotor). 2026. Acceso: jun. 2026.
 - [RFC9881] J. Massimo, P. Kampanakis, S. Turner, B. Westerbaan. *RFC 9881: Internet X.509 PKI — Algorithm Identifiers for ML-DSA*. IETF, 2025.
 - [JR13] A. Juels, R. L. Rivest. *Honeywords: Making Password-Cracking Detectable*. ACM CCS 2013.
 - [US10521584] N. Sharifi Mehr (Amazon Technologies). *Computer Threat Analysis Service*. Patente US 10,521,584 B1, 2019.

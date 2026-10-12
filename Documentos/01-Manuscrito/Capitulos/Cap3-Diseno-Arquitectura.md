@@ -10,7 +10,7 @@
 
 Una arquitectura blockchain post-cuántica para sistemas en general enfrenta una tensión que este capítulo resuelve. Por un lado, **debe** usar firmas post-cuánticas (Dilithium) para resistir la amenaza cuántica a la autenticación de transacciones (Cap. 1, Cap. 6). Por otro, esas firmas son **~50× más grandes** que las clásicas, lo que —aplicado de forma ingenua sobre una cadena única— degrada el rendimiento en un orden de magnitud.
 
-La tesis de este capítulo es que **la arquitectura dual-chain no es un complemento opcional, sino la respuesta directa a ese sobrecosto**: al ejecutar y verificar las firmas en una capa L2 y publicar en L1 solo un compromiso respaldado por una prueba, el costo on-chain por transacción post-cuántica se amortiza hasta el de su diferencia de estado clásica. Como corolario, **la capa de verificación del L2 debe ser ella misma post-cuántica**, lo que determina decisiones concretas de diseño (§3.5).
+La arquitectura dual-chain es la respuesta de diseño estudiada para distribuir el sobrecosto de firmas poscuánticas entre ejecución y anclaje. Su amortización se modela bajo condiciones de disponibilidad de datos, prueba de la lógica pertinente y costo del probador (§6.6.5). La validación TG2 distingue esa propuesta de una implementación integral y exige una capa de pruebas cuya seguridad se justifique para el modelo de amenaza considerado.
 
 El capítulo desarrolla el Objetivo 1: especifica los roles de la **Anchor Layer (L1)** y la **Active Layer (L2)**, el camino de la firma post-cuántica a través del sistema, y los componentes clave (Nexus Sequencer, Nitro Verifier), integrando la evidencia de que las cadenas líderes (Ethereum, Solana) convergen hacia el mismo diseño.
 
@@ -77,48 +77,42 @@ $$
 
 donde $d$ es la **diferencia de estado** por transacción —**independiente del esquema de firma**—. El factor $s_q$ **desaparece** del costo on-chain. Con valores modelados ($d\approx40$ B), un rollup de validez reduce el costo por transacción post-cuántica de 3 409 B a $\sim$ 40–140 B (reducción **~24–85×**), con punto de equilibrio en lotes de $\sim$ 10⁴ transacciones (§3.5).
 
-**En la dimensión de cómputo**, la L1 verifica **una** prueba por *batch* (independiente de $M$) en lugar de $M$ firmas, reduciendo el cómputo de verificación on-chain a $\sim$ 0 por transacción. Como el costo de verificar Dilithium ya es bajo (§3.3), este ahorro es secundario frente al de datos.
+**En la dimensión de cómputo**, la L1 verifica **una** prueba por *batch* (independiente de $M$) en lugar de $M$ firmas, distribuyendo el costo de verificación de la prueba entre las operaciones del lote, sin eliminarlo. Como el costo de verificar Dilithium ya es bajo (§3.3), este ahorro es secundario frente al de datos.
 
-> **Conclusión de diseño.** El dual-chain lleva el costo amortizado on-chain de una transacción post-cuántica al de su diferencia de estado clásica: **el tamaño de la firma se vuelve irrelevante para la L1.**
+> **Conclusión de diseño.** El costo por operación puede distribuirse entre el lote y sus diferencias de estado bajo el modelo de disponibilidad y publicación adoptado. Las firmas siguen teniendo costo de almacenamiento, transmisión y verificación en la frontera que las conserva. El modelo no elimina esos costos ni mide por sí solo el rendimiento de una blockchain completa (§6.6.5).
 
 ---
 
-## 3.5 Coherencia post-cuántica del verificador (decisión de diseño crítica)
+## 3.5 Coherencia post-cuántica de la capa de pruebas
 
-La amortización de §3.4 depende de una prueba de validez. Aquí aparece una **inconsistencia latente** que el diseño debe resolver:
+El diseño requiere que los compromisos y el sistema de pruebas sean compatibles con su modelo de amenaza. Los argumentos basados en emparejamientos y logaritmos discretos, como Groth16 sobre curvas clásicas, incorporan supuestos vulnerables a un adversario cuántico suficientemente potente. NEXUS explora una construcción basada en hash y FRI; su ausencia de emparejamientos evita esa dependencia particular, pero no demuestra solidez QROM de la construcción completa.
 
-> Si la prueba que la L1 verifica usa **Groth16 sobre BN254** (basado en emparejamientos / logaritmo discreto), **Shor la rompe**. Un adversario cuántico podría falsificar la prueba que atestigua las transacciones, y la L1 la aceptaría — reintroduciendo la vulnerabilidad cuántica en la capa de verificación, justo la que el sistema pretende eliminar.
+**Tabla 3.2 — Supuestos de las familias de prueba.**
 
-**Decisión:** el verificador (el "Nitro Verifier") debe usar un **sistema de pruebas post-cuántico** —un **STARK** (hash + FRI) o un SNARK reticular—, no Groth16.
+| Familia | Dependencia principal | Condición de validación |
+|---|---|---|
+| Groth16 sobre curvas clásicas | Emparejamientos y logaritmo discreto | No satisface el modelo frente a Shor con recursos suficientes |
+| Argumentos basados en hash y FRI | Compromisos, proximidad y compilación Fiat–Shamir | Requieren prueba de composición, parámetros y modelo ROM/QROM |
 
-**Tabla 3.2 — Sistemas de prueba.**
+**PoC heredada y revisión TG2.** El prototipo usa el campo Goldilocks, NTT, Merkle sobre SHA3-256, retos de extensión y FRI para una recurrencia ilustrativa. Las pruebas del software comprueban casos, pero su aceptación no acredita por sí sola proximidad de la traza ni validez de transacciones completas. La revisión del Objetivo 4 caracteriza la aceptación heredada, el enlace parcial de raíces y la recuperación del testigo pequeño. La variante TG2 v1 vincula un FRI de traza al AIR por una raíz común (§§6.7.1–6.7.4).
 
-| Sistema | Base de seguridad | ¿Post-cuántico? | $\pi$ | Equilibrio de lotes |
-|---|---|:---:|---:|---:|
-| Groth16 (emparejamientos) | log. discreto en curvas | No (Shor) | ~200 B | ~10² tx |
-| **STARK** (hash + FRI) | resistencia de colisión | Sí | ~10²–10³ KB | ~10⁴ tx |
+**Presupuesto histórico de seguridad.** La cifra de aproximadamente 100 bits se conserva como objetivo del diseño anterior. La auditoría no la acredita: el campo de extensión no basta para cerrar composición y consultas, y el trabajo del nonce no impide reinicios de transcripción. Las derivaciones por rondas y ROM de §§6.7.8–6.7.9 explicitan hipótesis y presupuesto adversario; permanecen propuestas pendientes de dictamen y no garantizan 100 bits, conocimiento cero ni QROM completo.
 
-El precio de la coherencia PQ es una prueba mayor → un equilibrio de lotes mayor (~10⁴ tx), perfectamente alcanzable. Esto convierte al Nitro Verifier de adorno opcional en **componente arquitectónico necesario y justificado**.
+**Tabla 3.3 — Mediciones históricas del AIR ilustrativo.**
 
-> **Prototipo de referencia implementado (PoC).** Para sustanciar esta decisión más allá del diseño, se implementó en el repositorio (`nexus-zk::stark`, cableado en `nexus-active::pq_verifier`) un **STARK hash-based propio** que materializa el **motor criptográfico post-cuántico** del Nitro Verifier (no su aritmetización completa): campo de Goldilocks ($p=2^{64}-2^{32}+1$), codificación Reed–Solomon vía **NTT**, compromisos de **Merkle sobre SHA3-256** con separación de dominio hoja/nodo, no interactividad por **Fiat–Shamir** y prueba de bajo grado **FRI**. Una transición de estado se aritmetiza (frontera + transición → polinomio de composición) y su validez se reduce a una afirmación de bajo grado que FRI certifica, atando la traza al compromiso en la fase de consulta. **Ninguna primitiva usa emparejamientos ni curvas elípticas** —solo hash y aritmética de campo—, de modo que **Shor no aplica**, a diferencia del andamiaje Groth16/BN254 que reemplaza.
->
-> **Endurecimiento (soundness ~100 bits).** Los desafíos del verificador (combinación `α`, plegado `β`) se extraen del **campo de extensión** $F_{p^2}\ (\approx 2^{128})$ —no del campo base de 64 bits—, lo que eleva los términos de soundness de la combinación de restricciones y del plegado FRI ($\sim\!\text{grado}/|F|$) por encima de $2^{-100}$; esto es **estructural** (en el campo base el techo caería a ~40 bits para trazas grandes, sin importar el número de consultas). Se añade **grinding** (proof-of-work de 20 bits en Fiat–Shamir, que anula el re-muestreo de la transcripción) y **40 consultas distintas** —muestreadas *sin reemplazo* (una consulta repetida no aporta soundness); las 40 se alcanzan para $T\ge 16$, que cubre todos los tamaños medidos— a *rate* $\rho=1/4$. Presupuesto: $\varepsilon \le \underbrace{2^{-107}}_{\alpha,\ F_{p^2}} + \underbrace{2^{-100}}_{\beta,\ \text{plegado}} + \underbrace{2^{-(80+20)}}_{\text{consulta}+\text{grind}} \approx 2^{-100}$, con tres salvedades que se enuncian con franqueza: (i) el término de consulta (80 bits) usa la convención de *proximity gaps* [BSCIKS20] (2 bits/consulta), **conjetural**; la cota **incondicional provable** por decodificación única da ~47 bits en esa fase, cerrable con DEEP (trabajo futuro); (ii) la cifra corresponde a la **configuración de producción** (build *release*, grinding de 20 bits); (iii) el **techo del campo** ($\varepsilon_\alpha,\varepsilon_\beta$ en $F_{p^2}$) es **>100 bits de forma provable e incondicional** —es lo que el campo base de 64 bits no permitía (su techo caía a ~40 bits)—. Mediciones (portátil modesto, Rust puro, $F_{p^2}$, *blowup* 8, 40 consultas, grinding $2^{20}$):
->
-**Tabla 3.3 — Coherencia post-cuántica del verificador (decisión de diseño crítica).**
+| Filas de traza | Tamaño de prueba histórico | Verificación histórica |
+|---:|---:|---:|
+| 16 | 132 KB | 6,0 ms |
+| 256 | 268 KB | 8,9 ms |
+| 4096 | 445 KB | 12,9 ms |
 
-| Pasos de traza | Tamaño de prueba | Generar | **Verificar** |
-|---:|---:|---:|---:|
-| 16 | 132 KB | — | 6,0 ms |
-| 256 | 268 KB | — | 8,9 ms |
-| 4096 | 445 KB | — | **12,9 ms** |
->
-> El resultado central es la **verificación sucinta**: al multiplicar el cómputo por **256×** (16→4096 pasos), el tiempo de verificación crece solo **~2,2×** (polilogarítmico), mientras el tamaño de prueba crece sub-linealmente. Es justo la propiedad que la L1 necesita: verificar un lote L2 grande con costo casi constante, sin curvas rotas por Shor. *(El tiempo de **generación** está dominado por el grinding —coste fijo $\sim 2^{20}$ hashes— y por la NTT del probador; no es la magnitud relevante para la L1.)* La aritmetización **completa** de la máquina de estado de una aplicación completa (el AIR del PoC es ilustrativo) y la incorporación de DEEP/out-of-domain quedan como trabajo futuro (Cap. 7); el **motor criptográfico post-cuántico**, que es lo que porta la afirmación de coherencia, está implementado, **endurecido a ~100 bits** y verificado por una batería de pruebas (incluida una adversarial que rechaza un probador con composición de bajo grado desligada de la traza).
+Estas cifras pertenecen a la serie histórica y a una carga ilustrativa. Filas AIR no equivalen a transacciones ML-DSA. Las nuevas mediciones preservan repeticiones y dispersión (§6.6), y las diferencias de procedencia se conservan explícitas. El costo del probador, incluido el trabajo del nonce, forma parte del balance de viabilidad; una curva de verificación no certifica seguridad ni el flujo L2/L1 completo.
 
-> **Validación externa contundente.** La hoja de ruta de consenso de Ethereum ("Lean Consensus", antes *Beam Chain*) llega a la **misma conclusión**: reemplaza BLS por firmas hash-based (leanXMSS), que pesan 20–40× más y carecen de agregación nativa, y lo resuelve con **`leanVM`, un zkVM que comprime las firmas ~250× con agregación SNARK post-cuántica**; ethereum.org afirma explícitamente que *«los STARKs ya son resistentes a la cuántica»* y que los compromisos KZG deberán migrar a STARK/reticular. El principio de NEXUS —*el sistema de pruebas debe ser PQ*— es el mismo que adopta la frontera.
+Las propuestas poscuánticas de Ethereum y Solana aportan contexto sobre tamaño de firmas y agregación. Sus hojas de ruta no sustituyen la validación de NEXUS ni se presentan como despliegue completo de la arquitectura de esta tesis [EthRoadmap26, Solana-QR26].
 
 ### 3.5.1 Una tensión de diseño honesta: Dilithium vs. STARK-friendliness
 
-Conviene declarar una tensión técnica que demuestra dominio del problema. **Probar la verificación de una firma Dilithium dentro de un STARK es costoso** (operaciones reticulares, claves públicas grandes); de hecho, **Ethereum eligió firmas hash-based en parte porque son más STARK-friendly** que las reticulares, y **Solana eligió Falcon** (reticular pero de firma pequeña). La elección de NEXUS por **Dilithium** optimiza la **verificación directa** (L1, y la robustez/estandarización de la implementación) a costa de mayor fricción en la **agregación probada** (L2). No es un defecto, sino una **decisión consciente con un trade explícito**: NEXUS prioriza la robustez del primitivo y reconoce la agregación STARK de firmas reticulares como el reto de ingeniería a resolver. La divergencia **Ethereum (hash-based) / Solana (Falcon) / NEXUS (Dilithium)** evidencia que **no existe una respuesta única** — y que la elección debe justificarse, como aquí.
+La tensión técnica es el costo de aritmetizar ML-DSA dentro de un sistema de pruebas. NEXUS selecciona ML-DSA como esquema de firma por su estandarización y por la API semillada del backend, mientras estudia separadamente la agregación por pruebas. El AIR actual no verifica firmas ML-DSA: medirlo no resuelve el costo de esa aritmetización. Las propuestas externas de firmas hash-based o Falcon ilustran alternativas de diseño, con supuestos y costos propios.
 
 ---
 
@@ -136,7 +130,7 @@ $$
 
 Rotar o migrar de esquema actualiza la **política** y el **epoch**, **sin tocar la id_estable**. Un **Registro de Claves (Key Registry)** permite asociar claves post-cuánticas junto a las clásicas, habilitando **firmas híbridas** durante la transición y la **migración por cuenta**.
 
-> **Validación externa.** Ethereum implementa este patrón: **EIP-7702 (smart EOAs, ya live)** permite a una cuenta de dirección estable delegar su lógica de verificación; **EIP-8141 ("signature agility", fork Hegota, H2-2026)** y un **Key Registry** permiten que cada cuenta migre a un esquema PQ de forma independiente, sin hard fork global. El modelo de cuenta de NEXUS adopta este enfoque validado, cerrando el problema identidad↔clave↔rotación↔dirección.
+> **Referencia de diseño.** La abstracción de cuentas permite separar identidad de política de verificación. Las propuestas de agilidad de firmas y registros poscuánticos de Ethereum son antecedentes de esa separación [Eth-PQ26]. En NEXUS, R3 comprueba un registro local y firmas por época; su integración con el sequencer y el anclaje L1 sigue pendiente (§5.8).
 
 ---
 
@@ -183,7 +177,7 @@ El diseño dual-chain de NEXUS responde, pieza por pieza, al problema que la PQC
 
 > **Supuesto explícito (para que las afirmaciones de seguridad estén bien formadas).** La integridad del libro mayor depende, además de la in-falsificabilidad de las firmas (Cap. 6), de la **seguridad del consenso**. En NEXUS el consenso BFT operativo es **diseño de referencia**, no implementación; por tanto, la garantía del sistema se enuncia condicionalmente: *in-falsificabilidad a nivel de transacción bajo el supuesto de consenso honesto-mayoritario*. La realización completa del consenso, la DA y el verificador STARK es trabajo futuro (Cap. 7).
 
-Con ello, el **Objetivo 1 queda atendido**: la arquitectura dual-chain está especificada como modelo de referencia, con su rol —amortizar el sobrecosto post-cuántico manteniendo coherencia PQ— justificado cuantitativamente y validado por la convergencia de la industria.
+Con ello, el **Objetivo 1 queda atendido**: la arquitectura dual-chain está especificada como modelo de referencia, con su rol —amortizar el sobrecosto post-cuántico manteniendo coherencia PQ— justificado cuantitativamente y contextualizado por propuestas externas y sujeto a la validación TG2.
 
 ---
 

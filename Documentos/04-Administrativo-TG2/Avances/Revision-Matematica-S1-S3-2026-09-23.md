@@ -6,6 +6,10 @@
 
 ## Material y orden de lectura
 
+**Catálogo complementario del 12 de octubre:** [enunciados, dependencias e integridad documental](Catalogo-Validacion-2026-10-12/README.md). Permite localizar doce afirmaciones en sus fuentes y relacionarlas con M1–M6. El comprobador no verifica las demostraciones ni registra un dictamen; QROM conserva su condición de trabajo futuro.
+
+**Edición consolidada para revisión:** [Word del 12 de octubre](Derivaciones-Matematicas-TG2-2026-10-12.docx) y [fuente](Derivaciones-Matematicas-TG2-2026-10-12.md). Los argumentos por rondas, ROM y potencial se integran también en §§6.7.8–6.7.9 del manuscrito. La edición previa y los paquetes siguientes son antecedentes; sus estados históricos no sustituyen el estado de esta consolidación ni cierran M1–M6.
+
 **Cota QROM de cola:** [conteo y recurrencia de amplitudes](Cola-QROM-2026-09-23/README.md). Se propone un límite para Tcola mediante ausencia de ciclos anclados, capacidad local, escalera de niveles y unión sobre conjuntos de 39 índices. Para M5 revisar esos pasos y la extensión analítica de R. Los 144 perfiles incluyen 16 cotas no triviales; pasan 96 Python y 197 Rust. La omisión S continúa sin cota útil y los exponentes de cola no acreditan seguridad global.
 
 **Muestreo QROM y cambio de juego:** [reducción condicional al verificador](Muestreo-QROM-2026-09-23/README.md). Propone la cobertura de aceptación falsa, un verificador auxiliar acotado y la aplicación del lema 4.9 de CMS19. Para M5 se solicita revisar esos tres pasos, el tamaño del conjunto local G y el presupuesto Q+V. La probabilidad de omisión o cola se define mediante β, sin cota útil demostrada. Pasan 80 Python y 197 Rust; el corpus contiene enunciados válidos y la herramienta no decide falsedad ni demuestra β.
@@ -16,9 +20,9 @@
 
 **Suplemento de revisión interna:** [revisión crítica y potencial para nonces adaptativos](Revision-Critica-ROM-2026-09-23/README.md). Refuerza §§5–8 de la transferencia ROM y añade 96 escenarios de estrategias exactas; mantiene la fórmula. No constituye el dictamen independiente solicitado.
 
-**Complementos posteriores integrados en `main`:** [solidez por rondas del IOP conjunto](Cierre-Matematico-2026-09-23/README.md) y [transferencia clásica ROM al protocolo TG2 v1](Transferencia-ROM-2026-09-23/README.md). El segundo propone una demostración con extracción por registro hash, gramática del canal, sesgo, nonces adaptativos y pérdidas explícitas. Ambos requieren dictamen y amplían M3–M5; el manuscrito y el Word siguientes conservan su edición anterior. QROM permanece abierto.
+**Complementos posteriores integrados en `main`:** [solidez por rondas del IOP conjunto](Cierre-Matematico-2026-09-23/README.md) y [transferencia clásica ROM al protocolo TG2 v1](Transferencia-ROM-2026-09-23/README.md). El segundo propone una demostración con extracción por registro hash, gramática del canal, sesgo, nonces adaptativos y pérdidas explícitas. Ambos requieren dictamen y amplían M3–M5; las ediciones históricas se conservan y los argumentos están integrados en el manuscrito y suplemento del 12 de octubre. QROM permanece abierto.
 
-**Lectura consolidada:** [documento Word de las derivaciones](Derivaciones-Matematicas-TG2-2026-09-23.docx) y [fuente Markdown](Derivaciones-Matematicas-TG2-2026-09-23.md). Reúne los argumentos completos, sus hipótesis, evidencia y preguntas M1–M6. La sección 1.1 explica la diferencia entre una demostración escrita pendiente de revisión y el paso de compilación que sigue abierto.
+**Lectura consolidada:** [documento Word de las derivaciones](Derivaciones-Matematicas-TG2-2026-10-12.docx) y [fuente Markdown](Derivaciones-Matematicas-TG2-2026-10-12.md). Reúne los argumentos completos, sus hipótesis, evidencia y preguntas M1–M6. La sección 1.1 explica la diferencia entre una demostración escrita pendiente de revisión y el paso de compilación que sigue abierto.
 
 1. [Manuscrito vigente](../../01-Manuscrito/README.md), §§6.7.2–6.7.6 y conclusiones.
 2. [S1: álgebra y transferencia de distancia](R4-Algebra-AIR-FRI-2026-09-22.md).

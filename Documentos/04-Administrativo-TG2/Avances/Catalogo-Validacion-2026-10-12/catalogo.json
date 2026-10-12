@@ -1,0 +1,442 @@
+{
+  "esquema": 1,
+  "fecha": "2026-10-12",
+  "revision_documental_base": "c4f68a9fb0029229dd01586426c1c07bf94dbac3",
+  "revision_codigo_analizada": "01dcde960402b6c60a19242b7ae3d6ac3d82a518",
+  "qrom_air_fri": "trabajo_futuro",
+  "fuente_metodologica": {
+    "repositorio": "https://github.com/openai/math",
+    "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+    "uso": "Estructura de enunciados, soluciones, axiomas y notas de alcance; no importa garantías a NEXUS."
+  },
+  "archivos": [
+    {
+      "id": "r1",
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/R1-Correspondencia-Formal-2026-09-22.md",
+      "sha256": "3af452d6ae953075d6bf3fc174ea85f7f6e24347fdd6a6222414c94bee682b56"
+    },
+    {
+      "id": "algebra",
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/R4-Algebra-AIR-FRI-2026-09-22.md",
+      "sha256": "a448e2428fc9edca3b1f7b25caccd5efbaeadc89fde9d18cbd4d4cbbbfad46ac"
+    },
+    {
+      "id": "rondas",
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md",
+      "sha256": "886380857ccab164c6b5300a9bfc736d426c37a4e82ac9af47e54b874d17cb62"
+    },
+    {
+      "id": "rom",
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md",
+      "sha256": "2336aa9548b2820b844834b4c29ef1648930f41435458d3c2cee45a86d945524"
+    },
+    {
+      "id": "potencial",
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/Revision-Critica-ROM.md",
+      "sha256": "fb89056e602571f20bb9438fcb1e6fba415b43db30352399977188f57616fc7a"
+    },
+    {
+      "id": "corpus",
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/corpus.json",
+      "sha256": "0d74fe1300cdae66bbecf5955ba4855a0b2046f3ce39f1cedb6a6ff8c05268ed"
+    },
+    {
+      "id": "cola",
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/Cola-y-Conteo-QROM.md",
+      "sha256": "ffda72e538d7634c834351240b7a2c635e098dfa85f171fa2ea3de5bffacc3ff"
+    },
+    {
+      "id": "muestreo",
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/Muestreo-y-Puente-QROM.md",
+      "sha256": "ca373ff511f2a6d33cbed41d1a8a30beda442bd1b964f0e057e02bc0b6936207"
+    },
+    {
+      "id": "rust",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/fuentes/nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs",
+      "sha256": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f"
+    }
+  ],
+  "afirmaciones": [
+    {
+      "id": "N01",
+      "enunciado": "Pr[R_alpha=0] <= 1/p^2 para una traza inválida fijada previamente.",
+      "modelo": "algebra_ideal",
+      "alcance": "Cancelación de residuos del AIR demostrativo.",
+      "hipotesis": [
+        "F=Goldilocks, K extensión cuadrática; T potencia de dos y N=8T.",
+        "f en F[X], grado < T, e inicio/salida fijados antes de alpha.",
+        "Al menos un residuo R_j es no nulo; alpha_0,alpha_1,alpha_2 uniformes independientes en K."
+      ],
+      "exclusiones": [
+        "No acota grinding, reinicios ni consultas adaptativas.",
+        "No es una garantía del hash determinista ni QROM."
+      ],
+      "dependencias": [],
+      "revision": [
+        "M1"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "algebra",
+          "localizador": "## 3. Cancelación y probabilidad condicionada"
+        }
+      ],
+      "estado": "derivacion_propuesta",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    },
+    {
+      "id": "N02",
+      "enunciado": "dist(c_f,RS[K,L,2T]) >= (5T+1)/(8T) cuando R_alpha != 0.",
+      "modelo": "algebra_ideal",
+      "alcance": "Distancia de una composición racional a un código.",
+      "hipotesis": [
+        "N=8T; L contiene N puntos distintos y D=X^T-1 no se anula en L.",
+        "f está fijado y tiene grado < T; numeradores según S1.",
+        "R_alpha != 0; cada candidato h tiene grado < 2T; deg(N_alpha-Dh) <= 3T-1."
+      ],
+      "exclusiones": [
+        "No implica una tasa de rechazo FRI.",
+        "La probabilidad del evento de cancelación se trata separadamente en N01."
+      ],
+      "dependencias": [],
+      "revision": [
+        "M1"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "algebra",
+          "localizador": "## 4. Distancia cuando no hay cancelación"
+        }
+      ],
+      "estado": "derivacion_propuesta",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    },
+    {
+      "id": "N03",
+      "enunciado": "Existe a lo sumo un candidato de grado < T a distancia <= delta_t del oráculo fijado.",
+      "modelo": "IOP_ideal",
+      "alcance": "Unicidad y selección previa del candidato; rama fuera del campo base.",
+      "hipotesis": [
+        "Código RS sobre N puntos distintos; distancia mínima (N-T+1)/N.",
+        "2*delta_t < (N-T+1)/N.",
+        "El candidato se determina a partir del oráculo previo a alpha; la comprobación AIR exige valores base."
+      ],
+      "exclusiones": [
+        "Unicidad no demuestra que exista un candidato.",
+        "La pertenencia al campo base requiere la rama específica de la derivación."
+      ],
+      "dependencias": [],
+      "revision": [
+        "M2"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "rondas",
+          "localizador": "### 5.1 Elección de caso al fijar la traza"
+        }
+      ],
+      "estado": "derivacion_propuesta",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    },
+    {
+      "id": "N04",
+      "enunciado": "Salvo a lo sumo n valores beta, el acuerdo de a+beta*b sobre S implica acuerdo de a y b con polinomios sobre el mismo S.",
+      "modelo": "IOP_ideal",
+      "alcance": "Lema A de acuerdo correlacionado.",
+      "hipotesis": [
+        "Y tiene n>=1 puntos distintos; e>=1; a,b:Y->K.",
+        "|S| >= (1-theta)*n y (1-3*theta)*n > e-1.",
+        "Los polinomios candidatos tienen grado < e y las funciones se fijan antes de beta."
+      ],
+      "exclusiones": [
+        "No cubre radios que incumplen la desigualdad estricta.",
+        "No basta conocer distancias individuales sin conservar S."
+      ],
+      "dependencias": [],
+      "revision": [
+        "M3"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "rondas",
+          "localizador": "## 3. Lema elemental de acuerdo para dos funciones"
+        }
+      ],
+      "estado": "derivacion_propuesta",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    },
+    {
+      "id": "N05",
+      "enunciado": "Sin excepciones, la fracción de parejas aceptantes es <=1-theta; omitir todas las malas se acota por H(M,q,theta).",
+      "modelo": "IOP_ideal",
+      "alcance": "Recorrido FRI y muestreo sin reemplazo.",
+      "hipotesis": [
+        "Oráculo inicial a distancia > theta de su código.",
+        "No ocurre ningún evento excepcional de plegado de N04.",
+        "Constante final fijada antes de q parejas distintas uniformes de M=N/2; 0<=q<=M."
+      ],
+      "exclusiones": [
+        "No se multiplican automáticamente probabilidades de ambos FRI.",
+        "No trata la generación hash adaptativa de consultas."
+      ],
+      "dependencias": [
+        "N04"
+      ],
+      "revision": [
+        "M3"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "rondas",
+          "localizador": "**Lema B: consultas cuando no hubo eventos excepcionales.**"
+        }
+      ],
+      "estado": "derivacion_propuesta",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    },
+    {
+      "id": "N06",
+      "enunciado": "La proposición conjunta da cotas por ronda y ordinaria para aceptación falsa del AIR y ambos FRI.",
+      "modelo": "IOP_ideal",
+      "alcance": "Función de estado del protocolo conjunto.",
+      "hipotesis": [
+        "T potencia de dos entre 16 y 4096; campos y grados de la derivación.",
+        "Oráculos completos inmutables; cada capa se fija antes de su reto uniforme fresco.",
+        "delta_t=delta_c=1/8 cumple unicidad y desigualdades de acuerdo; q=40 parejas distintas con consulta compartida.",
+        "Enunciado falso significa ausencia de traza válida sobre F."
+      ],
+      "exclusiones": [
+        "No cuantifica por sí sola el ejecutable Merkle/Fiat-Shamir.",
+        "No demuestra validez ML-DSA, conocimiento cero ni 100 bits."
+      ],
+      "dependencias": [
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N05"
+      ],
+      "revision": [
+        "M4"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "rondas",
+          "localizador": "## 6. Proposición conjunta y cota ordinaria"
+        }
+      ],
+      "estado": "derivacion_propuesta",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    },
+    {
+      "id": "N07",
+      "enunciado": "Fuera de Bad_H, una apertura aceptada coincide con el vector extraído y congelado antes del reto.",
+      "modelo": "ROM_clasico",
+      "alcance": "Extracción por registro de consultas de una raíz marcada.",
+      "hipotesis": [
+        "Un único oráculo clásico de 256 bits y registro temporal de consultas.",
+        "Raíz marcada como campo comprometido antes del reto; profundidad y formas canónicas fijas.",
+        "Extracción usa el registro en ese instante; las regiones desconocidas se completan con cero.",
+        "Bad_H incluye los eventos excepcionales definidos en la transferencia."
+      ],
+      "exclusiones": [
+        "No es extracción incondicional para una raíz desconocida.",
+        "No es extracción eficiente de testigos ni argumento QROM."
+      ],
+      "dependencias": [],
+      "revision": [
+        "M5-ROM"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "rom",
+          "localizador": "## 5. Extracción previa de los oráculos Merkle"
+        },
+        {
+          "archivo_id": "potencial",
+          "localizador": "## 2. Extracción: instante, profundidad y raíz marcada"
+        }
+      ],
+      "estado": "derivacion_propuesta",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    },
+    {
+      "id": "N08",
+      "enunciado": "La cuenta de candidatos por potencial aporta (Q+1)*2^(-g)*(h_T+tau_T) a la aceptación fuera de excepciones.",
+      "modelo": "ROM_clasico",
+      "alcance": "Nonces adaptativos y cola del selector de índices.",
+      "hipotesis": [
+        "Candidato fijado al inicio antes de su primera respuesta; conjunto G fijo de parejas buenas.",
+        "Respuestas nuevas uniformes condicionadas a la historia; duplicados no crean oportunidades.",
+        "Cada consulta inicia como máximo un candidato; verificación final inicia a lo sumo otro.",
+        "Potenciales no negativos detenidos al primer evento excepcional; R=512 para la cola."
+      ],
+      "exclusiones": [
+        "No cobra 2^(-g) después de condicionar a un nonce ganador.",
+        "No traslada la supermartingala clásica a consultas cuánticas."
+      ],
+      "dependencias": [
+        "N05",
+        "N07"
+      ],
+      "revision": [
+        "M5-ROM"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "potencial",
+          "localizador": "## 4. Lema de candidatos adaptativos mediante potencial"
+        },
+        {
+          "archivo_id": "potencial",
+          "localizador": "## 5. Cola y número de consultas"
+        }
+      ],
+      "estado": "derivacion_propuesta",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    },
+    {
+      "id": "N09",
+      "enunciado": "Pr[falso y acepta] <= E_ROM(T,g,Q) con las pérdidas de grafo, campo y candidatos de la fórmula propuesta.",
+      "modelo": "ROM_clasico",
+      "alcance": "Verificador NEXUS-TG2-LINKED-FRI-v1.",
+      "hipotesis": [
+        "SHA3 se modela mediante un solo oráculo aleatorio clásico.",
+        "Q incluye preparación, compromisos y nonces; no hay ayuda correlacionada gratuita.",
+        "Una prueba final; perfil fijo T,g; enunciado adaptativo dentro de ese perfil.",
+        "Se aplican los lemas algebraicos, gramática, límites de forma y cuentas B_T,V_T de la transferencia."
+      ],
+      "exclusiones": [
+        "No es seguridad incondicional de SHA3 ni reducción QROM.",
+        "Los parámetros vigentes no acreditan 100 bits ni conocimiento cero."
+      ],
+      "dependencias": [
+        "N06",
+        "N07",
+        "N08"
+      ],
+      "revision": [
+        "M5-ROM",
+        "M6"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "rom",
+          "localizador": "**Teorema ROM propuesto.**"
+        }
+      ],
+      "estado": "derivacion_propuesta",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    },
+    {
+      "id": "N10",
+      "enunciado": "Los 14 certificados preservados coinciden en Python y Rust: 8 honestos aceptados y 6 alejados rechazados.",
+      "modelo": "corpus_finito",
+      "alcance": "Correspondencia del verificador en los casos del corpus.",
+      "hipotesis": [
+        "Se usan los certificados y el informe corpus.json preservados.",
+        "Se distingue aceptación honesta de oráculos alejados con enunciados válidos.",
+        "La instantánea Rust se conserva en R4-Merkle-FS; los resultados pertenecen a la ejecución histórica."
+      ],
+      "exclusiones": [
+        "No demuestra equivalencia general de implementaciones.",
+        "Los seis rechazos no son seis falsificaciones de enunciados falsos."
+      ],
+      "dependencias": [],
+      "revision": [
+        "M6"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "rom",
+          "localizador": "## 11. Correspondencia experimental y trazabilidad"
+        },
+        {
+          "archivo_id": "corpus",
+          "localizador": "{"
+        },
+        {
+          "archivo_id": "rust",
+          "localizador": "verify"
+        }
+      ],
+      "estado": "contraste_empirico",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    },
+    {
+      "id": "N11",
+      "enunciado": "La cota de cola QROM no resuelve la omisión beta^S ni cierra una garantía cuántica completa de AIR/FRI.",
+      "modelo": "QROM",
+      "alcance": "Resultados parciales conservados como investigación futura.",
+      "hipotesis": [
+        "Se mantienen las hipótesis del ancla, base sin colisiones, conteo y presupuesto de consultas.",
+        "La revisión independiente de cola, cobertura y cambio de juego permanece pendiente.",
+        "La cota útil de omisión beta^S no está demostrada en esta reducción."
+      ],
+      "exclusiones": [
+        "No se combina el factor clásico h_T con búsqueda cuántica sin reducción.",
+        "Esta línea no es un requisito añadido al cierre activo."
+      ],
+      "dependencias": [],
+      "revision": [
+        "M5-QROM"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "cola",
+          "localizador": "## 9. Siguiente obligación"
+        },
+        {
+          "archivo_id": "muestreo",
+          "localizador": "## 5. El evento que falta acotar"
+        }
+      ],
+      "estado": "trabajo_futuro",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    },
+    {
+      "id": "N12",
+      "enunciado": "R1 identifica el perfil ML-DSA y refuta la aplicación directa examinada de JMW24; quedan R1-A–E.",
+      "modelo": "correspondencia_bibliografica",
+      "alcance": "Perfil, condiciones de reducción y obligaciones del código de firma.",
+      "hipotesis": [
+        "Parámetros del backend y traducción concretos conservados en R1.",
+        "Se considera el teorema y versión bibliográfica identificados, no todas las reducciones posibles.",
+        "La firma hedged, codificación, semillas y errores extremos requieren su puente propio."
+      ],
+      "exclusiones": [
+        "Inaplicabilidad de un teorema no demuestra un ataque.",
+        "AIR/FRI y factorización cuántica no prueban resistencia de ML-DSA."
+      ],
+      "dependencias": [],
+      "revision": [
+        "R1-A",
+        "R1-B",
+        "R1-C",
+        "R1-D",
+        "R1-E",
+        "M6"
+      ],
+      "evidencia": [
+        {
+          "archivo_id": "r1",
+          "localizador": "## Obligaciones que permanecen"
+        }
+      ],
+      "estado": "correspondencia_documentada",
+      "mecanizacion": "no_disponible",
+      "dictamen": null
+    }
+  ]
+}

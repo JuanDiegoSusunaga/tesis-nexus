@@ -1,7 +1,10 @@
+param([string]$Documento, [string]$CarpetaTrabajo)
 $ErrorActionPreference = 'Stop'
 $raizDerivaciones = Split-Path -Parent $PSScriptRoot
 $rutaDerivaciones = Join-Path $raizDerivaciones 'Documentos\04-Administrativo-TG2\Avances\Derivaciones-Matematicas-TG2-2026-09-23.docx'
 $carpetaTrabajoDerivaciones = Join-Path $raizDerivaciones '.tools\derivaciones\render'
+if (-not [string]::IsNullOrWhiteSpace($Documento)) { $rutaDerivaciones = [IO.Path]::GetFullPath((Join-Path $raizDerivaciones $Documento)) }
+if (-not [string]::IsNullOrWhiteSpace($CarpetaTrabajo)) { $carpetaTrabajoDerivaciones = [IO.Path]::GetFullPath((Join-Path $raizDerivaciones $CarpetaTrabajo)) }
 $null = New-Item -ItemType Directory -Path $carpetaTrabajoDerivaciones -Force
 $copiaDerivaciones = Join-Path $carpetaTrabajoDerivaciones 'derivaciones.docx'
 Copy-Item -LiteralPath $rutaDerivaciones -Destination $copiaDerivaciones -Force

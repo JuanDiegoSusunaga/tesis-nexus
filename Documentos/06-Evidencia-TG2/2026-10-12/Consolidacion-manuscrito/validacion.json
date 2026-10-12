@@ -1,0 +1,216 @@
+{
+  "fecha": "2026-10-12",
+  "codigo": [
+    {
+      "comando": [
+        "cargo",
+        "check",
+        "--workspace",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml"
+      ],
+      "salida": 0,
+      "log": "codigo-1.log"
+    },
+    {
+      "comando": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml"
+      ],
+      "salida": 0,
+      "log": "codigo-2.log"
+    },
+    {
+      "comando": [
+        "cargo",
+        "build",
+        "--workspace",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "nexus/Cargo.toml"
+      ],
+      "salida": 0,
+      "log": "codigo-3.log"
+    }
+  ],
+  "pruebas_python_derivaciones_y_catalogo": [
+    {
+      "comando": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_rbr_conjunto_tg2.py",
+        "-v"
+      ],
+      "salida": 0,
+      "log": "python-1.log"
+    },
+    {
+      "comando": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_transferencia_rom_tg2.py",
+        "-v"
+      ],
+      "salida": 0,
+      "log": "python-2.log"
+    },
+    {
+      "comando": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts/tests",
+        "-p",
+        "test_revision_rom_tg2.py",
+        "-v"
+      ],
+      "salida": 0,
+      "log": "python-3.log"
+    },
+    {
+      "comando": [
+        "python",
+        "scripts/verificar_catalogo_validacion.py"
+      ],
+      "salida": 0,
+      "log": "python-4.log"
+    }
+  ],
+  "pruebas_rust": 197,
+  "pruebas_python_derivaciones": 30,
+  "pruebas_python_verificador_edicion": 10,
+  "verificador_edicion_tests": "python -m unittest discover -s scripts/tests -p test_verificar_version_tg2.py -v: diez pruebas correctas.",
+  "archivos_protegidos_comprobados": 176,
+  "cambios_codigo_rust": false,
+  "catalogo": {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Catalogo-Validacion-2026-10-12/validacion.json",
+    "bytes": 1821,
+    "sha256": "56026a99c54b3e78aa893f2ddd7a5f3b3682cfa9d3b40b594a0274a8bb4deaa2"
+  },
+  "enlaces_locales_comprobados": 345,
+  "revision_visual_paginas": {
+    "word": 110,
+    "derivaciones": 54,
+    "pdf": 97
+  },
+  "fuentes": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "bytes": 15243,
+      "sha256": "57b04431ff0e0945bf41bf419d49b8bdaef271403924ec6c58a643177d1d8164"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "bytes": 5961,
+      "sha256": "b9ead99a051817c61772e3bdac9f52f38f82cdd61173b126f2ceb16040a06a79"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "bytes": 10715,
+      "sha256": "cb644d3e158fa3350f18665ad54e5a1e4fff9a7e80be6069e22f963efc18f12f"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "bytes": 10758,
+      "sha256": "76dcf3bca7c7a23c227e1e2920d3477771dcc5abca1be8fc050979bfed41c075"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "bytes": 18395,
+      "sha256": "e40c32efcaf7bec7d841407b39c58f98c1493fe5fdad2812ac95388440ce37cd"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "bytes": 13698,
+      "sha256": "9f489e6d787405a3d1e141f17fb728fdf89025db97f00475979b3da64739ebf0"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "bytes": 28859,
+      "sha256": "0c0189efd88d64927a8c432b3f5c02e1993265b368d4ef981490c60968478116"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "bytes": 96370,
+      "sha256": "d9ffc7fbfd5bfc05f2c1d9b65fcd6d2b6d9d0857e4a4b5329e16b0e6121149eb"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "bytes": 12622,
+      "sha256": "c80a15f661a0744fd1f66fb3eec6de55d62668ad4e6b43a1b422977a02c156e1"
+    },
+    {
+      "archivo": "scripts/actualizar_derivaciones_word.ps1",
+      "bytes": 3467,
+      "sha256": "89d2eb2504aef83bfbcd0f5942eb9876af80bd3f5b73a3214983e9b7bb8a1ef2"
+    },
+    {
+      "archivo": "scripts/compilar_manuscrito.py",
+      "bytes": 17012,
+      "sha256": "91d96d5766cbd9d1b397d79e47900a98fcdaeedaf52402f042aa23b13ecea073"
+    },
+    {
+      "archivo": "scripts/exportar_manuscrito_pdf.py",
+      "bytes": 8611,
+      "sha256": "090962c0baef62e18acffc66057f9c18e9047a372afe7b270adb7c99fd974eee"
+    },
+    {
+      "archivo": "scripts/generar_derivaciones_docx.py",
+      "bytes": 6309,
+      "sha256": "c9bcc46418d3940df36477fea4a03e768243259daf3f1eec1106028b08a05851"
+    },
+    {
+      "archivo": "scripts/registrar_version_tg2.py",
+      "bytes": 2888,
+      "sha256": "74266a136ffc42e641dc67e6d1a29c1fc02a310fa0fd985ebf40e93bbf14a719"
+    },
+    {
+      "archivo": "scripts/renderizar_manuscrito_word.ps1",
+      "bytes": 5415,
+      "sha256": "2612f3d0b71c43ed1a42d8e7f842ffca1f869b44df83d36074bde89ec61090dc"
+    },
+    {
+      "archivo": "scripts/revisar_graficas_manuscrito.py",
+      "bytes": 8512,
+      "sha256": "92878f7e41e1497f2eb69c310a02346703e11687b1e10ce39b6056d79673da46"
+    },
+    {
+      "archivo": "scripts/revisar_manuscrito.py",
+      "bytes": 5285,
+      "sha256": "0984f9f8cadea81bf169543458152a79f3f6c2c33215fbe1b986a54ccdd600f4"
+    },
+    {
+      "archivo": "scripts/verificar_catalogo_validacion.py",
+      "bytes": 5244,
+      "sha256": "6ae6b2b322195a1002286c6962713d4d312c6b780812208236f1ba06462d1e3d"
+    },
+    {
+      "archivo": "scripts/verificar_version_tg2.py",
+      "bytes": 3207,
+      "sha256": "f726fc77d782b44a51c9df725f8a82aa1d1f78bb089daf81bd3a0429433a6858"
+    }
+  ],
+  "renderer_empaquetado": "Intentado; falta pdf2image y no está disponible LibreOffice. Se conserva el log y se usa el renderer nativo de Word existente.",
+  "limite": "Estas comprobaciones no mecanizan las pruebas ni constituyen aprobación académica."
+}

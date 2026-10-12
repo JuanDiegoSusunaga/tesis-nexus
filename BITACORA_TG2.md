@@ -1,5 +1,23 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Consolidación del manuscrito y revisión de antecedentes, 12 de octubre de 2026
+
+Por solicitud del autor, se consolidó la revisión de las afirmaciones heredadas en la edición TG2. Se precisan el presupuesto histórico de 100 bits, conocimiento cero, alcance del AIR, condiciones de firma, protección de semillas y amortización. Se integran §§6.7.7–6.7.10: lectura crítica de antecedentes, solidez ideal por rondas, transferencia ROM y potencial para nonces, y alcance QROM como trabajo futuro. Las derivaciones propuestas y R1-A–E conservan el dictamen pendiente; no se atribuye la aprobación previa del director a esta edición.
+
+Se generan el manuscrito Markdown, Word y PDF y un nuevo suplemento de derivaciones del 12 de octubre, preservando el anterior. La edición tiene 110 páginas Word y 97 PDF, 34 tablas, 848 celdas comparadas, tres figuras y 560 ecuaciones nativas; el suplemento tiene 14 tablas y 673 ecuaciones nativas. Se revisan las páginas renderizadas y se corrigen desbordamientos de dos ecuaciones y la tabla de presupuestos, sin cambiar sus términos. El PDF no presenta páginas vacías ni texto fuera de márgenes.
+
+Pasan cargo check con todos los targets, 197 pruebas Rust y cargo build; también 30 pruebas Python de los complementos y diez del verificador de edición. El catálogo conserva doce afirmaciones y nueve archivos íntegros. La protección por SHA-256 verifica 176 archivos de TG1, Rust y paquetes matemáticos originales. Los procesos hijos de los lanzadores modificados se ejecutan ocultos. El renderer empaquetado carece de sus dependencias; se usa la renderización nativa de Word existente. Los resultados se registran en [la evidencia de consolidación](Documentos/06-Evidencia-TG2/2026-10-12/Consolidacion-manuscrito/).
+
+El código probado está en c5c466c6350e4ff06d04d27ed68b029095c7aec8; las demostraciones preservan su referencia a 01dcde960402b6c60a19242b7ae3d6ac3d82a518. Se sincronizan balance, índices, preguntas de revisión, guion y manifiesto. La entrega académica, el dictamen y la sustentación siguen por registrar. [Informe de cambios](Documentos/04-Administrativo-TG2/Avances/Consolidacion-Manuscrito-TG2-2026-10-12.md).
+
+## Catálogo de afirmaciones y evaluación de OpenAI Math, 12 de octubre de 2026
+
+Por indicación del autor, se adapta la estructura de enunciado, solución y alcance de Lean/Comparator al [catálogo de validación](Documentos/04-Administrativo-TG2/Avances/Catalogo-Validacion-2026-10-12/README.md). Doce entradas enlazan M1–M6 y R1 con sus hipótesis, dependencias, localizadores y nueve archivos identificados por SHA-256. El comprobador usa la biblioteca estándar de Python y solo verifica integridad y coherencia documental. No constituye una mecanización, una nueva ejecución de Rust ni un dictamen independiente.
+
+La evaluación externa fija `openai/math` en `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`. El resultado 279 queda como candidato secundario de factorización cuántica, sin incorporación a la bibliografía principal ni uso como fundamento de resistencia de ML-DSA. Se distingue el desafío Comparator, que puede contener `sorry`, de la solución y su ejecución. La verificación Lean del preprint queda pendiente.
+
+El catálogo referencia el análisis del código `01dcde960402b6c60a19242b7ae3d6ac3d82a518` y una instantánea preservada. El checkout local de `nexus/` observado está en `c5c466c6350e4ff06d04d27ed68b029095c7aec8`; no se cambia ni se atribuyen sus resultados a la edición histórica. El manuscrito y sus salidas conservan la edición previa; QROM de AIR/FRI sigue como trabajo futuro. El complemento no añade Lean como requisito de cierre académico.
+
 ## Decisión de alcance: QROM como trabajo futuro, 23 de septiembre de 2026
 
 El autor indicó expresamente: «Deja en memoria QROM como trabajo futuro». Se registra como decisión vigente para la transferencia QROM completa del protocolo AIR/FRI de TG2 v1. La cota de omisión β^S, el dictamen de esa línea y sus parámetros conjuntos quedan como investigación futura y dejan de ser requisitos del plan de cierre activo. No se reanudará esa investigación por defecto al continuar el cierre; se retomará cuando el autor lo solicite expresamente.
