@@ -1262,5 +1262,3 @@ El manuscrito y el Word anteriores conservan sus ediciones identificadas. Este s
 - Ben-Sasson, Chiesa y Spooner, [Interactive Oracle Proofs](https://eprint.iacr.org/2016/116.pdf), versión del 10 de febrero de 2016, §3.1 y §§6–7; [copia local](Transferencia-ROM-2026-09-23/bibliografia/BCS16.pdf). Se contrastó la extracción por registro; las cuentas específicas y el potencial de este suplemento no se atribuyen al artículo.
 - [Solidez por rondas de AIR/FRI](Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md), lemas A–B y proposición C.
 - [Transferencia ROM de TG2 v1](Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md), parámetros, gramática, evento de grafo y cuentas del verificador.
-
-

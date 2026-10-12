@@ -5,9 +5,11 @@
   "celdas": 265,
   "ecuaciones_nativas": 673,
   "ecuaciones_bloque": 70,
-  "sha256_fuente": "48f9c969b6d11861e8ea722c1760445f37051e2b04513136c0621a7186759155",
+  "sha256_fuente": "cdd1b4f06ce4a2dee1fb5ed92d3206a3d7fef631298446d23c614c9dc617da07",
   "sha256_word_antes_actualizar_indice": "6f67075de45f82b6eb8b87c8275d83f2ec9300cec105e85a41a85089f5ce4ede",
   "advertencias_pandoc": [],
   "revision_visual": "Completada: 54 páginas Word; tablas y ecuaciones legibles.",
-  "sha256_word_final": "0f69212e5458864c5ef610aba4b425e2b0d461ee715029e07c0227d6c2dcf192"
+  "sha256_word_final": "0f69212e5458864c5ef610aba4b425e2b0d461ee715029e07c0227d6c2dcf192",
+  "sha256_fuente_en_generacion": "48f9c969b6d11861e8ea722c1760445f37051e2b04513136c0621a7186759155",
+  "normalizacion_finales_linea": "CRLF a LF y eliminación de dos líneas vacías al final; contenido matemático y Word idénticos."
 }

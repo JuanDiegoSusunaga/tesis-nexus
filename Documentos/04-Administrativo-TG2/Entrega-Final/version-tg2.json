@@ -5,7 +5,7 @@
   "estado": "Edición de trabajo preparada para revisión",
   "documentos": {
     "repositorio": "https://github.com/JuanDiegoSusunaga/tesis-nexus.git",
-    "commit_anterior": "c4f68a9fb0029229dd01586426c1c07bf94dbac3",
+    "commit_anterior": "931aa36613375c12388abefe51c7b21207468c8a",
     "identificacion": "El commit que contiene este manifiesto identifica la edición documental."
   },
   "codigo": {
@@ -4606,13 +4606,13 @@
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Consolidacion-manuscrito/revision-derivaciones.json",
-      "bytes": 703,
-      "sha256": "c259d80bef5c62153cb0c170d2688111a690897c05654a448f0edcf25598c158"
+      "bytes": 941,
+      "sha256": "731017fd97021b0252bd7f0390e66630d0c0bb484c8b5c6a2c474da679dc3b08"
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Consolidacion-manuscrito/revision-manuscrito.json",
       "bytes": 1775,
-      "sha256": "d6e9ae7ef4742ac605e5350cc0e2f43cad233729b580fb71c1ccc1e7231fda1d"
+      "sha256": "90eb9586b9099acb77d5177caeed014b2c247ac3b3eed7b8e01f33bf2c5fe41b"
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Consolidacion-manuscrito/validacion.json",
