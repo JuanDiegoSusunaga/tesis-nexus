@@ -1,0 +1,137 @@
+{
+  "esquema": 1,
+  "fuentes": [
+    {
+      "nombre": "FIPS204.html",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/FIPS204.html",
+      "url": "https://csrc.nist.gov/pubs/fips/204/final",
+      "url_efectiva": "https://csrc.nist.gov/pubs/fips/204/final",
+      "consulta_utc": "2026-10-18T03:49:13.033194+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "last_modified_http": null,
+      "bytes": 44810,
+      "sha256": "4eaca7c21203a8c54532afefa756691bd756f6eb9d6c7e6d0191b56e2d02068e"
+    },
+    {
+      "nombre": "FIPS204.pdf",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/FIPS204.pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf",
+      "url_efectiva": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf",
+      "consulta_utc": "2026-10-18T03:49:14.998006+00:00",
+      "content_type": "application/pdf",
+      "last_modified_http": "Thu, 22 Aug 2024 13:51:35 GMT",
+      "bytes": 3291746,
+      "sha256": "57239b9f84c03227eda3ca0991204dc7764c79af9ce2e6824eda774918d46b6b"
+    },
+    {
+      "nombre": "FIPS204-errata.xlsx",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/FIPS204-errata.xlsx",
+      "url": "https://csrc.nist.gov/files/pubs/fips/204/final/docs/fips-204-potential-updates.xlsx",
+      "url_efectiva": "https://csrc.nist.gov/files/pubs/fips/204/final/docs/fips-204-potential-updates.xlsx",
+      "consulta_utc": "2026-10-18T03:49:15.752975+00:00",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "last_modified_http": "Fri, 31 Jul 2026 17:20:25 GMT",
+      "bytes": 23071,
+      "sha256": "5bc93ce63bc647e6d1d456cb2d3a171426c15aca4a7a0e0edd40d08b7a34c793"
+    },
+    {
+      "nombre": "SP800-90B.html",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/SP800-90B.html",
+      "url": "https://csrc.nist.gov/pubs/sp/800/90/b/final",
+      "url_efectiva": "https://csrc.nist.gov/pubs/sp/800/90/b/final",
+      "consulta_utc": "2026-10-18T03:49:16.486421+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "last_modified_http": null,
+      "bytes": 45028,
+      "sha256": "bdb51c67f10de321edd4341a6754a9e6864bf57c3a2f21e10e2ed0dfa9fad6a9"
+    },
+    {
+      "nombre": "SP800-90B.pdf",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/SP800-90B.pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90B.pdf",
+      "url_efectiva": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90B.pdf",
+      "consulta_utc": "2026-10-18T03:49:18.973659+00:00",
+      "content_type": "application/pdf",
+      "last_modified_http": "Wed, 10 Jan 2018 14:24:12 GMT",
+      "bytes": 1043696,
+      "sha256": "9b0dd77131ade3617a91cd8457fa09e0dc354c273bb2220a6afeaca16e5defe7"
+    },
+    {
+      "nombre": "SP800-90B-errata.pdf",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/SP800-90B-errata.pdf",
+      "url": "https://csrc.nist.gov/files/pubs/sp/800/90/b/final/docs/sp800-90b_errata_potential_updates.pdf",
+      "url_efectiva": "https://csrc.nist.gov/files/pubs/sp/800/90/b/final/docs/sp800-90b_errata_potential_updates.pdf",
+      "consulta_utc": "2026-10-18T03:49:19.739300+00:00",
+      "content_type": "application/pdf",
+      "last_modified_http": "Thu, 29 May 2025 20:00:29 GMT",
+      "bytes": 107606,
+      "sha256": "af99ae20161aeed6e8eab88badf650e08c9f5ac455b71cf1095c289c104a5128"
+    },
+    {
+      "nombre": "SP800-90C.html",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/SP800-90C.html",
+      "url": "https://csrc.nist.gov/pubs/sp/800/90/c/final",
+      "url_efectiva": "https://csrc.nist.gov/pubs/sp/800/90/c/final",
+      "consulta_utc": "2026-10-18T03:49:20.455816+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "last_modified_http": null,
+      "bytes": 46323,
+      "sha256": "667752f1ed054e2bb39ff2194957305788962e7f33e803a8fd370a0c210210b7"
+    },
+    {
+      "nombre": "SP800-57r5.html",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/SP800-57r5.html",
+      "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final",
+      "url_efectiva": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final",
+      "consulta_utc": "2026-10-18T03:49:21.186333+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "last_modified_http": null,
+      "bytes": 47388,
+      "sha256": "e3ad2485cf29e1ce930fb759272ad1aed5f4be32966359b3128a230df7032b65"
+    },
+    {
+      "nombre": "SP800-57r5.pdf",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/SP800-57r5.pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf",
+      "url_efectiva": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf",
+      "consulta_utc": "2026-10-18T03:49:23.695578+00:00",
+      "content_type": "application/pdf",
+      "last_modified_http": "Fri, 31 Jul 2020 15:02:29 GMT",
+      "bytes": 1688080,
+      "sha256": "cc32391022c1382ac7c91490f6bcc8838e0f889925270da23ef4e800e2ecb7ad"
+    },
+    {
+      "nombre": "SP800-57r6-ipd.html",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/SP800-57r6-ipd.html",
+      "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r6/ipd",
+      "url_efectiva": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r6/ipd",
+      "consulta_utc": "2026-10-18T03:49:24.440836+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "last_modified_http": null,
+      "bytes": 48229,
+      "sha256": "4043767e9916f46e5fa15d68373fd6e07c4bbd2f90425cb398085c1fbe9b31aa"
+    },
+    {
+      "nombre": "ACVP-ML-DSA.html",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/ACVP-ML-DSA.html",
+      "url": "https://pages.nist.gov/ACVP/draft-celi-acvp-ml-dsa.html",
+      "url_efectiva": "https://pages.nist.gov/ACVP/draft-celi-acvp-ml-dsa.html",
+      "consulta_utc": "2026-10-18T03:49:25.324115+00:00",
+      "content_type": "text/html",
+      "last_modified_http": "Fri, 02 Oct 2026 16:00:53 GMT",
+      "bytes": 170371,
+      "sha256": "d4f95a3fb55f5a1a211dd7f1dfcd4e1b364593e739f8d0ba7aded9a1a8ab48b8"
+    },
+    {
+      "nombre": "EntropyAssessment-README.md",
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/EntropyAssessment-README.md",
+      "url": "https://raw.githubusercontent.com/usnistgov/SP800-90B_EntropyAssessment/master/README.md",
+      "url_efectiva": "https://raw.githubusercontent.com/usnistgov/SP800-90B_EntropyAssessment/master/README.md",
+      "consulta_utc": "2026-10-18T03:49:25.532809+00:00",
+      "content_type": "text/plain; charset=utf-8",
+      "last_modified_http": null,
+      "bytes": 7497,
+      "sha256": "5c9cfd5899249fe10a5410e5e870e2724ff118fba741098dac6ed7c9908d0823"
+    }
+  ]
+}

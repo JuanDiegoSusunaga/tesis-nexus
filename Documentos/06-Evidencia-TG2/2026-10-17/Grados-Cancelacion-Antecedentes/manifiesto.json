@@ -1,0 +1,116 @@
+{
+  "esquema": 1,
+  "en_preparacion": false,
+  "auditoria_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Modelos-Pendientes/validacion.json",
+    "sha256": "bcbe86a0d7fd57bf7c622fdbee78da63698f9d6768813a329032365e289192b7"
+  },
+  "versiones_anteriores": {
+    "formalizacion/Nexus.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/formalizacion/Nexus.lean",
+      "sha256": "3e3a195cf4715a0a9ecae13db8d5c692a94d3e404cc81133a8b5af1277877d1e"
+    },
+    "formalizacion/Auditoria.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/formalizacion/Auditoria.lean",
+      "sha256": "6adc6ee30016a4f371acd756057aec14ef0abe31ded54071000eabd16ef29a95"
+    },
+    "formalizacion/cobertura.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/formalizacion/cobertura.json",
+      "sha256": "9baa30e0d97c062858616ef71592e5b4b06665f9b0b602cc7facd2b789c4f805"
+    },
+    "formalizacion/inventario-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/formalizacion/inventario-manuscrito.json",
+      "sha256": "a64b5b354db79604899106248df067ef35697bee487170fc2b82ace7d945acd7"
+    },
+    "formalizacion/revision-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/formalizacion/revision-manuscrito.json",
+      "sha256": "5d075080be0a8af95dbb5d692a8cfa7a2988592e1d1e47c66e559396449e7337"
+    },
+    "scripts/verificar_formalizacion.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/scripts/verificar_formalizacion.py",
+      "sha256": "bd4d24f640cc98a8780d36611195696cde8d761d99b7b9157ae41201b08075e2"
+    },
+    "formalizacion/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/formalizacion/README.md",
+      "sha256": "befc7a2e364add8d114fc325da3a6b2bdd348974777e3e714e71bef2ed0f3e64"
+    },
+    "formalizacion/ALCANCE-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/formalizacion/ALCANCE-MANUSCRITO.md",
+      "sha256": "b63eddd093e695a7f87711132c3f1ec2900201bcfe6d2aa27549707f7e4bf6ce"
+    },
+    "formalizacion/REVISION-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/formalizacion/REVISION-MANUSCRITO.md",
+      "sha256": "b857c468239cef40abb15658356df93fd92b8f0b1c7b28359e534d565d7e2c5f"
+    },
+    "README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/README.md",
+      "sha256": "4a116d0a22c181edd3129c2377743e31f42660c2cb6c735c59d225ac369a9ed2"
+    },
+    "BITACORA_TG2.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/BITACORA_TG2.md",
+      "sha256": "9f711cb329394e89e84a1df4058d92061a709a97940b45d80bf96548189af322"
+    },
+    "PENDIENTES.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/PENDIENTES.md",
+      "sha256": "d4e021ce9b3899433435ce571fe2b1ed7ab3dc33139682f444e5f864fa75c17f"
+    },
+    "Documentos/06-Evidencia-TG2/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/Documentos/06-Evidencia-TG2/README.md",
+      "sha256": "258fe09d69c1bef13b202556f819bc8588501ed54f87dd9ecd3e493c5c5471a3"
+    },
+    "Documentos/01-Manuscrito/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/Documentos/01-Manuscrito/README.md",
+      "sha256": "ac65779203832c065da19fe2c4837c457cb2023b1ff6c0bb80bf42e9e09d9aca"
+    },
+    "Documentos/04-Administrativo-TG2/Entrega-Final/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "sha256": "27565e8c33f3b68d540d9aefd6a300adefb1e8c6e97d395916426de3d9b1b537"
+    },
+    "Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "sha256": "5212c5cc7b7a1b30ba64528005ce0980f46e7e6bc2bfa8af42d8416a32b5a6ec"
+    }
+  },
+  "cambios_fuentes_previas_autorizados": [
+    "formalizacion/Nexus.lean",
+    "formalizacion/Auditoria.lean",
+    "formalizacion/cobertura.json",
+    "formalizacion/inventario-manuscrito.json",
+    "formalizacion/revision-manuscrito.json",
+    "scripts/verificar_formalizacion.py"
+  ],
+  "datos_fuente": [
+    {
+      "archivo": "scripts/analizar_algebra_air_r4.py",
+      "sha256": "903ff070b33a8eb40de1abeadb1acb434766e626a11993f064b045fbd5250fdc"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-algebra/fuentes/nexus/nexus-zk/tests/tg2_air_algebra.rs",
+      "sha256": "fd900251ca0b8363865c847976f618d66c8657993c0a24ad03cd5820eb86865e"
+    }
+  ],
+  "sha256_reglas_git": "15380f342946d96d13c9481b74b45429b94beba2f0d72be3ffdb64d6fc1767f4",
+  "manuscrito_sin_cambios": true,
+  "salidas_manuscrito": {
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md": "1efa9dddd08ce0bfab2e1061861a0d412b504c477ba17f7c6482f5af6d93ea58",
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx": "4dc669bd5d11cee82952c34495beaa7313e1d658e78c7d37014df093c876949e",
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf": "124baf5e12556e2aecf00cb497008ef340af43f55080c1ca932091ef4c4c1598"
+  },
+  "correspondencias_actualizadas": [
+    "Cap6-Validacion-Formal-108",
+    "Cap6-Validacion-Formal-114",
+    "Cap6-Validacion-Formal-115",
+    "Cap6-Validacion-Formal-116",
+    "Cap6-Validacion-Formal-117",
+    "Cap6-Validacion-Formal-118",
+    "Cap6-Validacion-Formal-119",
+    "Cap6-Validacion-Formal-120",
+    "Cap6-Validacion-Formal-121",
+    "Cap6-Validacion-Formal-122",
+    "Cap6-Validacion-Formal-123",
+    "Cap6-Validacion-Formal-124",
+    "Cap6-Validacion-Formal-125",
+    "Cap6-Validacion-Formal-147",
+    "Cap6-Validacion-Formal-148"
+  ]
+}

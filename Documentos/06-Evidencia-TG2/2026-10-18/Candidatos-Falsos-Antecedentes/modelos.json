@@ -1,0 +1,188 @@
+{
+  "ROM/CoincidenciaPrograma": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se formalizan las entradas de terminación, consulta y composición de programas de bytes. Dos funciones que coinciden en las entradas realmente consultadas producen idéntico resultado y transcripción. La ejecución puede repetirse con la función completada desde la tabla si todas sus consultas están almacenadas, sin exigir igualdad fuera de ese soporte.",
+    "limites": [
+      "La igualdad se refiere al programa matemático finito y no constituye equivalencia universal con las operaciones de máquina de Rust."
+    ],
+    "teoremas": [
+      "Nexus.ROM.CoincidenciaPrograma.entradas_terminar",
+      "Nexus.ROM.CoincidenciaPrograma.entradas_consultar",
+      "Nexus.ROM.CoincidenciaPrograma.entradas_unir",
+      "Nexus.ROM.CoincidenciaPrograma.ejecucion_congruente",
+      "Nexus.ROM.CoincidenciaPrograma.entradas_congruentes",
+      "Nexus.ROM.CoincidenciaPrograma.resultado_desde_tabla"
+    ]
+  },
+  "Canal/CanalPrevio": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Un programa de bytes ejecuta exactamente el canal hasta la absorción del nonce: origen, perfil, enunciado, raíz, tres alfas, ambas fases FRI y constantes. Su resultado es la semilla y sus entradas son la cadena canónica. Si dos funciones coinciden sobre esa cadena, tanto la cadena como la semilla coinciden. La reejecución usa únicamente entradas conocidas.",
+    "limites": [
+      "Se omite deliberadamente la consulta de trabajo: una primera I del adversario puede precederla. No se deduce un factor probabilístico de trabajo independiente."
+    ],
+    "teoremas": [
+      "Nexus.Canal.CanalPrevio.resultado_retos",
+      "Nexus.Canal.CanalPrevio.entradas_retos",
+      "Nexus.Canal.CanalPrevio.resultado_raices",
+      "Nexus.Canal.CanalPrevio.entradas_raices",
+      "Nexus.Canal.CanalPrevio.resultado_programa",
+      "Nexus.Canal.CanalPrevio.entradas_programa",
+      "Nexus.Canal.CanalPrevio.canal_congruente"
+    ]
+  },
+  "Verificador/FiltroFalso": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La elegibilidad exige perfil admitido, cadena recuperada igual a la reejecución canónica sobre la tabla, semilla exacta y todas las consultas conocidas. Exige además falsedad algebraica: ausencia del polinomio AIR de grado menor que 2^k de EnunciadoValido. Se prueban relectura exacta de parámetros, recuperación de los retos E canónicos, exclusión de enunciados válidos y elegibilidad del registro aceptado falso.",
+    "limites": [
+      "El filtro es una proposición matemática del pasado, no un algoritmo eficiente ni un nuevo control del ejecutable. La falsedad corresponde a EnunciadoValido; no se afirma refinamiento de Rust/serde/bincode."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.FiltroFalso.admisible_certificado",
+      "Nexus.Verificador.FiltroFalso.falso_iff",
+      "Nexus.Verificador.FiltroFalso.canonico_registro",
+      "Nexus.Verificador.FiltroFalso.parametros_canonicos",
+      "Nexus.Verificador.FiltroFalso.elegible_iff",
+      "Nexus.Verificador.FiltroFalso.elegible_registro",
+      "Nexus.Verificador.FiltroFalso.valido_excluido",
+      "Nexus.Verificador.FiltroFalso.retos_canonicos"
+    ]
+  },
+  "ROM/FiltroSelector": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Una condición previsible vacía simultáneamente los dos conjuntos buenos. Se prueban pertenencia, intersección y cardinal; una muestra de cardinal positivo queda cubierta exactamente cuando se cumple esa condición y estaba contenida en la intersección original. Se definen probabilidades como medias incondicionales y se demuestra monotonicidad y separación aditiva de dos eventos excepcionales.",
+    "limites": [
+      "Filtrar por un límite de cardinal no lo demuestra gratis para la política original: se conserva la probabilidad del evento excluido."
+    ],
+    "teoremas": [
+      "Nexus.ROM.FiltroSelector.pertenencia",
+      "Nexus.ROM.FiltroSelector.interseccion",
+      "Nexus.ROM.FiltroSelector.cardinal",
+      "Nexus.ROM.FiltroSelector.cardinal_interseccion",
+      "Nexus.ROM.FiltroSelector.muestra_positiva",
+      "Nexus.ROM.FiltroSelector.medida_media",
+      "Nexus.ROM.FiltroSelector.medida_monotona",
+      "Nexus.ROM.FiltroSelector.separar_excepciones"
+    ]
+  },
+  "ROM/PresupuestoPrefijo": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La dirección fresca siguiente pertenece al registro completo y no al prefijo; por borrado de esa dirección se obtiene una desigualdad estricta de cardinales. De un presupuesto global B de entradas distintas se deriva m<=B-1 para cada primera exposición y para la tabla del estado correspondiente. El número global de entradas distintas se acota también por la altura del programa finito.",
+    "limites": [
+      "El presupuesto global B todavía se recibe como hipótesis. La altura no se identifica con Q+V_T ni B con Q; R permanece analítico."
+    ],
+    "teoremas": [
+      "Nexus.ROM.PresupuestoPrefijo.frescura_descuenta",
+      "Nexus.ROM.PresupuestoPrefijo.activacion_descuenta",
+      "Nexus.ROM.PresupuestoPrefijo.prefijo_desde_total",
+      "Nexus.ROM.PresupuestoPrefijo.total_desde_altura",
+      "Nexus.ROM.PresupuestoPrefijo.estado_desde_total"
+    ]
+  },
+  "Verificador/PoliticasFalsas": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "GT/GC se restringen al canal canónico falso y a intersecciones de cardinal como máximo g, usando solo el prefijo. La cota de cardinal de las políticas filtradas es universal por construcción. La aceptación falsa matemática, con propuesta adaptativa e intercalaciones, produce una primera exposición elegible y su muestra real. Si no ocurre exceso de cardinal en ningún prefijo elegible, esa aceptación queda cubierta por las políticas filtradas.",
+    "limites": [
+      "Exceso es una unión de primeras exposiciones elegibles cuyo cardinal original supera g. Su probabilidad no se acota todavía; el filtro no demuestra que sea pequeña ni presupone ausencia de exceso al definir la ley uniforme."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.PoliticasFalsas.cardinal",
+      "Nexus.Verificador.PoliticasFalsas.omision_iff",
+      "Nexus.Verificador.PoliticasFalsas.registro_cubierto",
+      "Nexus.Verificador.PoliticasFalsas.cobertura_certificado",
+      "Nexus.Verificador.PoliticasFalsas.cobertura_adversario",
+      "Nexus.Verificador.PoliticasFalsas.sin_exceso_cubre"
+    ]
+  },
+  "Canal/UnionFiltrada": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La omisión con las políticas filtradas coincide con el selector instrumentado. Su unión probabilística satisface riesgo(R,e,40,g,B-1)*B bajo un único presupuesto global B de entradas distintas; se derivan la cota g de la intersección filtrada y el presupuesto B-1 del pasado, eliminando las hipótesis externas separadas g y m de todas las activaciones.",
+    "limites": [
+      "La cobertura de una aceptación falsa por esa unión exige separar el evento de exceso. La cota de B y el tratamiento de todos los perfiles y reinicios siguen pendientes."
+    ],
+    "teoremas": [
+      "Nexus.Canal.UnionFiltrada.omision_iff",
+      "Nexus.Canal.UnionFiltrada.cota_union"
+    ]
+  },
+  "Verificador/CotaFalsa": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "En un solo experimento uniforme finito y para un perfil k fijo se demuestra Pr(aceptación falsa)<=Pr(no SinBad)+Pr(Exceso)+riesgo(R,k+2,40,g,B-1)*B, con solo la hipótesis de presupuesto global B. Las cotas g de las políticas filtradas y m<=B-1 se derivan. Para R=512 y 4<=k<=12 se sustituye la cola del selector por 2^-300, conservando la hipergeométrica y el error de acoplamiento separados.",
+    "limites": [
+      "La fórmula aún podría ser vacua. Falta acotar Pr(Exceso) mediante las rondas AIR/FRI y sus respuestas reales, acotar Pr(no SinBad), derivar B, integrar trabajo, perfiles y reinicios, refinamiento universal Rust y ejemplo numérico integral. La cola 2^-300 por sí sola no es una garantía de seguridad global. No se condiciona a SinBad, aceptación ni ausencia de exceso."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.CotaFalsa.cota_sin_exceso",
+      "Nexus.Verificador.CotaFalsa.cota_aditiva",
+      "Nexus.Verificador.CotaFalsa.cota_512"
+    ]
+  }
+}

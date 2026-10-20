@@ -1,0 +1,91 @@
+{
+  "esquema": 1,
+  "auditoria_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Anillos-Contraejemplo/validacion.json",
+    "sha256": "f7cb18d85c38e20f7677833626c19ce18313c7840cd2f0660230a8b09a46bd4a"
+  },
+  "versiones_anteriores": {
+    "formalizacion/Nexus.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/formalizacion/Nexus.lean",
+      "sha256": "b11a61ef937fc091b67eb0f58e7191107398a6634208de1a9a822230cb656d88"
+    },
+    "formalizacion/Auditoria.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/formalizacion/Auditoria.lean",
+      "sha256": "7e0fc2962297eadced5035f97f470461ddf638ae95b7a3c99a38708fa85a168b"
+    },
+    "formalizacion/cobertura.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/formalizacion/cobertura.json",
+      "sha256": "5186d59858956920a93162e50a39c9611ac5088f4dacc59dbe6d7aeffa949825"
+    },
+    "formalizacion/inventario-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/formalizacion/inventario-manuscrito.json",
+      "sha256": "232e7825fd687d1d8c7df67a14eeeaa5a99adafd527e846b317a94b22ca2111c"
+    },
+    "formalizacion/revision-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/formalizacion/revision-manuscrito.json",
+      "sha256": "a02f48196dd848fa030be2c3f105ed9c583e4960659471476dc39946944f9d26"
+    },
+    "scripts/verificar_formalizacion.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/scripts/verificar_formalizacion.py",
+      "sha256": "d0e9b3ac60b929477a643b97963932f3aab4456f18bd7ee5447bdf2bfaff106a"
+    },
+    "scripts/lean.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/scripts/lean.py",
+      "sha256": "439d055bc5c982ff8d90b7cd1b05adc11968e1f5f9a6c876a800ad31def02cb3"
+    },
+    "scripts/verificar_revision_manuscrito.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/scripts/verificar_revision_manuscrito.py",
+      "sha256": "608b71e8102ea50bbda13139ead22c93102c6c11632c5b1440def153cd545373"
+    },
+    "scripts/tests/test_verificar_revision_manuscrito.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/scripts/tests/test_verificar_revision_manuscrito.py",
+      "sha256": "a4eb687be73508ddd95b6982db8d030036738e4b0a2ee338293a2400e8455b3a"
+    },
+    "formalizacion/REVISION-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/formalizacion/REVISION-MANUSCRITO.md",
+      "sha256": "4fe005c7fd28e8af5a768b9c0c40a4a1a922433d71820816c9c3082a93891c31"
+    },
+    "formalizacion/ALCANCE-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/formalizacion/ALCANCE-MANUSCRITO.md",
+      "sha256": "5e6d1af5ec0b15815e1a75422e67014bee166a4808290ec198a1c9a2f97c6e18"
+    },
+    "formalizacion/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/formalizacion/README.md",
+      "sha256": "4d4a94fee146ed7d649c853a8242898accafbce7b1b606edeef97bc39fcd6ca7"
+    },
+    "README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/README.md",
+      "sha256": "83a7d6068bdfbd735d72f3dd5d7cf433d0d6faecf748907e08f5f7f67b6ac168"
+    },
+    "BITACORA_TG2.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/BITACORA_TG2.md",
+      "sha256": "4a2f3dff2e06017da9ae946c8fda6e05fd1b2840d05f1cbc0d91486d21cbdfad"
+    },
+    "Documentos/06-Evidencia-TG2/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/version_anterior/Documentos/06-Evidencia-TG2/README.md",
+      "sha256": "ce146a77e95316f5b25039490f511351169eab86f6764b530714e1b9d2943b5d"
+    }
+  },
+  "cambios_fuentes_previas_autorizados": [
+    "formalizacion/Nexus.lean",
+    "formalizacion/Auditoria.lean",
+    "formalizacion/cobertura.json",
+    "formalizacion/inventario-manuscrito.json",
+    "formalizacion/revision-manuscrito.json",
+    "scripts/verificar_formalizacion.py",
+    "scripts/lean.py"
+  ],
+  "modulos_nuevos": [
+    "Nexus.Cripto.Probabilidad",
+    "Nexus.Cripto.Oraculo",
+    "Nexus.MLDSA.Representantes",
+    "Nexus.MLDSA.Cortos",
+    "Nexus.MLDSA.MSIS",
+    "Nexus.MLDSA.MLWE",
+    "Nexus.MLDSA.SelfTarget",
+    "Nexus.Cripto.Firma",
+    "Nexus.Cripto.Seguridad"
+  ],
+  "teoremas_nuevos": 114,
+  "sha256_reglas_git": "15380f342946d96d13c9481b74b45429b94beba2f0d72be3ffdb64d6fc1767f4"
+}

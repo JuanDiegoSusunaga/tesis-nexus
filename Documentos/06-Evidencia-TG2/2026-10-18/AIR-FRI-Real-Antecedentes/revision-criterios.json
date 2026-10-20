@@ -1,0 +1,264 @@
+{
+  "esquema": 1,
+  "grupos_revisados": [
+    {
+      "id": "M26",
+      "titulo": "Aritmética de mediciones: unidades, razones y redondeos",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Identificar datos fuente y versiones antes de calcular inversos, razones y diferencias.",
+        "Formalizar solo las cuentas y tolerancias; la medición permanece evidencia de una ejecución."
+      ],
+      "pendientes_anteriores": [
+        "Siguen sin identificar las corridas originales H1/H2 y sus versiones, junto con M44. Las cuentas y tolerancias ya probadas no certifican procedencia ni capacidad sostenida; esta pasada no inventa datos de esas corridas."
+      ],
+      "modulos_nuevos": [],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Identificar datos fuente y versiones antes de calcular inversos, razones y diferencias.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Formalizar solo las cuentas y tolerancias; la medición permanece evidencia de una ejecución.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "Siguen sin identificar las corridas originales H1/H2 y sus versiones, junto con M44. Las cuentas y tolerancias ya probadas no certifican procedencia ni capacidad sostenida; esta pasada no inventa datos de esas corridas."
+      ]
+    },
+    {
+      "id": "M35",
+      "titulo": "Muestra compartida e hipergeométrica H",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+        "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI."
+      ],
+      "pendientes_anteriores": [
+        "La aceptación falsa ya está cubierta por políticas del pasado que exigen canal canónico, falsedad algebraica y cardinal <=g. Se deriva m<=B-1 del presupuesto global B y se obtiene Pr(falsa)<=Pr(no SinBad)+Pr(Exceso)+riesgo*B, sin hipótesis global g/m sobre las políticas originales. Falta acotar Exceso con los argumentos AIR/FRI y sus retos reales, las excepciones y B, integrar trabajo, perfiles y reinicios y refinar universalmente Rust. No se ha demostrado que el exceso sea improbable."
+      ],
+      "modulos_nuevos": [
+        "Canal/VectoresCampo",
+        "FRI/ControlesCampo",
+        "FRI/ListaCampo",
+        "Canal/VistaCampo",
+        "Verificador/ConsultaCampo",
+        "N06/CardinalCompartida",
+        "Verificador/CardinalVista",
+        "Verificador/ExcesoRondas",
+        "Verificador/PresupuestoGlobal",
+        "Verificador/RondasReales",
+        "Verificador/CotaRondas"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "Ya se transfieren los controles GT/GC originales a la consulta compartida sobre el campo y se deriva su cardinal <=floor(7*2^e/8) bajo PrefijoSeguro del canal real. Todo exceso implica un fallo AIR/FRI explícito del mismo prefijo y Pr(Exceso)<=Pr(Rondas). Se deriva B del presupuesto Q adversario y del coste máximo del verificador. Falta acotar Pr(Rondas) con la fijación de cada vector antes de su E, las respuestas reales, sesgos y preconsultas, acotar excepciones ROM, integrar trabajo, perfiles y reinicios y refinar universalmente Rust."
+      ]
+    },
+    {
+      "id": "M36",
+      "titulo": "Solidez ideal por rondas y reinicios",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+        "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash."
+      ],
+      "pendientes_anteriores": [
+        "Ya hay filtro causal de canal canónico falso y cobertura de la aceptación falsa desde el adversario. El pasado de una primera I usa a lo sumo B-1 entradas distintas si el total usa a lo sumo B; se elimina m como hipótesis separada. Falta derivar el presupuesto global B del adversario y del verificador, integrar perfiles, rondas y reinicios y revisión independiente. El autor declaró que no hay dictamen; no se identifica B con Q ni altura con Q+V_T."
+      ],
+      "modulos_nuevos": [
+        "Canal/VectoresCampo",
+        "FRI/ControlesCampo",
+        "FRI/ListaCampo",
+        "Canal/VistaCampo",
+        "Verificador/ConsultaCampo",
+        "N06/CardinalCompartida",
+        "Verificador/CardinalVista",
+        "Verificador/ExcesoRondas",
+        "Verificador/PresupuestoGlobal",
+        "Verificador/RondasReales",
+        "Verificador/CotaRondas"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "Se deriva B=Q+V12(R), con V12(R)=24383+R y B=Q+24895 para R=512, desde el adversario adaptativo y el verificador matemático completo de bytes, incluidos rechazos e intercalaciones. No se recibe B como hipótesis independiente ni se identifica la altura con Q+V. La cota sigue siendo para un perfil fijo. Falta la ley causal de las rondas reales, la composición de varios perfiles, rondas y reinicios con presupuesto común y revisión independiente. El autor declaró que no hay dictamen."
+      ]
+    },
+    {
+      "id": "M39",
+      "titulo": "Presupuestos, formas, gramática y semántica del verificador",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Justificar V_T, B_T y S=Q+V_T a partir de listas, rechazos, serialización e índices.",
+        "Enlazar los modelos tipados con enteros de máquina y el verificador Rust."
+      ],
+      "pendientes_anteriores": [
+        "La reejecución del canal previo usa exactamente sus consultas conocidas y produce cadena y semilla canónicas; el filtro distingue esa propiedad de la simple lectura de parámetros. La aceptación falsa del lector matemático ya se cubre por ese filtro y por una cota con excepciones explícitas. Falta refinamiento universal serde/bincode, operaciones de máquina y Rust y presupuestos globales. Permanecen EOF estricto y corte analítico R."
+      ],
+      "modulos_nuevos": [
+        "Canal/VectoresCampo",
+        "FRI/ControlesCampo",
+        "FRI/ListaCampo",
+        "Canal/VistaCampo",
+        "Verificador/ConsultaCampo",
+        "N06/CardinalCompartida",
+        "Verificador/CardinalVista",
+        "Verificador/ExcesoRondas",
+        "Verificador/PresupuestoGlobal",
+        "Verificador/RondasReales",
+        "Verificador/CotaRondas"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Justificar V_T, B_T y S=Q+V_T a partir de listas, rechazos, serialización e índices.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Enlazar los modelos tipados con enteros de máquina y el verificador Rust.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "Ya están transferidos los controles de los vectores y del acarreo a AIR/FRI sobre el campo y derivado el presupuesto uniforme del lector matemático completo de bytes. Para R=512 el verificador usa como máximo 24895 llamadas entre todos los perfiles admitidos. Falta el refinamiento universal serde/bincode, operaciones de máquina y Rust. Permanecen EOF estricto y corte analítico R; el coste de varias verificaciones o reinicios necesita composición común."
+      ]
+    },
+    {
+      "id": "M40",
+      "titulo": "Potencial de nonces y cola del selector",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+        "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado."
+      ],
+      "pendientes_anteriores": [
+        "La fórmula ya distingue aceptación falsa, excepción ROM y exceso del cardinal original de GT/GC. El filtro causal y su cardinal universal están demostrados y m<=B-1 se deriva. Para R=512 la cola del selector se acota por 2^-300. Falta acotar Pr(Exceso) con los eventos AIR/FRI sobre primeras exposiciones reales, el factor de trabajo y el presupuesto común de perfiles y reinicios. No se descarta el exceso ni se trata la preconsulta deliberada como un error de cumpleaños."
+      ],
+      "modulos_nuevos": [
+        "Canal/VectoresCampo",
+        "FRI/ControlesCampo",
+        "FRI/ListaCampo",
+        "Canal/VistaCampo",
+        "Verificador/ConsultaCampo",
+        "N06/CardinalCompartida",
+        "Verificador/CardinalVista",
+        "Verificador/ExcesoRondas",
+        "Verificador/PresupuestoGlobal",
+        "Verificador/RondasReales",
+        "Verificador/CotaRondas"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "La cota usa el umbral algebraico derivado de GT/GC originales y sustituye el exceso por un evento real clasificado de FRI de traza, cancelación AIR o FRI de composición. Se deriva B=Q+24895 para R=512 y m<=Q+24894. Falta acotar Pr(Rondas) mediante primeras exposiciones de E con los vectores ya fijados, integrar el factor de trabajo, preconsultas deliberadas, perfiles y reinicios. El trabajo no se considera independiente ni la preconsulta deliberada un error de cumpleaños."
+      ]
+    },
+    {
+      "id": "M41",
+      "titulo": "Cota ROM completa y ejemplo numérico",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar la cota parametrizada del evento excepcional del registro.",
+        "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+        "Certificar el ejemplo numérico solo después de fijar las hipótesis completas."
+      ],
+      "pendientes_anteriores": [
+        "Para un perfil fijo ya se demuestra Pr(falsa)<=Pr(no SinBad)+Pr(Exceso)+riesgo(R,k+2,40,g,B-1)*B, bajo presupuesto global B. Se derivan filtro de canal canónico falso, cota g de las políticas filtradas y m<=B-1. Falta acotar el exceso y las excepciones, derivar B, transferir las rondas AIR/FRI reales, integrar trabajo, perfiles y reinicios, refinamiento universal Rust y ejemplo numérico integral. La fórmula podría ser vacua y la cola 2^-300 no constituye solidez global."
+      ],
+      "modulos_nuevos": [
+        "Canal/VectoresCampo",
+        "FRI/ControlesCampo",
+        "FRI/ListaCampo",
+        "Canal/VistaCampo",
+        "Verificador/ConsultaCampo",
+        "N06/CardinalCompartida",
+        "Verificador/CardinalVista",
+        "Verificador/ExcesoRondas",
+        "Verificador/PresupuestoGlobal",
+        "Verificador/RondasReales",
+        "Verificador/CotaRondas"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar la cota parametrizada del evento excepcional del registro.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Certificar el ejemplo numérico solo después de fijar las hipótesis completas.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "Para perfil fijo y R=512 se demuestra Pr(falsa)<=Pr(no SinBad)+Pr(Rondas)+(Q+24895)*(choose(floor(7*2^(k+2)/8),40)/choose(2^(k+2),40)+2^-300+error(Digest,512,Q+24894)), bajo solo presupuesto Q adversario. El umbral y B están derivados. Falta acotar las dos probabilidades excepcionales con los retos E reales, sesgos y preconsultas, integrar trabajo, perfiles y reinicios, refinamiento universal Rust y ejemplo numérico integral. La fórmula puede ser vacua; ni la cola 2^-300 ni la cota de muestreo 1/200 implican solidez global."
+      ]
+    }
+  ],
+  "cerrados_en_su_modelo": [],
+  "parciales_restantes": [
+    "M26",
+    "M35",
+    "M36",
+    "M39",
+    "M40",
+    "M41"
+  ],
+  "criterios_reducidos": false,
+  "obligaciones_adicionales_cerradas": false,
+  "tesis_completa_verificada": false,
+  "dictamen_independiente": "pendiente"
+}

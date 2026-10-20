@@ -1,0 +1,9 @@
+Comando: python scripts/lean.py build
+Registro inicial UTC: 2026-10-19T19:55:04.297Z
+Fin UTC: 2026-10-19T19:55:37.193Z
+Codigo de salida: 0
+
+✔ [4082/4084] Built Nexus.Verificador.PuenteAdaptativoFinal (15s)
+✔ [4083/4084] Built Nexus (8.3s)
+Build completed successfully (4084 jobs).
+

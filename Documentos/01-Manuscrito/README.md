@@ -1,6 +1,14 @@
-# Manuscrito NEXUS — edición vigente
+# Manuscrito NEXUS
 
-**Actualización:** 12 de octubre de 2026. Edición de trabajo consolidada para TG2; el estado técnico y los pendientes se detallan en la [ruta de cierre](../04-Administrativo-TG2/Ruta-de-Cierre-TG2.md).
+**Consolidación documental local, 20 de octubre:** manuscrito y evidencia se incluyen en el commit autorizado que contiene el manifiesto de entrega, sin push ni regeneración. Las fuentes Lean aún locales, sus herramientas nuevas y los temporales no forman parte de este commit documental; no se altera su estado técnico. [Alcance y respaldos](../06-Evidencia-TG2/2026-10-20/Consolidacion-Documental/preparacion.json).
+
+**Comprobación posterior a la regeneración, 20 de octubre:** pasa la [verificación global final de Rust](../06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json) sobre `637e77c`: check de todos los targets, 223 pruebas sin fallos y build, con cuatro trabajos y caché. No cambia el código, no se recompila Lean y no se regeneran las salidas del manuscrito. El texto y los informes de conciliación siguientes conservan los conteos disponibles al generarse; los nuevos logs se incorporan a la evidencia y al manifiesto sin reescribir esos antecedentes.
+
+**Estado, 20 de octubre:** el manuscrito está sincronizado con el contrato Rust y su conexión local a `ActiveChain`, commit `637e77c99e804664915caf4ed928a10ef81cc870`. Se distinguen las 197 pruebas globales de referencia de las ejecuciones aisladas de 113 y 55 pruebas, sin sumarlas ni anunciar una nueva global. La [conciliación y revisión visual](../06-Evidencia-TG2/2026-10-20/Conciliacion-Manuscrito-Rust/verificacion.json) conserva las fórmulas e hipótesis de §6.7.9 y los objetivos originales. Solo actualiza allí una frase descriptiva: Rust también aplica el corte de 512 extracciones, sin que ello demuestre equivalencia universal.
+
+**Actualización:** 20 de octubre de 2026. Se mantiene una sola tesis, sin etiquetas de etapas académicas ni narrativa de borradores. El historial y los respaldos permanecen fuera del manuscrito, en la evidencia y la [ruta de cierre](../04-Administrativo-TG2/Ruta-de-Cierre-TG2.md). Esta pasada no compila Rust ni Lean; conserva intactas 89 fuentes/configuraciones Rust y 354 Lean. La [auditoría global previa de 2709 declaraciones](../06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json) no acredita por sí sola todo el manuscrito, refinamiento universal Rust, QROM ni aprobación académica. El AIR sigue siendo escalar: las raíces SHA3 generales fuera del modelo se rechazan y los positivos de integración son sintéticos.
+
+**Antecedente de coherencia, 19 de octubre:** se atendieron los seis grupos de la revisión integral: alcance de los objetivos, min-entropía conjunta, consenso e incentivos, amortización y CPU, hipótesis de las síntesis y propuesta de señuelos. Se preservaron los objetivos originales y se declaró el cumplimiento parcial de la reducción concreta de seguridad de las firmas. La cota ROM de §6.7.9 y las fuentes Lean permanecieron intactas. [Corrección y controles](../06-Evidencia-TG2/2026-10-19/Revision-Integral-Coherencia/correccion-verificada.json).
 
 **Alcance:** sistemas en general que requieren firmas digitales, registros verificables y gestión de claves. El título, los resúmenes, el objetivo general y las conclusiones incorporan la aclaración expresa del autor. La arquitectura blockchain dual es el modelo de referencia de la tesis; cada dominio de aplicación requiere validar sus reglas propias.
 
@@ -10,7 +18,7 @@
 - [PDF de lectura](Tesis-NEXUS-completa.pdf): índice con páginas y enlaces internos.
 - [Markdown ensamblado](Tesis-NEXUS-completa.md): contenido generado desde las fuentes.
 
-Las tres salidas corresponden a los mismos capítulos, resumen y bibliografía. Se conserva un único nombre por formato. Tras integrar la revisión y los complementos por rondas y ROM, el Word tiene 110 páginas y el PDF 98: usan motores de maquetación distintos y cada índice corresponde a su propio archivo. La exportación PDF de Word se bloqueó también con un documento mínimo; el PDF se generó localmente desde el mismo Markdown, con MathML y Chrome, sin enviar el manuscrito a servicios externos.
+Las tres salidas corresponden a los mismos capítulos, resumen y bibliografía, con un único nombre por formato. Word tiene 115 páginas, 34 tablas, tres figuras y 606 ecuaciones nativas; el PDF tiene 103 páginas. Usan motores de maquetación distintos y cada índice corresponde a su propio archivo. El PDF se genera localmente desde el mismo Markdown, con MathML y Chrome, sin enviar el manuscrito a servicios externos. Se compararon las 848 celdas de las 34 tablas y se inspeccionaron visualmente todas las páginas de ambos formatos. Los archivos anteriores se conservan como respaldos, no como manuscritos alternativos de consulta.
 
 ## Fuente de edición
 
@@ -20,7 +28,7 @@ Formato aplicado: papel carta, márgenes de 2,54 cm, Times New Roman de 12 punto
 
 ## Regeneración desde la raíz del proyecto
 
-Los informes se guardan en una carpeta con la fecha de ejecución. Para reproducir esta edición, establecer antes de los comandos `$env:NEXUS_TG2_FECHA_EVIDENCIA="2026-10-12"`; debe ser una fecha válida AAAA-MM-DD.
+Los informes se guardan en una carpeta con la fecha de ejecución. Para una nueva generación, establecer antes de los comandos `$env:NEXUS_TG2_FECHA_EVIDENCIA="2026-10-20"`; debe ser una fecha válida AAAA-MM-DD. Esta conciliación reutilizó los generadores existentes y separó sus registros en `2026-10-20/Conciliacion-Manuscrito-Rust/`.
 
 Requisitos: Python con `lxml`, Matplotlib, PyMuPDF y Pillow; Pandoc; Microsoft Word para actualizar su índice; Chrome o Edge para el PDF. Las versiones Python están fijadas en [requirements.txt](../../requirements.txt). Las [instrucciones de instalación y reproducción](../../scripts/README.md) usan `.venv`; también se admite la instalación histórica de PyMuPDF en `.tools/pdf`. El [manifiesto de edición](../04-Administrativo-TG2/Entrega-Final/version-tg2.json) identifica los archivos conservados y el commit de código.
 
@@ -34,9 +42,17 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/renderizar_manus
 python scripts/revisar_graficas_manuscrito.py
 ```
 
-El ensamblador normaliza las fuentes y comprueba filas, columnas y conversión matemática. La revisión compara las 848 celdas con una conversión independiente desde Markdown; reconoce la representación equivalente de `ℓ` que Word guarda como una `l` con estilo matemático script. La edición conserva 565 objetos matemáticos nativos en Word, incluidos 36 bloques. Las imágenes temporales quedan en `.tools/`.
+El ensamblador normaliza las fuentes y comprueba filas, columnas y conversión matemática. La revisión compara las 848 celdas con una conversión independiente desde Markdown; reconoce la representación equivalente de `ℓ` que Word guarda como una `l` con estilo matemático script. El manuscrito conserva 606 objetos matemáticos nativos en Word. Las imágenes temporales quedan en `.tools/` o en `tmp/` según el comando de renderizado.
 
 ## Revisión registrada
+
+**Conciliación Lean del 17 de octubre:** [fuentes, regeneración y revisión](../06-Evidencia-TG2/2026-10-17/Manuscrito-Modelos/README.md).
+Se corrigen KiB/firmas, los bytes de hoja y el estado parcial de Lean en resumen,
+abstract y capítulo 6. La formalización registraba 1610 resultados al cerrar la etapa de las 22 obligaciones, que tiene una
+[auditoría propia](../06-Evidencia-TG2/2026-10-17/Lean-Obligaciones-22/README.md).
+Se revisan todas las páginas Word/PDF, 34 tablas y 848 celdas; el cierre matemático
+integral y el dictamen independiente siguen pendientes. Las referencias de 12 de
+octubre que siguen identifican la edición anterior.
 
 **Revisión web vigente:** [tres informes, integración y asuntos abiertos](../04-Administrativo-TG2/Avances/Revision-Subagentes-2026-10-12/README.md); [identificación y verificación de esta edición](../06-Evidencia-TG2/2026-10-12/Revision-subagentes/Consolidacion/revision-manuscrito.json). La sustentación queda aplazada por el autor.
 
@@ -44,7 +60,7 @@ El ensamblador normaliza las fuentes y comprueba filas, columnas y conversión m
 
 - [Auditoría Merkle/Fiat–Shamir y correspondencia del corpus](../04-Administrativo-TG2/Avances/R4-Merkle-Fiat-Shamir-2026-09-23.md).
 - [Paquete para revisión matemática S1–S3](../04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md).
-- [Identificación de la edición vigente](../06-Evidencia-TG2/2026-10-12/Consolidacion-manuscrito/revision-manuscrito.json).
+- [Identificación histórica de la edición del 12 de octubre](../06-Evidencia-TG2/2026-10-12/Consolidacion-manuscrito/revision-manuscrito.json).
 - [Identificación histórica de la auditoría Merkle/Fiat–Shamir](../06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/revision-manuscrito.json).
 
 - [Cota interactiva ideal: derivación, correspondencia, cuentas y límites](../04-Administrativo-TG2/Avances/R4-Cota-Interactiva-2026-09-22.md).

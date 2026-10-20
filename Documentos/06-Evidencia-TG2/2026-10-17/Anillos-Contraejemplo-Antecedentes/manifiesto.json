@@ -1,0 +1,145 @@
+{
+  "esquema": 1,
+  "auditoria_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Costos-Residencia/validacion.json",
+    "sha256": "32d6178c8b0eaf8cb4590d6d8442f02b1f1b1f572a4aecdb7bd782a717288823"
+  },
+  "versiones_anteriores": {
+    "formalizacion/Nexus.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/formalizacion/Nexus.lean",
+      "sha256": "e0c86b1f9159ceedc030b1aac4c2e96b117c6dba56633de0abdad8e6500675a9"
+    },
+    "formalizacion/Auditoria.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/formalizacion/Auditoria.lean",
+      "sha256": "d77b2a22104c36015e00fed73b1c5e7fea780e7678caed6ecfdbe12f417538b2"
+    },
+    "formalizacion/cobertura.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/formalizacion/cobertura.json",
+      "sha256": "303f1ce7fa06ed4d5e4297278c3c8894371953934095c45785ad19577864b72d"
+    },
+    "formalizacion/inventario-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/formalizacion/inventario-manuscrito.json",
+      "sha256": "f249a027f9198370deac6002858b233b45c0c8b65c3af0f0735aab2984d9e4aa"
+    },
+    "formalizacion/revision-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/formalizacion/revision-manuscrito.json",
+      "sha256": "54e37640990b15ba3d2e6f3fed90cd93372e04857129c055656e25828d237f99"
+    },
+    "scripts/verificar_formalizacion.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/scripts/verificar_formalizacion.py",
+      "sha256": "fa4ab950ff8ba14540fc0a96b9421a56a520719872b35b5545b7e39d73bd64c2"
+    },
+    "scripts/lean.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/scripts/lean.py",
+      "sha256": "d3047e6dfcb169184841ca3de2bba647944550a29a4fe36395a774fafa0f82ed"
+    },
+    "scripts/verificar_revision_manuscrito.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/scripts/verificar_revision_manuscrito.py",
+      "sha256": "608b71e8102ea50bbda13139ead22c93102c6c11632c5b1440def153cd545373"
+    },
+    "scripts/tests/test_verificar_revision_manuscrito.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/scripts/tests/test_verificar_revision_manuscrito.py",
+      "sha256": "a4eb687be73508ddd95b6982db8d030036738e4b0a2ee338293a2400e8455b3a"
+    },
+    "formalizacion/REVISION-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/formalizacion/REVISION-MANUSCRITO.md",
+      "sha256": "05df3d01c137e0b2765796ade8244188a22897d3e2281c744f6cba69c9faaaf0"
+    },
+    "formalizacion/ALCANCE-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/formalizacion/ALCANCE-MANUSCRITO.md",
+      "sha256": "b7685de438104473a29e32207114541ee642ac837c4b4018b2d20aa5afdf8e0c"
+    },
+    "formalizacion/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/formalizacion/README.md",
+      "sha256": "cb48b190872e157f29139c2e389b65f606584c136e26f1f4cacd9388191276c9"
+    },
+    "README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/README.md",
+      "sha256": "f31ecfa7c916b99f840e7a66940ff38ca00aae0e8d8099030cf5ea7780c8f3d5"
+    },
+    "BITACORA_TG2.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/BITACORA_TG2.md",
+      "sha256": "8f1c71b9ee8ec84376023b0fc02b381e418a37f64364127f611f228fbaf5f136"
+    },
+    "Documentos/06-Evidencia-TG2/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/version_anterior/Documentos/06-Evidencia-TG2/README.md",
+      "sha256": "3caeae92ed6ed8a3a0516e477f5489eeb130c1338ed54e08cfa1ce2210bf7f3f"
+    }
+  },
+  "cambios_fuentes_previas_autorizados": [
+    "formalizacion/Nexus.lean",
+    "formalizacion/Auditoria.lean",
+    "formalizacion/cobertura.json",
+    "formalizacion/inventario-manuscrito.json",
+    "formalizacion/revision-manuscrito.json",
+    "scripts/verificar_formalizacion.py",
+    "scripts/lean.py"
+  ],
+  "modulos_nuevos": [
+    "Nexus.MLDSA.Parametros",
+    "Nexus.MLDSA.Anillos",
+    "Nexus.MLDSA.Normas",
+    "Nexus.AIR.DistanciaExacta",
+    "Nexus.AIR.Perturbacion",
+    "Nexus.AIR.ComposicionAlejada",
+    "Nexus.AIR.CocientesAlejados",
+    "Nexus.AIR.Interpolacion",
+    "Nexus.AIR.ContraejemploGoldilocks"
+  ],
+  "teoremas_nuevos": 121,
+  "fuentes_r4": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/validacion.json",
+      "sha256": "46e9d1ad420b6e88218a22f913e9a39ac3eda100fbc473a2893676d0922daf70"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/analisis.json",
+      "sha256": "6498a8abfa7c87bd6a528846011c3970687b21505dbafe83482e01e94ce559a4"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/tabla-proximidad.md",
+      "sha256": "39bea330d11b8d6b14b47a1f58db3e7a2d7e0ce34a49bda3a200c53173237810"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/cargo-check.log",
+      "sha256": "ccb6d754348dac41b01930e7aeba80c667acd66343e9d66edfa00cb4e48977ea"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/cargo-test.log",
+      "sha256": "cb7005605188b165db754680a377d3e9b6caca939c69e8d5a06561ecba9eab1b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/cargo-build.log",
+      "sha256": "736faefe3e44393ec8df4403ba3f98e8c12ed77524be85b2919c107f5273e539"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/cargo-test-release.log",
+      "sha256": "0753b3afcb3a56c03502722ff617240d30fe9d0a5e8d075baa3cabea35476112"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-16.bin",
+      "sha256": "db046fdd7274740f16d134fb443df253c495130f622d1820ca9a55fb3a8e0eb5"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-32.bin",
+      "sha256": "8a496f8c41662fdaf73a96e7d8dcd25c988774d2cee807539bb5b49871617a15"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-64.bin",
+      "sha256": "0c2ff42338a7cd95221b623bc2f5ac369f67807fa346e854a4ff7fcfd4c74f42"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-16.bin",
+      "sha256": "1d2ee6f2aa11b81e70e2cb3531c3b90796c7fb6d7e89cc113774f3c5723ee8d7"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-32.bin",
+      "sha256": "ce956e0fd08f7f8c6f2ca7c400ff3869da9a188f1bcc81a3af52fcd62257f75b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-64.bin",
+      "sha256": "e7ebd99896cf217068d48b8f77bfcf7f7889f6e007a2c28b7f6d7098b4bbca8f"
+    }
+  ],
+  "sha256_reglas_git": "15380f342946d96d13c9481b74b45429b94beba2f0d72be3ffdb64d6fc1767f4"
+}

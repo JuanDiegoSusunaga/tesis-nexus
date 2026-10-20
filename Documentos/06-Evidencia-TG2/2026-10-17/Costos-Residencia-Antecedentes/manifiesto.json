@@ -1,0 +1,143 @@
+{
+  "esquema": 1,
+  "auditoria_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Entropia-Salud/validacion.json",
+    "sha256": "ea16fc987403bf189744d99ede4c5b4fb4ae8ea090bd02fec92ca3aeefbf2a67"
+  },
+  "versiones_anteriores": {
+    "formalizacion/Nexus.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/formalizacion/Nexus.lean",
+      "sha256": "446c8b79b10f091f703782e75eef8e16750fee6b36fcbb6d3d8e52c85242be71"
+    },
+    "formalizacion/Auditoria.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/formalizacion/Auditoria.lean",
+      "sha256": "c6f81def061c62269db59201018bf933f83cd01468dffc0e206d3835b8238b6c"
+    },
+    "formalizacion/cobertura.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/formalizacion/cobertura.json",
+      "sha256": "558ff46ed5750dedde3309e3f40214d2192810eb003299502b1d24afc558a475"
+    },
+    "formalizacion/inventario-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/formalizacion/inventario-manuscrito.json",
+      "sha256": "54ccea52f5637fdc5ab1dec7a57afd2eb3ea8cac9a55d53f90cc8fe9ac20eeaa"
+    },
+    "formalizacion/revision-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/formalizacion/revision-manuscrito.json",
+      "sha256": "5dcc590b1c6517bbb275ec0a011577bf1a272bf1e30223ef9fea3b1b5fee8e62"
+    },
+    "scripts/verificar_formalizacion.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/scripts/verificar_formalizacion.py",
+      "sha256": "95fdda1f14063a44824298209d132ccbfe0e0bd2a82ee6c722d24aaae7e64304"
+    },
+    "scripts/lean.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/scripts/lean.py",
+      "sha256": "94fe20a053130cd5832dea000de6abfebc057218ee69ff498d532bd499c8ee04"
+    },
+    "scripts/verificar_revision_manuscrito.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/scripts/verificar_revision_manuscrito.py",
+      "sha256": "608b71e8102ea50bbda13139ead22c93102c6c11632c5b1440def153cd545373"
+    },
+    "scripts/tests/test_verificar_revision_manuscrito.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/scripts/tests/test_verificar_revision_manuscrito.py",
+      "sha256": "a4eb687be73508ddd95b6982db8d030036738e4b0a2ee338293a2400e8455b3a"
+    },
+    "formalizacion/REVISION-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/formalizacion/REVISION-MANUSCRITO.md",
+      "sha256": "50dd197fc429578b532595cda88724dbd6cb4249f38e720daa20704e6af50b41"
+    },
+    "formalizacion/ALCANCE-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/formalizacion/ALCANCE-MANUSCRITO.md",
+      "sha256": "143d0420f19ba8acb8256dbba83f72a42a27a255b06cc1de679a3f9a968e1ae3"
+    },
+    "formalizacion/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/formalizacion/README.md",
+      "sha256": "ce5a843b0865b87609f3476160d9a92e1f2378cedc32a3b71391e27bfc631d53"
+    },
+    "README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/README.md",
+      "sha256": "bc3c57cac560b39ad2d6ae8f40bd59f7e188ff1e830699e6773f8e13740b9f79"
+    },
+    "BITACORA_TG2.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/BITACORA_TG2.md",
+      "sha256": "3ac668c882041e35570f5f02f34e555aa584ff82b21c1980a9466629ca1280c4"
+    },
+    "Documentos/06-Evidencia-TG2/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/version_anterior/Documentos/06-Evidencia-TG2/README.md",
+      "sha256": "6b5c28b208cf5e9d16a88f587447ef7058a72c7d11cc46d0e539f616befdb553"
+    }
+  },
+  "cambios_fuentes_previas_autorizados": [
+    "formalizacion/Nexus.lean",
+    "formalizacion/Auditoria.lean",
+    "formalizacion/cobertura.json",
+    "formalizacion/inventario-manuscrito.json",
+    "formalizacion/revision-manuscrito.json",
+    "scripts/verificar_formalizacion.py",
+    "scripts/lean.py"
+  ],
+  "modulos_nuevos": [
+    "Nexus.Modelos.ResidenciaIntegral",
+    "Nexus.Modelos.CapturaUniforme",
+    "Nexus.Modelos.Memoria",
+    "Nexus.Modelos.AmortizacionVariable",
+    "Nexus.Complejidad.NTT",
+    "Nexus.Complejidad.Rechazo",
+    "Nexus.Complejidad.Firma"
+  ],
+  "teoremas_nuevos": 118,
+  "fuentes_r5": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/validacion.json",
+      "sha256": "ecdb936a8d64678837a3d129b276053fb734a3168f79f78cc6768aca9d26a927"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/fips204-0.4.6-types.rs",
+      "sha256": "d811518ef64dbac77e0aead6f33edde8ae1ec89ef641334b6232d2a35bd1cb18"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/representaciones.log",
+      "sha256": "cf4e34ac716ecadad9d6aa143b102c08145dffe94a97e143e88ad6a61409c9d7"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/cargo-check.log",
+      "sha256": "9ba877b3dccc4930da082d6d3687baf0f9204f8e6810980c2a0aa2046452d8dc"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/cargo-test.log",
+      "sha256": "fd7250aaf2266b290b3fc1edcea0a518f6c0df4181c3d4360be842fdc0ec4acc"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/cargo-build.log",
+      "sha256": "082dbcf9d145a009ad6a238328b5c99618c353fa3d9fa1e89dc54c3516f2ccb6"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/fuentes/nexus/nexus-crypto/tests/tg2_residence.rs",
+      "sha256": "9d280cc114eee3da61d446d4d69e1b5697e7d1a442c496ed2bb5de1e24743628"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/fuentes/nexus/nexus-crypto/benches/residencia_bench.rs",
+      "sha256": "4ff93c7794118936e310a333847fd9787a8a1bdb6e11fc0e9779602a98ca251e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/fuentes/nexus/nexus-crypto/src/dilithium.rs",
+      "sha256": "f414f7970bdda33de52b93ffcb26ff758898697060c639173fa99a0fe4a08d4e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/fuentes/nexus/nexus-crypto/src/keypair.rs",
+      "sha256": "c54b41ef0f80a396bbf7a0d0943521fd416b6dd42d933eac090dddba6d995334"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/fuentes/nexus/nexus-crypto/src/entropy.rs",
+      "sha256": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/fuentes/nexus/Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/fuentes/scripts/modelar_residencia_r5.py",
+      "sha256": "b3dfa956491ef776f9828f8ac06d7f672031d7c8a4b3939b70339d51f8420a9c"
+    }
+  ],
+  "sha256_reglas_git": "15380f342946d96d13c9481b74b45429b94beba2f0d72be3ffdb64d6fc1767f4"
+}

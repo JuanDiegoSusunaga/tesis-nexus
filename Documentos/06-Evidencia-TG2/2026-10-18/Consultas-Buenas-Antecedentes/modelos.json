@@ -1,0 +1,185 @@
+{
+  "ROM/ValoresFinales": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La ausencia de colisiones en la tabla final se deriva del recorrido efectivo SinBad. Toda consulta del programa está guardada y una apertura válida y registrada determina exactamente el valor del vector indexado calculado solo desde esa tabla, sin usar H fuera de ella.",
+    "limites": [
+      "SinBad se usa en una implicación determinista. No se condiciona una distribución uniforme a ese evento ni se reemplaza su pérdida probabilística."
+    ],
+    "teoremas": [
+      "Nexus.ROM.ValoresFinales.tabla_sin_colisiones",
+      "Nexus.ROM.ValoresFinales.consulta_guardada",
+      "Nexus.ROM.ValoresFinales.valor_en_tabla",
+      "Nexus.ROM.ValoresFinales.valor_del_programa"
+    ]
+  },
+  "Canal/CapasIndexadas": {
+    "grupos": [
+      "M35",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Una representación recursiva de las capas conserva su altura al retirar la cabeza. Se prueba su igualdad con la representación zipIdx de la vista y la conservación de las longitudes de ambas representaciones.",
+    "limites": [
+      "La altura se mantiene explícita; no se identifica con un presupuesto de consultas del adversario."
+    ],
+    "teoremas": [
+      "Nexus.Canal.CapasIndexadas.desde_mapIdx",
+      "Nexus.Canal.CapasIndexadas.capas_desde",
+      "Nexus.Canal.CapasIndexadas.longitud_desde",
+      "Nexus.Canal.CapasIndexadas.longitud_capas"
+    ]
+  },
+  "FRI/ControlesValores": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La compatibilidad del acarreo, el plegado y el estado siguiente dependen únicamente de izquierda y derecha. Desde las condiciones del programa FRI aceptado y sus valores extraídos se demuestran los controles sobre todos los vectores de capas hasta la constante final. Se recupera también la primera pareja efectiva cuando la fase contiene capas.",
+    "limites": [
+      "Es una transferencia determinista del recorrido aceptado. Las cotas probabilísticas de todas las rondas y el refinamiento universal Rust siguen separados."
+    ],
+    "teoremas": [
+      "Nexus.Goldilocks.ControlesValores.compatible_valores",
+      "Nexus.Goldilocks.ControlesValores.plegado_valores",
+      "Nexus.Goldilocks.ControlesValores.siguiente_valores",
+      "Nexus.Goldilocks.ControlesValores.recorrido_valores",
+      "Nexus.Goldilocks.ControlesValores.verificacion_valores",
+      "Nexus.Goldilocks.ControlesValores.primera_pareja",
+      "Nexus.Goldilocks.ControlesValores.primera_verificacion"
+    ]
+  },
+  "Verificador/ValoresConsulta": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La aceptación de una consulta y su soporte efectivo en el programa global producen los valores extraídos de sus seis posiciones AIR y todas las aperturas FRI. Se conserva cada índice y cada raíz, sin recibir una lista adicional de autenticaciones como premisa.",
+    "limites": [
+      "La hipótesis de inclusión de consultas se elimina en la instancia del verificador completo con adversario. No afirma canonicidad ni autenticación de bytes ajenos al lector matemático."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.ValoresConsulta.aperturas_extraidas",
+      "Nexus.Verificador.ValoresConsulta.puntos_como_funcion",
+      "Nexus.Verificador.ValoresConsulta.seis_puntos",
+      "Nexus.Verificador.ValoresConsulta.valores_air",
+      "Nexus.Verificador.ValoresConsulta.fri_traza",
+      "Nexus.Verificador.ValoresConsulta.fri_composicion"
+    ]
+  },
+  "Verificador/RetosVista": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Las longitudes del perfil aceptado separan exactamente los tres alfas y los segmentos de betas de traza y composición de la vista final. Sus valores son los entregados realmente por el canal ejecutado, sin elegir retos adicionales.",
+    "limites": [
+      "La igualdad de segmentos no establece independencia condicionada a aceptación o SinBad."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.RetosVista.particion_retos",
+      "Nexus.Verificador.RetosVista.cantidades_retos",
+      "Nexus.Verificador.RetosVista.retos_vista",
+      "Nexus.Verificador.RetosVista.segmentos_vista",
+      "Nexus.Verificador.RetosVista.tres_alfas"
+    ]
+  },
+  "Verificador/ConsultaBuena": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se transportan los enlaces efectivos de traza y composición a los valores extraídos. Una consulta aceptada con los retos reales, forma admitida y soporte de sus valores satisface simultáneamente pruebaTraza y pruebaComposicion: canonicidad de las seis posiciones, enlaces, plegados, acarreo y constantes finales de todas las capas.",
+    "limites": [
+      "Los dos controles se cumplen para una misma consulta. No se multiplican probabilidades de fases ni se deduce todavía una cota del cardinal de sus conjuntos buenos."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.ConsultaBuena.enlace_traza_valores",
+      "Nexus.Verificador.ConsultaBuena.enlace_composicion_valores",
+      "Nexus.Verificador.ConsultaBuena.consulta_en_vista"
+    ]
+  },
+  "Canal/MuestraEfectiva": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La lista ordenada de índices se define como función del selector ejecutado, conservando la parada al completar cuarenta distintos. Se prueban resultado, ausencia de duplicados, soporte de su continuación y equivalencia exacta de su conjunto con la selección sobre la cinta real. Se transporta el tamaño 4*2^k a 2^(k+2) sin cambiar índices.",
+    "limites": [
+      "La cinta puede desplegarse matemáticamente más allá de la parada; esa cola no se atribuye al registro real. R continúa siendo un corte analítico."
+    ],
+    "teoremas": [
+      "Nexus.Canal.MuestraEfectiva.resultado_lista",
+      "Nexus.Canal.MuestraEfectiva.lista_sin_duplicados",
+      "Nexus.Canal.MuestraEfectiva.soporte_lista",
+      "Nexus.Canal.MuestraEfectiva.aceptacion_lista",
+      "Nexus.Canal.MuestraEfectiva.conjunto_desde_cinta",
+      "Nexus.Canal.MuestraEfectiva.transportar_selector"
+    ]
+  },
+  "Verificador/MuestraBuena": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La aceptación completa produce un testigo cuya muestra es exactamente la lista efectiva del selector. Sus cuarenta índices distintos pertenecen a GT intersección GC calculados antes del primer I. Se identifica esa muestra con la salida de la cinta real usada en el acoplamiento ROM y se obtiene la inclusión determinista aceptación implica muestra completa y omisión conjunta. La instancia con propuesta adaptativa e intercalaciones elimina la hipótesis externa de soporte del verificador.",
+    "limites": [
+      "La cobertura se obtiene bajo SinBad y en el corte de entradas nuevas. Falta convertir ese corte al prefijo bruto de llamadas, registrar sus políticas en la unión de primeras exposiciones, justificar g/m/B y las cotas FRI y de trabajo y componer excepciones. No es una cota de solidez global ni un refinamiento universal Rust."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.MuestraBuena.tamano_indices",
+      "Nexus.Verificador.MuestraBuena.testigo_efectivo",
+      "Nexus.Verificador.MuestraBuena.consulta_de_muestra",
+      "Nexus.Verificador.MuestraBuena.cuarenta_indices",
+      "Nexus.Verificador.MuestraBuena.conjunto_efectivo",
+      "Nexus.Verificador.MuestraBuena.muestra_igual_salida",
+      "Nexus.Verificador.MuestraBuena.aceptacion_en_conjuntos",
+      "Nexus.Verificador.MuestraBuena.desde_adversario",
+      "Nexus.Verificador.MuestraBuena.omision_efectiva",
+      "Nexus.Verificador.MuestraBuena.cobertura_selector_adversario"
+    ]
+  }
+}

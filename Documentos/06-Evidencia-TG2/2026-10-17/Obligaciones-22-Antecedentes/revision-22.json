@@ -1,0 +1,366 @@
+{
+  "esquema": 1,
+  "grupos_revisados": [
+    {
+      "id": "M05",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Fijar dimensiones, salida de H, norma y distribución de la instancia.",
+        "Formalizar la relación de victoria sin asumir una reducción desde firmas reales."
+      ],
+      "modulos_nuevos": [
+        "MLDSA/Retos"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Completar la cardinalidad y el codec bibliográfico, SampleInBall, juego cuántico y reducción desde firmas.",
+      "limites": []
+    },
+    {
+      "id": "M10",
+      "estado_anterior": "parcial",
+      "estado_actual": "modelo_verificado",
+      "criterio_cierre_conservado": [
+        "Conservar las desigualdades ya probadas para los tres perfiles.",
+        "Instanciar dimensiones, norma y constantes desde los tipos y la versión bibliográfica correctos."
+      ],
+      "modulos_nuevos": [
+        "MLDSA/ContrasteJMW"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": null,
+      "limites": [
+        "Contraste de una condición necesaria de JMW24v2, no formalización de su reducción cuántica, ataque ni imposibilidad de otras reducciones. La procedencia bibliográfica está identificada por versión y copia preservada."
+      ]
+    },
+    {
+      "id": "M11",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Definir codificación inequívoca, hash externo, asociación de clave, cadena y nonce.",
+        "Probar verificación previa al cambio de estado bajo supuestos explícitos de hash y firma."
+      ],
+      "modulos_nuevos": [
+        "Cripto/RotacionFirmada",
+        "Cripto/OperacionBytes"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Vincular transacciones y codecs efectivos; el sobre de operaciones TG2 ya está probado, pero no equivale a bincode TG1 ni a seguridad de hash/firma.",
+      "limites": []
+    },
+    {
+      "id": "M13",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Definir estado e invariantes de identidad, época y claves vigentes.",
+        "Demostrar atomicidad del modelo, autorización de cambios y vigencia respecto de un prefijo confiable.",
+        "Mantener custodia, destrucción de copias y secrecia hacia adelante como obligaciones adicionales."
+      ],
+      "modulos_nuevos": [
+        "Cripto/RotacionFirmada",
+        "Cripto/OperacionBytes"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Derivar la cadena completa de altas/rotaciones/retiros y checkpoints del registro Rust y enlazarla con la política; quedan custodia, borrado y secrecia hacia adelante.",
+      "limites": []
+    },
+    {
+      "id": "M16",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Modelar el conteo consecutivo y la condición de fallo al alcanzar C.",
+        "Definir el techo bajo H>0 y 0<alpha<1; comprobar H=7.5 y alpha=2^-20.",
+        "Explicitar las hipótesis probabilísticas de cualquier cota de falsas alarmas."
+      ],
+      "modulos_nuevos": [
+        "Salud/RachasCondicionales"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Demostrar correspondencia del cálculo de corte en f64 y del monitor Rust. La nueva cota necesita leyes condicionales justificadas para la fuente.",
+      "limites": []
+    },
+    {
+      "id": "M18",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Definir estados sin evaluación, fallo retenido, reevaluación y renovación pendiente.",
+        "Probar bloqueo de derivación y operaciones, acumulación de lotes y conservación de contadores al rotar."
+      ],
+      "modulos_nuevos": [
+        "Salud/InvariantesLote"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Completar Rust/f64 y el enlace con KDF, registro y operaciones; los límites de contadores del modelo ya están probados.",
+      "limites": []
+    },
+    {
+      "id": "M21",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Comprobar 4032-96=3936, 4032+1952+9=5993 y 128+17*256*4=17536.",
+        "Vincular cada tamaño con la representación y versión medidas; no interpretarlo como entropía ni RAM total."
+      ],
+      "modulos_nuevos": [
+        "Modelos/LayoutBackend"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Probar correspondencia ABI/layout del compilador y versión objetivo. La contabilidad declarada de campos no demuestra sizeof, RAM total ni zeroización.",
+      "limites": []
+    },
+    {
+      "id": "M23",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Definir un modelo de operaciones y la familia asintótica; distinguir n fijo de n variable.",
+        "Derivar el recuento k*l, las transformadas y las cotas gruesa y optimizada.",
+        "Enlazar el costo del algoritmo NTT con el del backend como obligación aparte."
+      ],
+      "modulos_nuevos": [
+        "MLDSA/NTTAlgebra"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Refinar árbol par/impar y coset a la NTT real del backend, orden, Montgomery y enteros; faltan muestreo, hashes y costo de bits.",
+      "limites": []
+    },
+    {
+      "id": "M24",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Modelar intentos independientes con probabilidad de aceptación p>0 y probar E[N]=1/p.",
+        "Para O(1), exigir una cota inferior uniforme positiva de p en la familia.",
+        "Conservar por separado el agotamiento del contador y la distribución del ejecutable."
+      ],
+      "modulos_nuevos": [
+        "Complejidad/ContadorFirma"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Justificar la distribución y probabilidad de rechazo reales y su conducta al agotarse kappa; bloques y fronteras u16 ya están modelados.",
+      "limites": []
+    },
+    {
+      "id": "M25",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Precisar codificaciones y parámetros para cotas de claves y firmas.",
+        "Contar capas, caminos y consultas para O(q log²N); no inferirlo de pocos tiempos medidos."
+      ],
+      "modulos_nuevos": [
+        "Complejidad/SerializacionPrueba"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Completar equivalencia de serialización/parsing Rust y familias completas de anchos; los conteos de listas y cabeceras no bastan por sí solos.",
+      "limites": []
+    },
+    {
+      "id": "M26",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Identificar datos fuente y versiones antes de calcular inversos, razones y diferencias.",
+        "Formalizar solo las cuentas y tolerancias; la medición permanece evidencia de una ejecución."
+      ],
+      "modulos_nuevos": [],
+      "nota": "Se contrastó la aritmética ya mecanizada con el alcance de Mediciones y sus fuentes congeladas. No se rehacen mediciones ni se cierra la procedencia exacta H1/H2 de M44; se conserva el estado parcial.",
+      "pendiente": "Identificar completamente la procedencia H1/H2 y el alcance de las corridas junto con M44; las cuentas no certifican causalidad ni rendimiento sostenido.",
+      "limites": []
+    },
+    {
+      "id": "M27",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Definir el juego y pagos antes de afirmar equilibrio de Nash o requisitos de colusión.",
+        "Precisar peso de stake, umbral estricto o inclusivo e intersección de quórums.",
+        "Expresar recuperación y muestreo DA como resultados condicionados; conservar TG1 intacto."
+      ],
+      "modulos_nuevos": [],
+      "nota": "Se revisaron los teoremas existentes de quórum, Nash y reconstrucción condicionada. No hay modelo desplegado completo ni prueba de mayoría coludida; TG1 permanece intacto y el estado parcial no cambia.",
+      "pendiente": "Mantener y verificar el vínculo de los modelos de referencia con las afirmaciones de diseño, sin atribuir consenso, DA, incentivos desplegados ni mayoría coludida a los teoremas condicionados.",
+      "limites": []
+    },
+    {
+      "id": "M31",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Representar el puente de raíces y su dominio, incluidos alias y rango de índices.",
+        "Formalizar la reconstrucción del testigo del ejemplo pequeño si se usa como resultado matemático.",
+        "No convertir pruebas de casos ni ausencia de enmascaramiento en una prueba general de solidez."
+      ],
+      "modulos_nuevos": [
+        "ROM/ReconstruccionPublica"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Identificar nodos y evaluaciones exactas de certificados del ejemplo y refinamiento legado. La reconstrucción matemática no demuestra aceptación general ni conocimiento cero.",
+      "limites": []
+    },
+    {
+      "id": "M32",
+      "estado_anterior": "parcial",
+      "estado_actual": "modelo_verificado",
+      "criterio_cierre_conservado": [
+        "Conservar el enlace local ya probado para el formato Fp2 compartido.",
+        "Derivar ambas aceptaciones FRI del recorrido completo, acarreo y valor final, con formas e índices válidos."
+      ],
+      "modulos_nuevos": [
+        "Merkle/RegistroVerificador",
+        "FRI/Recorrido",
+        "Canal/AceptacionRecorridos"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": null,
+      "limites": [
+        "Se deriva el registro de cada apertura modelada. La integración de esos eventos en la tabla común, las familias causales y toda la ejecución Rust permanece pendiente en M37/M39.",
+        "Modelo de naturales y operaciones de campo. La extracción requiere ausencia de colisiones y registro de aperturas. La equivalencia con toda la ejecución Rust y su tabla ROM no se deriva de este bucle.",
+        "La familia construida usa el registro final para la implicación de aceptación. Su identificación con una familia causal previa a cada reto sigue en M37/M36. La probabilidad de muestra es la uniforme ideal; el selector real corresponde a M35/M40."
+      ]
+    },
+    {
+      "id": "M33",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar representantes, plegado, recuperación y excepciones previas al reto ya demostrados.",
+        "Separar el lema elemental mecanizado del corolario bibliográfico general y del cambio uniforme beta/a_j."
+      ],
+      "modulos_nuevos": [
+        "FRI/RetosAfines"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Completar la correspondencia con el corolario bibliográfico general y la transformación integral de transcripciones; beta/a y el plegado del coset ya están probados.",
+      "limites": []
+    },
+    {
+      "id": "M35",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+        "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI."
+      ],
+      "modulos_nuevos": [
+        "ROM/SelectorRechazo"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Derivar distribución uniforme del subconjunto completo por rechazo y enlazar entradas del selector con respuestas frescas en todas las historias; no suponer independencia entre ambos FRI.",
+      "limites": []
+    },
+    {
+      "id": "M36",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+        "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash."
+      ],
+      "modulos_nuevos": [
+        "Canal/AceptacionRecorridos",
+        "ROM/PotencialCandidatos",
+        "ROM/ComposicionCotas"
+      ],
+      "nota": "El recorrido y el potencial nuevos reducen premisas locales, pero no construyen aún el adaptador externo integral de todas las historias; no hay dictamen independiente. B ideal sigue separado del presupuesto hash.",
+      "pendiente": "Construir el adaptador externo integral a las rondas/reinicios ideales y completar revisión independiente; el presupuesto de inicios no equivale automáticamente a consultas hash.",
+      "limites": []
+    },
+    {
+      "id": "M37",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar extracción, congelación y órdenes de primeras consultas bajo ausencia de aciertos.",
+        "Obtener los hechos de registro y familias causales para todas las historias del protocolo."
+      ],
+      "modulos_nuevos": [
+        "Merkle/RegistroVerificador"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Construir familias causales y la tabla común del protocolo a partir de todos sus eventos; el nuevo evaluador Merkle registra sus consultas locales pero no modela todo Rust.",
+      "limites": []
+    },
+    {
+      "id": "M39",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Justificar V_T, B_T y S=Q+V_T a partir de listas, rechazos, serialización e índices.",
+        "Enlazar los modelos tipados con enteros de máquina y el verificador Rust."
+      ],
+      "modulos_nuevos": [
+        "Merkle/RegistroVerificador",
+        "FRI/Recorrido",
+        "Complejidad/SerializacionPrueba",
+        "FRI/FormasLimites"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Completar todas las formas, rechazos, gramática conjunta, deserialización y semántica de máquina del verificador. Las cotas de índices y listas cubren el modelo matemático explícito.",
+      "limites": []
+    },
+    {
+      "id": "M40",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+        "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado."
+      ],
+      "modulos_nuevos": [
+        "ROM/SelectorRechazo",
+        "ROM/PotencialCandidatos"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Instanciar los árboles de potencial con candidatos reales, sus conjuntos buenos y leyes frescas condicionales; cerrar el acoplamiento con gramática, memoria y selector.",
+      "limites": []
+    },
+    {
+      "id": "M41",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar la cota parametrizada del evento excepcional del registro.",
+        "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+        "Certificar el ejemplo numérico solo después de fijar las hipótesis completas."
+      ],
+      "modulos_nuevos": [
+        "ROM/ComposicionCotas",
+        "ROM/EjemploNumerico"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": "Derivar para el ejecutable las inclusiones y cotas de eventos compuestas. El intervalo numérico ya es exacto, pero sigue siendo evaluación de una fórmula condicionada.",
+      "limites": []
+    },
+    {
+      "id": "M46",
+      "estado_anterior": "parcial",
+      "estado_actual": "modelo_verificado",
+      "criterio_cierre_conservado": [
+        "Conservar la selección parcial previa a retos, unicidad y descomposición f=A+zB ya mecanizadas.",
+        "Conservar el conteo de puntos no base con sus hipótesis y enlazarlo a la consulta autenticada sin imponer un oráculo globalmente base."
+      ],
+      "modulos_nuevos": [
+        "Canal/AceptacionRecorridos"
+      ],
+      "nota": "Pruebas nuevas del modelo y límites contrastados con el criterio conservado.",
+      "pendiente": null,
+      "limites": [
+        "La familia construida usa el registro final para la implicación de aceptación. Su identificación con una familia causal previa a cada reto sigue en M37/M36. La probabilidad de muestra es la uniforme ideal; el selector real corresponde a M35/M40."
+      ]
+    }
+  ],
+  "cerrados_en_su_modelo": [
+    "M10",
+    "M32",
+    "M46"
+  ],
+  "parciales_restantes": 19,
+  "criterios_reducidos": false,
+  "tesis_completa_verificada": false,
+  "dictamen_independiente": "pendiente"
+}

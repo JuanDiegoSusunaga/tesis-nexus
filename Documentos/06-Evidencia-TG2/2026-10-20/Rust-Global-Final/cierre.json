@@ -1,0 +1,69 @@
+{
+  "fecha": "2026-10-20",
+  "fecha_utc": "2026-10-20T16:21:35.780119+00:00",
+  "estado": "global_rust_correcta_y_trazabilidad_actualizada",
+  "verificacion": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json",
+    "bytes": 86920,
+    "sha256": "b5f740de756ac89dad9e61e469f98b721fd3c4643a9c064f3d9ad7520c485eff"
+  },
+  "commit_codigo": "637e77c99e804664915caf4ed928a10ef81cc870",
+  "pruebas_globales": 223,
+  "pruebas_falladas": 0,
+  "advertencias_por_etapa": {
+    "check": 52,
+    "test": 52,
+    "build": 37
+  },
+  "ejecucion_repetida_al_cerrar": false,
+  "fuentes_rust_intactas": 89,
+  "fuentes_lean_intactas": 354,
+  "lean_recompilado": false,
+  "manuscrito_intacto": true,
+  "manuscrito_regenerado": false,
+  "manifiesto_previo": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "bytes": 2271039,
+    "sha256": "c54997fa441cc38404fdc314c0f444e5e88e895ec51eefde0807a2c1b3885c32"
+  },
+  "archivos_previos_intactos": 9636,
+  "seguimiento_actual": [
+    {
+      "archivo": "PENDIENTES.md",
+      "bytes": 38363,
+      "sha256": "4a4d09c6d0c2f5dc55fed5fd421ad14f0811da7015334c063ddf39ae3f42ac5b"
+    },
+    {
+      "archivo": "BITACORA_TG2.md",
+      "bytes": 205204,
+      "sha256": "b692fa6d91d1aadb2d3bf06cf250c5f0ede748d5488aeb2c9f41729dc941584e"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/README.md",
+      "bytes": 11662,
+      "sha256": "307146d6c676a7525391481f34573b762aaac8aa7c1aa1301cd95c9e149f09af"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 8909,
+      "sha256": "8976c8a82c5b9eb10d47072ff374d26b03f6320da920b1d9559d3e5ba1969c76"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 20260,
+      "sha256": "39574f7e2cfc195d0074044a789f313a87638d8f4ac9e49db3b3c8b195b45e39"
+    }
+  ],
+  "herramientas_conservadas": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/ejecucion.py",
+      "bytes": 7137,
+      "sha256": "cca4deff00049c1e23aa6d76b62fc3bf8b01c2228b3de16f7ec75103c9be1fca",
+      "origen": "tmp/rust-global-final-2026-10-20.py",
+      "uso": "Instantánea del ejecutor; su raíz relativa corresponde a la ubicación de origen."
+    }
+  ],
+  "sin_commit_ni_push": true,
+  "limite": "Verifica este workspace y sus casos de prueba; no prueba equivalencia universal Rust/Lean, validez L2 completa ni seguridad integral.",
+  "antecedentes": "Los informes de 197 pruebas globales y 113/55 aisladas y el manuscrito se conservan sin reescribirlos."
+}

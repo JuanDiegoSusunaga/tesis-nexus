@@ -1,0 +1,58 @@
+{
+  "perfil": "Evidencia histórica R4 de proximidad de 2026-09-22",
+  "fuentes_r4": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/validacion.json",
+      "sha256": "46e9d1ad420b6e88218a22f913e9a39ac3eda100fbc473a2893676d0922daf70"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/analisis.json",
+      "sha256": "6498a8abfa7c87bd6a528846011c3970687b21505dbafe83482e01e94ce559a4"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/tabla-proximidad.md",
+      "sha256": "39bea330d11b8d6b14b47a1f58db3e7a2d7e0ce34a49bda3a200c53173237810"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/cargo-check.log",
+      "sha256": "ccb6d754348dac41b01930e7aeba80c667acd66343e9d66edfa00cb4e48977ea"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/cargo-test.log",
+      "sha256": "cb7005605188b165db754680a377d3e9b6caca939c69e8d5a06561ecba9eab1b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/cargo-build.log",
+      "sha256": "736faefe3e44393ec8df4403ba3f98e8c12ed77524be85b2919c107f5273e539"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/cargo-test-release.log",
+      "sha256": "0753b3afcb3a56c03502722ff617240d30fe9d0a5e8d075baa3cabea35476112"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-16.bin",
+      "sha256": "db046fdd7274740f16d134fb443df253c495130f622d1820ca9a55fb3a8e0eb5"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-32.bin",
+      "sha256": "8a496f8c41662fdaf73a96e7d8dcd25c988774d2cee807539bb5b49871617a15"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-64.bin",
+      "sha256": "0c2ff42338a7cd95221b623bc2f5ac369f67807fa346e854a4ff7fcfd4c74f42"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-16.bin",
+      "sha256": "1d2ee6f2aa11b81e70e2cb3531c3b90796c7fb6d7e89cc113774f3c5723ee8d7"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-32.bin",
+      "sha256": "ce956e0fd08f7f8c6f2ca7c400ff3869da9a188f1bcc81a3af52fcd62257f75b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-64.bin",
+      "sha256": "e7ebd99896cf217068d48b8f77bfcf7f7889f6e007a2c28b7f6d7098b4bbca8f"
+    }
+  ],
+  "limite": "La aceptación de tres tamaños y el rechazo del control se conservan como evidencia empírica. No se ejecuta Rust ni se afirma equivalencia del verificador con Lean."
+}

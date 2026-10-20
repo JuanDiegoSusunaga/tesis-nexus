@@ -1,8 +1,12 @@
 # Balance de cumplimiento — Objetivos 3 y 4
 
-**Fecha:** 12 de octubre de 2026. Balance técnico para revisar el cierre académico de TG2; conserva las obligaciones abiertas y el enfoque en sistemas en general.
+**Actualización:** 19 de octubre de 2026. Balance técnico para revisar el cierre académico; conserva las obligaciones abiertas y el enfoque en sistemas en general.
+
+**Resultado vigente de Lean y del manuscrito:** pasaron la compilación global de la raíz y sus 347 submódulos y la auditoría de 2709 declaraciones, sin `sorryAx` ni axiomas fuera de política. La cota conservadora del verificador matemático en ROM clásico, su presupuesto causal, el trabajo y los reinicios están demostrados bajo las hipótesis declaradas. §6.7.9 fue conciliada con esos teoremas y se regeneraron Word y PDF como una sola tesis final, sin etiquetas de etapas académicas ni ediciones del manuscrito. La [verificación documental](../../06-Evidencia-TG2/2026-10-19/Conciliacion-Manuscrito-ROM/verificacion.json) coteja fuentes, tablas, ejemplos racionales y páginas, reutilizando los registros Lean sin recompilar. No prueba corrección integral de la tesis, refinamiento universal Rust ni transferencia QROM. Los antecedentes fechados siguientes conservan su alcance histórico; no reabren la cota ROM ya demostrada.
 
 **Decisión vigente del autor:** la transferencia QROM completa del protocolo AIR/FRI queda como trabajo futuro. Su conclusión no es un requisito de esta ruta de cierre; se conservan los resultados parciales y se declara el límite. R1 de ML-DSA mantiene sus obligaciones propias.
+
+**Coherencia corregida:** los objetivos originales permanecen intactos; el manuscrito declara cumplimiento parcial en la reducción concreta de seguridad de las firmas y no la sustituye por la cota ROM de AIR/FRI. La secrecia hacia adelante queda condicionada a custodia, material fresco y eliminación de copias. Los seis grupos documentales CI01–CI06 están atendidos y sus salidas Word/PDF revisadas, sin nueva compilación Lean/Rust. [Registro](../../06-Evidencia-TG2/2026-10-19/Revision-Integral-Coherencia/correccion-verificada.json).
 
 ## Actividades y evidencia
 

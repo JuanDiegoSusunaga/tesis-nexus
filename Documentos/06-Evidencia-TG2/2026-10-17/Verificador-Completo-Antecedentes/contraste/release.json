@@ -1,0 +1,208 @@
+{
+  "casos": [
+    {
+      "archivo_binario": "honesto-16.bin.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "Acepta",
+      "nombre": "honesto-16.bin",
+      "rust": "Acepta",
+      "sha3_256": "576e41b667792f4c7f7f1d89cb7de0026baef1fc23e21c461f63919e83b5e2f6"
+    },
+    {
+      "archivo_binario": "honesto-256.bin.bin",
+      "bytes": 437470,
+      "envoltura_estricta": "Acepta",
+      "nombre": "honesto-256.bin",
+      "rust": "Acepta",
+      "sha3_256": "ee723977c61433ff45500fc0c28bfa8e6a55a976b80c1826f7e6661e12669964"
+    },
+    {
+      "archivo_binario": "honesto-4096.bin.bin",
+      "bytes": 760286,
+      "envoltura_estricta": "Acepta",
+      "nombre": "honesto-4096.bin",
+      "rust": "Acepta",
+      "sha3_256": "935e5b3e321368e3c2f9b3976c1ccd776c2b968d83da79f2c779e947467918b4"
+    },
+    {
+      "archivo_binario": "honesto-64.bin.bin",
+      "bytes": 306782,
+      "envoltura_estricta": "Acepta",
+      "nombre": "honesto-64.bin",
+      "rust": "Acepta",
+      "sha3_256": "532d6914a4c2f0c2e33bd296604e219122cf6077ae9a8f8b86e4c132378eaa42"
+    },
+    {
+      "archivo_binario": "lejano-16.bin.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "TraceFri",
+      "nombre": "lejano-16.bin",
+      "rust": "TraceFri",
+      "sha3_256": "63932eada1ac4072dd1a06f6470a1d85db7c547d4aeda58b2ccff0adf6644b82"
+    },
+    {
+      "archivo_binario": "lejano-32.bin.bin",
+      "bytes": 249118,
+      "envoltura_estricta": "TraceFri",
+      "nombre": "lejano-32.bin",
+      "rust": "TraceFri",
+      "sha3_256": "dbff7b408057ceddb7e612f66b526e80b0c6016fd32903c1281fe07d21d66f4a"
+    },
+    {
+      "archivo_binario": "lejano-64.bin.bin",
+      "bytes": 306782,
+      "envoltura_estricta": "TraceFri",
+      "nombre": "lejano-64.bin",
+      "rust": "TraceFri",
+      "sha3_256": "ede8bdfbbb6195b0c2014d77529f7014290496c9618dcce7cd73770b4167f983"
+    },
+    {
+      "archivo_binario": "sufijo-tres-bytes.bin",
+      "bytes": 196577,
+      "envoltura_estricta": "Lectura",
+      "nombre": "sufijo-tres-bytes",
+      "rust": "Acepta",
+      "sha3_256": "cb9f09b4b647d85e932eb336c47f8e3134b8e5ad1aa16cfee220291f965f25e9"
+    },
+    {
+      "archivo_binario": "truncado.bin",
+      "bytes": 196573,
+      "envoltura_estricta": "Lectura",
+      "nombre": "truncado",
+      "rust": "Lectura",
+      "sha3_256": "e9e7c054fee3a4fae0dce6437e19e30a10cbc95ea6105204939f6352b6b2afa5"
+    },
+    {
+      "archivo_binario": "campo-no-canonico.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "NonCanonical",
+      "nombre": "campo-no-canonico",
+      "rust": "NonCanonical",
+      "sha3_256": "0bc6083d36b722e490b07e2fa86c897ace44e8134a20e9ac5f4f3e813e227dae"
+    },
+    {
+      "archivo_binario": "filas.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "Rows",
+      "nombre": "filas",
+      "rust": "Rows",
+      "sha3_256": "187490712e21ad352097a251b7aed38e5b9b0ef89e284dbacaab3a5a99fab4de"
+    },
+    {
+      "archivo_binario": "version.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "Profile",
+      "nombre": "version",
+      "rust": "Profile",
+      "sha3_256": "58f5b9958d99cbd6f547ad993601f2fe2d0bd3e56f2c8cc785ca3bd925279945"
+    },
+    {
+      "archivo_binario": "trabajo-perfil.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "Profile",
+      "nombre": "trabajo-perfil",
+      "rust": "Profile",
+      "sha3_256": "da5d3d6bcd79ac97492af919eadf09c01c24504f8a00bf3abfecbe7f7b5ce099"
+    },
+    {
+      "archivo_binario": "raices-vacias.bin",
+      "bytes": 196446,
+      "envoltura_estricta": "Shape",
+      "nombre": "raices-vacias",
+      "rust": "Shape",
+      "sha3_256": "d20d9577f57f3df2dc5d562d4b01279767ce966d7f7514378704c080e09dfaf1"
+    },
+    {
+      "archivo_binario": "faltan-consultas.bin",
+      "bytes": 191670,
+      "envoltura_estricta": "Shape",
+      "nombre": "faltan-consultas",
+      "rust": "Shape",
+      "sha3_256": "55cf16dd55c359eb24939f0b62715bcff953fefd27c7203d0b0a61fdcb6f346d"
+    },
+    {
+      "archivo_binario": "raiz-compartida.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "TraceRoot",
+      "nombre": "raiz-compartida",
+      "rust": "TraceRoot",
+      "sha3_256": "c0a3244eb66f691b37cd60ba23c997f9571c2945018be8d711fca023d1735944"
+    },
+    {
+      "archivo_binario": "faltan-puntos-air.bin",
+      "bytes": 196334,
+      "envoltura_estricta": "Shape",
+      "nombre": "faltan-puntos-air",
+      "rust": "Shape",
+      "sha3_256": "1584f263bfc6967b7b68fba73fced4a4ba4f91137993513b05140bdd37441dbd"
+    },
+    {
+      "archivo_binario": "camino-corto.bin",
+      "bytes": 196542,
+      "envoltura_estricta": "Shape",
+      "nombre": "camino-corto",
+      "rust": "Shape",
+      "sha3_256": "8ac7c82c1dc1251f89c4d4247fda01799416dc9e3601750fab3ccf7c780d2e9f"
+    },
+    {
+      "archivo_binario": "faltan-capas.bin",
+      "bytes": 196270,
+      "envoltura_estricta": "Shape",
+      "nombre": "faltan-capas",
+      "rust": "Shape",
+      "sha3_256": "ef4abb470eec1da690184227e944f4e63263573f61b9eca7fd4fec10b7eb681c"
+    },
+    {
+      "archivo_binario": "apertura-air.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "TraceOpening",
+      "nombre": "apertura-air",
+      "rust": "TraceOpening",
+      "sha3_256": "c9c78503b5f846cb5826645810a2525248e8e7e4935fdf972b1989f65cdc635f"
+    },
+    {
+      "archivo_binario": "enlace-traza.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "TraceLink",
+      "nombre": "enlace-traza",
+      "rust": "TraceLink",
+      "sha3_256": "ef4b428bec175dbedade319da51eff134e206f1b548f89d57332b0420c347395"
+    },
+    {
+      "archivo_binario": "fri-traza.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "TraceFri",
+      "nombre": "fri-traza",
+      "rust": "TraceFri",
+      "sha3_256": "03e975018c7a1769906009a344c3ac132dc17b7fc069aef06b83b264a008da87"
+    },
+    {
+      "archivo_binario": "enlace-composicion.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "CompositionLink",
+      "nombre": "enlace-composicion",
+      "rust": "CompositionLink",
+      "sha3_256": "e75c26e38341611e93a6a8cb5923357327fd8b5be88cddfa1d3f7c71139d1ca1"
+    },
+    {
+      "archivo_binario": "fri-composicion.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "CompositionFri",
+      "nombre": "fri-composicion",
+      "rust": "CompositionFri",
+      "sha3_256": "d236c87b9e15a89b58bed5ddc470f092027daf07b3811385a1474688644d2c37"
+    },
+    {
+      "archivo_binario": "nonce-invalido.bin",
+      "bytes": 196574,
+      "envoltura_estricta": "Grinding",
+      "nombre": "nonce-invalido",
+      "rust": "Grinding",
+      "sha3_256": "5cca0ffc6c805986c10212f9ff708cd0acbe363014d189b2334d56233e58c8da"
+    }
+  ],
+  "correcto": true,
+  "esquema": 1,
+  "limite": "Contraste de ejemplos en Rust. El EOF estricto es una envoltura adicional; bincode::deserialize admite sufijos. No es refinamiento universal ni ejecución de Lean.",
+  "perfil": "release"
+}

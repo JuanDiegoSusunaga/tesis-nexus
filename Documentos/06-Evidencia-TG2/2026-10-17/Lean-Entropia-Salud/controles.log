@@ -1,0 +1,29 @@
+["C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe", "-m", "unittest", "discover", "-s", "scripts/tests", "-p", "test_verificar_formalizacion.py", "-v"]
+
+test_rejects_duplicate_output (test_verificar_formalizacion.AuditTests.test_rejects_duplicate_output) ... ok
+test_rejects_missing_theorem (test_verificar_formalizacion.AuditTests.test_rejects_missing_theorem) ... ok
+test_rejects_sorry_and_custom_or_native_axioms (test_verificar_formalizacion.AuditTests.test_rejects_sorry_and_custom_or_native_axioms) ... ok
+test_rejects_unregistered_theorem (test_verificar_formalizacion.AuditTests.test_rejects_unregistered_theorem) ... ok
+test_standard_axioms_and_axiom_free_proof (test_verificar_formalizacion.AuditTests.test_standard_axioms_and_axiom_free_proof) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+
+["C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe", "-m", "unittest", "discover", "-s", "scripts/tests", "-p", "test_verificar_revision_manuscrito.py", "-v"]
+
+test_admite_revision_vigente_con_fuentes_exactas (test_verificar_revision_manuscrito.RevisionTests.test_admite_revision_vigente_con_fuentes_exactas) ... ok
+test_rechaza_cambio_de_texto_o_linea (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_cambio_de_texto_o_linea) ... ok
+test_rechaza_cierre_sin_demostraciones (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_cierre_sin_demostraciones) ... ok
+test_rechaza_declaracion_lean_inventada (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_declaracion_lean_inventada) ... ok
+test_rechaza_eliminar_un_enlace_previo (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_eliminar_un_enlace_previo) ... ok
+test_rechaza_modelo_sin_cierre_auditable (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_modelo_sin_cierre_auditable) ... ok
+test_rechaza_omision_y_duplicado_de_bloque (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_omision_y_duplicado_de_bloque) ... ok
+test_rechaza_salida_del_repositorio (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_salida_del_repositorio) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.212s
+
+OK
+

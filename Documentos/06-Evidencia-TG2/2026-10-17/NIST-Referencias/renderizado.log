@@ -1,0 +1,10 @@
+["C:\\Users\\juand\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\pdftoppm.exe", "-f", "33", "-l", "35", "-r", "110", "-png", "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-10-17\\NIST-Referencias\\fuentes\\SP800-90B.pdf", "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-10-17\\NIST-Referencias\\visual\\salud"]
+Syntax Error: No display font for 'Symbol'
+Syntax Error: No display font for 'ArialUnicode'
+
+["C:\\Users\\juand\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\pdftoppm.exe", "-f", "1", "-l", "1", "-r", "110", "-png", "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-10-17\\NIST-Referencias\\fuentes\\SP800-90B-errata.pdf", "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-10-17\\NIST-Referencias\\visual\\errata"]
+Syntax Error: No display font for 'Symbol'
+Syntax Error: No display font for 'ArialUnicode'
+
+["C:\\Users\\juand\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\pdftoppm.exe", "-f", "126", "-l", "126", "-r", "110", "-png", "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-10-17\\NIST-Referencias\\fuentes\\SP800-57r5.pdf", "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-10-17\\NIST-Referencias\\visual\\destruccion"]
+

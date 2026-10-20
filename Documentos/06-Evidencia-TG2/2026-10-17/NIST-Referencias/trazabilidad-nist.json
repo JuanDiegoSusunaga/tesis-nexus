@@ -1,0 +1,132 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-18T03:53:29.156652+00:00",
+  "fuentes_consultadas": 12,
+  "hallazgos": [
+    {
+      "id": "NIST-01",
+      "fuentes": [
+        "FIPS204.html",
+        "FIPS204.pdf",
+        "FIPS204-errata.xlsx"
+      ],
+      "grupos": [
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M23",
+        "M24",
+        "M43"
+      ],
+      "hallazgo": "FIPS 204 final de agosto de 2024 y posibles correcciones de julio de 2026. PDF y hoja de erratas actuales idénticos a los conservados en R1; la hoja coincide también con la copia del 12 de octubre.",
+      "aplicacion": "Mantener el contraste de NTT, mensaje M', orden mu||w1, Montgomery y rechazo R1-D. Las posibles correcciones no se presentan como una revisión oficial ya incorporada ni como una reducción formalizada."
+    },
+    {
+      "id": "NIST-02",
+      "fuentes": [
+        "SP800-90B.html",
+        "SP800-90B.pdf",
+        "SP800-90B-errata.pdf"
+      ],
+      "grupos": [
+        "M14",
+        "M15",
+        "M16",
+        "M17",
+        "M18",
+        "M43"
+      ],
+      "hallazgo": "La sección 4.4 contiene RCT/APT. El pseudocódigo APT comienza con B=1 y usa W-1 muestras adicionales. Las dos erratas de mayo de 2025 corresponden a las secciones 5.2.4 y 6.3.1.",
+      "aplicacion": "Conservar RCT=4 y el certificado del perfil APT=16 bajo sus hipótesis explícitas. No atribuir H=7.5 a una fila de la tabla 2, que no contiene ese perfil. Distinguir el lote propio de 65536 del proceso de validación de una fuente."
+    },
+    {
+      "id": "NIST-03",
+      "fuentes": [
+        "SP800-90C.html"
+      ],
+      "grupos": [
+        "M12",
+        "M14",
+        "M18",
+        "M43"
+      ],
+      "hallazgo": "SP 800-90C figura como publicación final del 25 de septiembre de 2025 y enlaza fuentes SP 800-90B con mecanismos DRBG SP 800-90A.",
+      "aplicacion": "Usar la versión final en la revisión del flujo fuente, acondicionamiento, generador y derivación. No deducir conformidad de una composición HKDF/SHAKE por citar la serie 90."
+    },
+    {
+      "id": "NIST-04",
+      "fuentes": [
+        "SP800-57r5.html",
+        "SP800-57r5.pdf",
+        "SP800-57r6-ipd.html"
+      ],
+      "grupos": [
+        "M13",
+        "M19",
+        "M20",
+        "M21",
+        "M43"
+      ],
+      "hallazgo": "La revisión 5 se consulta como final; la revisión 6 consultada está rotulada Initial Public Draft. La sección 8.3.4 de revisión 5 trata la destrucción de todas las copias privadas/secretas cuando dejan de necesitarse.",
+      "aplicacion": "Mantener abiertos custodia, copias, semillas retenidas, respaldo y borrado. Rotación y registro por sí solos no demuestran secrecia hacia adelante; la recomendación no acredita destrucción física del prototipo."
+    },
+    {
+      "id": "NIST-05",
+      "fuentes": [
+        "ACVP-ML-DSA.html"
+      ],
+      "grupos": [
+        "M06",
+        "M07",
+        "M11",
+        "M24",
+        "M43"
+      ],
+      "hallazgo": "La especificación distingue keyGen/sigGen/sigVer, interfaces internas/externas, pure/preHash y externalMu; FIPS204-tr1 se define como revisión de pruebas contra el mismo FIPS 204.",
+      "aplicacion": "Identificar revisión, perfil e interfaz antes de incorporar vectores. Priorizar generación determinista y rutas de rechazo en pruebas adicionales R1-D. No se ejecuta aquí una validación ACVP ni se importa una demostración Lean."
+    },
+    {
+      "id": "NIST-06",
+      "fuentes": [
+        "EntropyAssessment-README.md"
+      ],
+      "grupos": [
+        "M14",
+        "M15",
+        "M18",
+        "M43"
+      ],
+      "hallazgo": "El repositorio usnistgov contiene herramientas C++ de estimación IID/no-IID y reinicios, con requisitos de compilación y formato de muestras documentados.",
+      "aplicacion": "Contrastar una fuente concreta cuando existan datos brutos y reinicios con procedencia. No sustituir esos datos por el histograma o por muestras sintetizadas para aparentar calificación."
+    }
+  ],
+  "teoremas_existentes_relacionados": [
+    "Nexus.Salud.corte_rct_perfil",
+    "Nexus.Salud.apt_quince_no_admisible",
+    "Nexus.Salud.apt_dieciseis_admisible",
+    "Nexus.Salud.corte_apt_perfil_minimo"
+  ],
+  "grupos_parciales_sin_cambios": [
+    "M26",
+    "M31",
+    "M35",
+    "M36",
+    "M37",
+    "M39",
+    "M40",
+    "M41"
+  ],
+  "grupos_cerrados_en_esta_revision": [],
+  "observacion_editorial": {
+    "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+    "linea": 21,
+    "texto": "| **Capa operativa** | 5 | Min-entropía + salud SP 800-90B + rotación con secrecia hacia adelante. |",
+    "propuesta_pendiente": "Precisar en la próxima conciliación del manuscrito que la rotación y el registro están implementados, mientras custodia, borrado y secrecia hacia adelante conservan sus obligaciones.",
+    "estado": "observacion_documental_sin_editar_capitulo"
+  },
+  "dictamen_independiente": "pendiente",
+  "tesis_completa_verificada": false,
+  "certificacion_nist": false
+}

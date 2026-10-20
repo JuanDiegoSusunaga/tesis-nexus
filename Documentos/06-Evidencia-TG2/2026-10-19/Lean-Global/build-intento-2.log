@@ -1,0 +1,17 @@
+Comando: python scripts/lean.py build
+Inicio UTC: 2026-10-19T19:44:28.547Z
+Fin UTC: 2026-10-19T19:44:37.652Z
+Codigo de salida: 1
+
+✖ [3957/4084] Building Nexus.FRI.Adaptativo (8.4s)
+trace: .> LEAN_PATH=C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean c:\Users\juand\Desktop\Tesis\.tools\lean\elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\Users\juand\Desktop\Tesis\formalizacion\Nexus\FRI\Adaptativo.lean -o C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\FRI\Adaptativo.olean -i C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\FRI\Adaptativo.ilean -c C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\FRI\Adaptativo.c --setup C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\FRI\Adaptativo.setup.json --json
+error: Nexus/FRI/Adaptativo.lean:277:0: automatically included section variable(s) unused in theorem `Nexus.FRI.cota_excepciones_adaptativas_cruda_media`:
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Some required targets logged failures:
+- Nexus.FRI.Adaptativo
+error: build failed
+

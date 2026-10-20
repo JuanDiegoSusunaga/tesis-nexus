@@ -2,15 +2,15 @@
 
 *Objetivo 1 · el capítulo "espina": Costo → Respuesta → Coherencia*
 
-> **Rol en el arco de la tesis.** Este capítulo es la articulación central: toma la **solución** (firmas post-cuánticas, Cap. 4), expone el **costo** que introducen, y muestra que la **arquitectura dual-chain** es la *respuesta* a ese costo, exigiendo además **coherencia post-cuántica** en su capa de verificación. El análisis cuantitativo detallado vive en el documento companion `Analisis-Overhead-PQC-DualChain`; aquí se integra con el diseño arquitectónico completo.
+> **Alcance del capítulo.** Se presenta el costo de las firmas post-cuánticas y la arquitectura dual-chain propuesta para distribuirlo entre ejecución y anclaje. La capa de pruebas debe satisfacer el modelo de amenaza considerado. Los cálculos de sobrecosto y amortización se relacionan con el análisis de complejidad y sensibilidad de §§6.5–6.6.
 
 ---
 
 ## 3.1 Introducción
 
-Una arquitectura blockchain post-cuántica para sistemas en general enfrenta una tensión que este capítulo resuelve. Por un lado, **debe** usar firmas post-cuánticas (Dilithium) para resistir la amenaza cuántica a la autenticación de transacciones (Cap. 1, Cap. 6). Por otro, esas firmas son **~50× más grandes** que las clásicas, lo que —aplicado de forma ingenua sobre una cadena única— degrada el rendimiento en un orden de magnitud.
+Una arquitectura blockchain post-cuántica debe considerar tanto la seguridad de la autenticación como su costo. Las firmas ML-DSA-65 estudiadas ocupan aproximadamente 52 veces los bytes de la firma ECDSA de referencia. En un modelo limitado exclusivamente por datos, ese aumento reduce el número de operaciones que caben en un bloque (§3.3); no determina por sí solo el rendimiento de un sistema completo.
 
-La arquitectura dual-chain es la respuesta de diseño estudiada para distribuir el sobrecosto de firmas poscuánticas entre ejecución y anclaje. Su amortización se modela bajo condiciones de disponibilidad de datos, prueba de la lógica pertinente y costo del probador (§6.6.5). La validación TG2 distingue esa propuesta de una implementación integral y exige una capa de pruebas cuya seguridad se justifique para el modelo de amenaza considerado.
+La arquitectura dual-chain es la respuesta de diseño estudiada para distribuir el sobrecosto de firmas poscuánticas entre ejecución y anclaje. Su amortización se modela bajo condiciones de disponibilidad de datos, prueba de la lógica pertinente y costo del probador (§6.6.5). La validación distingue esa propuesta de una implementación integral y exige una capa de pruebas cuya seguridad se justifique para el modelo de amenaza considerado.
 
 El capítulo desarrolla el Objetivo 1: especifica los roles de la **Anchor Layer (L1)** y la **Active Layer (L2)**, el camino de la firma post-cuántica a través del sistema, y los componentes clave (Nexus Sequencer, Nitro Verifier), integrando la evidencia de que las cadenas líderes (Ethereum, Solana) convergen hacia el mismo diseño.
 
@@ -41,17 +41,19 @@ En el diseño propuesto, la firma de 3,3 KB se verifica **en el L2** y esa verif
 
 ## 3.3 El sobrecosto de la criptografía post-cuántica
 
-El costo de la PQC tiene **dos dimensiones**, y solo una es el cuello de botella.
+El costo de la PQC incluye datos y cómputo. El recurso limitante depende de la carga y de la implementación; las comparaciones siguientes no establecen un cuello de botella universal.
 
 **Tabla 3.1 — ECDSA P-256 vs. Dilithium3.** *(El cociente exacto 3 309/64 ≈ 52× se redondea a ~50× en el texto narrativo; ambas cifras designan el mismo dato.)*
 
-| Magnitud | ECDSA P-256 | Dilithium3 | Razón | ¿Cuello de botella? |
+| Magnitud | ECDSA P-256 | Dilithium3 | Razón | Implicación |
 |---|---:|---:|---:|:---:|
-| Firma | 64 B | 3 309 B | ~52× | **Sí (datos)** |
-| Clave pública | 33 B | 1 952 B | ~59× | **Sí (datos)** |
-| Verificación (CPU) | decenas de µs | ~0,17–0,44 ms (medido) | ~1× (mismo orden, sub-ms) | No |
+| Firma | 64 B | 3 309 B | ~52× | Aumentan los datos |
+| Clave pública | 33 B | 1 952 B | ~59× | Aumentan los datos |
+| Verificación CPU (H2) | 144,8 µs | 77,6 µs | ~0,54× (tiempo) | Depende de la carga |
 
-**Hallazgo central:** el penalizador post-cuántico es de **tamaño** (ancho de banda, almacenamiento, disponibilidad de datos), **no de cómputo** —verificar Dilithium cuesta lo mismo que ECDSA—. Por tanto, lo que hay que optimizar es **la cantidad de datos de autenticación que tocan la L1**, que es precisamente la función de un rollup.
+Las latencias CPU corresponden a la serie histórica H2 de la Tabla 6.8; no son medidas del sistema completo.
+
+**Resultado de la comparación.** El incremento de bytes motiva estudiar la cantidad de datos de autenticación publicada en L1. Las verificaciones de la serie histórica H2 son del mismo orden de magnitud, pero no tienen el mismo costo ni permiten descartar CPU, generación de pruebas u otras operaciones como recursos limitantes. La procedencia y las restricciones de esas mediciones se detallan en §6.6.
 
 **Impacto en una cadena única.** Modelando una transacción como carga útil base $b$ más la firma, y un presupuesto de datos por bloque $B_d$, el throughput es $\mathrm{TPS}=B_d/(\tau(b+s))$. Con $b\approx100$ B, $B_d=1$ MB, $\tau=12$ s:
 
@@ -65,19 +67,21 @@ Es decir, **adoptar PQC de forma ingenua cuesta ~20× de throughput** (la firma 
 
 ## 3.4 La amortización dual-chain
 
-El rollup ejecuta $M$ transacciones fuera de cadena y publica en L1 solo un compromiso $C$, una prueba $\pi$ y los datos de disponibilidad $D$. La observación crucial:
+El modelo de rollup ejecuta $M$ operaciones en L2 y publica en L1 un compromiso $C$, una prueba de tamaño $\pi(M)$ y los datos exigidos por la política de disponibilidad. La prueba debe autenticar la verificación de firmas y la lógica ejecutada; el AIR ilustrativo actual no implementa ese flujo completo.
 
-> Si una **prueba de validez** atestigua sucintamente que las $M$ transacciones estaban correctamente firmadas (Dilithium) y ejecutadas, **las firmas no necesitan publicarse en L1**. El sobrecosto de 50× se paga una vez fuera de cadena y se **elimina** de la L1.
+> Una prueba de validez puede sustituir la verificación directa de las firmas en L1. Omitir además sus bytes de la publicación depende de que la política de disponibilidad y reconstrucción no los exija allí. La prueba no elimina las obligaciones de almacenar y distribuir los datos necesarios.
 
-El costo on-chain por transacción es entonces
+En un escenario donde la disponibilidad publicada se representa mediante $d$ bytes de diferencia de estado por operación, y el compromiso y los metadatos fijos ocupan $c$ bytes, el costo de datos de anclaje por operación es
 
 $$
-F(M) = d + \frac{C+\pi}{M} \xrightarrow{\ M\to\infty\ } d,
+F(M) = d + \frac{c+\pi(M)}{M}.
 $$
 
-donde $d$ es la **diferencia de estado** por transacción —**independiente del esquema de firma**—. El factor $s_q$ **desaparece** del costo on-chain. Con valores modelados ($d\approx40$ B), un rollup de validez reduce el costo por transacción post-cuántica de 3 409 B a $\sim$ 40–140 B (reducción **~24–85×**), con punto de equilibrio en lotes de $\sim$ 10⁴ transacciones (§3.5).
+El límite $F(M)\to d$ requiere $\pi(M)/M\to0$, es decir, crecimiento sublineal del tamaño de prueba. Con una prueba fija es inmediato; no se presume para una familia arbitraria de pruebas. Si la política exige publicar además una firma de $s_q$ bytes por operación, el costo de ese escenario es $F(M)+s_q$, y su límite conserva ese sumando. La independencia de $d$ respecto del esquema es una hipótesis de este modelo de publicación.
 
-**En la dimensión de cómputo**, la L1 verifica **una** prueba por *batch* (independiente de $M$) en lugar de $M$ firmas, distribuyendo el costo de verificación de la prueba entre las operaciones del lote, sin eliminarlo. Como el costo de verificar Dilithium ya es bajo (§3.3), este ahorro es secundario frente al de datos.
+**Ejemplo aritmético.** Con $d=40$ B, $c=32$ B y una prueba fija supuesta de 100.000 B, el modelo da 140,032 B por operación para $M=1000$ y 50,0032 B para $M=10000$. Frente a la referencia de 3409 B por operación, el equilibrio $F(M)\leq3409$ exige $M\geq30$; aproximarse a $d$ con un sobrecosto de a lo sumo el 10 % exige $M\geq25008$. Son umbrales distintos. Estas cifras describen el escenario supuesto, no los tamaños medidos del PoC ni un ahorro demostrado para transacciones ML-DSA completas.
+
+**En la dimensión de cómputo**, se verifica una prueba por lote, pero su tiempo $t_\pi(M)$ puede crecer con $M$. El costo por operación es $t_\pi(M)/M$; solo tiende a cero si ese tiempo es sublineal. El costo del probador y la espera para formar el lote también deben contabilizarse (§6.6.5).
 
 > **Conclusión de diseño.** El costo por operación puede distribuirse entre el lote y sus diferencias de estado bajo el modelo de disponibilidad y publicación adoptado. Las firmas siguen teniendo costo de almacenamiento, transmisión y verificación en la frontera que las conserva. El modelo no elimina esos costos ni mide por sí solo el rendimiento de una blockchain completa (§6.6.5).
 
@@ -94,9 +98,13 @@ El diseño requiere que los compromisos y el sistema de pruebas sean compatibles
 | Groth16 sobre curvas clásicas | Emparejamientos y logaritmo discreto | No satisface el modelo frente a Shor con recursos suficientes |
 | Argumentos basados en hash y FRI | Compromisos, proximidad y compilación Fiat–Shamir | Requieren prueba de composición, parámetros y modelo ROM/QROM |
 
-**PoC heredada y revisión TG2.** El prototipo usa el campo Goldilocks, NTT, Merkle sobre SHA3-256, retos de extensión y FRI para una recurrencia ilustrativa. Las pruebas del software comprueban casos, pero su aceptación no acredita por sí sola proximidad de la traza ni validez de transacciones completas. La revisión del Objetivo 4 caracteriza la aceptación heredada, el enlace parcial de raíces y la recuperación del testigo pequeño. La variante TG2 v1 vincula un FRI de traza al AIR por una raíz común (§§6.7.1–6.7.4).
+**Prototipo y alcance del verificador.** El prototipo usa el campo Goldilocks, NTT, Merkle sobre SHA3-256, retos de extensión y FRI para una recurrencia ilustrativa. La ruta activa de validez exige dos recorridos FRI, de traza y composición, con raíz compartida entre traza y AIR, lectura canónica y perfil externo. El verificador básico se conserva para reproducir los contraejemplos y límites auditados (§§6.7.1–6.7.4); no habilita la aceptación de esa ruta activa.
 
-**Presupuesto histórico de seguridad.** La cifra de aproximadamente 100 bits se conserva como objetivo del diseño anterior. La auditoría no la acredita: el campo de extensión no basta para cerrar composición y consultas, y el trabajo del nonce no impide reinicios de transcripción. Las derivaciones por rondas y ROM de §§6.7.8–6.7.9 explicitan hipótesis y presupuesto adversario; permanecen propuestas pendientes de dictamen y no garantizan 100 bits, conocimiento cero ni QROM completo.
+`ActiveChain` suministra el contexto mediante instantáneas privadas de los lotes construidos localmente. Comprueba el certificado antes de registrar un envío de validez o híbrido, rechaza metadatos alterados y evita registrar dos envíos del mismo índice. La raíz inicial se captura antes de ejecutar y los lotes se separan entre bloques completos. Estos controles son locales en memoria; no demuestran consenso persistente ni antirrepetición entre reinicios. El modo optimista mantiene su aceptación provisional separada.
+
+El motor de transacciones produce raíces SHA3 generales, mientras el AIR solo admite escalares canónicos. Los lotes fuera de ese dominio se rechazan sin truncar hashes ni fabricar una prueba de recurrencia para presentarla como prueba de transacciones. La conexión de la API está implementada, pero la validez de una aplicación completa requiere aritmetizar sus reglas y vincular íntegramente sus raíces. Los casos positivos escalares de integración son ensayos sintéticos, no validaciones de transacciones L2.
+
+**Presupuesto de seguridad.** No se acredita una garantía de aproximadamente 100 bits: el campo de extensión no basta para cerrar composición y consultas, y el trabajo del nonce no impide reinicios de transcripción. La cota de §6.7.9 incorpora trabajo y presupuesto adversario en el modelo ROM clásico; no demuestra seguridad del ejecutable, conocimiento cero ni transferencia cuántica completa.
 
 **Tabla 3.3 — Mediciones históricas del AIR ilustrativo.**
 
@@ -153,13 +161,15 @@ El **Nexus Sequencer** ordena las transacciones del L2. Un secuenciador único c
 - **Separación proponente/constructor (PBS):** separar *quién ordena* de *quién construye* el bloque, para limitar el MEV — el enfoque del **PBS enshrined (ePBS)** de Ethereum.
 - **Secuenciadores concurrentes:** múltiples productores concurrentes, como los **Multiple Concurrent Leaders (MCL)** de Solana, que reducen el poder de un único líder.
 
-**Modelo de incentivos.** El comportamiento del secuenciador se modela con teoría de juegos: se **argumenta** que, bajo un modelo de pagos con *stake* y *slashing*, la estrategia honesta sería un **equilibrio de Nash** (la deshonestidad conduce a la pérdida del *stake*) — análisis de diseño, no resultado formalmente probado. Con secuenciación **concurrente**, el juego pasa de un único jugador a **N jugadores**, de modo que la censura/MEV requeriría la **colusión de la mayoría** — un argumento de robustez más fuerte que el del secuenciador único. *(El mecanismo operativo de slashing es diseño de referencia; su implementación es trabajo futuro.)*
+**Modelo de incentivos.** Para un jugador $i$, sean $r_i$ la recompensa honesta, $c_i$ su costo, $g_i$ la ganancia de desviarse, $p_i$ la probabilidad de detección y $D_i$ el depósito perdido al detectarse la desviación. En el juego de referencia, las utilidades son $r_i-c_i$ y $g_i-p_iD_i$. El perfil honesto es equilibrio de Nash si y solo si $g_i-p_iD_i\leq r_i-c_i$ para cada jugador. El depósito por sí solo no demuestra esa desigualdad; deben justificarse pagos, detección y reglas del mecanismo. El modelo condicional está formalizado, pero no acredita el equilibrio del secuenciador desplegado.
+
+La concurrencia introduce varios productores, pero no determina un umbral universal de colusión para censura o MEV. Ese resultado depende de las reglas de inclusión, la comunicación y el modelo de coaliciones. El mecanismo operativo de incentivos y slashing permanece como diseño de referencia.
 
 ---
 
 ## 3.9 Finalidad
 
-El modelo contempla **finalidad rápida e irreversible** para confirmar operaciones y mantener registros consistentes. El **Finality Gadget** de la Anchor Layer se especifica para finalizar un bloque cuando el peso de voto (ponderado por *stake*) cruza el umbral de 2/3, con verificación de las firmas de voto y enlace de ascendencia entre bloques finalizados. *(Diseño de referencia; su implementación operativa es trabajo futuro, §3.10.)*
+El diseño busca finalidad determinista para confirmar operaciones y mantener registros consistentes. El **Finality Gadget** de referencia exige un quórum de peso estrictamente mayor que $2/3$, verificación de firmas y enlace de ascendencia. Con peso bizantino menor que $1/3$, dos quórums de ese tamaño tienen intersección honesta. Para excluir certificados incompatibles se requiere además que los participantes honestos respeten las reglas de voto y bloqueo del protocolo; el lema de intersección no demuestra por sí solo seguridad y vivacidad del consenso. Su implementación operativa permanece como trabajo futuro (§3.10).
 
 > **Validación externa y diseño a contrastar.** Solana **Alpenglow** (Votor + Rotor; testnet may-2026, mainnet ~finales 2026) reduce la finalidad de 12,8 s a **100–150 ms**: **Votor** finaliza en **una ronda** con ≥80 % del *stake* en línea (~100 ms) y en dos rondas al 60 % (~150 ms). Ethereum persigue **finalidad de un solo paso (SSF)** y ~4 s en Lean Consensus. NEXUS adopta como requisito una **finalidad determinista rápida** y contrasta su gadget con el diseño de Votor (quórum por *stake*, finalidad en 1–2 rondas), coherente con las correcciones del consenso (quórum ponderado por *stake* + verificación de votos).
 
@@ -169,15 +179,15 @@ El modelo contempla **finalidad rápida e irreversible** para confirmar operacio
 
 El diseño dual-chain de NEXUS responde, pieza por pieza, al problema que la PQC plantea:
 
-1. La PQC introduce un sobrecosto de **datos** (~50× firma, ~20× throughput en L1) — §3.3.
-2. El **rollup de validez** amortiza ese costo a $\sim d$ (la diferencia de estado clásica), eliminando las firmas de la L1 — §3.4.
-3. La coherencia PQ exige un **verificador STARK**, no Groth16 — §3.5; con la tensión Dilithium-vs-STARK declarada — §3.5.1.
+1. La firma de referencia introduce aproximadamente 52 veces los bytes de ECDSA; el modelo limitado por datos estima una razón de throughput de 20,8 bajo sus parámetros (§3.3).
+2. La amortización tiende a $d$ si la prueba crece sublinealmente y la política de disponibilidad admite el presupuesto de publicación supuesto (§3.4).
+3. La capa de pruebas requiere garantías compatibles con la amenaza cuántica. NEXUS estudia hash y FRI, con transferencia QROM completa pendiente y la aritmetización de ML-DSA aún no realizada (§3.5).
 4. La **abstracción de cuenta + Key Registry** resuelve identidad-vs-clave y habilita migración — §3.6.
 5. La **DA estilo PeerDAS** y la **secuenciación con incentivos** y la **finalidad rápida** completan la arquitectura — §3.7–3.9.
 
-> **Supuesto explícito (para que las afirmaciones de seguridad estén bien formadas).** La integridad del libro mayor depende, además de la in-falsificabilidad de las firmas (Cap. 6), de la **seguridad del consenso**. En NEXUS el consenso BFT operativo es **diseño de referencia**, no implementación; por tanto, la garantía del sistema se enuncia condicionalmente: *in-falsificabilidad a nivel de transacción bajo el supuesto de consenso honesto-mayoritario*. La realización completa del consenso, la DA y el verificador STARK es trabajo futuro (Cap. 7).
+> **Supuestos y límite de composición.** La integridad del libro mayor requiere garantías propias de firmas, autorización, transiciones y consenso. El diseño de quórums supone menos de $1/3$ de peso bizantino y certificados de peso mayor que $2/3$, junto con las reglas de voto, bloqueo y comunicación del protocolo; una mayoría honesta simple no basta. La inforjabilidad del esquema de firma y la seguridad del consenso son propiedades distintas. NEXUS no deduce una garantía del sistema completo de esos supuestos ni del lema de intersección: la integración del consenso, la disponibilidad de datos y la lógica completa de la capa de pruebas permanece como trabajo futuro (Cap. 7).
 
-Con ello, el **Objetivo 1 queda atendido**: la arquitectura dual-chain está especificada como modelo de referencia, con su rol —amortizar el sobrecosto post-cuántico manteniendo coherencia PQ— justificado cuantitativamente y contextualizado por propuestas externas y sujeto a la validación TG2.
+Con ello, el **Objetivo 1 queda atendido**: la arquitectura dual-chain está especificada como modelo de referencia, con su rol —amortizar el sobrecosto post-cuántico manteniendo coherencia PQ— justificado cuantitativamente y contextualizado por propuestas externas y sujeto a la validación.
 
 ---
 
@@ -188,4 +198,3 @@ Con ello, el **Objetivo 1 queda atendido**: la arquitectura dual-chain está esp
 - [Buterin21] V. Buterin. *An Incomplete Guide to Rollups*. 2021.
 - Ethereum Foundation. *Fusaka Mainnet Announcement* (PeerDAS, EIP-7594). Nov. 2025. · ethereum.org/roadmap (Account abstraction EIP-7702; Quantum resistance / Lean Consensus, EIP-8141).
 - Anza. *Alpenglow* (Votor/Rotor). 2025–2026. · Solana. *Quantum Readiness* (Falcon; Winternitz Vault). 2026.
-- *(Análisis de overhead: documento companion `Analisis-Overhead-PQC-DualChain`; validación de fuentes: `Ideas-Ethereum-Solana-para-NEXUS`.)*

@@ -1,0 +1,135 @@
+{
+  "ROM/CertificadoLegado16": {
+    "grupos": [
+      "M31"
+    ],
+    "secciones": [
+      "6.7.1",
+      "6.7.3"
+    ],
+    "verificado": "Dieciséis índices, consultas, ranuras y valores literales del certificado legado público de 16 filas. Se prueban las posiciones seleccionadas, nodos distintos, grado menor que 16, evaluaciones exactas, interpolación y recuperación de la segunda fila 5, también para cualquier traza compatible de ese grado. Rust y una relectura Python enlazan externamente los bytes concretos con esas constantes.",
+    "limites": [
+      "Ejemplo concreto de PqValidityProof legado, con hojas AIR de ocho bytes y dominio NEXUS-STARK-v2; no se identifica con TG2 v1. El enlace de archivo/SHA3/bincode es evidencia ejecutada externa al núcleo Lean. No prueba refinamiento universal Rust, ZK ni solidez general."
+    ],
+    "teoremas": [
+      "Nexus.ROM.CertificadoLegado16.posiciones_del_certificado",
+      "Nexus.ROM.CertificadoLegado16.nodos_distintos",
+      "Nexus.ROM.CertificadoLegado16.grado_polinomio",
+      "Nexus.ROM.CertificadoLegado16.raiz_dominio_valor",
+      "Nexus.ROM.CertificadoLegado16.evaluaciones_certificado",
+      "Nexus.ROM.CertificadoLegado16.interpolacion_exacta",
+      "Nexus.ROM.CertificadoLegado16.segunda_fila_polinomio",
+      "Nexus.ROM.CertificadoLegado16.testigo_recuperado",
+      "Nexus.ROM.CertificadoLegado16.cualquier_traza_compatible",
+      "Nexus.ROM.CertificadoLegado16.segunda_fila_unica"
+    ]
+  },
+  "Canal/GramaticaTG2": {
+    "grupos": [
+      "M35",
+      "M37",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Gramática conjunta de inicio, perfil, enunciado, raíces, fases, finales, nonce, E/I, trabajo y Merkle TG2 v1. Longitudes máximas de 79 octetos; las absorciones que coinciden con un nodo son de enunciado y se conserva un solapamiento explícito. No se separan artificialmente las tablas por rol.",
+    "limites": [
+      "Gramática de entradas del protocolo declarada a partir de las fuentes; falta traducción completa de parser, rechazos, control de flujo y consultas arbitrarias del adversario. La gramática por sí sola no demuestra frescura ni solidez."
+    ],
+    "teoremas": [
+      "Nexus.Canal.GramaticaTG2.longitud_datos",
+      "Nexus.Canal.GramaticaTG2.longitudes_absorcion",
+      "Nexus.Canal.GramaticaTG2.longitudes_gramatica",
+      "Nexus.Canal.GramaticaTG2.longitud_enunciado",
+      "Nexus.Canal.GramaticaTG2.longitud_perfil",
+      "Nexus.Canal.GramaticaTG2.longitud_nonce_absorbido",
+      "Nexus.Canal.GramaticaTG2.absorcion_determina_datos",
+      "Nexus.Canal.GramaticaTG2.reto_excluye_absorcion",
+      "Nexus.Canal.GramaticaTG2.trabajo_excluye_absorcion",
+      "Nexus.Canal.GramaticaTG2.nodo_solo_solapa_enunciado",
+      "Nexus.Canal.GramaticaTG2.solapamiento_conjunto",
+      "Nexus.Canal.GramaticaTG2.extension_indice_distintos"
+    ]
+  },
+  "ROM/ProgramaCompartido": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M37",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Claves finitas con longitud y hasta 79 octetos, iguales si y solo si sus bytes coinciden; el solapamiento entre roles comparte clave. Todo programa finito produce historia causal compatible, y se deriva la ley fresca y la repetida en cada prefijo. El compilador a árboles de candidatos memoriza por clave y no sortea otra respuesta en una repetición, incluso entre roles.",
+    "limites": [
+      "La uniformidad es ROM ideal condicionada a frescura explícita; no demuestra SHA3 uniforme ni que todas las claves del ejecutable sean frescas. Dominio acotado de entradas del verificador, sin adaptador integral del adversario de bytes arbitrarios. Faltan los conjuntos buenos y sus cotas para cada candidato real, el refinamiento Rust y revisión independiente."
+    ],
+    "teoremas": [
+      "Nexus.ROM.ProgramaCompartido.entrada_acotada",
+      "Nexus.ROM.ProgramaCompartido.clave_igual_si_bytes_iguales",
+      "Nexus.ROM.ProgramaCompartido.bytes_iguales_si_clave_igual",
+      "Nexus.ROM.ProgramaCompartido.clave_igual_iff",
+      "Nexus.ROM.ProgramaCompartido.roles_solapados_comparten_clave",
+      "Nexus.ROM.ProgramaCompartido.historia_producida_compatible",
+      "Nexus.ROM.ProgramaCompartido.prefijo_compatible",
+      "Nexus.ROM.ProgramaCompartido.uniforme_en_prefijo",
+      "Nexus.ROM.ProgramaCompartido.repetida_en_prefijo",
+      "Nexus.ROM.ProgramaCompartido.entradas_distintas_acotadas",
+      "Nexus.ROM.ProgramaCompartido.compilar_repetida",
+      "Nexus.ROM.ProgramaCompartido.compilar_fresca",
+      "Nexus.ROM.ProgramaCompartido.segunda_consulta_sin_sorteo"
+    ]
+  },
+  "Canal/ProgramaTG2": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M37",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Programa del canal con bytes de perfil y enunciado, tres alfas, dos fases FRI, trabajo, absorción de nonce y un selector compartido. Desde el recorrido se demuestra la cuenta 13+2*(longitudes de ambas listas de raíces)+R+C, con rechazo de trabajo y duplicados incluidos; se identifica con canalPerfil si las listas tienen longitudes k y k+1.",
+    "limites": [
+      "R es corte de análisis: el Rust no aborta a las 512 extracciones. Trabajo válido es un predicado parametrizado; las aperturas son continuación con coste C separado. Falta refinamiento completo del selector, máscara, parser, aritmética de campo y verificador Rust; no se afirma independencia entre las dos fases."
+    ],
+    "teoremas": [
+      "Nexus.Canal.ProgramaTG2.costo_retos",
+      "Nexus.Canal.ProgramaTG2.costo_raices",
+      "Nexus.Canal.ProgramaTG2.costo_fase",
+      "Nexus.Canal.ProgramaTG2.costo_selector",
+      "Nexus.Canal.ProgramaTG2.continuacion_selector_cuarenta",
+      "Nexus.Canal.ProgramaTG2.presupuesto_canal",
+      "Nexus.Canal.ProgramaTG2.presupuesto_perfil"
+    ]
+  },
+  "FRI/IndicesMaquina": {
+    "grupos": [
+      "M39"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Conversión, suma, división y módulo de USize se enlazan exactamente con naturales bajo cotas explícitas. Las seis posiciones AIR de TG2 coinciden con sus operaciones de máquina; sus sumas intermedias caben incluso en 32 bits para N<=32768 e i<N/2. Se instancia N=2^(k+3), k<=12.",
+    "limites": [
+      "Semántica de USize de Lean, válida en sus plataformas de 32/64 bits. No prueba el compilador ni la equivalencia de todas las operaciones Rust/usize, el parser, las formas o la aritmética de campo."
+    ],
+    "teoremas": [
+      "Nexus.Goldilocks.IndicesMaquina.conversion_exacta",
+      "Nexus.Goldilocks.IndicesMaquina.suma_exacta",
+      "Nexus.Goldilocks.IndicesMaquina.division_exacta",
+      "Nexus.Goldilocks.IndicesMaquina.modulo_exacto",
+      "Nexus.Goldilocks.IndicesMaquina.intermedios_en_rango",
+      "Nexus.Goldilocks.IndicesMaquina.posiciones_corresponden",
+      "Nexus.Goldilocks.IndicesMaquina.posiciones_perfil"
+    ]
+  }
+}

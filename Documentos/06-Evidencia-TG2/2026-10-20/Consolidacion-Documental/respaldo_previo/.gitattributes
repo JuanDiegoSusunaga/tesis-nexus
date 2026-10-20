@@ -1,0 +1,56 @@
+# Conservar los bytes que identifican las mediciones y sus fuentes.
+/.gitattributes text eol=lf
+/Documentos/06-Evidencia-TG2/** -text -whitespace
+
+# Conservar los bytes de las pruebas Lean y los verificadores identificados por SHA-256.
+/formalizacion/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/scripts/lean.py -text
+/scripts/verificar_formalizacion.py -text
+/scripts/tests/test_verificar_formalizacion.py -text
+/scripts/inventariar_matematica.py -text
+/scripts/verificar_revision_manuscrito.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/scripts/tests/test_verificar_revision_manuscrito.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Conservar los bytes de la documentación vigente registrada en la evidencia.
+/README.md text eol=crlf
+/BITACORA_TG2.md text eol=crlf
+
+# Conservar la edición revisada y sus hashes al clonar en Windows o Linux.
+/Documentos/01-Manuscrito/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Las rutas SVG generadas por Matplotlib conservan espacios y hashes originales.
+/Documentos/01-Manuscrito/Figuras/*.svg -whitespace
+*.docx binary
+*.pdf binary
+*.png binary
+*.bin binary
+
+# Fuente del documento matemático independiente, identificada mediante SHA-256.
+/Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-*.md -text
+
+# Conservar la derivación de investigación, fuentes primarias y logs observados.
+/Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/bibliografia/** -whitespace
+
+# Conservar las fuentes, cálculos y comprobaciones de la transferencia ROM.
+/Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/bibliografia/** -whitespace
+
+# Preservar fuentes, cálculos y logs de la revisión crítica posterior.
+/Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preservar fuentes primarias, derivación y cálculos de la primera etapa QROM.
+/Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Documentos/04-Administrativo-TG2/Avances/QROM-2026-09-23/bibliografia/** -whitespace
+
+# Conservar el extractor QROM, su demostración y los registros de regresión.
+/Documentos/04-Administrativo-TG2/Avances/Extractor-QROM-2026-09-23/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preservar muestreo QROM, expansión del verificador y evidencia enlazada.
+/Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preservar la cota de cola QROM, su fuente primaria y la regresión.
+/Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/bibliografia/** -whitespace
+
+# Preservar los informes independientes y sus huellas tras la revisión web.
+/Documentos/04-Administrativo-TG2/Avances/Revision-Subagentes-2026-10-12/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

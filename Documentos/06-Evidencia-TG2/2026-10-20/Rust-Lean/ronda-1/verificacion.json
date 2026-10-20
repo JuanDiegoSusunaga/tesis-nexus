@@ -1,0 +1,83 @@
+{
+  "global": false,
+  "paquetes": [
+    "nexus-zk",
+    "nexus-active"
+  ],
+  "pasos": [
+    {
+      "etapa": "check",
+      "comando": [
+        "cargo",
+        "check",
+        "-p",
+        "nexus-zk",
+        "-p",
+        "nexus-active",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--jobs",
+        "4",
+        "--manifest-path",
+        "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\Cargo.toml"
+      ],
+      "codigo_salida": 0,
+      "segundos": 10.828,
+      "registro": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Lean/ronda-1/cargo-check.log",
+      "sha256": "acead7186dfcb819bc4a9a44c7fff4e68552e9abdc9d3a3462ce8e7d81ff7d56",
+      "pruebas_pasadas": 0,
+      "pruebas_falladas": 0,
+      "advertencias_diagnosticas": 32
+    },
+    {
+      "etapa": "test",
+      "comando": [
+        "cargo",
+        "test",
+        "-p",
+        "nexus-zk",
+        "-p",
+        "nexus-active",
+        "--locked",
+        "--offline",
+        "--jobs",
+        "4",
+        "--manifest-path",
+        "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\Cargo.toml"
+      ],
+      "codigo_salida": 0,
+      "segundos": 25.031,
+      "registro": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Lean/ronda-1/cargo-test.log",
+      "sha256": "584b63f853ef7e2afe8050a741d6dcdb7a69b1d22622dccdf534ce70b5d96824",
+      "pruebas_pasadas": 113,
+      "pruebas_falladas": 0,
+      "advertencias_diagnosticas": 32
+    },
+    {
+      "etapa": "build",
+      "comando": [
+        "cargo",
+        "build",
+        "-p",
+        "nexus-zk",
+        "-p",
+        "nexus-active",
+        "--locked",
+        "--offline",
+        "--jobs",
+        "4",
+        "--manifest-path",
+        "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\Cargo.toml"
+      ],
+      "codigo_salida": 0,
+      "segundos": 4.0,
+      "registro": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Lean/ronda-1/cargo-build.log",
+      "sha256": "268e3d1876a99184443ec7be020d54b2162965171da9d616ed5014d4ade2784b",
+      "pruebas_pasadas": 0,
+      "pruebas_falladas": 0,
+      "advertencias_diagnosticas": 19
+    }
+  ],
+  "correcto": true
+}

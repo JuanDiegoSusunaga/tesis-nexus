@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-18-lean-consultas-buenas",
+  "archivos_comprobados": 8195,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T17:43:54.180946+00:00",
+  "sha256_manifiesto": "e19ac87b78fed8d417ff453d8c2d574fa68a884136f7bfb97e1423c257336520",
+  "nota": "Informe fuera del manifiesto que verifica para evitar referencia hash circular."
+}

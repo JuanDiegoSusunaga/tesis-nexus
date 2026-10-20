@@ -1,0 +1,40 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-17T15:51:30.594488+00:00",
+  "correcto": true,
+  "auditoria_lean": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Costos-Residencia/validacion.json",
+    "sha256": "32d6178c8b0eaf8cb4590d6d8442f02b1f1b1f572a4aecdb7bd782a717288823",
+    "teoremas": 982,
+    "modulos": 120,
+    "fuentes": 215,
+    "logs": 126
+  },
+  "fuentes_previas_sin_cambios": 170,
+  "fuentes_previas_actualizadas_con_copia": 7,
+  "versiones_anteriores_intactas": 15,
+  "fuentes_historicas_R5_intactas": 13,
+  "candidatos_con_texto_linea_e_identidad_preservados": 272,
+  "fuentes_manuscrito_intactas": 8,
+  "revision_y_documentacion_previas_recuperables": true,
+  "resultados_y_catalogo_previos_conservados": true,
+  "etapas_lean": 29,
+  "logs_lean_intactos": 1918,
+  "controles_unitarios": 13,
+  "enlaces_locales_existentes": 310,
+  "tesis_completa_verificada": false,
+  "sha256_reglas_git": "15380f342946d96d13c9481b74b45429b94beba2f0d72be3ffdb64d6fc1767f4",
+  "sha256_documentacion_y_controles": {
+    "README.md": "f31ecfa7c916b99f840e7a66940ff38ca00aae0e8d8099030cf5ea7780c8f3d5",
+    "BITACORA_TG2.md": "8f1c71b9ee8ec84376023b0fc02b381e418a37f64364127f611f228fbaf5f136",
+    "formalizacion/README.md": "cb48b190872e157f29139c2e389b65f606584c136e26f1f4cacd9388191276c9",
+    "formalizacion/ALCANCE-MANUSCRITO.md": "b7685de438104473a29e32207114541ee642ac837c4b4018b2d20aa5afdf8e0c",
+    "formalizacion/REVISION-MANUSCRITO.md": "05df3d01c137e0b2765796ade8244188a22897d3e2281c744f6cba69c9faaaf0",
+    "Documentos/06-Evidencia-TG2/README.md": "3caeae92ed6ed8a3a0516e477f5489eeb130c1338ed54e08cfa1ce2210bf7f3f",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Costos-Residencia/README.md": "c4c82939c7328dee1c5511000c293fa1a01380849a58f579c8f42a047086681b",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Costos-Residencia-Antecedentes/README.md": "b30f669329b0fe183e48f80ca8891fafdcc8f0a79a46fd70a99ae56523ed0219",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Costos-Residencia/controles.log": "1520ec0b3d2e680942820a2423b79426a68b6944f79c67bdd22b075580026e68",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Costos-Residencia/revision-manuscrito.json": "64cb622c319dad569498b7109a78522d9670400b42ba3cd1b95ba900f34c509d"
+  },
+  "limite": "La integridad preserva identidad e historia. La revisión semántica y el dictamen independiente no se deducen de hashes o de controles unitarios."
+}

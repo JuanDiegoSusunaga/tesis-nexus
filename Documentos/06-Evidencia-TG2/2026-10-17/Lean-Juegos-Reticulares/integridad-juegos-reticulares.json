@@ -1,0 +1,40 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-17T22:14:49.470829+00:00",
+  "correcto": true,
+  "auditoria_lean": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Juegos-Reticulares/validacion.json",
+    "sha256": "3d7cfccec95155903c486f2752cf957c620fc6cf23d24047d45bc9b9d1aa0417",
+    "teoremas": 1217,
+    "modulos": 138,
+    "fuentes": 280,
+    "logs": 144
+  },
+  "fuentes_previas_sin_cambios": 247,
+  "fuentes_previas_actualizadas_con_copia": 7,
+  "versiones_anteriores_intactas": 15,
+  "fuentes_historicas_R4_intactas": 13,
+  "candidatos_con_texto_linea_e_identidad_preservados": 272,
+  "fuentes_manuscrito_intactas": 8,
+  "revision_y_documentacion_previas_recuperables": true,
+  "resultados_y_catalogo_previos_conservados": true,
+  "etapas_lean": 31,
+  "logs_lean_intactos": 2197,
+  "controles_unitarios": 13,
+  "enlaces_locales_existentes": 339,
+  "tesis_completa_verificada": false,
+  "sha256_reglas_git": "15380f342946d96d13c9481b74b45429b94beba2f0d72be3ffdb64d6fc1767f4",
+  "sha256_documentacion_y_controles": {
+    "README.md": "eb4aec1671be29ca92244e8114f61f4ef2d8edd9ef4df4908c28027d6e01aa39",
+    "BITACORA_TG2.md": "d276e503a5a158cd4efdf540a556ee2e78b16668c56160759dc592f27db12b56",
+    "formalizacion/README.md": "989fe21069c48d1af1cf391f8cb95e230173891b1c144f7ca1669ce351ac0cc8",
+    "formalizacion/ALCANCE-MANUSCRITO.md": "97c0d49bad0cfac2c296a2a366ff21a914e81b3124c79f3715cf8e63c67450e4",
+    "formalizacion/REVISION-MANUSCRITO.md": "b0260aa2433d92981853742ad221c0afccfcb9e1ea9e46418a2d5037889f5479",
+    "Documentos/06-Evidencia-TG2/README.md": "54c89c151140bc361cd39294ee78c594cbf2cb3127a6b2233b6ce0a2dfbc0485",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Juegos-Reticulares/README.md": "d92d50368adb4e9ae401f3d09a44482d75544a112fe7b59960b57b240109dbe7",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Juegos-Reticulares-Antecedentes/README.md": "cfc708310debfd60bc51e0446dd3c60a7631fff6101b562222cc2ed90396f025",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Juegos-Reticulares/controles.log": "0d4b6464f0e4d2bf72b86640913c9474ed26c84a4c6af7f09020062e1a27bd43",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Juegos-Reticulares/revision-manuscrito.json": "162b6530043ac956a26b7253d4ee93e558f94718f81385494f0600a1d5436830"
+  },
+  "limite": "La integridad preserva identidad e historia. La revisión semántica y el dictamen independiente no se deducen de hashes o de controles unitarios."
+}

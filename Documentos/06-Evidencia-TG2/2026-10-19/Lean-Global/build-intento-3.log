@@ -1,0 +1,185 @@
+Comando: python scripts/lean.py build
+Inicio UTC: 2026-10-19T19:44:47.824Z
+Fin UTC: 2026-10-19T19:50:59.584Z
+Codigo de salida: 1
+
+✔ [3957/4084] Built Nexus.FRI.Adaptativo (8.4s)
+✔ [3958/4084] Built Nexus.FRI.Consulta (7.9s)
+✔ [3959/4084] Built Nexus.N06.Transcripcion (7.9s)
+✔ [3960/4084] Built Nexus.N06.Goldilocks (8.1s)
+✔ [3961/4084] Built Nexus.FRI.Experimento (8.5s)
+✔ [3962/4084] Built Nexus.N06.Estado (9.3s)
+✔ [3963/4084] Built Nexus.FRI.Recorrido (9.3s)
+✔ [3964/4084] Built Nexus.N06.Compartida (9.5s)
+✔ [3965/4084] Built Nexus.Complejidad.SerializacionPrueba (8.3s)
+✔ [3966/4084] Built Nexus.N06.Prefijos (8.4s)
+✔ [3967/4084] Built Nexus.FRI.FormasLimites (8.4s)
+✔ [3968/4084] Built Nexus.N06.Ejecucion (8.6s)
+✔ [3969/4084] Built Nexus.N06.CardinalCompartida (9.2s)
+✔ [3970/4084] Built Nexus.N06.CongruenciaPrefijos (8.3s)
+✔ [3971/4084] Built Nexus.FRI.IndicesMaquina (8.5s)
+✔ [3972/4084] Built Nexus.Bytes.Lectura (8.7s)
+✔ [3973/4084] Built Nexus.N06.Solidez (9.0s)
+✔ [3974/4084] Built Nexus.Bytes.Codec (7.0s)
+✔ [3975/4084] Built Nexus.N06.Monitores (9.6s)
+✖ [3976/4084] Building Nexus.Verificador.LeyTransporteFRI (9.7s)
+trace: .> LEAN_PATH=C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean c:\Users\juand\Desktop\Tesis\.tools\lean\elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\Users\juand\Desktop\Tesis\formalizacion\Nexus\Verificador\LeyTransporteFRI.lean -o C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\LeyTransporteFRI.olean -i C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\LeyTransporteFRI.ilean -c C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\LeyTransporteFRI.c --setup C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\LeyTransporteFRI.setup.json --json
+error: Nexus/Verificador/LeyTransporteFRI.lean:179:51: Variable name `hS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+error: Nexus/Verificador/LeyTransporteFRI.lean:204:53: This simp argument is unused:
+  Nat.cast_ofNat
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nexus.ROM.Sesgo.masa, Fintype.card_fin]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Nexus/Verificador/LeyTransporteFRI.lean:491:29: This simp argument is unused:
+  ite_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Bideal, hi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Nexus/Verificador/LeyTransporteFRI.lean:535:54: This simp argument is unused:
+  Nat.cast_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_const, Finset.card_range, Nat.cast_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Nexus/Verificador/LeyTransporteFRI.lean:535:68: This simp argument is unused:
+  Nat.cast_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_const, Finset.card_range, Nat.cast_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3979/4084] Built Nexus.Verificador.Certificado (7.7s)
+✔ [3980/4084] Built Nexus.Canal.LecturaAbsorcion (7.9s)
+✔ [3981/4084] Built Nexus.N06.EstadoConjunto (7.9s)
+✔ [3982/4084] Built Nexus.Verificador.Forma (8.5s)
+✔ [3983/4084] Built Nexus.FRI.ProgramaVerificacion (8.7s)
+✔ [3984/4084] Built Nexus.Canal.LecturaCadena (10s)
+✔ [3985/4084] Built Nexus.N06.PorRondas (8.3s)
+✔ [3986/4084] Built Nexus.Canal.ParametrosRecuperados (8.1s)
+✔ [3987/4084] Built Nexus.N06.ReiniciosIdeal (7.8s)
+✔ [3988/4084] Built Nexus.N06.ReiniciosAdaptativos (8.5s)
+✔ [3989/4084] Built Nexus.Canal.VistaSemantica (8.7s)
+✔ [3990/4084] Built Nexus.Canal.CanalPrevio (8.7s)
+✔ [3991/4084] Built Nexus.N06.TranscripcionCausal (8.7s)
+✔ [3992/4084] Built Nexus.N06.SolidezCausal (7.7s)
+✔ [3993/4084] Built Nexus.Canal.VectoresCampo (8.2s)
+✔ [3994/4084] Built Nexus.Canal.CapasIndexadas (8.3s)
+✔ [3995/4084] Built Nexus.N06.PoliticasCompatibles (7.0s)
+✔ [3996/4084] Built Nexus.N06.TerminalesConstantes (7.6s)
+✔ [3997/4084] Built Nexus.N06.MensajesCompatibles (7.4s)
+✔ [3998/4084] Built Nexus.N06.ReiniciosObservados (7.9s)
+✔ [3999/4084] Built Nexus.N06.OraculosEmitidos (7.8s)
+✔ [4000/4084] Built Nexus.Canal.OraculosMerkle (7.4s)
+✔ [4001/4084] Built Nexus.N06.DatosTranscripcion (7.8s)
+✔ [4002/4084] Built Nexus.Canal.RaizCompartida (7.7s)
+✔ [4003/4084] Built Nexus.N06.TranscripcionExplicita (7.8s)
+✔ [4004/4084] Built Nexus.Canal.OraculosBase (8.0s)
+✔ [4005/4084] Built Nexus.Canal.AperturasAIR (7.8s)
+✔ [4006/4084] Built Nexus.N06.RondasExplicitas (7.7s)
+✔ [4007/4084] Built Nexus.Canal.EnlaceComposicion (7.9s)
+✔ [4008/4084] Built Nexus.N06.ExtensionRetos (7.7s)
+✔ [4009/4084] Built Nexus.N06.PasosExplicitos (7.5s)
+✔ [4010/4084] Built Nexus.Canal.AceptacionRecorridos (7.7s)
+✔ [4011/4084] Built Nexus.Verificador.Consulta (8.1s)
+✔ [4012/4084] Built Nexus.N06.PlanesExplicitos (7.5s)
+✔ [4013/4084] Built Nexus.Verificador.Completo (8.2s)
+✔ [4014/4084] Built Nexus.N06.TraduccionPlanes (7.8s)
+✔ [4015/4084] Built Nexus.Canal.Intercalaciones (8.1s)
+✔ [4016/4084] Built Nexus.Verificador.TrabajoDigest (8.3s)
+✔ [4017/4084] Built Nexus.Canal.CongelacionPrograma (8.1s)
+✔ [4018/4084] Built Nexus.Verificador.TrabajoSelectorLocal (8.1s)
+✔ [4019/4084] Built Nexus.Verificador.Adversario (8.1s)
+✔ [4020/4084] Built Nexus.Merkle.AperturasPrograma (8.3s)
+✔ [4021/4084] Built Nexus.Canal.ConteoNonce (8.6s)
+✔ [4022/4084] Built Nexus.FRI.AperturasPrograma (8.8s)
+✔ [4023/4084] Built Nexus.ROM.ValoresFinales (8.8s)
+✔ [4024/4084] Built Nexus.Canal.FamiliasPrograma (8.0s)
+✔ [4025/4084] Built Nexus.Verificador.SoporteConsulta (8.5s)
+✔ [4026/4084] Built Nexus.Verificador.SoporteCompleto (8.2s)
+✔ [4027/4084] Built Nexus.Verificador.FamiliasAceptadas (8.1s)
+✔ [4028/4084] Built Nexus.Verificador.ExperimentoCausal (8.1s)
+✔ [4029/4084] Built Nexus.Verificador.CandidatoPrevio (8.2s)
+✔ [4030/4084] Built Nexus.Verificador.LeyConjunta (8.3s)
+✔ [4031/4084] Built Nexus.Verificador.SemanticaPrevia (8.2s)
+✔ [4032/4084] Built Nexus.Verificador.VistaPrevia (7.0s)
+✔ [4033/4084] Built Nexus.Verificador.ContinuacionCausal (8.3s)
+✔ [4034/4084] Built Nexus.Verificador.ConjuntosPrevios (8.7s)
+✔ [4035/4084] Built Nexus.FRI.ControlesValores (8.1s)
+✔ [4036/4084] Built Nexus.Verificador.RetosVista (8.1s)
+✔ [4037/4084] Built Nexus.Verificador.PoliticasPrefijo (8.1s)
+✔ [4038/4084] Built Nexus.Canal.UnionPrefijo (8.9s)
+✔ [4039/4084] Built Nexus.ROM.PresupuestoPrefijo (8.9s)
+✔ [4040/4084] Built Nexus.Verificador.FiltroFalso (8.9s)
+✔ [4041/4084] Built Nexus.Verificador.ValoresConsulta (9.0s)
+✔ [4042/4084] Built Nexus.FRI.ControlesCampo (9.3s)
+✔ [4043/4084] Built Nexus.FRI.ListaCampo (7.9s)
+✔ [4044/4084] Built Nexus.Verificador.ConsultaBuena (8.3s)
+✔ [4045/4084] Built Nexus.Canal.VistaCampo (7.0s)
+✔ [4046/4084] Built Nexus.Verificador.MuestraBuena (8.3s)
+✔ [4047/4084] Built Nexus.Canal.OraculosVista (8.7s)
+✔ [4048/4084] Built Nexus.Verificador.ConsultaCampo (8.0s)
+✔ [4049/4084] Built Nexus.Verificador.CoberturaPrimeras (8.7s)
+✔ [4050/4084] Built Nexus.Verificador.PoliticasFalsas (8.8s)
+✔ [4051/4084] Built Nexus.Canal.VistaCausal (9.1s)
+✔ [4052/4084] Built Nexus.Canal.UnionFiltrada (8.8s)
+✔ [4053/4084] Built Nexus.Verificador.CardinalVista (9.1s)
+✔ [4054/4084] Built Nexus.Verificador.NonceCandidato (8.0s)
+✔ [4055/4084] Built Nexus.Verificador.CotaAceptacion (9.2s)
+✔ [4056/4084] Built Nexus.Verificador.CotaFalsa (8.2s)
+✔ [4057/4084] Built Nexus.Canal.PrefijoAIR (8.6s)
+✔ [4058/4084] Built Nexus.Verificador.UnionPerfilesFRI (8.8s)
+✔ [4059/4084] Built Nexus.Verificador.ExcesoRondas (8.3s)
+✖ [4060/4084] Building Nexus.Canal.ContextoAIR (8.2s)
+trace: .> LEAN_PATH=C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean c:\Users\juand\Desktop\Tesis\.tools\lean\elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\Users\juand\Desktop\Tesis\formalizacion\Nexus\Canal\ContextoAIR.lean -o C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Canal\ContextoAIR.olean -i C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Canal\ContextoAIR.ilean -c C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Canal\ContextoAIR.c --setup C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Canal\ContextoAIR.setup.json --json
+error: Nexus/Canal/ContextoAIR.lean:123:15: This simp argument is unused:
+  hc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Nexus/Canal/ContextoAIR.lean:126:25: This simp argument is unused:
+  hf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.card_empty, zero_le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Nexus/Canal/ContextoAIR.lean:128:17: This simp argument is unused:
+  hf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [4061/4084] Built Nexus.Canal.PrefijoTrabajo (8.3s)
+✔ [4062/4084] Built Nexus.Canal.ParTrabajo (8.1s)
+✔ [4063/4084] Built Nexus.Verificador.RondasReales (8.5s)
+✔ [4064/4084] Built Nexus.Verificador.PresupuestoGlobal (8.8s)
+✔ [4065/4084] Built Nexus.Verificador.CandidatoTrabajo (8.8s)
+✔ [4066/4084] Built Nexus.Canal.ConteoPares (9.2s)
+✔ [4067/4084] Built Nexus.Verificador.RondasCausales (8.0s)
+✔ [4068/4084] Built Nexus.Verificador.CotaRondas (9.4s)
+✖ [4069/4084] Building Nexus.Verificador.CotaSinBad (9.5s)
+trace: .> LEAN_PATH=C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean c:\Users\juand\Desktop\Tesis\.tools\lean\elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\Users\juand\Desktop\Tesis\formalizacion\Nexus\Verificador\CotaSinBad.lean -o C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\CotaSinBad.olean -i C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\CotaSinBad.ilean -c C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\CotaSinBad.c --setup C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\CotaSinBad.setup.json --json
+error: Nexus/Verificador/CotaSinBad.lean:129:2: exponent 300 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+✔ [4075/4084] Built Nexus.Verificador.PoliticasTrabajo (8.4s)
+✔ [4076/4084] Built Nexus.Canal.PrimerosPares (8.3s)
+✔ [4077/4084] Built Nexus.Canal.FrescuraTrabajo (7.0s)
+✔ [4078/4084] Built Nexus.Canal.TrabajoPrefijo (8.5s)
+Some required targets logged failures:
+- Nexus.Verificador.LeyTransporteFRI
+- Nexus.Canal.ContextoAIR
+- Nexus.Verificador.CotaSinBad
+error: build failed
+

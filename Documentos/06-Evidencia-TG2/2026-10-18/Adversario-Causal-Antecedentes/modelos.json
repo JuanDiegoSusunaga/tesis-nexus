@@ -1,0 +1,201 @@
+{
+  "ROM/ProgramaBytes": {
+    "grupos": [
+      "M37",
+      "M39"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Programa finito con entradas de bytes arbitrarios y resultado de cualquier tipo. La secuencia concatena registros, conserva el resultado del programa TG2 levantado y tiene un presupuesto estructural finito. Cada par de su traza responde mediante la misma H y su tabla es compatible.",
+    "limites": [
+      "Finito por construcción; no formaliza ejecuciones infinitas, memoria de máquina ni SHA3 concreto."
+    ],
+    "teoremas": [
+      "Nexus.ROM.ProgramaBytes.resultado_unir",
+      "Nexus.ROM.ProgramaBytes.traza_unir",
+      "Nexus.ROM.ProgramaBytes.traza_responde",
+      "Nexus.ROM.ProgramaBytes.resultado_levantado",
+      "Nexus.ROM.ProgramaBytes.entradas_levantadas",
+      "Nexus.ROM.ProgramaBytes.costo_acotado",
+      "Nexus.ROM.ProgramaBytes.tabla_de_traza_compatible"
+    ]
+  },
+  "ROM/ProyeccionDigest": {
+    "grupos": [
+      "M35"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Bijección de los 32 octetos del digest con Fin(256^32). El índice real de los primeros ocho octetos coincide con el residuo del entero completo para e<=64; cada índice tiene 2^(256-e) preimágenes y masa 1/2^e. Se conservan todos los promedios de funciones del índice.",
+    "limites": [
+      "Distribución uniforme ideal del digest completo; no afirma que SHA3 concreto tenga esa ley."
+    ],
+    "teoremas": [
+      "Nexus.ROM.ProyeccionDigest.leer_append",
+      "Nexus.ROM.ProyeccionDigest.leer_digest_separa",
+      "Nexus.ROM.ProyeccionDigest.indice_es_residuo",
+      "Nexus.ROM.ProyeccionDigest.fibras_iguales",
+      "Nexus.ROM.ProyeccionDigest.cardinal_digest",
+      "Nexus.ROM.ProyeccionDigest.masa_indice",
+      "Nexus.ROM.ProyeccionDigest.promedio_indice"
+    ]
+  },
+  "ROM/HistoriaLocal": {
+    "grupos": [
+      "M35",
+      "M37"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La estrategia del programa usa solo el prefijo de respuestas y su historia efectiva es compatible. Cada prefijo equivale a fijar exactamente sus entradas observadas, a lo sumo n. Sobre el universo finito de observadas más próxima entrada se cuenta la ley fresca 1/2^256; una repetición con respuesta distinta es imposible.",
+    "limites": [
+      "No se postula una medida uniforme sobre todas las funciones del dominio infinito de bytes. La consulta fresca es una hipótesis local; no se condiciona a SinBad ni se obtiene independencia global entre fases."
+    ],
+    "teoremas": [
+      "Nexus.ROM.HistoriaLocal.historia_compatible",
+      "Nexus.ROM.HistoriaLocal.prefijo_compatible",
+      "Nexus.ROM.HistoriaLocal.consulta_fresca",
+      "Nexus.ROM.HistoriaLocal.consulta_repetida",
+      "Nexus.ROM.HistoriaLocal.ley_fresca_local",
+      "Nexus.ROM.HistoriaLocal.ley_repetida_local",
+      "Nexus.ROM.HistoriaLocal.claves_prefijo_sin_cota",
+      "Nexus.ROM.HistoriaLocal.tablas_del_prefijo_coinciden",
+      "Nexus.ROM.HistoriaLocal.cilindro_del_prefijo",
+      "Nexus.ROM.HistoriaLocal.respuesta_fresca_del_prefijo"
+    ]
+  },
+  "ROM/EjecucionBytes": {
+    "grupos": [
+      "M37",
+      "M39"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "El programa de bytes ejecuta una tabla compartida compatible con H: memoriza las nuevas entradas, conserva las repeticiones y registra todas las consultas reales. La ausencia de excepciones se verifica antes de cada respuesta fresca y produce un RecorridoSinAcierto. Los orígenes ordenados de absorción y reto se derivan de su pertenencia al registro efectivo, también cuando las llamadas actuales son repetidas.",
+    "limites": [
+      "SinBad se exige sobre el recorrido producido. No se prueba aquí su probabilidad global, ni se supone que las llamadas repetidas sean frescas."
+    ],
+    "teoremas": [
+      "Nexus.ROM.EjecucionBytes.avanzar_compatible",
+      "Nexus.ROM.EjecucionBytes.avanzar_incluye",
+      "Nexus.ROM.EjecucionBytes.avanzar_guarda",
+      "Nexus.ROM.EjecucionBytes.avanzar_responde_memoria",
+      "Nexus.ROM.EjecucionBytes.final_compatible",
+      "Nexus.ROM.EjecucionBytes.final_incluye",
+      "Nexus.ROM.EjecucionBytes.traza_guardada",
+      "Nexus.ROM.EjecucionBytes.consulta_en_tabla",
+      "Nexus.ROM.EjecucionBytes.recorrido_desde_programa",
+      "Nexus.ROM.EjecucionBytes.final_unir",
+      "Nexus.ROM.EjecucionBytes.sinbad_unir",
+      "Nexus.ROM.EjecucionBytes.origen_raiz_reto_del_registro"
+    ]
+  },
+  "ROM/PalabrasDigest": {
+    "grupos": [
+      "M35"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La proyección real de R digests independientes tiene fibras de tamaño (2^(256-e))^R. Conserva promedios y cocientes de eventos de palabras de índices. Se obtiene uniformidad de q-subconjuntos y el cociente hipergeométrico del selector condicionado a completar antes de R.",
+    "limites": [
+      "Experimento ideal de digests independientes. Falta identificar su ley con el experimento global de primeras exposiciones adversarias, sin imponer independencia después de excluir eventos malos."
+    ],
+    "teoremas": [
+      "Nexus.ROM.PalabrasDigest.cardinal_fibra",
+      "Nexus.ROM.PalabrasDigest.cardinal_evento",
+      "Nexus.ROM.PalabrasDigest.promedio_palabras",
+      "Nexus.ROM.PalabrasDigest.cociente_eventos",
+      "Nexus.ROM.PalabrasDigest.selector_uniforme",
+      "Nexus.ROM.PalabrasDigest.selector_hipergeometrico"
+    ]
+  },
+  "Canal/Intercalaciones": {
+    "grupos": [
+      "M35",
+      "M37",
+      "M39"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Un adversario con estado puede consultar bytes arbitrarios antes de cada petición del protocolo y actualizarse después de su respuesta. El verificador matemático conserva resultado y su registro es una subsecuencia del global. El coste global es el coste del protocolo más las consultas adversarias, con cota Q+V_T y tabla efectiva común.",
+    "limites": [
+      "Política finita de consultas clásicas; no modela consultas cuánticas. Se conserva el corte analítico R y no se deduce refinamiento universal Rust."
+    ],
+    "teoremas": [
+      "Nexus.Canal.Intercalaciones.resultado_intercalado",
+      "Nexus.Canal.Intercalaciones.registro_intercalado",
+      "Nexus.Canal.Intercalaciones.costo_intercalado",
+      "Nexus.Canal.Intercalaciones.presupuesto_con_adversario",
+      "Nexus.Canal.Intercalaciones.verificador_intercalado_equivale",
+      "Nexus.Canal.Intercalaciones.presupuesto_verificador_intercalado",
+      "Nexus.Canal.Intercalaciones.consultas_verificador_guardadas"
+    ]
+  },
+  "Canal/CongelacionPrograma": {
+    "grupos": [
+      "M37"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Una apertura aceptada registrada en el programa global se encuentra en su tabla efectiva. Los primeros orígenes absorción/reto proporcionan un extractor que usa solo la tabla anterior a la primera respuesta del reto. Sus valores coinciden con toda apertura posterior registrada. Se instancia el origen en el verificador con intercalaciones.",
+    "limites": [
+      "Se mantienen SinBad y las premisas de pertenencia de absorción, reto y apertura al registro. Falta derivarlas conjuntamente para todas las familias AIR/FRI y conectarlas con la solidez integral."
+    ],
+    "teoremas": [
+      "Nexus.Canal.CongelacionPrograma.apertura_registrada_en_tabla",
+      "Nexus.Canal.CongelacionPrograma.apertura_antes_del_reto",
+      "Nexus.Canal.CongelacionPrograma.existe_vector_previo",
+      "Nexus.Canal.CongelacionPrograma.origen_en_verificador_intercalado"
+    ]
+  },
+  "Canal/CintaSelector": {
+    "grupos": [
+      "M35"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Para cualquier H, desplegar R respuestas de entradas I evalúa exactamente el programa real de selección, incluido su rechazo por corte. La proyección del selector ordenado se evalúa sobre la misma cinta; desde vacío completa exactamente cuando aparecen al menos cuarenta índices distintos.",
+    "limites": [
+      "La cola desplegada después de completar cuarenta es matemática y no forma parte del registro ejecutado. Esta igualdad determinista no prueba que las direcciones sean frescas o la cinta independiente."
+    ],
+    "teoremas": [
+      "Nexus.Canal.CintaSelector.longitud_cinta",
+      "Nexus.Canal.CintaSelector.longitud_indices",
+      "Nexus.Canal.CintaSelector.resultado_desde_cinta",
+      "Nexus.Canal.CintaSelector.resultado_ordenado_desde_cinta",
+      "Nexus.Canal.CintaSelector.vacio_completa_iff"
+    ]
+  },
+  "Verificador/Adversario": {
+    "grupos": [
+      "M35",
+      "M37",
+      "M39"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "El proponente consulta entradas arbitrarias y elige adaptativamente los bytes del certificado y su estado. Se compone con el lector estricto y el verificador intercalado usando una sola H. La aceptación entrega un certificado leído con forma válida. Registros previos y del verificador quedan en el global, que tiene historia causal compatible y coste adversario más protocolo.",
+    "limites": [
+      "El presupuesto Q+V conserva la hipótesis del límite V del candidato elegido; el coste del parser no se cuenta. Faltan eventos/candidatos globales, correspondencia universal Rust y solidez integral."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.Adversario.resultado_con_bytes",
+      "Nexus.Verificador.Adversario.aceptacion_certificado_elegido",
+      "Nexus.Verificador.Adversario.costo_total",
+      "Nexus.Verificador.Adversario.presupuesto_condicional",
+      "Nexus.Verificador.Adversario.registro_proponente",
+      "Nexus.Verificador.Adversario.registro_verificador",
+      "Nexus.Verificador.Adversario.tabla_efectiva_compatible",
+      "Nexus.Verificador.Adversario.historia_efectiva_compatible"
+    ]
+  }
+}

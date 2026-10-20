@@ -1,0 +1,316 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-16T21:50:56.262132+00:00",
+  "correcto": true,
+  "tesis_completa_verificada": false,
+  "version": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)",
+  "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "revision_documental_contexto": "195b8133370a8157563e434c8a2489b5e27df17f",
+  "nota_revision": "Los hashes identifican el árbol de trabajo ejecutado; el commit de contexto puede no contener estos cambios.",
+  "afirmaciones_catalogo": 12,
+  "afirmaciones_con_teoremas": 6,
+  "teoremas_auditados": 17,
+  "axiomas": {
+    "Nexus.ceros_acotados": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N01.coeficiente_unico": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N01.conteo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N01.cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N01.cota_extension_cuadratica": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N02.cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N03.unicidad_conteo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N03.unicidad": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.interseccion_triple": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.acuerdo_correlacionado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.acuerdo_correlacionado_radio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.muestras_buenas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.probabilidad_omision": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.cota_omision": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.muestras_no_vacias": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N12.condicion_falla": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N12.cuentas_minimas": [
+      "propext"
+    ]
+  },
+  "kernel": {
+    "herramienta": "leanchecker incluido en Lean 4.35.0",
+    "modulos": [
+      "Nexus.Distancia",
+      "Nexus.N01.Solucion",
+      "Nexus.N02.Solucion",
+      "Nexus.N03.Solucion",
+      "Nexus.N04.Solucion",
+      "Nexus.N05.Muestreo",
+      "Nexus.N12.Solucion"
+    ],
+    "modo": "Replay de cada módulo por separado; se confía en los módulos importados. No es --fresh ni un verificador externo."
+  },
+  "integridad_catalogo_historico": {
+    "correcto": true,
+    "afirmaciones": 12,
+    "archivos": 9,
+    "errores": [],
+    "alcance": "Integridad y coherencia documental; no verifica verdad matemática ni seguridad.",
+    "mecanizacion": "no_disponible",
+    "dictamen": "pendiente",
+    "qrom_air_fri": "trabajo_futuro"
+  },
+  "cobertura": [
+    {
+      "id": "N01",
+      "estado": "componente_verificado",
+      "verificado": "Unicidad del coeficiente, conteo de triples cancelantes y probabilidad <=1/|K|, especializada a |K|=p^2, para residuos polinómicos fijos no todos nulos en cualquier campo finito.",
+      "teoremas": [
+        "Nexus.N01.coeficiente_unico",
+        "Nexus.N01.conteo",
+        "Nexus.N01.cota",
+        "Nexus.N01.cota_extension_cuadratica"
+      ],
+      "pendiente": [
+        "Construcción concreta del campo Goldilocks y su extensión.",
+        "Equivalencia entre traza AIR inválida y residuos individuales no todos nulos.",
+        "Correspondencia de la distribución producto uniforme con el canal concreto; no se verifica hash adaptativo."
+      ]
+    },
+    {
+      "id": "N02",
+      "estado": "componente_verificado",
+      "verificado": "Cota (5T+1)/(8T) para toda composición A/D frente a cualquier h de grado <2T, con residuo A%D no nulo, ausencia de polos y cotas de grado explícitas.",
+      "teoremas": [
+        "Nexus.N02.cota"
+      ],
+      "pendiente": [
+        "Derivación de las cotas de grado para las fórmulas concretas de los tres numeradores AIR.",
+        "Construcción del dominio coset y prueba de ausencia de polos para sus parámetros.",
+        "Transferencia local 3*epsilon a un oráculo no polinómico."
+      ]
+    },
+    {
+      "id": "N03",
+      "estado": "componente_verificado",
+      "verificado": "Unicidad de dos polinomios de grado <T cercanos a un mismo oráculo, para cualquier campo y dominio finito, bajo la desigualdad estricta del catálogo y radio racional.",
+      "teoremas": [
+        "Nexus.N03.unicidad_conteo",
+        "Nexus.N03.unicidad"
+      ],
+      "pendiente": [
+        "No se demuestra existencia del candidato.",
+        "Rama de candidato fuera del campo base y cota de posiciones no base.",
+        "Selección temporal del candidato antes de los retos dentro del modelo del protocolo."
+      ]
+    },
+    {
+      "id": "N04",
+      "estado": "lema_radio_racional_verificado",
+      "verificado": "Lema A de acuerdo correlacionado, simultáneo para todos los conjuntos S, salvo a lo sumo |L| retos. Incluye forma entera e+3t<=|L| y forma de radio racional no negativo con (1-3*theta)|L|>e-1; incluye theta=1/8.",
+      "teoremas": [
+        "Nexus.N04.interseccion_triple",
+        "Nexus.N04.acuerdo_correlacionado",
+        "Nexus.N04.acuerdo_correlacionado_radio"
+      ],
+      "pendiente": [
+        "Instanciación en las parejas opuestas y capas concretas de FRI.",
+        "La versión escrita permite radios reales; la formalización actual usa radios racionales."
+      ]
+    },
+    {
+      "id": "N05",
+      "estado": "componente_verificado",
+      "verificado": "Conteo exacto de muestras uniformes de q elementos distintos y cota hipergeométrica por número de parejas malas, bajo un conjunto aceptante dado. La interpretación probabilística exige q<=M.",
+      "teoremas": [
+        "Nexus.N05.muestras_buenas",
+        "Nexus.N05.probabilidad_omision",
+        "Nexus.N05.cota_omision",
+        "Nexus.N05.muestras_no_vacias"
+      ],
+      "pendiente": [
+        "Lema B de propagación por todas las capas FRI sin excepciones.",
+        "Cota del número de parejas aceptantes desde la distancia del oráculo.",
+        "Conversión con ceil(theta*M) y cota exponencial H<=(1-theta)^q.",
+        "Distribución efectiva de las consultas generadas mediante hash."
+      ]
+    },
+    {
+      "id": "N06",
+      "estado": "pendiente",
+      "verificado": null,
+      "teoremas": [],
+      "pendiente": [
+        "Modelo de transcripciones del IOP conjunto, estados por ronda y composición de sus eventos.",
+        "Enlace de N01-N05 y comprobación de todos los perfiles."
+      ]
+    },
+    {
+      "id": "N07",
+      "estado": "pendiente",
+      "verificado": null,
+      "teoremas": [],
+      "pendiente": [
+        "Modelo del registro de consultas al oráculo aleatorio, árboles Merkle, extracción previa y eventos Bad_H."
+      ]
+    },
+    {
+      "id": "N08",
+      "estado": "pendiente",
+      "verificado": null,
+      "teoremas": [],
+      "pendiente": [
+        "Potencial de candidatos adaptativos, nonces y cola del selector; modelo probabilístico temporal."
+      ]
+    },
+    {
+      "id": "N09",
+      "estado": "pendiente",
+      "verificado": null,
+      "teoremas": [],
+      "pendiente": [
+        "Teorema ROM completo y sus pérdidas, condicionado al cierre de N06-N08 y al puente con el verificador."
+      ]
+    },
+    {
+      "id": "N10",
+      "estado": "evidencia_empirica_historica",
+      "verificado": null,
+      "teoremas": [],
+      "pendiente": [
+        "Se conserva la integridad documental del corpus de 14 certificados; esta ejecución no repite Rust/Python ni demuestra equivalencia general de implementaciones."
+      ]
+    },
+    {
+      "id": "N11",
+      "estado": "trabajo_futuro",
+      "verificado": null,
+      "teoremas": [],
+      "pendiente": [
+        "La cota QROM de omisión y la transferencia completa siguen abiertas; no se reabre esta línea en esta etapa."
+      ]
+    },
+    {
+      "id": "N12",
+      "estado": "componente_verificado",
+      "verificado": "Para los tres perfiles numéricos de R1, la desigualdad necesaria examinada falla para todo eta entero >=1. Se comprueban además los tres lados izquierdos mínimos y floor(8380417/32)=261888.",
+      "teoremas": [
+        "Nexus.N12.condicion_falla",
+        "Nexus.N12.cuentas_minimas"
+      ],
+      "pendiente": [
+        "Correspondencia de los parámetros tabulados con el backend y con las hipótesis del teorema bibliográfico.",
+        "Obligaciones R1-A-E y seguridad completa de ML-DSA; la inaplicabilidad no demuestra un ataque."
+      ]
+    }
+  ],
+  "sha256_fuentes": {
+    "Documentos/04-Administrativo-TG2/Avances/Catalogo-Validacion-2026-10-12/catalogo.json": "05f372f87280226ce5e62a8b569b2410424c5d33d0c9efa03de3caf363863aa2",
+    "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md": "886380857ccab164c6b5300a9bfc736d426c37a4e82ac9af47e54b874d17cb62",
+    "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/Cola-y-Conteo-QROM.md": "ffda72e538d7634c834351240b7a2c635e098dfa85f171fa2ea3de5bffacc3ff",
+    "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/Muestreo-y-Puente-QROM.md": "ca373ff511f2a6d33cbed41d1a8a30beda442bd1b964f0e057e02bc0b6936207",
+    "Documentos/04-Administrativo-TG2/Avances/R1-Correspondencia-Formal-2026-09-22.md": "3af452d6ae953075d6bf3fc174ea85f7f6e24347fdd6a6222414c94bee682b56",
+    "Documentos/04-Administrativo-TG2/Avances/R4-Algebra-AIR-FRI-2026-09-22.md": "a448e2428fc9edca3b1f7b25caccd5efbaeadc89fde9d18cbd4d4cbbbfad46ac",
+    "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/Revision-Critica-ROM.md": "fb89056e602571f20bb9438fcb1e6fba415b43db30352399977188f57616fc7a",
+    "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/corpus.json": "0d74fe1300cdae66bbecf5955ba4855a0b2046f3ce39f1cedb6a6ff8c05268ed",
+    "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md": "2336aa9548b2820b844834b4c29ef1648930f41435458d3c2cee45a86d945524",
+    "Documentos/06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/fuentes/nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f",
+    "formalizacion/Auditoria.lean": "eb94cad92a2434139017bfe38395d30b55f3f41e46a10293dbc44849676ab752",
+    "formalizacion/cobertura.json": "450069bc2b063b5349fc277b3af3d1eb818c7e98d510e80839dc7a9566b3a813",
+    "formalizacion/lake-manifest.json": "709c7dde35fe143806c87d5d5ae58591a2ce38cc73884a88d9d04d17e4d02838",
+    "formalizacion/lakefile.toml": "eb403d328c9e0f4250c1835f18fce68834cb0906990afd13294c5ff7cdc7649a",
+    "formalizacion/lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "formalizacion/Nexus/Distancia.lean": "dd9e2e904d76ecbbc0a05d1edccb4a6c4b08dac1224f84c1a8c9622c7986d4f9",
+    "formalizacion/Nexus/Inicio.lean": "475418a03d49f70c50f1210499f5428319404a2af0b34bc402701dc55d19ad06",
+    "formalizacion/Nexus/N01/Enunciado.lean": "ef447f132dd3585e250788c6707c571ec4affc9655e6c5fcbbbf7751944079f5",
+    "formalizacion/Nexus/N01/Solucion.lean": "11f5b36b91caeb42007822aaf193e95767aa5dcc5b93be4532f5d44f8ea93636",
+    "formalizacion/Nexus/N02/Enunciado.lean": "33fbefbc30d76911b37253591086dd2104204746ae87de2a4df6640b00083f11",
+    "formalizacion/Nexus/N02/Solucion.lean": "5a4791c7cb7d4c1b941c9d624075d850bc5f8be83bb403800fa9a55f6f5872a5",
+    "formalizacion/Nexus/N03/Enunciado.lean": "09ebdbfc6c6f64b5b7d6ced09040bc84a8f94ca39bc35b2c98b1c410163a4c86",
+    "formalizacion/Nexus/N03/Solucion.lean": "01b9dfdf274ceefa956fb29279fcd97f1e6e3d050bad0cc3933d09d51b8033ae",
+    "formalizacion/Nexus/N04/Enunciado.lean": "53a0e927d1754124702d647443ce092816847be8155b7d858e8e8d969772e928",
+    "formalizacion/Nexus/N04/Solucion.lean": "d6e707c9c59b07fec1b3085b2d0d222a3e256f0f368be1947a4b632fdb6c0141",
+    "formalizacion/Nexus/N05/Muestreo.lean": "5c0a871c4e77f95ff9283149c6d6075d6754f7e8739b95dbd7d05e895915ef69",
+    "formalizacion/Nexus/N12/Enunciado.lean": "d28dfb78713a5638e60711db889ade65eac3de0472f0964ebb0736988734983c",
+    "formalizacion/Nexus/N12/Solucion.lean": "45421a5487f20c9d7ad31fb003bce224dac0ac55c34243002b24d68b5c3a2e12",
+    "formalizacion/Nexus.lean": "1274a5c9ce92ecf6c6140a03b36114688ba74dcca83d036d608796f4b39ef4a1",
+    "scripts/lean.py": "57429b47a5335ffeeed114910ac1502c72903731f96e308a659b1a5247119a63",
+    "scripts/tests/test_verificar_formalizacion.py": "1216cb06b5cfc480dddeb9e12422109e03763e697d4c638596ec97b2dc383495",
+    "scripts/verificar_catalogo_validacion.py": "6ae6b2b322195a1002286c6962713d4d312c6b780812208236f1ba06462d1e3d",
+    "scripts/verificar_formalizacion.py": "6e0e929c6874cf81e673205e78a824f69e5353ded68ffadf5d5ef3f152616273"
+  },
+  "sha256_logs": {
+    "axiomas.log": "e58ac646241807528894639993b1f67601f70f532e6ba477be3538195d538c60",
+    "build.log": "15bf4339833dfe23732de0f76b088c5c245bc4eed425ca0a7810d46e13137d7c",
+    "catalogo.log": "47f585f4cb468ae56abccd46908f42914b15a8d59c7a94d4293727622d743f11",
+    "documentos-revision.log": "5eef81f75eeea332fa7b79cd9f0197879e52450439666d4ca85fdf63c405a870",
+    "kernel-Nexus.Distancia.log": "cec93112f54537abe3dccf5241e8b63e5210715e0e939e37005980aa255ba15a",
+    "kernel-Nexus.N01.Solucion.log": "fb1faca949181e97c8a46f86fca5122c63cbb36f44d1e6f7c5a897ba11d99d7d",
+    "kernel-Nexus.N02.Solucion.log": "4ce1f77f64587c939fd534e4dcfa2847156e293be437d1997fdd3a2fdde5fa61",
+    "kernel-Nexus.N03.Solucion.log": "81778ebe8d0c37f835cd22a6ecb67f784652965d61d5e511964b9aeb819ca0b8",
+    "kernel-Nexus.N04.Solucion.log": "ac01ca499252b3660457cad7a99093178707e963d418c94df075f754ce6ee48f",
+    "kernel-Nexus.N05.Muestreo.log": "133ffd9f05a81fa128d105ee83d9f39f6f29d2c29d22414fa0272a311ab5b588",
+    "kernel-Nexus.N12.Solucion.log": "a9a5488cc85e882d547bc3bc81b2f9838deff5407ab9df3c9da05ec7141d8402",
+    "mathlib-revision.log": "62787bb69cf52a2f926974c378d5c649db10d451cbe8a34082ab1ace8e0b3865",
+    "version.log": "f00f804e2bfd26bec1fe2ec5dbb31705e03a85ebbffb576039c1a56debd6fe9c"
+  },
+  "dictamen_independiente": "pendiente",
+  "qrom_air_fri": "trabajo_futuro"
+}

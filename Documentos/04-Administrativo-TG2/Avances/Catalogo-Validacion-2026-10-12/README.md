@@ -6,6 +6,8 @@ El catálogo acompaña las [preguntas M1–M6](../Revision-Matematica-S1-S3-2026
 
 ## Afirmaciones y dependencias
 
+**Complemento del 16 de octubre:** la [primera comprobación en Lean](../../../../formalizacion/VERIFICACION.md) añade 17 lemas y teoremas sobre componentes de N01–N05 y N12, con [evidencia de ejecución](../../../06-Evidencia-TG2/2026-10-16/Lean/validacion.json). El JSON y los estados siguientes conservan la instantánea histórica del 12 de octubre; la [cobertura actual](../../../../formalizacion/cobertura.json) distingue los fragmentos mecanizados de sus puentes y obligaciones pendientes.
+
 Los enunciados siguientes se leen con todas las hipótesis de [catalogo.json](catalogo.json) y de sus localizadores. «Derivación propuesta» identifica una demostración escrita pendiente de revisión; «contraste empírico» identifica resultados del corpus, sin generalizarlos a todos los adversarios. Ninguna fila significa que Lean haya aceptado una prueba.
 
 | ID | Afirmación delimitada | Dependencias del catálogo | Revisión relacionada | Estado |

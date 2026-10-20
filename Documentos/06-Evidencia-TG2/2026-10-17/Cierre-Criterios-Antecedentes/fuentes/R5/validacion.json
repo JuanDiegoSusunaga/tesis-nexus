@@ -1,0 +1,41 @@
+{
+  "pruebas": 163,
+  "nuevas_r5": 3,
+  "perfil": "desarrollo",
+  "fuentes": [
+    {
+      "archivo": "nexus/nexus-crypto/tests/tg2_residence.rs",
+      "sha256": "9d280cc114eee3da61d446d4d69e1b5697e7d1a442c496ed2bb5de1e24743628"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/benches/residencia_bench.rs",
+      "sha256": "4ff93c7794118936e310a333847fd9787a8a1bdb6e11fc0e9779602a98ca251e"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/dilithium.rs",
+      "sha256": "f414f7970bdda33de52b93ffcb26ff758898697060c639173fa99a0fe4a08d4e"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/keypair.rs",
+      "sha256": "c54b41ef0f80a396bbf7a0d0943521fd416b6dd42d933eac090dddba6d995334"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/entropy.rs",
+      "sha256": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f"
+    },
+    {
+      "archivo": "nexus/Cargo.lock",
+      "sha256": "4a0a438fab8a2b5e5197f25a35eb90864133e45e3ee7668f604c87e1ae1c002c"
+    },
+    {
+      "archivo": "scripts/modelar_residencia_r5.py",
+      "sha256": "b3dfa956491ef776f9828f8ac06d7f672031d7c8a4b3939b70339d51f8420a9c"
+    }
+  ],
+  "backend_types_sha256": "d811518ef64dbac77e0aead6f33edde8ae1ec89ef641334b6232d2a35bd1cb18",
+  "limite": "Tamaños de tipo y representación comprobados; sin lectura de memoria liberada ni medición de residuos del SO.",
+  "cargo-check.log": "9ba877b3dccc4930da082d6d3687baf0f9204f8e6810980c2a0aa2046452d8dc",
+  "cargo-test.log": "fd7250aaf2266b290b3fc1edcea0a518f6c0df4181c3d4360be842fdc0ec4acc",
+  "cargo-build.log": "082dbcf9d145a009ad6a238328b5c99618c353fa3d9fa1e89dc54c3516f2ccb6",
+  "representaciones.log": "cf4e34ac716ecadad9d6aa143b102c08145dffe94a97e143e88ad6a61409c9d7"
+}

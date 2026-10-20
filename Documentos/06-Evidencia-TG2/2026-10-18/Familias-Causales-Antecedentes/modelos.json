@@ -1,0 +1,240 @@
+{
+  "Canal/RegistroRaices": {
+    "grupos": [
+      "M35",
+      "M37"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se despliegan los estados, eventos de absorción/retos y betas de los bucles del canal. Resultados y registros coinciden con los programas; las raíces conservan orden y cantidad y cada evento está en el prefijo real, sin suponer frescura.",
+    "limites": [
+      "Semántica de una H común; no deduce que los valores reducidos sean uniformes ni verifica SHA3."
+    ],
+    "teoremas": [
+      "Nexus.Canal.RegistroRaices.retos_resultado",
+      "Nexus.Canal.RegistroRaices.retos_registro",
+      "Nexus.Canal.RegistroRaices.retos_longitud",
+      "Nexus.Canal.RegistroRaices.raices_resultado",
+      "Nexus.Canal.RegistroRaices.raices_registro",
+      "Nexus.Canal.RegistroRaices.raices_proyeccion",
+      "Nexus.Canal.RegistroRaices.raices_longitud",
+      "Nexus.Canal.RegistroRaices.eventos_registrados",
+      "Nexus.Canal.RegistroRaices.registrado_monotono"
+    ]
+  },
+  "Canal/RegistroSelector": {
+    "grupos": [
+      "M35",
+      "M37"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Una ejecución aceptada del selector produce cuarenta índices distintos en orden y una continuación aceptada cuyo registro es subsecuencia del efectivamente ejecutado, incluidos duplicados previos.",
+    "limites": [
+      "Conserva el corte analítico R; no prueba la ley conjunta del selector adversario ni su refinamiento Rust."
+    ],
+    "teoremas": [
+      "Nexus.Canal.RegistroSelector.aceptacion_con_registro"
+    ]
+  },
+  "Canal/RegistroCompleto": {
+    "grupos": [
+      "M35",
+      "M37",
+      "M39"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La transcripción del canal completo se calcula desde H: raíz base, tres alfas, ambas listas de raíces/betas y estados. Se prueba su resultado y registro exactos, la pertenencia de cada absorción/reto y el soporte de la continuación elegida al aceptar.",
+    "limites": [
+      "Valores matemáticos y misma H. No atribuye independencia a retos correlacionados ni añade el corte R al bucle Rust."
+    ],
+    "teoremas": [
+      "Nexus.Canal.RegistroCompleto.resultado_canal",
+      "Nexus.Canal.RegistroCompleto.registro_canal",
+      "Nexus.Canal.RegistroCompleto.base_registrada",
+      "Nexus.Canal.RegistroCompleto.traza_registrada",
+      "Nexus.Canal.RegistroCompleto.composicion_registrada",
+      "Nexus.Canal.RegistroCompleto.raices_conservadas",
+      "Nexus.Canal.RegistroCompleto.alfas_tres",
+      "Nexus.Canal.RegistroCompleto.aceptacion_con_soporte"
+    ]
+  },
+  "Merkle/AperturasPrograma": {
+    "grupos": [
+      "M37"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Las aperturas llevan raíz, altura, posición, valor y hermanos. Su autenticación y soporte se extraen del subprograma Merkle y se transportan al registro global; el valor coincide con el oráculo anterior al primer reto correspondiente.",
+    "limites": [
+      "La extracción usa ausencia de excepciones mediante un corte causal y el rango del índice; no afirma seguridad de SHA3 concreto."
+    ],
+    "teoremas": [
+      "Nexus.Merkle.AperturasPrograma.programa_valido",
+      "Nexus.Merkle.AperturasPrograma.programa_registrado",
+      "Nexus.Merkle.AperturasPrograma.registrada_monotona",
+      "Nexus.Merkle.AperturasPrograma.apertura_antes_reto",
+      "Nexus.Merkle.AperturasPrograma.valor_en_oraculo_previo"
+    ]
+  },
+  "FRI/AperturasPrograma": {
+    "grupos": [
+      "M37"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se enumeran izquierda/derecha de cada capa FRI con el estado de acarreo efectivo. La aceptación produce autenticación y soporte de todas ellas, cantidad dos por capa, rango de índices y origen en la raíz y altura de esa capa.",
+    "limites": [
+      "El plegado y los índices son matemáticos; la solidez probabilística de FRI y el refinamiento Rust son obligaciones distintas."
+    ],
+    "teoremas": [
+      "Nexus.Goldilocks.AperturasFRI.cantidad",
+      "Nexus.Goldilocks.AperturasFRI.todas_validas",
+      "Nexus.Goldilocks.AperturasFRI.todas_registradas",
+      "Nexus.Goldilocks.AperturasFRI.indices_acotados",
+      "Nexus.Goldilocks.AperturasFRI.origen_capa",
+      "Nexus.Goldilocks.AperturasFRI.verificacion_registra",
+      "Nexus.Goldilocks.AperturasFRI.origen_en_raices"
+    ]
+  },
+  "Verificador/SoporteConsulta": {
+    "grupos": [
+      "M37",
+      "M39"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Una consulta aceptada registra exactamente seis aperturas AIR y todas las parejas FRI de traza/composición. Se compone el registro de sus subprogramas, se prueba autenticación, rango y origen de cada apertura y cantidad 6+2*k+2*(k+1).",
+    "limites": [
+      "La correspondencia universal de operaciones de máquina y del parser con Rust sigue separada."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.SoporteConsulta.air_soporte",
+      "Nexus.Verificador.SoporteConsulta.registro_consulta",
+      "Nexus.Verificador.SoporteConsulta.todas_con_soporte",
+      "Nexus.Verificador.SoporteConsulta.posiciones_acotadas",
+      "Nexus.Verificador.SoporteConsulta.air_indices",
+      "Nexus.Verificador.SoporteConsulta.indices_acotados",
+      "Nexus.Verificador.SoporteConsulta.cantidad",
+      "Nexus.Verificador.SoporteConsulta.origenes"
+    ]
+  },
+  "Verificador/SoporteCompleto": {
+    "grupos": [
+      "M35",
+      "M37",
+      "M39"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La aceptación completa entrega muestra y desafíos efectivos con soporte de la continuación. Se derivan todas las absorciones/retos y las aperturas de las cuarenta consultas desde el programa, con autenticación, rango, origen y cantidad 40*(6+2*k+2*(k+1)). No se reciben registros arbitrarios como premisas.",
+    "limites": [
+      "Modelo matemático con EOF estricto y corte R explícitos. No prueba equivalencia universal del ejecutable Rust."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.SoporteCompleto.del_programa",
+      "Nexus.Verificador.SoporteCompleto.prefijo_registrado",
+      "Nexus.Verificador.SoporteCompleto.base_registrada",
+      "Nexus.Verificador.SoporteCompleto.traza_registrada",
+      "Nexus.Verificador.SoporteCompleto.composicion_registrada",
+      "Nexus.Verificador.SoporteCompleto.consultas_soporte",
+      "Nexus.Verificador.SoporteCompleto.consultas_indices",
+      "Nexus.Verificador.SoporteCompleto.consultas_origenes",
+      "Nexus.Verificador.SoporteCompleto.consultas_cantidad",
+      "Nexus.Verificador.SoporteCompleto.soporte_total",
+      "Nexus.Verificador.SoporteCompleto.rango_total",
+      "Nexus.Verificador.SoporteCompleto.origen_total",
+      "Nexus.Verificador.SoporteCompleto.cantidad_total"
+    ]
+  },
+  "Canal/FamiliasPrograma": {
+    "grupos": [
+      "M37"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Los eventos del registro global y SinBad construyen todos sus cortes de primera exposición. La tabla de cada corte es el prefijo exacto hasta la posición de la primera consulta; el oráculo depende de ese prefijo y es independiente del testigo elegido. La familia se captura como OraculosEmitidos y lee las aperturas aceptadas.",
+    "limites": [
+      "El prefijo de la historia y la raíz son explícitos. No impone una distribución de probabilidades a las familias."
+    ],
+    "teoremas": [
+      "Nexus.Canal.FamiliasPrograma.tabla_corte",
+      "Nexus.Canal.FamiliasPrograma.depende_del_prefijo",
+      "Nexus.Canal.FamiliasPrograma.independiente_del_testigo",
+      "Nexus.Canal.FamiliasPrograma.coincide_con_final",
+      "Nexus.Canal.FamiliasPrograma.leer_emision",
+      "Nexus.Canal.FamiliasPrograma.apertura_en_familia"
+    ]
+  },
+  "Verificador/FamiliasAceptadas": {
+    "grupos": [
+      "M37"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Desde la aceptación con propuesta adaptativa de bytes y consultas arbitrarias intercaladas se construyen la familia AIR base y todas las capas FRI de traza/composición. Cada apertura efectiva coincide con su oráculo anterior al primer reto asociado. Solo se exige SinBad y aceptación; los hechos de registro se derivan. Las familias tienen k y k+1 capas.",
+    "limites": [
+      "Cierre del modelo clásico finito de registro/congelación M37. No cierra solidez integral, ley conjunta del selector, candidatos, refinamiento Rust, ZK, QROM o dictamen independiente."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.FamiliasAceptadas.construir_desde_aceptacion",
+      "Nexus.Verificador.FamiliasAceptadas.evento_por_indice",
+      "Nexus.Verificador.FamiliasAceptadas.todas_congeladas",
+      "Nexus.Verificador.FamiliasAceptadas.cantidades_familias",
+      "Nexus.Verificador.FamiliasAceptadas.desde_adversario",
+      "Nexus.Verificador.FamiliasAceptadas.cierre_adversario"
+    ]
+  },
+  "ROM/PlanPrograma": {
+    "grupos": [
+      "M35",
+      "M37",
+      "M39",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "El programa finito de bytes se compila al plan de respuestas frescas y memoria: las repeticiones no consumen cuota fresca. Se obtiene la probabilidad exacta y cota adaptativa de excepciones. Sin excepción, la función de la tabla final reproduce la ejecución del programa y satisface SinBad.",
+    "limites": [
+      "Se exige altura(programa)<=S. No se deduce automáticamente ese límite estructural de Q+V_T del ejecutable ni se cuenta memoria/CPU."
+    ],
+    "teoremas": [
+      "Nexus.ROM.PlanPrograma.rama_menor",
+      "Nexus.ROM.PlanPrograma.probabilidad_excepcion",
+      "Nexus.ROM.PlanPrograma.cota_excepcion",
+      "Nexus.ROM.PlanPrograma.recorrido_efectivo",
+      "Nexus.ROM.PlanPrograma.realizacion",
+      "Nexus.ROM.PlanPrograma.memoria_realiza"
+    ]
+  },
+  "Verificador/ExperimentoCausal": {
+    "grupos": [
+      "M37",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "En el experimento muestreado sin excepción, una aceptación produce todas las familias congeladas. El evento de aceptar sin reconstruirlas implica excepción y su probabilidad está acotada por min(1,S*(49*S+B)/2^256), bajo el presupuesto de altura declarado.",
+    "limites": [
+      "Es riesgo de fallo de reconstrucción causal, no probabilidad de aceptar un enunciado falso ni solidez integral. La ley conjunta del selector, candidatos, unión completa de eventos y refinamiento Rust siguen abiertos."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.ExperimentoCausal.familias_muestreadas",
+      "Nexus.Verificador.ExperimentoCausal.fallo_implica_excepcion",
+      "Nexus.Verificador.ExperimentoCausal.riesgo_fallo",
+      "Nexus.Verificador.ExperimentoCausal.cota_fallo"
+    ]
+  }
+}

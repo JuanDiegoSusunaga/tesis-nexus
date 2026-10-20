@@ -1,0 +1,135 @@
+{
+  "fecha": "2026-10-19",
+  "resultado": "correcto",
+  "tesis_completa_verificada": false,
+  "alcance": "Conciliación de la cota conservadora ROM y narrativa única del manuscrito; no prueba corrección global de la tesis.",
+  "lean_recompilado": false,
+  "fuentes_y_registros_lean_previamente_auditados_sin_cambios": 364,
+  "auditoria_global_de_referencia": "Documentos/06-Evidencia-TG2/2026-10-19/Lean-Global/verificacion.json",
+  "sha256_auditoria_global": "5a206a516c28e1613e6f3d76e1892ad8c167215d06b3a3e89aeca10f63291ce9",
+  "matriz_correspondencia": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-19/Conciliacion-Manuscrito-ROM/matriz-correspondencia.json",
+    "filas": 15,
+    "sha256": "f6633a9504e1b82364e5946a2b876314b21f7afc1e59ade836d1bb5406a6cfa6"
+  },
+  "ensamblado_identico_a_fuentes": true,
+  "etiquetas_internas_tg1_tg2": 0,
+  "word": {
+    "paginas": 112,
+    "tablas": 34,
+    "figuras": 3,
+    "ecuaciones_nativas": 583,
+    "rotulos_y_tablas_juntos": true
+  },
+  "pdf": {
+    "paginas": 99,
+    "paginas_vacias": [],
+    "texto_fuera_de_margenes": [],
+    "paginas_con_cota_rom_o_referencias": [
+      6,
+      8,
+      21,
+      79,
+      80,
+      81,
+      83,
+      84,
+      85,
+      86,
+      87,
+      90,
+      91,
+      92
+    ]
+  },
+  "tablas_comparadas": 34,
+  "celdas_comparadas": 848,
+  "cotejo_aritmetico_independiente": [
+    {
+      "L": 1000000,
+      "bits": 20,
+      "Q": 1048576,
+      "k": 12,
+      "valor_decimal_aproximado": "0.0047573354532699026208189613951294557",
+      "comparacion_racional_exacta": "< 2378667727/500000000000"
+    },
+    {
+      "L": 1000000,
+      "bits": 20,
+      "Q": 1000000,
+      "k": null,
+      "valor_decimal_aproximado": "0.029958214834855027348202303209189192",
+      "comparacion_racional_exacta": "< 1/20"
+    },
+    {
+      "L": 1000000,
+      "bits": 12,
+      "Q": 1000,
+      "k": null,
+      "valor_decimal_aproximado": "0.0076769646237559861321488209897579892",
+      "comparacion_racional_exacta": "< 1/80"
+    }
+  ],
+  "limite_del_cotejo": "La igualdad entre prosa, fórmulas y enunciados Lean se revisa manualmente; estos controles no mecanizan la semántica de la tesis.",
+  "revision_visual": {
+    "estado": "completa_sin_incidencias_de_contenido_o_maquetacion_detectadas",
+    "paginas_word_inspeccionadas": 112,
+    "paginas_pdf_inspeccionadas": 99,
+    "metodo": "Inspección de todas las páginas renderizadas, mediante láminas de cuatro páginas sin reescalado; las páginas idénticas por SHA-256 conservan la inspección previa de esta misma pasada.",
+    "render_word": "Motor nativo de Word mediante scripts/renderizar_manuscrito_word.ps1, ejecutado con Word oculto.",
+    "render_pdf": "Rasterización local del PDF generado desde las mismas fuentes con MathML y Chrome.",
+    "limitacion_entorno": "El renderizador empaquetado render_docx.py no pudo iniciar porque pdf2image no está instalado; se utilizó el flujo local existente.",
+    "manifiesto_imagenes": "Documentos/06-Evidencia-TG2/2026-10-19/Conciliacion-Manuscrito-ROM/imagenes-inspeccionadas.json",
+    "sha256_manifiesto_imagenes": "0e43065c7a850c882ccdf0be63a3d64a53ca5b2b8712a43b63352d94f0f0eb80"
+  },
+  "fuentes_y_salidas": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "sha256": "6f87efbeacde9de7988ff670b5fa2fae5ec4224ead4b93a45e291b8c0e985c3e"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "sha256": "04504bbc46463282911e4ec5f6b2a24f8cf08dd85f23bcf40de35505062e6890"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "sha256": "a428a5b3065dc9352f47863998c99d3b4ec937dd1e29b4a598ab0c7ca57fbbb7"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "sha256": "cc5d0d07858f93cc5120424b4861b63f93045c5e07fcbf8bcbd256223f76f97a"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "sha256": "776e6f9cda1b8636def6f732efa8ce830a3c5c5108288b004752d7847504c0fc"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "sha256": "a3382dcee2eeea4d425a907144269ad1ba77814b145c72a1c2937708c345054a"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "sha256": "ff6fb8abc3293e658356f37b244711d1e69c28bbbb0c1c0f395806558aad7114"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "sha256": "491afe758c4fab4c38c9c94b51f122f29fa8da41ce0baf9343db47fb641caf92"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "sha256": "f159b25e219d8b2e82be2ac770509a9ccd8f9bea8de8b115cd3ba640eb81f8c2"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "sha256": "950bf805da6ee88dbf1147d992827abb479c6f944a9de4c3830a1972310d3cd8"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "sha256": "87d7d51bb3ca41b482a5dd5f84a4167d93b37f5fb6d39044e8c832d50bf134a6"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "sha256": "c30a2ed17bfc27d348f4b686f2dfb3a6daab7fa90bfd098a89e5f0deab1db0f3"
+    }
+  ]
+}

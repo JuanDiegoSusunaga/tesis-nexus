@@ -1,0 +1,236 @@
+{
+  "esquema": 1,
+  "fecha": "2026-10-19",
+  "tipo": "cotejo_manual_manuscrito_con_enunciados_lean",
+  "tesis_completa_verificada": false,
+  "lean_recompilado": false,
+  "seccion": "6.7.9",
+  "filas": [
+    {
+      "id": "ROM01",
+      "afirmacion": "Una sola tabla ROM con memoria y continuaciones adaptativas.",
+      "estado": "demostrado_en_modelo",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/Verificador/LeyConjunta.lean",
+          "declaraciones": [
+            "ley_historia",
+            "respuesta_fresca"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM02",
+      "afirmacion": "T=2^k, 4<=k<=12; cuarenta consultas compartidas y trabajo de 12/20 bits.",
+      "estado": "condicion_explicita",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/Verificador/Forma.lean",
+          "declaraciones": [
+            "Forma"
+          ]
+        },
+        {
+          "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoFinal.lean",
+          "declaraciones": [
+            "cota_512",
+            "cota_512_todos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM03",
+      "afirmacion": "Q acota todas las llamadas adversarias en cada ejecución compatible; B=Q+24895 se deriva para R=512.",
+      "estado": "condicion_y_presupuesto_demostrado",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/Verificador/PresupuestoGlobal.lean",
+          "declaraciones": [
+            "llamadas_totales",
+            "entradas_distintas",
+            "presupuesto_512"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM04",
+      "afirmacion": "L es el parámetro auxiliar de marcas adicionales del registro, no un tamaño serializado ni el término histórico B_T.",
+      "estado": "definicion_del_modelo",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/ROM/Juego.lean",
+          "declaraciones": [
+            "Estado",
+            "Solicitud",
+            "inicial"
+          ]
+        },
+        {
+          "archivo": "formalizacion/Nexus/Verificador/CotaSinBad.lean",
+          "declaraciones": [
+            "cota_512"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM05",
+      "afirmacion": "Excepción hash <=min(1,B(49B+L)/2^256).",
+      "estado": "demostrado_en_modelo",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/Verificador/CotaSinBad.lean",
+          "declaraciones": [
+            "cota_512"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM06",
+      "afirmacion": "AIR/FRI sobre todos los perfiles: cardinal <=130709 y riesgo <=(130709/p^2+2524360/10^35)B.",
+      "estado": "demostrado_en_modelo",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/Verificador/CotaAdaptativaFinal.lean",
+          "declaraciones": [
+            "cardinal_excepciones",
+            "tasa",
+            "cota_rondas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM07",
+      "afirmacion": "A lo sumo Q+1 parejas estado/nonce distintas, registradas antes de sus dos respuestas.",
+      "estado": "demostrado_en_modelo",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/Canal/ConteoPares.lean",
+          "declaraciones": [
+            "adversario"
+          ]
+        },
+        {
+          "archivo": "formalizacion/Nexus/Canal/PrimerosPares.lean",
+          "declaraciones": [
+            "frescura_ambas",
+            "carga_adversario"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM08",
+      "afirmacion": "Masa de trabajo 2^-g y producto con el selector sin condicionar a un nonce ganador.",
+      "estado": "demostrado_en_modelo",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/Verificador/TrabajoDigest.lean",
+          "declaraciones": [
+            "masa_trabajo",
+            "ley_trabajo_y_respuesta"
+          ]
+        },
+        {
+          "archivo": "formalizacion/Nexus/Canal/TrabajoPrefijo.lean",
+          "declaraciones": [
+            "cota_condicionada",
+            "cota_union"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM09",
+      "afirmacion": "Sigma conserva la cola 2^-300, delta(B)=min(1,512(B+515)/2^256) y la razón hipergeométrica h_k.",
+      "estado": "demostrado_en_modelo",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoFinal.lean",
+          "declaraciones": [
+            "selector"
+          ]
+        },
+        {
+          "archivo": "formalizacion/Nexus/ROM/AcoplamientoCadena.lean",
+          "declaraciones": [
+            "error"
+          ]
+        },
+        {
+          "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoNumerica.lean",
+          "declaraciones": [
+            "selector_uniforme"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM10",
+      "afirmacion": "Cota final para perfil fijo y adaptativo; Bad y AIR/FRI se cobran una sola vez.",
+      "estado": "demostrado_en_modelo",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoFinal.lean",
+          "declaraciones": [
+            "cota512",
+            "cota512Todos",
+            "cota_512",
+            "cota_512_todos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM11",
+      "afirmacion": "L=1000000, k=12, g=20, Q=2^20: Pr[AceptaFalsa_12]<0.004757335454.",
+      "estado": "demostrado_en_modelo",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoNumerica.lean",
+          "declaraciones": [
+            "ejemplo_4096_release",
+            "aceptacion_4096_release"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM12",
+      "afirmacion": "L=1000000, g=20, Q=1000000: Pr[AceptaFalsa]<1/20 sobre todos los perfiles.",
+      "estado": "demostrado_en_modelo",
+      "lean": [
+        {
+          "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoNumerica.lean",
+          "declaraciones": [
+            "ejemplo_release",
+            "aceptacion_release"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ROM13",
+      "afirmacion": "El ejecutable Rust sin corte, codecs, SHA3 determinista fuera del ROM y QROM no quedan cubiertos.",
+      "estado": "fuera_del_resultado",
+      "lean": []
+    },
+    {
+      "id": "ROM14",
+      "afirmacion": "No se ha identificado la fórmula histórica más ajustada con la cota mecanizada; la tesis presenta solo la conservadora y conserva el texto anterior en respaldos.",
+      "estado": "equivalencia_no_demostrada",
+      "lean": []
+    },
+    {
+      "id": "ROM15",
+      "afirmacion": "La compilación no certifica automáticamente toda afirmación matemática de la tesis; esta pasada coteja la cota ROM y sus referencias transversales.",
+      "estado": "limite_del_cotejo",
+      "lean": []
+    }
+  ]
+}

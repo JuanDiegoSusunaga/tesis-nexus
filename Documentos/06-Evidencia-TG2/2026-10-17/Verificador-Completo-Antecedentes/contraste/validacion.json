@@ -1,0 +1,159 @@
+{
+  "esquema": 1,
+  "correcto": true,
+  "ejecuciones": [
+    {
+      "nombre": "cargo-check",
+      "argumentos": [
+        "cargo",
+        "check",
+        "--offline",
+        "--manifest-path",
+        "C:\\Users\\juand\\Desktop\\Tesis\\.tools\\lean\\contraste-verificador\\Cargo.toml"
+      ],
+      "codigo": 0,
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Verificador-Completo-Antecedentes/contraste/cargo-check-6.log",
+      "sha256": "f45ada75ce0c495e53163d7ed7636fd71d0ef0c3a7d0dbc7dd7ae72ac27bb1d2"
+    },
+    {
+      "nombre": "cargo-test",
+      "argumentos": [
+        "cargo",
+        "test",
+        "--offline",
+        "--manifest-path",
+        "C:\\Users\\juand\\Desktop\\Tesis\\.tools\\lean\\contraste-verificador\\Cargo.toml"
+      ],
+      "codigo": 0,
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Verificador-Completo-Antecedentes/contraste/cargo-test-3.log",
+      "sha256": "f6347853dd70c3e1d341f57b80ddca55fa105ef65a74f02bac332ebb446cc624"
+    },
+    {
+      "nombre": "cargo-build",
+      "argumentos": [
+        "cargo",
+        "build",
+        "--offline",
+        "--manifest-path",
+        "C:\\Users\\juand\\Desktop\\Tesis\\.tools\\lean\\contraste-verificador\\Cargo.toml"
+      ],
+      "codigo": 0,
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Verificador-Completo-Antecedentes/contraste/cargo-build-3.log",
+      "sha256": "34fde2559b7e5b046d5003be90ac4c7cb931d11c099c1732f9143153a033503c"
+    },
+    {
+      "nombre": "contraste-debug",
+      "argumentos": [
+        "C:\\Users\\juand\\Desktop\\Tesis\\.tools\\lean\\target-exportador\\debug\\tg2-contraste-verificador.exe",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-09-22\\R4-FRI-vinculado",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-10-17\\Verificador-Completo-Antecedentes\\contraste\\debug.json"
+      ],
+      "codigo": 0,
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Verificador-Completo-Antecedentes/contraste/contraste-debug-3.log",
+      "sha256": "47337a0359201e041c10651fad8349ecd8f2892c3d710ccfd70787bd6e70d418"
+    },
+    {
+      "nombre": "cargo-build-release",
+      "argumentos": [
+        "cargo",
+        "build",
+        "--offline",
+        "--release",
+        "--manifest-path",
+        "C:\\Users\\juand\\Desktop\\Tesis\\.tools\\lean\\contraste-verificador\\Cargo.toml"
+      ],
+      "codigo": 0,
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Verificador-Completo-Antecedentes/contraste/cargo-build-release-3.log",
+      "sha256": "d505a9c4bb72dff3ada1d3da49b7a655a4c653d1db831db1885070083cf2ad45"
+    },
+    {
+      "nombre": "contraste-release",
+      "argumentos": [
+        "C:\\Users\\juand\\Desktop\\Tesis\\.tools\\lean\\target-exportador\\release\\tg2-contraste-verificador.exe",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-09-22\\R4-FRI-vinculado",
+        "C:\\Users\\juand\\Desktop\\Tesis\\Documentos\\06-Evidencia-TG2\\2026-10-17\\Verificador-Completo-Antecedentes\\contraste\\release.json"
+      ],
+      "codigo": 0,
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Verificador-Completo-Antecedentes/contraste/contraste-release-3.log",
+      "sha256": "36c8a4a0c6828b7e9229c2e96fd5dacf48ff6e686e08cffca7008ec72c0f0af4"
+    }
+  ],
+  "fuentes_rust_inalteradas": {
+    "nexus/nexus-active/experiments/tg2_canonical_verifier.rs": "bc543ed1dca51cca940a46bf05edfdc3459b95d2075c8267035b13261609447c",
+    "nexus/nexus-active/src/batch.rs": "df7a3649148c8290ff0d00d474e3070b93384bebb5992bee7f61e170e87bc3b8",
+    "nexus/nexus-active/src/chain.rs": "02b6979e1b13bea8b57fd9128a93a61d5249840054dcdf79d5d513d8e9d5136f",
+    "nexus/nexus-active/src/execution.rs": "6f938cc83ba311f9322a327b5bf7292303b9bf14a0bb93fbd73be6f9e1362735",
+    "nexus/nexus-active/src/lib.rs": "6b38cacf8a74387ef7a2cad08303bc82d11e11b7af7875f6efeba9598e8ad54c",
+    "nexus/nexus-active/src/pq_verifier.rs": "f43ec5b557e7291ae07733d7feac6b2610e4e988d4c2bfaedb305ed4f8f5bd0b",
+    "nexus/nexus-active/src/sequencer.rs": "bd85345499d0a0f062fa090762260e26a47efdcc8f024383146b0479ba828c91",
+    "nexus/nexus-active/src/verifier.rs": "e0aa48d00d9c79b4695443a48e92b0192b55d44c86a48baf980b1815b3e73f3a",
+    "nexus/nexus-active/tests/tg2_verification.rs": "2d070ff517b73732ffb75e0e6e418db81959e0bf50923a67ee1f9a803ffc5c99",
+    "nexus/nexus-anchor/src/chain.rs": "d2a453ed22273d5d05e85bfad6289efff548ed9d2168d5e3a39da7a64f0a58ba",
+    "nexus/nexus-anchor/src/consensus.rs": "fc54deaafff2b0f2646bfa8a1e565828b8090a613eb979706bc4f3c0f1ea296f",
+    "nexus/nexus-anchor/src/data_availability.rs": "8c0291930cfbdea1b8d5c64a3518e378c2c5d843c9f52a8e4284ebc3e11326d9",
+    "nexus/nexus-anchor/src/finality.rs": "7573b8b51b1fb83770ac97952ff715327e55d63545ee651a588654b9e03c8a67",
+    "nexus/nexus-anchor/src/lib.rs": "dde092a93b02c139bf5a4d188732bbc84262d0957679bb7f148cf13bb04691c8",
+    "nexus/nexus-anchor/src/validator.rs": "88157402703c8668db100ceac7dcbca0fd8e298530b8aa28749e50eeba38d880",
+    "nexus/nexus-cli/src/main.rs": "b27fd564e3bce132b2c9eadeb985fdd4672630ece06a6a0f1fc89903a26a09fc",
+    "nexus/nexus-core/src/block.rs": "26e9eb963d1ac61a6714c0a9162dc70f6f1044a6014f690d5bd37aab892396fe",
+    "nexus/nexus-core/src/error.rs": "341ec5865031dd923fadafc84056d3e977f5863c858c379532a1a0a93ed73e71",
+    "nexus/nexus-core/src/lib.rs": "8eeaf86806e8b783566bf4b111ea4c734604ca0f47392c6df047dcc505876ab5",
+    "nexus/nexus-core/src/merkle.rs": "42301fad5a732f43be6faadabc5c9f78d28d27610a616324132c08c60531cddf",
+    "nexus/nexus-core/src/state.rs": "650dc1efbdadda21aae90aea1c0deed9da3a77a7ff05585197159ca29f85dcdd",
+    "nexus/nexus-core/src/traits.rs": "cf00fb6cf97654350aee9967df7a4292480b9bee64bbdc92b681f54c15e38e8d",
+    "nexus/nexus-core/src/transaction.rs": "454897ad4d888913a76fc2ef10a404607835c42c81316b740bed823c72f0231e",
+    "nexus/nexus-core/src/types.rs": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492",
+    "nexus/nexus-crypto/benches/classical_baseline.rs": "d7bc1b83ba346badf5826a974c2cbc530ec0ca86aecb519cba4c472cbceab896",
+    "nexus/nexus-crypto/benches/dilithium_bench.rs": "680b8e38c02b371f78951453aa938e4bc9508dbdd1524032c6a22e1c7b691cfc",
+    "nexus/nexus-crypto/benches/residencia_bench.rs": "4ff93c7794118936e310a333847fd9787a8a1bdb6e11fc0e9779602a98ca251e",
+    "nexus/nexus-crypto/examples/apt_sweep.rs": "0931cdf72cace4abb3abac785682a5959737c450ca375f08a73249d476b3ace8",
+    "nexus/nexus-crypto/examples/rotation_demo.rs": "20980e891511dcc252e5b628445527022798bb0d4ccc2bb3856380bc1ac16154",
+    "nexus/nexus-crypto/examples/tg2_throughput.rs": "102d51806838c53c4c2db814c16d8fea723e98bc043572931202106028e97db0",
+    "nexus/nexus-crypto/examples/throughput_tps.rs": "1ab4200bd4a7ee8bd085dcd9f27fd7fa39fce1396d2d227a5e0d3db483c6df71",
+    "nexus/nexus-crypto/experiments/tg2_throughput.rs": "4543da19a5a21e1325a6e077b93bf39144c83bd3fc95ef1e75a2e63cc9157dcb",
+    "nexus/nexus-crypto/src/dilithium.rs": "f414f7970bdda33de52b93ffcb26ff758898697060c639173fa99a0fe4a08d4e",
+    "nexus/nexus-crypto/src/entropy.rs": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f",
+    "nexus/nexus-crypto/src/keypair.rs": "c54b41ef0f80a396bbf7a0d0943521fd416b6dd42d933eac090dddba6d995334",
+    "nexus/nexus-crypto/src/lib.rs": "6154dce44c5dc2ec229f3cb47ed7c56293c6b2d4c2227b2066e96deb4d74eec9",
+    "nexus/nexus-crypto/src/registry.rs": "c512c6ce48321b8ce0f71bc3c45691f079fa427b018b1d805a6ce97c21467b50",
+    "nexus/nexus-crypto/src/signer.rs": "394d8ff0fc95e49db40210b55bce4ede345b88603cb1c4a8f3e3ba946952d539",
+    "nexus/nexus-crypto/tests/tg2_correspondence.rs": "74a65eeaa08044f4c5103756648e7cdad85ce67fc988f30f6424643d58d851c1",
+    "nexus/nexus-crypto/tests/tg2_residence.rs": "9d280cc114eee3da61d446d4d69e1b5697e7d1a442c496ed2bb5de1e24743628",
+    "nexus/nexus-crypto/tests/tg2_throughput.rs": "9c241c7a2166f3bd0c7131c8f8d2dbe1bb00c7bf5c484c07c4f4bd06ee49582c",
+    "nexus/nexus-network/src/lib.rs": "3d8cd52931d4f4db93909c0d17810b209dde16340968eea2b518f457e1542423",
+    "nexus/nexus-network/src/peer.rs": "84a454b4c5c5555d6812e1ac524311d1c59f0810437a1b29e60f579cf5a8713f",
+    "nexus/nexus-network/src/protocol.rs": "1c0e23d23e314dd59b39e20616784a6fb55764b70b27b1c7b03aab03fbc6915a",
+    "nexus/nexus-node/src/config.rs": "ebef163af60a07e1f8551bbe96419df67322ed8b0ff25e688dd85e8e5cd0dcfd",
+    "nexus/nexus-node/src/lib.rs": "da7eb9df729ca19dbdc1f83286284a18eb8b7c4877cec2b5e5a3354ca575a162",
+    "nexus/nexus-node/src/rpc.rs": "442963766bc9f30ee0ef9ca3c328b10f7ce453af810dc42bafb5280e22777b03",
+    "nexus/nexus-sentinel/src/lib.rs": "31098331af6d890578ccc07da031aea55c8a5b83e0ba160025466904224c6702",
+    "nexus/nexus-zk/examples/stark_demo.rs": "ee5beb634ff18619f08513290e0cde91a07340c41a8c0f06e9d7e46e25352b40",
+    "nexus/nexus-zk/examples/tg2_stark_measure.rs": "3399edbf42e2cfae2bc8330d499f06b2a0f6acd63a9469f8173a3c0751c69053",
+    "nexus/nexus-zk/experiments/tg2_air_algebra.rs": "c899b7f9a89b00df3a3a6c0fbdfda5b2dada531127de3c74de8a46e09b3f7d55",
+    "nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f",
+    "nexus/nexus-zk/experiments/tg2_trace_proximity.rs": "fc73af507ce1242667d47b17d37d0b4a9570bc75a1fb49eabdb469be960b2b1f",
+    "nexus/nexus-zk/src/circuits.rs": "fde3f78bb5e20e6be850bbe18f730fda3d815a45d19e906728be83aeac8ab899",
+    "nexus/nexus-zk/src/lib.rs": "7c1b7492c122d5bc83ca3bf3e729c1f898aaabba38dfdb49b4a6d421aa29bc63",
+    "nexus/nexus-zk/src/prover.rs": "18ab5a8d19a55e554cea62062003c1d1541330d22b085b89496e5d9e49c3866d",
+    "nexus/nexus-zk/src/verifier.rs": "5f4c8168b6ff86e2712474e2dfc443f056a6091d46c48d662ad90b0ffb0b9a73",
+    "nexus/nexus-zk/src/stark/air.rs": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7",
+    "nexus/nexus-zk/src/stark/channel.rs": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d",
+    "nexus/nexus-zk/src/stark/field.rs": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7",
+    "nexus/nexus-zk/src/stark/fri.rs": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5",
+    "nexus/nexus-zk/src/stark/merkle.rs": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f",
+    "nexus/nexus-zk/src/stark/mod.rs": "757961838fae6c64567b85ab72b360c3aa1ce0a7104f07f0ee86f7ef6b3fc66b",
+    "nexus/nexus-zk/src/stark/ntt.rs": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3",
+    "nexus/nexus-zk/src/stark/params.rs": "7968cb0f575eb17f6241240567ff1832944ee0e0208c20c9ccf711b2ec42f533",
+    "nexus/nexus-zk/tests/tg2_air_algebra.rs": "fd900251ca0b8363865c847976f618d66c8657993c0a24ad03cd5820eb86865e",
+    "nexus/nexus-zk/tests/tg2_linked_trace_fri.rs": "1270fe7b2a8b843b038db6fa6803975a1448044df1693b86875c20942316707d",
+    "nexus/nexus-zk/tests/tg2_soundness.rs": "1655b2f6e24d488329883aeec256595c8a02081419d7f0cb830c2e0435b878b7",
+    "nexus/nexus-zk/tests/tg2_trace_proximity.rs": "b3041688851e554e82c2340ff1e24d57017d7c662c11c9f226679717695fbcdc"
+  },
+  "casos": 50,
+  "casos_por_perfil": {
+    "debug": 25,
+    "release": 25
+  },
+  "diferencia_sufijos": "bincode::deserialize admite la cola; la envoltura EOF estricta la rechaza.",
+  "alcance": "Pruebas del paquete auxiliar y contraste de ejemplos, sin ejecutar Lean ni demostrar equivalencia universal Rust/Lean."
+}

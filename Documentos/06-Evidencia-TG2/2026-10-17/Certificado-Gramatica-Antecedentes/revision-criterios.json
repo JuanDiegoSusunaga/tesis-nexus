@@ -1,0 +1,290 @@
+{
+  "esquema": 1,
+  "grupos_revisados": [
+    {
+      "id": "M26",
+      "titulo": "Aritmética de mediciones: unidades, razones y redondeos",
+      "estado_anterior": "parcial",
+      "criterio_cierre_conservado": [
+        "Identificar datos fuente y versiones antes de calcular inversos, razones y diferencias.",
+        "Formalizar solo las cuentas y tolerancias; la medición permanece evidencia de una ejecución."
+      ],
+      "pendientes_anteriores": [
+        "Identificar las corridas originales H1/H2, sus versiones y el alcance de los datos, junto con M44. Las cuentas y redondeos están probados; no certifican procedencia, causalidad ni capacidad sostenida."
+      ],
+      "juicio": "Correspondencia semántica evaluada por el agente; sin dictamen independiente.",
+      "modulos_nuevos": [],
+      "estado_actual": "parcial",
+      "pendiente_actual": "Siguen sin identificar las corridas originales H1/H2 y sus versiones, junto con M44. Las cuentas y tolerancias ya probadas no certifican procedencia ni capacidad sostenida; esta pasada no inventa datos de esas corridas.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Identificar datos fuente y versiones antes de calcular inversos, razones y diferencias.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Formalizar solo las cuentas y tolerancias; la medición permanece evidencia de una ejecución.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ]
+    },
+    {
+      "id": "M31",
+      "titulo": "Límites del verificador legado y del conocimiento cero",
+      "estado_anterior": "parcial",
+      "criterio_cierre_conservado": [
+        "Representar el puente de raíces y su dominio, incluidos alias y rango de índices.",
+        "Formalizar la reconstrucción del testigo del ejemplo pequeño si se usa como resultado matemático.",
+        "No convertir pruebas de casos ni ausencia de enmascaramiento en una prueba general de solidez."
+      ],
+      "pendientes_anteriores": [
+        "Identificar y extraer los nodos y evaluaciones concretos de los certificados del ejemplo; enlazar su reconstrucción con esos certificados y el verificador legado. La interpolación condicional ya probada no establece esa correspondencia ni conocimiento cero general."
+      ],
+      "juicio": "Correspondencia semántica evaluada por el agente; sin dictamen independiente.",
+      "modulos_nuevos": [
+        "ROM/CertificadoLegado16"
+      ],
+      "estado_actual": "modelo_verificado",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Representar el puente de raíces y su dominio, incluidos alias y rango de índices.",
+          "evaluacion": "satisfecho_en_el_modelo",
+          "justificacion": "Puente de ocho bytes, dominio canónico, alias modular y de índices ya formalizados; se conserva su alcance legado.",
+          "teoremas": [
+            "Nexus.ROM.Raices.puente_raiz_canonica",
+            "Nexus.ROM.Raices.puente_inyectivo_en_dominio",
+            "Nexus.ROM.Raices.cola_ignorada",
+            "Nexus.ROM.Raices.alias_modular_concreto",
+            "Nexus.ROM.Raices.alias_indice"
+          ]
+        },
+        {
+          "criterio_original": "Formalizar la reconstrucción del testigo del ejemplo pequeño si se usa como resultado matemático.",
+          "evaluacion": "satisfecho_en_el_modelo",
+          "justificacion": "El certificado legado concreto se genera y verifica en Rust y se relee independientemente con Python. Sus índices/valores literales se prueban en Lean: dieciséis nodos distintos, evaluaciones exactas y reconstrucción de la segunda fila 5. La vinculación a bytes/SHA3 es evidencia externa explícita.",
+          "teoremas": [
+            "Nexus.ROM.CertificadoLegado16.posiciones_del_certificado",
+            "Nexus.ROM.CertificadoLegado16.nodos_distintos",
+            "Nexus.ROM.CertificadoLegado16.grado_polinomio",
+            "Nexus.ROM.CertificadoLegado16.evaluaciones_certificado",
+            "Nexus.ROM.CertificadoLegado16.interpolacion_exacta",
+            "Nexus.ROM.CertificadoLegado16.testigo_recuperado",
+            "Nexus.ROM.CertificadoLegado16.segunda_fila_unica"
+          ]
+        },
+        {
+          "criterio_original": "No convertir pruebas de casos ni ausencia de enmascaramiento en una prueba general de solidez.",
+          "evaluacion": "satisfecho_en_el_modelo",
+          "justificacion": "Los resultados se limitan al ejemplo concreto y a la unicidad condicionada al grado; no se afirma ZK ni solidez general ni refinamiento universal del código.",
+          "teoremas": [
+            "Nexus.ROM.CertificadoLegado16.cualquier_traza_compatible",
+            "Nexus.ROM.CertificadoLegado16.segunda_fila_unica"
+          ]
+        }
+      ],
+      "obligaciones_adicionales_abiertas": [
+        "Ejemplo concreto de PqValidityProof legado, con hojas AIR de ocho bytes y dominio NEXUS-STARK-v2; no se identifica con TG2 v1. El enlace de archivo/SHA3/bincode es evidencia ejecutada externa al núcleo Lean. No prueba refinamiento universal Rust, ZK ni solidez general."
+      ],
+      "seguridad_implementacion_demostrada": false
+    },
+    {
+      "id": "M35",
+      "titulo": "Muestra compartida e hipergeométrica H",
+      "estado_anterior": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+        "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI."
+      ],
+      "pendientes_anteriores": [
+        "Derivar de todas las historias del protocolo las claves frescas y leyes de entrada del selector implementado, con la tabla compartida. Conservar la muestra común de ambas fases FRI; no suponer independencia entre ellas."
+      ],
+      "juicio": "Correspondencia semántica evaluada por el agente; sin dictamen independiente.",
+      "modulos_nuevos": [
+        "Canal/GramaticaTG2",
+        "ROM/ProgramaCompartido",
+        "Canal/ProgramaTG2"
+      ],
+      "estado_actual": "parcial",
+      "pendiente_actual": "Instanciar la proyección de respuestas y demostrar las claves frescas bajo las excepciones en todas las historias del ejecutable y del adversario. El programa de canal usa una sola muestra; su ley fresca está condicionada a ausencia de la clave en la historia, no se elimina esa condición.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ]
+    },
+    {
+      "id": "M36",
+      "titulo": "Solidez ideal por rondas y reinicios",
+      "estado_anterior": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+        "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash."
+      ],
+      "pendientes_anteriores": [
+        "Completar el adaptador externo de rondas y reinicios y obtener revisión independiente. El autor declaró que no hay dictamen. El presupuesto de inicios ideal B no equivale automáticamente a consultas hash."
+      ],
+      "juicio": "Correspondencia semántica evaluada por el agente; sin dictamen independiente.",
+      "modulos_nuevos": [
+        "ROM/ProgramaCompartido",
+        "Canal/ProgramaTG2"
+      ],
+      "estado_actual": "parcial",
+      "pendiente_actual": "Completar el adaptador integral de rondas y reinicios y obtener revisión independiente; el autor declaró que no hay dictamen. El compilador de programas finitos no identifica por sí solo los inicios B con consultas hash Q.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ]
+    },
+    {
+      "id": "M37",
+      "titulo": "Extracción Merkle, bytes y orden temporal ROM",
+      "estado_anterior": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar extracción, congelación y órdenes de primeras consultas bajo ausencia de aciertos.",
+        "Obtener los hechos de registro y familias causales para todas las historias del protocolo."
+      ],
+      "pendientes_anteriores": [
+        "Construir las familias causales y los hechos de registro para todas las historias del protocolo usando una tabla común, a partir de sus eventos y gramática reales."
+      ],
+      "juicio": "Correspondencia semántica evaluada por el agente; sin dictamen independiente.",
+      "modulos_nuevos": [
+        "Canal/GramaticaTG2",
+        "ROM/ProgramaCompartido",
+        "Canal/ProgramaTG2"
+      ],
+      "estado_actual": "parcial",
+      "pendiente_actual": "Extender el programa causal a todas las consultas y eventos del protocolo/adversario, incluidas entradas arbitrarias fuera de la gramática acotada. Derivar registro y congelación antes de la primera exposición bajo los eventos de excepción; el solapamiento enunciado/nodo debe seguir en la tabla común.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar extracción, congelación y órdenes de primeras consultas bajo ausencia de aciertos.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Obtener los hechos de registro y familias causales para todas las historias del protocolo.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ]
+    },
+    {
+      "id": "M39",
+      "titulo": "Presupuestos, formas, gramática y semántica del verificador",
+      "estado_anterior": "parcial",
+      "criterio_cierre_conservado": [
+        "Justificar V_T, B_T y S=Q+V_T a partir de listas, rechazos, serialización e índices.",
+        "Enlazar los modelos tipados con enteros de máquina y el verificador Rust."
+      ],
+      "pendientes_anteriores": [
+        "Derivar todas las formas, rechazos y presupuestos de la gramática, serialización, deserialización e índices del verificador Rust y su semántica de enteros de máquina."
+      ],
+      "juicio": "Correspondencia semántica evaluada por el agente; sin dictamen independiente.",
+      "modulos_nuevos": [
+        "Canal/GramaticaTG2",
+        "Canal/ProgramaTG2",
+        "FRI/IndicesMaquina"
+      ],
+      "estado_actual": "parcial",
+      "pendiente_actual": "Completar gramática de certificados, parser/deserialización, rechazos y correspondencia integral con Rust. Ya se deriva la cuenta del canal y se verifican las seis posiciones con USize; faltan la composición con todas las aperturas, las otras operaciones de máquina y el refinamiento del ejecutable.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Justificar V_T, B_T y S=Q+V_T a partir de listas, rechazos, serialización e índices.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Enlazar los modelos tipados con enteros de máquina y el verificador Rust.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ]
+    },
+    {
+      "id": "M40",
+      "titulo": "Potencial de nonces y cola del selector",
+      "estado_anterior": "parcial",
+      "criterio_cierre_conservado": [
+        "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+        "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado."
+      ],
+      "pendientes_anteriores": [
+        "Instanciar el potencial con los árboles de candidatos reales, sus conjuntos buenos, leyes, nonces, trabajo y tabla compartida antes de responder; cubrir abandono, intercalación y duplicados sin condicionar a un nonce encontrado."
+      ],
+      "juicio": "Correspondencia semántica evaluada por el agente; sin dictamen independiente.",
+      "modulos_nuevos": [
+        "Canal/GramaticaTG2",
+        "ROM/ProgramaCompartido",
+        "Canal/ProgramaTG2"
+      ],
+      "estado_actual": "parcial",
+      "pendiente_actual": "Construir los programas de los candidatos reales y sus conjuntos buenos con cotas antes de responder, además del trabajo/nonce y la tabla global. El compilador memoriza las repeticiones, pero no demuestra valor<=rho para esos candidatos ni la carga global de inicios.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ]
+    },
+    {
+      "id": "M41",
+      "titulo": "Cota ROM completa y ejemplo numérico",
+      "estado_anterior": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar la cota parametrizada del evento excepcional del registro.",
+        "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+        "Certificar el ejemplo numérico solo después de fijar las hipótesis completas."
+      ],
+      "pendientes_anteriores": [
+        "Probar las inclusiones y leyes de los eventos del ejecutable bajo un mismo experimento e instanciar la composición de los tres términos con el adaptador causal, sesgos, selector y presupuestos. La aritmética numérica existente es condicional."
+      ],
+      "juicio": "Correspondencia semántica evaluada por el agente; sin dictamen independiente.",
+      "modulos_nuevos": [
+        "Canal/GramaticaTG2",
+        "ROM/ProgramaCompartido",
+        "Canal/ProgramaTG2"
+      ],
+      "estado_actual": "parcial",
+      "pendiente_actual": "Probar las inclusiones y leyes de los tres eventos bajo un mismo experimento del ejecutable, incluyendo adversario, sesgo, selector y presupuestos completos. La gramática, programa causal y cuenta del canal son componentes; no instancian todavía la cota numérica global.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar la cota parametrizada del evento excepcional del registro.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Certificar el ejemplo numérico solo después de fijar las hipótesis completas.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ]
+    }
+  ],
+  "cerrados_en_su_modelo": [
+    "M31"
+  ],
+  "parciales_restantes": [
+    "M26",
+    "M35",
+    "M36",
+    "M37",
+    "M39",
+    "M40",
+    "M41"
+  ],
+  "criterios_reducidos": false,
+  "obligaciones_adicionales_cerradas": false,
+  "tesis_completa_verificada": false,
+  "dictamen_independiente": "pendiente"
+}

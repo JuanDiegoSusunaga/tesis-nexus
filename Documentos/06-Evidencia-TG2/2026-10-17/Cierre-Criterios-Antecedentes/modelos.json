@@ -1,0 +1,82 @@
+{
+  "Cripto/AplicacionAutenticada": {
+    "grupos": [
+      "M11"
+    ],
+    "secciones": [
+      "6.4.3"
+    ],
+    "verificado": "El contexto procede del registro de claves. Aceptar aplica el documento y consume el nonce atómicamente; repetir la solicitud rechaza. Bajo un contrato explícito de procedencia de firmas, admitir implica documento autorizado o colisión con un documento autorizado; excluir ese evento da autorización.",
+    "limites": [
+      "No prueba el contrato de procedencia para ML-DSA ni resistencia a colisiones. No presupone inyectividad global de un hash finito, ni identifica el codec con bincode TG1."
+    ],
+    "teoremas": [
+      "Nexus.Cripto.Transacciones.Aplicacion.procesar_exige_admision",
+      "Nexus.Cripto.Transacciones.Aplicacion.procesar_actualiza_atomico",
+      "Nexus.Cripto.Transacciones.Aplicacion.procesar_vincula_clave",
+      "Nexus.Cripto.Transacciones.Aplicacion.procesar_impide_repeticion",
+      "Nexus.Cripto.Transacciones.Aplicacion.admision_autorizada_o_colision",
+      "Nexus.Cripto.Transacciones.Aplicacion.procesar_autorizado_sin_colision"
+    ]
+  },
+  "Salud/Operaciones": {
+    "grupos": [
+      "M18"
+    ],
+    "secciones": [
+      "5.2",
+      "5.4",
+      "5.5"
+    ],
+    "verificado": "Composición atómica de derivación por política y admisión de una operación. Sin evaluación, renovación pendiente o reevaluación sin rotación no se produce estado de operación; éxito exige política, consumo de uso y admisión. Una admisión fallida no produce estado nuevo.",
+    "limites": [
+      "Operaciones que usan la clave en un modelo Option; no implementa una KDF, firma real, persistencia de estado ni equivalencia Rust/f64."
+    ],
+    "teoremas": [
+      "Nexus.Salud.Operaciones.bloqueo_derivacion_bloquea_operacion",
+      "Nexus.Salud.Operaciones.operacion_exige_politica_y_admision",
+      "Nexus.Salud.Operaciones.sin_evaluar_bloquea_operacion",
+      "Nexus.Salud.Operaciones.renovacion_bloquea_operacion",
+      "Nexus.Salud.Operaciones.reevaluar_sin_rotar_bloquea_operacion",
+      "Nexus.Salud.Operaciones.admision_fallida_no_produce_estado"
+    ]
+  },
+  "Complejidad/FamiliasCodificacion": {
+    "grupos": [
+      "M25"
+    ],
+    "secciones": [
+      "6.5"
+    ],
+    "verificado": "Biyeción de índices de cabecera y bits de cada coeficiente con posiciones del paquete. Codificación inyectiva, recuperación de todos los bits y longitud exacta. Cotas O para familias en las que cabecera, componentes, grado y ancho varían simultáneamente, con cota uniforme explícita de la cabecera.",
+    "limites": [
+      "Formato de bits de ancho fijo declarado; no identifica el empaquetado ni parser Rust. La constante de O exige la cota eventual de cabecera y no estima tiempo medido."
+    ],
+    "teoremas": [
+      "Nexus.Complejidad.Comunicacion.Familias.longitud_codifica",
+      "Nexus.Complejidad.Comunicacion.Familias.decodifica_codifica",
+      "Nexus.Complejidad.Comunicacion.Familias.codifica_inyectiva",
+      "Nexus.Complejidad.Comunicacion.Familias.longitud_publica",
+      "Nexus.Complejidad.Comunicacion.Familias.longitud_firma",
+      "Nexus.Complejidad.Comunicacion.Familias.publica_familia_es_O",
+      "Nexus.Complejidad.Comunicacion.Familias.firma_familia_es_O"
+    ]
+  },
+  "Modelos/DisponibilidadCondicional": {
+    "grupos": [
+      "M27"
+    ],
+    "secciones": [
+      "3",
+      "6.6"
+    ],
+    "verificado": "Muestreo DA sin reemplazo: espacio no vacío y probabilidad exacta de omitir fragmentos no disponibles, fijado el conjunto disponible antes de muestrear. Contraejemplo a intersección honesta con quórums inclusivos 2/3 y peso bizantino exactamente 1/3.",
+    "limites": [
+      "Resultados de referencia condicionados; no prueban consenso, incentivos ni DA desplegados, ni la afirmación de mayoría coludida del diseño. TG1 permanece intacto."
+    ],
+    "teoremas": [
+      "Nexus.Modelos.Disponibilidad.Condicional.omision_fragmentos_no_disponibles",
+      "Nexus.Modelos.Disponibilidad.Condicional.frontera_quorum_sin_interseccion_honesta"
+    ]
+  }
+}

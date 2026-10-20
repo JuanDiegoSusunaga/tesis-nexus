@@ -1,0 +1,377 @@
+{
+  "Reticulos/Euclideos": {
+    "grupo": "M02",
+    "secciones": [
+      "6.2.1"
+    ],
+    "verificado": "Span entero de una familia real independiente, rango y dimensión intrínseca, combinaciones inyectivas y finitud en bolas. Mínimos sucesivos definidos por radios; monotonía, primer mínimo positivo y alcanzado. Relaciones SVP/SIVP/GapSVP y promesa disjunta.",
+    "limites": [
+      "No demuestra dureza computacional ni aproximación algorítmica. La consecución de mínimos superiores no se prueba aquí."
+    ],
+    "teoremas": [
+      "Nexus.Reticulos.rango_le_dimension",
+      "Nexus.Reticulos.dimension_intrinseca",
+      "Nexus.Reticulos.generador_pertenece",
+      "Nexus.Reticulos.generador_no_nulo",
+      "Nexus.Reticulos.combinacion_pertenece",
+      "Nexus.Reticulos.combinacion_inyectiva",
+      "Nexus.Reticulos.base_espacio_coincide",
+      "Nexus.Reticulos.imagen_reticulo_interno",
+      "Nexus.Reticulos.combinaciones_exactas",
+      "Nexus.Reticulos.bola_finita",
+      "Nexus.Reticulos.radios_acotados_inferiormente",
+      "Nexus.Reticulos.radios_no_vacios",
+      "Nexus.Reticulos.minimo_no_negativo",
+      "Nexus.Reticulos.minimo_le_radio",
+      "Nexus.Reticulos.radios_monotonos",
+      "Nexus.Reticulos.minimos_monotonos",
+      "Nexus.Reticulos.existe_vector_mas_corto",
+      "Nexus.Reticulos.radio_uno_iff",
+      "Nexus.Reticulos.primer_minimo_alcanzado",
+      "Nexus.Reticulos.primer_minimo_positivo",
+      "Nexus.Reticulos.promesa_gap_disjunta",
+      "Nexus.Reticulos.svp_mayor_factor",
+      "Nexus.Reticulos.sivp_mayor_factor"
+    ]
+  },
+  "MLDSA/Plantilla": {
+    "grupo": "M07",
+    "secciones": [
+      "6.3.1"
+    ],
+    "verificado": "Plantilla FSwA con dimensiones, respuesta z, reconstrucción Az-ct=Ay-cs2, pistas booleanas, cotas de norma y peso, intento con rechazo y corrección condicionada a reconstrucción de pistas y reto.",
+    "limites": [
+      "No identifica redondeos concretos, codecs, expansión, distribución de máscaras, firma hedged ni simulador del backend."
+    ],
+    "teoremas": [
+      "Nexus.MLDSA.ecuacion_respuesta",
+      "Nexus.MLDSA.verifica_plantilla",
+      "Nexus.MLDSA.intento_acepta_iff",
+      "Nexus.MLDSA.intento_rechaza_iff",
+      "Nexus.MLDSA.aceptacion_respeta_norma",
+      "Nexus.MLDSA.aceptacion_respeta_pistas",
+      "Nexus.MLDSA.cotas_mayores"
+    ]
+  },
+  "Cripto/Variacion": {
+    "grupo": "M38",
+    "secciones": [
+      "6.7.7",
+      "6.7.9"
+    ],
+    "verificado": "Leyes racionales finitas normalizadas, variación total y cota de cualquier evento; productos independientes y pérdida aditiva, con iteración para m factores.",
+    "limites": [
+      "La independencia es explícita en la construcción del producto. No establece frescura para historias adaptativas del protocolo."
+    ],
+    "teoremas": [
+      "Nexus.Cripto.Variacion.distancia_no_negativa",
+      "Nexus.Cripto.Variacion.distancia_simetrica",
+      "Nexus.Cripto.Variacion.distancia_reflexiva",
+      "Nexus.Cripto.Variacion.evento_complemento",
+      "Nexus.Cripto.Variacion.diferencia_evento_acotada",
+      "Nexus.Cripto.Variacion.producto_distancia",
+      "Nexus.Cripto.Variacion.producto_independiente_cota",
+      "Nexus.Cripto.Variacion.evento_producto_cota"
+    ]
+  },
+  "ROM/Sesgo": {
+    "grupo": "M38",
+    "secciones": [
+      "6.7.7",
+      "6.7.9"
+    ],
+    "verificado": "Conteo exacto de preimágenes de x mod p sobre S valores; ley normalizada, Delta=r(p-r)/(pS), masa máxima y cuadrado para pares independientes. Cota de eventos para m retos de dos coordenadas y números Goldilocks, incluido 56Delta<7.069e-28.",
+    "limites": [
+      "Se refiere a bloques uniformes frescos e independientes. Falta el adaptador causal que atribuya estas leyes a todas las respuestas relevantes del registro ROM."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Sesgo.descomposicion",
+      "Nexus.ROM.Sesgo.cociente_fibra",
+      "Nexus.ROM.Sesgo.representante_fibra",
+      "Nexus.ROM.Sesgo.cardinal_fibra",
+      "Nexus.ROM.Sesgo.particion_residuos",
+      "Nexus.ROM.Sesgo.masa_no_negativa",
+      "Nexus.ROM.Sesgo.masa_normalizada",
+      "Nexus.ROM.Sesgo.desviacion_residuo",
+      "Nexus.ROM.Sesgo.sesgo_exacto",
+      "Nexus.ROM.Sesgo.masa_le_maxima",
+      "Nexus.ROM.Sesgo.goldilocks_resto",
+      "Nexus.ROM.Sesgo.goldilocks_intervalo",
+      "Nexus.ROM.Sesgo.hibrido_cota",
+      "Nexus.ROM.Sesgo.goldilocks_28_retos",
+      "Nexus.ROM.Sesgo.distancia_reduccion",
+      "Nexus.ROM.Sesgo.masa_extension_acotada",
+      "Nexus.ROM.Sesgo.evento_retos_extension"
+    ]
+  },
+  "Cripto/Derivacion": {
+    "grupo": "M12",
+    "secciones": [
+      "5.3",
+      "5.4"
+    ],
+    "verificado": "Formato de dominio Sentinel, dos contadores de ocho bytes, semilla de 32 bytes y contexto; inyectividad, reproducibilidad de hash/KeyGen deterministas, separación de entradas de rotación y derivación, y colisión explícita si entradas distintas dan la misma salida.",
+    "limites": [
+      "Determinismo no implica inyectividad del hash: se prueba un contraejemplo constante. No demuestra uniformidad KDF, dureza de SHA3, material fresco, seguridad de KeyGen o ausencia de desbordamientos Rust."
+    ],
+    "teoremas": [
+      "Nexus.Cripto.Derivacion.longitud_dominio_derivar",
+      "Nexus.Cripto.Derivacion.longitud_dominio_rotar",
+      "Nexus.Cripto.Derivacion.limite_contador",
+      "Nexus.Cripto.Derivacion.longitud_entrada",
+      "Nexus.Cripto.Derivacion.codificacion_inyectiva",
+      "Nexus.Cripto.Derivacion.epoca_separa_entrada",
+      "Nexus.Cripto.Derivacion.contador_separa_entrada",
+      "Nexus.Cripto.Derivacion.contexto_separa_entrada",
+      "Nexus.Cripto.Derivacion.reproducibilidad",
+      "Nexus.Cripto.Derivacion.separacion_o_colision",
+      "Nexus.Cripto.Derivacion.determinismo_no_exige_inyectividad",
+      "Nexus.Cripto.Derivacion.longitud_entrada_rotar",
+      "Nexus.Cripto.Derivacion.dominios_distintos",
+      "Nexus.Cripto.Derivacion.derivar_rotar_separados"
+    ]
+  },
+  "Cripto/RegistroEpocas": {
+    "grupo": "M13",
+    "secciones": [
+      "5.4"
+    ],
+    "verificado": "Estado por identidad y época, preparación de lote, instalación atómica bajo controles, conservación de identidad predeterminada e historial, vigencia actual y rechazo de época retirada. Prefijo confiable, truncación posterior indetectable por punto antiguo y hash de prefijo o colisión.",
+    "limites": [
+      "Autorización, posesión y validez del registro son controles booleanos parametrizados. No formaliza aún su derivación de firmas, la cadena completa de registros Rust, retiro, custodia durable, destrucción o secrecia hacia adelante."
+    ],
+    "teoremas": [
+      "Nexus.Cripto.Epocas.preparacion_fallida_atomica",
+      "Nexus.Cripto.Epocas.autorizacion_fallida_atomica",
+      "Nexus.Cripto.Epocas.posesion_fallida_atomica",
+      "Nexus.Cripto.Epocas.registro_fallido_atomico",
+      "Nexus.Cripto.Epocas.rotacion_incrementa_epoca",
+      "Nexus.Cripto.Epocas.rotacion_preserva_predeterminada",
+      "Nexus.Cripto.Epocas.rotacion_extiende_historial",
+      "Nexus.Cripto.Epocas.rotacion_preserva_identidades",
+      "Nexus.Cripto.Epocas.epoca_retirada_no_vigente",
+      "Nexus.Cripto.Epocas.prefijo_exige_longitud",
+      "Nexus.Cripto.Epocas.prefijo_compatible_con_extension",
+      "Nexus.Cripto.Epocas.punto_antiguo_admite_truncacion",
+      "Nexus.Cripto.Epocas.hash_prefijo_o_colision",
+      "Nexus.Cripto.Epocas.preparacion_conserva_identidades",
+      "Nexus.Cripto.Epocas.fallo_de_derivacion_rechaza_lote"
+    ]
+  },
+  "Cripto/Transacciones": {
+    "grupo": "M11",
+    "secciones": [
+      "4.3",
+      "6.3.2"
+    ],
+    "verificado": "Documento con identidad, época, cadena, nonce y contenido, codec matemático con longitud y decodificación inversa. Admisión anterior al cambio de estado, controles de cadena/nonce, consumo que evita repetición y cambio de contenido que exige otro hash o colisión.",
+    "limites": [
+      "El codec usa listas de naturales y no se identifica con bincode ni con transacciones TG1. Verificación y asociación de claves son parámetros; no acredita seguridad de hash/firma o refinamiento del programa."
+    ],
+    "teoremas": [
+      "Nexus.Cripto.Transacciones.decodifica_codifica",
+      "Nexus.Cripto.Transacciones.codifica_inyectiva",
+      "Nexus.Cripto.Transacciones.no_admisible_no_cambia",
+      "Nexus.Cripto.Transacciones.cambio_exige_verificacion",
+      "Nexus.Cripto.Transacciones.otra_cadena_rechazada",
+      "Nexus.Cripto.Transacciones.nonce_incorrecto_rechazado",
+      "Nexus.Cripto.Transacciones.contenido_cambiado_colision_o_digest_distinto",
+      "Nexus.Cripto.Transacciones.nonce_consumido_impide_repeticion"
+    ]
+  },
+  "Modelos/IdealHistorico": {
+    "grupo": "M34",
+    "secciones": [
+      "6.7.5"
+    ],
+    "verificado": "Fórmula histórica con error por rondas, omisión y unión conservadora, conservada separada de la fórmula refinada. Techo para el número de parejas, cuatro redondeos superiores de la tabla 6.19 y unión de cuatro eventos PMF bajo inclusión y cotas individuales.",
+    "limites": [
+      "Las cotas individuales FRI y la descomposición del protocolo son hipótesis explícitas. No mecaniza el teorema bibliográfico general ni el verificador completo."
+    ],
+    "teoremas": [
+      "Nexus.Modelos.IdealHistorico.error_fri_le_uno",
+      "Nexus.Modelos.IdealHistorico.limite_le_uno",
+      "Nexus.Modelos.IdealHistorico.error_fri_no_negativo",
+      "Nexus.Modelos.IdealHistorico.techo_omision",
+      "Nexus.Modelos.IdealHistorico.tabla6_19",
+      "Nexus.Modelos.IdealHistorico.presupuesto_por_rondas",
+      "Nexus.Modelos.IdealHistorico.union_eventos",
+      "Nexus.Modelos.IdealHistorico.union_conservadora"
+    ]
+  },
+  "ROM/RaicesCanonicas": {
+    "grupo": "M31",
+    "secciones": [
+      "6.7.1",
+      "6.7.3"
+    ],
+    "verificado": "Puente legado de raíz a campo mediante ocho bytes LE y reducción; dominio canónico inyectivo, cola de 24 bytes ignorada, alias concretos 0/p e índices congruentes. Recuperación polinómica desde suficientes aperturas públicas distintas.",
+    "limites": [
+      "No demuestra aceptación de todos los certificados legados ni equivalencia del verificador Rust. La reconstrucción exige suficientes evaluaciones distintas y cota de grado."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Raices.puente_raiz_canonica",
+      "Nexus.ROM.Raices.raiz_canonica_inyectiva",
+      "Nexus.ROM.Raices.raiz_canonica_valida",
+      "Nexus.ROM.Raices.dominio_canonico_invertible",
+      "Nexus.ROM.Raices.puente_inyectivo_en_dominio",
+      "Nexus.ROM.Raices.cola_ignorada",
+      "Nexus.ROM.Raices.alias_modular_concreto",
+      "Nexus.ROM.Raices.alias_indice",
+      "Nexus.ROM.Raices.alias_3_19",
+      "Nexus.ROM.Raices.reconstruccion_por_aperturas"
+    ]
+  },
+  "Complejidad/Comunicacion": {
+    "grupo": "M25",
+    "secciones": [
+      "6.5",
+      "6.7.4"
+    ],
+    "verificado": "Conteo de caminos, capas y consultas del formato TG2 declarado; cota cuadrática y O(q log²N), tabla de cuatro tamaños y LDE. Cotas para bits de claves y firmas con anchos y cabeceras explícitos.",
+    "limites": [
+      "Falta refinamiento con serialización Rust y una familia completa de anchos para las asíntotas de claves. La cota de operaciones no estima tiempos medidos."
+    ],
+    "teoremas": [
+      "Nexus.Complejidad.Comunicacion.caminos_cota",
+      "Nexus.Complejidad.Comunicacion.suma_tg2_cota",
+      "Nexus.Complejidad.Comunicacion.consulta_tg2_cuadratica",
+      "Nexus.Complejidad.Comunicacion.bytes_tg2_cota",
+      "Nexus.Complejidad.Comunicacion.bytes_tg2_es_O",
+      "Nexus.Complejidad.Comunicacion.tabla_bytes_tg2",
+      "Nexus.Complejidad.Comunicacion.tabla_lde",
+      "Nexus.Complejidad.Comunicacion.publica_cota",
+      "Nexus.Complejidad.Comunicacion.firma_cota"
+    ]
+  },
+  "Modelos/QuorumIncentivos": {
+    "grupo": "M27",
+    "secciones": [
+      "3"
+    ],
+    "verificado": "Pesos de stake normalizados e intersección honesta con umbrales estrictos o inclusivos correctos. Juego de pagos explícito: condición necesaria y suficiente de Nash y desviación unilateral rentable. Recuperación Reed-Solomon condicionada y contraejemplo a recuperación por mera duplicación.",
+    "limites": [
+      "Son modelos de referencia que no acreditan consenso, incentivos o disponibilidad desplegados. No se modifica TG1 ni se demuestra la mayoría coludida del diseño."
+    ],
+    "teoremas": [
+      "Nexus.Modelos.Quorum.peso_monotono",
+      "Nexus.Modelos.Quorum.interseccion_cota",
+      "Nexus.Modelos.Quorum.quorum_estricto_interseca_honestos",
+      "Nexus.Modelos.Quorum.quorum_inclusivo_requiere_menor_byzantino",
+      "Nexus.Modelos.Incentivos.honestidad_nash_iff",
+      "Nexus.Modelos.Incentivos.desviacion_unilateral_rentable",
+      "Nexus.Modelos.Incentivos.deposito_suficiente",
+      "Nexus.Modelos.Disponibilidad.recuperacion_reed_solomon",
+      "Nexus.Modelos.Disponibilidad.duplicar_no_recupera_dos_componentes"
+    ]
+  },
+  "Modelos/Mediciones": {
+    "grupo": "M26",
+    "secciones": [
+      "5.5",
+      "6.6"
+    ],
+    "verificado": "Racionales extraídos de dos JSON R4 conservados: 175 redondeos dentro de 0.005 y ocho razones de rendimiento. Diferencia de medianas sin redondear, razones históricas H1/H2, inverso ideal de latencia, crecimiento y corrección KiB/firmas: aproximadamente 238, no 232.",
+    "limites": [
+      "Las cuentas no certifican mediciones físicas, causalidad, capacidad sostenida o identidad entre corridas. La procedencia exacta H1/H2 permanece separada en M44."
+    ],
+    "teoremas": [
+      "Nexus.Modelos.Mediciones.criterionR4_redondeo",
+      "Nexus.Modelos.Mediciones.starkR4_redondeo",
+      "Nexus.Modelos.Mediciones.criterionComplemento_redondeo",
+      "Nexus.Modelos.Mediciones.throughputComplemento_redondeo",
+      "Nexus.Modelos.Mediciones.razon_throughput_1",
+      "Nexus.Modelos.Mediciones.razon_throughput_2",
+      "Nexus.Modelos.Mediciones.razon_throughput_4",
+      "Nexus.Modelos.Mediciones.razon_throughput_8",
+      "Nexus.Modelos.Mediciones.razon_throughput_12",
+      "Nexus.Modelos.Mediciones.razon_throughput_16",
+      "Nexus.Modelos.Mediciones.razon_throughput_20",
+      "Nexus.Modelos.Mediciones.razon_throughput_24",
+      "Nexus.Modelos.Mediciones.diferencia_mediana_sin_redondear",
+      "Nexus.Modelos.Mediciones.razones_historicas",
+      "Nexus.Modelos.Mediciones.inverso_latencia_ideal",
+      "Nexus.Modelos.Mediciones.razones_clasicas_h2",
+      "Nexus.Modelos.Mediciones.crecimiento_historico",
+      "Nexus.Modelos.Mediciones.correccion_kib"
+    ]
+  },
+  "ROM/ColaSelector": {
+    "grupo": "M40",
+    "secciones": [
+      "6.7.9"
+    ],
+    "verificado": "Inyección de secuencias con a lo sumo q valores distintos en testigos de subconjunto; cota cardinal binomial(M,q)q^R y cola uniforme min(1,binomial(M,q)(q/M)^R). Para q=39,R=512 y los nueve perfiles, tau<2^-300. Se explicita que condicionar a trabajo válido elimina su factor.",
+    "limites": [
+      "La cola supone extracciones uniformes independientes. Falta el potencial adaptativo de candidatos que trate abandono, intercalación, trabajo y duplicados en todo el protocolo."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Selector.completar_rango",
+      "Nexus.ROM.Selector.testigo_rango_inyectivo",
+      "Nexus.ROM.Selector.cardinal_subconjuntos",
+      "Nexus.ROM.Selector.cardinal_testigos",
+      "Nexus.ROM.Selector.cola_cardinal",
+      "Nexus.ROM.Selector.cola_le_uno",
+      "Nexus.ROM.Selector.cola_selector_acotada",
+      "Nexus.ROM.Selector.tau_no_negativa",
+      "Nexus.ROM.Selector.tau_corte_512",
+      "Nexus.ROM.Selector.condicionar_trabajo",
+      "Nexus.ROM.Selector.presupuesto_inicios"
+    ]
+  },
+  "Salud/DecimalesAPT": {
+    "grupo": "M17",
+    "secciones": [
+      "5.2"
+    ],
+    "verificado": "Intervalo racional para 2^-7.5, pesos binomiales encerrados, cola partida y resto geométrico. Certifica cola del corte 15 como 1.523e-6 con error<5e-10 y del corte 16 como 2.764e-7 con error<5e-11; complementa la minimalidad ya probada.",
+    "limites": [
+      "Se conserva el modelo B=1+Bin(511,2^-7.5). No es equivalencia f64/Rust, calificación de fuente física o certificación SP 800-90B."
+    ],
+    "teoremas": [
+      "Nexus.Salud.probabilidad_apt_intervalo_decimal",
+      "Nexus.Salud.peso_apt_intervalo_decimal",
+      "Nexus.Salud.cola_apt_partida",
+      "Nexus.Salud.cola_apt_intervalo_finito",
+      "Nexus.Salud.cola_apt_quince_decimal",
+      "Nexus.Salud.cola_apt_dieciseis_decimal"
+    ]
+  },
+  "Cripto/PerdidaQROM": {
+    "grupo": "M08",
+    "secciones": [
+      "6.3.2"
+    ],
+    "verificado": "Fórmula L_Q citada y parámetros de referencia B+23. Se prueba positividad, L_Q<2^-360 e intervalo del logaritmo con |log2(L_Q)+361.64|<0.005 mediante cuadrados, racionales y monotonía del logaritmo.",
+    "limites": [
+      "Reproducción aritmética de una fórmula del manuscrito, sin formalizar la reducción bibliográfica ni atribuir sus hipótesis a NEXUS. No reabre QROM AIR/FRI."
+    ],
+    "teoremas": [
+      "Nexus.Cripto.PerdidaQROM.escala_exacta",
+      "Nexus.Cripto.PerdidaQROM.primer_intervalo",
+      "Nexus.Cripto.PerdidaQROM.segundo_intervalo",
+      "Nexus.Cripto.PerdidaQROM.perdida_intervalo_escalado",
+      "Nexus.Cripto.PerdidaQROM.perdida_positiva",
+      "Nexus.Cripto.PerdidaQROM.perdida_menor_dos_menos_360",
+      "Nexus.Cripto.PerdidaQROM.logaritmo_perdida_decimal"
+    ]
+  },
+  "ROM/Presupuestos": {
+    "grupo": "M39",
+    "secciones": [
+      "6.7.9"
+    ],
+    "verificado": "Forma tipada de seis aperturas AIR y dos por capa FRI, longitudes y hashes de rutas. Fórmulas de caminos, hojas, etiquetas, canal y retos, monotonía del corte y suma de presupuestos. Extremos T=16/4096: V=6943/24895 y B=5450/22106.",
+    "limites": [
+      "El modelo cuenta rutas de la forma declarada. Falta derivar esa forma y todos los rechazos del verificador Rust, gramática/colisiones de roles, índices, deserialización y enteros de máquina."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Presupuestos.rutas_numero",
+      "Nexus.ROM.Presupuestos.hashes_rutas_numero",
+      "Nexus.ROM.Presupuestos.canal_menos_extracciones",
+      "Nexus.ROM.Presupuestos.verificador_menos_extracciones",
+      "Nexus.ROM.Presupuestos.presupuesto_total",
+      "Nexus.ROM.Presupuestos.tabla_presupuestos"
+    ]
+  }
+}

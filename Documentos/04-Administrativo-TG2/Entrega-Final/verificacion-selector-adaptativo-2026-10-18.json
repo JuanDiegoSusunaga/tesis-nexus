@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-18-lean-selector-adaptativo",
+  "archivos_comprobados": 6889,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T15:33:54.714992+00:00",
+  "sha256_manifiesto": "868843dc5ca966f45dc762f2b8004b18c51926667070ab16cddcad1c7955c65c",
+  "nota": "Informe fuera del manifiesto que verifica para evitar referencia hash circular."
+}

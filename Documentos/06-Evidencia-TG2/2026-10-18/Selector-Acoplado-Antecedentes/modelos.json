@@ -1,0 +1,161 @@
+{
+  "ROM/CintasRetos": {
+    "grupos": [
+      "M35",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Una equivalencia explícita identifica los productos recursivos de retos con vectores Fin R de respuestas y conserva la lista y la media de cualquier observable.",
+    "limites": [
+      "Identidad entre espacios finitos ideales; no afirma frescura de direcciones ni uniformidad condicionada al éxito."
+    ],
+    "teoremas": [
+      "Nexus.ROM.CintasRetos.longitud",
+      "Nexus.ROM.CintasRetos.lista_equivalencia",
+      "Nexus.ROM.CintasRetos.promedio_equivalencia",
+      "Nexus.ROM.CintasRetos.promedio_listas"
+    ]
+  },
+  "ROM/ComparacionAcoplada": {
+    "grupos": [
+      "M35",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Si dos salidas coinciden fuera de una excepción, la diferencia absoluta de probabilidades de cualquier evento se acota por la masa de esa excepción. Se justifican indicadores, unión y paso de una cota condicional a la incondicional.",
+    "limites": [
+      "La excepción se paga aditivamente; no se condiciona a su ausencia ni se identifica SHA3 concreto con un ROM."
+    ],
+    "teoremas": [
+      "Nexus.ROM.ComparacionAcoplada.promedio_evento",
+      "Nexus.ROM.ComparacionAcoplada.indicador_union",
+      "Nexus.ROM.ComparacionAcoplada.union_eventos",
+      "Nexus.ROM.ComparacionAcoplada.cota_desde_condicional",
+      "Nexus.ROM.ComparacionAcoplada.promedio_resta",
+      "Nexus.ROM.ComparacionAcoplada.absoluto_promedio",
+      "Nexus.ROM.ComparacionAcoplada.indicador_cota",
+      "Nexus.ROM.ComparacionAcoplada.diferencia_evento",
+      "Nexus.ROM.ComparacionAcoplada.transferencia_evento"
+    ]
+  },
+  "ROM/RepeticionesCinta": {
+    "grupos": [
+      "M35",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se cuenta la probabilidad de que una cinta uniforme repita un estado o toque un conjunto inicial T, con recurrencia exacta y cota conservadora min(1,R*(|T|+R)/|A|).",
+    "limites": [
+      "Se incluye también el último valor aunque no llegue a usarse como siguiente dirección. La cota no supone independencia de las consultas reales."
+    ],
+    "teoremas": [
+      "Nexus.ROM.RepeticionesCinta.no_negativa",
+      "Nexus.ROM.RepeticionesCinta.acotada_uno",
+      "Nexus.ROM.RepeticionesCinta.recurrencia",
+      "Nexus.ROM.RepeticionesCinta.cota_union",
+      "Nexus.ROM.RepeticionesCinta.cota_minimo"
+    ]
+  },
+  "ROM/CadenaMemoria": {
+    "grupos": [
+      "M35",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La cadena H(codificar estado) se implementa como árbol con memoria y como muestreo sobre cinta independiente. Las repeticiones ignoran una coordenada ideal y devuelven el valor guardado. Su ley tras una tabla fija coincide con las completaciones uniformes y, fuera de las repeticiones especificadas, la salida es la cinta ideal.",
+    "limites": [
+      "La comparación requiere codificación inyectiva y primera dirección nueva. Es una cadena matemática sin nuevas consultas adversarias intercaladas durante ella."
+    ],
+    "teoremas": [
+      "Nexus.ROM.CadenaMemoria.evaluar_arbol",
+      "Nexus.ROM.CadenaMemoria.fresca_igual_cinta",
+      "Nexus.ROM.CadenaMemoria.limpia_implica_fresca",
+      "Nexus.ROM.CadenaMemoria.cardinal_previos",
+      "Nexus.ROM.CadenaMemoria.limpia_acopla",
+      "Nexus.ROM.CadenaMemoria.valor_transformar",
+      "Nexus.ROM.CadenaMemoria.media_muestreo",
+      "Nexus.ROM.CadenaMemoria.ley_condicionada"
+    ]
+  },
+  "ROM/AcoplamientoCadena": {
+    "grupos": [
+      "M35",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Tras un pasado fijo de m direcciones, si la primera dirección es nueva y la codificación inyectiva, cualquier evento de R respuestas de la cadena ROM difiere del evento sobre una cinta independiente a lo sumo en delta=min(1,R*(m+R+1)/|A|). Se prueban comparación y transferencia sin excluir excepciones del espacio de probabilidad.",
+    "limites": [
+      "No deduce frescura de la primera dirección de un candidato adaptativamente elegido, ni conjuntos buenos independientes del futuro. La condición es el pasado fijo, nunca SinBad, completar o aceptar."
+    ],
+    "teoremas": [
+      "Nexus.ROM.AcoplamientoCadena.error_no_negativo",
+      "Nexus.ROM.AcoplamientoCadena.error_acotado_uno",
+      "Nexus.ROM.AcoplamientoCadena.cota_repeticiones",
+      "Nexus.ROM.AcoplamientoCadena.diferencia_muestreo",
+      "Nexus.ROM.AcoplamientoCadena.transferencia_muestreo",
+      "Nexus.ROM.AcoplamientoCadena.diferencia_rom",
+      "Nexus.ROM.AcoplamientoCadena.diferencia_vector"
+    ]
+  },
+  "ROM/SelectorAcoplado": {
+    "grupos": [
+      "M35",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "El índice real leerLE(first8) mod 2^e conserva la ley uniforme ideal para e<=64. Tras pasado fijo y primera dirección fresca, el selector ROM completo omite ambos conjuntos a lo sumo en choose(|GT inter GC|,q)/choose(2^e,q)+delta. El evento ampliado de omisión o abandono se acota por la misma hipergeométrica más tau y una sola delta.",
+    "limites": [
+      "GT y GC son conjuntos fijos antes de la cadena y comparten una única muestra. No se prueba uniformidad del selector real condicionado a completar, ni la selección global de candidatos, ni las rondas FRI adaptativas."
+    ],
+    "teoremas": [
+      "Nexus.ROM.SelectorAcoplado.salida_vector",
+      "Nexus.ROM.SelectorAcoplado.completas_positivas",
+      "Nexus.ROM.SelectorAcoplado.ideal_omision",
+      "Nexus.ROM.SelectorAcoplado.ideal_abandono",
+      "Nexus.ROM.SelectorAcoplado.ideal_con_abandono",
+      "Nexus.ROM.SelectorAcoplado.omision_rom",
+      "Nexus.ROM.SelectorAcoplado.abandono_rom",
+      "Nexus.ROM.SelectorAcoplado.omision_compartida",
+      "Nexus.ROM.SelectorAcoplado.omision_o_abandono_rom"
+    ]
+  },
+  "Canal/SelectorAcoplado": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se construye un universo finito que contiene pasado y todas las entradas I, se demuestra la inyectividad de la codificación real y se identifica la cadena con CintaSelector. La cota se enlaza al resultado del programa matemático de selección de 40 índices. Para k entre 4 y 12 y R=512, omisión o abandono tiene cota hipergeométrica+2^(-300)+delta, con delta=min(1,512*(m+513)/2^256).",
+    "limites": [
+      "Primera dirección fresca, pasado compatible fijo y conjuntos buenos fijados antes de responder siguen siendo hipótesis. El corte es analítico, la cola extendida no es registro efectivo y no se modifica Rust. No prueba presupuesto global, soundness integral ni refinamiento universal."
+    ],
+    "teoremas": [
+      "Nexus.Canal.SelectorAcoplado.pasado_en_universo",
+      "Nexus.Canal.SelectorAcoplado.indices_en_universo",
+      "Nexus.Canal.SelectorAcoplado.codificar_inyectiva",
+      "Nexus.Canal.SelectorAcoplado.cinta_igual",
+      "Nexus.Canal.SelectorAcoplado.error_digest",
+      "Nexus.Canal.SelectorAcoplado.diferencia_cinta",
+      "Nexus.Canal.SelectorAcoplado.programa_omision",
+      "Nexus.Canal.SelectorAcoplado.omision_programa",
+      "Nexus.Canal.SelectorAcoplado.abandono_512",
+      "Nexus.Canal.SelectorAcoplado.omision_o_abandono_512"
+    ]
+  }
+}

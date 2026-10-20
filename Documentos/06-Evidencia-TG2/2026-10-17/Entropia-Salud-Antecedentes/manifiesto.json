@@ -1,0 +1,92 @@
+{
+  "esquema": 1,
+  "auditoria_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Enlace-AIR-FRI/validacion.json",
+    "sha256": "e04c2d23f5e69127d3b439fb6872144c4e291ee5e88200e5a3fb8127bcf5a7c0"
+  },
+  "versiones_anteriores": {
+    "formalizacion/Nexus.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/formalizacion/Nexus.lean",
+      "sha256": "30899dafce48ba9ae460e2be84e8468da1e15640f10e5420b07e61b8535c8b1c"
+    },
+    "formalizacion/Auditoria.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/formalizacion/Auditoria.lean",
+      "sha256": "7ad435324a8952a8305d2e605f6bb0ebf153ee8435d11618d69f92bca6b02e4b"
+    },
+    "formalizacion/cobertura.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/formalizacion/cobertura.json",
+      "sha256": "9989f0b824343b9547e82dc2fbd00eb18df67a3753dfb8fbb9cf4fa91ac7db93"
+    },
+    "formalizacion/inventario-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/formalizacion/inventario-manuscrito.json",
+      "sha256": "66cd20238ee08d43feb7f63a65fccb190dca8ac4ec56dc74b53816a63eac8438"
+    },
+    "scripts/verificar_formalizacion.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/scripts/verificar_formalizacion.py",
+      "sha256": "8c0189f066d4d44f31b4591a1f2551095da8f6fc4b7fc8166dd73e95c30bafcd"
+    },
+    "scripts/lean.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/scripts/lean.py",
+      "sha256": "56330febbc40bbe6343f74dea96813c1ca50a06da899693f50cf862c4f6238a3"
+    },
+    "formalizacion/revision-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/formalizacion/revision-manuscrito.json",
+      "sha256": "0fa05c08c9a7c38edc503f5919d8df54e2a2bed4afb6393a2fe8a8106f810f2f"
+    },
+    "scripts/verificar_revision_manuscrito.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/scripts/verificar_revision_manuscrito.py",
+      "sha256": "a656441f4ce8af32b54c2c691c15505fce3a3da4f2b9ca35f47c294e5adc43f7"
+    },
+    "scripts/tests/test_verificar_revision_manuscrito.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/scripts/tests/test_verificar_revision_manuscrito.py",
+      "sha256": "14b32d2dcab97d6abe8fbfabd4d233fec55f225b88284bb62e2e2306e8662d09"
+    },
+    "formalizacion/REVISION-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/formalizacion/REVISION-MANUSCRITO.md",
+      "sha256": "608321332ce5953c0d86628a208b87a9f73db38c54625b4663f6dbe9aee0a815"
+    },
+    "formalizacion/ALCANCE-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/formalizacion/ALCANCE-MANUSCRITO.md",
+      "sha256": "d2930e59a137d6e7350c001f72be5e91e2c951a4b0dae9b5e7904aff5754775a"
+    },
+    "formalizacion/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/formalizacion/README.md",
+      "sha256": "f29d2db4b996e8f33a9f584604e6084bb0c5114d6a5f6991ceb54726988c72a1"
+    },
+    "README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/README.md",
+      "sha256": "b73c3eb5a2d9ff310d6b5a2e0fd8f62abe560de2dddd526694797e6f2ab0b1fc"
+    },
+    "BITACORA_TG2.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/BITACORA_TG2.md",
+      "sha256": "3a2bcc254f496fcb0be36877b2da55c50f6d21a97f73e6aa4fcc4f1534d4ce4f"
+    },
+    "Documentos/06-Evidencia-TG2/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/version_anterior/Documentos/06-Evidencia-TG2/README.md",
+      "sha256": "bd7e1dec7aaa0385845b3841880447fc52f2c0237ed523ab0a4de8fefe91d392"
+    }
+  },
+  "cambios_fuentes_previas_autorizados": [
+    "formalizacion/Nexus.lean",
+    "formalizacion/Auditoria.lean",
+    "formalizacion/cobertura.json",
+    "formalizacion/inventario-manuscrito.json",
+    "scripts/verificar_formalizacion.py",
+    "scripts/lean.py"
+  ],
+  "rust_modelado": {
+    "origen": "nexus/nexus-crypto/src/entropy.rs",
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/fuentes/nexus/nexus-crypto/src/entropy.rs",
+    "sha256": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f"
+  },
+  "modulos_nuevos": [
+    "Nexus.Entropia.Minima",
+    "Nexus.Entropia.Shannon",
+    "Nexus.Salud.RCT",
+    "Nexus.Salud.Binomial",
+    "Nexus.Salud.APT",
+    "Nexus.Salud.Monitor",
+    "Nexus.Salud.Fuente"
+  ],
+  "teoremas_nuevos": 87
+}

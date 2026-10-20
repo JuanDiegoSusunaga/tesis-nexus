@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-18-lean-candidatos-falsos",
+  "archivos_comprobados": 8897,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T19:24:03.178484+00:00",
+  "sha256_manifiesto": "22b814ca66631a720e4f62fd06d3b161db3a1ac4bd85943986f0d4a70345d7a9",
+  "nota": "Informe fuera del manifiesto que verifica para evitar referencia hash circular."
+}

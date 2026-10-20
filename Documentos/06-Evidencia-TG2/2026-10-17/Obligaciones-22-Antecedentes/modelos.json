@@ -1,0 +1,468 @@
+{
+  "Merkle/RegistroVerificador": {
+    "grupos": [
+      "M37",
+      "M39",
+      "M32"
+    ],
+    "secciones": [
+      "6.7.6",
+      "6.7.9"
+    ],
+    "verificado": "Evaluador Merkle que devuelve digest y consultas en orden desde la hoja; coincide con el bucle indexado y produce el registro exigido por extracción. Forma incorrecta rechaza sin hashes; aceptación registra cada entrada y cuesta altura+1 consultas.",
+    "limites": [
+      "Se deriva el registro de cada apertura modelada. La integración de esos eventos en la tabla común, las familias causales y toda la ejecución Rust permanece pendiente en M37/M39."
+    ],
+    "teoremas": [
+      "Nexus.Merkle.RegistroVerificador.digest_evaluado",
+      "Nexus.Merkle.RegistroVerificador.registro_evaluado",
+      "Nexus.Merkle.RegistroVerificador.apertura_registrada_por_evaluacion",
+      "Nexus.Merkle.RegistroVerificador.costo_consultas",
+      "Nexus.Merkle.RegistroVerificador.indice_coincide_bucle",
+      "Nexus.Merkle.RegistroVerificador.indice_consultas_contadas",
+      "Nexus.Merkle.RegistroVerificador.rechazo_forma_sin_consultas",
+      "Nexus.Merkle.RegistroVerificador.aceptacion_equivalente",
+      "Nexus.Merkle.RegistroVerificador.aceptacion_registra_y_cuenta"
+    ]
+  },
+  "FRI/Recorrido": {
+    "grupos": [
+      "M32",
+      "M39"
+    ],
+    "secciones": [
+      "6.7.4",
+      "6.7.8"
+    ],
+    "verificado": "Bucle con Option, rechazo persistente, prefijos, posiciones, autenticación y acarreo extraídos de ejecución aceptada; ecuaciones de plegado y constante final, aceptación de una muestra y de ambas fases. Comprobaciones de longitudes de listas y rechazo con cero capas.",
+    "limites": [
+      "Modelo de naturales y operaciones de campo. La extracción requiere ausencia de colisiones y registro de aperturas. La equivalencia con toda la ejecución Rust y su tabla ROM no se deriva de este bucle."
+    ],
+    "teoremas": [
+      "Nexus.Goldilocks.Recorrido.paso_correcto",
+      "Nexus.Goldilocks.Recorrido.fallo_persistente",
+      "Nexus.Goldilocks.Recorrido.prefijo_aceptado",
+      "Nexus.Goldilocks.Recorrido.posicion_ejecucion",
+      "Nexus.Goldilocks.Recorrido.posicion_acotada",
+      "Nexus.Goldilocks.Recorrido.apertura_de_ejecucion",
+      "Nexus.Goldilocks.Recorrido.acarreo_de_ejecucion",
+      "Nexus.Goldilocks.Recorrido.valor_autenticado",
+      "Nexus.Goldilocks.Recorrido.plegado_autenticado",
+      "Nexus.Goldilocks.Recorrido.ecuacion_de_ejecucion",
+      "Nexus.Goldilocks.Recorrido.punto_posicion_cuadrado",
+      "Nexus.Goldilocks.Recorrido.recorrido_de_indices",
+      "Nexus.Goldilocks.Recorrido.aceptacion_de_ejecucion",
+      "Nexus.Goldilocks.Recorrido.muestra_de_ejecuciones",
+      "Nexus.Goldilocks.Recorrido.verificador_formas",
+      "Nexus.Goldilocks.Recorrido.verificador_ejecucion",
+      "Nexus.Goldilocks.Recorrido.cero_capas_rechazado",
+      "Nexus.Goldilocks.Recorrido.ambas_aceptaciones"
+    ]
+  },
+  "Canal/AceptacionRecorridos": {
+    "grupos": [
+      "M32",
+      "M46",
+      "M36"
+    ],
+    "secciones": [
+      "6.7.4",
+      "6.7.8"
+    ],
+    "verificado": "Las dos ejecuciones FRI dan las premisas de aceptación compartida AIR/FRI con raíz inicial común, seis aperturas y enlace local. Cota de la rama de candidato no base a partir de controles de base de la muestra, sin exigir que el oráculo completo sea base.",
+    "limites": [
+      "La familia construida usa el registro final para la implicación de aceptación. Su identificación con una familia causal previa a cada reto sigue en M37/M36. La probabilidad de muestra es la uniforme ideal; el selector real corresponde a M35/M40."
+    ],
+    "teoremas": [
+      "Nexus.Canal.ambas_ejecuciones_en_prefijo",
+      "Nexus.Canal.aceptacion_compartida_de_recorridos",
+      "Nexus.Canal.cota_candidato_no_base_autenticado",
+      "Nexus.Canal.cota_compartida_candidato_no_base"
+    ]
+  },
+  "MLDSA/ContrasteJMW": {
+    "grupos": [
+      "M10"
+    ],
+    "secciones": [
+      "6.4.2"
+    ],
+    "verificado": "Gamma de extracción se deriva como max(gamma1-beta,2gamma2+1+2^(d-1)tau), dimensiones desde k+ell+1 y tipos Fin; conexión con N12, cuentas de los tres perfiles y fallo de la condición para todo etaAux>=1 y toda gamma mayor.",
+    "limites": [
+      "Contraste de una condición necesaria de JMW24v2, no formalización de su reducción cuántica, ataque ni imposibilidad de otras reducciones. La procedencia bibliográfica está identificada por versión y copia preservada."
+    ],
+    "teoremas": [
+      "Nexus.MLDSA.ContrasteJMW.gamma_desde_parametros",
+      "Nexus.MLDSA.ContrasteJMW.dimensiones_desde_parametros",
+      "Nexus.MLDSA.ContrasteJMW.dimensiones_testigo",
+      "Nexus.MLDSA.ContrasteJMW.parametro_auxiliar_separado",
+      "Nexus.MLDSA.ContrasteJMW.condicion_equivalente",
+      "Nexus.MLDSA.ContrasteJMW.aplicacion_directa_descartada",
+      "Nexus.MLDSA.ContrasteJMW.lado_derecho",
+      "Nexus.MLDSA.ContrasteJMW.lados_izquierdos",
+      "Nexus.MLDSA.ContrasteJMW.robustez_cota_mayor"
+    ]
+  },
+  "MLDSA/Retos": {
+    "grupos": [
+      "M05"
+    ],
+    "secciones": [
+      "6.2.3",
+      "6.4.2"
+    ],
+    "verificado": "Alfabeto concreto B_tau de polinomios con coeficientes centrados en {-1,0,1} y peso tau; norma uno y no nulidad para tau>0, soporte y construcción con signos. Instanciación de la relación SelfTarget con ese alfabeto.",
+    "limites": [
+      "Faltan el codec de la entrada bibliográfica, cardinalidad completa del alfabeto, distribución de SampleInBall, acceso cuántico al oráculo y reducción desde firmas."
+    ],
+    "teoremas": [
+      "Nexus.MLDSA.Retos.soporte_cero",
+      "Nexus.MLDSA.Retos.reto_no_nulo",
+      "Nexus.MLDSA.Retos.norma_reto_le_uno",
+      "Nexus.MLDSA.Retos.norma_reto",
+      "Nexus.MLDSA.Retos.peso_acotado",
+      "Nexus.MLDSA.Retos.centrado_desde_soporte",
+      "Nexus.MLDSA.Retos.soporte_desde_soporte",
+      "Nexus.MLDSA.Retos.desde_soporte_es_reto",
+      "Nexus.MLDSA.Retos.signo_determina_reto",
+      "Nexus.MLDSA.Retos.self_target_reto_concreto"
+    ]
+  },
+  "FRI/RetosAfines": {
+    "grupos": [
+      "M33"
+    ],
+    "secciones": [
+      "6.7.5",
+      "6.7.8"
+    ],
+    "verificado": "Cambio biyectivo entre beta y el peso afín en un representante no nulo, fórmula de mariposa y cardinales de preimágenes. Normalización global x=a*y con reto beta/a, equivalencia del plegado y conservación de uniformidad por conteo.",
+    "limites": [
+      "La transformación afín por punto no crea retos independientes entre puntos. La normalización beta/a usa un único a por capa. No se formaliza el corolario bibliográfico general de BGK+23 ni su transformación completa de transcripciones."
+    ],
+    "teoremas": [
+      "Nexus.FRI.Afin.recuperar_coeficiente",
+      "Nexus.FRI.Afin.coeficiente_recuperar",
+      "Nexus.FRI.Afin.formula_afin",
+      "Nexus.FRI.Afin.mismo_reto_acopla_puntos",
+      "Nexus.FRI.Afin.preimagen_evento_cardinal",
+      "Nexus.FRI.Afin.plegado_coset",
+      "Nexus.FRI.Afin.coset_uniforme_cardinal"
+    ]
+  },
+  "Cripto/RotacionFirmada": {
+    "grupos": [
+      "M13",
+      "M11"
+    ],
+    "secciones": [
+      "5.5",
+      "6.4.3"
+    ],
+    "verificado": "Autorización saliente y posesión entrante se obtienen verificando firmas del mensaje tipado que incluye época y todas las claves siguientes. Instalación exige ambas, conserva identidades e historial y rechaza propuesta repetida o firma ausente.",
+    "limites": [
+      "Verificación de firma abstracta y mensaje tipado; no identifica codec, registro Rust completo ni seguridad de la firma. Custodia, destrucción, retiro durable y secrecia hacia adelante siguen pendientes."
+    ],
+    "teoremas": [
+      "Nexus.Cripto.Epocas.Firmada.instalacion_exige_firmas",
+      "Nexus.Cripto.Epocas.Firmada.firmas_con_claves_vigentes",
+      "Nexus.Cripto.Epocas.Firmada.instalacion_epoca_exacta",
+      "Nexus.Cripto.Epocas.Firmada.instalacion_historial",
+      "Nexus.Cripto.Epocas.Firmada.propuesta_repetida_rechazada",
+      "Nexus.Cripto.Epocas.Firmada.falta_firma_rechaza_lote",
+      "Nexus.Cripto.Epocas.Firmada.identidades_preservadas"
+    ]
+  },
+  "Cripto/OperacionBytes": {
+    "grupos": [
+      "M11",
+      "M13"
+    ],
+    "secciones": [
+      "5.5",
+      "6.4.3"
+    ],
+    "verificado": "Formato de operation_bytes de registry.rs: dominio ASCII de 22 bytes, identidad de 32, época u64, longitud u64 y mensaje; cuenta 70+len, recuperación de campos e inyectividad.",
+    "limites": [
+      "Es el sobre de operación TG2, no el bincode de transacciones TG1. La lectura de longitud como u64 exige len<2^64; seguridad del hash/firma y correspondencia global del registro permanecen separadas."
+    ],
+    "teoremas": [
+      "Nexus.Cripto.OperacionBytes.dominio_longitud",
+      "Nexus.Cripto.OperacionBytes.longitud_operacion",
+      "Nexus.Cripto.OperacionBytes.identidad_recuperada",
+      "Nexus.Cripto.OperacionBytes.epoca_recuperada",
+      "Nexus.Cripto.OperacionBytes.mensaje_recuperado",
+      "Nexus.Cripto.OperacionBytes.codificacion_inyectiva",
+      "Nexus.Cripto.OperacionBytes.cambio_campo_exige_otros_bytes"
+    ]
+  },
+  "Salud/RachasCondicionales": {
+    "grupos": [
+      "M16"
+    ],
+    "secciones": [
+      "5.3"
+    ],
+    "verificado": "Cota de rachas con leyes condicionadas por símbolo inicial e historia repetida, sin exigir IID. Composición con el corte RCT, límites de rachas no fallidas y del incremento del contador u64 del perfil.",
+    "limites": [
+      "La cota condicional se exige en todas las historias repetidas pertinentes y no se deduce de min-entropía marginal. No verifica el cálculo f64 del umbral ni califica la fuente física."
+    ],
+    "teoremas": [
+      "Nexus.Salud.Condicional.continuacion_no_negativa",
+      "Nexus.Salud.Condicional.continuacion_acotada",
+      "Nexus.Salud.Condicional.racha_condicional_acotada",
+      "Nexus.Salud.Condicional.rct_condicional",
+      "Nexus.Salud.Condicional.racha_no_fallida_acotada",
+      "Nexus.Salud.Condicional.incremento_sin_desbordamiento",
+      "Nexus.Salud.Condicional.perfil_incremento_u64",
+      "Nexus.Salud.Condicional.monitor_sano_racha"
+    ]
+  },
+  "Salud/InvariantesLote": {
+    "grupos": [
+      "M18"
+    ],
+    "secciones": [
+      "5.3",
+      "5.5"
+    ],
+    "verificado": "Invariante muestras<65536 e histograma[i]<=muestras preservado por muestra, lote, recuperación y rotación; límites de incrementos de muestras/histograma y época rotada en u64.",
+    "limites": [
+      "Modelo del gestor ya definido. Faltan la equivalencia integral Rust/f64, KDF, calificación de fuente y el enlace con el registro y los secretos."
+    ],
+    "teoremas": [
+      "Nexus.Salud.Lote.inicio_valido",
+      "Nexus.Salud.Lote.ingreso_preserva",
+      "Nexus.Salud.Lote.lote_preserva",
+      "Nexus.Salud.Lote.recuperacion_preserva",
+      "Nexus.Salud.Lote.rotacion_preserva",
+      "Nexus.Salud.Lote.contador_no_desborda",
+      "Nexus.Salud.Lote.histograma_no_desborda",
+      "Nexus.Salud.Lote.epoca_rotada_u64"
+    ]
+  },
+  "MLDSA/NTTAlgebra": {
+    "grupos": [
+      "M23"
+    ],
+    "secciones": [
+      "6.5"
+    ],
+    "verificado": "Transformada radix dos recursiva sobre árbol par/impar, grado del polinomio y corrección completa por inducción frente a evaluación en coset; raíz de mitad y raíz siguiente, unicidad por evaluaciones e instancia ML-DSA de 256 coeficientes con zeta=1753.",
+    "limites": [
+      "NTT matemática de referencia. No se prueba el orden de datos del backend, Montgomery, aritmética de máquina, desbordamientos, hashes, muestreo o costo de bits."
+    ],
+    "teoremas": [
+      "Nexus.MLDSA.NTTAlgebra.evaluacion_nodo",
+      "Nexus.MLDSA.NTTAlgebra.grado_polinomio",
+      "Nexus.MLDSA.NTTAlgebra.raiz_mitad",
+      "Nexus.MLDSA.NTTAlgebra.raiz_siguiente",
+      "Nexus.MLDSA.NTTAlgebra.transformada_correcta",
+      "Nexus.MLDSA.NTTAlgebra.evaluaciones_determinan",
+      "Nexus.MLDSA.NTTAlgebra.mldsa_256"
+    ]
+  },
+  "Complejidad/ContadorFirma": {
+    "grupos": [
+      "M24"
+    ],
+    "secciones": [
+      "6.5"
+    ],
+    "verificado": "Bloques de máscaras disjuntos, validez de índices u16, capacidad floor(65536/ell), incremento y rollover separados. Capacidades 16384/13107/9362 y fronteras de los tres perfiles; enlace con cola geométrica ideal.",
+    "limites": [
+      "No atribuye IID al bucle determinista de máscaras ni certifica la conducta debug/release de Rust al desbordar. Cada bloque completo y el incremento posterior son condiciones distintas."
+    ],
+    "teoremas": [
+      "Nexus.Complejidad.ContadorFirma.bloques_disjuntos",
+      "Nexus.Complejidad.ContadorFirma.mascara_dentro_u16",
+      "Nexus.Complejidad.ContadorFirma.bloque_por_capacidad",
+      "Nexus.Complejidad.ContadorFirma.anterior_no_envuelve",
+      "Nexus.Complejidad.ContadorFirma.capacidades_perfiles",
+      "Nexus.Complejidad.ContadorFirma.frontera_44",
+      "Nexus.Complejidad.ContadorFirma.frontera_65",
+      "Nexus.Complejidad.ContadorFirma.frontera_87",
+      "Nexus.Complejidad.ContadorFirma.agotamiento_ideal"
+    ]
+  },
+  "Complejidad/SerializacionPrueba": {
+    "grupos": [
+      "M25",
+      "M39"
+    ],
+    "secciones": [
+      "6.6",
+      "6.7.4"
+    ],
+    "verificado": "Conteo de bytes desde codificación de vectores y caminos: 8+32h por camino, 48+64h por capa FRI y suma de capas de longitud variable. Se separan 102 bytes fijos de prueba y 24 de enunciado; el certificado cuenta 126.",
+    "limites": [
+      "Modelo del formato de ancho fijo declarado; falta equivalencia automática con serde/bincode, errores del parser y familias completas de anchos de claves."
+    ],
+    "teoremas": [
+      "Nexus.Complejidad.Serializacion.longitud_vector",
+      "Nexus.Complejidad.Serializacion.longitud_ancho_fijo",
+      "Nexus.Complejidad.Serializacion.longitud_camino",
+      "Nexus.Complejidad.Serializacion.longitud_capa",
+      "Nexus.Complejidad.Serializacion.longitud_fri",
+      "Nexus.Complejidad.Serializacion.cabeceras_certificado",
+      "Nexus.Complejidad.Serializacion.cabecera_prueba_sola",
+      "Nexus.Complejidad.Serializacion.separar_enunciado"
+    ]
+  },
+  "FRI/FormasLimites": {
+    "grupos": [
+      "M39"
+    ],
+    "secciones": [
+      "6.7.4",
+      "6.7.9"
+    ],
+    "verificado": "Para k<=12, tamaños de dominio <=32768 y dentro de u64, mitades positivas e índices de ambas aperturas válidos; lecturas de listas aceptadas en rango, longitudes de zip y rechazo de longitudes incorrectas.",
+    "limites": [
+      "No es una semántica completa de Rust/usize ni de todos los rechazos y roles del protocolo. La cobertura de zip exige que las longitudes de consultas e índices coincidan."
+    ],
+    "teoremas": [
+      "Nexus.Goldilocks.Formas.dominio_u64",
+      "Nexus.Goldilocks.Formas.dominio_perfil",
+      "Nexus.Goldilocks.Formas.mitad_positiva",
+      "Nexus.Goldilocks.Formas.parejas_en_rango",
+      "Nexus.Goldilocks.Formas.pareja_sin_desbordamiento",
+      "Nexus.Goldilocks.Formas.lecturas_dentro_de_listas",
+      "Nexus.Goldilocks.Formas.zip_cubre_todas",
+      "Nexus.Goldilocks.Formas.zip_cuarenta",
+      "Nexus.Goldilocks.Formas.longitud_incorrecta_rechazada"
+    ]
+  },
+  "Modelos/LayoutBackend": {
+    "grupos": [
+      "M21"
+    ],
+    "secciones": [
+      "5.6.1"
+    ],
+    "verificado": "Campos del PrivateKey histórico: 32+32+64 bytes y arreglos L,K,K de 256 i32. Suma y alineación declaradas, perfiles 12416/17536/23680 y enlace del perfil 65 con el modelo de memoria; reordenar conserva la suma.",
+    "limites": [
+      "Contabilidad de campos y alineación modelada, no teorema de sizeof Rust/ABI, RAM total, entropía, copias del compilador o zeroización."
+    ],
+    "teoremas": [
+      "Nexus.Modelos.Layout.suma_campos",
+      "Nexus.Modelos.Layout.campos_alineados",
+      "Nexus.Modelos.Layout.tamanos_perfiles",
+      "Nexus.Modelos.Layout.alineacion_no_agrega",
+      "Nexus.Modelos.Layout.perfil_65_corresponde_modelo",
+      "Nexus.Modelos.Layout.reordenar_conserva_cuenta"
+    ]
+  },
+  "ROM/ReconstruccionPublica": {
+    "grupos": [
+      "M31"
+    ],
+    "secciones": [
+      "6.7.1",
+      "6.7.7"
+    ],
+    "verificado": "Dieciséis índices distintos de un dominio de 128 dan nodos distintos; interpolación recupera cualquier polinomio de grado<16 y, para la traza del ejemplo, la segunda fila 5.",
+    "limites": [
+      "Se necesitan dieciséis evaluaciones correctas y distintas del polinomio acotado. El módulo no demuestra que una firma o certificado concreto publique precisamente esos valores ni aceptación del verificador legado."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Reconstruccion.nodos_distintos",
+      "Nexus.ROM.Reconstruccion.recuperacion_exacta",
+      "Nexus.ROM.Reconstruccion.recuperacion_desde_valores",
+      "Nexus.ROM.Reconstruccion.recuperacion_traza_ejemplo",
+      "Nexus.ROM.Reconstruccion.recuperacion_segunda_fila"
+    ]
+  },
+  "ROM/SelectorRechazo": {
+    "grupos": [
+      "M35",
+      "M40"
+    ],
+    "secciones": [
+      "6.7.9"
+    ],
+    "verificado": "Proyección a conjuntos del selector con duplicados y parada: cardinal min(objetivo,distintas), terminación por suficientes distintas y equivariancia por permutaciones. Máscara binaria igual a residuo y fibras uniformes para potencias de dos. El selector incompleto coincide con pocas distintas y su probabilidad ideal tras 512 extracciones es <2^-300 en nueve perfiles.",
+    "limites": [
+      "Los bloques se modelan uniformes e independientes. Falta la distribución uniforme del subconjunto terminado y atribuir respuestas frescas al selector de cada historia del protocolo. El corte es del análisis, no del Rust original."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Selector.cardinal_objetivo",
+      "Nexus.ROM.Selector.nunca_excede_objetivo",
+      "Nexus.ROM.Selector.sin_reemplazo",
+      "Nexus.ROM.Selector.vacio_completa_iff",
+      "Nexus.ROM.Selector.vacio_incompleto_iff",
+      "Nexus.ROM.Selector.equivariancia",
+      "Nexus.ROM.Selector.mascara_es_residuo",
+      "Nexus.ROM.Selector.fibras_indice",
+      "Nexus.ROM.Selector.masa_indice_uniforme",
+      "Nexus.ROM.Selector.conjunto_ofFn",
+      "Nexus.ROM.Selector.incompleta_es_cola",
+      "Nexus.ROM.Selector.selector_corte_512"
+    ]
+  },
+  "ROM/PotencialCandidatos": {
+    "grupos": [
+      "M40",
+      "M36"
+    ],
+    "secciones": [
+      "6.7.9"
+    ],
+    "verificado": "Potencial de árboles de pruebas frescas con creación adaptativa, intercalación, abandono, repeticiones y parada. Se demuestra riesgo<=potencialInicial+B*rho y desde vacío B*rho; trabajo se cobra antes de responder y se conserva el factor en la cota de inicios<=Q+1.",
+    "limites": [
+      "Cada candidato creado debe tener un árbol fresco con valor<=rho. Sigue pendiente construir ese árbol y esa cota para todas las historias reales, con gramática y memoria compartidas. No identifica B con consultas hash sin ese adaptador."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Potencial.valor_no_negativo",
+      "Nexus.ROM.Potencial.cartera_no_negativa",
+      "Nexus.ROM.Potencial.cartera_concatenar",
+      "Nexus.ROM.Potencial.cartera_insertar",
+      "Nexus.ROM.Potencial.terminal_en_cartera",
+      "Nexus.ROM.Potencial.cota_potencial",
+      "Nexus.ROM.Potencial.cota_desde_vacio",
+      "Nexus.ROM.Potencial.trabajo_antes_respuesta",
+      "Nexus.ROM.Potencial.presupuestar_inicios",
+      "Nexus.ROM.Potencial.factor_trabajo_y_cola"
+    ]
+  },
+  "ROM/ComposicionCotas": {
+    "grupos": [
+      "M41",
+      "M36"
+    ],
+    "secciones": [
+      "6.7.9"
+    ],
+    "verificado": "Unión de tres eventos bajo una misma ley, transporte por variación total, composición de errores ROM/excepciones/consulta y suma de presupuestos. Se conserva la cota del juego ROM ya demostrado sin su mínimo con uno.",
+    "limites": [
+      "Las inclusiones y cotas de eventos de la ejecución real son premisas explícitas; no se resuelven declarándolas como hipótesis. Falta la identificación de esas premisas para el verificador completo."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Composicion.evento_monotono",
+      "Nexus.ROM.Composicion.evento_union",
+      "Nexus.ROM.Composicion.tres_eventos",
+      "Nexus.ROM.Composicion.transferir_ley",
+      "Nexus.ROM.Composicion.componer_cotas",
+      "Nexus.ROM.Composicion.cortes_presupuestados",
+      "Nexus.ROM.Composicion.cota_rom_sin_minimo"
+    ]
+  },
+  "ROM/EjemploNumerico": {
+    "grupos": [
+      "M41"
+    ],
+    "secciones": [
+      "6.7.9"
+    ],
+    "verificado": "Fórmula exacta de tres términos con mu, S=Q+V, presupuestos, hipergeométrica y cola. Para T=4096,g=20,Q=2^20 se certifica el intervalo (0.004757335453,0.004757335454]; para Q=2^28 la expresión truncada satura en uno.",
+    "limites": [
+      "Aritmética de la fórmula propuesta. No certifica seguridad del ejecutable ni elimina las premisas de distribución, causalidad, formas y correspondencia."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Ejemplo.cota_no_negativa",
+      "Nexus.ROM.Ejemplo.cota_no_supera_uno",
+      "Nexus.ROM.Ejemplo.ejemplo_4096_20",
+      "Nexus.ROM.Ejemplo.ejemplo_presupuesto_saturado"
+    ]
+  }
+}

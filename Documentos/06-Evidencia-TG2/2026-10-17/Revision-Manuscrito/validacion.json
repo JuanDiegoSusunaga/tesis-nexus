@@ -1,0 +1,141 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-17T14:19:34.544278+00:00",
+  "correcto": true,
+  "tipo": "integridad_y_trazabilidad_de_revision_manual",
+  "tesis_completa_verificada": false,
+  "cierre_matematico_completo": false,
+  "barrido_exhaustivo_demostrado": false,
+  "revision_independiente": "pendiente",
+  "recompilacion_lean": false,
+  "auditoria_lean_reutilizada": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Enlace-AIR-FRI/validacion.json",
+    "sha256": "e04c2d23f5e69127d3b439fb6872144c4e291ee5e88200e5a3fb8127bcf5a7c0",
+    "teoremas": 777,
+    "modulos": 106
+  },
+  "fuentes_de_auditoria_lean_intactas": 149,
+  "etapas_lean_preservadas": 27,
+  "logs_lean_intactos": 1673,
+  "resumen": {
+    "bloques_clasificados": 272,
+    "suplementos_identificados": 14,
+    "grupos_obligaciones": 46,
+    "enlaces_lean_con_alcance": 181,
+    "bloques_con_enlace_lean_parcial": 51,
+    "estados_obligaciones": {
+      "dependencia_bibliografica": 3,
+      "pendiente": 27,
+      "parcial": 13,
+      "trabajo_futuro": 1,
+      "respaldo_documental": 2
+    },
+    "clases": {
+      "resumen": 18,
+      "limite": 71,
+      "dependencia_bibliografica": 36,
+      "hipotesis": 23,
+      "modelo_condicional": 132,
+      "calculo": 102,
+      "objetivo_estructura": 4,
+      "definicion": 64,
+      "referencia_documental": 14,
+      "medicion": 51,
+      "trabajo_futuro": 3,
+      "dato_parametro": 6,
+      "implementacion": 21,
+      "estado_implementacion": 2,
+      "antecedente": 1,
+      "resultado_propio": 63,
+      "alcance_metodologico": 2,
+      "rotulo": 3,
+      "metodologia": 5,
+      "resultado_experimental": 4
+    },
+    "capitulos": [
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+        "candidatos_clasificados": 2,
+        "bloques_con_enlace_lean_parcial": 0,
+        "suplementos": 1
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+        "candidatos_clasificados": 8,
+        "bloques_con_enlace_lean_parcial": 1,
+        "suplementos": 1
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+        "candidatos_clasificados": 8,
+        "bloques_con_enlace_lean_parcial": 0,
+        "suplementos": 0
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+        "candidatos_clasificados": 19,
+        "bloques_con_enlace_lean_parcial": 10,
+        "suplementos": 3
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+        "candidatos_clasificados": 12,
+        "bloques_con_enlace_lean_parcial": 1,
+        "suplementos": 1
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+        "candidatos_clasificados": 35,
+        "bloques_con_enlace_lean_parcial": 3,
+        "suplementos": 6
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+        "candidatos_clasificados": 184,
+        "bloques_con_enlace_lean_parcial": 36,
+        "suplementos": 2
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+        "candidatos_clasificados": 4,
+        "bloques_con_enlace_lean_parcial": 0,
+        "suplementos": 0
+      }
+    ],
+    "hallazgos_editoriales": 6
+  },
+  "limite": "El comprobador no valida la verdad del juicio semántico ni demuestra los pendientes. La auditoría Lean previa se reutiliza por identidad de sus fuentes y logs; no hay pruebas Lean nuevas.",
+  "sha256_revision": {
+    "formalizacion/revision-manuscrito.json": "0fa05c08c9a7c38edc503f5919d8df54e2a2bed4afb6393a2fe8a8106f810f2f",
+    "scripts/verificar_revision_manuscrito.py": "a656441f4ce8af32b54c2c691c15505fce3a3da4f2b9ca35f47c294e5adc43f7",
+    "scripts/tests/test_verificar_revision_manuscrito.py": "14b32d2dcab97d6abe8fbfabd4d233fec55f225b88284bb62e2e2306e8662d09",
+    "formalizacion/REVISION-MANUSCRITO.md": "608321332ce5953c0d86628a208b87a9f73db38c54625b4663f6dbe9aee0a815"
+  },
+  "sha256_fuentes_manuscrito": {
+    "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md": "b9ead99a051817c61772e3bdac9f52f38f82cdd61173b126f2ceb16040a06a79",
+    "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md": "cb644d3e158fa3350f18665ad54e5a1e4fff9a7e80be6069e22f963efc18f12f",
+    "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md": "76dcf3bca7c7a23c227e1e2920d3477771dcc5abca1be8fc050979bfed41c075",
+    "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md": "b68c41082d10531cd11888283a524ddb9c421cbac3e8d7e61ea37ee01dc9ce9d",
+    "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md": "aac14761229724fa43d438ae0ee783432c78db409797c5009c9d5267672b567a",
+    "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md": "892037a264f2ef65e4e22fe6c4be703f66aaa0fd83bbf7bf0f65c6bdc45244e5",
+    "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md": "61cb25022db03d3897b090ce30173541e5b3230fe8077647a125055d881cad3d",
+    "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md": "f807dea85d3a443f7010378d9c6b1e302afaddd95f8dcc956d0fe11aad1234d4"
+  },
+  "enlaces_ausentes": [],
+  "pruebas_revision": {
+    "correcto": true,
+    "codigo_salida": 0,
+    "controles": 6,
+    "log": "pruebas.log"
+  },
+  "sha256_documentacion_y_logs": {
+    "README.md": "b73c3eb5a2d9ff310d6b5a2e0fd8f62abe560de2dddd526694797e6f2ab0b1fc",
+    "BITACORA_TG2.md": "3a2bcc254f496fcb0be36877b2da55c50f6d21a97f73e6aa4fcc4f1534d4ce4f",
+    "formalizacion/README.md": "f29d2db4b996e8f33a9f584604e6084bb0c5114d6a5f6991ceb54726988c72a1",
+    "formalizacion/ALCANCE-MANUSCRITO.md": "d2930e59a137d6e7350c001f72be5e91e2c951a4b0dae9b5e7904aff5754775a",
+    "formalizacion/REVISION-MANUSCRITO.md": "608321332ce5953c0d86628a208b87a9f73db38c54625b4663f6dbe9aee0a815",
+    "Documentos/06-Evidencia-TG2/README.md": "bd7e1dec7aaa0385845b3841880447fc52f2c0237ed523ab0a4de8fefe91d392",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Revision-Manuscrito/README.md": "fe31f45e4982ea2a498529cae6e162ad02e3cc5c7d72a42fddea246ef757a53c",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Revision-Manuscrito/pruebas.log": "6bc14f8c8c1bf096b30ffbbabec198cd6402ea691adb733f6b6c2f40e3138de6"
+  }
+}

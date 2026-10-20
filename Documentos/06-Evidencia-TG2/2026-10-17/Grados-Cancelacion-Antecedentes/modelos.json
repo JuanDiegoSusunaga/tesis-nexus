@@ -1,0 +1,98 @@
+{
+  "AIR/GradosValidos": {
+    "grupos": [
+      "M28"
+    ],
+    "secciones": [
+      "6.7.2"
+    ],
+    "verificado": "Factorización de fronteras válidas, cocientes de frontera de grado <=T-2, numeradores de frontera de grado <=2(T-1), cociente de transición de grado <=T y composición de grado <=T. Para trazas válidas, identidad racional fuera de polos y grado <2T.",
+    "limites": [
+      "El cociente euclídeo está definido incluso con resto no nulo: su cota de grado por sí sola no demuestra validez. La identidad racional requiere divisibilidad. No demuestra refinamiento Rust, NTT ni aceptación de certificados."
+    ],
+    "teoremas": [
+      "Nexus.AIR.GradosValidos.frontera_factoriza",
+      "Nexus.AIR.GradosValidos.cociente_frontera_valida",
+      "Nexus.AIR.GradosValidos.grado_cociente_frontera",
+      "Nexus.AIR.GradosValidos.grado_cociente_transicion",
+      "Nexus.AIR.GradosValidos.grado_numerador_frontera",
+      "Nexus.AIR.GradosValidos.numerador_valido_divisible",
+      "Nexus.AIR.GradosValidos.factorizacion_valida",
+      "Nexus.AIR.GradosValidos.grado_cociente_combinado",
+      "Nexus.AIR.GradosValidos.evaluacion_composicion_valida",
+      "Nexus.AIR.GradosValidos.certificado_valido"
+    ]
+  },
+  "AIR/CancelacionSesgada": {
+    "grupos": [
+      "M29"
+    ],
+    "secciones": [
+      "6.7.2",
+      "6.7.9"
+    ],
+    "verificado": "Cota de un evento con resultado único por la masa máxima. Ley conjunta por contexto y reto condicionado, unicidad de cancelación lineal y cota condicional. Para tres retos independientes con masas <=mu y residuos no todos nulos, cancelación <=mu; aplicación a una traza AIR fija inválida.",
+    "limites": [
+      "La cota condicional exige la ley condicionada y su masa máxima; no construye esa ley para todas las historias del protocolo. El corolario de tres retos usa independencia explícita. El adaptador causal y la composición ROM siguen abiertos."
+    ],
+    "teoremas": [
+      "Nexus.AIR.CancelacionSesgada.evento_unico_le",
+      "Nexus.AIR.CancelacionSesgada.evento_condicional",
+      "Nexus.AIR.CancelacionSesgada.cota_condicional_evento",
+      "Nexus.AIR.CancelacionSesgada.cota_condicional_lineal",
+      "Nexus.AIR.CancelacionSesgada.cota_producto_evento",
+      "Nexus.AIR.CancelacionSesgada.cota_primera",
+      "Nexus.AIR.CancelacionSesgada.intercambio_primeras",
+      "Nexus.AIR.CancelacionSesgada.intercambio_ultimas",
+      "Nexus.AIR.CancelacionSesgada.cota_tres",
+      "Nexus.AIR.CancelacionSesgada.cota_traza_invalida"
+    ]
+  },
+  "AIR/EjemploCancelacion": {
+    "grupos": [
+      "M29"
+    ],
+    "secciones": [
+      "6.7.2"
+    ],
+    "verificado": "Polinomio explícito sobre Goldilocks: 16 evaluaciones, cambio de primera fila de 3 a 4, invalidez, recurrencias restantes y resto combinado nulo para alpha0=10376293027944593777, alpha1=alpha2=1. Grado exacto de la traza 15, numerador 32 y composición 16. Existe una traza válida alternativa con la misma salida pública.",
+    "limites": [
+      "Los coeficientes se eligen algebraicamente; no se fuerzan retos SHA3 ni se prueba aceptación de un certificado o de un enunciado falso. No acredita conocimiento cero ni solidez global."
+    ],
+    "teoremas": [
+      "Nexus.AIR.EjemploCancelacion.raiz_valor",
+      "Nexus.AIR.EjemploCancelacion.grado_traza",
+      "Nexus.AIR.EjemploCancelacion.coeficiente_ultimo",
+      "Nexus.AIR.EjemploCancelacion.grado_traza_exacto",
+      "Nexus.AIR.EjemploCancelacion.evaluaciones",
+      "Nexus.AIR.EjemploCancelacion.primera_fila",
+      "Nexus.AIR.EjemploCancelacion.segunda_fila",
+      "Nexus.AIR.EjemploCancelacion.tercera_fila",
+      "Nexus.AIR.EjemploCancelacion.final_fila",
+      "Nexus.AIR.EjemploCancelacion.traza_invalida",
+      "Nexus.AIR.EjemploCancelacion.recurrencias",
+      "Nexus.AIR.EjemploCancelacion.transicion_positiva",
+      "Nexus.AIR.EjemploCancelacion.transicion_inicial",
+      "Nexus.AIR.EjemploCancelacion.denominador_filas",
+      "Nexus.AIR.EjemploCancelacion.frontera_inicial",
+      "Nexus.AIR.EjemploCancelacion.frontera_inicial_otra",
+      "Nexus.AIR.EjemploCancelacion.frontera_final",
+      "Nexus.AIR.EjemploCancelacion.numerador_transicion_otra",
+      "Nexus.AIR.EjemploCancelacion.calculo_coeficiente",
+      "Nexus.AIR.EjemploCancelacion.numerador_filas",
+      "Nexus.AIR.EjemploCancelacion.cancelacion_exacta",
+      "Nexus.AIR.EjemploCancelacion.grado_composicion_cota",
+      "Nexus.AIR.EjemploCancelacion.evaluacion_tras_cancelar",
+      "Nexus.AIR.EjemploCancelacion.coeficiente_reescalado",
+      "Nexus.AIR.EjemploCancelacion.coeficiente_transicion",
+      "Nexus.AIR.EjemploCancelacion.coeficiente_transicion_exacto",
+      "Nexus.AIR.EjemploCancelacion.coeficiente_numerador_transicion",
+      "Nexus.AIR.EjemploCancelacion.coeficiente_numerador_combinado",
+      "Nexus.AIR.EjemploCancelacion.grado_numerador_exacto",
+      "Nexus.AIR.EjemploCancelacion.grado_composicion_exacto",
+      "Nexus.AIR.EjemploCancelacion.salida_honesta",
+      "Nexus.AIR.EjemploCancelacion.existe_valida_alternativa",
+      "Nexus.AIR.EjemploCancelacion.certificado_cancelacion"
+    ]
+  }
+}

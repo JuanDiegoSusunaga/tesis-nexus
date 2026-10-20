@@ -1,0 +1,432 @@
+warning: unused import: `NexusError`
+ --> nexus-core\src\merkle.rs:5:22
+  |
+5 | use crate::{Hash256, NexusError, Hashable};
+  |                      ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ----^^^^^^^^^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `current_index`
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_current_index`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-core` (lib) generated 3 warnings (run `cargo fix --lib -p nexus-core` to apply 3 suggestions)
+   Compiling nexus-zk v0.1.0 (C:\Users\juand\Desktop\Tesis\nexus\nexus-zk)
+warning: unused import: `PQSignature`
+ --> nexus-crypto\src\signer.rs:8:35
+  |
+8 |     Address, Hash256, NexusError, PQSignature, SignatureScheme,
+  |                                   ^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `created_at` is never read
+   --> nexus-crypto\src\entropy.rs:233:5
+    |
+225 | pub struct SentinelSeed {
+    |            ------------ field in this struct
+...
+233 |     created_at: Timestamp,
+    |     ^^^^^^^^^^
+    |
+    = note: `SentinelSeed` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-crypto` (lib) generated 2 warnings (run `cargo fix --lib -p nexus-crypto` to apply 1 suggestion)
+warning: unused import: `NexusError`
+ --> nexus-zk\src\lib.rs:9:27
+  |
+9 | use nexus_core::{Hash256, NexusError, StateRoot};
+  |                           ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+   Compiling nexus-active v0.1.0 (C:\Users\juand\Desktop\Tesis\nexus\nexus-active)
+warning: unused imports: `BlockHeight` and `TransactionType`
+  --> nexus-active\src\sequencer.rs:10:22
+   |
+10 |     Address, Amount, BlockHeight, Hash256, NexusError, SignedTransaction,
+   |                      ^^^^^^^^^^^
+11 |     Timestamp, TransactionType,
+   |                ^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `VecDeque`
+  --> nexus-active\src\sequencer.rs:16:45
+   |
+16 | use std::collections::{BinaryHeap, HashMap, VecDeque};
+   |                                             ^^^^^^^^
+
+warning: unused import: `std::collections::HashMap`
+  --> nexus-active\src\execution.rs:11:5
+   |
+11 | use std::collections::HashMap;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `PQSignature`
+ --> nexus-active\src\batch.rs:5:39
+  |
+5 | use nexus_core::{Hash256, NexusError, PQSignature, SignedTransaction, StateRoot, BlockHeight, Timestamp};
+  |                                       ^^^^^^^^^^^
+
+warning: unused imports: `Address` and `InMemoryState`
+  --> nexus-active\src\chain.rs:13:46
+   |
+13 |     SignedTransaction, StateRoot, Timestamp, Address, InMemoryState,
+   |                                              ^^^^^^^  ^^^^^^^^^^^^^
+
+warning: unused import: `Signer`
+  --> nexus-active\src\sequencer.rs:13:38
+   |
+13 | use nexus_crypto::{DilithiumKeypair, Signer};
+   |                                      ^^^^^^
+
+warning: unused variable: `original`
+   --> nexus-active\src\verifier.rs:228:9
+    |
+228 |         original: &StateProof,
+    |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_original`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `value`
+   --> nexus-active\src\execution.rs:239:9
+    |
+239 |         value: Amount,
+    |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_value`
+
+warning: fields `keypair` and `current_batch` are never read
+   --> nexus-active\src\sequencer.rs:101:5
+    |
+ 97 | pub struct NexusSequencer {
+    |            -------------- fields in this struct
+...
+101 |     keypair: Arc<DilithiumKeypair>,
+    |     ^^^^^^^
+...
+107 |     current_batch: Arc<RwLock<Vec<SignedTransaction>>>,
+    |     ^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `vk_hash` is never read
+  --> nexus-active\src\verifier.rs:84:5
+   |
+74 | pub struct NitroVerifier {
+   |            ------------- field in this struct
+...
+84 |     vk_hash: Hash256,
+   |     ^^^^^^^
+
+warning: field `challenger` is never read
+   --> nexus-active\src\verifier.rs:103:5
+    |
+100 | struct PendingProof {
+    |        ------------ field in this struct
+...
+103 |     challenger: Option<Address>,
+    |     ^^^^^^^^^^
+    |
+    = note: `PendingProof` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: field `max_retries` is never read
+   --> nexus-active\src\batch.rs:247:5
+    |
+239 | pub struct BatchSubmitter {
+    |            -------------- field in this struct
+...
+247 |     max_retries: u32,
+    |     ^^^^^^^^^^^
+
+warning: fields `verifier` and `l1_reference` are never read
+  --> nexus-active\src\chain.rs:53:5
+   |
+45 | pub struct ActiveChain {
+   |            ----------- fields in this struct
+...
+53 |     verifier: Arc<RwLock<NitroVerifier>>,
+   |     ^^^^^^^^
+...
+65 |     l1_reference: Arc<RwLock<BlockHeight>>,
+   |     ^^^^^^^^^^^^
+
+warning: `nexus-zk` (lib) generated 1 warning (run `cargo fix --lib -p nexus-zk` to apply 1 suggestion)
+warning: `nexus-zk` (lib test) generated 1 warning (1 duplicate)
+warning: struct `Division` is never constructed
+ --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:9:12
+  |
+9 | pub struct Division {
+  |            ^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: struct `Audit` is never constructed
+  --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:15:12
+   |
+15 | pub struct Audit {
+   |            ^^^^^
+
+warning: struct `Composition` is never constructed
+  --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:24:12
+   |
+24 | pub struct Composition {
+   |            ^^^^^^^^^^^
+
+warning: function `trim` is never used
+  --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:30:4
+   |
+30 | fn trim(mut p: Vec<Felt>) -> Vec<Felt> {
+   |    ^^^^
+
+warning: function `degree` is never used
+  --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:35:8
+   |
+35 | pub fn degree(p: &[Felt]) -> Option<usize> {
+   |        ^^^^^^
+
+warning: function `degree_ext` is never used
+  --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:39:8
+   |
+39 | pub fn degree_ext(p: &[Fp2]) -> Option<usize> {
+   |        ^^^^^^^^^^
+
+warning: function `sub` is never used
+  --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:43:4
+   |
+43 | fn sub(a: &[Felt], b: &[Felt]) -> Vec<Felt> {
+   |    ^^^
+
+warning: function `mul` is never used
+  --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:50:4
+   |
+50 | fn mul(a: &[Felt], b: &[Felt]) -> Vec<Felt> {
+   |    ^^^
+
+warning: function `shifted` is never used
+  --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:59:4
+   |
+59 | fn shifted(a: &[Felt], factor: Felt) -> Vec<Felt> {
+   |    ^^^^^^^
+
+warning: function `divide` is never used
+  --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:68:4
+   |
+68 | fn divide(a: &[Felt], b: &[Felt]) -> Result<Division, String> {
+   |    ^^^^^^
+
+warning: function `audit` is never used
+  --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:87:8
+   |
+87 | pub fn audit(trace: &[Felt], start: Felt, output: Felt) -> Result<Audit, String> {
+   |        ^^^^^
+
+warning: function `compose` is never used
+   --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:127:8
+    |
+127 | pub fn compose(audit: &Audit, alphas: [Fp2; 3]) -> Composition {
+    |        ^^^^^^^
+
+warning: function `eval_ext` is never used
+   --> nexus-zk\tests\..\experiments\tg2_air_algebra.rs:144:8
+    |
+144 | pub fn eval_ext(coefficients: &[Fp2], x: Felt) -> Fp2 {
+    |        ^^^^^^^^
+
+warning: `nexus-active` (lib) generated 13 warnings (run `cargo fix --lib -p nexus-active` to apply 7 suggestions)
+warning: `nexus-zk` (test "tg2_trace_proximity") generated 13 warnings
+warning: `nexus-active` (lib test) generated 12 warnings (12 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.39s
+     Running unittests src\lib.rs (C:/tmp/nexus-target\debug\deps\nexus_active-95b72bd2b219a44b.exe)
+
+running 20 tests
+test batch::tests::test_batch_submitter ... ok
+test pq_verifier::tests::garbage_bytes_do_not_deserialize_as_proof ... ok
+test execution::tests::test_execution_engine_creation ... ok
+test chain::tests::test_chain_stats ... ok
+test sequencer::tests::test_sequencer_creation ... ok
+test chain::tests::test_produce_block ... ok
+test chain::tests::test_active_chain_creation ... ok
+test verifier::tests::test_optimistic_verification ... ok
+test sequencer::tests::test_duplicate_transaction ... ok
+test sequencer::tests::test_submit_transaction ... ok
+test verifier::tests::test_verifier_creation ... ok
+test verifier::tests::test_zk_verification ... ok
+test execution::tests::test_execute_transfer ... ok
+test pq_verifier::tests::wrong_post_root_rejected ... ok
+test batch::tests::test_batch_builder ... ok
+test sequencer::tests::test_build_batch ... ok
+test pq_verifier::tests::prove_and_verify_bound ... ok
+test verifier::tests::test_stark_pq_rejects_wrong_post_root ... ok
+test verifier::tests::test_real_stark_pq_verification ... ok
+test pq_verifier::tests::serialization_roundtrip ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running tests\lean_contract.rs (C:/tmp/nexus-target\debug\deps\lean_contract-d20a84ce03d63034.exe)
+
+running 7 tests
+test no_reinterpreta_hashes_arbitrarios_ni_alias_modulares_como_escalares ... ok
+test rechaza_basura_truncados_sufijos_y_perfiles_sin_cambiar_estado ... ok
+test contexto_tipo_altura_entradas_y_todas_las_coordenadas_se_comprueban ... ok
+test modo_optimista_no_registra_raiz_antes_de_finalizar_ni_acredita_el_contrato ... ok
+test solo_la_ruta_con_contexto_registra_una_raiz_tras_aceptar ... ok
+test modo_hibrido_no_cae_a_aceptacion_optimista_por_tamano ... ok
+test altura_es_contexto_externo_y_no_se_anuncia_como_restriccion_air ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.29s
+
+     Running tests\tg2_verification.rs (C:/tmp/nexus-target\debug\deps\tg2_verification-ac5b67408496440b.exe)
+
+running 15 tests
+test active_rejects_garbage_without_marking_root_verified ... ok
+test canonical_refuses_arbitrary_hash_roots ... ok
+test canonical_rejects_wrong_type_height_and_outer_inputs ... ok
+test public_openings_recover_the_witness_for_the_16_row_example ... ok
+test active_rejects_legacy_stark_without_trusted_context ... ok
+test canonical_bounds_trace_size_before_arithmetic ... ok
+test canonical_rejects_empty_truncated_trailing_and_oversized_payloads ... ok
+test canonical_executes_stark_checks_after_structural_validation ... ok
+test canonical_rejects_noncanonical_deserialized_field_elements ... ok
+test canonical_valid_proof_accepts ... ok
+test canonical_does_not_claim_height_is_in_the_air_statement ... ok
+test canonical_rejects_missing_queries_layers_and_paths ... ok
+test canonical_rejects_mutations_in_every_byte_of_pre_and_post ... ok
+test legacy_field_reduction_also_collides_within_first_eight_bytes ... ok
+test legacy_ignores_each_of_the_last_24_bytes_of_both_roots ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.47s
+
+     Running unittests src\lib.rs (C:/tmp/nexus-target\debug\deps\nexus_zk-e31ed47e92e73fb7.exe)
+
+running 36 tests
+test stark::air::tests::tampered_start_rejects ... ok
+test stark::air::tests::tampered_trace_value_rejects ... ok
+test stark::channel::tests::grinding_roundtrip ... ok
+test stark::air::tests::tampered_output_rejects ... ok
+test stark::channel::tests::indices_in_range ... ok
+test stark::air::tests::wrong_steps_rejects ... ok
+test stark::air::tests::verifier_total_on_empty_queries ... ok
+test stark::channel::tests::tag_injectivity ... ok
+test stark::channel::tests::transcript_is_deterministic_and_order_sensitive ... ok
+test stark::field::tests::fp2_is_field ... ok
+test stark::field::tests::legendre_seven_is_non_residue ... ok
+test stark::field::tests::mul_inv_roundtrip ... ok
+test stark::field::tests::near_modulus_arithmetic ... ok
+test stark::field::tests::root_of_unity_has_correct_order ... ok
+test stark::fri::tests::query_indices_distinct_without_replacement ... ok
+test stark::field::tests::add_sub_roundtrip ... ok
+test stark::air::tests::adversarial_per_element_tamper_rejected ... ok
+test stark::linked::tests::selector_respeta_limite_512_y_orden ... ok
+test stark::fri::tests::rejects_tampered_opening ... ok
+test stark::merkle::tests::leaf_node_domain_separation ... ok
+test stark::fri::tests::rejects_high_degree ... ok
+test stark::fri::tests::rejects_wrong_final_value ... ok
+test stark::merkle::tests::open_and_verify_all_leaves ... ok
+test stark::ntt::tests::coset_ntt_matches_naive_eval ... ok
+test stark::ntt::tests::ntt_intt_roundtrip ... ok
+test stark::merkle::tests::tampered_value_rejected ... ok
+test stark::ntt::tests::ntt_matches_naive_eval ... ok
+test stark::linked::tests::selector_cuenta_duplicados_y_rechaza_dominios_invalidos ... ok
+test stark::params::tests::soundness_budget_print ... ok
+test stark::air::tests::pipeline_honest_is_faithful ... ok
+test stark::air::tests::valid_transition_accepts ... ok
+test stark::fri::tests::accepts_low_degree ... ok
+test stark::air::tests::adversarial_transition_violation_rejected ... ok
+test stark::air::tests::adversarial_unrelated_low_degree_cp_rejected ... ok
+test stark::air::tests::multiple_sizes ... ok
+test stark::air::tests::adversarial_property_valid_accept_flips_reject ... ok
+
+test result: ok. 36 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.82s
+
+     Running tests\lean_contract.rs (C:/tmp/nexus-target\debug\deps\lean_contract-406f1c749aed0ada.exe)
+
+running 4 tests
+test lector_acota_filas_version_y_perfil_antes_de_asignar_vectores ... ok
+test lector_rechaza_truncados_sufijos_cantidades_hostiles_y_campos_no_canonicos ... ok
+test verificacion_tipificada_rechaza_formas_y_enlaces_antes_de_indexar ... ok
+test los_catorce_certificados_historicos_conservan_su_resultado_y_bytes ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.09s
+
+     Running tests\tg2_air_algebra.rs (C:/tmp/nexus-target\debug\deps\tg2_air_algebra-57ca89bfb67b0d61.exe)
+
+running 7 tests
+test errores_pueden_cancelarse_con_tres_coeficientes_no_nulos ... ok
+test oraculo_rechaza_tamanos_y_polos_fuera_del_modelo ... ok
+test errores_de_frontera_y_transicion_dejan_residuos ... ok
+test identidad_residual_y_cota_de_raices_en_caso_invalido ... ok
+test dos_errores_de_oraculo_afectan_como_maximo_seis_composiciones ... ok
+test trazas_validas_dividen_y_respetan_las_cotas ... ok
+test oraculo_coincide_con_las_aperturas_del_probador_heredado ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests\tg2_linked_trace_fri.rs (C:/tmp/nexus-target\debug\deps\tg2_linked_trace_fri-0108226eb1a6859b.exe)
+
+running 10 tests
+test fri_de_composicion_sigue_exigiendo_las_restricciones ... ok
+test rechaza_los_tres_contraejemplos_preservados_en_fri_de_traza ... ok
+test valida_limites_antes_de_multiplicar_o_indexar ... ok
+test rechaza_elementos_no_canonicos_antes_de_la_aritmetica ... ok
+test enunciado_version_y_perfil_no_se_pueden_sustituir ... ok
+test rechaza_formas_truncadas_excesivas_y_consultas_reordenadas ... ok
+test transcripcion_independiente_reproduce_indices_y_distingue_fases ... ok
+test raiz_y_codificacion_son_comunes_al_air_y_fri_de_traza ... ok
+test detecta_valores_caminos_y_enlaces_alterados ... ok
+test acepta_casos_honestos_y_serializacion_sin_lde_completo ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 7.96s
+
+     Running tests\tg2_soundness.rs (C:/tmp/nexus-target\debug\deps\tg2_soundness-b8f1195a42da6410.exe)
+
+running 7 tests
+test merkle_de_bajo_nivel_presupone_indice_en_dominio ... ok
+test presupuesto_nominal_no_depende_de_las_filas_ni_del_perfil ... ok
+test consultas_reales_sin_reemplazo_segun_tamano ... ok
+test retos_de_extension_reproducibles_y_canonicos ... ok
+test grinding_admite_varios_nonces_validos ... ok
+test air_liga_enunciado_compromiso_y_valor_final ... ok
+test fri_puede_aceptar_palabra_cercana_con_grado_exacto_alto ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.99s
+
+     Running tests\tg2_trace_proximity.rs (C:/tmp/nexus-target\debug\deps\tg2_trace_proximity-8d152d8d81608572.exe)
+
+running 7 tests
+test control_exhaustivo_valida_limites_compromiso_y_restricciones ... ok
+test control_exhaustivo_acepta_ejecucion_honesta ... ok
+test distancia_exacta_al_codigo_tiene_testigo_de_t_acuerdos ... ok
+test pruebas_reales_siguen_ligadas_al_enunciado_y_aperturas ... ok
+test familia_conserva_filas_y_composicion_dentro_de_cota ... ok
+test verificador_acepta_trazas_a_distancia_siete_octavos ... ok
+test control_exhaustivo_rechaza_el_grado_de_las_aceptaciones_heredadas ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.60s
+
+   Doc-tests nexus_active
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nexus_zk
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

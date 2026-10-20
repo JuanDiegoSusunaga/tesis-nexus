@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-18-lean-air-fri-real",
+  "archivos_comprobados": 9266,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T20:09:50.258188+00:00",
+  "sha256_manifiesto": "8efa55554f656b44ec8d635ee9d92964c12066d637fd21f3165dbffc60d4c967",
+  "nota": "Informe fuera del manifiesto que verifica para evitar referencia hash circular."
+}

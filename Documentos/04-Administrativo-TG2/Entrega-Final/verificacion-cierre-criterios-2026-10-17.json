@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-17-lean-cierre-criterios",
+  "archivos_comprobados": 4652,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T03:45:58.053554+00:00",
+  "sha256_manifiesto": "66dc5b290d8c2e4df84ed1eaf33d81509c0c47e7de91e308efe716ede505ed48",
+  "nota": "El informe queda fuera del manifiesto comprobado para evitar una referencia hash circular."
+}

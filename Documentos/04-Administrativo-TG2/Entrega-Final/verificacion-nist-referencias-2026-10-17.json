@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-17-nist-referencias",
+  "archivos_comprobados": 4693,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T03:54:53.324828+00:00",
+  "sha256_manifiesto": "2bcb3432190e43fdaa691c2845bc6e27107761c28f7de901945a3c6ee382411d",
+  "nota": "El informe se conserva fuera del manifiesto que verifica para evitar una referencia hash circular."
+}

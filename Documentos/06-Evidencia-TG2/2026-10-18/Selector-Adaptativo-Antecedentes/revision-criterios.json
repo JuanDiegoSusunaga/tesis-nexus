@@ -1,0 +1,233 @@
+{
+  "esquema": 1,
+  "grupos_revisados": [
+    {
+      "id": "M26",
+      "titulo": "Aritmética de mediciones: unidades, razones y redondeos",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Identificar datos fuente y versiones antes de calcular inversos, razones y diferencias.",
+        "Formalizar solo las cuentas y tolerancias; la medición permanece evidencia de una ejecución."
+      ],
+      "pendientes_anteriores": [
+        "Siguen sin identificar las corridas originales H1/H2 y sus versiones, junto con M44. Las cuentas y tolerancias ya probadas no certifican procedencia ni capacidad sostenida; esta pasada no inventa datos de esas corridas."
+      ],
+      "modulos_nuevos": [],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Identificar datos fuente y versiones antes de calcular inversos, razones y diferencias.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Formalizar solo las cuentas y tolerancias; la medición permanece evidencia de una ejecución.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "Siguen sin identificar las corridas originales H1/H2 y sus versiones, junto con M44. Las cuentas y tolerancias ya probadas no certifican procedencia ni capacidad sostenida; esta pasada no inventa datos de esas corridas."
+      ]
+    },
+    {
+      "id": "M35",
+      "titulo": "Muestra compartida e hipergeométrica H",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+        "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI."
+      ],
+      "pendientes_anteriores": [
+        "La ley conjunta del programa y sus prefijos está probada. Ahora se transfiere localmente el selector de índices real mediante un acoplamiento con error explícito, incluida omisión compartida y abandono, tras un pasado fijo y primera dirección nueva. Falta derivar esa frescura para los candidatos seleccionados y preconsultas del adversario, enlazar las primeras exposiciones y todas las rondas de retos FRI con sus conjuntos buenos causales, integrar la elección de candidatos y transferir las cotas bajo el experimento adversario completo. No se afirma uniformidad tras condicionar a SinBad, aceptación o completar; el refinamiento universal Rust permanece abierto."
+      ],
+      "modulos_nuevos": [
+        "ROM/ContinuacionPrefijo",
+        "ROM/ParticionObservada",
+        "ROM/ObservacionesPrefijo",
+        "ROM/SelectorPrefijo",
+        "ROM/SelectorAdaptativo",
+        "Canal/SelectorAdaptativo",
+        "Verificador/ContinuacionCausal"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "La continuación tras un prefijo tiene ya su ley exacta. La semilla del selector y los conjuntos buenos pueden depender de una exploración adaptativa anterior; se obtiene una cota sobre todos los pasados, con una única muestra compartida y un término explícito Pr(primera dirección preconsultada). Falta acotar ese término para los candidatos reales y cargarlo a las excepciones del experimento común, derivar los conjuntos buenos causales y enlazar las primeras exposiciones y todas las rondas FRI. También permanece el refinamiento universal Rust. No se condiciona a SinBad, completar, aceptación ni a un futuro elegido favorablemente."
+      ]
+    },
+    {
+      "id": "M36",
+      "titulo": "Solidez ideal por rondas y reinicios",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+        "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash."
+      ],
+      "pendientes_anteriores": [
+        "Completar el adaptador integral de rondas y reinicios y obtener revisión independiente; el autor declaró que no hay dictamen. El compilador de programas finitos no identifica por sí solo los inicios B con consultas hash Q."
+      ],
+      "modulos_nuevos": [
+        "ROM/ContinuacionPrefijo",
+        "ROM/ParticionObservada",
+        "Verificador/ContinuacionCausal"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "El mismo verificador con propuesta adaptativa e intercalaciones ya tiene ley exacta de resultado y continuación tras un prefijo observado, y presupuesto residual altura(programa)-n. Falta el adaptador integral de rondas y reinicios y la revisión independiente; el autor declaró que no hay dictamen. No se identifica automáticamente B con consultas hash Q ni altura con Q+V_T."
+      ]
+    },
+    {
+      "id": "M39",
+      "titulo": "Presupuestos, formas, gramática y semántica del verificador",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Justificar V_T, B_T y S=Q+V_T a partir de listas, rechazos, serialización e índices.",
+        "Enlazar los modelos tipados con enteros de máquina y el verificador Rust."
+      ],
+      "pendientes_anteriores": [
+        "El verificador matemático, lector, formas, canal y aperturas conservan su presupuesto V_T demostrado. La ley conjunta y el selector de índices tienen ahora comparación cuantitativa local con la cinta ideal, bajo primera dirección fresca. Falta refinamiento universal de serde/bincode, operaciones de máquina y ejecutable Rust; permanecen la diferencia de EOF y el corte analítico R. La hipótesis altura(programa)<=S no se identifica automáticamente con Q+V_T."
+      ],
+      "modulos_nuevos": [
+        "Canal/SelectorAdaptativo",
+        "Verificador/ContinuacionCausal"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Justificar V_T, B_T y S=Q+V_T a partir de listas, rechazos, serialización e índices.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Enlazar los modelos tipados con enteros de máquina y el verificador Rust.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "El verificador matemático conserva su presupuesto y ahora su ley exacta tras cualquier prefijo efectivo. El selector de bytes admite decisiones dependientes del pasado y contabiliza explícitamente la primera dirección preconsultada. Falta refinamiento universal de serde/bincode, operaciones de máquina y ejecutable Rust; permanecen EOF estricto y corte analítico R. Los límites de altura no se identifican automáticamente con Q+V_T."
+      ]
+    },
+    {
+      "id": "M40",
+      "titulo": "Potencial de nonces y cola del selector",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+        "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado."
+      ],
+      "pendientes_anteriores": [
+        "Construir los programas de los candidatos reales y sus conjuntos buenos con cotas fijadas antes de responder, además del trabajo/nonce y la carga global de inicios. El selector local ya tiene cota hipergeométrica compartida y error explícito cuando su primera dirección es fresca respecto al pasado fijo. Falta demostrar esa premisa para los candidatos elegidos adaptativamente y valor<=rho; un nonce ya encontrado no se convierte en una prueba independiente."
+      ],
+      "modulos_nuevos": [
+        "ROM/ParticionObservada",
+        "ROM/ObservacionesPrefijo",
+        "ROM/SelectorPrefijo",
+        "ROM/SelectorAdaptativo",
+        "Canal/SelectorAdaptativo"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "El selector ya admite semilla y conjuntos buenos elegidos del prefijo de una exploración adaptativa y produce una cota global con Pr(preconsulta) explícita. Falta construir los candidatos/nonces reales, fijar sus cotas g/m y valor<=rho antes de responder, acotar y cargar las preconsultas y la carga global de inicios, e incorporar el factor de trabajo y las intercalaciones del experimento común. Un nonce ya encontrado no se convierte en una prueba independiente."
+      ]
+    },
+    {
+      "id": "M41",
+      "titulo": "Cota ROM completa y ejemplo numérico",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar la cota parametrizada del evento excepcional del registro.",
+        "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+        "Certificar el ejemplo numérico solo después de fijar las hipótesis completas."
+      ],
+      "pendientes_anteriores": [
+        "La ley conjunta del programa y la cota de fallo de reconstrucción causal se conservan. El selector local de índices añade transferencia cuantitativa de omisión o abandono con una única muestra y error explícito. Falta probar e instanciar las inclusiones de todos los eventos de solidez, las rondas FRI y presupuestos bajo el experimento adversario común, derivar frescura de los candidatos seleccionados, enlazar universalmente Rust y certificar el ejemplo numérico integral. La cota local no es una cota de aceptación falsa global."
+      ],
+      "modulos_nuevos": [
+        "ROM/ContinuacionPrefijo",
+        "ROM/ParticionObservada",
+        "ROM/ObservacionesPrefijo",
+        "ROM/SelectorPrefijo",
+        "ROM/SelectorAdaptativo",
+        "Canal/SelectorAdaptativo",
+        "Verificador/ContinuacionCausal"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar la cota parametrizada del evento excepcional del registro.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Certificar el ejemplo numérico solo después de fijar las hipótesis completas.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "Se dispone de ley de continuación del verificador completo y de cota del selector sobre todos los pasados, con omisión compartida, abandono y Pr(preconsulta) explícita. Falta acotar esta probabilidad y probar las inclusiones de todos los eventos de solidez y las rondas FRI bajo el mismo experimento de candidatos/nonces, componer los presupuestos, enlazar universalmente Rust y certificar el ejemplo numérico integral. No se ha demostrado una cota de aceptación falsa global."
+      ]
+    }
+  ],
+  "cerrados_en_su_modelo": [],
+  "parciales_restantes": [
+    "M26",
+    "M35",
+    "M36",
+    "M39",
+    "M40",
+    "M41"
+  ],
+  "criterios_reducidos": false,
+  "obligaciones_adicionales_cerradas": false,
+  "tesis_completa_verificada": false,
+  "dictamen_independiente": "pendiente"
+}

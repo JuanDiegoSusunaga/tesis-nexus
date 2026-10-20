@@ -1,0 +1,199 @@
+[PÁGINA PDF 1]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+NIST Special Publication 800-90B Errata 
+(Last updated on May 29, 2025) 
+Document: NIST SP 800-90B 
+Publication Date: January 2018 
+Link: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90B.pdf 
+Publication Details: https://csrc.nist.gov/pubs/sp/800/90/b/final 
+The following list compiles known typographical and editorial errors identifed in NIST SP 800-90B, 
+along with corrections and attribution where available. Note that these proposed corrections are not 
+ofcial changes to the document but may be incorporated in a future errata update. 
+1. Location: Page 39, Line 8, Section 5.2.4 
+Original: the critical value at 0.001, which is 27.887. 
+Correction: the critical value at 0.001, which is 27.877. 
+Notes: Corrected numerical error in the critical value for the chi-squared test. 
+Reported by: Dr. Abel C. H. Chen (May 29, 2025) 
+2. Location: Page 42, Lines 2-3, Section 6.3.1
+√ 
+Original: with pu = 0.4 + 2.576 · 0.012 = 0.6895. The min-entropy estimate is − log2(0.6822) = 
+0.5363. 
+√ 
+Correction: with pu = 0.4+2.576· 0.012 = 0.6822. The min-entropy estimate is − log2(0.6822) = 
+0.5518. 
+Notes: Corrected numerical error in the computation of pu and updated the corresponding min-
+entropy estimate. 
+Reported by: Dr. Abel C. H. Chen (May 28, 2025) 
+1 

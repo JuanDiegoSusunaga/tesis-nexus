@@ -1,0 +1,39 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-17T15:06:06.954780+00:00",
+  "correcto": true,
+  "auditoria_lean": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Entropia-Salud/validacion.json",
+    "sha256": "ea16fc987403bf189744d99ede4c5b4fb4ae8ea090bd02fec92ca3aeefbf2a67",
+    "teoremas": 864,
+    "modulos": 113,
+    "fuentes": 177,
+    "logs": 119
+  },
+  "fuentes_previas_sin_cambios": 143,
+  "fuentes_previas_actualizadas_con_copia": 6,
+  "versiones_anteriores_intactas": 15,
+  "candidatos_con_texto_linea_e_identidad_preservados": 272,
+  "fuentes_manuscrito_intactas": 8,
+  "rust_modelado_intacto": true,
+  "revision_previa_recuperable_por_copias": true,
+  "etapas_lean": 28,
+  "logs_lean_intactos": 1792,
+  "controles_unitarios": 13,
+  "enlaces_locales_existentes": 297,
+  "tesis_completa_verificada": false,
+  "sha256_reglas_git": "15380f342946d96d13c9481b74b45429b94beba2f0d72be3ffdb64d6fc1767f4",
+  "sha256_documentacion_y_controles": {
+    "README.md": "bc3c57cac560b39ad2d6ae8f40bd59f7e188ff1e830699e6773f8e13740b9f79",
+    "BITACORA_TG2.md": "3ac668c882041e35570f5f02f34e555aa584ff82b21c1980a9466629ca1280c4",
+    "formalizacion/README.md": "ce5a843b0865b87609f3476160d9a92e1f2378cedc32a3b71391e27bfc631d53",
+    "formalizacion/ALCANCE-MANUSCRITO.md": "143d0420f19ba8acb8256dbba83f72a42a27a255b06cc1de679a3f9a968e1ae3",
+    "formalizacion/REVISION-MANUSCRITO.md": "50dd197fc429578b532595cda88724dbd6cb4249f38e720daa20704e6af50b41",
+    "Documentos/06-Evidencia-TG2/README.md": "6b5c28b208cf5e9d16a88f587447ef7058a72c7d11cc46d0e539f616befdb553",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Entropia-Salud/README.md": "f91f34e1b39f65786fcc00cb8c3ee807169b5a96bbb48f83f66825e309d3b974",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Entropia-Salud-Antecedentes/README.md": "b1639c567e84a55155abf684dbb102ee3c58cfab5b01af0bc18b83fbe1777219",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Entropia-Salud/controles.log": "e90c77ab03d989211c5d68e7b7f86944419c39fdf5df3ffe197cfcbecef8e9c0",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Entropia-Salud/revision-manuscrito.json": "eddd1011c2c502e200987e3994e6f9e7851f8e79da1ce0dbf67aae6088fe4e9c"
+  },
+  "limite": "Los hashes preservan identidad e historia. Los controles de trazabilidad no sustituyen juicio semántico, auditoría Lean ni dictamen matemático independiente."
+}

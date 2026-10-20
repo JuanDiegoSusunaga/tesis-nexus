@@ -1,0 +1,215 @@
+{
+  "esquema": 1,
+  "en_preparacion": false,
+  "auditoria_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Juegos-Reticulares/validacion.json",
+    "sha256": "3d7cfccec95155903c486f2752cf957c620fc6cf23d24047d45bc9b9d1aa0417"
+  },
+  "versiones_anteriores": {
+    "formalizacion/Nexus.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/formalizacion/Nexus.lean",
+      "sha256": "1d85df9b9a39fbd784585568e7107e54ea11c45c0a7e1d79326cdf2c6af41025"
+    },
+    "formalizacion/Auditoria.lean": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/formalizacion/Auditoria.lean",
+      "sha256": "aa5dab1382fe51568298edf38accec27c03156ac258ffb2974a39e30d5098c63"
+    },
+    "formalizacion/cobertura.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/formalizacion/cobertura.json",
+      "sha256": "8924d65e71505d465f736f5570661c8ae8266ac6cb219686084bd5d3e96e6c9d"
+    },
+    "formalizacion/inventario-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/formalizacion/inventario-manuscrito.json",
+      "sha256": "1d2466f51ee1272adb37710136ef30222b83ebb0b516ad09a323bbd086710c97"
+    },
+    "formalizacion/revision-manuscrito.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/formalizacion/revision-manuscrito.json",
+      "sha256": "ace6297e4dd0d2a0562607967ea729860d4e1cfbd245428b9efe7c4f91e91e9a"
+    },
+    "scripts/verificar_formalizacion.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/scripts/verificar_formalizacion.py",
+      "sha256": "865afa1ef30526a2b65ebb4323e5542912fae48a0fe5c697665c34a68038a197"
+    },
+    "scripts/lean.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/scripts/lean.py",
+      "sha256": "f26d6e39f623c2827c8c04a42b9717b598835d52796c18c1dac72cc5bb544319"
+    },
+    "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "sha256": "61cb25022db03d3897b090ce30173541e5b3230fe8077647a125055d881cad3d"
+    },
+    "scripts/verificar_revision_manuscrito.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/scripts/verificar_revision_manuscrito.py",
+      "sha256": "608b71e8102ea50bbda13139ead22c93102c6c11632c5b1440def153cd545373"
+    },
+    "scripts/tests/test_verificar_revision_manuscrito.py": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/scripts/tests/test_verificar_revision_manuscrito.py",
+      "sha256": "a4eb687be73508ddd95b6982db8d030036738e4b0a2ee338293a2400e8455b3a"
+    },
+    "formalizacion/REVISION-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/formalizacion/REVISION-MANUSCRITO.md",
+      "sha256": "b0260aa2433d92981853742ad221c0afccfcb9e1ea9e46418a2d5037889f5479"
+    },
+    "formalizacion/ALCANCE-MANUSCRITO.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/formalizacion/ALCANCE-MANUSCRITO.md",
+      "sha256": "97c0d49bad0cfac2c296a2a366ff21a914e81b3124c79f3715cf8e63c67450e4"
+    },
+    "formalizacion/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/formalizacion/README.md",
+      "sha256": "989fe21069c48d1af1cf391f8cb95e230173891b1c144f7ca1669ce351ac0cc8"
+    },
+    "README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/README.md",
+      "sha256": "eb4aec1671be29ca92244e8114f61f4ef2d8edd9ef4df4908c28027d6e01aa39"
+    },
+    "BITACORA_TG2.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/BITACORA_TG2.md",
+      "sha256": "d276e503a5a158cd4efdf540a556ee2e78b16668c56160759dc592f27db12b56"
+    },
+    "Documentos/06-Evidencia-TG2/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/Documentos/06-Evidencia-TG2/README.md",
+      "sha256": "54c89c151140bc361cd39294ee78c594cbf2cb3127a6b2233b6ce0a2dfbc0485"
+    },
+    "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Modelos-Pendientes-Antecedentes/version_anterior/Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "sha256": "b9ead99a051817c61772e3bdac9f52f38f82cdd61173b126f2ceb16040a06a79"
+    }
+  },
+  "cambios_fuentes_previas_autorizados": [
+    "formalizacion/Nexus.lean",
+    "formalizacion/Auditoria.lean",
+    "formalizacion/cobertura.json",
+    "formalizacion/inventario-manuscrito.json",
+    "formalizacion/revision-manuscrito.json",
+    "scripts/verificar_formalizacion.py",
+    "scripts/lean.py",
+    "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+    "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md"
+  ],
+  "sha256_reglas_git": "15380f342946d96d13c9481b74b45429b94beba2f0d72be3ffdb64d6fc1767f4",
+  "correcciones_manuscrito": [
+    {
+      "candidato": "Cap6-Validacion-Formal-089",
+      "motivo": "El registro histórico usa KiB=1024 B: 768.2 KiB/3309 B se aproxima a 238, no a 232."
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "sustituciones": [
+        {
+          "anterior": "con 16 bytes canónicos. Las aperturas AIR",
+          "actual": "con 16 bytes canónicos de coordenadas; el hash de hoja recibe 17 bytes al añadir el prefijo de dominio. Las aperturas AIR"
+        },
+        {
+          "anterior": "La demostración escrita propuesta está pendiente de revisión independiente y no está mecanizada en Lean.",
+          "actual": "Los modelos ideales de estado, rondas y reinicios tienen componentes mecanizados en Lean y una auditoría registrada en `formalizacion/`; la correspondencia integral con el ejecutable y la revisión independiente permanecen pendientes."
+        },
+        {
+          "anterior": "La ejecución de Lean/Comparator permanece pendiente y el resultado 279",
+          "actual": "La auditoría Lean comprueba componentes explícitos del manuscrito y sus axiomas, sin acreditar el cierre integral; Comparator y el dictamen independiente permanecen pendientes. El resultado 279"
+        }
+      ]
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "sustituciones": [
+        {
+          "anterior": "El catálogo relaciona afirmaciones, hipótesis y evidencia sin mecanizar las demostraciones.",
+          "actual": "El catálogo relaciona afirmaciones, hipótesis y evidencia; las pruebas Lean complementarias mecanizan componentes de los modelos con alcance y axiomas auditados. La correspondencia integral con el ejecutable y el cierre matemático completo permanecen pendientes."
+        },
+        {
+          "anterior": "A catalogue links claims, assumptions, and evidence without mechanizing the proofs.",
+          "actual": "A catalogue links claims, assumptions, and evidence; complementary Lean proofs mechanize components of the models with audited scope and axioms. Full correspondence with the executable and complete mathematical verification remain pending."
+        }
+      ]
+    }
+  ],
+  "modulos_nuevos": [
+    "Nexus.Reticulos.Euclideos",
+    "Nexus.MLDSA.Plantilla",
+    "Nexus.Cripto.Variacion",
+    "Nexus.ROM.Sesgo",
+    "Nexus.Cripto.Derivacion",
+    "Nexus.Cripto.RegistroEpocas",
+    "Nexus.Cripto.Transacciones",
+    "Nexus.Modelos.IdealHistorico",
+    "Nexus.ROM.RaicesCanonicas",
+    "Nexus.Complejidad.Comunicacion",
+    "Nexus.Modelos.QuorumIncentivos",
+    "Nexus.Modelos.Mediciones",
+    "Nexus.ROM.ColaSelector",
+    "Nexus.Salud.DecimalesAPT",
+    "Nexus.Cripto.PerdidaQROM",
+    "Nexus.ROM.Presupuestos"
+  ],
+  "teoremas_nuevos": 176,
+  "teoremas_totales": 1393,
+  "modulos_totales": 154,
+  "cambios_candidatos": [
+    {
+      "id": "Cap6-Validacion-Formal-089",
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "linea": 412,
+      "anterior": "**El *trade-off*, declarado.** Una prueba de 768 KB es ~232× una firma Dilithium3; pero se paga **una vez por lote**: a $2^{18}$ pasos equivale a ~3 B por paso probado, y su verificación histórica tarda 7,74 ms para esta recurrencia. Una fila del AIR no equivale a una transacción de la aplicación. La cadencia del prover (~10 s en un hilo a $2^{18}$) fija la latencia mínima de bacheo del PoC; su paralelización es trabajo futuro (Cap. 7).",
+      "actual": "**El *trade-off*, declarado.** Una prueba histórica de 768,2 KiB equivale a ~238 firmas Dilithium3 de 3309 B; pero se paga **una vez por lote**: a $2^{18}$ pasos equivale a ~3 B por paso probado, y su verificación histórica tarda 7,74 ms para esta recurrencia. Una fila del AIR no equivale a una transacción de la aplicación. La cadencia del prover (~10 s en un hilo a $2^{18}$) fija la latencia mínima de bacheo del PoC; su paralelización es trabajo futuro (Cap. 7).",
+      "sha256_anterior": "938c5475daa46f095d7443d864fae12595988e88faa45e42838bd6bdc2679493",
+      "sha256_actual": "66fa405209836ac19217e6e6501443e7a715b3079260414d613e8e3b8223828f"
+    },
+    {
+      "id": "Cap6-Validacion-Formal-135",
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "linea": 650,
+      "anterior": "**Diseño experimental.** La variante TG2 añade un recorrido FRI de traza, con cota de grado menor que $T$, al recorrido de composición, con cota menor que $2T$. Admite potencias de dos entre 16 y 4096 filas y mantiene $N=8T$. El árbol de traza codifica cada valor base como $(u,0)$ en la extensión, con 16 bytes canónicos. Las aperturas AIR y la primera capa FRI de traza deben referirse a una única raíz:",
+      "actual": "**Diseño experimental.** La variante TG2 añade un recorrido FRI de traza, con cota de grado menor que $T$, al recorrido de composición, con cota menor que $2T$. Admite potencias de dos entre 16 y 4096 filas y mantiene $N=8T$. El árbol de traza codifica cada valor base como $(u,0)$ en la extensión, con 16 bytes canónicos de coordenadas; el hash de hoja recibe 17 bytes al añadir el prefijo de dominio. Las aperturas AIR y la primera capa FRI de traza deben referirse a una única raíz:",
+      "sha256_anterior": "9e793db5a39ab1a0555b828b4c3e23ff38f076b5dcb1bf42ac63c051522abcc5",
+      "sha256_actual": "458310d4d67f42d38bea0cea3978a38e35655a05d89d38d2ab13edd0f9993a96"
+    },
+    {
+      "id": "Cap6-Validacion-Formal-166",
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "linea": 773,
+      "anterior": "La derivación posterior desarrolla una función de estado para AIR, FRI de traza, FRI de composición y consulta compartida. Su punto de partida es el enfoque de solidez por rondas de [GMW26, Teorema 5.2]; se utiliza un lema elemental de acuerdo suficiente para los radios de NEXUS, sin atribuir a este trabajo el resultado general del artículo. La demostración escrita propuesta está pendiente de revisión independiente y no está mecanizada en Lean.",
+      "actual": "La derivación posterior desarrolla una función de estado para AIR, FRI de traza, FRI de composición y consulta compartida. Su punto de partida es el enfoque de solidez por rondas de [GMW26, Teorema 5.2]; se utiliza un lema elemental de acuerdo suficiente para los radios de NEXUS, sin atribuir a este trabajo el resultado general del artículo. Los modelos ideales de estado, rondas y reinicios tienen componentes mecanizados en Lean y una auditoría registrada en `formalizacion/`; la correspondencia integral con el ejecutable y la revisión independiente permanecen pendientes.",
+      "sha256_anterior": "cb4c2d9336f86b861b450039e68d089a3347d6ddaed2cb8f0bfb485a13bcf416",
+      "sha256_actual": "22d6a26da4f16966d6bb9836b2b4828028f00c8606bed626c69e12acb7844e81"
+    }
+  ],
+  "cambios_suplementos": [
+    {
+      "id": "SUP13",
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "linea": 841,
+      "anterior": "El catálogo complementario relaciona doce afirmaciones con sus hipótesis, dependencias y evidencia identificada por SHA-256. Distingue la integridad documental, los contrastes empíricos, una derivación propuesta, una prueba mecanizada y el dictamen académico. Su comprobador valida referencias y archivos; no decide verdad matemática. La ejecución de Lean/Comparator permanece pendiente y el resultado 279 de OpenAI Math conserva su estado de candidato bibliográfico, sin fundamentar garantías de NEXUS.",
+      "actual": "El catálogo complementario relaciona doce afirmaciones con sus hipótesis, dependencias y evidencia identificada por SHA-256. Distingue la integridad documental, los contrastes empíricos, una derivación propuesta, una prueba mecanizada y el dictamen académico. Su comprobador valida referencias y archivos; no decide verdad matemática. La auditoría Lean comprueba componentes explícitos del manuscrito y sus axiomas, sin acreditar el cierre integral; Comparator y el dictamen independiente permanecen pendientes. El resultado 279 de OpenAI Math conserva su estado de candidato bibliográfico, sin fundamentar garantías de NEXUS.",
+      "sha256_anterior": "e671bb4b7d72070dc977c707140299ec419f6a02381f3b594ebb352935bf54b1",
+      "sha256_actual": "33286a4dac8a031e3947ce8318379f29d87b6fa92be47a4c6a844ff4f3e3c5fe"
+    },
+    {
+      "id": "SUP14",
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "linea": 14,
+      "anterior": "Las mediciones trazables evalúan componentes con repeticiones y dispersión. La revisión de la PoC STARK refuta una premisa de proximidad de la traza heredada y comprueba una variante que vincula FRI de traza con AIR mediante una raíz común. Se integran una derivación ideal por rondas y una transferencia propuesta en ROM clásico con consultas hash y nonces adaptativos, pendientes de dictamen independiente. La transferencia QROM completa de AIR/FRI queda como trabajo futuro. El catálogo relaciona afirmaciones, hipótesis y evidencia sin mecanizar las demostraciones.",
+      "actual": "Las mediciones trazables evalúan componentes con repeticiones y dispersión. La revisión de la PoC STARK refuta una premisa de proximidad de la traza heredada y comprueba una variante que vincula FRI de traza con AIR mediante una raíz común. Se integran una derivación ideal por rondas y una transferencia propuesta en ROM clásico con consultas hash y nonces adaptativos, pendientes de dictamen independiente. La transferencia QROM completa de AIR/FRI queda como trabajo futuro. El catálogo relaciona afirmaciones, hipótesis y evidencia; las pruebas Lean complementarias mecanizan componentes de los modelos con alcance y axiomas auditados. La correspondencia integral con el ejecutable y el cierre matemático completo permanecen pendientes.",
+      "sha256_anterior": "83c82bf2afbbca38336602b824e1712c946e8608e2a4f7c4b97d0bd66d355354",
+      "sha256_actual": "a007b0e8dcc2d6e7b0c819797e492b477b787f1e9cfb8779825b54b97631c014"
+    }
+  ],
+  "datos_fuente": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-validacion/resumen-mediciones.json",
+      "sha256": "514194ed509ad118ab8f43c993a872f0378d70de249b37df1c356f6ca5cf087c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-complemento/resumen.json",
+      "sha256": "980412fd4125490d5f78b39801558e0b3e72220f87df9351369519e8e8f6fc53"
+    },
+    {
+      "archivo": "scripts/analizar_transferencia_rom_tg2.py",
+      "sha256": "c675e16983ca7951057981d33675755a3ea129c552848c00bdfb8811b9c8e002"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/fuentes/scripts/analizar_fri_vinculado_r4.py",
+      "sha256": "e4ca88d0a9467585a2d5bfe2f10158d4f8f5046e6c272d3be3f203fc8921345d"
+    }
+  ],
+  "dictamen_independiente": "No hay dictamen, confirmado por el autor."
+}

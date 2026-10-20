@@ -1,0 +1,46 @@
+["C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe", "-m", "unittest", "discover", "-s", "scripts/tests", "-p", "test_verificar_formalizacion.py", "-v"]
+
+test_rejects_duplicate_output (test_verificar_formalizacion.AuditTests.test_rejects_duplicate_output) ... ok
+test_rejects_missing_theorem (test_verificar_formalizacion.AuditTests.test_rejects_missing_theorem) ... ok
+test_rejects_sorry_and_custom_or_native_axioms (test_verificar_formalizacion.AuditTests.test_rejects_sorry_and_custom_or_native_axioms) ... ok
+test_rejects_unregistered_theorem (test_verificar_formalizacion.AuditTests.test_rejects_unregistered_theorem) ... ok
+test_standard_axioms_and_axiom_free_proof (test_verificar_formalizacion.AuditTests.test_standard_axioms_and_axiom_free_proof) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+
+["C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe", "-m", "unittest", "discover", "-s", "scripts/tests", "-p", "test_verificar_revision_manuscrito.py", "-v"]
+
+test_admite_revision_vigente_con_fuentes_exactas (test_verificar_revision_manuscrito.RevisionTests.test_admite_revision_vigente_con_fuentes_exactas) ... ok
+test_rechaza_cambio_de_texto_o_linea (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_cambio_de_texto_o_linea) ... ok
+test_rechaza_cierre_sin_demostraciones (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_cierre_sin_demostraciones) ... ok
+test_rechaza_declaracion_lean_inventada (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_declaracion_lean_inventada) ... ok
+test_rechaza_eliminar_un_enlace_previo (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_eliminar_un_enlace_previo) ... ok
+test_rechaza_modelo_sin_cierre_auditable (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_modelo_sin_cierre_auditable) ... ok
+test_rechaza_omision_y_duplicado_de_bloque (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_omision_y_duplicado_de_bloque) ... ok
+test_rechaza_salida_del_repositorio (test_verificar_revision_manuscrito.RevisionTests.test_rechaza_salida_del_repositorio) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.285s
+
+OK
+
+["C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe", "-m", "unittest", "discover", "-s", "scripts/tests", "-p", "test_replay_kernel.py", "-v"]
+
+test_cache_rejects_changed_imports (test_replay_kernel.ReplayTests.test_cache_rejects_changed_imports) ... ok
+test_cache_rejects_tampered_logs (test_replay_kernel.ReplayTests.test_cache_rejects_tampered_logs) ... ok
+test_failure_is_reported_after_collecting_every_result (test_replay_kernel.ReplayTests.test_failure_is_reported_after_collecting_every_result) ... ok
+test_four_workers_replay_every_module_and_respect_the_limit (test_replay_kernel.ReplayTests.test_four_workers_replay_every_module_and_respect_the_limit) ... ok
+test_rejects_unbounded_workers_and_duplicate_modules (test_replay_kernel.ReplayTests.test_rejects_unbounded_workers_and_duplicate_modules) ... ok
+test_replays_every_module_once_with_at_most_two_workers (test_replay_kernel.ReplayTests.test_replays_every_module_once_with_at_most_two_workers) ... ok
+test_reuses_only_validated_logs_and_runs_every_other_module (test_replay_kernel.ReplayTests.test_reuses_only_validated_logs_and_runs_every_other_module) ... Reutilizado por identidad: Nexus.A
+ok
+test_sequential_mode_keeps_the_original_order (test_replay_kernel.ReplayTests.test_sequential_mode_keeps_the_original_order) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.087s
+
+OK
+

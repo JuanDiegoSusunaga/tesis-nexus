@@ -1,0 +1,263 @@
+{
+  "esquema": 1,
+  "fecha": "2026-10-19",
+  "tipo": "compilacion_aislada_y_auditoria_del_puente_y_cotas_rom",
+  "estado": "verificado_en_el_modelo_rom_clasico_finito",
+  "tesis_completa_verificada": false,
+  "compilacion_global_ejecutada": false,
+  "herramienta": {
+    "lean": "4.35.0",
+    "lanzador": "scripts/lean.py",
+    "ventanas_de_consola": "ocultas_por_CREATE_NO_WINDOW",
+    "limite_memoria_ultimas_comprobaciones_mb": 4096
+  },
+  "alcance": {
+    "programa": "Nexus.Verificador.Adversario.ejecutar",
+    "modelo": "Un único oráculo aleatorio sobre el universo finito original del programa de bytes",
+    "bits_admitidos": [
+      12,
+      20
+    ],
+    "corte_selector": 512,
+    "perfiles_k": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "presupuesto": "Todas las consultas adversarias reales, incluidas propuesta e intercalaciones, <= Q para toda tabla",
+    "presupuesto_total_derivado": "B = Q + 24895",
+    "cargo_candidatos": "Q+1 parejas estado/nonce, en su primera consulta de cualquiera de los dos roles",
+    "factor_trabajo": "2^(-bits), demostrado desde Completo.trabajo y compuesto antes de las respuestas",
+    "union_excepcional": "Cardinal <= 130709, con tasa 130709/p^2 + 2524360/10^35",
+    "error_selector": "AcoplamientoCadena.error Digest 512 (B+2)",
+    "union_perfiles": "Bad y AIR/FRI una sola vez; suma de riesgos del selector",
+    "premisas_semanticas_pendientes_en_teorema_final": []
+  },
+  "requisitos_verificados": [
+    {
+      "requisito": "Vectores y conjuntos excepcionales fijados causalmente antes de sus respuestas E",
+      "evidencia": [
+        "Nexus.Verificador.RondasCausales.rondas_causales",
+        "Nexus.Verificador.CotaAdaptativaFinal.cota_rondas"
+      ]
+    },
+    {
+      "requisito": "Carga Q+1 incluyendo trabajo antes o después del nonce y preconsultas",
+      "evidencia": [
+        "Nexus.Canal.ConteoPares.adversario",
+        "Nexus.Canal.PrimerosPares.carga_adversario",
+        "Nexus.Canal.PrimerosPares.frescura_ambas"
+      ]
+    },
+    {
+      "requisito": "Trabajo, selector y memorias en un mismo ROM, sin condicionar al nonce ganador",
+      "evidencia": [
+        "Nexus.Verificador.TrabajoDigest.masa_trabajo",
+        "Nexus.Canal.TrabajoPrefijo.cota_union"
+      ]
+    },
+    {
+      "requisito": "Cobertura de aceptación falsa adaptativa real del modelo",
+      "evidencia": [
+        "Nexus.Verificador.CoberturaTrabajo.adversario_seguro"
+      ]
+    },
+    {
+      "requisito": "Cotas completas de perfil fijo y adaptativo con parámetros y presupuesto derivados",
+      "evidencia": [
+        "Nexus.Verificador.CotaTrabajoFinal.cota_512",
+        "Nexus.Verificador.CotaTrabajoFinal.cota_512_todos"
+      ]
+    },
+    {
+      "requisito": "Ejemplo numérico enlazado con la probabilidad del programa, no solo con una suma postulada",
+      "evidencia": [
+        "Nexus.Verificador.CotaTrabajoNumerica.aceptacion_4096_release",
+        "Nexus.Verificador.CotaTrabajoNumerica.aceptacion_release"
+      ]
+    },
+    {
+      "requisito": "Compilación aislada del ensamblaje y auditoría de axiomas",
+      "evidencia": [
+        "formalizacion/Nexus/Verificador/PuenteAdaptativoFinal.lean",
+        "formalizacion/AuditoriaPuenteAdaptativo.lean"
+      ]
+    }
+  ],
+  "compilaciones_componentes": [
+    {
+      "archivo": "formalizacion/Nexus/Canal/ParTrabajo.lean",
+      "comando": "python scripts/lean.py lean -M 4096 -o .lake/build/lib/lean/Nexus/Canal/ParTrabajo.olean Nexus/Canal/ParTrabajo.lean",
+      "resultado_final": 0
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/ConteoPares.lean",
+      "comando": "python scripts/lean.py lean -M 4096 -o .lake/build/lib/lean/Nexus/Canal/ConteoPares.olean Nexus/Canal/ConteoPares.lean",
+      "resultado_final": 0
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/PrimerosPares.lean",
+      "comando": "python scripts/lean.py lean -M 4096 -o .lake/build/lib/lean/Nexus/Canal/PrimerosPares.olean Nexus/Canal/PrimerosPares.lean",
+      "resultado_final": 0
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/FrescuraTrabajo.lean",
+      "comando": "python scripts/lean.py lean -M 4096 -o .lake/build/lib/lean/Nexus/Canal/FrescuraTrabajo.olean Nexus/Canal/FrescuraTrabajo.lean",
+      "resultado_final": 0
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/TrabajoPrefijo.lean",
+      "comando": "python scripts/lean.py lean -M 4096 -o .lake/build/lib/lean/Nexus/Canal/TrabajoPrefijo.olean Nexus/Canal/TrabajoPrefijo.lean",
+      "resultado_final": 0
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CandidatoTrabajo.lean",
+      "comando": "python scripts/lean.py lean -M 4096 -o .lake/build/lib/lean/Nexus/Verificador/CandidatoTrabajo.olean Nexus/Verificador/CandidatoTrabajo.lean",
+      "resultado_final": 0
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/PoliticasTrabajo.lean",
+      "comando": "python scripts/lean.py lean -M 4096 -o .lake/build/lib/lean/Nexus/Verificador/PoliticasTrabajo.olean Nexus/Verificador/PoliticasTrabajo.lean",
+      "resultado_final": 0
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CoberturaTrabajo.lean",
+      "comando": "python scripts/lean.py lean -M 4096 -o .lake/build/lib/lean/Nexus/Verificador/CoberturaTrabajo.olean Nexus/Verificador/CoberturaTrabajo.lean",
+      "resultado_final": 0
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoFinal.lean",
+      "comando": "python scripts/lean.py lean -M 4096 -o .lake/build/lib/lean/Nexus/Verificador/CotaTrabajoFinal.olean Nexus/Verificador/CotaTrabajoFinal.lean",
+      "resultado_final": 0
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoNumerica.lean",
+      "comando": "python scripts/lean.py lean -M 4096 -o .lake/build/lib/lean/Nexus/Verificador/CotaTrabajoNumerica.olean Nexus/Verificador/CotaTrabajoNumerica.lean",
+      "resultado_final": 0
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/PuenteAdaptativoFinal.lean",
+      "comando": "python scripts/lean.py lean -M 4096 -o .lake/build/lib/lean/Nexus/Verificador/PuenteAdaptativoFinal.olean Nexus/Verificador/PuenteAdaptativoFinal.lean",
+      "resultado_final": 0
+    }
+  ],
+  "auditoria": {
+    "comando": "python scripts/lean.py lean -M 4096 AuditoriaPuenteAdaptativo.lean",
+    "resultado_final": 0,
+    "declaraciones": 191,
+    "axiomas_permitidos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "axiomas_inesperados": [],
+    "sorryAx": false,
+    "log": "Documentos/06-Evidencia-TG2/2026-10-19/Lean-Puente-Cotas-ROM/auditoria-local.log",
+    "sha256_log": "010efd8b5c1056d8d62399845c40d861da52f62e3d5ac04a2989d4a32096e394"
+  },
+  "ejemplos": [
+    {
+      "teorema": "Nexus.Verificador.CotaTrabajoNumerica.aceptacion_4096_release",
+      "L": 1000000,
+      "bits": 20,
+      "k": 12,
+      "Q": 1048576,
+      "cota_estricta_racional": "4757335454 / 10^12"
+    },
+    {
+      "teorema": "Nexus.Verificador.CotaTrabajoNumerica.aceptacion_release",
+      "L": 1000000,
+      "bits": 20,
+      "perfiles": "todos",
+      "Q": 1000000,
+      "cota_estricta_racional": "1/20"
+    },
+    {
+      "teorema": "Nexus.Verificador.CotaTrabajoNumerica.ejemplo_debug",
+      "L": 1000000,
+      "bits": 12,
+      "perfiles": "todos",
+      "Q": 1000,
+      "cota_estricta_de_la_expresion": "1/80"
+    }
+  ],
+  "limites": [
+    "Cota conservadora con unión AIR/FRI sobre perfiles y error de acoplamiento; no identidad con la fórmula originalmente propuesta de constantes más ajustadas.",
+    "R=512 es el corte analítico del modelo; no se verifica el bucle Rust sin corte.",
+    "No se acredita refinamiento universal Rust/serde/bincode/operaciones de máquina, SHA3 determinista fuera del ROM, QROM, procedencia H1/H2 ni dictamen.",
+    "No se recompilaron Nexus.lean ni Auditoria.lean; los imports locales usan los artefactos ya generados de sus dependencias.",
+    "Los conteos globales históricos del 18 de octubre no se presentan como un nuevo inventario global."
+  ],
+  "fuentes": [
+    {
+      "archivo": "formalizacion/Nexus/Canal/ParTrabajo.lean",
+      "sha256": "0a7aa35b1318135d5ab2991745f026fd90af80c99728ddb71387d464a32198e0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/ConteoPares.lean",
+      "sha256": "d9f471f94508357edd4f6156bc6967c620fd7da8326512d7878d24f23d5bece0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/PrimerosPares.lean",
+      "sha256": "d1a503e83116888fcda355f7bfa0bd75173687ea495eccfd7855988c68e9acce"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/FrescuraTrabajo.lean",
+      "sha256": "9fb03df7ea725299deaf7278a31f06d1f41048562f20dceaa05c7cc828833508"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/TrabajoPrefijo.lean",
+      "sha256": "32b2fb8460451f50668f959582f209cffc5eea736bc60dc19aa8cddd6d5f723c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CandidatoTrabajo.lean",
+      "sha256": "b61aa49e3b69987a8d7924b64d62dc5d6e57136b60dd58e943dadc21ef9a7ad7"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/PoliticasTrabajo.lean",
+      "sha256": "2ecc43111b0a15a1ad5b911998c9907c2ba65e0f789dcd15dbcf2636159cb167"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CoberturaTrabajo.lean",
+      "sha256": "bed961a52ecd17afc7517740fb9ff1f84e6cffcd5e030f7e04393bacf35a4793"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoFinal.lean",
+      "sha256": "d27635f52ae810b83530aea903a36ba2b124ff9a594184f7abfc131a7894b59e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoNumerica.lean",
+      "sha256": "a9cea1ad3167edd67ebbb291409840451041d164dae6ebcbce37e4956e202fe9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/PuenteAdaptativoFinal.lean",
+      "sha256": "3a972ffe039ab7574e8e187e125d33a3818a219581beee87cf6a065577031cb8"
+    },
+    {
+      "archivo": "formalizacion/AuditoriaPuenteAdaptativo.lean",
+      "sha256": "cc83e6f23b299b2d2eb12f116b3dc21439b5af4bf6826a1b94aba1361af38f48"
+    },
+    {
+      "archivo": "formalizacion/REVISION-MANUSCRITO.md",
+      "sha256": "abcbdf549ab446e96d70f4c1b46e2b151d8ac5d1a91d47339ac4ed4b6dee45e4"
+    },
+    {
+      "archivo": "formalizacion/revision-manuscrito.json",
+      "sha256": "c85fb398851202c976b44c2a450dabad740ab632e3e95ed74b7f9dc3b783fa6d"
+    },
+    {
+      "archivo": "formalizacion/README.md",
+      "sha256": "e2e71a1188186c44cd1c6fef29bf7d96bc51a7a5fb6ffaeb2dc1e5b56f2be019"
+    },
+    {
+      "archivo": "PENDIENTES.md",
+      "sha256": "f4335b235c9d91b07eb9c187542be4fec2432979110cedf53fe3ff1a0d64540f"
+    }
+  ]
+}

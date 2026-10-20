@@ -1,0 +1,105 @@
+Comando: python scripts/lean.py build
+Registro inicial UTC: 2026-10-19T19:54:42.431Z
+Fin UTC: 2026-10-19T19:54:54.124Z
+Codigo de salida: 1
+
+✖ [4082/4084] Building Nexus.Verificador.PuenteAdaptativoFinal (14s)
+trace: .> LEAN_PATH=C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean c:\Users\juand\Desktop\Tesis\.tools\lean\elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\Users\juand\Desktop\Tesis\formalizacion\Nexus\Verificador\PuenteAdaptativoFinal.lean -o C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\PuenteAdaptativoFinal.olean -i C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\PuenteAdaptativoFinal.ilean -c C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\PuenteAdaptativoFinal.c --setup C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\PuenteAdaptativoFinal.setup.json --json
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:2315:76: unsolved goals
+A : Type
+L bits k Q : ℕ
+proponer : Programa (List Octeto × A)
+atacar : A → GramaticaTG2.Peticion → Programa A
+actualizar : A → GramaticaTG2.Peticion → Digest → A
+defecto : Digest
+hk0 : 4 ≤ k
+hk1 : k ≤ 12
+hQ :
+  ∀ (H : ↥(universo (Adversario.ejecutar bits 512 proponer atacar actualizar)) → Digest),
+    Adversario.adversarias (oraculo (Adversario.ejecutar bits 512 proponer atacar actualizar) defecto H) bits 512
+        proponer atacar actualizar ≤
+      Q
+epsSin : ℚ
+hSin :
+  (FiltroSelector.medida fun H =>
+      ¬EjecucionBytes.SinBad (oraculo (Adversario.ejecutar bits 512 proponer atacar actualizar) defecto H) (inicial L)
+          (Adversario.ejecutar bits 512 proponer atacar actualizar)) ≤
+    epsSin
+t : Torre Fp2 (altura (Adversario.ejecutar bits 512 proponer atacar actualizar))
+θ : ℝ
+hθ : 0 ≤ θ
+h2 : 2 ≠ 0
+hmargin :
+  ∀ (j : Fin (altura (Adversario.ejecutar bits 512 proponer atacar actualizar))),
+    ↑(t.grado (↑j + 1)) - 1 < (1 - 3 * θ) * ↑(t.dominio (↑j + 1)).card
+estrategia : ℕ → List Fp2 → Fp2 → Fp2
+secuencia :
+  (↥(universo (Adversario.ejecutar bits 512 proponer atacar actualizar)) → Digest) →
+    Retos Digest (altura (Adversario.ejecutar bits 512 proponer atacar actualizar))
+hley :
+  ∀ (f : Retos Digest (altura (Adversario.ejecutar bits 512 proponer atacar actualizar)) → ℚ),
+    (promedio fun H => f (secuencia H)) = promedio f
+hpuente :
+  ∀ (H : ↥(universo (Adversario.ejecutar bits 512 proponer atacar actualizar)) → Digest),
+    Rondas (oraculo (Adversario.ejecutar bits 512 proponer atacar actualizar) defecto H)
+        (Adversario.ejecutar bits 512 proponer atacar actualizar) defecto
+        (altura (Adversario.ejecutar bits 512 proponer atacar actualizar)) →
+      Escapa (excepcionesDigest t θ hθ h2 hmargin estrategia) pasoDigest 0
+        (altura (Adversario.ejecutar bits 512 proponer atacar actualizar)) [] (secuencia H)
+p : Programa Bool := Adversario.ejecutar bits 512 proponer atacar actualizar
+epsRondas : ℚ :=
+  ↑((t.dominio 0).card - (t.dominio (altura p)).card) / ↑Goldilocks.p ^ 2 + ↑(altura p) * (2524360 / 10 ^ 35)
+hr :
+  (FiltroSelector.medida fun H =>
+      Rondas (oraculo p defecto H) p defecto (altura (Adversario.ejecutar bits 512 proponer atacar actualizar))) ≤
+    ↑((t.dominio 0).card - (t.dominio (altura (Adversario.ejecutar bits 512 proponer atacar actualizar))).card) /
+        ↑Goldilocks.p ^ 2 +
+      ↑(altura (Adversario.ejecutar bits 512 proponer atacar actualizar)) * (2524360 / 10 ^ 35)
+hr' :
+  (FiltroSelector.medida fun H =>
+      Rondas (oraculo (Adversario.ejecutar bits 512 proponer atacar actualizar) defecto H)
+        (Adversario.ejecutar bits 512 proponer atacar actualizar) defecto
+        (altura (Adversario.ejecutar bits 512 proponer atacar actualizar))) ≤
+    epsRondas
+hf :
+  (FiltroSelector.medida fun H =>
+        ¬EjecucionBytes.SinBad (oraculo (Adversario.ejecutar bits 512 proponer atacar actualizar) defecto H) (inicial L)
+            (Adversario.ejecutar bits 512 proponer atacar actualizar)) ≤
+      epsSin →
+    (FiltroSelector.medida fun H =>
+          Rondas (oraculo (Adversario.ejecutar bits 512 proponer atacar actualizar) defecto H)
+            (Adversario.ejecutar bits 512 proponer atacar actualizar) defecto
+            (altura (Adversario.ejecutar bits 512 proponer atacar actualizar))) ≤
+        epsRondas →
+      (FiltroSelector.medida fun H =>
+          PoliticasFalsas.AceptaFalsa (oraculo (Adversario.ejecutar bits 512 proponer atacar actualizar) defecto H) bits
+            512 k proponer atacar actualizar) ≤
+        epsSin + epsRondas +
+          (↑((CardinalVista.umbral (k + 2)).choose 40) / ↑((2 ^ (k + 2)).choose 40) + 1 / 2 ^ 300 +
+              AcoplamientoCadena.error Digest 512 (Q + 24894)) *
+            (↑Q + 24895)
+hfinal :
+  (FiltroSelector.medida fun H =>
+      PoliticasFalsas.AceptaFalsa (oraculo (Adversario.ejecutar bits 512 proponer atacar actualizar) defecto H) bits 512
+        k proponer atacar actualizar) ≤
+    epsSin +
+        (↑((t.dominio 0).card - (t.dominio (altura p)).card) / ↑Goldilocks.p ^ 2 + ↑(altura p) * (2524360 / 10 ^ 35)) +
+      (↑((CardinalVista.umbral (k + 2)).choose 40) / ↑((2 ^ (k + 2)).choose 40) + 1 / 2 ^ 300 +
+          AcoplamientoCadena.error Digest 512 (Q + 24894)) *
+        (↑Q + 24895)
+⊢ epsSin +
+          ↑((t.dominio 0).card - (t.dominio (altura (Adversario.ejecutar bits 512 proponer atacar actualizar))).card) /
+            ↑Goldilocks.p ^ 2 +
+        ↑(altura (Adversario.ejecutar bits 512 proponer atacar actualizar)) * (2524360 / 10 ^ 35) +
+      (↑((CardinalVista.umbral (k + 2)).choose 40) / ↑((2 ^ (k + 2)).choose 40) + 1 / 2 ^ 300 +
+          AcoplamientoCadena.error Digest 512 (Q + 24894)) *
+        (↑Q + 24895) =
+    epsSin +
+        (↑((t.dominio 0).card - (t.dominio (altura p)).card) / ↑Goldilocks.p ^ 2 + ↑(altura p) * (2524360 / 10 ^ 35)) +
+      (↑((CardinalVista.umbral (k + 2)).choose 40) / ↑((2 ^ (k + 2)).choose 40) + 1 / 2 ^ 300 +
+          AcoplamientoCadena.error Digest 512 (Q + 24894)) *
+        (↑Q + 24895)
+Some required targets logged failures:
+- Nexus.Verificador.PuenteAdaptativoFinal
+error: build failed
+

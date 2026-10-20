@@ -1,0 +1,17 @@
+{
+  "fuente_actual": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/fuentes/FIPS204-errata.xlsx",
+  "sha256_actual": "5bc93ce63bc647e6d1d456cb2d3a171426c15aca4a7a0e0edd40d08b7a34c793",
+  "comparaciones": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-09-22/R1-correspondencia/bibliografia/FIPS204-errata.xlsx",
+      "sha256": "5bc93ce63bc647e6d1d456cb2d3a171426c15aca4a7a0e0edd40d08b7a34c793",
+      "bytes_identicos": true
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-12/Revision-subagentes/R1/FIPS204-errata-actual.xlsx",
+      "sha256": "5bc93ce63bc647e6d1d456cb2d3a171426c15aca4a7a0e0edd40d08b7a34c793",
+      "bytes_identicos": true
+    }
+  ],
+  "limite": "Comparación de bytes: no reinterpreta ni modifica la hoja de cálculo."
+}

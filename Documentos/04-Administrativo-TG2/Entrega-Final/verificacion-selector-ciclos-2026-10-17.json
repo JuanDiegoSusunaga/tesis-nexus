@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-17-lean-selector-ciclos",
+  "archivos_comprobados": 4413,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T02:56:30.484866+00:00",
+  "sha256_manifiesto": "41c30aefc04a0140e6c9bdc70194e89117ccdb67cacb306c44105ed3112a0ad5",
+  "nota": "Este informe queda fuera del manifiesto que comprueba para evitar una referencia hash circular."
+}

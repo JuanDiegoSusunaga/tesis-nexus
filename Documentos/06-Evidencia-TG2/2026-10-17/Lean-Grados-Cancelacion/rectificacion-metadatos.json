@@ -1,0 +1,40 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-18T00:14:01.478425+00:00",
+  "motivo": "inventario_base conservaba el hash anterior pero apuntaba al inventario actual ampliado. Se enlaza la copia exacta que ya estaba conservada y auditada.",
+  "auditoria_matematica_original": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/validacion.json",
+    "sha256": "317dacd257ef65ab3ec6b91876bbe5d222f1d5af8f6fae189b3868785d470299"
+  },
+  "revision_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/revision-manuscrito-previa-rectificacion.json",
+    "sha256": "b37fc4788fd5bdf93817ab44b7cd271c3f3906b4d4ba02feab693ea4594cc7b6"
+  },
+  "inventario_base_anterior": {
+    "archivo": "formalizacion/inventario-manuscrito.json",
+    "sha256": "a64b5b354db79604899106248df067ef35697bee487170fc2b82ace7d945acd7"
+  },
+  "inventario_base_corregido": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/version_anterior/formalizacion/inventario-manuscrito.json",
+    "sha256": "a64b5b354db79604899106248df067ef35697bee487170fc2b82ace7d945acd7"
+  },
+  "referencia_auditoria_anterior": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/validacion.json",
+    "teoremas": 1446,
+    "modulos": 157
+  },
+  "referencia_auditoria_corregida": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/validacion-rectificada.json",
+    "teoremas": 1446,
+    "modulos": 157
+  },
+  "revision_corregida_sha256": "cabf4195c6b148059e33123f515fa7b85d915d35807fa2081000d0e9dee9778a",
+  "fuentes_cambiadas": [
+    "formalizacion/revision-manuscrito.json"
+  ],
+  "archivos_lean_sin_cambios": true,
+  "registros_y_teoremas_sin_cambios": true,
+  "logs_sin_cambios": 163,
+  "recompilacion_lean": false,
+  "limite": "Rectificación documental. Reutiliza la compilación, axiomas y 157 replays originales por identidad de todos sus archivos Lean, herramientas, registro y logs. No añade pruebas matemáticas."
+}

@@ -1,0 +1,33 @@
+{
+  "versiones_anteriores": {
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Manuscrito-Modelos/version_anterior/Tesis-NEXUS-completa.md",
+      "sha256": "6b05e17956b8cba57632a990542ee9afdad3c6e1686f2246eefeec57c513bba9"
+    },
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Manuscrito-Modelos/version_anterior/Tesis-NEXUS-completa.docx",
+      "sha256": "15e94cc141742c9969a3607696e4c810444e33080b1230aa10d66c570346439d"
+    },
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Manuscrito-Modelos/version_anterior/Tesis-NEXUS-completa.pdf",
+      "sha256": "6f275237aeeccc49f73ea406581e2bc3a5a26a4b2f5ae421454c8564335d9bfa"
+    },
+    "Documentos/01-Manuscrito/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Manuscrito-Modelos/version_anterior/README.md",
+      "sha256": "7317ed4d5e28e5700a0eedbe9bfb216a58986d9566510472c097acd2a09de081"
+    }
+  },
+  "fuentes": {
+    "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md": "cb644d3e158fa3350f18665ad54e5a1e4fff9a7e80be6069e22f963efc18f12f",
+    "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md": "76dcf3bca7c7a23c227e1e2920d3477771dcc5abca1be8fc050979bfed41c075",
+    "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md": "b68c41082d10531cd11888283a524ddb9c421cbac3e8d7e61ea37ee01dc9ce9d",
+    "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md": "aac14761229724fa43d438ae0ee783432c78db409797c5009c9d5267672b567a",
+    "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md": "892037a264f2ef65e4e22fe6c4be703f66aaa0fd83bbf7bf0f65c6bdc45244e5",
+    "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md": "47beabb62e127140bff8e5d3f9d7cc2e6f65548db331621671283674a5c011ee",
+    "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md": "f807dea85d3a443f7010378d9c6b1e302afaddd95f8dcc956d0fe11aad1234d4",
+    "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md": "ac83e5155b519c2543393414b022b72cf231708acf12c166c5f24ad482753abe",
+    "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md": "077d752b9458f77ba04338fb8dfc50d05acab2aaecc420d9fab1b5bda8e6dfea"
+  },
+  "motivo": "Conciliar unidades, formato de hoja y estado parcial Lean de TG2; no altera TG1.",
+  "entorno": "Windows. No hay cargador de dependencias de documentos ni LibreOffice empaquetado disponible; se conserva el pipeline local existente y el render nativo de Word."
+}

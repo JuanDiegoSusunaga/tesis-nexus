@@ -1,0 +1,189 @@
+{
+  "Canal/LecturaAbsorcion": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "El lector de absorciones comprueba etiquetas, datos canónicos y recodificación completa. Recupera cada absorción codificada y todo resultado positivo corresponde a una entrada exacta. Inicio y retos cortos no se interpretan como absorciones.",
+    "limites": [
+      "La lectura se usa dentro de una cadena reconstruida; no postula separación global de dominios Merkle/canal ni equivalencia universal con Rust."
+    ],
+    "teoremas": [
+      "Nexus.Canal.LecturaAbsorcion.bloque_correcto",
+      "Nexus.Canal.LecturaAbsorcion.interpretar_datos",
+      "Nexus.Canal.LecturaAbsorcion.estado_absorcion",
+      "Nexus.Canal.LecturaAbsorcion.etiqueta_absorcion",
+      "Nexus.Canal.LecturaAbsorcion.leer_entrada",
+      "Nexus.Canal.LecturaAbsorcion.leer_canonico",
+      "Nexus.Canal.LecturaAbsorcion.leer_corto",
+      "Nexus.Canal.LecturaAbsorcion.leer_reto",
+      "Nexus.Canal.LecturaAbsorcion.leer_inicio"
+    ]
+  },
+  "Canal/LecturaCadena": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La interpretación ordenada recupera perfil y enunciado en bytes, raíz base, ambas listas FRI, constantes finales y un nonce. Se prueba la lectura completa de la cadena efectiva del canal, descartando los retos E al extraer las absorciones.",
+    "limites": [
+      "El éxito del lector no es una caracterización de todas las cadenas válidas: se demuestra su corrección sobre la cadena efectiva y la canonicidad de cada absorción leída. No recupera aperturas futuras."
+    ],
+    "teoremas": [
+      "Nexus.Canal.LecturaCadena.fase_leida",
+      "Nexus.Canal.LecturaCadena.tokens_completos",
+      "Nexus.Canal.LecturaCadena.retos_sin_absorciones",
+      "Nexus.Canal.LecturaCadena.raices_con_absorciones",
+      "Nexus.Canal.LecturaCadena.cadena_con_absorciones",
+      "Nexus.Canal.LecturaCadena.cadena_leida"
+    ]
+  },
+  "Canal/ParametrosRecuperados": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Los codecs recuperan los seis campos del perfil y las tres cantidades del enunciado bajo sus anchos explícitos. Se validan versión, tamaños y cuarenta consultas; el exponente se obtiene de las filas mediante log2. La cadena del perfil con k<=29 y bits<u32 devuelve exactamente sus parámetros, raíces, constantes y nonce.",
+    "limites": [
+      "Los naturales y codecs son matemáticos. No demuestra refinamiento universal del ejecutable, serde/bincode o sus opciones de EOF."
+    ],
+    "teoremas": [
+      "Nexus.Canal.ParametrosRecuperados.perfil_codificado",
+      "Nexus.Canal.ParametrosRecuperados.perfil_en_dominio",
+      "Nexus.Canal.ParametrosRecuperados.perfil_leido",
+      "Nexus.Canal.ParametrosRecuperados.enunciado_codificado",
+      "Nexus.Canal.ParametrosRecuperados.enunciado_leido",
+      "Nexus.Canal.ParametrosRecuperados.paquete_decodificado",
+      "Nexus.Canal.ParametrosRecuperados.cadena_decodificada",
+      "Nexus.Canal.ParametrosRecuperados.lectura_unica"
+    ]
+  },
+  "Canal/RetosRecuperados": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Las entradas de 33 bytes de la cadena efectiva son sus retos E. Sus respuestas producen, en orden y conservando repeticiones, los tres alfas y los betas de ambas fases. Una tabla que contiene la cadena obtiene la misma lista de retos, cualquiera que sea su valor de completación externa.",
+    "limites": [
+      "La conservación es determinista; no afirma independencia de los retos condicionada a aceptación o a SinBad."
+    ],
+    "teoremas": [
+      "Nexus.Canal.RetosRecuperados.retos_append",
+      "Nexus.Canal.RetosRecuperados.absorcion_sin_reto",
+      "Nexus.Canal.RetosRecuperados.retos_de_retos",
+      "Nexus.Canal.RetosRecuperados.retos_de_raices",
+      "Nexus.Canal.RetosRecuperados.retos_de_cadena",
+      "Nexus.Canal.RetosRecuperados.retos_congruentes",
+      "Nexus.Canal.RetosRecuperados.retos_de_tabla"
+    ]
+  },
+  "Canal/VistaSemantica": {
+    "grupos": [
+      "M35",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se construye una vista solo desde tabla, semilla y digest de completación: parámetros interpretados, retos y vectores indexados de la raíz base y todas las capas. Se demuestra su conservación a partir de igualdad de retos y vectores, con reducción explícita de índices al tamaño del árbol.",
+    "limites": [
+      "La vista puede rechazar la interpretación con none. No incluye testigos Merkle posteriores ni el factor probabilístico de trabajo."
+    ],
+    "teoremas": [
+      "Nexus.Canal.VistaSemantica.valor_conservado",
+      "Nexus.Canal.VistaSemantica.capas_conservadas",
+      "Nexus.Canal.VistaSemantica.vista_conservada",
+      "Nexus.Canal.VistaSemantica.lectura_determinada"
+    ]
+  },
+  "Verificador/SemanticaPrevia": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "El registro efectivo del candidato y la forma aceptada permiten interpretar exactamente k, bits, inicio, salida, raíces base y FRI, constantes finales y nonce antes del primer I. Se recuperan los alfas y betas reales. Dos candidatos registrados con la misma semilla tienen los mismos datos semánticos, aunque se presenten inicialmente con perfiles distintos.",
+    "limites": [
+      "No se identifican los certificados completos: sus aperturas pueden diferir. La instancia de adversario y ausencia de excepciones procede del registro anterior; no se condiciona la ley uniforme a ese evento."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.SemanticaPrevia.parametros_antes",
+      "Nexus.Verificador.SemanticaPrevia.desde_aceptacion",
+      "Nexus.Verificador.SemanticaPrevia.misma_semilla_mismos_datos",
+      "Nexus.Verificador.SemanticaPrevia.retos_antes",
+      "Nexus.Verificador.SemanticaPrevia.retos_fases_antes",
+      "Nexus.Verificador.SemanticaPrevia.raices_determinadas"
+    ]
+  },
+  "Verificador/VistaPrevia": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se demuestra que cada raíz de la vista procede de una absorción real, incluidos todos los elementos de ambas listas. La vista leída antes del primer I coincide exactamente con parámetros, retos y oráculos extraídos del registro final. Dos candidatos registrados con igual semilla tienen la misma vista final.",
+    "limites": [
+      "Es una igualdad determinista bajo las condiciones del registro causal. Falta transportar el corte de entradas nuevas al prefijo bruto de llamadas usado en la unión probabilística."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.VistaPrevia.raiz_absorbida",
+      "Nexus.Verificador.VistaPrevia.disponible_final",
+      "Nexus.Verificador.VistaPrevia.vista_congelada",
+      "Nexus.Verificador.VistaPrevia.vista_leida",
+      "Nexus.Verificador.VistaPrevia.misma_semilla_misma_vista"
+    ]
+  },
+  "Verificador/ConjuntosPrevios": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "GT y GC quedan definidos desde tabla y semilla mediante valores extraídos, canonicidad base, enlaces de traza/composición, plegados y acarreo FRI hasta sus constantes finales. Son vacíos si falla la lectura. Se demuestra que las políticas anteriores al primer I coinciden con los conjuntos de la vista final; misma semilla produce las mismas políticas y se caracteriza la consulta compartida por su intersección.",
+    "limites": [
+      "Falta demostrar que todas las consultas aceptadas del verificador pertenecen a estos conjuntos, sus cotas g/m/B y el enlace efectivo a la unión de primeras exposiciones. No es todavía solidez global, factor de trabajo ni refinamiento universal Rust."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.ConjuntosPrevios.pertenencia_buenos",
+      "Nexus.Verificador.ConjuntosPrevios.lectura_fallida_sin_buenos",
+      "Nexus.Verificador.ConjuntosPrevios.politica_antes",
+      "Nexus.Verificador.ConjuntosPrevios.conjuntos_antes",
+      "Nexus.Verificador.ConjuntosPrevios.misma_semilla_mismas_politicas",
+      "Nexus.Verificador.ConjuntosPrevios.consulta_compartida"
+    ]
+  }
+}

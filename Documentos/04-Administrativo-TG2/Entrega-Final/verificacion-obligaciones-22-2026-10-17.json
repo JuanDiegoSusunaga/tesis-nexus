@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-17-lean-obligaciones-22",
+  "archivos_comprobados": 4181,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T01:26:04.874846+00:00",
+  "sha256_manifiesto": "f8bed2db72252a3d1787af4201f03ee9d8e02ab70bb6442e918cbd461f3c2989",
+  "nota": "Este informe queda fuera del manifiesto que comprueba para evitar una referencia hash circular."
+}

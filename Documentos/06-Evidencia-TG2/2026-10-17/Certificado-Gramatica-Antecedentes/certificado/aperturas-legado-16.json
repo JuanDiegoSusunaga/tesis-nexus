@@ -1,0 +1,1610 @@
+{
+  "N": 128,
+  "T": 16,
+  "aperturas": [
+    {
+      "consulta": 0,
+      "indice": 44,
+      "ranura": 0,
+      "valor": 3073125860036984190
+    },
+    {
+      "consulta": 0,
+      "indice": 52,
+      "ranura": 1,
+      "valor": 17472200172595916490
+    },
+    {
+      "consulta": 0,
+      "indice": 60,
+      "ranura": 2,
+      "valor": 126816010597520944
+    },
+    {
+      "consulta": 0,
+      "indice": 108,
+      "ranura": 3,
+      "valor": 2365571593789134012
+    },
+    {
+      "consulta": 0,
+      "indice": 116,
+      "ranura": 4,
+      "valor": 7737882172522132119
+    },
+    {
+      "consulta": 0,
+      "indice": 124,
+      "ranura": 5,
+      "valor": 12471734752774457819
+    },
+    {
+      "consulta": 1,
+      "indice": 16,
+      "ranura": 0,
+      "valor": 2302721075661155600
+    },
+    {
+      "consulta": 1,
+      "indice": 24,
+      "ranura": 1,
+      "valor": 16075887111011962771
+    },
+    {
+      "consulta": 1,
+      "indice": 32,
+      "ranura": 2,
+      "valor": 6082432298925710451
+    },
+    {
+      "consulta": 1,
+      "indice": 80,
+      "ranura": 3,
+      "valor": 8942011931368626265
+    },
+    {
+      "consulta": 1,
+      "indice": 88,
+      "ranura": 4,
+      "valor": 2934414579055727027
+    },
+    {
+      "consulta": 1,
+      "indice": 96,
+      "ranura": 5,
+      "valor": 4313901591939234277
+    },
+    {
+      "consulta": 2,
+      "indice": 36,
+      "ranura": 0,
+      "valor": 16616745497489931683
+    },
+    {
+      "consulta": 2,
+      "indice": 44,
+      "ranura": 1,
+      "valor": 3073125860036984190
+    },
+    {
+      "consulta": 2,
+      "indice": 52,
+      "ranura": 2,
+      "valor": 17472200172595916490
+    },
+    {
+      "consulta": 2,
+      "indice": 100,
+      "ranura": 3,
+      "valor": 10532111083535141782
+    },
+    {
+      "consulta": 2,
+      "indice": 108,
+      "ranura": 4,
+      "valor": 2365571593789134012
+    },
+    {
+      "consulta": 2,
+      "indice": 116,
+      "ranura": 5,
+      "valor": 7737882172522132119
+    },
+    {
+      "consulta": 3,
+      "indice": 10,
+      "ranura": 0,
+      "valor": 4734504292507539585
+    },
+    {
+      "consulta": 3,
+      "indice": 18,
+      "ranura": 1,
+      "valor": 17839096270854920917
+    },
+    {
+      "consulta": 3,
+      "indice": 26,
+      "ranura": 2,
+      "valor": 1099011271455349022
+    },
+    {
+      "consulta": 3,
+      "indice": 74,
+      "ranura": 3,
+      "valor": 1603347165550740416
+    },
+    {
+      "consulta": 3,
+      "indice": 82,
+      "ranura": 4,
+      "valor": 3373178628621395690
+    },
+    {
+      "consulta": 3,
+      "indice": 90,
+      "ranura": 5,
+      "valor": 694550406662957691
+    },
+    {
+      "consulta": 4,
+      "indice": 15,
+      "ranura": 0,
+      "valor": 14364342219149889971
+    },
+    {
+      "consulta": 4,
+      "indice": 23,
+      "ranura": 1,
+      "valor": 294152931859384514
+    },
+    {
+      "consulta": 4,
+      "indice": 31,
+      "ranura": 2,
+      "valor": 14760327884309741320
+    },
+    {
+      "consulta": 4,
+      "indice": 79,
+      "ranura": 3,
+      "valor": 11567163565858965588
+    },
+    {
+      "consulta": 4,
+      "indice": 87,
+      "ranura": 4,
+      "valor": 17677792746889609109
+    },
+    {
+      "consulta": 4,
+      "indice": 95,
+      "ranura": 5,
+      "valor": 14502171906238319925
+    },
+    {
+      "consulta": 5,
+      "indice": 54,
+      "ranura": 0,
+      "valor": 2274150160589598637
+    },
+    {
+      "consulta": 5,
+      "indice": 62,
+      "ranura": 1,
+      "valor": 14094054727455698475
+    },
+    {
+      "consulta": 5,
+      "indice": 70,
+      "ranura": 2,
+      "valor": 18416753311744720173
+    },
+    {
+      "consulta": 5,
+      "indice": 118,
+      "ranura": 3,
+      "valor": 17954748521044994422
+    },
+    {
+      "consulta": 5,
+      "indice": 126,
+      "ranura": 4,
+      "valor": 6578353707810279856
+    },
+    {
+      "consulta": 5,
+      "indice": 6,
+      "ranura": 5,
+      "valor": 13757491475470458817
+    },
+    {
+      "consulta": 6,
+      "indice": 39,
+      "ranura": 0,
+      "valor": 2100588043868032722
+    },
+    {
+      "consulta": 6,
+      "indice": 47,
+      "ranura": 1,
+      "valor": 6582664874620141068
+    },
+    {
+      "consulta": 6,
+      "indice": 55,
+      "ranura": 2,
+      "valor": 10071360129821494207
+    },
+    {
+      "consulta": 6,
+      "indice": 103,
+      "ranura": 3,
+      "valor": 15838110354569005459
+    },
+    {
+      "consulta": 6,
+      "indice": 111,
+      "ranura": 4,
+      "valor": 11880414185881140556
+    },
+    {
+      "consulta": 6,
+      "indice": 119,
+      "ranura": 5,
+      "valor": 12774791799403628097
+    },
+    {
+      "consulta": 7,
+      "indice": 11,
+      "ranura": 0,
+      "valor": 14949597378956263851
+    },
+    {
+      "consulta": 7,
+      "indice": 19,
+      "ranura": 1,
+      "valor": 340039724809176603
+    },
+    {
+      "consulta": 7,
+      "indice": 27,
+      "ranura": 2,
+      "valor": 2030889271922416663
+    },
+    {
+      "consulta": 7,
+      "indice": 75,
+      "ranura": 3,
+      "valor": 13068598416745771131
+    },
+    {
+      "consulta": 7,
+      "indice": 83,
+      "ranura": 4,
+      "valor": 122510515798397738
+    },
+    {
+      "consulta": 7,
+      "indice": 91,
+      "ranura": 5,
+      "valor": 7147499458499452116
+    },
+    {
+      "consulta": 8,
+      "indice": 48,
+      "ranura": 0,
+      "valor": 17440811249201570102
+    },
+    {
+      "consulta": 8,
+      "indice": 56,
+      "ranura": 1,
+      "valor": 3891399275255574910
+    },
+    {
+      "consulta": 8,
+      "indice": 64,
+      "ranura": 2,
+      "valor": 2358901632655861545
+    },
+    {
+      "consulta": 8,
+      "indice": 112,
+      "ranura": 3,
+      "valor": 5788731015576826917
+    },
+    {
+      "consulta": 8,
+      "indice": 120,
+      "ranura": 4,
+      "valor": 6823939933668609745
+    },
+    {
+      "consulta": 8,
+      "indice": 0,
+      "ranura": 5,
+      "valor": 4825148612097906909
+    },
+    {
+      "consulta": 9,
+      "indice": 25,
+      "ranura": 0,
+      "valor": 3398936835388476844
+    },
+    {
+      "consulta": 9,
+      "indice": 33,
+      "ranura": 1,
+      "valor": 15289679354249055266
+    },
+    {
+      "consulta": 9,
+      "indice": 41,
+      "ranura": 2,
+      "valor": 1585999879496247541
+    },
+    {
+      "consulta": 9,
+      "indice": 89,
+      "ranura": 3,
+      "valor": 16321548217458410251
+    },
+    {
+      "consulta": 9,
+      "indice": 97,
+      "ranura": 4,
+      "valor": 18119357200638377125
+    },
+    {
+      "consulta": 9,
+      "indice": 105,
+      "ranura": 5,
+      "valor": 13839250413625797781
+    },
+    {
+      "consulta": 10,
+      "indice": 60,
+      "ranura": 0,
+      "valor": 126816010597520944
+    },
+    {
+      "consulta": 10,
+      "indice": 68,
+      "ranura": 1,
+      "valor": 12338804158717408089
+    },
+    {
+      "consulta": 10,
+      "indice": 76,
+      "ranura": 2,
+      "valor": 12560964880362383110
+    },
+    {
+      "consulta": 10,
+      "indice": 124,
+      "ranura": 3,
+      "valor": 12471734752774457819
+    },
+    {
+      "consulta": 10,
+      "indice": 4,
+      "ranura": 4,
+      "valor": 11686710200266506228
+    },
+    {
+      "consulta": 10,
+      "indice": 12,
+      "ranura": 5,
+      "valor": 5148683310413595926
+    },
+    {
+      "consulta": 11,
+      "indice": 21,
+      "ranura": 0,
+      "valor": 11863584455186801984
+    },
+    {
+      "consulta": 11,
+      "indice": 29,
+      "ranura": 1,
+      "valor": 10481389558721842082
+    },
+    {
+      "consulta": 11,
+      "indice": 37,
+      "ranura": 2,
+      "valor": 13688933844647075638
+    },
+    {
+      "consulta": 11,
+      "indice": 85,
+      "ranura": 3,
+      "valor": 1833520644806850798
+    },
+    {
+      "consulta": 11,
+      "indice": 93,
+      "ranura": 4,
+      "valor": 10337404805270503693
+    },
+    {
+      "consulta": 11,
+      "indice": 101,
+      "ranura": 5,
+      "valor": 10729214219286054878
+    },
+    {
+      "consulta": 12,
+      "indice": 34,
+      "ranura": 0,
+      "valor": 13891607752199178126
+    },
+    {
+      "consulta": 12,
+      "indice": 42,
+      "ranura": 1,
+      "valor": 8850696836921242473
+    },
+    {
+      "consulta": 12,
+      "indice": 50,
+      "ranura": 2,
+      "valor": 5391283015012031838
+    },
+    {
+      "consulta": 12,
+      "indice": 98,
+      "ranura": 3,
+      "valor": 14068130583541209228
+    },
+    {
+      "consulta": 12,
+      "indice": 106,
+      "ranura": 4,
+      "valor": 5295786254452013043
+    },
+    {
+      "consulta": 12,
+      "indice": 114,
+      "ranura": 5,
+      "valor": 10730082542115038633
+    },
+    {
+      "consulta": 13,
+      "indice": 63,
+      "ranura": 0,
+      "valor": 6733742822338294555
+    },
+    {
+      "consulta": 13,
+      "indice": 71,
+      "ranura": 1,
+      "valor": 15044863648935425929
+    },
+    {
+      "consulta": 13,
+      "indice": 79,
+      "ranura": 2,
+      "valor": 11567163565858965588
+    },
+    {
+      "consulta": 13,
+      "indice": 127,
+      "ranura": 3,
+      "valor": 8164895075352298137
+    },
+    {
+      "consulta": 13,
+      "indice": 7,
+      "ranura": 4,
+      "valor": 1456867478348531803
+    },
+    {
+      "consulta": 13,
+      "indice": 15,
+      "ranura": 5,
+      "valor": 14364342219149889971
+    },
+    {
+      "consulta": 14,
+      "indice": 8,
+      "ranura": 0,
+      "valor": 1737102766307840582
+    },
+    {
+      "consulta": 14,
+      "indice": 16,
+      "ranura": 1,
+      "valor": 2302721075661155600
+    },
+    {
+      "consulta": 14,
+      "indice": 24,
+      "ranura": 2,
+      "valor": 16075887111011962771
+    },
+    {
+      "consulta": 14,
+      "indice": 72,
+      "ranura": 3,
+      "valor": 13442258279307500954
+    },
+    {
+      "consulta": 14,
+      "indice": 80,
+      "ranura": 4,
+      "valor": 8942011931368626265
+    },
+    {
+      "consulta": 14,
+      "indice": 88,
+      "ranura": 5,
+      "valor": 2934414579055727027
+    },
+    {
+      "consulta": 15,
+      "indice": 33,
+      "ranura": 0,
+      "valor": 15289679354249055266
+    },
+    {
+      "consulta": 15,
+      "indice": 41,
+      "ranura": 1,
+      "valor": 1585999879496247541
+    },
+    {
+      "consulta": 15,
+      "indice": 49,
+      "ranura": 2,
+      "valor": 1457320592001131174
+    },
+    {
+      "consulta": 15,
+      "indice": 97,
+      "ranura": 3,
+      "valor": 18119357200638377125
+    },
+    {
+      "consulta": 15,
+      "indice": 105,
+      "ranura": 4,
+      "valor": 13839250413625797781
+    },
+    {
+      "consulta": 15,
+      "indice": 113,
+      "ranura": 5,
+      "valor": 16143009939531683447
+    },
+    {
+      "consulta": 16,
+      "indice": 30,
+      "ranura": 0,
+      "valor": 3609257034369463018
+    },
+    {
+      "consulta": 16,
+      "indice": 38,
+      "ranura": 1,
+      "valor": 5146015210602122721
+    },
+    {
+      "consulta": 16,
+      "indice": 46,
+      "ranura": 2,
+      "valor": 12982278157850270090
+    },
+    {
+      "consulta": 16,
+      "indice": 94,
+      "ranura": 3,
+      "valor": 5839742085249392188
+    },
+    {
+      "consulta": 16,
+      "indice": 102,
+      "ranura": 4,
+      "valor": 16138743181812395495
+    },
+    {
+      "consulta": 16,
+      "indice": 110,
+      "ranura": 5,
+      "valor": 8815615541659479919
+    },
+    {
+      "consulta": 17,
+      "indice": 22,
+      "ranura": 0,
+      "valor": 6215590840716698087
+    },
+    {
+      "consulta": 17,
+      "indice": 30,
+      "ranura": 1,
+      "valor": 3609257034369463018
+    },
+    {
+      "consulta": 17,
+      "indice": 38,
+      "ranura": 2,
+      "valor": 5146015210602122721
+    },
+    {
+      "consulta": 17,
+      "indice": 86,
+      "ranura": 3,
+      "valor": 1027428953901733724
+    },
+    {
+      "consulta": 17,
+      "indice": 94,
+      "ranura": 4,
+      "valor": 5839742085249392188
+    },
+    {
+      "consulta": 17,
+      "indice": 102,
+      "ranura": 5,
+      "valor": 16138743181812395495
+    },
+    {
+      "consulta": 18,
+      "indice": 14,
+      "ranura": 0,
+      "valor": 11789485768437204044
+    },
+    {
+      "consulta": 18,
+      "indice": 22,
+      "ranura": 1,
+      "valor": 6215590840716698087
+    },
+    {
+      "consulta": 18,
+      "indice": 30,
+      "ranura": 2,
+      "valor": 3609257034369463018
+    },
+    {
+      "consulta": 18,
+      "indice": 78,
+      "ranura": 3,
+      "valor": 727796919314808973
+    },
+    {
+      "consulta": 18,
+      "indice": 86,
+      "ranura": 4,
+      "valor": 1027428953901733724
+    },
+    {
+      "consulta": 18,
+      "indice": 94,
+      "ranura": 5,
+      "valor": 5839742085249392188
+    },
+    {
+      "consulta": 19,
+      "indice": 20,
+      "ranura": 0,
+      "valor": 289636832246269184
+    },
+    {
+      "consulta": 19,
+      "indice": 28,
+      "ranura": 1,
+      "valor": 4072545067445863324
+    },
+    {
+      "consulta": 19,
+      "indice": 36,
+      "ranura": 2,
+      "valor": 16616745497489931683
+    },
+    {
+      "consulta": 19,
+      "indice": 84,
+      "ranura": 3,
+      "valor": 10494967570357353549
+    },
+    {
+      "consulta": 19,
+      "indice": 92,
+      "ranura": 4,
+      "valor": 18379006434878720190
+    },
+    {
+      "consulta": 19,
+      "indice": 100,
+      "ranura": 5,
+      "valor": 10532111083535141782
+    },
+    {
+      "consulta": 20,
+      "indice": 59,
+      "ranura": 0,
+      "valor": 11085205215794594896
+    },
+    {
+      "consulta": 20,
+      "indice": 67,
+      "ranura": 1,
+      "valor": 2945525614286356456
+    },
+    {
+      "consulta": 20,
+      "indice": 75,
+      "ranura": 2,
+      "valor": 13068598416745771131
+    },
+    {
+      "consulta": 20,
+      "indice": 123,
+      "ranura": 3,
+      "valor": 16809973003914008230
+    },
+    {
+      "consulta": 20,
+      "indice": 3,
+      "ranura": 4,
+      "valor": 2266190013291072096
+    },
+    {
+      "consulta": 20,
+      "indice": 11,
+      "ranura": 5,
+      "valor": 14949597378956263851
+    },
+    {
+      "consulta": 21,
+      "indice": 45,
+      "ranura": 0,
+      "valor": 13655022420407255803
+    },
+    {
+      "consulta": 21,
+      "indice": 53,
+      "ranura": 1,
+      "valor": 1581329911698968056
+    },
+    {
+      "consulta": 21,
+      "indice": 61,
+      "ranura": 2,
+      "valor": 2525655740546471548
+    },
+    {
+      "consulta": 21,
+      "indice": 109,
+      "ranura": 3,
+      "valor": 15138680816010579680
+    },
+    {
+      "consulta": 21,
+      "indice": 117,
+      "ranura": 4,
+      "valor": 12795554056603268757
+    },
+    {
+      "consulta": 21,
+      "indice": 125,
+      "ranura": 5,
+      "valor": 3289632403839559886
+    },
+    {
+      "consulta": 22,
+      "indice": 50,
+      "ranura": 0,
+      "valor": 5391283015012031838
+    },
+    {
+      "consulta": 22,
+      "indice": 58,
+      "ranura": 1,
+      "valor": 13143477877473170901
+    },
+    {
+      "consulta": 22,
+      "indice": 66,
+      "ranura": 2,
+      "valor": 7702951902592518983
+    },
+    {
+      "consulta": 22,
+      "indice": 114,
+      "ranura": 3,
+      "valor": 10730082542115038633
+    },
+    {
+      "consulta": 22,
+      "indice": 122,
+      "ranura": 4,
+      "valor": 6891726006874475822
+    },
+    {
+      "consulta": 22,
+      "indice": 2,
+      "ranura": 5,
+      "valor": 11611330721780951950
+    },
+    {
+      "consulta": 23,
+      "indice": 35,
+      "ranura": 0,
+      "valor": 10702209423658460584
+    },
+    {
+      "consulta": 23,
+      "indice": 43,
+      "ranura": 1,
+      "valor": 9548670777363890307
+    },
+    {
+      "consulta": 23,
+      "indice": 51,
+      "ranura": 2,
+      "valor": 2151854626532891648
+    },
+    {
+      "consulta": 23,
+      "indice": 99,
+      "ranura": 3,
+      "valor": 16230092755565040503
+    },
+    {
+      "consulta": 23,
+      "indice": 107,
+      "ranura": 4,
+      "valor": 11681937944006713159
+    },
+    {
+      "consulta": 23,
+      "indice": 115,
+      "ranura": 5,
+      "valor": 5839967387470228337
+    },
+    {
+      "consulta": 24,
+      "indice": 6,
+      "ranura": 0,
+      "valor": 13757491475470458817
+    },
+    {
+      "consulta": 24,
+      "indice": 14,
+      "ranura": 1,
+      "valor": 11789485768437204044
+    },
+    {
+      "consulta": 24,
+      "indice": 22,
+      "ranura": 2,
+      "valor": 6215590840716698087
+    },
+    {
+      "consulta": 24,
+      "indice": 70,
+      "ranura": 3,
+      "valor": 18416753311744720173
+    },
+    {
+      "consulta": 24,
+      "indice": 78,
+      "ranura": 4,
+      "valor": 727796919314808973
+    },
+    {
+      "consulta": 24,
+      "indice": 86,
+      "ranura": 5,
+      "valor": 1027428953901733724
+    },
+    {
+      "consulta": 25,
+      "indice": 12,
+      "ranura": 0,
+      "valor": 5148683310413595926
+    },
+    {
+      "consulta": 25,
+      "indice": 20,
+      "ranura": 1,
+      "valor": 289636832246269184
+    },
+    {
+      "consulta": 25,
+      "indice": 28,
+      "ranura": 2,
+      "valor": 4072545067445863324
+    },
+    {
+      "consulta": 25,
+      "indice": 76,
+      "ranura": 3,
+      "valor": 12560964880362383110
+    },
+    {
+      "consulta": 25,
+      "indice": 84,
+      "ranura": 4,
+      "valor": 10494967570357353549
+    },
+    {
+      "consulta": 25,
+      "indice": 92,
+      "ranura": 5,
+      "valor": 18379006434878720190
+    },
+    {
+      "consulta": 26,
+      "indice": 28,
+      "ranura": 0,
+      "valor": 4072545067445863324
+    },
+    {
+      "consulta": 26,
+      "indice": 36,
+      "ranura": 1,
+      "valor": 16616745497489931683
+    },
+    {
+      "consulta": 26,
+      "indice": 44,
+      "ranura": 2,
+      "valor": 3073125860036984190
+    },
+    {
+      "consulta": 26,
+      "indice": 92,
+      "ranura": 3,
+      "valor": 18379006434878720190
+    },
+    {
+      "consulta": 26,
+      "indice": 100,
+      "ranura": 4,
+      "valor": 10532111083535141782
+    },
+    {
+      "consulta": 26,
+      "indice": 108,
+      "ranura": 5,
+      "valor": 2365571593789134012
+    },
+    {
+      "consulta": 27,
+      "indice": 43,
+      "ranura": 0,
+      "valor": 9548670777363890307
+    },
+    {
+      "consulta": 27,
+      "indice": 51,
+      "ranura": 1,
+      "valor": 2151854626532891648
+    },
+    {
+      "consulta": 27,
+      "indice": 59,
+      "ranura": 2,
+      "valor": 11085205215794594896
+    },
+    {
+      "consulta": 27,
+      "indice": 107,
+      "ranura": 3,
+      "valor": 11681937944006713159
+    },
+    {
+      "consulta": 27,
+      "indice": 115,
+      "ranura": 4,
+      "valor": 5839967387470228337
+    },
+    {
+      "consulta": 27,
+      "indice": 123,
+      "ranura": 5,
+      "valor": 16809973003914008230
+    },
+    {
+      "consulta": 28,
+      "indice": 32,
+      "ranura": 0,
+      "valor": 6082432298925710451
+    },
+    {
+      "consulta": 28,
+      "indice": 40,
+      "ranura": 1,
+      "valor": 10254859337434841809
+    },
+    {
+      "consulta": 28,
+      "indice": 48,
+      "ranura": 2,
+      "valor": 17440811249201570102
+    },
+    {
+      "consulta": 28,
+      "indice": 96,
+      "ranura": 3,
+      "valor": 4313901591939234277
+    },
+    {
+      "consulta": 28,
+      "indice": 104,
+      "ranura": 4,
+      "valor": 1259496769731200133
+    },
+    {
+      "consulta": 28,
+      "indice": 112,
+      "ranura": 5,
+      "valor": 5788731015576826917
+    },
+    {
+      "consulta": 29,
+      "indice": 19,
+      "ranura": 0,
+      "valor": 340039724809176603
+    },
+    {
+      "consulta": 29,
+      "indice": 27,
+      "ranura": 1,
+      "valor": 2030889271922416663
+    },
+    {
+      "consulta": 29,
+      "indice": 35,
+      "ranura": 2,
+      "valor": 10702209423658460584
+    },
+    {
+      "consulta": 29,
+      "indice": 83,
+      "ranura": 3,
+      "valor": 122510515798397738
+    },
+    {
+      "consulta": 29,
+      "indice": 91,
+      "ranura": 4,
+      "valor": 7147499458499452116
+    },
+    {
+      "consulta": 29,
+      "indice": 99,
+      "ranura": 5,
+      "valor": 16230092755565040503
+    },
+    {
+      "consulta": 30,
+      "indice": 46,
+      "ranura": 0,
+      "valor": 12982278157850270090
+    },
+    {
+      "consulta": 30,
+      "indice": 54,
+      "ranura": 1,
+      "valor": 2274150160589598637
+    },
+    {
+      "consulta": 30,
+      "indice": 62,
+      "ranura": 2,
+      "valor": 14094054727455698475
+    },
+    {
+      "consulta": 30,
+      "indice": 110,
+      "ranura": 3,
+      "valor": 8815615541659479919
+    },
+    {
+      "consulta": 30,
+      "indice": 118,
+      "ranura": 4,
+      "valor": 17954748521044994422
+    },
+    {
+      "consulta": 30,
+      "indice": 126,
+      "ranura": 5,
+      "valor": 6578353707810279856
+    },
+    {
+      "consulta": 31,
+      "indice": 61,
+      "ranura": 0,
+      "valor": 2525655740546471548
+    },
+    {
+      "consulta": 31,
+      "indice": 69,
+      "ranura": 1,
+      "valor": 9252767948762936000
+    },
+    {
+      "consulta": 31,
+      "indice": 77,
+      "ranura": 2,
+      "valor": 732575385390725166
+    },
+    {
+      "consulta": 31,
+      "indice": 125,
+      "ranura": 3,
+      "valor": 3289632403839559886
+    },
+    {
+      "consulta": 31,
+      "indice": 5,
+      "ranura": 4,
+      "valor": 9483525728031515213
+    },
+    {
+      "consulta": 31,
+      "indice": 13,
+      "ranura": 5,
+      "valor": 17978713658818909457
+    },
+    {
+      "consulta": 32,
+      "indice": 13,
+      "ranura": 0,
+      "valor": 17978713658818909457
+    },
+    {
+      "consulta": 32,
+      "indice": 21,
+      "ranura": 1,
+      "valor": 11863584455186801984
+    },
+    {
+      "consulta": 32,
+      "indice": 29,
+      "ranura": 2,
+      "valor": 10481389558721842082
+    },
+    {
+      "consulta": 32,
+      "indice": 77,
+      "ranura": 3,
+      "valor": 732575385390725166
+    },
+    {
+      "consulta": 32,
+      "indice": 85,
+      "ranura": 4,
+      "valor": 1833520644806850798
+    },
+    {
+      "consulta": 32,
+      "indice": 93,
+      "ranura": 5,
+      "valor": 10337404805270503693
+    },
+    {
+      "consulta": 33,
+      "indice": 23,
+      "ranura": 0,
+      "valor": 294152931859384514
+    },
+    {
+      "consulta": 33,
+      "indice": 31,
+      "ranura": 1,
+      "valor": 14760327884309741320
+    },
+    {
+      "consulta": 33,
+      "indice": 39,
+      "ranura": 2,
+      "valor": 2100588043868032722
+    },
+    {
+      "consulta": 33,
+      "indice": 87,
+      "ranura": 3,
+      "valor": 17677792746889609109
+    },
+    {
+      "consulta": 33,
+      "indice": 95,
+      "ranura": 4,
+      "valor": 14502171906238319925
+    },
+    {
+      "consulta": 33,
+      "indice": 103,
+      "ranura": 5,
+      "valor": 15838110354569005459
+    },
+    {
+      "consulta": 34,
+      "indice": 38,
+      "ranura": 0,
+      "valor": 5146015210602122721
+    },
+    {
+      "consulta": 34,
+      "indice": 46,
+      "ranura": 1,
+      "valor": 12982278157850270090
+    },
+    {
+      "consulta": 34,
+      "indice": 54,
+      "ranura": 2,
+      "valor": 2274150160589598637
+    },
+    {
+      "consulta": 34,
+      "indice": 102,
+      "ranura": 3,
+      "valor": 16138743181812395495
+    },
+    {
+      "consulta": 34,
+      "indice": 110,
+      "ranura": 4,
+      "valor": 8815615541659479919
+    },
+    {
+      "consulta": 34,
+      "indice": 118,
+      "ranura": 5,
+      "valor": 17954748521044994422
+    },
+    {
+      "consulta": 35,
+      "indice": 42,
+      "ranura": 0,
+      "valor": 8850696836921242473
+    },
+    {
+      "consulta": 35,
+      "indice": 50,
+      "ranura": 1,
+      "valor": 5391283015012031838
+    },
+    {
+      "consulta": 35,
+      "indice": 58,
+      "ranura": 2,
+      "valor": 13143477877473170901
+    },
+    {
+      "consulta": 35,
+      "indice": 106,
+      "ranura": 3,
+      "valor": 5295786254452013043
+    },
+    {
+      "consulta": 35,
+      "indice": 114,
+      "ranura": 4,
+      "valor": 10730082542115038633
+    },
+    {
+      "consulta": 35,
+      "indice": 122,
+      "ranura": 5,
+      "valor": 6891726006874475822
+    },
+    {
+      "consulta": 36,
+      "indice": 17,
+      "ranura": 0,
+      "valor": 26128928338460884
+    },
+    {
+      "consulta": 36,
+      "indice": 25,
+      "ranura": 1,
+      "valor": 3398936835388476844
+    },
+    {
+      "consulta": 36,
+      "indice": 33,
+      "ranura": 2,
+      "valor": 15289679354249055266
+    },
+    {
+      "consulta": 36,
+      "indice": 81,
+      "ranura": 3,
+      "valor": 464885147491451482
+    },
+    {
+      "consulta": 36,
+      "indice": 89,
+      "ranura": 4,
+      "valor": 16321548217458410251
+    },
+    {
+      "consulta": 36,
+      "indice": 97,
+      "ranura": 5,
+      "valor": 18119357200638377125
+    },
+    {
+      "consulta": 37,
+      "indice": 41,
+      "ranura": 0,
+      "valor": 1585999879496247541
+    },
+    {
+      "consulta": 37,
+      "indice": 49,
+      "ranura": 1,
+      "valor": 1457320592001131174
+    },
+    {
+      "consulta": 37,
+      "indice": 57,
+      "ranura": 2,
+      "valor": 4532059252792603043
+    },
+    {
+      "consulta": 37,
+      "indice": 105,
+      "ranura": 3,
+      "valor": 13839250413625797781
+    },
+    {
+      "consulta": 37,
+      "indice": 113,
+      "ranura": 4,
+      "valor": 16143009939531683447
+    },
+    {
+      "consulta": 37,
+      "indice": 121,
+      "ranura": 5,
+      "valor": 2674405829945505525
+    },
+    {
+      "consulta": 38,
+      "indice": 24,
+      "ranura": 0,
+      "valor": 16075887111011962771
+    },
+    {
+      "consulta": 38,
+      "indice": 32,
+      "ranura": 1,
+      "valor": 6082432298925710451
+    },
+    {
+      "consulta": 38,
+      "indice": 40,
+      "ranura": 2,
+      "valor": 10254859337434841809
+    },
+    {
+      "consulta": 38,
+      "indice": 88,
+      "ranura": 3,
+      "valor": 2934414579055727027
+    },
+    {
+      "consulta": 38,
+      "indice": 96,
+      "ranura": 4,
+      "valor": 4313901591939234277
+    },
+    {
+      "consulta": 38,
+      "indice": 104,
+      "ranura": 5,
+      "valor": 1259496769731200133
+    },
+    {
+      "consulta": 39,
+      "indice": 57,
+      "ranura": 0,
+      "valor": 4532059252792603043
+    },
+    {
+      "consulta": 39,
+      "indice": 65,
+      "ranura": 1,
+      "valor": 17264696416724978239
+    },
+    {
+      "consulta": 39,
+      "indice": 73,
+      "ranura": 2,
+      "valor": 3830512766189983995
+    },
+    {
+      "consulta": 39,
+      "indice": 121,
+      "ranura": 3,
+      "valor": 2674405829945505525
+    },
+    {
+      "consulta": 39,
+      "indice": 1,
+      "ranura": 4,
+      "valor": 6062150311314790967
+    },
+    {
+      "consulta": 39,
+      "indice": 9,
+      "ranura": 5,
+      "valor": 5910820443427780754
+    }
+  ],
+  "bits": 12,
+  "dominio_canal": "NEXUS-STARK-v2",
+  "formato": "PqValidityProof legado bincode 1.3.3",
+  "indices_consulta": [
+    44,
+    16,
+    36,
+    10,
+    15,
+    54,
+    39,
+    11,
+    48,
+    25,
+    60,
+    21,
+    34,
+    63,
+    8,
+    33,
+    30,
+    22,
+    14,
+    20,
+    59,
+    45,
+    50,
+    35,
+    6,
+    12,
+    28,
+    43,
+    32,
+    19,
+    46,
+    61,
+    13,
+    23,
+    38,
+    42,
+    17,
+    41,
+    24,
+    57
+  ],
+  "inicio": 3,
+  "nonce": 245,
+  "puntos_distintos": 128,
+  "salida": 16711650847234044346,
+  "seleccionados": [
+    {
+      "consulta": 8,
+      "indice": 0,
+      "ranura": 5,
+      "valor": 4825148612097906909,
+      "x": 7
+    },
+    {
+      "consulta": 39,
+      "indice": 1,
+      "ranura": 4,
+      "valor": 6062150311314790967,
+      "x": 14411580376881299457
+    },
+    {
+      "consulta": 22,
+      "indice": 2,
+      "ranura": 5,
+      "valor": 11611330721780951950,
+      "x": 3848290697216
+    },
+    {
+      "consulta": 20,
+      "indice": 3,
+      "ranura": 4,
+      "valor": 2266190013291072096,
+      "x": 7881419605147648
+    },
+    {
+      "consulta": 10,
+      "indice": 4,
+      "ranura": 4,
+      "valor": 11686710200266506228,
+      "x": 492581209128960
+    },
+    {
+      "consulta": 31,
+      "indice": 5,
+      "ranura": 4,
+      "valor": 9483525728031515213,
+      "x": 15392927904256
+    },
+    {
+      "consulta": 5,
+      "indice": 6,
+      "ranura": 5,
+      "valor": 13757491475470458817,
+      "x": 18446744069399904257
+    },
+    {
+      "consulta": 13,
+      "indice": 7,
+      "ranura": 4,
+      "valor": 1456867478348531803,
+      "x": 18446744039349354504
+    },
+    {
+      "consulta": 14,
+      "indice": 8,
+      "ranura": 0,
+      "valor": 1737102766307840582,
+      "x": 10376293537166655489
+    },
+    {
+      "consulta": 39,
+      "indice": 9,
+      "ranura": 5,
+      "valor": 5910820443427780754,
+      "x": 18194542490281837441
+    },
+    {
+      "consulta": 3,
+      "indice": 10,
+      "ranura": 0,
+      "valor": 4734504292507539585,
+      "x": 56
+    },
+    {
+      "consulta": 7,
+      "indice": 11,
+      "ranura": 0,
+      "valor": 14949597378956263851,
+      "x": 4612178598562889730
+    },
+    {
+      "consulta": 10,
+      "indice": 12,
+      "ranura": 5,
+      "valor": 5148683310413595926,
+      "x": 30786325577728
+    },
+    {
+      "consulta": 31,
+      "indice": 13,
+      "ranura": 5,
+      "valor": 17978713658818909457,
+      "x": 63051356841181184
+    },
+    {
+      "consulta": 18,
+      "indice": 14,
+      "ranura": 0,
+      "valor": 11789485768437204044,
+      "x": 3940649673031680
+    },
+    {
+      "consulta": 4,
+      "indice": 15,
+      "ranura": 0,
+      "valor": 14364342219149889971,
+      "x": 123143423234048
+    }
+  ],
+  "verificador_legado_acepta": true
+}

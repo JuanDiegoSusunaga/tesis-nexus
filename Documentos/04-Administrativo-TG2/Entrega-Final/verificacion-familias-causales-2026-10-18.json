@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-18-lean-familias-causales",
+  "archivos_comprobados": 5983,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T06:23:09.449662+00:00",
+  "sha256_manifiesto": "91db831fd2960670978a882eb8b5bd82166cba58b554ffb1a65bb914d92f17f6",
+  "nota": "Informe fuera del manifiesto que verifica para evitar referencia hash circular."
+}

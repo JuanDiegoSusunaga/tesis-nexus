@@ -1,0 +1,40 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-17T21:24:07.965901+00:00",
+  "correcto": true,
+  "auditoria_lean": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Anillos-Contraejemplo/validacion.json",
+    "sha256": "f7cb18d85c38e20f7677833626c19ce18313c7840cd2f0660230a8b09a46bd4a",
+    "teoremas": 1103,
+    "modulos": 129,
+    "fuentes": 254,
+    "logs": 135
+  },
+  "fuentes_previas_sin_cambios": 208,
+  "fuentes_previas_actualizadas_con_copia": 7,
+  "versiones_anteriores_intactas": 15,
+  "fuentes_historicas_R4_intactas": 13,
+  "candidatos_con_texto_linea_e_identidad_preservados": 272,
+  "fuentes_manuscrito_intactas": 8,
+  "revision_y_documentacion_previas_recuperables": true,
+  "resultados_y_catalogo_previos_conservados": true,
+  "etapas_lean": 30,
+  "logs_lean_intactos": 2053,
+  "controles_unitarios": 13,
+  "enlaces_locales_existentes": 327,
+  "tesis_completa_verificada": false,
+  "sha256_reglas_git": "15380f342946d96d13c9481b74b45429b94beba2f0d72be3ffdb64d6fc1767f4",
+  "sha256_documentacion_y_controles": {
+    "README.md": "83a7d6068bdfbd735d72f3dd5d7cf433d0d6faecf748907e08f5f7f67b6ac168",
+    "BITACORA_TG2.md": "4a2f3dff2e06017da9ae946c8fda6e05fd1b2840d05f1cbc0d91486d21cbdfad",
+    "formalizacion/README.md": "4d4a94fee146ed7d649c853a8242898accafbce7b1b606edeef97bc39fcd6ca7",
+    "formalizacion/ALCANCE-MANUSCRITO.md": "5e6d1af5ec0b15815e1a75422e67014bee166a4808290ec198a1c9a2f97c6e18",
+    "formalizacion/REVISION-MANUSCRITO.md": "4fe005c7fd28e8af5a768b9c0c40a4a1a922433d71820816c9c3082a93891c31",
+    "Documentos/06-Evidencia-TG2/README.md": "ce146a77e95316f5b25039490f511351169eab86f6764b530714e1b9d2943b5d",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Anillos-Contraejemplo/README.md": "8cdda66be7db63365d02c27caac67bba8aac51613b900283ca378c68d4719547",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Anillos-Contraejemplo-Antecedentes/README.md": "ccbebc27aee55f5788d44b8df93868e65c775a2147c4d953cc08885402b52d3b",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Anillos-Contraejemplo/controles.log": "ce2adf9da2e1b30a0dbaca384d8a701a99b45f8be3311bf64ac010e26e9308d4",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Anillos-Contraejemplo/revision-manuscrito.json": "bafcfc7317ea4b1fb11d582fdf81b325c5d50094ef20e501ec6bfc709ef7ed2b"
+  },
+  "limite": "La integridad preserva identidad e historia. La revisión semántica y el dictamen independiente no se deducen de hashes o de controles unitarios."
+}

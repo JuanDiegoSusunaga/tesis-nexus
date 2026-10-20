@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-18-lean-primeras-exposiciones",
+  "archivos_comprobados": 7203,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T16:05:50.867058+00:00",
+  "sha256_manifiesto": "b762681b2d5cef5bf835d71c5f1f6f617c671bef948ac0ddeaa92a1251d5566c",
+  "nota": "Informe fuera del manifiesto que verifica para evitar referencia hash circular."
+}

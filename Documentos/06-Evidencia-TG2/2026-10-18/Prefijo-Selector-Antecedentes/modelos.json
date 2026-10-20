@@ -1,0 +1,182 @@
+{
+  "ROM/TablaObservada": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La tabla se reconstruye únicamente de los pares observados, conservando la primera respuesta de una entrada repetida. Se prueban las claves exactas, ausencia de duplicados y longitud igual al número de entradas distintas del pasado, sin consultar la continuación ni una función hash fuera de ese pasado.",
+    "limites": [
+      "Es una normalización determinista de la transcripción; no supone independencia de respuestas repetidas."
+    ],
+    "teoremas": [
+      "Nexus.ROM.TablaObservada.claves_agregar",
+      "Nexus.ROM.TablaObservada.claves_recorrer",
+      "Nexus.ROM.TablaObservada.claves_tabla",
+      "Nexus.ROM.TablaObservada.sin_repetidos_agregar",
+      "Nexus.ROM.TablaObservada.sin_repetidos_recorrer",
+      "Nexus.ROM.TablaObservada.sin_repetidos_tabla",
+      "Nexus.ROM.TablaObservada.cardinal_tabla"
+    ]
+  },
+  "ROM/PrefijoPrograma": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "El estado tras n llamadas y la continuación residual se relacionan con take/drop de la traza real. La continuación se reconstruye usando respuestas anteriores. Su próxima entrada es la entrada n de la traza; su tabla coincide con la normalización del prefijo, incluso con repeticiones. La ejecución final, compatibilidad y ausencia de excepciones se conservan al reanudar, y existe el recorrido causal del prefijo.",
+    "limites": [
+      "n cuenta llamadas, incluidas las repetidas. La altura acota el programa finito y no se identifica con Q+V_T ni con el presupuesto de entradas distintas."
+    ],
+    "teoremas": [
+      "Nexus.ROM.PrefijoPrograma.reanudar_prefijo",
+      "Nexus.ROM.PrefijoPrograma.traza_resto",
+      "Nexus.ROM.PrefijoPrograma.proxima_traza",
+      "Nexus.ROM.PrefijoPrograma.proxima_prefijo",
+      "Nexus.ROM.PrefijoPrograma.avanzar_tabla",
+      "Nexus.ROM.PrefijoPrograma.tabla_estado",
+      "Nexus.ROM.PrefijoPrograma.tabla_desde_vacio",
+      "Nexus.ROM.PrefijoPrograma.estado_al_final",
+      "Nexus.ROM.PrefijoPrograma.tabla_final",
+      "Nexus.ROM.PrefijoPrograma.final_resto",
+      "Nexus.ROM.PrefijoPrograma.sinbad_resto",
+      "Nexus.ROM.PrefijoPrograma.compatible_estado",
+      "Nexus.ROM.PrefijoPrograma.recorrido_prefijo"
+    ]
+  },
+  "ROM/CorteLlamadas": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Toda entrada de un corte del programa aparece en su registro de llamadas. Se localiza su primera aparición y se construye un corte causal en ese mismo instante. La tabla anterior de cualquier corte de esa dirección es exactamente la tabla normalizada del prefijo bruto anterior a la primera llamada, aunque esa llamada proceda de una preconsulta del adversario.",
+    "limites": [
+      "La identificación se demuestra bajo SinBad y se usa como implicación determinista; no condiciona una ley uniforme a ese evento."
+    ],
+    "teoremas": [
+      "Nexus.ROM.CorteLlamadas.entrada_corte",
+      "Nexus.ROM.CorteLlamadas.primera_de_entrada",
+      "Nexus.ROM.CorteLlamadas.existe_corte",
+      "Nexus.ROM.CorteLlamadas.tabla_corte",
+      "Nexus.ROM.CorteLlamadas.corte_en_llamadas"
+    ]
+  },
+  "Canal/SemillaProxima": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La semilla es una función del programa residual reconstruido desde el pasado: lee los primeros 32 octetos de la próxima entrada. Se demuestra que si la próxima llamada es I(s), devuelve exactamente s. La activación comprueba la igualdad de toda la entrada con I(s), sin recibir el certificado futuro como argumento de la política.",
+    "limites": [
+      "Leer el prefijo de una entrada arbitraria no la declara un reto I ni un canal válido. La comprobación de la entrada completa pertenece al predicado de activación."
+    ],
+    "teoremas": [
+      "Nexus.Canal.SemillaProxima.leer_indice",
+      "Nexus.Canal.SemillaProxima.semilla_indice",
+      "Nexus.Canal.SemillaProxima.semilla_prefijo"
+    ]
+  },
+  "Verificador/PoliticasPrefijo": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "GT y GC se definen como políticas del prefijo bruto, con su tabla normalizada y la semilla de la próxima llamada. El registro de un candidato aceptado determina una primera activación cuya semilla y políticas coinciden exactamente con las del corte causal. El número de entradas del estado coincide con las entradas distintas del prefijo.",
+    "limites": [
+      "La lectura de un candidato arbitrario no caracteriza todavía todos los canales válidos ni proporciona una cota pequeña de los cardinales de GT/GC."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.PoliticasPrefijo.registro_previsible",
+      "Nexus.Verificador.PoliticasPrefijo.conjuntos_registro",
+      "Nexus.Verificador.PoliticasPrefijo.cantidad_entradas"
+    ]
+  },
+  "Verificador/CoberturaPrimeras": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La aceptación del verificador matemático bajo SinBad implica que existe una primera llamada I en la traza completa cuya muestra real tiene cardinal cuarenta y está contenida en GT intersección GC de ese prefijo bruto. La instancia con propuesta adaptativa de bytes e intercalaciones obtiene el certificado decodificado y su soporte de la propia ejecución, incluyendo primeras exposiciones deliberadas anteriores al verificador.",
+    "limites": [
+      "El perfil de la salida del certificado puede variar con H. La cobertura no permite aplicar una sola cota de perfil fijo a una unión de perfiles sin justificar su carga conjunta."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.CoberturaPrimeras.registro_cubierto",
+      "Nexus.Verificador.CoberturaPrimeras.cobertura_certificado",
+      "Nexus.Verificador.CoberturaPrimeras.cobertura_adversario"
+    ]
+  },
+  "Canal/UnionPrefijo": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La activación y la omisión con las políticas reconstruidas coinciden con los eventos instrumentados del selector finito. Se aplica la unión de primeras exposiciones a esas políticas, con cota riesgo(R,e,40,g,m) por B entradas distintas, para un perfil fijo y cotas g/m/B explícitas en todas las activaciones.",
+    "limites": [
+      "g limita GT intersección GC en todas las activaciones del experimento, no solo después de aceptar o bajo SinBad. Todavía no se demuestra una cota pequeña de g para candidatos falsos ni un filtro causal que la justifique."
+    ],
+    "teoremas": [
+      "Nexus.Canal.UnionPrefijo.inicio_iff",
+      "Nexus.Canal.UnionPrefijo.omision_iff",
+      "Nexus.Canal.UnionPrefijo.cota_union"
+    ]
+  },
+  "Verificador/CotaAceptacion": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "En un solo experimento uniforme de funciones sobre el universo finito del adversario, la aceptación con perfil k y SinBad se cubre por la unión de primeras exposiciones. Con cotas explícitas g/m/B de todas las activaciones se obtiene Pr(aceptación de perfil k y SinBad) <= riesgo(R,k+2,40,g,m)*B y, sin SinBad en el evento, Pr(aceptación de perfil k) <= Pr(no SinBad)+riesgo*B. El horizonte se deriva de la altura finita del propio programa.",
+    "limites": [
+      "La cota conserva como hipótesis g/m/B para todas las activaciones; podría ser vacua y no constituye solidez global ni prueba de que g sea pequeño. El perfil k está fijado antes del experimento. Faltan filtro de candidatos falsos, unión de perfiles y reinicios, cotas FRI y de trabajo, cota de las excepciones, presupuestos integrales y refinamiento universal Rust. SinBad se elimina aditivamente, sin condicionar la distribución a él."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.CotaAceptacion.cobertura_perfil",
+      "Nexus.Verificador.CotaAceptacion.cota_sin_excepciones",
+      "Nexus.Verificador.CotaAceptacion.cota_aditiva"
+    ]
+  }
+}

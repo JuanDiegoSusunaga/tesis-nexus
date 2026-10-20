@@ -1,0 +1,7 @@
+["C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe", "-X", "utf8", "-m", "unittest", "discover", "-s", "scripts/tests", "-p", "test_verificar_revision_manuscrito.py"]
+
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.039s
+
+OK

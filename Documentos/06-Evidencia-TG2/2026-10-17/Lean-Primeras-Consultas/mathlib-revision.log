@@ -1,0 +1,3 @@
+["git", "-C", "C:\\Users\\juand\\Desktop\\Tesis\\formalizacion\\.lake\\packages\\mathlib", "rev-parse", "HEAD"]
+
+56a005855ea17e0b0958f73ec801ae140b0a1679

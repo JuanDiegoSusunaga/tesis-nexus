@@ -20,7 +20,7 @@ Una validación de seguridad requiere un modelo de amenaza **preciso**. NEXUS di
 
 **(B) Amenaza a la autenticación (el foco de NEXUS).** Una clave pública clásica expuesta permite a un adversario con capacidad cuántica suficiente aplicar Shor a los problemas de factorización o logaritmo discreto y falsificar firmas. NEXUS estudia la sustitución de ECDSA por ML-DSA, derivado de CRYSTALS-Dilithium (Cap. 4). La validación de sus fundamentos y las obligaciones para obtener una garantía concreta de la implementación se presentan en §6.4; el funcionamiento de la API no constituye por sí solo una prueba de inforjabilidad.
 
-**Adversario.** El análisis de las firmas considera los modelos clásicos y cuánticos de las reducciones citadas, incluido QROM cuando corresponde a R1. Para AIR/FRI se distingue la derivación interactiva ideal de la transferencia propuesta en ROM clásico (§§6.7.8–6.7.9); su extensión QROM completa permanece como trabajo futuro (§6.7.10). Los canales laterales, fallos de implementación y el consenso operativo quedan fuera de esta validación; el diseño asume las condiciones de consenso de §3.10.
+**Adversario.** El análisis de las firmas considera los modelos clásicos y cuánticos de las reducciones citadas, incluido QROM cuando corresponde a R1. Para AIR/FRI se distingue la derivación interactiva ideal de la cota demostrada para el verificador matemático en ROM clásico (§§6.7.8–6.7.9); su extensión QROM completa permanece como trabajo futuro (§6.7.10). Los canales laterales, fallos de implementación y el consenso operativo quedan fuera de esta validación; el diseño asume las condiciones de consenso de §3.10.
 
 **Mitigación complementaria de la exposición.** Derivar la dirección como $H(pk)$ evita mostrar directamente la clave pública mientras no se revele por otro canal. Esta condición deja de cumplirse cuando la transacción transmite la clave. La protección depende también de la resistencia de preimagen del hash y del protocolo de uso; no garantiza que la clave sea irrecuperable ni sustituye una firma post-cuántica. El modelo de identidad estable y claves por época se desarrolla en §3.6.
 
@@ -52,9 +52,9 @@ La respuesta de NEXUS es un modelo de arquitectura dual: L2 ejecuta operaciones 
 
 **Novedad.** La criptografía post-cuántica, los esquemas de firma reticulares y los *rollups* existen por separado. La contribución de NEXUS es la **síntesis específica**:
 
-> *el tratamiento formal y cuantificado de cómo el sobrecosto de datos de las firmas post-cuánticas motiva y se mitiga con una arquitectura dual-chain de prueba de validez post-cuántica aplicable a distintos dominios, llevando el costo on-chain por transacción al de su diferencia de estado clásica.*
+> *el estudio formal y cuantificado del sobrecosto de datos de las firmas post-cuánticas y de su amortización en una arquitectura dual-chain. El costo de anclaje por operación tiende al de su diferencia de estado si el tamaño de prueba crece sublinealmente con el lote y la política de disponibilidad permite ese presupuesto de publicación; la realización completa de la capa de pruebas conserva las condiciones de §6.7.*
 
-La **convergencia independiente de Ethereum y Solana** hacia las mismas conclusiones (Cap. 2) **valida** —no resta— esta dirección.
+Las propuestas de Ethereum y Solana aportan antecedentes para esta dirección de diseño (Cap. 2); su coincidencia no demuestra la seguridad ni la viabilidad de la implementación de NEXUS.
 
 ## 1.5 Objetivos
 
@@ -67,11 +67,13 @@ La **convergencia independiente de Ethereum y Solana** hacia las mismas conclusi
 3. **Modelar e implementar la lógica de seguridad activa** del ciclo de vida de claves: min-entropía de la fuente, pruebas de salud (NIST SP 800-90B) y rotación con secrecia hacia adelante (Cap. 5).
 4. **Formalizar y validar la seguridad y la complejidad**: reducción de la in-forjabilidad de Dilithium a Module-LWE / SelfTargetMSIS / Module-SIS → Mod-SIVP, con el argumento de resistencia cuántica; y análisis de complejidad (notación O) (Cap. 6).
 
+**Alcance de cumplimiento.** El componente de reducción de seguridad del objetivo general y del objetivo específico 4 tiene cumplimiento parcial: se identifican los resultados publicados, sus condiciones y las correspondencias pendientes para ML-DSA implementado (§6.4), sin afirmar una cadena concreta completa para el ejecutable. Las demostraciones propias incluyen resultados de los modelos y la cota conservadora de aceptación falsa del verificador matemático AIR/FRI en ROM clásico (§6.7.9); esa cota no es una prueba de inforjabilidad de ML-DSA. En el objetivo 3 se comprueban monitor, rotación por épocas y registro local; la secrecia hacia adelante permanece condicionada por la custodia y la eliminación de secretos (§5.5). El capítulo 7 evalúa los objetivos con estas distinciones.
+
 ## 1.6 Alcance
 
 **Dominio de aplicación.** NEXUS se plantea para sistemas en general que necesitan autenticar operaciones, conservar registros verificables y gestionar el ciclo de vida de sus claves. En este trabajo, una transacción representa una operación firmada que modifica el estado de una aplicación; puede corresponder, por ejemplo, a la actualización de un registro o de un permiso. La arquitectura blockchain dual es el entorno de referencia del modelo y del prototipo. Cada aplicación debe definir sus reglas de autorización y transición de estado; los resultados de los componentes no constituyen validación de todas las aplicaciones posibles.
 
-**Dentro del alcance:** diseño y especificación de la arquitectura dual; implementación verificada de Dilithium y su enlace a las transacciones; derivación determinística por KDF; gestión activa de claves (min-entropía + salud + rotación); y validación formal (reducción + complejidad + benchmarks).
+**Dentro del alcance:** diseño y especificación de la arquitectura dual; implementación y comprobación funcional de ML-DSA y su enlace a las transacciones; derivación determinística contextual desde semilla; gestión activa de claves; estudio de las reducciones de seguridad y de sus condiciones de aplicación; demostraciones para los modelos declarados, incluida la cota ROM del verificador matemático; análisis de complejidad y mediciones de componentes. Este alcance no acredita una reducción completa de seguridad del ejecutable ni una garantía operativa de secrecia hacia adelante.
 
 **Fuera del alcance (declarado):** autenticación biométrica / extractores difusos (**eliminados**); implementación operativa de la capa ZK, del consenso BFT en red y de la disponibilidad de datos (diseño de referencia + trabajo futuro); confidencialidad post-cuántica (KEM); seguridad de implementación (canales laterales).
 

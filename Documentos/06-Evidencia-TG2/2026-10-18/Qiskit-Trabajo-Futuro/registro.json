@@ -1,0 +1,40 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-18T05:09:03.105773+00:00",
+  "decision_autor": "Deja eso anotado a futuro",
+  "tema": "Qiskit SDK y Qiskit Aer para experimentos cuánticos de TG2",
+  "estado": "trabajo_futuro",
+  "cierre_activo": false,
+  "retomar": "Cuando el autor lo solicite expresamente",
+  "instalacion_o_ejecucion_qiskit_realizada": false,
+  "copias_anteriores": {
+    "PENDIENTES.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-18/Qiskit-Trabajo-Futuro/version_anterior/PENDIENTES.md",
+      "sha256": "a747f9ef9e2d4bac2a75228754c0979194b67a8d4d1e8e583b2ddf0dc6cb2855"
+    },
+    "BITACORA_TG2.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-18/Qiskit-Trabajo-Futuro/version_anterior/BITACORA_TG2.md",
+      "sha256": "c3f7deb8192fbe8fbdd31b128308b9ec477689ee504ff95e1129ed30195911a9"
+    },
+    "Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-18/Qiskit-Trabajo-Futuro/version_anterior/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "sha256": "bd69f550bdf169d149332bbc85dd6c1c4020826dafda0ce31aa11a875ebe0898"
+    }
+  },
+  "archivos_edicion_anterior_recuperables": 5407,
+  "documentos_actualizados": {
+    "PENDIENTES.md": "2e284f27fd5f201828dfb4daeb5398514add43a6079e2fb8c419ca2d1737e7de",
+    "BITACORA_TG2.md": "240ebd42595992f84f71d730f076a940c342252b7736ba6b8f1e037fdf69ea5f"
+  },
+  "auditoria_lean_conservada": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Verificador-Completo/validacion.json",
+    "sha256": "ffe5096d171ea010bc4d8f925911e9f7e3fb1392b38905ea409c7dd9631c2753",
+    "teoremas": 1861,
+    "modulos": 207,
+    "fuentes": 631,
+    "logs": 213
+  },
+  "fuentes_lean_intactas": 631,
+  "dictamen_independiente": "pendiente",
+  "nota": "Actualización documental de alcance. No cambia pruebas, código Rust ni el estado de los siete grupos parciales."
+}

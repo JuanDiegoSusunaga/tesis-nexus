@@ -1,0 +1,200 @@
+Comando: python scripts/lean.py build
+Inicio UTC: 2026-10-19T19:52:27.415Z
+Fin UTC: 2026-10-19T19:53:44.471Z
+Codigo de salida: 1
+
+✔ [4075/4084] Built Nexus.Verificador.CancelacionAIRCausal (8.3s)
+✔ [4076/4084] Built Nexus.Verificador.CotaAdaptativaFinal (8.9s)
+✔ [4077/4084] Built Nexus.Verificador.CotaPerfilesFinal (8.8s)
+✔ [4078/4084] Built Nexus.Verificador.CotaInicios (8.6s)
+✔ [4079/4084] Built Nexus.Verificador.CoberturaTrabajo (8.0s)
+✔ [4080/4084] Built Nexus.Verificador.CotaTrabajoFinal (8.7s)
+✔ [4081/4084] Built Nexus.Verificador.CotaTrabajoNumerica (8.9s)
+✖ [4082/4084] Building Nexus.Verificador.PuenteAdaptativoFinal (14s)
+trace: .> LEAN_PATH=C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean c:\Users\juand\Desktop\Tesis\.tools\lean\elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\Users\juand\Desktop\Tesis\formalizacion\Nexus\Verificador\PuenteAdaptativoFinal.lean -o C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\PuenteAdaptativoFinal.olean -i C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\PuenteAdaptativoFinal.ilean -c C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\PuenteAdaptativoFinal.c --setup C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\PuenteAdaptativoFinal.setup.json --json
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:89:61: Unknown identifier `m`
+
+Note: It is not possible to treat `m` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:91:25: Unknown identifier `m`
+
+Note: It is not possible to treat `m` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:99:60: Unknown identifier `m`
+
+Note: It is not possible to treat `m` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:101:25: Unknown identifier `m`
+
+Note: It is not possible to treat `m` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:110:13: declaration uses `sorry`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:196:4: Variable name `n` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _n
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:683:6: This simp argument is unused:
+  consultasEn
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [arbolRaicesCausales, restringirArbol, mediaArbol]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:717:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1097:8: This simp argument is unused:
+  List.drop_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ha, hb, List.take_append]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1097:34: This simp argument is unused:
+  List.take_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [List.drop_append, ha, hb]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1376:8: declaration uses `sorry`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1405:8: declaration uses `sorry`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1434:8: declaration uses `sorry`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1465:8: declaration uses `sorry`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1756:4: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1827:0: automatically included section variable(s) unused in theorem `Nexus.Verificador.PuenteAdaptativoFinal.LeyCausal.frescaHasta_iff_no_repeticion`:
+  [Fintype Q]
+  [Fintype A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] [Fintype A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1839:0: automatically included section variable(s) unused in theorem `Nexus.Verificador.PuenteAdaptativoFinal.LeyCausal.vistas_append_singleton`:
+  [Fintype Q]
+  [Fintype A]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] [Fintype A] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1867:31: This simp argument is unused:
+  i.isLt
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1868:30: This simp argument is unused:
+  i.isLt
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [List.take_append]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1870:0: automatically included section variable(s) unused in theorem `Nexus.Verificador.PuenteAdaptativoFinal.LeyCausal.valor_transformar`:
+  [Fintype Q]
+  [Nonempty A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] [Nonempty A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1901:46: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:1994:41: unsolved goals
+A : Type
+m : ℕ
+p : Programa A
+defecto : Digest
+fase : (↥(universo p) → Digest) → Prop
+t : Torre Fp2 m
+θ : ℝ
+hθ : 0 ≤ θ
+h2 : 2 ≠ 0
+hmargin : ∀ (j : Fin m), ↑(t.grado (↑j + 1)) - 1 < (1 - 3 * θ) * ↑(t.dominio (↑j + 1)).card
+estrategia : ℕ → List Fp2 → Fp2 → Fp2
+secuencia : (↥(universo p) → Digest) → Retos Digest m
+hley : ∀ (f : Retos Digest m → ℚ), (promedio fun H => f (secuencia H)) = promedio f
+hpuente :
+  ∀ (H : ↥(universo p) → Digest),
+    fase H → Escapa (excepcionesDigest sorry θ hθ h2 ⋯ estrategia) pasoDigest 0 m [] (secuencia H)
+hmed hmed' :
+  FiltroSelector.medida fase ≤ N06.riesgo (excepcionesDigest sorry θ hθ h2 ⋯ estrategia) pasoDigest (fun x => 0) 0 m []
+⊢ FiltroSelector.medida fase ≤ ↑((t.dominio 0).card - (t.dominio m).card) / ↑Goldilocks.p ^ 2 + ↑m * (2524360 / 10 ^ 35)
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:2035:73: unsolved goals
+A : Type
+p : Programa A
+defecto : Digest
+fase : (↥(universo p) → Digest) → Prop
+rs : List Digest
+s : Digest
+hp : consultasEn (universo p) (arbolRaicesCausales rs s)
+t : Torre Fp2 rs.length
+θ : ℝ
+hθ : 0 ≤ θ
+h2 : 2 ≠ 0
+hmargin : ∀ (j : Fin rs.length), ↑(t.grado (↑j + 1)) - 1 < (1 - 3 * θ) * ↑(t.dominio (↑j + 1)).card
+estrategia : ℕ → List Fp2 → Fp2 → Fp2
+hpuente :
+  ∀ (H : ↥(universo p) → Digest),
+    fase H →
+      Escapa (excepcionesDigest sorry θ hθ h2 ⋯ estrategia) pasoDigest 0 rs.length []
+        (retosDeFin rs.length fun j => (digestsRaices (oraculo p defecto H) rs s).getD (↑j) (Classical.choice ⋯))
+E : ℕ → List Digest → Finset Digest := excepcionesDigest sorry θ hθ h2 ⋯ estrategia
+seq : (↥(universo p) → Digest) → Retos Digest rs.length :=
+  fun H => retosDeFin rs.length fun j => (digestsRaices (oraculo p defecto H) rs s).getD (↑j) (Classical.choice ⋯)
+htrans :
+  (promedio fun H =>
+      if
+          Escapa E pasoDigest 0 rs.length []
+            (retosDeFin rs.length fun j =>
+              (digestsRaices (SoporteFinito.prolongar (universo p) defecto H) rs s).getD (↑j) (Classical.choice ⋯)) then
+        1
+      else 0) ≤
+    (promedio fun xs => if Escapa E pasoDigest 0 rs.length [] xs then 1 else 0) + errorRaices rs.length
+hmed :
+  FiltroSelector.medida fase ≤
+    N06.riesgo (excepcionesDigest sorry θ hθ h2 ⋯ estrategia) pasoDigest (fun x => 0) 0 rs.length [] +
+      errorRaices rs.length
+⊢ FiltroSelector.medida fase ≤
+    ↑((t.dominio 0).card - (t.dominio rs.length).card) / ↑Goldilocks.p ^ 2 + ↑rs.length * (2524360 / 10 ^ 35) +
+      errorRaices rs.length
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:2055:10: declaration uses `sorry`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:2124:41: unsolved goals
+A : Type
+m : ℕ
+p : Programa A
+defecto : Digest
+t : Torre Fp2 m
+θ : ℝ
+hθ : 0 ≤ θ
+h2 : 2 ≠ 0
+hmargin : ∀ (j : Fin m), ↑(t.grado (↑j + 1)) - 1 < (1 - 3 * θ) * ↑(t.dominio (↑j + 1)).card
+estrategia : ℕ → List Fp2 → Fp2 → Fp2
+secuencia : (↥(universo p) → Digest) → Retos Digest m
+hley : ∀ (f : Retos Digest m → ℚ), (promedio fun H => f (secuencia H)) = promedio f
+hpuente :
+  ∀ (H : ↥(universo p) → Digest),
+    Rondas (oraculo p defecto H) p defecto m →
+      Escapa (excepcionesDigest sorry θ hθ h2 ⋯ estrategia) pasoDigest 0 m [] (secuencia H)
+hmed hmed' :
+  (FiltroSelector.medida fun H => Rondas (oraculo p defecto H) p defecto m) ≤
+    N06.riesgo (excepcionesDigest sorry θ hθ h2 ⋯ estrategia) pasoDigest (fun x => 0) 0 m []
+⊢ (FiltroSelector.medida fun H => Rondas (oraculo p defecto H) p defecto m) ≤
+    ↑((t.dominio 0).card - (t.dominio m).card) / ↑Goldilocks.p ^ 2 + ↑m * (2524360 / 10 ^ 35)
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:2148:8: declaration uses `sorry`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:2183:8: declaration uses `sorry`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:2213:8: declaration uses `sorry`
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:2331:29: exponent 300 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:2437:2: exponent 300 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+error: Nexus/Verificador/PuenteAdaptativoFinal.lean:2487:2: exponent 300 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+Some required targets logged failures:
+- Nexus.Verificador.PuenteAdaptativoFinal
+error: build failed
+

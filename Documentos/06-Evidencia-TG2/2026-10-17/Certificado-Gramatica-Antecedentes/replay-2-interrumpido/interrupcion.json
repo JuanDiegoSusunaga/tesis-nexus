@@ -1,0 +1,363 @@
+{
+  "esquema": 1,
+  "interrumpida": true,
+  "completa": false,
+  "motivo": "El autor solicitó pasar de dos a cuatro procesos simultáneos.",
+  "modulos_confirmados": {
+    "Nexus.ROM.CertificadoLegado16": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.CertificadoLegado16.log",
+      "sha256": "29e22b76d6111e48960b73dfe4ee9e2b3bc001175301b51e3bb04913936e2d26",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Canal.GramaticaTG2": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Canal.GramaticaTG2.log",
+      "sha256": "11e8b0cdcfaf580b3570d84f73dc9ad80ca4bb78ebc7e28adcac7938606e953a",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.ProgramaCompartido": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.ProgramaCompartido.log",
+      "sha256": "2a9ea908837b07213f4005317508f8e2e0484fa15fd78c4086f5f6f4367a4585",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Canal.ProgramaTG2": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Canal.ProgramaTG2.log",
+      "sha256": "e2bcd239929997c371f346de84d06d4bc55146bddc7b0ad67f9605b711a83b5e",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.FRI.IndicesMaquina": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.FRI.IndicesMaquina.log",
+      "sha256": "d98ed2e90eb1340795dfc7c9c142c37c05b667a8880297c9ff81b2157191a290",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.AplicacionAutenticada": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.AplicacionAutenticada.log",
+      "sha256": "49be38230ac6db25644f5e26b1b581c9cc00f8447ddf0f30f66226bee63d95f3",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Salud.Operaciones": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Salud.Operaciones.log",
+      "sha256": "e8158974848041c4f5f4bf8e9d5d8d09ec79c5557bf5de370e8f4a4cb3daa424",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Complejidad.FamiliasCodificacion": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Complejidad.FamiliasCodificacion.log",
+      "sha256": "25cc5d7012c8a78efa2e39a206b5b2a87cd6c8d830f97f13131ead789cd493e9",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Modelos.DisponibilidadCondicional": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Modelos.DisponibilidadCondicional.log",
+      "sha256": "a493dbcad3aea1280c383f4937c95f812261805cfea4ceca9a4dd60d362ceaca",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.CardinalRetos": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.CardinalRetos.log",
+      "sha256": "096013ee9480428cf132d5e3b2e07ebe2e180c193fafac554cf4fbb0b5d7f9d6",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.ProductoNTT": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.ProductoNTT.log",
+      "sha256": "ab85307207223ce0fa3382b2f545c3dacc8b82303362dea2fa13349ffcdf5d27",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Complejidad.CosteNTT": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Complejidad.CosteNTT.log",
+      "sha256": "d97d5bed0cf2fff7e076214410a15d222fdd4d9b9fe63b5a37d1d5015730776c",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.UniformidadSelector": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.UniformidadSelector.log",
+      "sha256": "b1c46d8085d7112515205e5db3ea6211f197dc11e047128d979af192270b4e0a",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.LeySelector": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.LeySelector.log",
+      "sha256": "41583fda95a82d937932743a5251848773e1842297da74a4da68f3ee6a8ba3ca",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.AcoplamientoSelector": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.AcoplamientoSelector.log",
+      "sha256": "f001fbb1069cc494147dafc03f36d7fbd6a9d3e137933d27b5cbce4e70e801fc",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.FrescuraFinita": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.FrescuraFinita.log",
+      "sha256": "94a0eddcddf49554eb1fa7ebaf04804bccd7addf9a858be37b1d2174b316481a",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.HistoriaCausal": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.HistoriaCausal.log",
+      "sha256": "d409bf1b61366fd3ae8991898ec2f54c8f1f2111f30f4d2a0848e24ba31abbe3",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.DecodificacionOperacion": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.DecodificacionOperacion.log",
+      "sha256": "122096b285775a9311b2ea09343937cd088bed091afc195a32e2c4af0fbb0cb9",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.CiclosFirmados": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.CiclosFirmados.log",
+      "sha256": "154572915b9d68eef138eb4790dc900fe5e37f2f5cb10d1ea16dc44feeff921b",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Merkle.RegistroVerificador": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Merkle.RegistroVerificador.log",
+      "sha256": "94244cc92449d5f33fbcf3807aaab9a2213108774a46c4ef27296cff4b3ffd42",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.FRI.Recorrido": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.FRI.Recorrido.log",
+      "sha256": "17f3be4ea630ff3709cbcfe1efdc2d368f6cdea7eae8fb00fa8ac6f1f797332e",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Canal.AceptacionRecorridos": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Canal.AceptacionRecorridos.log",
+      "sha256": "9260d649792c1fc1392a5127e795e4e90f8309c1b82f67ab796bed9b46ab5e29",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.ContrasteJMW": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.ContrasteJMW.log",
+      "sha256": "c2254c37b83c3aaac8eb0dc9fff75b4bf2609745bb125d632ec8b82433a35ceb",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.Retos": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.Retos.log",
+      "sha256": "2c946eecfe0e0ef0a88adb72d74c3749093413bf57f4d229c8743fa2a6d4294d",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.FRI.RetosAfines": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.FRI.RetosAfines.log",
+      "sha256": "919bfbc61b60afa9e47b0ff10943d9f2a30bf5eef1bbc3c70c0c1d263bad5c2d",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.RotacionFirmada": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.RotacionFirmada.log",
+      "sha256": "f9fbef97d729d99eccb69b43a88c7c623300becce6f7d83c24544e4f8da9c64a",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.OperacionBytes": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.OperacionBytes.log",
+      "sha256": "8af903629fd882751a54dc54a4872d7a4bc143f0cf456030d6c1a8091e68955f",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Salud.RachasCondicionales": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Salud.RachasCondicionales.log",
+      "sha256": "da3ea8fca43f9e48492cfb59eb6ae4698a47c90ebefea7ec88fc15bbd5a5b366",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Salud.InvariantesLote": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Salud.InvariantesLote.log",
+      "sha256": "b41a19028a7d2bce15b8b85e4d3db381963f5f7e1c6797eb5ca926ec72eb2191",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.NTTAlgebra": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.NTTAlgebra.log",
+      "sha256": "cb65d0d0b9cae7c55cb897494e989fa5bda9bd296fa33128a3c004671996ccf5",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Complejidad.ContadorFirma": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Complejidad.ContadorFirma.log",
+      "sha256": "5919aae1aac351055e60831d64523f2c56cb05a5b68aa9e2e805e00ff2a0d4cf",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Complejidad.SerializacionPrueba": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Complejidad.SerializacionPrueba.log",
+      "sha256": "6e0159d4146c05481094badf3eb17e6d8b0ad29c8a883cf70c2071892d3c7a98",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.FRI.FormasLimites": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.FRI.FormasLimites.log",
+      "sha256": "79db815b713338b3e1d324574f13a5b4e0a4a9191ca129a601655710962d8406",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Modelos.LayoutBackend": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Modelos.LayoutBackend.log",
+      "sha256": "202dbf7e56871c13e2881a7c896c1424da2f7e4d441d433121116264909b4c5f",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.ReconstruccionPublica": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.ReconstruccionPublica.log",
+      "sha256": "c71c294921649cd0eaeccff107208c9d6251908c81e138a81ca209b8c8dfe45c",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.SelectorRechazo": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.SelectorRechazo.log",
+      "sha256": "41c0ce5110c1967634f50967eeff0a0011eb71e5a661351a3aab1003dc2b3814",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.PotencialCandidatos": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.PotencialCandidatos.log",
+      "sha256": "641eba1cb2a80349f64421d41d863c7486eec95510040d8c27c412abf46aa2bd",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.ComposicionCotas": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.ComposicionCotas.log",
+      "sha256": "6419937bf3c8364f0b31de73d0036b801c20d5e06b9b45b180793d9cca60d08a",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.EjemploNumerico": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.EjemploNumerico.log",
+      "sha256": "42332a7c4582e38e2a7254347ab2a0d177491133ae7251492406922cae258de5",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.AIR.GradosValidos": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.AIR.GradosValidos.log",
+      "sha256": "cc972eaa5484fa06c47a21ac0a32ee080b89f680f42aa7f4208c8ae926f1229c",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.AIR.CancelacionSesgada": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.AIR.CancelacionSesgada.log",
+      "sha256": "313700e0306e6ebb15421f7098111c9383791df4bcf1616494f89c841047c7a9",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.AIR.EjemploCancelacion": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.AIR.EjemploCancelacion.log",
+      "sha256": "63f90c67bf7c37531d932002fe4fde7f2f0138c07e608add29a2fb0637d71c8e",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Reticulos.Euclideos": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Reticulos.Euclideos.log",
+      "sha256": "ab07ee2504e25f1fda66b33679642baf9906046558c7857e83f1f913e3f1c5ca",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.Plantilla": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.Plantilla.log",
+      "sha256": "834a19dea541e7ca862ee70264d6a651d6020f534595f0d419ba0beb2b2122e0",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.Variacion": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.Variacion.log",
+      "sha256": "278fdc554b8e476caaa61221db29e05aba5746717ff3372b846ee1a6ba38c91b",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.Sesgo": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.Sesgo.log",
+      "sha256": "148f048b4ab7da071f4750fcee43c1a988aadb9b6d04161a4f43d6b98e46e453",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.Derivacion": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.Derivacion.log",
+      "sha256": "cbb7626f3034a8220c07889d0272d8a6ef0302da959d63b96bf086e6efe02b4d",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.RegistroEpocas": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.RegistroEpocas.log",
+      "sha256": "07641bc71862c5e53a747f9d785ee99846b4fd91b64783eafb9f75c8ce97592e",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.Transacciones": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.Transacciones.log",
+      "sha256": "b0ec2228924170cf65c005683eb9bab2cc8f51fd1a9459e804ab424fa8d373a5",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Modelos.IdealHistorico": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Modelos.IdealHistorico.log",
+      "sha256": "bac101cd9d86201bdaf7e74aed1254728eae2e0442c4141fcc220439ece54465",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.RaicesCanonicas": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.RaicesCanonicas.log",
+      "sha256": "60333cab81b863c867bb98c4b775fa6f147e51ffb3696050ced241e09ba3bb99",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Complejidad.Comunicacion": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Complejidad.Comunicacion.log",
+      "sha256": "fea3840068e55006f98dc80be8d99464e8ab2de6c29fe0d1af7c9d9ba23a0616",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Modelos.QuorumIncentivos": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Modelos.QuorumIncentivos.log",
+      "sha256": "31e950c1dbbb480dd8163246021b4be5cc2dd64573c3877e6e1a368f4ae33349",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Modelos.Mediciones": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Modelos.Mediciones.log",
+      "sha256": "4cba79e259d631895480444f0867f4dfc6285083c328e6652a8b94d74af6dfc0",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.ColaSelector": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.ColaSelector.log",
+      "sha256": "080426e78dfb788e1366e6dc4309338dc652bbd7190fd762c7af6f4613f9bd35",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Salud.DecimalesAPT": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Salud.DecimalesAPT.log",
+      "sha256": "f4730980ec099a4e2f16204ba797a778ae0b4509c548086a71a3393c453e57fe",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.PerdidaQROM": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.PerdidaQROM.log",
+      "sha256": "dd4cba844aa2f6fc06179561f65aac0c05a1b927adaf86c6a94850633d73112c",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.ROM.Presupuestos": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.ROM.Presupuestos.log",
+      "sha256": "10116ec04af020f526959b2c8aef33f7dd90b47a8b4aa70cdd30ee78aafc094e",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.Probabilidad": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.Probabilidad.log",
+      "sha256": "843f44a0f69cb594b638ca5a0c1e9e6bb358f3e46b03cff182b40ba1e8fd6402",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.Oraculo": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.Oraculo.log",
+      "sha256": "be4606fe7cc304dbb9169e85b74094b91b35905c1bb621cee0fafdd2cba03073",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.Representantes": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.Representantes.log",
+      "sha256": "1d4ac4f6e553ba6b9ac9e073ec616d46f5eeab1523c0338572456386bb65cf41",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.Cortos": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.Cortos.log",
+      "sha256": "2d715e2d439e7ac4f8c364a127bac12ef56ac9789da316b4d08502298b7104f9",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.MSIS": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.MSIS.log",
+      "sha256": "3f456c271c13e83fd110f3702bd1cb5455004727cd5fabb91458e9dbdf688950",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.MLWE": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.MLWE.log",
+      "sha256": "5431e78fd0a9572662d97188f28e3ae78ff5ead88acf9516b3853b894e01380a",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.SelfTarget": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.SelfTarget.log",
+      "sha256": "f7571999b593d385c43eaf9f299b6cbfa8da8002f0aa9ee273d2b0717c078abd",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.Firma": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.Firma.log",
+      "sha256": "40af22e1ce74346562dcbd8a39b87ae90ffbe16b309b824233f07f33c559e050",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.Cripto.Seguridad": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.Cripto.Seguridad.log",
+      "sha256": "c6c58552685eb73b7c4b9572da2bd615a1c5b97be6cb3c0c7c786dd5c9fbd419",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.Parametros": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.Parametros.log",
+      "sha256": "0aecd6fd85b52b2fe0dd4af1e421d6a4fa0a0969f7b7cedbec0255bb58b711cb",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.Anillos": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.Anillos.log",
+      "sha256": "59b41fedaf65a4882ff5f16b5b2ceb4c0a983d34d65673667bdb388a52bc159a",
+      "exito_confirmado_en_salida_del_padre": true
+    },
+    "Nexus.MLDSA.Normas": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/kernel-Nexus.MLDSA.Normas.log",
+      "sha256": "a8a9d15b65ef5055a31149987f53689797a14d98950eb3fe57f8cbbab5f9e9c3",
+      "exito_confirmado_en_salida_del_padre": true
+    }
+  },
+  "fuentes_del_ejecutor": {
+    "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/fuentes/scripts/verificar_formalizacion.py": "7d501eebdf00c55d1a6630257629f14ad90ad00ee4253bf7dd674e692e77dd6d",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Certificado-Gramatica-Antecedentes/replay-2-interrumpido/fuentes/scripts/tests/test_replay_kernel.py": "edd6a507a8b496341808fefa43a63fbb5662373d456340ec45a67b654c61093d"
+  },
+  "nota": "Los logs fuera del prefijo confirmado no se reutilizan ni representan una auditoría completa."
+}

@@ -1,5 +1,23 @@
 # Conservar los bytes que identifican las mediciones y sus fuentes.
+/.gitattributes text eol=lf
 /Documentos/06-Evidencia-TG2/** -text -whitespace
+
+# Conservar los bytes de las pruebas Lean y los verificadores identificados por SHA-256.
+/formalizacion/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/scripts/lean.py -text
+/scripts/verificar_formalizacion.py -text
+/scripts/tests/test_verificar_formalizacion.py -text
+/scripts/inventariar_matematica.py -text
+/scripts/verificar_revision_manuscrito.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/scripts/tests/test_verificar_revision_manuscrito.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Conservar los bytes de la documentación vigente registrada en la evidencia.
+/README.md text eol=crlf
+/BITACORA_TG2.md text eol=crlf
+/PENDIENTES.md text eol=crlf
+/Documentos/04-Administrativo-TG2/Entrega-Final/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Documentos/04-Administrativo-TG2/Avances/Catalogo-Validacion-2026-10-12/README.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/scripts/compilar_manuscrito.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 
 # Conservar la edición revisada y sus hashes al clonar en Windows o Linux.
 /Documentos/01-Manuscrito/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

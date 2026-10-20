@@ -1,0 +1,12 @@
+["C:\\Users\\juand\\AppData\\Local\\Programs\\Python\\Python311\\python.exe", "C:\\Users\\juand\\Desktop\\Tesis\\scripts\\verificar_catalogo_validacion.py"]
+
+{
+  "correcto": true,
+  "afirmaciones": 12,
+  "archivos": 9,
+  "errores": [],
+  "alcance": "Integridad y coherencia documental; no verifica verdad matemática ni seguridad.",
+  "mecanizacion": "no_disponible",
+  "dictamen": "pendiente",
+  "qrom_air_fri": "trabajo_futuro"
+}

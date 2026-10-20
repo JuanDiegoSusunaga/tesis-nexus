@@ -1,0 +1,64 @@
+Comando: python scripts/lean.py build
+Inicio UTC: 2026-10-19T19:51:14.485Z
+Fin UTC: 2026-10-19T19:51:45.806Z
+Codigo de salida: 1
+
+✖ [4069/4084] Building Nexus.Canal.ContextoAIR (8.8s)
+trace: .> LEAN_PATH=C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean c:\Users\juand\Desktop\Tesis\.tools\lean\elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\Users\juand\Desktop\Tesis\formalizacion\Nexus\Canal\ContextoAIR.lean -o C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Canal\ContextoAIR.olean -i C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Canal\ContextoAIR.ilean -c C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Canal\ContextoAIR.c --setup C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Canal\ContextoAIR.setup.json --json
+error: Nexus/Canal/ContextoAIR.lean:125:11: unsolved goals
+case some.none
+t : Tabla Entrada Digest
+defecto a : Digest
+ctx : Contexto
+⊢ (match
+        candidatoPerfil ctx.k (oraculoMerkle ctx.k 0 (funcionTabla defecto t) (List.map Prod.fst t) ctx.raiz)
+          (1 / 8) with
+      | none => ∅
+      | some f =>
+        excepcionesCriticas (residuosPerfil ctx.k f ((algebraMap Fp Fp2) ctx.inicio) ((algebraMap Fp Fp2) ctx.salida))
+          ctx.anteriores.length
+          (acumular (residuosPerfil ctx.k f ((algebraMap Fp Fp2) ctx.inicio) ((algebraMap Fp Fp2) ctx.salida)) 0 0
+            ctx.anteriores)).card ≤
+    1
+error: Nexus/Canal/ContextoAIR.lean:127:6: Type mismatch
+  excepciones_criticas_cardinal ?m.85 ?m.86 ?m.87
+has type
+  (excepcionesCriticas ?m.85 ?m.86 ?m.87).card ≤ 1
+but is expected to have type
+  (match some ctx with
+      | none => ∅
+      | some ctx =>
+        match
+          candidatoPerfil ctx.k (oraculoMerkle ctx.k 0 (funcionTabla defecto t) (List.map Prod.fst t) ctx.raiz)
+            (1 / 8) with
+        | none => ∅
+        | some f =>
+          have R := residuosPerfil ctx.k f ((algebraMap Fp Fp2) ctx.inicio) ((algebraMap Fp Fp2) ctx.salida);
+          excepcionesCriticas R ctx.anteriores.length (acumular R 0 0 ctx.anteriores)).card ≤
+    1
+error: Nexus/Canal/ContextoAIR.lean:125:25: This simp argument is unused:
+  Finset.card_empty
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [zero_le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Nexus/Canal/ContextoAIR.lean:125:44: This simp argument is unused:
+  zero_le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.card_empty]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [4070/4084] Built Nexus.Verificador.CotaSinBad (8.9s)
+✔ [4071/4084] Built Nexus.Verificador.LeyTransporteFRI (9.4s)
+✔ [4072/4084] Built Nexus.Verificador.ExcepcionesHash (8.8s)
+✔ [4073/4084] Built Nexus.Canal.ExtensionesPrefijo (8.2s)
+✖ [4074/4084] Building Nexus.Verificador.CotaFRICausal (8.9s)
+trace: .> LEAN_PATH=C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean c:\Users\juand\Desktop\Tesis\.tools\lean\elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\Users\juand\Desktop\Tesis\formalizacion\Nexus\Verificador\CotaFRICausal.lean -o C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\CotaFRICausal.olean -i C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\CotaFRICausal.ilean -c C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\CotaFRICausal.c --setup C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\CotaFRICausal.setup.json --json
+error: Nexus/Verificador/CotaFRICausal.lean:168:2: exponent 300 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+Some required targets logged failures:
+- Nexus.Canal.ContextoAIR
+- Nexus.Verificador.CotaFRICausal
+error: build failed
+

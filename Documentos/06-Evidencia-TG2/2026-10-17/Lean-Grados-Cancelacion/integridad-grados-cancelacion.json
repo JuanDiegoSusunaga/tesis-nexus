@@ -1,0 +1,61 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-18T00:14:45.020948+00:00",
+  "correcto": true,
+  "auditoria_lean": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/validacion-rectificada.json",
+    "sha256": "552e2d20c34946b14651c3057a128b6cbc241a3df5b4086d1c21e5616494c51f",
+    "teoremas": 1446,
+    "modulos": 157,
+    "fuentes": 344,
+    "logs": 163
+  },
+  "fuentes_previas_sin_cambios": 314,
+  "fuentes_previas_actualizadas_con_copia": 6,
+  "versiones_anteriores_intactas": 16,
+  "grupos_modelo_cerrados": [
+    "M28",
+    "M29"
+  ],
+  "archivos_edicion_anterior_recuperables": 3741,
+  "candidatos_con_texto_identidad_y_lineas_preservadas": 272,
+  "suplementos_intactos": 14,
+  "bloques_inventario_con_enlaces_parciales": 181,
+  "bloques_revision_con_enlaces_parciales": 190,
+  "enlaces_lean_con_alcance": 408,
+  "etapas_lean": 33,
+  "logs_lean_intactos": 2520,
+  "controles_unitarios": 13,
+  "enlaces_locales_existentes": 462,
+  "resultados_previos_conservados": true,
+  "capitulos_y_salidas_manuscrito_sin_cambios": true,
+  "tesis_completa_verificada": false,
+  "dictamen_independiente": "Pendiente; el autor confirmó que no hay dictamen.",
+  "rectificacion_documental": {
+    "referencia_inventario_base_corregida": true,
+    "auditoria_original_conservada": true,
+    "archivos_lean_modificados": 0,
+    "replays_originales_reutilizados": 157
+  },
+  "sha256_documentacion_y_controles": {
+    "README.md": "472aef6982bf6b767aaa76cc67a2e8ba3f4ce4a973f39fb2f1aa792620bbbcc6",
+    "BITACORA_TG2.md": "41435c3178cbc51c41acd74eab34659fc4ebbbf73bf86d2c73bcbc292b17effd",
+    "PENDIENTES.md": "ae5c745328a9ecab07e791bf003e07d76d8b29c9a3c66445792ccd6e13469aef",
+    "formalizacion/README.md": "e5db1c4ad0761ac5df69eb3f0383af2feeb5af2d843a4a13a212cdb554327578",
+    "formalizacion/ALCANCE-MANUSCRITO.md": "b4ae8fcd52230e9b473d25f20979f6adf5bdb1b1848ad75d4e5a61828ae18c59",
+    "formalizacion/REVISION-MANUSCRITO.md": "15d0e392457c2f36e86c36d0b799b0a0019965f8c2ee45d74d9ff7feb5c03496",
+    "Documentos/06-Evidencia-TG2/README.md": "9d12ab37cf5d438832ff7eb2e1d2e55449a72a9898da9b0755a1fc3943b5210a",
+    "Documentos/01-Manuscrito/README.md": "75cc08db09ff67105546f59746f461f12817cd9b45d692ce137ce9738b662036",
+    "Documentos/04-Administrativo-TG2/Entrega-Final/README.md": "fe9383d9dcaff5b5b0854e64b59b5654c784003f65fbb08b3073fc76bb09dd7c",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/README.md": "1434bed3b37e93f044e038b9e6961ab9f57b433243623862ea98070b2ed35c13",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/Revision-Alcance.md": "62696289ca2dde6c594254ac7430802f086ea656e1243438b64085fd99d92295",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Grados-Cancelacion-Antecedentes/README.md": "4e04c1e8aad918499c5e6ae4382514a4f3070b36cc7ee1ff9e2f62f0b0c9b652",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/controles-finales.log": "f558bcd775fd712e9d987909e37462cae86871c739c59f438b288ab4c4579035",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/revision-manuscrito.json": "a367170b24d54d7ee00a9d2e3432588f6e882a5caac70325a3f19bdf919c9f04",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/validacion.json": "317dacd257ef65ab3ec6b91876bbe5d222f1d5af8f6fae189b3868785d470299",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/rectificacion-metadatos.json": "df6539b5d3668bb3d11ee6339ce41f585787bf431c59508808bfea0191821745",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/revision-manuscrito-previa-rectificacion.json": "b37fc4788fd5bdf93817ab44b7cd271c3f3906b4d4ba02feab693ea4594cc7b6",
+    "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Grados-Cancelacion/controles.log": "dfd7ab0db7f21bad19674b54e329a089a9120ddcb8c4d63b08510d4324b6ed8d"
+  },
+  "limite": "Integridad y trazabilidad de modelos con alcances expresos; no demuestra exhaustividad, seguridad del ejecutable ni los pendientes."
+}

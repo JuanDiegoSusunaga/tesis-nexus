@@ -1,0 +1,130 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-17T23:18:56.344891+00:00",
+  "correcto": true,
+  "tipo": "integridad_y_trazabilidad_de_revision_manual",
+  "tesis_completa_verificada": false,
+  "cierre_matematico_completo": false,
+  "barrido_exhaustivo_demostrado": false,
+  "revision_independiente": "pendiente",
+  "recompilacion_lean": false,
+  "auditoria_lean_reutilizada": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Modelos-Pendientes/validacion.json",
+    "teoremas": 1393,
+    "modulos": 154,
+    "integridad": "La auditoría fija esta revisión entre sus fuentes; no hay dependencia circular con el hash de la propia auditoría."
+  },
+  "auditoria_lean_antecedente": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Enlace-AIR-FRI/validacion.json",
+    "sha256": "e04c2d23f5e69127d3b439fb6872144c4e291ee5e88200e5a3fb8127bcf5a7c0",
+    "teoremas": 777,
+    "modulos": 106
+  },
+  "fuentes_de_auditoria_lean_intactas": 320,
+  "etapas_lean_preservadas": 32,
+  "logs_lean_intactos": 2357,
+  "resumen": {
+    "bloques_clasificados": 272,
+    "suplementos_identificados": 14,
+    "grupos_obligaciones": 46,
+    "enlaces_lean_con_alcance": 381,
+    "bloques_con_enlace_lean_parcial": 187,
+    "estados_obligaciones": {
+      "dependencia_bibliografica": 3,
+      "modelo_verificado": 16,
+      "parcial": 24,
+      "trabajo_futuro": 1,
+      "respaldo_documental": 2
+    },
+    "clases": {
+      "resumen": 18,
+      "limite": 71,
+      "dependencia_bibliografica": 36,
+      "hipotesis": 23,
+      "modelo_condicional": 132,
+      "calculo": 102,
+      "objetivo_estructura": 4,
+      "definicion": 64,
+      "referencia_documental": 14,
+      "medicion": 51,
+      "trabajo_futuro": 3,
+      "dato_parametro": 6,
+      "implementacion": 21,
+      "estado_implementacion": 2,
+      "antecedente": 1,
+      "resultado_propio": 63,
+      "alcance_metodologico": 2,
+      "rotulo": 3,
+      "metodologia": 5,
+      "resultado_experimental": 4
+    },
+    "capitulos": [
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+        "candidatos_clasificados": 2,
+        "bloques_con_enlace_lean_parcial": 0,
+        "suplementos": 1
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+        "candidatos_clasificados": 8,
+        "bloques_con_enlace_lean_parcial": 1,
+        "suplementos": 1
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+        "candidatos_clasificados": 8,
+        "bloques_con_enlace_lean_parcial": 3,
+        "suplementos": 0
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+        "candidatos_clasificados": 19,
+        "bloques_con_enlace_lean_parcial": 12,
+        "suplementos": 3
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+        "candidatos_clasificados": 12,
+        "bloques_con_enlace_lean_parcial": 8,
+        "suplementos": 1
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+        "candidatos_clasificados": 35,
+        "bloques_con_enlace_lean_parcial": 26,
+        "suplementos": 6
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+        "candidatos_clasificados": 184,
+        "bloques_con_enlace_lean_parcial": 137,
+        "suplementos": 2
+      },
+      {
+        "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+        "candidatos_clasificados": 4,
+        "bloques_con_enlace_lean_parcial": 0,
+        "suplementos": 0
+      }
+    ],
+    "hallazgos_editoriales": 7
+  },
+  "limite": "El comprobador valida trazabilidad e integridad, no la verdad del juicio semántico ni los pendientes. Los estados modelo_verificado tienen teoremas registrados y presentes en la auditoría Lean elegida. Esta comprobación reutiliza esa auditoría por identidad de sus fuentes y logs, sin volver a compilar.",
+  "sha256_revision": {
+    "formalizacion/revision-manuscrito.json": "5d075080be0a8af95dbb5d692a8cfa7a2988592e1d1e47c66e559396449e7337",
+    "scripts/verificar_revision_manuscrito.py": "608b71e8102ea50bbda13139ead22c93102c6c11632c5b1440def153cd545373",
+    "scripts/tests/test_verificar_revision_manuscrito.py": "a4eb687be73508ddd95b6982db8d030036738e4b0a2ee338293a2400e8455b3a",
+    "formalizacion/REVISION-MANUSCRITO.md": "b857c468239cef40abb15658356df93fd92b8f0b1c7b28359e534d565d7e2c5f"
+  },
+  "sha256_fuentes_manuscrito": {
+    "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md": "077d752b9458f77ba04338fb8dfc50d05acab2aaecc420d9fab1b5bda8e6dfea",
+    "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md": "cb644d3e158fa3350f18665ad54e5a1e4fff9a7e80be6069e22f963efc18f12f",
+    "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md": "76dcf3bca7c7a23c227e1e2920d3477771dcc5abca1be8fc050979bfed41c075",
+    "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md": "b68c41082d10531cd11888283a524ddb9c421cbac3e8d7e61ea37ee01dc9ce9d",
+    "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md": "aac14761229724fa43d438ae0ee783432c78db409797c5009c9d5267672b567a",
+    "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md": "892037a264f2ef65e4e22fe6c4be703f66aaa0fd83bbf7bf0f65c6bdc45244e5",
+    "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md": "47beabb62e127140bff8e5d3f9d7cc2e6f65548db331621671283674a5c011ee",
+    "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md": "f807dea85d3a443f7010378d9c6b1e302afaddd95f8dcc956d0fe11aad1234d4"
+  }
+}

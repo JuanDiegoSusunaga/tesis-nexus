@@ -1,0 +1,130 @@
+{
+  "autorizacion": "Sí, compilación aislada; nexus-active y dependencias, cuatro trabajos, sin global ni Lean.",
+  "global": false,
+  "paquetes": [
+    "nexus-active"
+  ],
+  "dependencias": true,
+  "jobs": 4,
+  "hilos_pruebas": 4,
+  "fuentes_nexus_active": [
+    {
+      "archivo": "nexus/nexus-active/experiments/tg2_canonical_verifier.rs",
+      "sha256": "bc543ed1dca51cca940a46bf05edfdc3459b95d2075c8267035b13261609447c"
+    },
+    {
+      "archivo": "nexus/nexus-active/src/batch.rs",
+      "sha256": "a7a366f6b848c55972fdde7bfd342844584382a0ea12c7d771eb892c427bf7c6"
+    },
+    {
+      "archivo": "nexus/nexus-active/src/chain.rs",
+      "sha256": "b8507a3f7433555bb9d61623b061e983c16f60d7a123e460c79f86dcbad58e3d"
+    },
+    {
+      "archivo": "nexus/nexus-active/src/execution.rs",
+      "sha256": "6f938cc83ba311f9322a327b5bf7292303b9bf14a0bb93fbd73be6f9e1362735"
+    },
+    {
+      "archivo": "nexus/nexus-active/src/lib.rs",
+      "sha256": "20eff0c68bcdbba0a0fe30fd7e2fd7fcf9484715504b8ed57e1bf7f21dd07a98"
+    },
+    {
+      "archivo": "nexus/nexus-active/src/linked_verifier.rs",
+      "sha256": "7e329070f59e4cbfcaad3e5eaede2a76ced123b77f5a1335caa004f93b19db23"
+    },
+    {
+      "archivo": "nexus/nexus-active/src/pq_verifier.rs",
+      "sha256": "98fcb4fdb5738e5aef9b53a2cb0514ec4dc29eb3cb64193ae8d14610d59930f4"
+    },
+    {
+      "archivo": "nexus/nexus-active/src/sequencer.rs",
+      "sha256": "bd85345499d0a0f062fa090762260e26a47efdcc8f024383146b0479ba828c91"
+    },
+    {
+      "archivo": "nexus/nexus-active/src/verifier.rs",
+      "sha256": "5dc2b5023368ab35f63adc3349ebbf4770c77365499b8587c2c934659ad09f59"
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/active_chain_contract.rs",
+      "sha256": "50a51c8fa8603333429ab47c5e14df4a6bc0358761e2286a99346eb9081e5c17"
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/lean_contract.rs",
+      "sha256": "2ce2fd813115e2c27f61d6da8f3d958d4ab8f4235167525a67a4485eaf131639"
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/tg2_verification.rs",
+      "sha256": "6ceeb730ab48163a9ee2a59e505e57176151bcb2375ad2430d696af788875b47"
+    }
+  ],
+  "pasos": [
+    {
+      "etapa": "check",
+      "comando": [
+        "cargo",
+        "check",
+        "-p",
+        "nexus-active",
+        "--all-targets",
+        "--locked",
+        "--offline",
+        "--jobs",
+        "4",
+        "--manifest-path",
+        "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\Cargo.toml"
+      ],
+      "codigo_salida": 0,
+      "segundos": 2.719,
+      "registro": "Documentos/06-Evidencia-TG2/2026-10-20/ActiveChain/ronda-2/cargo-check.log",
+      "sha256": "529ac4fa532201c29e5cb943ddec07da566b013614e0bbf34756227edf9f6eae",
+      "pruebas_pasadas": 0,
+      "pruebas_falladas": 0,
+      "advertencias_diagnosticas": 19
+    },
+    {
+      "etapa": "test",
+      "comando": [
+        "cargo",
+        "test",
+        "-p",
+        "nexus-active",
+        "--locked",
+        "--offline",
+        "--jobs",
+        "4",
+        "--manifest-path",
+        "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\Cargo.toml"
+      ],
+      "codigo_salida": 0,
+      "segundos": 8.672,
+      "registro": "Documentos/06-Evidencia-TG2/2026-10-20/ActiveChain/ronda-2/cargo-test.log",
+      "sha256": "71e2aa91ccb2f559f1f5b4ed528a39c2369cf813eb2b94fe60727e3a7ed16ce5",
+      "pruebas_pasadas": 55,
+      "pruebas_falladas": 0,
+      "advertencias_diagnosticas": 19
+    },
+    {
+      "etapa": "build",
+      "comando": [
+        "cargo",
+        "build",
+        "-p",
+        "nexus-active",
+        "--locked",
+        "--offline",
+        "--jobs",
+        "4",
+        "--manifest-path",
+        "C:\\Users\\juand\\Desktop\\Tesis\\nexus\\Cargo.toml"
+      ],
+      "codigo_salida": 0,
+      "segundos": 1.484,
+      "registro": "Documentos/06-Evidencia-TG2/2026-10-20/ActiveChain/ronda-2/cargo-build.log",
+      "sha256": "a354f5c68ea711cc05c24a8ef467547fb5df8c33ac5ab0a5ab0b5696a3e593c5",
+      "pruebas_pasadas": 0,
+      "pruebas_falladas": 0,
+      "advertencias_diagnosticas": 19
+    }
+  ],
+  "correcto": true
+}

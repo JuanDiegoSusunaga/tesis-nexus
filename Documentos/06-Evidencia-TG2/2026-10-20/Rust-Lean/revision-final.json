@@ -1,0 +1,118 @@
+{
+  "fecha": "2026-10-20",
+  "solicitud": "Dale: punto 1, revisión final del cambio Rust contra Lean, sin compilar ni modificar código.",
+  "estado": "Sin hallazgos bloqueantes en el alcance estático revisado; no es certificación de equivalencia universal.",
+  "codigo_rust_modificado": false,
+  "codigo_lean_modificado": false,
+  "compilacion_rust_ejecutada": false,
+  "compilacion_lean_ejecutada": false,
+  "pruebas_rust_lean_repetidas": false,
+  "calculo_independiente": "Python, aritmética entera y modular sobre los nueve tamaños admitidos; no ejecuta Rust ni Lean.",
+  "commit_creado": false,
+  "manifiesto_entrega_modificado": false,
+  "manuscrito_regenerado": false,
+  "referencias_intactas": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Lean/adaptacion.json",
+      "sha256": "cb4b434b6a9def114a3358365a641266d01d48cd3f2c339c779a8961b497366a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json",
+      "sha256": "680ace2f3dd51f0fd5eeda05f48aed387842f0e28bdd92cf63af2420127f82d0"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Lean/ronda-final/verificacion.json",
+      "sha256": "14e504d709a70debfd2c43f84e787904080770bc151b3bfa672abf1137fc609a"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "sha256": "8a6bd3af02835ba0916e9886ce4fbab21d801b82559319416b78ebcb2488e824"
+    }
+  ],
+  "cotejo_sha256": {
+    "fuentes_rust_intactas": 88,
+    "fuentes_configuracion_lean_intactas": 354,
+    "fuentes_salidas_manuscrito_intactas": 12,
+    "registros_basales_y_manifiesto_intactos": 4,
+    "logs_aislados_intactos": 3,
+    "diferencias": []
+  },
+  "revision": [
+    {
+      "aspecto": "Lectura y rechazo antes del hash",
+      "rust": ["nexus/nexus-zk/src/stark/linked_codec.rs", "nexus/nexus-zk/src/stark/linked.rs"],
+      "lean": ["formalizacion/Nexus/Verificador/Certificado.lean", "formalizacion/Nexus/Verificador/Forma.lean", "formalizacion/Nexus/Verificador/Completo.lean"],
+      "resultado": "Orden LE, cantidades exactas antes de asignar vectores, residuos canónicos, EOF estricto, perfil y formas previos al canal. Las capacidades dependen del perfil validado, no de cantidades arbitrarias del mensaje."
+    },
+    {
+      "aspecto": "Canal y perfil externo",
+      "rust": ["nexus/nexus-zk/src/stark/linked.rs", "nexus/nexus-zk/src/stark/channel.rs"],
+      "lean": ["formalizacion/Nexus/Canal/GramaticaTG2.lean", "formalizacion/Nexus/Canal/ProgramaTG2.lean", "formalizacion/Nexus/Canal/DesafiosPrograma.lean"],
+      "resultado": "Coinciden dominio, etiquetas, cargas LE, separación de etapas, orden de desafíos y trabajo. Solo perfiles 12/20; el certificado no rebaja el perfil exigido por el llamante."
+    },
+    {
+      "aspecto": "Selector ordenado y acotado",
+      "rust": ["nexus/nexus-zk/src/stark/linked.rs"],
+      "lean": ["formalizacion/Nexus/Canal/SelectorOrdenado.lean"],
+      "resultado": "Cuarenta índices distintos, orden de primera aparición y máximo de 512 extracciones contando duplicados. Acepta si el cuadragésimo nuevo llega en la extracción 512; rechaza si se necesitaría la 513."
+    },
+    {
+      "aspecto": "Enlace AIR y ambas FRI",
+      "rust": ["nexus/nexus-zk/src/stark/linked.rs", "nexus/nexus-zk/src/stark/fri.rs", "nexus/nexus-zk/src/stark/merkle.rs", "nexus/nexus-zk/src/stark/field.rs"],
+      "lean": ["formalizacion/Nexus/Verificador/Consulta.lean", "formalizacion/Nexus/Canal/EnlaceComposicion.lean", "formalizacion/Nexus/FRI/ProgramaVerificacion.lean", "formalizacion/Nexus/FRI/Recorrido.lean", "formalizacion/Nexus/FRI/Cosets.lean", "formalizacion/Nexus/FRI/IndicesMaquina.lean"],
+      "resultado": "Coinciden seis posiciones, raíz compartida, fórmula de composición en x y -x, autenticación de ambos lados, acarreo, plegado y comparación final. Las formas se comprueban antes de indexar o recorrer con zip."
+    },
+    {
+      "aspecto": "Sobre y registro de raíces",
+      "rust": ["nexus/nexus-active/src/linked_verifier.rs", "nexus/nexus-active/src/verifier.rs"],
+      "lean": [],
+      "resultado": "Capa de aplicación adicional al modelo: comprueba tipo, escalares, altura, entradas, filas y perfil contra contexto externo. La ruta de validez registra solo tras aceptar y rechaza raíz distinta a altura ya registrada. Sin contexto, validez/híbrido rechazan; optimista queda separado. No se atribuyen estas políticas al teorema AIR."
+    }
+  ],
+  "calculos": {
+    "p": "18446744069414584321",
+    "dominio_k": "4 <= k <= 12; T=2^k; N=8T; d=k+3; m_traza=k; m_composicion=k+1",
+    "bytes_compromiso_m": "8+32*m+16",
+    "bytes_fri_m": "8+sum(j=0..m-1,48+64*(d-j))",
+    "bytes_consulta": "8+6*(16+32*d)+bytes_fri(k)+bytes_fri(k+1)",
+    "bytes_certificado": "24+2+4+32+bytes_compromiso(k)+bytes_compromiso(k+1)+8+8+40*bytes_consulta",
+    "hashes_por_consulta": "6*(k+4)+2*(sum(j=0..k-1,d-j)+k)+2*(sum(j=0..k,d-j)+k+1)",
+    "hashes_verificador_R512": "13+2*(2*k+1)+512+40*hashes_por_consulta; cota por bucles, no medición de tiempo ni prueba de máquina",
+    "perfiles": [
+      {"k": 4, "filas": 16, "dominio": 128, "bytes_certificado": 196574, "hashes_verificador_maximo_R512": 6943},
+      {"k": 5, "filas": 32, "dominio": 256, "bytes_certificado": 249118, "hashes_verificador_maximo_R512": 8627},
+      {"k": 6, "filas": 64, "dominio": 512, "bytes_certificado": 306782, "hashes_verificador_maximo_R512": 10471},
+      {"k": 7, "filas": 128, "dominio": 1024, "bytes_certificado": 369566, "hashes_verificador_maximo_R512": 12475},
+      {"k": 8, "filas": 256, "dominio": 2048, "bytes_certificado": 437470, "hashes_verificador_maximo_R512": 14639},
+      {"k": 9, "filas": 512, "dominio": 4096, "bytes_certificado": 510494, "hashes_verificador_maximo_R512": 16963},
+      {"k": 10, "filas": 1024, "dominio": 8192, "bytes_certificado": 588638, "hashes_verificador_maximo_R512": 19447},
+      {"k": 11, "filas": 2048, "dominio": 16384, "bytes_certificado": 671902, "hashes_verificador_maximo_R512": 22091},
+      {"k": 12, "filas": 4096, "dominio": 32768, "bytes_certificado": 760286, "hashes_verificador_maximo_R512": 24895}
+    ],
+    "limite_bytes": 2097152,
+    "limite_no_excluye_formas_validas_del_perfil": true,
+    "puntos_coset_revisados": 65408,
+    "predicado_coset": "Para todo x=7*omega_N^i de los nueve dominios: x!=0, x!=1, x!=g_T^(T-1), x^T!=1; omega_N^8=g_T y omega_N^(N/2)=-1. Incluye ambas mitades x/-x.",
+    "posiciones_air_revisadas": 196224,
+    "predicado_indices": "Para cada 0<=i<N/2, las seis posiciones quedan en [0,N); los sumandos previos al módulo son menores que 2^32.",
+    "predicado_u128": "Para residuos canónicos, (p-1)^2<2^128, 2*(p-1)<2^128 y 2*p-1<2^128. Fp2 reduce cada producto base antes de sumar.",
+    "alcance": "Comprobaciones finitas de dimensiones e índices y cotas algebraicas de acumuladores; no enumera certificados ni demuestra todo el código Rust."
+  },
+  "evidencia_previa_no_repetida": {
+    "check_test_build_aislados_correctos": true,
+    "pruebas_aisladas_pasadas": 113,
+    "pruebas_nuevas": 13,
+    "certificados_historicos": 14,
+    "honestos_aceptados": 8,
+    "alejados_rechazados": 6,
+    "procedencia": "adaptacion.json y ronda-final/verificacion.json, conservados con SHA256; no son una ejecución nueva de esta revisión."
+  },
+  "limites_conservados_no_obligaciones_nuevas": [
+    "Revisión estática manual, no exhaustiva ni prueba universal de refinamiento Rust/Lean; sin dictamen independiente.",
+    "ActiveChain aún no llama a verify_expected: create_state_proof conserva su sobre histórico con entradas vacías. La API del contrato escalar no equivale a integración de validación L2.",
+    "Contexto, altura, autorización y antirrepetición integral corresponden al llamante confiable. La recurrencia no valida transacciones ML-DSA ni raíces SHA3 arbitrarias.",
+    "Rutas heredadas y modo optimista permanecen separados del contrato revisado. No se certifican como parte de este resultado.",
+    "QROM AIR/FRI y Qiskit siguen como trabajo futuro; no se reabren ni se crean módulos Lean.",
+    "El manifiesto anterior conserva su significado histórico y no representa los cambios locales Rust aún sin commit."
+  ]
+}

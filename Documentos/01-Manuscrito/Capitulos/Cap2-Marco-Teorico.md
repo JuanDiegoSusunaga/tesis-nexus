@@ -62,7 +62,7 @@ La coherencia del diseño exige que la capa de pruebas tenga garantías compatib
 
 ## 2.7 Estado del arte y posicionamiento de NEXUS
 
-Los sistemas blockchain poscuánticos constituyen un área de investigación [Yang23]. Las referencias de diseño comparadas en esta edición incluyen dos líneas de preparación, consultadas en fuentes primarias el 12 de octubre de 2026:
+Los sistemas blockchain poscuánticos constituyen un área de investigación [Yang23]. Las referencias de diseño analizadas incluyen dos líneas de preparación, consultadas en fuentes primarias el 12 de octubre de 2026:
 
 - **Ethereum.** Su hoja de ruta plantea firmas hash-based y agregación por pruebas dentro del programa Lean Ethereum. Los hitos publicados son objetivos de migración, no una afirmación de que la transición completa esté operativa [Eth-PQ26].
 - **Solana.** Anza estudia Falcon y las modificaciones necesarias para incorporar firmas poscuánticas. Esa preparación no acredita una adopción completa en producción [Anza-PQ26].

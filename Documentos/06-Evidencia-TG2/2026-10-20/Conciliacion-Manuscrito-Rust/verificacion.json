@@ -1,0 +1,1675 @@
+{
+  "fecha": "2026-10-20",
+  "estado": "conciliacion_documental_y_revision_visual_completadas",
+  "autorizacion": "Dale a sincronizar la tesis con Rust, distinguir modelos y regenerar Word/PDF en una pasada.",
+  "rust_recompilado": false,
+  "lean_recompilado": false,
+  "modulos_lean_nuevos": 0,
+  "commit_rust": "637e77c99e804664915caf4ed928a10ef81cc870",
+  "fuentes_rust_intactas": 89,
+  "fuentes_lean_intactas": 354,
+  "registro_rust": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/ActiveChain/consolidacion.json",
+    "bytes": 40841,
+    "sha256": "a7e8283677ae0c9082ee1f33b2a15886d56f999b30eea48c84cb95d67b2380c7"
+  },
+  "registro_lean": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json",
+    "bytes": 60655,
+    "sha256": "680ace2f3dd51f0fd5eeda05f48aed387842f0e28bdd92cf63af2420127f82d0"
+  },
+  "objetivos_originales_preservados": true,
+  "seccion_6_7_9_identica_salvo_actualizacion_descriptiva_rust": true,
+  "actualizacion_6_7_9": {
+    "anterior": "No se identifica ese programa con el bucle Rust sin corte.",
+    "actual": "La ruta Rust activa también aplica ese corte; esta coincidencia no acredita equivalencia universal.",
+    "formulas_e_hipotesis_sin_cambios": true
+  },
+  "conteos_de_ejecuciones_no_sumados": [
+    197,
+    113,
+    55
+  ],
+  "tesis_completa_verificada": false,
+  "word": {
+    "paginas": 115,
+    "tablas": 34,
+    "figuras": 3,
+    "ecuaciones_nativas": 606
+  },
+  "pdf": {
+    "paginas": 103,
+    "paginas_vacias": [],
+    "texto_fuera_de_margenes": []
+  },
+  "celdas_cotejadas": 848,
+  "fuentes_y_salidas": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "bytes": 15268,
+      "sha256": "683df8882b9223f2f8efc9cd7671711bad60b79035aa307327e4d066d593752b",
+      "sha256_anterior": "683df8882b9223f2f8efc9cd7671711bad60b79035aa307327e4d066d593752b",
+      "modificado": false
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "bytes": 5678,
+      "sha256": "3f9d983555db87c162326d0bd0a6bc7f9944f45e68b9d7520389abce6e91d386",
+      "sha256_anterior": "04504bbc46463282911e4ec5f6b2a24f8cf08dd85f23bcf40de35505062e6890",
+      "modificado": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "bytes": 12012,
+      "sha256": "236265acef3e2962e4265337583a03b6b4584fc6391a7a7ee94304497e9a4be4",
+      "sha256_anterior": "236265acef3e2962e4265337583a03b6b4584fc6391a7a7ee94304497e9a4be4",
+      "modificado": false
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "bytes": 10741,
+      "sha256": "cc5d0d07858f93cc5120424b4861b63f93045c5e07fcbf8bcbd256223f76f97a",
+      "sha256_anterior": "cc5d0d07858f93cc5120424b4861b63f93045c5e07fcbf8bcbd256223f76f97a",
+      "modificado": false
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "bytes": 21119,
+      "sha256": "02bc198cd04584c7ee7b3690705daa759c8c8c7c7271cf459228f97213657c2e",
+      "sha256_anterior": "3f05efc6d1b91e35ee326338f03e3d69ad2b2680d85fb81f693bac494b9fbf41",
+      "modificado": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "bytes": 15670,
+      "sha256": "a3382dcee2eeea4d425a907144269ad1ba77814b145c72a1c2937708c345054a",
+      "sha256_anterior": "a3382dcee2eeea4d425a907144269ad1ba77814b145c72a1c2937708c345054a",
+      "modificado": false
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "bytes": 30995,
+      "sha256": "42432b410390ca3f37949c3be4ba8b3d90f2c9e8643082b653ed1f361909e302",
+      "sha256_anterior": "1c20a1ac50d002f56dd2b90a11a0dc42812459e28aa3666f7f715411fcb5d8d0",
+      "modificado": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "bytes": 104244,
+      "sha256": "4d9fc8333bc740f08277b9bb60f209bd7a82ee8b60560a14d423da07073a133b",
+      "sha256_anterior": "ada0cea2a6bfa585b988b3be43c8334af0f9ab924c18d0413171706e18840fd3",
+      "modificado": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "bytes": 12788,
+      "sha256": "d47fd776d464962d727b0a356fd3842410d6f3173ab54759b4de2c9cc46eeeee",
+      "sha256_anterior": "7fcd070915cb530d6063aba9dae363e81573fa754994418d4f4e7ad4ab2cfe23",
+      "modificado": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "bytes": 228561,
+      "sha256": "8d47cebaf28088f7c6c356f0bf51baf2e07a1c32349b86d7b78594b1e13d9a24",
+      "sha256_anterior": "2337f1677a9a4ec32995de0eefacaccc06f05e4993b0ff5ce9579507733d859f",
+      "modificado": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 651727,
+      "sha256": "b08eb3eda721da63436a705c52e394207cbf74e00f4b172f8eda3d6919dafe48",
+      "sha256_anterior": "4d9862e597dd01255de2a80858be0e23c75754fbacb9b010e3c782db64d99f20",
+      "modificado": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2830964,
+      "sha256": "d868552e1a8f205a5093f2c38f220d26230bf8b0ddc50d854c01ba5ecc8899cc",
+      "sha256_anterior": "3f500f0d67c8d61769c5e14193ab18959d281e42f889b2eacdfaf78ab7da257e",
+      "modificado": true
+    }
+  ],
+  "renderizado": {
+    "paquete_intentado": true,
+    "error_paquete": "Falta pdf2image en el entorno local; gestor de dependencias del runtime no expuesto.",
+    "alternativa_word": "Word COM oculto, imágenes nativas 918x1188 y ecuaciones OMML conservadas.",
+    "alternativa_pdf": "Exportador existente con navegador sin interfaz y páginas PNG con PyMuPDF."
+  },
+  "revision_visual": {
+    "estado": "completa",
+    "imagenes": [
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-001.png",
+        "bytes": 25093,
+        "sha256": "fad22265fdd769f8d35180bde2536b0fdf39be0d84f9f6be644d1d540562f89e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-002.png",
+        "bytes": 64220,
+        "sha256": "fa5133cfb09872bdc7c2cd87f8fbb4305d48462fee35d6e8e2b1a6d7c03a07ee"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-003.png",
+        "bytes": 58197,
+        "sha256": "6ac79a5aab9cc90bd041ba632aa681f75f7bc8f2d3cd5c0b29f198d31624770a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-004.png",
+        "bytes": 78309,
+        "sha256": "3023561f350a0cf86121cd11460e3f7e606354de17c2ca1c4fba7af38a18bbe3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-005.png",
+        "bytes": 76927,
+        "sha256": "0bb248fd87f543c0646c102ea051a9f0fe92d3f8d31ad169d431a5deae214462"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-006.png",
+        "bytes": 37589,
+        "sha256": "680c286ba482a53f95ac5add11260a8b564357f85abc56b9e29e3d1671f9e642"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-007.png",
+        "bytes": 74832,
+        "sha256": "7394f7b13c2cd29b9a24170d728be09c9a3d6a293df64bbc81e8e196b6739c3e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-008.png",
+        "bytes": 86447,
+        "sha256": "3a94a70299dd95b95fe4a90dc7e817238f3a1fa092e235d786a0943fea5a0bf0"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-009.png",
+        "bytes": 50527,
+        "sha256": "36dba0555fbaf951e03b77571fe744db29e26b047abe533b376479cd50af2398"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-010.png",
+        "bytes": 104577,
+        "sha256": "3b33b7be1256ebbc3c879296a6b5d2aad8e8cb6ce0a79fff414798acd6eef89d"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-011.png",
+        "bytes": 77196,
+        "sha256": "e98d459918737044ec83fae77aa70aa7d1008dae5a7aca6203c0dd61f665668a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-012.png",
+        "bytes": 55846,
+        "sha256": "1fe2e76771a3e8ff7aae2ceae9fde5d161c7e1a6a121c4acad33891bdecd4568"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-013.png",
+        "bytes": 27325,
+        "sha256": "a1691ed68138817c0185ddb7817e75a419d00def11202ab3b8604a09502d12c3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-014.png",
+        "bytes": 76377,
+        "sha256": "e2094308dd06105a1798ebe99a6f8b851e7916e75ea016418f8400fcc001a3da"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-015.png",
+        "bytes": 65552,
+        "sha256": "6304884c5f5c1bce012d3d7dd6bafde50930cf53b2e33592b6262a057770ad48"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-016.png",
+        "bytes": 82750,
+        "sha256": "7dd24053e561197895108ba254a82ed262798e984fd936d9aebf3b09e0c40e08"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-017.png",
+        "bytes": 79491,
+        "sha256": "dee692f0be63f83bb3099c2361adc3729252f57d9e077e945296f89ef8cbcca3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-018.png",
+        "bytes": 73797,
+        "sha256": "9a2674433d1174a21525b23b6cf124e8e07490ed4adcc8528e55c6ff46da4d92"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-019.png",
+        "bytes": 36662,
+        "sha256": "b7448ef8f992bcd98f0c5a260e092009e66be6670078eea3900e4af942b8c67a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-020.png",
+        "bytes": 67159,
+        "sha256": "74d6b2c9b84228bbefb0caab758164ae6303ec26f305b415cc491cf1af4a7fd6"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-021.png",
+        "bytes": 106778,
+        "sha256": "059d5bb87043a35c28ff5f6179bbad262e4daa9c7e6d040f4ba5d9eb126f4256"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-022.png",
+        "bytes": 73715,
+        "sha256": "958cd0898ef2b64d3dd6110475b4671b21adffedabc88715176c3acb4d11f80e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-023.png",
+        "bytes": 71171,
+        "sha256": "1dc712cd6f15bfd13df7e86b0d49f0fa1efe21ab1dea0622f6d2921af06371a6"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-024.png",
+        "bytes": 85328,
+        "sha256": "c908c363282ff6d034c5d95d603dffcb7992704140a822e178283bcc8da28b60"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-025.png",
+        "bytes": 82307,
+        "sha256": "17885d3967946eb6b553a2315ae5b59ab1fc40ba11b389498d83b94196b8e544"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-026.png",
+        "bytes": 74672,
+        "sha256": "9874576be63b4747b8442c07147d1a3a09614cfca85b960eedaf5f8dfed72305"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-027.png",
+        "bytes": 69338,
+        "sha256": "0c1fc33598530eab37fee22ea8a0b9d76fec9d17216bc4adb1a8f7a44ab1deb0"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-028.png",
+        "bytes": 76427,
+        "sha256": "864cba655f936d8fae0ee89aee1bd5a7bcb7a879a8056b124656f2bc306bc5b4"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-029.png",
+        "bytes": 75535,
+        "sha256": "bacd572e7aea7a3bc541bf943c38d0c3d36ca38417ece658058fba72aaa7104e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-030.png",
+        "bytes": 46925,
+        "sha256": "5a55b0e18e00e8f51c41c3f5b146bc107efb6bb652000aae9f1b1abd03c7a684"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-031.png",
+        "bytes": 59244,
+        "sha256": "8e2c3258d65622c3580bb4f6b690e8f726b528e0e1ec0cbc947553c76d7acc3e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-032.png",
+        "bytes": 72601,
+        "sha256": "f50fd120be503dbf4568f8691de68871319b54b4df665e5ef3ef9f5f03661821"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-033.png",
+        "bytes": 80206,
+        "sha256": "726a2185ecdc8801bb2634ad43211c8e5e51ad8d7c66bbb8d444975e57749277"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-034.png",
+        "bytes": 70313,
+        "sha256": "a3676038c3a5908ee25bee42ae17b246fc48a90ee76abba380477fe4a05ba6f9"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-035.png",
+        "bytes": 82439,
+        "sha256": "8a9225c3314ec709619e68876840448d94d527f561e9fd4de257a444214214d6"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-036.png",
+        "bytes": 82290,
+        "sha256": "5819a91e576de07e72c83c5f25a3c4389aa6d17c029a3922758c76aa462bfba2"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-037.png",
+        "bytes": 73588,
+        "sha256": "499289334226e49298c3b38d42ad4560d980ae58b9abc03b9af041cafc0b892a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-038.png",
+        "bytes": 65590,
+        "sha256": "03db503efdbfb4ee7ebb11d3f49344114dd14ca7ad7fd9391e31e4cf7d435833"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-039.png",
+        "bytes": 70918,
+        "sha256": "614fbb42f01010c025043cf02a940398ffc6fc9f054e2860078fa5595c8b7e49"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-040.png",
+        "bytes": 69268,
+        "sha256": "2fe2235045b94a7a259acb1bf65c4c3691685eba6e282d012a10ff90f65aec97"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-041.png",
+        "bytes": 78285,
+        "sha256": "1aaf9ebae447afc1c77d2dab0653ec146f17960b25e317a50f0fae9fd3ec09a1"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-042.png",
+        "bytes": 75472,
+        "sha256": "1bf34f8167894a6e424c739b59faf17cf69abe47b2c9cab2693ba81826329eab"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-043.png",
+        "bytes": 73672,
+        "sha256": "12971b47ff5887b24302e3b9b963ff1e31d3166f449da3de35ce6440b9355347"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-044.png",
+        "bytes": 86822,
+        "sha256": "411d30c05d9bfe425cdd1daf3ea3976da9658b0bfc1b1d80e3c85120807db74c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-045.png",
+        "bytes": 73612,
+        "sha256": "100246c04c0b27a5bdfde9e49b36ce95f6d4f5fc3468285758fece2cdd5fcc8a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-046.png",
+        "bytes": 78254,
+        "sha256": "8094de893f7bdeb1564b8949bdcfed727a2ae05779f8b058a7e9bfed15b50064"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-047.png",
+        "bytes": 82305,
+        "sha256": "b0be9d4d471047a9dfb173b6c194ee5c5f7127d074c1c76cc66c8f3e4de87ab0"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-048.png",
+        "bytes": 79228,
+        "sha256": "cb3c34357b69937c73bbdcf7be6e33f81ea58489c7170d73897b953864be07ab"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-049.png",
+        "bytes": 75382,
+        "sha256": "eabc030bfd48076df26554a9bf94813913e9f1797ce7f551d53f639aabd7d7f7"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-050.png",
+        "bytes": 144039,
+        "sha256": "25f2df2d31809f418bfb11a5d050f9d14daa1a10bee34097e2a08db4ea56e908"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-051.png",
+        "bytes": 84890,
+        "sha256": "2619fa4b3297f916022a8a85f36caed243491bc9e07e8d8c5cf85de3f4571dc1"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-052.png",
+        "bytes": 68594,
+        "sha256": "02035a9357d394174a44bc3e552953a7bcdcce7035fe5b78e803fa73e06f9fee"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-053.png",
+        "bytes": 64981,
+        "sha256": "ce5ea5266c32d3d40127ac36bb92602a966a3fd5a8c67a43180ccfe698760806"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-054.png",
+        "bytes": 74347,
+        "sha256": "3f7d2830b7140246a1d28fd6d9909fb74a181ddc950d41cd46eafac40b376622"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-055.png",
+        "bytes": 68195,
+        "sha256": "8e7de25ea9de82549f4eec23497d82a5e8a05c6aef6aa19b4b6d58a406ef6676"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-056.png",
+        "bytes": 71483,
+        "sha256": "d02ae86a1a21b0e6c91d56a5f5c242f62bd2b2ce308606a68c61f9bb7a3aa672"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-057.png",
+        "bytes": 61973,
+        "sha256": "46a8b6c831fec5b69847eae84a3a69423dd6e87744a18e1b1e3f851e8d817710"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-058.png",
+        "bytes": 75369,
+        "sha256": "b8194d6bcc1a94727b27962bc30c7b6c9b230f16d5a3573cf1106632e0a0c50b"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-059.png",
+        "bytes": 83170,
+        "sha256": "081996885e273738013dc0681a0c635ac826405e4b2382f94d99d93eeba4009f"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-060.png",
+        "bytes": 79513,
+        "sha256": "ddf845d7dae607d18e201382b677abc7fd6b7bab682bb4d6ae199406240e08b3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-061.png",
+        "bytes": 90965,
+        "sha256": "574ebdc5647943820deebb0c77492a515cd70338849f06aab51a63fba77c759f"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-062.png",
+        "bytes": 80737,
+        "sha256": "50c33214ef36c88bacc699718c741b6d31bc90b3c8071db7ac3115236eb11f40"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-063.png",
+        "bytes": 73420,
+        "sha256": "9605d7581b7ba87cef1a2ae91a06c924dd0c4d40a28649194b41ad46ea45cc1b"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-064.png",
+        "bytes": 82177,
+        "sha256": "4e9a5b8c9251964ab6bcbde6815caf21cbb48917ae0a2afde759b23ae298b503"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-065.png",
+        "bytes": 73434,
+        "sha256": "0db9db2a3fcd05137f75b33f70abb8e70e36ca2c47d771f58660ae30d8350235"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-066.png",
+        "bytes": 78516,
+        "sha256": "4b5173adadbb15d4296fec326f4d9db6729f4c6c2541e3d41e8d11da71df8a04"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-067.png",
+        "bytes": 76623,
+        "sha256": "434057b8f81dbeff6b247810617aabe25fe117105564c5a68b07ec22312858d2"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-068.png",
+        "bytes": 81738,
+        "sha256": "483d7ad92e0a92ec9592d0756c64bdd6651b1f59260838abdc0cea7aac4921d3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-069.png",
+        "bytes": 79985,
+        "sha256": "505c16867f9afa87ea94572ba6439c28460f6771bbef46b4a216dd8630db8f7c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-070.png",
+        "bytes": 79584,
+        "sha256": "dded0fcd7be91c056b482fcb930caff1feb4d58cd149768ed0e9a91675e3ae91"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-071.png",
+        "bytes": 80947,
+        "sha256": "ee955256d3aa66da552cf9b0a75395ba6e8f8e759c8c443851785c26f161a039"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-072.png",
+        "bytes": 81296,
+        "sha256": "be9eb64c1b211be98856270a07a1baee32d644537a39320cf7009d23ac898f88"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-073.png",
+        "bytes": 78835,
+        "sha256": "8d89b003b66866a3221fdbbeb2220488896391547e122b184017ebb22aa1b266"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-074.png",
+        "bytes": 68749,
+        "sha256": "a3ab17519fa6292de4773e2d20f97cb3ec189a3751e7d4788527228356b2bec8"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-075.png",
+        "bytes": 85319,
+        "sha256": "dc108ebe7469f90887669b82db45a225b6b961398b7ce9d7b75c8d362bf8e5fe"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-076.png",
+        "bytes": 83619,
+        "sha256": "19426794ee768c207302fb293c6df79f84df184749b0eb1009aab54b3c34a74f"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-077.png",
+        "bytes": 58199,
+        "sha256": "ecc0fee42755015ea3f1bb13c3d4eaa831beaeec97c84ae40282ed94bc92384a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-078.png",
+        "bytes": 72080,
+        "sha256": "4f32953825d6bd15929f8ff128bbdc8f0193ed9b275fc0ceb6d729c51ef7426c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-079.png",
+        "bytes": 83650,
+        "sha256": "993ccbc8359fcfd4c9870a7462a861f2d3b692e7bb578b73050ee9c37b42b041"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-080.png",
+        "bytes": 71945,
+        "sha256": "d22ca8ab311fb0113e7315a10fd7b9e8eb724426a7a55cc48e0b971a7c264cee"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-081.png",
+        "bytes": 82054,
+        "sha256": "71a2ebf463f4c9a519de9f353c0fc269de9e7d6b649437937517aa0c08f0087d"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-082.png",
+        "bytes": 82306,
+        "sha256": "8332987568e905cbe12ac760eacac9b3b54db00e777dfbfb1768f9d3ddc53d7c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-083.png",
+        "bytes": 77837,
+        "sha256": "0fe3c3b1a8ecd2539b2cabb5d114bb088b1f76c7f3e1c87decb3c6cbbee92b98"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-084.png",
+        "bytes": 75778,
+        "sha256": "9f89fc0a2ddfe3cbf43960b4db832e5b1e0e2c29e3c16832742a048ab2e95a69"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-085.png",
+        "bytes": 80498,
+        "sha256": "8c155be347b82dc48667d114926ab7d3af652e51766a7b8c5c3739b040f950e0"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-086.png",
+        "bytes": 82709,
+        "sha256": "7cfb82bcae5c3a42689f4fa748999a14192024018bb170150e30a09eb2332aa1"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-087.png",
+        "bytes": 80398,
+        "sha256": "120e9897e2e423e084a7a4bdc0867f5580711e24b057e458ec15e93a1d6d5aab"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-088.png",
+        "bytes": 81344,
+        "sha256": "528ab5fbe64ff14e1a9998b6d53d1df5b68f4ddbd312815c7050131f9cbc3f0b"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-089.png",
+        "bytes": 78181,
+        "sha256": "8b3fe6850a9db02ac3a40d84e6d642ed899150bf01c14aeb00bcabf9bf21d0f7"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-090.png",
+        "bytes": 80047,
+        "sha256": "7e1ba33bfad860f88fcb491ee078b61af01c6c7b67b760a4ffda29287f88080b"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-091.png",
+        "bytes": 70252,
+        "sha256": "21d46f1844113f6a3b0813ed976ea3349e29a992e11e98078bd3b136518d26f4"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-092.png",
+        "bytes": 87322,
+        "sha256": "414b2c04e4ea6da05556f4d1fffbdfaa2b1edae0382d77a6bccf69eb017e24b3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-093.png",
+        "bytes": 85468,
+        "sha256": "7e7f4ef44c8765bb02546f2a9743689e3d2262770d6291df183e1dcda917224b"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-094.png",
+        "bytes": 65317,
+        "sha256": "79d07f37fc6b98f38eece48ebb24f5d2bffac81404c00b489397bdadacb8cc03"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-095.png",
+        "bytes": 75202,
+        "sha256": "bcd2add77d88553a67f19e93585c1dd107931010f4aadb6037718ea548bd78b2"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-096.png",
+        "bytes": 67413,
+        "sha256": "53402eac048ed3309f34c6273cdb215975262a975ac5ccc98bed9764d144431c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-097.png",
+        "bytes": 77539,
+        "sha256": "4cd8c8e0e3492b49c726e64e72374d5424eb0cd3ede5d1e1ecf107521117c7fa"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-098.png",
+        "bytes": 77080,
+        "sha256": "cb74b57ddc96a5ba5c9481cc00e66ed890e9bc1a44b07203e0f4b26e4c1b3f47"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-099.png",
+        "bytes": 80280,
+        "sha256": "20da54c46a6c9eed5c272bca290284d2c45609d633e172c3f8e032da9c88ea4d"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-100.png",
+        "bytes": 88484,
+        "sha256": "37599ea3518102e2668866c1dc118c590324b1cd95ea9c4e18998b59fe905a7c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-101.png",
+        "bytes": 25920,
+        "sha256": "96991e0001dd8228eb83f44dfbde9626e997ec9766564c21954d9b7054be533c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-102.png",
+        "bytes": 70416,
+        "sha256": "05f19c0c233388f11c2b94c56041a44e71d0292dc6f6cb2f442e5f13d949e0d1"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-103.png",
+        "bytes": 86590,
+        "sha256": "e26d25074de28d9aa1a624bbf98fdf0ecbda1f9f1b73cca086a9e0cc01705b8a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-104.png",
+        "bytes": 77362,
+        "sha256": "08b7c4220cbe086af1c758f65a141a76ec3ab241515696ad06b87e7b2588cf2c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-105.png",
+        "bytes": 81396,
+        "sha256": "4e9fa1f6bf961a6586e04f385023d6ee509e363fca088ea878d431333f58a96c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-106.png",
+        "bytes": 73711,
+        "sha256": "c73946e7cef667f1adfe8e18980225e65f9e4cdf8dcfb1f4981d0a1f5bc35a24"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-107.png",
+        "bytes": 68195,
+        "sha256": "81b4feb038338bcbc60de1ac66a4939d1cc7c7906d6816e70dacb599085c7b82"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-108.png",
+        "bytes": 83690,
+        "sha256": "b04fa0688cc7eab3b7478918d0e99a662dd87175a0e5b2f266f0134a8ba749a6"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-109.png",
+        "bytes": 87331,
+        "sha256": "c9e4f0cd3490dc2fa7479165adb2b320a5372b20de6891cb0314b65d0a0215b4"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-110.png",
+        "bytes": 83897,
+        "sha256": "a0bc5ab16db51a10288c1fca6a0315e299bb61ac885cb1f1f2b62bc7719b522a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-111.png",
+        "bytes": 81600,
+        "sha256": "cac860756a0e3effcdfe10111d135118cc6c19012a7a3eb04a85071f25c67d2d"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-112.png",
+        "bytes": 80426,
+        "sha256": "a22e155b01c2bc23df2022ea5bf290079904f00afcc4077c590a9e1b8252889e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-113.png",
+        "bytes": 88624,
+        "sha256": "80da4253dee4b7685a04dfa3751ec757858796b1cad90d8286252fafa02f88b9"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-114.png",
+        "bytes": 85837,
+        "sha256": "52aa77fd11581aa8f41078b12b07548f3e1cfbd27396059d8b4bf0041b33f57f"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/word-final/word-115.png",
+        "bytes": 29242,
+        "sha256": "9e2087c578a837d6714c4f697d7c589753631b3a371a0ed8b3eb2616fe36b872"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-001.png",
+        "bytes": 43947,
+        "sha256": "f3a0a91d4de1650ce76a78e46a16344613517ee843f112506be59220d30076fb"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-002.png",
+        "bytes": 149787,
+        "sha256": "5667250b2fda6c1eb444ea2b4f36e32586a2f75174d72649c54b940de22481fe"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-003.png",
+        "bytes": 122323,
+        "sha256": "2c67e497a4ba0e77390c67caa471d2502fd8dd9cbf1dde91fc4a18d04b766196"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-004.png",
+        "bytes": 162028,
+        "sha256": "ce209dd620365e30eeb8d14b6dbb5f8c72d55eb2b983c9850d7ca523a4bf3ede"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-005.png",
+        "bytes": 160827,
+        "sha256": "9141957eee33f3162bd6b59a1055bbbbd53b3eb6a95a9335c2160f71a2949c26"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-006.png",
+        "bytes": 72342,
+        "sha256": "dc0c1f79f09cac0f32c432a7fdae701ee5adbd308d410663cc31d976d29c3a57"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-007.png",
+        "bytes": 185250,
+        "sha256": "c7b031c2541473f45714c3e5fbb816b8cdb6621e75e8011230ebe33e34adfa70"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-008.png",
+        "bytes": 199116,
+        "sha256": "23b0b8a9193f3d213dd0a487251e8f65bee2631651faac809007d1d14e719ca6"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-009.png",
+        "bytes": 141997,
+        "sha256": "a2c244af02ed00defdf04027cc468d2e89c466fe4600e9997d091f9999321a62"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-010.png",
+        "bytes": 193417,
+        "sha256": "40496d25ac5a7c54b018858962349c1f8715056fad9b68ff2e9b28fa61aa5668"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-011.png",
+        "bytes": 140685,
+        "sha256": "4cfad6b8b36bc637c90b0a9f614c76e3af5a873f56873b71eaf4fe98cfdebaf1"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-012.png",
+        "bytes": 46787,
+        "sha256": "5c169290e27e9e985f750d631cdac6711c6a3b84c89be58214459283400dd23f"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-013.png",
+        "bytes": 170640,
+        "sha256": "084bd9548428098f760a94bc130d1128f8bfa3767925e9e584d4422f097b1419"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-014.png",
+        "bytes": 152682,
+        "sha256": "0f5bcba765c06af94913cb5b3a07537c86bd5d41478587f954719b81b506f5b6"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-015.png",
+        "bytes": 179608,
+        "sha256": "3ccc463aa21d2774b88309a7b28327e26279103696c24418ab57b97737590ef2"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-016.png",
+        "bytes": 168901,
+        "sha256": "f362af8f272a75920113d6fb45c7f81a48470a925918089b204a97ee7f88784e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-017.png",
+        "bytes": 147686,
+        "sha256": "ae4227f9d7ad49f53462e2e552b766c1d285d8b9ed4b1c8687575e76b1f2a61a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-018.png",
+        "bytes": 171994,
+        "sha256": "baf6a589b2f20386f377bc359f8a4405945c3af813f0beac107cbf52e3ad35a3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-019.png",
+        "bytes": 113408,
+        "sha256": "c0c623ef8e1aea7b985ed605c0030b57c960778791f3061df5386c72b891affd"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-020.png",
+        "bytes": 153966,
+        "sha256": "8638189d805e876fca7c38728613d460aabf98dfc0fab28e5e53bef58d986a79"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-021.png",
+        "bytes": 175916,
+        "sha256": "f021e87ccd7623ae480f4e5be562768085bf45133466841ff7bc9331e7870a89"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-022.png",
+        "bytes": 182192,
+        "sha256": "b12b16e99588882eaa25bc659fa6543c6cc1a8effe8a3ccdc52b7f4f29306bbd"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-023.png",
+        "bytes": 180192,
+        "sha256": "3b3cafdf9bf5d4cb9b74a8cf0cfaf9cd95452605a6a7dc261392293f2efbc013"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-024.png",
+        "bytes": 167420,
+        "sha256": "eeb322179fd66380a09082bb53c4d98d272219289946a3d503690755c6233dc4"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-025.png",
+        "bytes": 177889,
+        "sha256": "77c3aea9b55c2e8e5cb4fae4212641179c7c49c87349733bc357893ed2e44fdd"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-026.png",
+        "bytes": 182929,
+        "sha256": "16b71840a7cb7c57b9f86c253739ab576ea8cc29bb1267b035a3125fd3a39805"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-027.png",
+        "bytes": 53349,
+        "sha256": "3622a94f741e636a99a5279fe14b88a20fa28a709abd4ac84eb7f1e909d50050"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-028.png",
+        "bytes": 134769,
+        "sha256": "8e0d24322323164d0a1b9880e460c17b38fd369c8b031aa3e327af355a1e4194"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-029.png",
+        "bytes": 166161,
+        "sha256": "6c3eb81b6e4072037aff849315a86705a243b273b539e39851dafb0db0559df6"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-030.png",
+        "bytes": 191699,
+        "sha256": "2bde035d91301d7107013e6b0cc5b6227f5f31d21c8a64258f5af80a73daaa88"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-031.png",
+        "bytes": 164559,
+        "sha256": "48d7362a5bee01a0b30e2cf6170adb90c0d4b8ea55d865a0e1bd876f6148ebfe"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-032.png",
+        "bytes": 175998,
+        "sha256": "f884195c3c5eb85b1010c1d462bb68680f6c63240a1a6b2e1106ab562f673b47"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-033.png",
+        "bytes": 154620,
+        "sha256": "873560ae3f0b9828ec8b0eed92b0de2c333d46913acc7c5bf86a41120c1657c0"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-034.png",
+        "bytes": 151736,
+        "sha256": "f9a00287164c400707e60d808735d2a084216d426668d0ca0c3a6045c907a5f5"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-035.png",
+        "bytes": 165125,
+        "sha256": "fadd1122042edb77aa477263ae44223d8f06e14200609b36dfdad9ded99a6630"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-036.png",
+        "bytes": 165068,
+        "sha256": "b576b1e4951413e2c2c91e21a0d7baf62c560a99434b552877a619949a17795b"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-037.png",
+        "bytes": 207629,
+        "sha256": "3faafc1f26b24b54ad9afdf771ece26723cbaf3a057276b1cd853da74d3b580f"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-038.png",
+        "bytes": 185794,
+        "sha256": "39180c7dc1efd644293557d7d6720658b3157ce0b8f02c675eb382bc6f7a094c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-039.png",
+        "bytes": 190345,
+        "sha256": "36cb18df2c792d323ecc15ec5de605cd44a99eb4d6f6f595a446a197250859f6"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-040.png",
+        "bytes": 179740,
+        "sha256": "e15ebd64d8873d7a1d685dea9380656d6ebb1a10a652a45452082a04a7718b8f"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-041.png",
+        "bytes": 169442,
+        "sha256": "a563f2e03f08a2369930d5e0936aad812340b495af0f78f5fe1c58c20c655f64"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-042.png",
+        "bytes": 173018,
+        "sha256": "0a2fb5fdb36095be3e3707063cb8165dbad5d9a64ac377715aeed6d624ba3dd3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-043.png",
+        "bytes": 173943,
+        "sha256": "7c097306cd46802e4174e3ec57882262da45c6751f3b67b5375184aba9312a83"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-044.png",
+        "bytes": 126000,
+        "sha256": "f7c30611f1679f68b566761fe3cc3f7175f1aa8e45f8b3aa882d21ccf52de4ce"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-045.png",
+        "bytes": 122727,
+        "sha256": "3f76a3c10df2b78ce4f807f1ab40da4addc823b58bbf2fe5e37104b913efffbe"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-046.png",
+        "bytes": 165258,
+        "sha256": "b3d9865b821ae7c657b005eaa5e038b5c19e87fae591f93a70d11379dd372e99"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-047.png",
+        "bytes": 179126,
+        "sha256": "140fe7ac6555b8e4ce3451464967eafbf14bc721cf176d58f5205ee812767f62"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-048.png",
+        "bytes": 51343,
+        "sha256": "51336f1014e7655910c2d6b5bc304a89583ba27534f340ef561552e425fa128f"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-049.png",
+        "bytes": 172205,
+        "sha256": "71232ff151c598d3e5f54fb691d5e666a44c0c8bde9fd1916f012a45b4f4c419"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-050.png",
+        "bytes": 158169,
+        "sha256": "d38698d7c87be5306cd78fadb7447c6d0c534194e51bb19a8050355a7183b5cf"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-051.png",
+        "bytes": 152651,
+        "sha256": "38f51b385891b4ab4806f5dc72bb9d82a1c1adcb8dcc4882f1ee4b6067d59f50"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-052.png",
+        "bytes": 130700,
+        "sha256": "1ca4440a6a29f27eadd7c75076dc939b76c467eb5424cb04bb7744e73391a9b1"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-053.png",
+        "bytes": 190984,
+        "sha256": "d323db51afe1df73c8659f1680f75e47acad8b06a164310d1b58bc4886935cc1"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-054.png",
+        "bytes": 183835,
+        "sha256": "ca1fad337b3fac77c78616ec64f33d43a940c0ce15eaf9f9bf7d6fc95e30e2d3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-055.png",
+        "bytes": 199839,
+        "sha256": "d01ef95b090a136c8f5b3c8c0ea358a3f93b862ad9ec366e71f9cc579e000cc6"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-056.png",
+        "bytes": 192487,
+        "sha256": "5561489098c8f59b2e6e26f19f08797b0d97ee31e7acc868b449696ba64b9b07"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-057.png",
+        "bytes": 157598,
+        "sha256": "fb643161479a2ed43f74cc05cd98888431d684f20b8836184175ae47ecceeaac"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-058.png",
+        "bytes": 158482,
+        "sha256": "63c0ede88e2a210274002daf134a55274fb8cbfa1a6db5fc31c6a7dd6fb6b7c2"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-059.png",
+        "bytes": 179329,
+        "sha256": "e1bf5f1b244b4a20701e123e232b593d1bcd0576310dafe43aa1d492de893d05"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-060.png",
+        "bytes": 158820,
+        "sha256": "18c6f24b168ce47a7f532876e354b72b5461870ce7c41a802792132b3a2a3405"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-061.png",
+        "bytes": 157340,
+        "sha256": "c474e4be845d222a432fd50f4fd2fea6d9254c9cfd065b10fc0169ec098284c0"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-062.png",
+        "bytes": 148020,
+        "sha256": "72cc4d0404dc1e53f29cec2a7fad9fff1f548340cb1b1f9486293007ba662b22"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-063.png",
+        "bytes": 158490,
+        "sha256": "3a2b89dd57b01f08c73c426bb5e35f90efbecc5441b687494301f66fe125fe10"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-064.png",
+        "bytes": 181960,
+        "sha256": "07af64a9a8e62b99fc857703b0a9fe767abeb36b2ede44ef5c0505f5edb7c8d3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-065.png",
+        "bytes": 150223,
+        "sha256": "468df6a8b6721ebb7c7fb95b3f8090f47b788131138d0183df8ac51fb333ef56"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-066.png",
+        "bytes": 166835,
+        "sha256": "029e0b6911afb84d1fab6b93d10d7ab8514c070bff77db52875d39c2d85b0a1a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-067.png",
+        "bytes": 172106,
+        "sha256": "af09ff658db78ab0c8fcea20df7328806512594e3b33fab7d545b598fd4e83a3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-068.png",
+        "bytes": 103524,
+        "sha256": "f1b9992b3c9f8dac756ed1b302f8962ca10729e0c7cf3b5366274c36266c7279"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-069.png",
+        "bytes": 175535,
+        "sha256": "cc5b9f57b0c8a04a0caa4e20deff6f24c687b24cd12108a98f4530baa84f2b3b"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-070.png",
+        "bytes": 146244,
+        "sha256": "ac604098e0eb0d690910f29fb16756448260b943f1c92194ad62aecec790bc78"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-071.png",
+        "bytes": 140921,
+        "sha256": "f5bb95edb1c823380603d05cfe8f43d7bb976056144d604a7c11f59bac3234e0"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-072.png",
+        "bytes": 176886,
+        "sha256": "90cd88f764d61dcc7b599916561a9347b232971e30a8e0478dd0858377b91fcd"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-073.png",
+        "bytes": 188776,
+        "sha256": "0e09cd3122df88bab957eafb9028e24b2fef8bec17657b7ba90333434b5ad61d"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-074.png",
+        "bytes": 173089,
+        "sha256": "c691429c986471ad17b48d74c9728d060ed0955cfb6e3d4e5c50bed449d223e3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-075.png",
+        "bytes": 178454,
+        "sha256": "73b8d6373d67773cd0f1151a2fd5a233b83e27624217e0fa0e0f40185c606105"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-076.png",
+        "bytes": 165853,
+        "sha256": "5e5e415a23ff654c909c9bf213fd0591ff0792a7b949b60b78166e3ffd77629f"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-077.png",
+        "bytes": 178388,
+        "sha256": "4d7b8e7030d32b3198bf333a73fe90c32874f1231bfcdbe950353524ef0ce23a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-078.png",
+        "bytes": 192155,
+        "sha256": "150508517a572f3336b17262bfa97b0911da3b41176f4b6a87599afbd4bb9085"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-079.png",
+        "bytes": 176613,
+        "sha256": "c50206a6de481c115dc72804b3c18874020e0d7a1945912d5c662d543a6cffda"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-080.png",
+        "bytes": 196206,
+        "sha256": "45535eb29a8073b80669b8f4fe0a1a5bb1fab32fc08408c46608685cb0f01e03"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-081.png",
+        "bytes": 179498,
+        "sha256": "3688843f2e10f9b95a335dbaa3a860aa036c1ecfb4e2f31f51c6cd492e524d92"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-082.png",
+        "bytes": 175183,
+        "sha256": "f0da7f299d3e6e9cebe26c4dfd3490631dfa5d4b348bc1d746dde8a979dfacea"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-083.png",
+        "bytes": 157851,
+        "sha256": "07079520b457baca3b8a9475d567bc38ba8bef5223dba67e0c8024a93cf60895"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-084.png",
+        "bytes": 180365,
+        "sha256": "9acf5b442d018aabfb612c627f38ef97fc01da1eb684de91cbc73e989b29547a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-085.png",
+        "bytes": 175627,
+        "sha256": "8d7c41c092a7741476034f6bb46f51bad171d6b50946059ca05e0ec6502eb38c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-086.png",
+        "bytes": 141217,
+        "sha256": "620c87e464661f44d4f5eb1850bc18a13a949e255f56a90238cb44998abef6db"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-087.png",
+        "bytes": 152424,
+        "sha256": "5d1c6538eda173e8d0e0665aacb868486b3a042cc2e1312f4fd3b44d161a68de"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-088.png",
+        "bytes": 138611,
+        "sha256": "6f3b200f08548ace724920764acd71678891dbc8d0a6fcf61caf68963ed382a1"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-089.png",
+        "bytes": 206230,
+        "sha256": "781afa9416a604c8944fbd76426d3c5c9de5028bf9b073af3d16c0c2a4b20cfb"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-090.png",
+        "bytes": 172581,
+        "sha256": "bf9b02bebd7478dd1b4aab6ece5c88011daa4194bf0d054489faf39ee1966fb1"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-091.png",
+        "bytes": 208619,
+        "sha256": "3a992f35bcff8142dcf8e112e5d6393e68a005423bf3eaaeeef0c79b5d9c7c0c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-092.png",
+        "bytes": 58994,
+        "sha256": "bc0425e77d35c58b858d30f0dacfd7adcb22f2729362cc1c1cfc4fe7ef0767ac"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-093.png",
+        "bytes": 153258,
+        "sha256": "fea6ac3f0cd56b813556f03c48437498748676a748618d759e3ef6274df23f9a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-094.png",
+        "bytes": 225917,
+        "sha256": "4f6c5d9f66f8aa459a73c9bef4227b5643da3a22a79baed1c6e8c53c73453307"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-095.png",
+        "bytes": 180501,
+        "sha256": "1942141fb12e7c06abf47ad21c50eb6fda22ad9f09ea6a1afc09618fb413bd11"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-096.png",
+        "bytes": 172961,
+        "sha256": "097d63511243d15e9b09d34cb2c0bd1ebd2f27c30ba027051a1e62c7af30e57e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-097.png",
+        "bytes": 174797,
+        "sha256": "1733594dc454e844b2496bcf277fc4bf23c9c926ebc86ea2a34ebecc41720b5d"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-098.png",
+        "bytes": 202697,
+        "sha256": "a7f5ea5343ec7476bbf95b4cc72f22db8d3d2512b7bddae268031d3dd9e64dc0"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-099.png",
+        "bytes": 215054,
+        "sha256": "bbeedd6d6825e9a50c7d7bbe130eadfbf594de5f5bfc283042412c0a41979213"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-100.png",
+        "bytes": 198626,
+        "sha256": "9aaa435b8a4b542b4a0c0db9d715af79b63e6a0b40c12c13142a23e0d6151d70"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-101.png",
+        "bytes": 206191,
+        "sha256": "595a268e07b109487fdee3d915edc09d1d810ca73c10ed1717b6dd03d43b50b6"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-102.png",
+        "bytes": 206754,
+        "sha256": "9d617e9e6700845b6c3372e8db1c5bb7ce7f8e5a08201a774c5d3bc64e538841"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/pdf-final/pdf-103.png",
+        "bytes": 190071,
+        "sha256": "cd6036d033235d01d253eea21bc3a59769c2fbb1b08168bc8d9c6c7322a76509"
+      }
+    ],
+    "laminas_sin_reescalar": [
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-001-004.png",
+        "bytes": 556930,
+        "sha256": "2aff8a7e56b07ff30590c9f65424fbd146f3ef830007d63415be366481d722b2"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-005-008.png",
+        "bytes": 668484,
+        "sha256": "4ef02cf509baa41f0a187d736242e3ec0b775292acbe957635353f950d5d1b96"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-009-012.png",
+        "bytes": 606935,
+        "sha256": "7f2418efa0243114bfcc5ce20ba09bd27c26da9f747eca39f082f9b7ef585221"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-013-016.png",
+        "bytes": 744693,
+        "sha256": "ff3cff09ac7c8749bdd22d6d36ab25cf5bdb5bab99154855d57c6912d3c27899"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-017-020.png",
+        "bytes": 689208,
+        "sha256": "80c516fa27376bb1b48c4bcd1863ef544f0c10e16876471902a68a33140ccaca"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-021-024.png",
+        "bytes": 796590,
+        "sha256": "ca4fc822527f8e15b71e2941056789c611247f611c9481bf423419d268ff975c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-025-028.png",
+        "bytes": 628295,
+        "sha256": "7d3e3551a64f8e00eef116f59ce39d6a15159eefe7168043eeeab5d9fab0e139"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-029-032.png",
+        "bytes": 810373,
+        "sha256": "de391035aec170b8fb0b4b1a2830fc9c335c8fd398203ee7c51a6193b699d294"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-033-036.png",
+        "bytes": 733817,
+        "sha256": "48cfd51da787c0131d2e183c380c6b23aeb129022a5861727990f19204954e69"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-037-040.png",
+        "bytes": 892183,
+        "sha256": "1c53e995eb6b48136f879c97ad09b38460cb1da25393cd7db06b5a99505797f7"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-041-044.png",
+        "bytes": 734338,
+        "sha256": "70f108c3781b8c6d7e88c50302a8b3247d88bc9af2b260ec79271f3721caa02c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-045-048.png",
+        "bytes": 621763,
+        "sha256": "b7ba555b399398a6ddb20274307825eb086f8e4d0b3a346b7ee54e54248276b9"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-049-052.png",
+        "bytes": 714340,
+        "sha256": "41f5c1659258f71ac2aec25e7ab9c8f0fbf12405ce48e8bed6536a6d57e746ca"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-053-056.png",
+        "bytes": 875850,
+        "sha256": "1b1d68f76ac5b6a1f75616712fffe9093b1d6bf5553469597eb24e2a3114e71e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-057-060.png",
+        "bytes": 757099,
+        "sha256": "892fcb6c3da9026cbcefd8f5d967a3c07009d18e2e13c68fd95f082b5441cb72"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-061-064.png",
+        "bytes": 745313,
+        "sha256": "4beedec45c8cd56e189ad2d62f22fe44dbe969fba1b8fb17e4c7b2034c096b9e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-065-068.png",
+        "bytes": 686634,
+        "sha256": "e25bdec05d534104062f90963e2740f9ceb689bb433abb70ea32a078b99599ac"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-069-072.png",
+        "bytes": 727526,
+        "sha256": "521724fed424b5248fb3df81fdbcfe6a191b2f4856935b19fd89a4c3a69d3a66"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-073-076.png",
+        "bytes": 799378,
+        "sha256": "265ac2de4c3c6df74d4e43a5ac1a87617af4476eabfed20ce895bd7bafef5cc7"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-077-080.png",
+        "bytes": 853383,
+        "sha256": "35e0305714c2dd8a0eb0f18efc58a0747b2206835bfda90c2b6cbe3bcd0be098"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-081-084.png",
+        "bytes": 803866,
+        "sha256": "fc010574e66f6f3d04d570afea522a24ff878e4426937ca0c67081a464b7259c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-085-088.png",
+        "bytes": 690753,
+        "sha256": "8777fb370f7f763c66e77eaf92a3ecc8c9848179a4c6f20b7afd986c708418d5"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-089-092.png",
+        "bytes": 747796,
+        "sha256": "f191f31f83fd8d6d0efb2ddfacea8afbe5f446ec2efe779a5577400486b571b3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-093-096.png",
+        "bytes": 839138,
+        "sha256": "745740f9fe52bc0f37855f1cf342a3b1644c40d7875cc4986c77f3a5bdd24cf7"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-097-100.png",
+        "bytes": 905640,
+        "sha256": "e85a2189a277ab7b3b33060992bc238d796b7233e5f31f0709f80085f0badc06"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/pdf-101-103.png",
+        "bytes": 736391,
+        "sha256": "68b0bdbfcb5c708b1e8b0febd4345bb572c40f1bbf454745f5279a5a7b975cb0"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-001-004.png",
+        "bytes": 245528,
+        "sha256": "c78ad022a91b42149a67c840699ae42b3cc772ec7266db8e59c179c6a2a6ea9e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-005-008.png",
+        "bytes": 264505,
+        "sha256": "a165cc6aec59993c19a0607bdfecdc3cef7bab04c9eb3cadd6017988bf8ac2d5"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-009-012.png",
+        "bytes": 291784,
+        "sha256": "4f62edad60c60b6593bd291184472d3dcb86b12383a95b546cccf5de2739df57"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-013-016.png",
+        "bytes": 261829,
+        "sha256": "003edfd96bc54cbd60cba0700f24eeb0b6256a06294c80bda731dd7950b00f50"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-017-020.png",
+        "bytes": 273110,
+        "sha256": "fa9969d36b2cfc8bb8b1ac359bbe24a7dc5180b694b29fc428628d82e84f4450"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-021-024.png",
+        "bytes": 346371,
+        "sha256": "f12d10e14eb911d5f05570c530807f3dfb7f59a47e04bcf195d3876020290851"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-025-028.png",
+        "bytes": 296803,
+        "sha256": "23af95609d58a106ffb408e1b28a7d9efbdc9f5da8548470115dfce46a62dd45"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-029-032.png",
+        "bytes": 265379,
+        "sha256": "852f37881592ed0c0a5490d7b7b2767272db5cf5b53338b9f4cef9537f122b9e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-033-036.png",
+        "bytes": 319450,
+        "sha256": "bf2f05ef8695b5b257b43e1d0e680aee2e7b487bea6072d1f020cc346c1c0f4a"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-037-040.png",
+        "bytes": 292553,
+        "sha256": "79f7999a41578500569c6b6903476b500d85c1087c1d045ed5b8bda103f1fe20"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-041-044.png",
+        "bytes": 297466,
+        "sha256": "3227ec1322fbdd5eda20d395ad1b4ab59a0e4ff7da66ad025b750ac1c7ed89b9"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-045-048.png",
+        "bytes": 304141,
+        "sha256": "2051b4ca61cd31461e0b54a3212b60da63f11f7dbcdfad73339d739895e47938"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-049-052.png",
+        "bytes": 389690,
+        "sha256": "77b69d00ad3348cd126162bfc8b98c68a0012f24cd568148e3c76ee016e43cfd"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-053-056.png",
+        "bytes": 302650,
+        "sha256": "8834faae2cf6cad30ae6ff29393afa1d669816d843b819edf30357f0c81d13f7"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-057-060.png",
+        "bytes": 310948,
+        "sha256": "2856156559fb0828c144fd8206a81758768b34df64cce9c5fb445f41029322c8"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-061-064.png",
+        "bytes": 325219,
+        "sha256": "742eb43af5328419a4958c4020ebd7235bbf38920c0350d53239a985b246fda2"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-065-068.png",
+        "bytes": 327218,
+        "sha256": "e068085f532b8cb79701e70ba0a60d577b81edc0118bfafbe3d0287d1e445914"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-069-072.png",
+        "bytes": 334003,
+        "sha256": "800715445d8429bd23967ca92ce92a2c80008269e3dbb411a0a9d47698541760"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-073-076.png",
+        "bytes": 305652,
+        "sha256": "d72a7457b8779be94f6d1ec115d362f9e6775b2fe681df58c1c7a84933da0a85"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-077-080.png",
+        "bytes": 278677,
+        "sha256": "c9cc55905fd85278ccfe4d2416a006a1219d9ed555467bb1a4bd1cbed1f8edf3"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-081-084.png",
+        "bytes": 320567,
+        "sha256": "f2b645fe9587985680cdae1aa66931949ee802930125d84041a1d9a138ada13f"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-085-088.png",
+        "bytes": 309797,
+        "sha256": "bc48187a81514928e126c730224651c73a51426595ccf8630911c11950758bf6"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-089-092.png",
+        "bytes": 309572,
+        "sha256": "6e56b4674ae83b0a1cf6b8d1b85eb5ff3e12c0eaf3a55d67eba4af3f8ebeac6f"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-093-096.png",
+        "bytes": 291474,
+        "sha256": "20fbde10a9fb5f59498bf87fa32cd2a9314fdfc78f218512a2f80b99d346a22c"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-097-100.png",
+        "bytes": 333364,
+        "sha256": "5b9633a603b9951a9fd121581db8d0395ff8ba9c5946780d2caaaf27d728a00e"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-101-104.png",
+        "bytes": 263675,
+        "sha256": "e6e99b1fe75026b9a51b54d8df1602a1659a906eff337c5876735502b7eadb43"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-105-108.png",
+        "bytes": 312482,
+        "sha256": "37130745fe2799bd86d57595f1480fb3772610ac005e3ab761ddcf3ee0228883"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-109-112.png",
+        "bytes": 377141,
+        "sha256": "187bc348847ba3d1e3e678969ad3f6fbd637c7f615eafd111fc0c596f39391c2"
+      },
+      {
+        "archivo": "tmp/conciliacion-rust/qa-final/word-113-115.png",
+        "bytes": 242033,
+        "sha256": "f6f2e46fc86495d98219657fbe1859694d5e26088748db3cfceaef58e9465bb7"
+      }
+    ],
+    "paginas_word_inspeccionadas": 115,
+    "paginas_pdf_inspeccionadas": 103,
+    "hallazgos_pendientes": [],
+    "metodo": "Inspección de todas las páginas en 55 láminas de cuatro páginas a resolución nativa, sin reescalar; imágenes de 918x1188 por página.",
+    "correcciones": [
+      "Resumen abreviado sin cambiar sus afirmaciones para reunir texto y palabras clave en una página.",
+      "Actualizada la descripción del corte Rust en §6.7.9; fórmulas e hipótesis preservadas."
+    ],
+    "reinspeccion_ultima_correccion": {
+      "word": [
+        "word-095.png",
+        "word-096.png",
+        "word-097.png"
+      ],
+      "resto_word_identico_a_las_paginas_ya_inspeccionadas": [
+        "word-001.png",
+        "word-002.png",
+        "word-003.png",
+        "word-004.png",
+        "word-005.png",
+        "word-006.png",
+        "word-007.png",
+        "word-008.png",
+        "word-009.png",
+        "word-010.png",
+        "word-011.png",
+        "word-012.png",
+        "word-013.png",
+        "word-014.png",
+        "word-015.png",
+        "word-016.png",
+        "word-017.png",
+        "word-018.png",
+        "word-019.png",
+        "word-020.png",
+        "word-021.png",
+        "word-022.png",
+        "word-023.png",
+        "word-024.png",
+        "word-025.png",
+        "word-026.png",
+        "word-027.png",
+        "word-028.png",
+        "word-029.png",
+        "word-030.png",
+        "word-031.png",
+        "word-032.png",
+        "word-033.png",
+        "word-034.png",
+        "word-035.png",
+        "word-036.png",
+        "word-037.png",
+        "word-038.png",
+        "word-039.png",
+        "word-040.png",
+        "word-041.png",
+        "word-042.png",
+        "word-043.png",
+        "word-044.png",
+        "word-045.png",
+        "word-046.png",
+        "word-047.png",
+        "word-048.png",
+        "word-049.png",
+        "word-050.png",
+        "word-051.png",
+        "word-052.png",
+        "word-053.png",
+        "word-054.png",
+        "word-055.png",
+        "word-056.png",
+        "word-057.png",
+        "word-058.png",
+        "word-059.png",
+        "word-060.png",
+        "word-061.png",
+        "word-062.png",
+        "word-063.png",
+        "word-064.png",
+        "word-065.png",
+        "word-066.png",
+        "word-067.png",
+        "word-068.png",
+        "word-069.png",
+        "word-070.png",
+        "word-071.png",
+        "word-072.png",
+        "word-073.png",
+        "word-074.png",
+        "word-075.png",
+        "word-076.png",
+        "word-077.png",
+        "word-078.png",
+        "word-079.png",
+        "word-080.png",
+        "word-081.png",
+        "word-082.png",
+        "word-083.png",
+        "word-084.png",
+        "word-085.png",
+        "word-086.png",
+        "word-087.png",
+        "word-088.png",
+        "word-089.png",
+        "word-090.png",
+        "word-091.png",
+        "word-092.png",
+        "word-093.png",
+        "word-094.png",
+        "word-098.png",
+        "word-099.png",
+        "word-100.png",
+        "word-101.png",
+        "word-102.png",
+        "word-103.png",
+        "word-104.png",
+        "word-105.png",
+        "word-106.png",
+        "word-107.png",
+        "word-108.png",
+        "word-109.png",
+        "word-110.png",
+        "word-111.png",
+        "word-112.png",
+        "word-113.png",
+        "word-114.png",
+        "word-115.png"
+      ],
+      "pdf": "Las 103 páginas finales se inspeccionaron después de la última corrección."
+    }
+  },
+  "limite": "Concilia la exposición con el código comprobado; no amplía el AIR ni demuestra refinamiento universal, validación L2 general o aprobación académica.",
+  "fecha_utc_cierre": "2026-10-20T15:58:22.139468+00:00",
+  "incidencia_orquestacion": "Word exportó correctamente 115 páginas; un envoltorio interpretó $LASTEXITCODE no establecido como fallo. Se comprobó el log completo y se ejecutó después solo el renderizado oculto, correctamente. No corresponde a un fallo de compilación Rust/Lean.",
+  "seguimiento_actual": [
+    {
+      "archivo": "PENDIENTES.md",
+      "bytes": 37692,
+      "sha256": "6a65c3fb7102f1b3c9de7ab4ba51de226a2a4587fc4a79a5c2b354a27caf0112"
+    },
+    {
+      "archivo": "BITACORA_TG2.md",
+      "bytes": 203212,
+      "sha256": "f31cca98e6a50ef9668e2101b7e315b3112cad0dadb8f12b79001ac52a2ec82d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/README.md",
+      "bytes": 11092,
+      "sha256": "2b4b0971946f1823d1f9aea71b211aba9798d86f7089e9d6b22eb37809278e1d"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 8324,
+      "sha256": "0d5b6b8287da20159bc03e98c5659216a0f9e445dcb6339cbb6c1bee285440ea"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 19524,
+      "sha256": "7d4be092a1b0492f59b3534e940920e66486f4ce458e1838a2ab448c294c2ff6"
+    }
+  ],
+  "manifiesto_previo_conservado": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Conciliacion-Manuscrito-Rust/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "bytes": 2258872,
+    "sha256": "d6ac5605d4d5d97aa15fc08e318e1544667858adbecaf6cd383443b0c8d91d4e"
+  }
+}

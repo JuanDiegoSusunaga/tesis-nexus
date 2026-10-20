@@ -1,0 +1,21 @@
+{
+  "alcance": "Modelos discretos clásicos y relaciones algebraicas del manuscrito TG2.",
+  "parametros": {
+    "q": 8380417,
+    "n": 256,
+    "eta_perfiles": [
+      2,
+      4,
+      2
+    ],
+    "inyectividad_hasta": 4190208
+  },
+  "selftarget": "Reto finito y codificaciones inyectivas parametrizados; tabla uniforme sobre dominio finito y consultas clásicas adaptativas.",
+  "correccion_asintotica": "La familia de errores pertenece a [0,1]; se excluye el infinito antes de usar toReal y exigir despreciabilidad.",
+  "limites": [
+    "No se demuestra dureza MLWE/MSIS, reducción desde firmas ni seguridad de ML-DSA real.",
+    "No se identifica el juego clásico finito de SelfTarget con el juego QROM bibliográfico.",
+    "La clase de eficiencia asintótica es un parámetro explícito; no hay una máquina PPT formalizada.",
+    "No se modifican capítulos, TG1, Rust ni las evidencias empíricas."
+  ]
+}

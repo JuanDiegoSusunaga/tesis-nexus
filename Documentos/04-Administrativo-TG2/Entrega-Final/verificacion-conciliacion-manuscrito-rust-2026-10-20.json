@@ -1,0 +1,47 @@
+{
+  "edicion": "tesis-final",
+  "archivos_comprobados": 9641,
+  "commit_codigo": "637e77c99e804664915caf4ed928a10ef81cc870",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-20T15:58:22.139468+00:00",
+  "manifiesto": {
+    "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "bytes": 2271039,
+    "sha256": "c54997fa441cc38404fdc314c0f444e5e88e895ec51eefde0807a2c1b3885c32"
+  },
+  "conciliacion": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Conciliacion-Manuscrito-Rust/verificacion.json",
+    "bytes": 65731,
+    "sha256": "d79415685610bfc3462668f71078e9158a8100b3da24734bad621924baa38bc2"
+  },
+  "manifiesto_previo": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Conciliacion-Manuscrito-Rust/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "bytes": 2258872,
+    "sha256": "d6ac5605d4d5d97aa15fc08e318e1544667858adbecaf6cd383443b0c8d91d4e"
+  },
+  "rutas_previas_preservadas": 9597,
+  "archivos_previos_intactos": 9583,
+  "archivos_previos_actualizados": [
+    "BITACORA_TG2.md",
+    "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+    "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+    "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+    "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+    "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+    "Documentos/01-Manuscrito/README.md",
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+    "Documentos/01-Manuscrito/plantilla-referencia.docx",
+    "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+    "Documentos/06-Evidencia-TG2/README.md",
+    "PENDIENTES.md"
+  ],
+  "imagenes_inspeccionadas": 218,
+  "fuentes_rust_intactas": 89,
+  "fuentes_lean_intactas": 354,
+  "rust_lean_recompilados": false,
+  "commit_documental_creado": false,
+  "push_realizado": false
+}

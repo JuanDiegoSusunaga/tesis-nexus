@@ -1,0 +1,141 @@
+{
+  "ROM/ActivacionPrefijo": {
+    "grupos": [
+      "M35",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La activación de un candidato depende solo del prefijo efectivo. La cota condicionada en las fibras activas se transfiere a una media global ponderada; con riesgo uniforme rho se obtiene rho por la probabilidad de activación, sin cobrar las fibras inactivas.",
+    "limites": [
+      "La decisión debe preceder a la respuesta; no admite activar retrospectivamente usando el éxito futuro."
+    ],
+    "teoremas": [
+      "Nexus.ROM.ActivacionPrefijo.media_activada",
+      "Nexus.ROM.ActivacionPrefijo.cota_activada",
+      "Nexus.ROM.ActivacionPrefijo.media_factor",
+      "Nexus.ROM.ActivacionPrefijo.cota_activada_constante"
+    ]
+  },
+  "ROM/PrimeraExposicion": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "El programa residual se reconstruye exclusivamente del pasado. Activar exige que la próxima consulta sea la dirección del candidato y que aún no esté registrada. Se prueba que el índice es su primera aparición, que no hay doble carga y que toda dirección consultada tiene una primera exposición efectiva.",
+    "limites": [
+      "Estas identidades de transcripciones no presuponen ausencia de colisiones ni uniformidad tras SinBad; por sí solas no construyen los conjuntos buenos FRI."
+    ],
+    "teoremas": [
+      "Nexus.ROM.PrimeraExposicion.reanudar_prefijo",
+      "Nexus.ROM.PrimeraExposicion.proxima_traza",
+      "Nexus.ROM.PrimeraExposicion.proxima_prefijo",
+      "Nexus.ROM.PrimeraExposicion.activa_iff",
+      "Nexus.ROM.PrimeraExposicion.indice_primero",
+      "Nexus.ROM.PrimeraExposicion.activa_indice",
+      "Nexus.ROM.PrimeraExposicion.activa_registrada",
+      "Nexus.ROM.PrimeraExposicion.sin_doble_carga",
+      "Nexus.ROM.PrimeraExposicion.existe_primera"
+    ]
+  },
+  "ROM/ConteoActivaciones": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La unión finita de eventos activados se acota por rho multiplicado por el número esperado de activaciones; un presupuesto B da rho*B. Se permite cualquier solapamiento entre candidatos y se formaliza la transferencia desde un evento final cubierto por la unión.",
+    "limites": [
+      "No requiere independencia de candidatos. La cobertura del evento de aceptación falsa completo y la cota local rho de cada candidato real deben demostrarse aparte."
+    ],
+    "teoremas": [
+      "Nexus.ROM.ConteoActivaciones.media_suma",
+      "Nexus.ROM.ConteoActivaciones.indicador_existe",
+      "Nexus.ROM.ConteoActivaciones.union_finita",
+      "Nexus.ROM.ConteoActivaciones.numero_por_indicadores",
+      "Nexus.ROM.ConteoActivaciones.suma_probabilidades",
+      "Nexus.ROM.ConteoActivaciones.cota_por_activaciones",
+      "Nexus.ROM.ConteoActivaciones.cota_por_presupuesto",
+      "Nexus.ROM.ConteoActivaciones.transferir_evento"
+    ]
+  },
+  "ROM/CargaPrimeras": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Candidatos dependientes del índice y del pasado se inyectan en direcciones distintas de la traza por su primera posición. Su número se acota por direcciones distintas, consultas totales y horizonte. Toda dirección presente en un prefijo se remonta a una activación estrictamente anterior.",
+    "limites": [
+      "El presupuesto de direcciones debe corresponder al programa común que incluya al adversario y al verificador. No se identifica automáticamente con Q ni Q+V_T."
+    ],
+    "teoremas": [
+      "Nexus.ROM.CargaPrimeras.direccion_inyectiva",
+      "Nexus.ROM.CargaPrimeras.carga_distintas",
+      "Nexus.ROM.CargaPrimeras.carga_consultas",
+      "Nexus.ROM.CargaPrimeras.carga_horizonte",
+      "Nexus.ROM.CargaPrimeras.primera_antes_reutilizacion"
+    ]
+  },
+  "ROM/SelectorPrimeras": {
+    "grupos": [
+      "M35",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se aplica el acoplamiento del selector antes de su primera consulta y se obtiene rho=choose(g,q)/choose(2^e,q)+tau+delta. La unión de candidatos registrados se acota por rho*E[inicios] y por rho*B para B direcciones distintas. Una preconsulta deliberada con omisión se remonta a su primera exposición si allí se registran la misma semilla y conjuntos que contienen el conjunto final. Para R=512 y k=4..12, tau<2^(-300).",
+    "limites": [
+      "La unión registrada no lleva un sumando separado Pr(preconsulta), pero no se demuestra que esa probabilidad sea pequeña. La cobertura requiere registro causal y conservación de semilla y conjuntos en la primera exposición. Falta construir ese registro para todos los candidatos/nonces reales, derivar g/m/B, las rondas FRI, el factor de trabajo y las inclusiones de solidez integral."
+    ],
+    "teoremas": [
+      "Nexus.ROM.SelectorPrimeras.riesgo_no_negativo",
+      "Nexus.ROM.SelectorPrimeras.cota_condicionada",
+      "Nexus.ROM.SelectorPrimeras.cota_inicio",
+      "Nexus.ROM.SelectorPrimeras.cota_union",
+      "Nexus.ROM.SelectorPrimeras.cota_presupuesto",
+      "Nexus.ROM.SelectorPrimeras.reanclar_preconsulta",
+      "Nexus.ROM.SelectorPrimeras.riesgo_512"
+    ]
+  },
+  "Canal/PrimerasExposiciones": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se identifica la activación del árbol con la próxima entrada I de bytes reales y su ausencia del prefijo. El número de activaciones se carga a las direcciones distintas del programa arbitrario de bytes. La unión de éxitos del selector matemático instrumentado, activados en primeras exposiciones, se acota por rho*B con parámetros elegidos antes de cada respuesta.",
+    "limites": [
+      "El éxito instrumentado solo comprueba la muestra compartida de 40 índices contra GT/GC; no es aceptación del verificador completo. La cobertura de todos los candidatos finales, los conjuntos buenos causales, presupuestos y refinamiento universal Rust siguen pendientes. R es analítico."
+    ],
+    "teoremas": [
+      "Nexus.Canal.PrimerasExposiciones.traza_bytes",
+      "Nexus.Canal.PrimerasExposiciones.consulta_siguiente",
+      "Nexus.Canal.PrimerasExposiciones.inicio_iff",
+      "Nexus.Canal.PrimerasExposiciones.ampliada_iff",
+      "Nexus.Canal.PrimerasExposiciones.carga_bytes",
+      "Nexus.Canal.PrimerasExposiciones.cota_programas"
+    ]
+  }
+}

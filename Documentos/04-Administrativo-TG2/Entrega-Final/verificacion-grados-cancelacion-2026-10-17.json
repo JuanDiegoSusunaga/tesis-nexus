@@ -1,0 +1,11 @@
+{
+  "edicion": "tg2-2026-10-17-lean-grados-cancelacion",
+  "archivos_comprobados": 3938,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "manifiesto": {
+    "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "sha256": "fa528b7e419016dc5c79eea96ca286c87964f9e20677e80783fa648edb3c7914"
+  }
+}

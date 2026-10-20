@@ -1,0 +1,210 @@
+{
+  "tablas_con_contenido_identico": 34,
+  "celdas_comparadas": 848,
+  "sha256_contenido_tablas": "845bfced8ff2a4fac28512e86e881046459bcf3770caa3ef06e9463dd594bb88",
+  "paginas_pdf": 102,
+  "paginas_con_tablas": [
+    {
+      "pagina": 12,
+      "rotulos": [
+        "Tabla 1.1"
+      ]
+    },
+    {
+      "pagina": 14,
+      "rotulos": [
+        "Tabla 2.1"
+      ]
+    },
+    {
+      "pagina": 20,
+      "rotulos": [
+        "Tabla 3.1",
+        "Tabla 6.8"
+      ]
+    },
+    {
+      "pagina": 22,
+      "rotulos": [
+        "Tabla 3.2"
+      ]
+    },
+    {
+      "pagina": 23,
+      "rotulos": [
+        "Tabla 3.3"
+      ]
+    },
+    {
+      "pagina": 29,
+      "rotulos": [
+        "Tabla 4.1"
+      ]
+    },
+    {
+      "pagina": 32,
+      "rotulos": [
+        "Tabla 4.2"
+      ]
+    },
+    {
+      "pagina": 33,
+      "rotulos": [
+        "Tabla 4.3"
+      ]
+    },
+    {
+      "pagina": 41,
+      "rotulos": [
+        "Tabla 5.1"
+      ]
+    },
+    {
+      "pagina": 43,
+      "rotulos": [
+        "Tabla 5.2",
+        "Tabla 6.11"
+      ]
+    },
+    {
+      "pagina": 46,
+      "rotulos": [
+        "Tabla 5.3"
+      ]
+    },
+    {
+      "pagina": 52,
+      "rotulos": [
+        "Tabla 6.1"
+      ]
+    },
+    {
+      "pagina": 58,
+      "rotulos": [
+        "Tabla 6.2"
+      ]
+    },
+    {
+      "pagina": 60,
+      "rotulos": [
+        "Tabla 6.3"
+      ]
+    },
+    {
+      "pagina": 61,
+      "rotulos": [
+        "Tabla 6.4"
+      ]
+    },
+    {
+      "pagina": 62,
+      "rotulos": [
+        "Tabla 6.5"
+      ]
+    },
+    {
+      "pagina": 63,
+      "rotulos": [
+        "Tabla 6.6",
+        "Tabla 6.7"
+      ]
+    },
+    {
+      "pagina": 64,
+      "rotulos": [
+        "Tabla 6.8"
+      ]
+    },
+    {
+      "pagina": 66,
+      "rotulos": [
+        "Tabla 6.9"
+      ]
+    },
+    {
+      "pagina": 68,
+      "rotulos": [
+        "Tabla 6.10",
+        "Tabla 6.11"
+      ]
+    },
+    {
+      "pagina": 69,
+      "rotulos": [
+        "Tabla 6.12"
+      ]
+    },
+    {
+      "pagina": 71,
+      "rotulos": [
+        "Tabla 6.13",
+        "Tabla 6.14"
+      ]
+    },
+    {
+      "pagina": 74,
+      "rotulos": [
+        "Tabla 6.15"
+      ]
+    },
+    {
+      "pagina": 76,
+      "rotulos": [
+        "Tabla 6.16"
+      ]
+    },
+    {
+      "pagina": 77,
+      "rotulos": [
+        "Tabla 6.17"
+      ]
+    },
+    {
+      "pagina": 78,
+      "rotulos": [
+        "Tabla 6.17"
+      ]
+    },
+    {
+      "pagina": 79,
+      "rotulos": [
+        "Tabla 6.18"
+      ]
+    },
+    {
+      "pagina": 81,
+      "rotulos": [
+        "Tabla 6.19",
+        "Tabla 6.18"
+      ]
+    },
+    {
+      "pagina": 83,
+      "rotulos": [
+        "Tabla 6.20"
+      ]
+    },
+    {
+      "pagina": 84,
+      "rotulos": [
+        "Tabla 6.21"
+      ]
+    },
+    {
+      "pagina": 86,
+      "rotulos": [
+        "Tabla 6.22"
+      ]
+    },
+    {
+      "pagina": 92,
+      "rotulos": [
+        "Tabla 7.1"
+      ]
+    }
+  ],
+  "paginas_vacias": [],
+  "texto_fuera_de_margenes": [],
+  "sha256_pdf": "3f500f0d67c8d61769c5e14193ab18959d281e42f889b2eacdfaf78ab7da257e",
+  "fecha": "2026-10-19"
+}

@@ -1,0 +1,12 @@
+{
+  "publicacion": "NIST SP 800-90B, final de 2018",
+  "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/nist.sp.800-90b.pdf",
+  "doi": "10.6028/NIST.SP.800-90B",
+  "consulta": "2026-10-17",
+  "secciones": [
+    "2.1",
+    "4.4.1",
+    "4.4.2"
+  ],
+  "uso": "Contraste de min-entropía, fórmula RCT y contador APT. Las pruebas no acreditan calificación de una fuente ni conformidad normativa del módulo."
+}

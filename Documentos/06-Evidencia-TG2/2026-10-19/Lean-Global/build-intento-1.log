@@ -1,0 +1,110 @@
+Comando: python scripts/lean.py build
+Inicio UTC: 2026-10-19T19:41:46.454Z
+Fin UTC: 2026-10-19T19:44:18.374Z
+Codigo de salida: 1
+
+✔ [3874/4084] Built Nexus.N06.Experimento (9.7s)
+✔ [3875/4084] Built Nexus.Merkle.MarcasGlobales (10s)
+✔ [3876/4084] Built Nexus.ROM.ComparacionAcoplada (10s)
+✔ [3877/4084] Built Nexus.ROM.PromediosCompletaciones (10s)
+✔ [3878/4084] Built Nexus.N06.Cancelacion (11s)
+✖ [3879/4084] Building Nexus.FRI.Adaptativo (11s)
+trace: .> LEAN_PATH=C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean c:\Users\juand\Desktop\Tesis\.tools\lean\elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\Users\juand\Desktop\Tesis\formalizacion\Nexus\FRI\Adaptativo.lean -o C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\FRI\Adaptativo.olean -i C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\FRI\Adaptativo.ilean -c C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\FRI\Adaptativo.c --setup C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\FRI\Adaptativo.setup.json --json
+error: Nexus/FRI/Adaptativo.lean:241:0: automatically included section variable(s) unused in theorem `Nexus.FRI.mem_preimagenExcepcion`:
+  [Field K]
+  [Fintype K]
+  [DecidableEq D]
+  [Nonempty D]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Field K] [Fintype K] [DecidableEq D] [Nonempty D] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+error: Nexus/FRI/Adaptativo.lean:264:0: automatically included section variable(s) unused in theorem `Nexus.FRI.probabilidadExcepcionesCruda_eq`:
+  [Fintype K]
+  [Nonempty D]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype K] [Nonempty D] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [3882/4084] Built Nexus.N06.Reinicios (11s)
+✔ [3883/4084] Built Nexus.ROM.PotencialCandidatos (11s)
+✔ [3884/4084] Built Nexus.ROM.RepeticionesCinta (11s)
+✔ [3885/4084] Built Nexus.N06.Consulta (11s)
+✔ [3900/4084] Built Nexus.ROM.Juego (9.2s)
+✔ [3901/4084] Built Nexus.N06.PrimerCambio (9.1s)
+✔ [3902/4084] Built Nexus.ROM.LeyArbol (9.5s)
+✔ [3903/4084] Built Nexus.N06.SeleccionAIR (9.4s)
+✔ [3904/4084] Built Nexus.N06.Muestras (9.2s)
+✔ [3905/4084] Built Nexus.ROM.ParticionObservada (9.9s)
+✔ [3906/4084] Built Nexus.ROM.ProgramaCompartido (9.6s)
+✔ [3907/4084] Built Nexus.ROM.Probabilidad (9.6s)
+✔ [3908/4084] Built Nexus.N06.Composicion (9.0s)
+✔ [3909/4084] Built Nexus.ROM.PrefijosGlobales (9.3s)
+✔ [3910/4084] Built Nexus.ROM.AcoplamientoArbol (9.3s)
+✔ [3911/4084] Built Nexus.Canal.ProgramaTG2 (9.2s)
+✔ [3912/4084] Built Nexus.N06.Parejas (9.1s)
+✔ [3936/4084] Built Nexus.ROM.RegistroFinal (9.5s)
+✔ [3937/4084] Built Nexus.ROM.ContinuacionPrefijo (9.4s)
+✔ [3938/4084] Built Nexus.ROM.ComposicionCotas (9.7s)
+✔ [3939/4084] Built Nexus.ROM.RegistroPrograma (9.3s)
+✔ [3940/4084] Built Nexus.Canal.SelectorOrdenado (10s)
+✔ [3941/4084] Built Nexus.ROM.ProyeccionDigest (10s)
+✔ [3942/4084] Built Nexus.ROM.TablaInversa (10s)
+✔ [3943/4084] Built Nexus.ROM.Preparacion (10s)
+✔ [3944/4084] Built Nexus.ROM.ObservacionesPrefijo (11s)
+✔ [3945/4084] Built Nexus.ROM.PrimeraExposicion (11s)
+✔ [3946/4084] Built Nexus.ROM.EjemploNumerico (11s)
+✔ [3947/4084] Built Nexus.ROM.ProgramaBytes (11s)
+✔ [3948/4084] Built Nexus.Merkle.ProgramaVerificacion (11s)
+✔ [3950/4084] Built Nexus.Canal.RegistroSelector (11s)
+✔ [3951/4084] Built Nexus.Canal.DesafiosPrograma (11s)
+✔ [3953/4084] Built Nexus.ROM.PalabrasDigest (11s)
+✔ [3954/4084] Built Nexus.ROM.CongelacionPrevia (9.9s)
+✔ [3955/4084] Built Nexus.ROM.Frescura (9.0s)
+✔ [3956/4084] Built Nexus.ROM.Origen (10s)
+✔ [3957/4084] Built Nexus.ROM.ActivacionPrefijo (10s)
+✔ [3958/4084] Built Nexus.ROM.CoincidenciaPrograma (10s)
+✔ [3959/4084] Built Nexus.ROM.CintasRetos (10s)
+✔ [3960/4084] Built Nexus.Canal.CintaSelector (10s)
+✔ [3961/4084] Built Nexus.ROM.HistoriaLocal (13s)
+✔ [3962/4084] Built Nexus.ROM.SoporteFinito (13s)
+✔ [3963/4084] Built Nexus.Canal.Raices (9.3s)
+✔ [3964/4084] Built Nexus.ROM.FormatoBase (9.3s)
+✔ [3965/4084] Built Nexus.ROM.OrdenConsultas (9.2s)
+✔ [3966/4084] Built Nexus.ROM.ConteoActivaciones (9.7s)
+✔ [3967/4084] Built Nexus.ROM.CadenaMemoria (9.5s)
+✔ [3968/4084] Built Nexus.Canal.MuestraEfectiva (9.4s)
+✔ [3969/4084] Built Nexus.ROM.CadenaCodigos (9.6s)
+✔ [3970/4084] Built Nexus.Canal.PrimerasConsultas (8.3s)
+✔ [3979/4084] Built Nexus.ROM.PrefijoCorte (8.5s)
+✔ [3980/4084] Built Nexus.ROM.CargaPrimeras (8.4s)
+✔ [3981/4084] Built Nexus.ROM.AcoplamientoCadena (8.7s)
+✔ [3982/4084] Built Nexus.Canal.Trayecto (8.1s)
+✔ [3983/4084] Built Nexus.ROM.EjecucionBytes (8.6s)
+✔ [3990/4084] Built Nexus.ROM.ExcepcionesPrefijo (8.7s)
+✔ [3993/4084] Built Nexus.ROM.SelectorAcoplado (9.1s)
+✔ [3994/4084] Built Nexus.Canal.RegistroRaices (10s)
+✔ [3996/4084] Built Nexus.ROM.PlanPrograma (10s)
+✔ [3997/4084] Built Nexus.ROM.PrefijoPrograma (11s)
+✔ [3998/4084] Built Nexus.ROM.RecortePrograma (11s)
+✔ [3999/4084] Built Nexus.ROM.SelectorPrefijo (9.1s)
+✔ [4000/4084] Built Nexus.Canal.SelectorAcoplado (9.8s)
+✔ [4001/4084] Built Nexus.ROM.LeyMuestreoPrograma (8.9s)
+✔ [4002/4084] Built Nexus.Canal.RegistroCompleto (9.4s)
+✔ [4007/4084] Built Nexus.ROM.CorteLlamadas (8.0s)
+✔ [4008/4084] Built Nexus.Canal.SemillaProxima (9.0s)
+✔ [4009/4084] Built Nexus.ROM.SelectorAdaptativo (9.6s)
+✔ [4010/4084] Built Nexus.ROM.ProgramaObservado (8.7s)
+✔ [4013/4084] Built Nexus.Canal.TrayectoTG2 (8.8s)
+✔ [4017/4084] Built Nexus.ROM.LeySinBad (11s)
+✔ [4018/4084] Built Nexus.Canal.SelectorAdaptativo (9.3s)
+✔ [4019/4084] Built Nexus.ROM.SelectorPrimeras (9.5s)
+✔ [4021/4084] Built Nexus.Canal.RetosRecuperados (8.8s)
+✔ [4022/4084] Built Nexus.Canal.ReconstruccionSelector (8.9s)
+✔ [4027/4084] Built Nexus.Canal.SoporteCandidato (8.9s)
+✔ [4058/4084] Built Nexus.Canal.PrimerasExposiciones (8.3s)
+✔ [4063/4084] Built Nexus.ROM.FiltroSelector (8.5s)
+Some required targets logged failures:
+- Nexus.FRI.Adaptativo
+error: build failed
+

@@ -1,0 +1,19 @@
+Comando: python scripts/lean.py build
+Inicio UTC: 2026-10-19T19:52:00.232Z
+Fin UTC: 2026-10-19T19:52:13.652Z
+Codigo de salida: 1
+
+✔ [4073/4084] Built Nexus.Canal.ContextoAIR (8.5s)
+✔ [4074/4084] Built Nexus.Verificador.CotaFRICausal (8.7s)
+✖ [4075/4084] Building Nexus.Verificador.CancelacionAIRCausal (8.3s)
+trace: .> LEAN_PATH=C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean c:\Users\juand\Desktop\Tesis\.tools\lean\elan\toolchains\leanprover--lean4---v4.35.0\bin\lean.exe C:\Users\juand\Desktop\Tesis\formalizacion\Nexus\Verificador\CancelacionAIRCausal.lean -o C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\CancelacionAIRCausal.olean -i C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\lib\lean\Nexus\Verificador\CancelacionAIRCausal.ilean -c C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\CancelacionAIRCausal.c --setup C:\Users\juand\Desktop\Tesis\formalizacion\.lake\build\ir\Nexus\Verificador\CancelacionAIRCausal.setup.json --json
+error: Nexus/Verificador/CancelacionAIRCausal.lean:73:11: Variable name `hj` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hj
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Some required targets logged failures:
+- Nexus.Verificador.CancelacionAIRCausal
+error: build failed
+

@@ -1,0 +1,40 @@
+{
+  "fecha": "2026-10-20",
+  "estado": "Commit y manifiesto comprobados sin recompilar.",
+  "integridad_manifiesto": {
+    "edicion": "tesis-final",
+    "archivos_comprobados": 9597,
+    "commit_codigo": "637e77c99e804664915caf4ed928a10ef81cc870",
+    "errores": [],
+    "correcto": true
+  },
+  "codigo": {
+    "commit": "637e77c99e804664915caf4ed928a10ef81cc870",
+    "padre": "3e40e283dddc15502830f9fc220e556385f9d477",
+    "arbol_git": "8623daab287c3a16c6d2b0b464cf5a115905a742",
+    "archivos_del_commit": [
+      "REPRODUCIBILIDAD_TG2.md",
+      "nexus-active/src/batch.rs",
+      "nexus-active/src/chain.rs",
+      "nexus-active/src/lib.rs",
+      "nexus-active/tests/active_chain_contract.rs"
+    ],
+    "arbol_limpio": true,
+    "push_realizado": false
+  },
+  "manifiesto": {
+    "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "bytes": 2258872,
+    "sha256": "d6ac5605d4d5d97aa15fc08e318e1544667858adbecaf6cd383443b0c8d91d4e"
+  },
+  "consolidacion": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/ActiveChain/consolidacion.json",
+    "bytes": 40841,
+    "sha256": "a7e8283677ae0c9082ee1f33b2a15886d56f999b30eea48c84cb95d67b2380c7"
+  },
+  "fuentes_lean_intactas": 354,
+  "fuentes_configuracion_rust": 89,
+  "manuscrito_intacto": 12,
+  "compilaciones_y_pruebas_rust_lean_repetidas": false,
+  "nota_integridad": "Registro externo posterior, fuera del inventario del propio manifiesto para evitar autorreferencia; hashes y Git no son nuevas pruebas del programa."
+}

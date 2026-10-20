@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-17-lean-certificado-gramatica",
+  "archivos_comprobados": 5051,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T04:28:34.296550+00:00",
+  "sha256_manifiesto": "75501201de84f9c83927529f0d31afc21f6fd4fdfaa1eaaad4509feb9a40b212",
+  "nota": "El informe se conserva fuera del manifiesto que verifica para evitar una referencia hash circular."
+}

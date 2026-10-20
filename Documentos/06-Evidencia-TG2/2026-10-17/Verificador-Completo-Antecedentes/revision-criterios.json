@@ -1,0 +1,228 @@
+{
+  "esquema": 1,
+  "grupos_revisados": [
+    {
+      "id": "M26",
+      "titulo": "Aritmética de mediciones: unidades, razones y redondeos",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Identificar datos fuente y versiones antes de calcular inversos, razones y diferencias.",
+        "Formalizar solo las cuentas y tolerancias; la medición permanece evidencia de una ejecución."
+      ],
+      "pendientes_anteriores": [
+        "Siguen sin identificar las corridas originales H1/H2 y sus versiones, junto con M44. Las cuentas y tolerancias ya probadas no certifican procedencia ni capacidad sostenida; esta pasada no inventa datos de esas corridas."
+      ],
+      "modulos_nuevos": [],
+      "pendiente_actual": "Siguen sin identificar las corridas originales H1/H2 y sus versiones, junto con M44. Las cuentas y tolerancias ya probadas no certifican procedencia ni capacidad sostenida; esta pasada no inventa datos de esas corridas.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Identificar datos fuente y versiones antes de calcular inversos, razones y diferencias.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Formalizar solo las cuentas y tolerancias; la medición permanece evidencia de una ejecución.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; los términos Lean no sustituyen revisión independiente."
+    },
+    {
+      "id": "M35",
+      "titulo": "Muestra compartida e hipergeométrica H",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+        "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI."
+      ],
+      "pendientes_anteriores": [
+        "Instanciar la proyección de respuestas y demostrar las claves frescas bajo las excepciones en todas las historias del ejecutable y del adversario. El programa de canal usa una sola muestra; su ley fresca está condicionada a ausencia de la clave en la historia, no se elimina esa condición."
+      ],
+      "modulos_nuevos": [
+        "Canal/SelectorOrdenado",
+        "Canal/DesafiosPrograma",
+        "Verificador/Completo"
+      ],
+      "pendiente_actual": "El canal conserva desafíos e índices en orden y su proyección a conjuntos está probada. Falta instanciar la ley uniforme ideal mediante claves frescas bajo las excepciones para todas las historias del ejecutable y adversario; no se retira la condición de frescura ni se supone independencia entre fases.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; los términos Lean no sustituyen revisión independiente."
+    },
+    {
+      "id": "M36",
+      "titulo": "Solidez ideal por rondas y reinicios",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+        "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash."
+      ],
+      "pendientes_anteriores": [
+        "Completar el adaptador integral de rondas y reinicios y obtener revisión independiente; el autor declaró que no hay dictamen. El compilador de programas finitos no identifica por sí solo los inicios B con consultas hash Q."
+      ],
+      "modulos_nuevos": [],
+      "pendiente_actual": "Completar el adaptador integral de rondas y reinicios y obtener revisión independiente; el autor declaró que no hay dictamen. El compilador de programas finitos no identifica por sí solo los inicios B con consultas hash Q.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; los términos Lean no sustituyen revisión independiente."
+    },
+    {
+      "id": "M37",
+      "titulo": "Extracción Merkle, bytes y orden temporal ROM",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar extracción, congelación y órdenes de primeras consultas bajo ausencia de aciertos.",
+        "Obtener los hechos de registro y familias causales para todas las historias del protocolo."
+      ],
+      "pendientes_anteriores": [
+        "Extender el programa causal a todas las consultas y eventos del protocolo/adversario, incluidas entradas arbitrarias fuera de la gramática acotada. Derivar registro y congelación antes de la primera exposición bajo los eventos de excepción; el solapamiento enunciado/nodo debe seguir en la tabla común."
+      ],
+      "modulos_nuevos": [
+        "ROM/RegistroPrograma",
+        "Merkle/ProgramaVerificacion",
+        "FRI/ProgramaVerificacion",
+        "Canal/DesafiosPrograma",
+        "Verificador/Completo"
+      ],
+      "pendiente_actual": "Las aperturas Merkle y recorridos FRI producen sus registros desde programas efectivos sobre una tabla común. Falta derivar familias causales y congelación antes de la primera exposición para todas las historias, incluyendo intercalaciones y consultas arbitrarias del adversario fuera de la gramática.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar extracción, congelación y órdenes de primeras consultas bajo ausencia de aciertos.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Obtener los hechos de registro y familias causales para todas las historias del protocolo.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; los términos Lean no sustituyen revisión independiente."
+    },
+    {
+      "id": "M39",
+      "titulo": "Presupuestos, formas, gramática y semántica del verificador",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Justificar V_T, B_T y S=Q+V_T a partir de listas, rechazos, serialización e índices.",
+        "Enlazar los modelos tipados con enteros de máquina y el verificador Rust."
+      ],
+      "pendientes_anteriores": [
+        "Completar gramática de certificados, parser/deserialización, rechazos y correspondencia integral con Rust. Ya se deriva la cuenta del canal y se verifican las seis posiciones con USize; faltan la composición con todas las aperturas, las otras operaciones de máquina y el refinamiento del ejecutable."
+      ],
+      "modulos_nuevos": [
+        "ROM/RegistroPrograma",
+        "Merkle/ProgramaVerificacion",
+        "Bytes/Lectura",
+        "Bytes/Codec",
+        "Verificador/Certificado",
+        "Canal/SelectorOrdenado",
+        "FRI/ProgramaVerificacion",
+        "Canal/DesafiosPrograma",
+        "Verificador/Forma",
+        "Verificador/Consulta",
+        "Verificador/Completo"
+      ],
+      "pendiente_actual": "El certificado y su lector matemático, formas, rechazos, canal y todas las aperturas ya están compuestos con presupuesto V_T demostrado. Falta refinamiento universal del parser serde/bincode, las otras operaciones de máquina y el ejecutable Rust. Se conserva la diferencia de EOF y el corte analítico R; el contraste de cincuenta casos es evidencia externa, no equivalencia universal.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Justificar V_T, B_T y S=Q+V_T a partir de listas, rechazos, serialización e índices.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Enlazar los modelos tipados con enteros de máquina y el verificador Rust.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; los términos Lean no sustituyen revisión independiente."
+    },
+    {
+      "id": "M40",
+      "titulo": "Potencial de nonces y cola del selector",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+        "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado."
+      ],
+      "pendientes_anteriores": [
+        "Construir los programas de los candidatos reales y sus conjuntos buenos con cotas antes de responder, además del trabajo/nonce y la tabla global. El compilador memoriza las repeticiones, pero no demuestra valor<=rho para esos candidatos ni la carga global de inicios."
+      ],
+      "modulos_nuevos": [],
+      "pendiente_actual": "Construir los programas de los candidatos reales y sus conjuntos buenos con cotas antes de responder, además del trabajo/nonce y la tabla global. El compilador memoriza las repeticiones, pero no demuestra valor<=rho para esos candidatos ni la carga global de inicios.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; los términos Lean no sustituyen revisión independiente."
+    },
+    {
+      "id": "M41",
+      "titulo": "Cota ROM completa y ejemplo numérico",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar la cota parametrizada del evento excepcional del registro.",
+        "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+        "Certificar el ejemplo numérico solo después de fijar las hipótesis completas."
+      ],
+      "pendientes_anteriores": [
+        "Probar las inclusiones y leyes de los tres eventos bajo un mismo experimento del ejecutable, incluyendo adversario, sesgo, selector y presupuestos completos. La gramática, programa causal y cuenta del canal son componentes; no instancian todavía la cota numérica global."
+      ],
+      "modulos_nuevos": [],
+      "pendiente_actual": "Probar las inclusiones y leyes de los tres eventos bajo un mismo experimento del ejecutable, incluyendo adversario, sesgo, selector y presupuestos completos. La gramática, programa causal y cuenta del canal son componentes; no instancian todavía la cota numérica global.",
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar la cota parametrizada del evento excepcional del registro.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        },
+        {
+          "criterio_original": "Certificar el ejemplo numérico solo después de fijar las hipótesis completas.",
+          "evaluacion": "conservado_sin_declarar_cierre"
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; los términos Lean no sustituyen revisión independiente."
+    }
+  ],
+  "cerrados_en_su_modelo": [],
+  "parciales_restantes": [
+    "M26",
+    "M35",
+    "M36",
+    "M37",
+    "M39",
+    "M40",
+    "M41"
+  ],
+  "criterios_reducidos": false,
+  "obligaciones_adicionales_cerradas": false,
+  "tesis_completa_verificada": false,
+  "dictamen_independiente": "pendiente"
+}

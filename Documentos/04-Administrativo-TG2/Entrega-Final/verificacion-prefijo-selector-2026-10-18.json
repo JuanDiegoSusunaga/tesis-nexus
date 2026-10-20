@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-18-lean-prefijo-selector",
+  "archivos_comprobados": 8542,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T18:47:50.608159+00:00",
+  "sha256_manifiesto": "c2515ece2df659220ed14f002ccff117f21ffc9f1d04e4febe966b213f21bbfb",
+  "nota": "Informe fuera del manifiesto que verifica para evitar referencia hash circular."
+}

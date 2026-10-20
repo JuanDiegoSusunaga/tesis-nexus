@@ -1,0 +1,175 @@
+{
+  "ROM/PromediosCompletaciones": {
+    "grupos": [
+      "M35",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Revelar una dirección nueva particiona las tablas compatibles en fibras del mismo tamaño. Se prueba la igualdad de medias para cualquier observable de toda la tabla y la equivalencia con la media uniforme desde la tabla vacía.",
+    "limites": [
+      "Identidades racionales de universos finitos; no supone SHA3 uniforme ni condiciona a un evento futuro."
+    ],
+    "teoremas": [
+      "Nexus.ROM.PromediosCompletaciones.media_equivalencia",
+      "Nexus.ROM.PromediosCompletaciones.media_sigma",
+      "Nexus.ROM.PromediosCompletaciones.media_revelar",
+      "Nexus.ROM.PromediosCompletaciones.media_vacia"
+    ]
+  },
+  "ROM/LeyArbol": {
+    "grupos": [
+      "M35",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Para cualquier árbol adaptativo finito, la media de una función de su resultado sobre tablas uniformes coincide con la evaluación que sortea solo respuestas nuevas y memoriza las repetidas. Se conserva la ley conjunta de resultado y transcripción completa; el valor inicial en direcciones no vistas es inmaterial.",
+    "limites": [
+      "La igualdad incluye excepciones y no atribuye uniformidad después de condicionar a SinBad, aceptación o un candidato elegido a posteriori."
+    ],
+    "teoremas": [
+      "Nexus.ROM.LeyArbol.evaluar_transformar",
+      "Nexus.ROM.LeyArbol.traza_transformar",
+      "Nexus.ROM.LeyArbol.evaluar_registrar",
+      "Nexus.ROM.LeyArbol.ley_condicionada",
+      "Nexus.ROM.LeyArbol.ley_desde_vacio",
+      "Nexus.ROM.LeyArbol.ley_transcripcion",
+      "Nexus.ROM.LeyArbol.defecto_inmaterial",
+      "Nexus.ROM.LeyArbol.ley_evento"
+    ]
+  },
+  "ROM/SoporteFinito": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se deriva del programa de bytes el soporte de todas sus ramas adaptativas. Restringir a un universo que lo contenga conserva resultado y registro. La ley del resultado es la del árbol con memoria y no depende de ampliar el universo finito.",
+    "limites": [
+      "El soporte es un objeto matemático finito, sin cota práctica de construcción. No se define una distribución uniforme sobre todas las funciones del dominio infinito de bytes."
+    ],
+    "teoremas": [
+      "Nexus.ROM.SoporteFinito.consulta_en_soporte",
+      "Nexus.ROM.SoporteFinito.rama_en_soporte",
+      "Nexus.ROM.SoporteFinito.entradas_en_soporte",
+      "Nexus.ROM.SoporteFinito.resultado_por_soporte",
+      "Nexus.ROM.SoporteFinito.traza_por_soporte",
+      "Nexus.ROM.SoporteFinito.prolongar_en_universo",
+      "Nexus.ROM.SoporteFinito.resultado_arbol",
+      "Nexus.ROM.SoporteFinito.traza_arbol",
+      "Nexus.ROM.SoporteFinito.resultado_restringir",
+      "Nexus.ROM.SoporteFinito.traza_restringir",
+      "Nexus.ROM.SoporteFinito.vistas_insertar",
+      "Nexus.ROM.SoporteFinito.actualizar_restriccion",
+      "Nexus.ROM.SoporteFinito.valor_restringir",
+      "Nexus.ROM.SoporteFinito.ley_global",
+      "Nexus.ROM.SoporteFinito.universo_inmaterial"
+    ]
+  },
+  "ROM/LeyMuestreoPrograma": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La tabla del plan crece por prefijos incluso si hay excepciones. Para cualquier observable del resultado, el mismo plan ROM de respuestas frescas tiene exactamente la ley de una función uniforme en el soporte del programa. Las repeticiones guardan su valor sin gastar respuesta fresca.",
+    "limites": [
+      "Conserva altura(programa)<=S. No deduce por sí solo S=Q+V_T del ejecutable ni verifica costes de memoria o CPU."
+    ],
+    "teoremas": [
+      "Nexus.ROM.LeyMuestreoPrograma.tabla_prefijo",
+      "Nexus.ROM.LeyMuestreoPrograma.respuesta_guardada",
+      "Nexus.ROM.LeyMuestreoPrograma.funcion_anexar",
+      "Nexus.ROM.LeyMuestreoPrograma.claves_anexar",
+      "Nexus.ROM.LeyMuestreoPrograma.consulta_en_claves",
+      "Nexus.ROM.LeyMuestreoPrograma.media_plan",
+      "Nexus.ROM.LeyMuestreoPrograma.ley_programa"
+    ]
+  },
+  "ROM/ProgramaObservado": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Instrumentar el programa para devolver resultado y transcripción conserva consultas, altura, soporte y el propio plan de muestreo. Se obtiene igualdad exacta de la ley conjunta de resultado y registro del plan original con el ROM uniforme finito.",
+    "limites": [
+      "La igualdad de leyes no prueba que los eventos de solidez del manuscrito estén correctamente incluidos ni que los índices del selector condicionado sean uniformes."
+    ],
+    "teoremas": [
+      "Nexus.ROM.ProgramaObservado.resultado_transformar",
+      "Nexus.ROM.ProgramaObservado.traza_transformar",
+      "Nexus.ROM.ProgramaObservado.altura_transformar",
+      "Nexus.ROM.ProgramaObservado.soporte_transformar",
+      "Nexus.ROM.ProgramaObservado.resultado_registrar",
+      "Nexus.ROM.ProgramaObservado.traza_registrar",
+      "Nexus.ROM.ProgramaObservado.altura_registrar",
+      "Nexus.ROM.ProgramaObservado.soporte_registrar",
+      "Nexus.ROM.ProgramaObservado.plan_transformar",
+      "Nexus.ROM.ProgramaObservado.plan_registrar",
+      "Nexus.ROM.ProgramaObservado.ley_transcripcion"
+    ]
+  },
+  "ROM/PrefijosGlobales": {
+    "grupos": [
+      "M35",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "El evento de igualdad de prefijos efectivos es exactamente el cilindro de sus direcciones observadas. Se cuenta su masa como |Digest|^(-u), con u direcciones distintas; una respuesta nueva es uniforme tras ese pasado fijo y una repetida distinta es imposible.",
+    "limites": [
+      "La condición es un prefijo fijo del pasado, sin SinBad ni aceptación. La frescura de la dirección siguiente se mantiene como hipótesis explícita."
+    ],
+    "teoremas": [
+      "Nexus.ROM.PrefijosGlobales.traza_responde",
+      "Nexus.ROM.PrefijosGlobales.prefijo_por_acuerdo",
+      "Nexus.ROM.PrefijosGlobales.acuerdo_por_prefijo",
+      "Nexus.ROM.PrefijosGlobales.prefijo_es_cilindro",
+      "Nexus.ROM.PrefijosGlobales.cardinal_prefijo",
+      "Nexus.ROM.PrefijosGlobales.probabilidad_prefijo",
+      "Nexus.ROM.PrefijosGlobales.siguiente_uniforme",
+      "Nexus.ROM.PrefijosGlobales.repetida_fija",
+      "Nexus.ROM.PrefijosGlobales.repetida_distinta_imposible"
+    ]
+  },
+  "Verificador/LeyConjunta": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se instancia la ley conjunta con el programa completo de propuesta adaptativa de bytes e intercalaciones arbitrarias. Resultado y transcripción del mismo muestreador tienen exactamente la ley de tablas uniformes en su soporte. Se prueba la masa de cada prefijo real y la respuesta fresca uniforme tras ese pasado.",
+    "limites": [
+      "No se ha transferido todavía la ley del selector uniforme ideal ni la cota de solidez integral. Se mantienen altura<=S, corte analítico R, diferencias del parser y refinamiento universal Rust pendientes."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.LeyConjunta.restriccion_oraculo",
+      "Nexus.Verificador.LeyConjunta.traza_arbol",
+      "Nexus.Verificador.LeyConjunta.prefijo_arbol",
+      "Nexus.Verificador.LeyConjunta.proyeccion_inyectiva",
+      "Nexus.Verificador.LeyConjunta.prefijos_iguales",
+      "Nexus.Verificador.LeyConjunta.ley_resultado",
+      "Nexus.Verificador.LeyConjunta.ley_historia",
+      "Nexus.Verificador.LeyConjunta.probabilidad_prefijo",
+      "Nexus.Verificador.LeyConjunta.respuesta_fresca"
+    ]
+  }
+}

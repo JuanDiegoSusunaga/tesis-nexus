@@ -1,0 +1,243 @@
+{
+  "esquema": 1,
+  "grupos_revisados": [
+    {
+      "id": "M26",
+      "titulo": "Aritmética de mediciones: unidades, razones y redondeos",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Identificar datos fuente y versiones antes de calcular inversos, razones y diferencias.",
+        "Formalizar solo las cuentas y tolerancias; la medición permanece evidencia de una ejecución."
+      ],
+      "pendientes_anteriores": [
+        "Siguen sin identificar las corridas originales H1/H2 y sus versiones, junto con M44. Las cuentas y tolerancias ya probadas no certifican procedencia ni capacidad sostenida; esta pasada no inventa datos de esas corridas."
+      ],
+      "modulos_nuevos": [],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Identificar datos fuente y versiones antes de calcular inversos, razones y diferencias.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Formalizar solo las cuentas y tolerancias; la medición permanece evidencia de una ejecución.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "Siguen sin identificar las corridas originales H1/H2 y sus versiones, junto con M44. Las cuentas y tolerancias ya probadas no certifican procedencia ni capacidad sostenida; esta pasada no inventa datos de esas corridas."
+      ]
+    },
+    {
+      "id": "M35",
+      "titulo": "Muestra compartida e hipergeométrica H",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+        "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI."
+      ],
+      "pendientes_anteriores": [
+        "Ya se interpreta el candidato recuperado y se construyen GT/GC desde la tabla anterior al primer I: parámetros, raíces, constantes, nonce, alfas/betas y todos los vectores coinciden con la vista final. Falta demostrar pertenencia de todas las consultas aceptadas a estos conjuntos, trasladar el corte de entradas nuevas al prefijo bruto de llamadas, aplicar la unión de primeras exposiciones, derivar g/m/B, enlazar las cotas de todas las rondas FRI y refinar universalmente Rust. Las igualdades bajo SinBad no condicionan la ley uniforme a SinBad."
+      ],
+      "modulos_nuevos": [
+        "ROM/ValoresFinales",
+        "Canal/CapasIndexadas",
+        "FRI/ControlesValores",
+        "Verificador/ValoresConsulta",
+        "Verificador/RetosVista",
+        "Verificador/ConsultaBuena",
+        "Canal/MuestraEfectiva",
+        "Verificador/MuestraBuena"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "Ya se demuestra que todas las consultas de la muestra efectiva aceptada pertenecen simultáneamente a GT/GC definidos antes del primer I. La muestra coincide con la salida real de la cinta usada en el acoplamiento, incluso con adversario adaptativo e intercalaciones. Falta trasladar el corte de entradas nuevas al prefijo bruto de llamadas y a la unión de primeras exposiciones, derivar g/m/B para candidatos falsos, integrar las cotas de todas las rondas FRI, el trabajo y las excepciones y refinar universalmente Rust. La inclusión bajo SinBad no condiciona la ley uniforme a SinBad."
+      ]
+    },
+    {
+      "id": "M36",
+      "titulo": "Solidez ideal por rondas y reinicios",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+        "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash."
+      ],
+      "pendientes_anteriores": [
+        "El registro efectivo ya interpreta los datos y retos reales del candidato y conserva GT/GC hasta el final, incluso ante una preconsulta deliberada. Falta el puente al prefijo bruto y el adaptador integral de rondas y reinicios, sus presupuestos y revisión independiente. El autor declaró que no hay dictamen. No se identifica B con Q ni altura con Q+V_T."
+      ],
+      "modulos_nuevos": [
+        "ROM/ValoresFinales",
+        "Verificador/ValoresConsulta",
+        "Canal/MuestraEfectiva",
+        "Verificador/MuestraBuena"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "La muestra ordenada efectiva ya tiene cuarenta índices distintos y soporte completo, y su aceptación implica pertenencia a GT/GC en el corte previo y coincide con la cinta real. Falta el puente al prefijo bruto y el adaptador integral de rondas y reinicios, sus presupuestos y revisión independiente. El autor declaró que no hay dictamen. No se identifica B con Q ni altura con Q+V_T."
+      ]
+    },
+    {
+      "id": "M39",
+      "titulo": "Presupuestos, formas, gramática y semántica del verificador",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Justificar V_T, B_T y S=Q+V_T a partir de listas, rechazos, serialización e índices.",
+        "Enlazar los modelos tipados con enteros de máquina y el verificador Rust."
+      ],
+      "pendientes_anteriores": [
+        "La cadena anterior al primer I ya se lee con absorciones canónicas, perfil, enunciado, raíces, constantes finales y nonce; el mismo registro conserva retos y vectores. Falta refinamiento universal de serde/bincode, operaciones de máquina y Rust, completar la correspondencia de los controles semánticos con la aceptación y los presupuestos globales. Permanecen EOF estricto y corte analítico R."
+      ],
+      "modulos_nuevos": [
+        "FRI/ControlesValores",
+        "Verificador/ValoresConsulta",
+        "Verificador/RetosVista",
+        "Verificador/ConsultaBuena",
+        "Canal/MuestraEfectiva",
+        "Verificador/MuestraBuena"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Justificar V_T, B_T y S=Q+V_T a partir de listas, rechazos, serialización e índices.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Enlazar los modelos tipados con enteros de máquina y el verificador Rust.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "El verificador matemático ya conecta sus aperturas AIR/FRI, los retos efectivos y la muestra ordenada real con los controles semánticos de GT/GC. Falta refinamiento universal de serde/bincode, operaciones de máquina y Rust y presupuestos globales. Permanecen EOF estricto y corte analítico R."
+      ]
+    },
+    {
+      "id": "M40",
+      "titulo": "Potencial de nonces y cola del selector",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+        "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado."
+      ],
+      "pendientes_anteriores": [
+        "El candidato aceptado ya tiene interpretación semántica y políticas GT/GC definidas solo desde su tabla anterior y semilla, con igualdad a la vista final. Misma semilla implica mismos parámetros, raíces, constantes, nonce y políticas. Falta registrar esas políticas en cada primera llamada bruta, probar pertenencia de todas las consultas aceptadas y sus cotas g/m/B y valor<=rho, integrar el factor probabilístico de trabajo y la carga común de reinicios. La validez del trabajo se deriva de aceptación; su digest no es la semilla."
+      ],
+      "modulos_nuevos": [
+        "ROM/ValoresFinales",
+        "Canal/CapasIndexadas",
+        "FRI/ControlesValores",
+        "Verificador/ValoresConsulta",
+        "Verificador/RetosVista",
+        "Verificador/ConsultaBuena",
+        "Canal/MuestraEfectiva",
+        "Verificador/MuestraBuena"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "El candidato aceptado ya produce exactamente la muestra real de cuarenta índices distintos y todos pertenecen a GT/GC calculados antes del primer I. La muestra se identifica con la salida del selector sobre la cinta real; la cobertura vale con propuesta adaptativa e intercalaciones, sin hipótesis externa de soporte. Falta registrar estas políticas en cada primera llamada bruta y aplicar la unión probabilística, justificar g/m/B y valor<=rho de candidatos falsos, el factor de trabajo y la carga común de reinicios. La inclusión bajo SinBad es determinista."
+      ]
+    },
+    {
+      "id": "M41",
+      "titulo": "Cota ROM completa y ejemplo numérico",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar la cota parametrizada del evento excepcional del registro.",
+        "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+        "Certificar el ejemplo numérico solo después de fijar las hipótesis completas."
+      ],
+      "pendientes_anteriores": [
+        "Ya existen GT/GC semánticos, leídos desde el candidato previo y conservados hasta la vista final, incluidos enlaces AIR/composición y acarreo FRI sobre valores extraídos. Falta demostrar que la aceptación implica pertenencia de todas las consultas, cubrir toda aceptación falsa con la unión de primeras exposiciones, enlazar cotas FRI, factor de trabajo, excepciones y presupuestos bajo un solo experimento, refinamiento universal Rust y ejemplo numérico integral. No se ha demostrado solidez global ni una cota pequeña de Pr(preconsulta)."
+      ],
+      "modulos_nuevos": [
+        "ROM/ValoresFinales",
+        "Canal/CapasIndexadas",
+        "FRI/ControlesValores",
+        "Verificador/ValoresConsulta",
+        "Verificador/RetosVista",
+        "Verificador/ConsultaBuena",
+        "Canal/MuestraEfectiva",
+        "Verificador/MuestraBuena"
+      ],
+      "evaluacion_criterios": [
+        {
+          "criterio_original": "Conservar la cota parametrizada del evento excepcional del registro.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        },
+        {
+          "criterio_original": "Certificar el ejemplo numérico solo después de fijar las hipótesis completas.",
+          "evaluacion": "conservado_sin_declarar_cierre",
+          "teoremas": []
+        }
+      ],
+      "juicio": "Correspondencia semántica del agente; no sustituye revisión independiente.",
+      "pendiente_actual": [
+        "Ya se demuestra aceptación implica muestra efectiva completa y pertenencia conjunta a GT/GC anteriores al primer I, con equivalencia exacta a la salida de la cinta real y soporte desde el adversario. Falta trasladar esta cobertura al prefijo bruto y a la unión de primeras exposiciones, derivar cotas de cardinal para candidatos falsos y todas las rondas FRI, factor de trabajo, composición de excepciones y presupuestos bajo un solo experimento, refinamiento universal Rust y ejemplo numérico integral. No se ha demostrado solidez global ni una cota pequeña de Pr(preconsulta)."
+      ]
+    }
+  ],
+  "cerrados_en_su_modelo": [],
+  "parciales_restantes": [
+    "M26",
+    "M35",
+    "M36",
+    "M39",
+    "M40",
+    "M41"
+  ],
+  "criterios_reducidos": false,
+  "obligaciones_adicionales_cerradas": false,
+  "tesis_completa_verificada": false,
+  "dictamen_independiente": "pendiente"
+}

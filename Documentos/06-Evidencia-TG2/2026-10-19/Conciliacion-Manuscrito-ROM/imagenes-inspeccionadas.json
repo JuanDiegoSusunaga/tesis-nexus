@@ -1,0 +1,1284 @@
+{
+  "fecha": "2026-10-19",
+  "paginas_word": 112,
+  "paginas_pdf": 99,
+  "origenes": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "sha256": "87d7d51bb3ca41b482a5dd5f84a4167d93b37f5fb6d39044e8c832d50bf134a6"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "sha256": "c30a2ed17bfc27d348f4b686f2dfb3a6daab7fa90bfd098a89e5f0deab1db0f3"
+    }
+  ],
+  "nota": "Huellas de las páginas inspeccionadas; las imágenes son temporales regenerables, no entregables alternativos.",
+  "imagenes": [
+    {
+      "formato": "word",
+      "pagina": 1,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-001.png",
+      "sha256": "75fb41d520d9870fefe4bfdb58e4d5a07587ac8346ea0a337e8f8bc2297e2589"
+    },
+    {
+      "formato": "word",
+      "pagina": 2,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-002.png",
+      "sha256": "21c1aa5ccb55531b197af07203b4cd0eacb469a8b84f60a3df9db3125d975dd9"
+    },
+    {
+      "formato": "word",
+      "pagina": 3,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-003.png",
+      "sha256": "b514d324de6326b8122b300ae2eb3bc32480be60ce65072839865854511a39a8"
+    },
+    {
+      "formato": "word",
+      "pagina": 4,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-004.png",
+      "sha256": "f70d0c4ff40f45014fc9ef84e2c22f8992644c9f8d15c8c77af49f9f8302301a"
+    },
+    {
+      "formato": "word",
+      "pagina": 5,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-005.png",
+      "sha256": "5636fbc4d126771cb691d19bbcb337016ee918ba6f294bf16f23fe816c31a4d9"
+    },
+    {
+      "formato": "word",
+      "pagina": 6,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-006.png",
+      "sha256": "680c286ba482a53f95ac5add11260a8b564357f85abc56b9e29e3d1671f9e642"
+    },
+    {
+      "formato": "word",
+      "pagina": 7,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-007.png",
+      "sha256": "7394f7b13c2cd29b9a24170d728be09c9a3d6a293df64bbc81e8e196b6739c3e"
+    },
+    {
+      "formato": "word",
+      "pagina": 8,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-008.png",
+      "sha256": "3a94a70299dd95b95fe4a90dc7e817238f3a1fa092e235d786a0943fea5a0bf0"
+    },
+    {
+      "formato": "word",
+      "pagina": 9,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-009.png",
+      "sha256": "36dba0555fbaf951e03b77571fe744db29e26b047abe533b376479cd50af2398"
+    },
+    {
+      "formato": "word",
+      "pagina": 10,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-010.png",
+      "sha256": "527fd0324245fd31193d81dbb8bebcda4ce69144d0da1622518e81fa0410d8a4"
+    },
+    {
+      "formato": "word",
+      "pagina": 11,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-011.png",
+      "sha256": "927371906f94b087417ef2c930e53771fa9dd1ee2aa81c021ea2e7692dc7744a"
+    },
+    {
+      "formato": "word",
+      "pagina": 12,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-012.png",
+      "sha256": "ef61c0e274b00342bd77ccf8bab9c61ba61c151e012337b869b4d9ab6a760188"
+    },
+    {
+      "formato": "word",
+      "pagina": 13,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-013.png",
+      "sha256": "b1c0dc4d4ee645842c174cdb0f5ff619fecc565c32157614d04b81893399eaf6"
+    },
+    {
+      "formato": "word",
+      "pagina": 14,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-014.png",
+      "sha256": "103fd5f05ffee78643ac433ffa566ea3457f672efc4b507055ae3e1061adbc12"
+    },
+    {
+      "formato": "word",
+      "pagina": 15,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-015.png",
+      "sha256": "0bd11f1027a86d0c0790b1c69ff7640c9fef6ff3770989eedeebdd539a1517cb"
+    },
+    {
+      "formato": "word",
+      "pagina": 16,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-016.png",
+      "sha256": "361cb2fcff3e63f3bd6e2eb673fb0242c55a1c54f406fb72d015662f695fc4d6"
+    },
+    {
+      "formato": "word",
+      "pagina": 17,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-017.png",
+      "sha256": "70d87b8bfea375f0041ae7bff0c3bce4da487259db0443d4afbeb4c149630e5a"
+    },
+    {
+      "formato": "word",
+      "pagina": 18,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-018.png",
+      "sha256": "fd956f56870ebb19d5383ff0592fc0aea383cda89d35ef3233db670305300217"
+    },
+    {
+      "formato": "word",
+      "pagina": 19,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-019.png",
+      "sha256": "033bcaf2c5612697d8f2dad5dc00d9e1898f20f6189a65aef33052e9f6348ff1"
+    },
+    {
+      "formato": "word",
+      "pagina": 20,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-020.png",
+      "sha256": "628855667df1347454a032f58878573fef6dd6edddd00450caa6141ea99d6a10"
+    },
+    {
+      "formato": "word",
+      "pagina": 21,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-021.png",
+      "sha256": "b755777e0665bba77b9034ca5811d09269515ae56940349c0f5b1f79c27985e8"
+    },
+    {
+      "formato": "word",
+      "pagina": 22,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-022.png",
+      "sha256": "c9ae7ed5eb8c26296b9e2bf3f7c1f2010b24c82e0fafa6d1ba1c96ee1d4c26fb"
+    },
+    {
+      "formato": "word",
+      "pagina": 23,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-023.png",
+      "sha256": "35d05cf3ab415c957cb40434680d35a6db58e4d822e7db0545e7e8a67e26f305"
+    },
+    {
+      "formato": "word",
+      "pagina": 24,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-024.png",
+      "sha256": "31547b38f2c03b3244f89cac60c70f20f984abc00bb56f439530e42a3ee731c3"
+    },
+    {
+      "formato": "word",
+      "pagina": 25,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-025.png",
+      "sha256": "0dfb71d91990cf975a9a9e015bedb35a3308cf42c3c1ac7e6ea408033dbca4ac"
+    },
+    {
+      "formato": "word",
+      "pagina": 26,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-026.png",
+      "sha256": "7e7a4264778ad628eb9d18ae0d617e9c065aac08110963005deef790badebc52"
+    },
+    {
+      "formato": "word",
+      "pagina": 27,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-027.png",
+      "sha256": "76e43d1933fb3fd8fe8e5e87f35fbd149309d9b7310d919dba2b3a6946caaf64"
+    },
+    {
+      "formato": "word",
+      "pagina": 28,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-028.png",
+      "sha256": "bdb965fe93dc74df32d9255710dfcf7fcd4bed58ab09f87b2456718e3f191d56"
+    },
+    {
+      "formato": "word",
+      "pagina": 29,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-029.png",
+      "sha256": "8693358649dfdab14a1daf01ca42e70dabc893dc2fd111869477eed8fc3a71c8"
+    },
+    {
+      "formato": "word",
+      "pagina": 30,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-030.png",
+      "sha256": "51db79275c62ca66b060fef808ddbc4c4430125cb6b9cac45c6a374fada88de3"
+    },
+    {
+      "formato": "word",
+      "pagina": 31,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-031.png",
+      "sha256": "c5cbd02c69e0198ace7206081b6dd4c946c0ff83f35ffa308df60a1d56b9e463"
+    },
+    {
+      "formato": "word",
+      "pagina": 32,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-032.png",
+      "sha256": "fdb9537bede25257db06ed96264cdca11fad628e3ac4a61d16dec4036e5a48da"
+    },
+    {
+      "formato": "word",
+      "pagina": 33,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-033.png",
+      "sha256": "98b35dfef6019df7a490ec13e20cc7619a033f1ad37933b2293ff4be24586a75"
+    },
+    {
+      "formato": "word",
+      "pagina": 34,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-034.png",
+      "sha256": "a68819928a22939dd9fca769a2863d4f1ea2d8fe5ae5885de83d2c02c4155b4e"
+    },
+    {
+      "formato": "word",
+      "pagina": 35,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-035.png",
+      "sha256": "bc8df6c98006c4e54c14bae36c443a02ef1bddaa548b17f7c29febfd738c66bf"
+    },
+    {
+      "formato": "word",
+      "pagina": 36,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-036.png",
+      "sha256": "b4f41ea21e210260bad44d0e29c5c1cef1746a6f69c248cda4d737394e7b5744"
+    },
+    {
+      "formato": "word",
+      "pagina": 37,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-037.png",
+      "sha256": "ccd347f5ff236b2e2df84f06fc9a2df1e27c3e508ad6a34147b6b389ce2fb964"
+    },
+    {
+      "formato": "word",
+      "pagina": 38,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-038.png",
+      "sha256": "a6935a38437d97aab450a1b74b3e8ae8fd71135fef62dbf1f8ea0b315d5bf495"
+    },
+    {
+      "formato": "word",
+      "pagina": 39,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-039.png",
+      "sha256": "8d7e722aa28520efb975ced77cf5ff1d63ca5d64fdc8aa01d702a62fc2d06b19"
+    },
+    {
+      "formato": "word",
+      "pagina": 40,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-040.png",
+      "sha256": "f8007be91dc4d857eec9f85232fa39e2fe8b7cf0c2961e0daf9ede293cd32000"
+    },
+    {
+      "formato": "word",
+      "pagina": 41,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-041.png",
+      "sha256": "eeba067df40f6d0589ef090576f584b3297b4bc0f769d6fdce105fc27d1ecf4a"
+    },
+    {
+      "formato": "word",
+      "pagina": 42,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-042.png",
+      "sha256": "8e97f4d9863c5f777423ed692a04e453192bb3989831bc8f2c849d62e596305e"
+    },
+    {
+      "formato": "word",
+      "pagina": 43,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-043.png",
+      "sha256": "b0911f55faf387b5a3e1b0c09c54c7579120699e55b79d033ef4f1478cdbc237"
+    },
+    {
+      "formato": "word",
+      "pagina": 44,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-044.png",
+      "sha256": "e85e6260ae70577a0a6392a6d515f7f19418cfebefdae1d07c82febe553a4bdb"
+    },
+    {
+      "formato": "word",
+      "pagina": 45,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-045.png",
+      "sha256": "e8b6c36c5241935f032e4b142d2ab12c319c618d1fa0a1b9e2594226db0d9d06"
+    },
+    {
+      "formato": "word",
+      "pagina": 46,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-046.png",
+      "sha256": "cf9f6684fa6591a4b3df9dfcb1725977bece3d8d47018ab79598278a3070f23b"
+    },
+    {
+      "formato": "word",
+      "pagina": 47,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-047.png",
+      "sha256": "c2f8d07ad892677909255a2be64df998e1212ed6d607215750d2ef3322cc8e6a"
+    },
+    {
+      "formato": "word",
+      "pagina": 48,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-048.png",
+      "sha256": "26fb1d3742b14dc965602c7befb29e860d94ae08360d43289c05ef9b5d6fff89"
+    },
+    {
+      "formato": "word",
+      "pagina": 49,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-049.png",
+      "sha256": "bf9b92cc8f3b51ac87c7dc2d8bf6cb2930af76460c7907d1e9c4c0af60d37aaf"
+    },
+    {
+      "formato": "word",
+      "pagina": 50,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-050.png",
+      "sha256": "29a7baa90be31f1380c48548603791254d1344900d45f77baa88f76a5c27b694"
+    },
+    {
+      "formato": "word",
+      "pagina": 51,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-051.png",
+      "sha256": "ee9586f16d344e59163bb0e2e3e6f4b6d7e8ef12a1e251cf2fac806094f37de4"
+    },
+    {
+      "formato": "word",
+      "pagina": 52,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-052.png",
+      "sha256": "32d858d63bfc73dd3b6644015887eef6e23f2e6f79ea7a3be75fb1b4efe2e1a4"
+    },
+    {
+      "formato": "word",
+      "pagina": 53,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-053.png",
+      "sha256": "90b459a268a8ba168bdbd1242833017458396deeb6b70b8980fc086878210cc3"
+    },
+    {
+      "formato": "word",
+      "pagina": 54,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-054.png",
+      "sha256": "65ce64fb7891796c0f125706554cf245ca50972eb858a36a114059c2fa4df302"
+    },
+    {
+      "formato": "word",
+      "pagina": 55,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-055.png",
+      "sha256": "4270b29d22a28c7874183f99a986931f76c0f096a72fc0d7cf2f375b4c785037"
+    },
+    {
+      "formato": "word",
+      "pagina": 56,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-056.png",
+      "sha256": "b5b45bc07bf1351517d7ba6ec592808edbe36f7dd3ae8dad680ce1e59c9d394f"
+    },
+    {
+      "formato": "word",
+      "pagina": 57,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-057.png",
+      "sha256": "bbfd6ea75d668948757dbfebec300ab907863c91ad570ad12247b699ba7f8604"
+    },
+    {
+      "formato": "word",
+      "pagina": 58,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-058.png",
+      "sha256": "d3d654dfea890dd95f620ffc09914a1c38296b981d31c57391048588928ea877"
+    },
+    {
+      "formato": "word",
+      "pagina": 59,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-059.png",
+      "sha256": "592b3783e8c69a4e6328ae99d22e818815d32dfdc350a1e8d5d69d425f732588"
+    },
+    {
+      "formato": "word",
+      "pagina": 60,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-060.png",
+      "sha256": "df5e8284e7418166a1683bf86a5479fa83c6db06fefa8465618b4c8bbb2261fc"
+    },
+    {
+      "formato": "word",
+      "pagina": 61,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-061.png",
+      "sha256": "d67f38f4465c708333180115afc74c752f2dcd290bd44ad22c209011b73471d7"
+    },
+    {
+      "formato": "word",
+      "pagina": 62,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-062.png",
+      "sha256": "b6893f1b0c8d9f759437fa8ac78bd6af092ec0c439ce09d516ddab74723e9e84"
+    },
+    {
+      "formato": "word",
+      "pagina": 63,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-063.png",
+      "sha256": "e710d81ad9bc224c560b10d5ce2bd6448317164e7dd6d9a0c864cadbe9732817"
+    },
+    {
+      "formato": "word",
+      "pagina": 64,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-064.png",
+      "sha256": "e113a7a45e62aaa0313ce7454021f9014177572a0d4efb432191dd45e916f18c"
+    },
+    {
+      "formato": "word",
+      "pagina": 65,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-065.png",
+      "sha256": "f955c99d72c60784412514b212ffeac9a049957a56be3d0b20dfb9937517e9a6"
+    },
+    {
+      "formato": "word",
+      "pagina": 66,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-066.png",
+      "sha256": "c7aa481e48e1b0d97710a0215f8b9d9dd9c22aff916bbd976e9ab4827504ac0a"
+    },
+    {
+      "formato": "word",
+      "pagina": 67,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-067.png",
+      "sha256": "97e0b8e5a0af96d25e8e4e393b7ede43ea3a5ea412b62deb721cc0d8dd524f91"
+    },
+    {
+      "formato": "word",
+      "pagina": 68,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-068.png",
+      "sha256": "dc9206cd148366e67ed3acc95f8abeb2a57c950ac5135684c970852ecd530b0d"
+    },
+    {
+      "formato": "word",
+      "pagina": 69,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-069.png",
+      "sha256": "0ecdfaa70d8a8b80556e58cc057257271e92e5b3f278a6bf0961e09461fd5ed1"
+    },
+    {
+      "formato": "word",
+      "pagina": 70,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-070.png",
+      "sha256": "36482bb8a2267a90e3929b4ee917b35a28eaefbb747f354bfae647b059d493bc"
+    },
+    {
+      "formato": "word",
+      "pagina": 71,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-071.png",
+      "sha256": "068bbdf03640cd7ad318259bbe395fb39e9649e4d1157677918ff9fa63056b04"
+    },
+    {
+      "formato": "word",
+      "pagina": 72,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-072.png",
+      "sha256": "41633a408fcc0f85f896c3d75a6e02725c094b3f6641ecfcc3b57cdc29d9d87c"
+    },
+    {
+      "formato": "word",
+      "pagina": 73,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-073.png",
+      "sha256": "0b84f02f3da8e4fb4b5b2d6a3a8b205aa2c975869de5784474932de732edc132"
+    },
+    {
+      "formato": "word",
+      "pagina": 74,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-074.png",
+      "sha256": "7e2607f1773e1fad8ac9ba606171064b81411d2892ad7fa3de25519382e8c2ec"
+    },
+    {
+      "formato": "word",
+      "pagina": 75,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-075.png",
+      "sha256": "d731e1c890af43620ffd4bc8c73aa10a85f931cf93b837eac5e1178830a61e81"
+    },
+    {
+      "formato": "word",
+      "pagina": 76,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-076.png",
+      "sha256": "245ae3d8079a4d460c20a6d820f0cf7d727a3001e3d2a809d9228fe0df7b96a0"
+    },
+    {
+      "formato": "word",
+      "pagina": 77,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-077.png",
+      "sha256": "a1d9cc25b438de707d6ff2c3e2e4621640e1782430767cb66c6883e31818bc96"
+    },
+    {
+      "formato": "word",
+      "pagina": 78,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-078.png",
+      "sha256": "f2f8a261ebf000c6d67e2b4d60653bd6ff3fb96ad37251caadffd994f911c19a"
+    },
+    {
+      "formato": "word",
+      "pagina": 79,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-079.png",
+      "sha256": "5542d751c2ff6b10b5ccd0f088ea4d7103ec1c3b003cd05a03388d417ff39f2a"
+    },
+    {
+      "formato": "word",
+      "pagina": 80,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-080.png",
+      "sha256": "6fd5f885a4d871dc7daed2cf24a53297d219f54f1a930542b045351f441a8bbc"
+    },
+    {
+      "formato": "word",
+      "pagina": 81,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-081.png",
+      "sha256": "7546cfc245b9898a2c8dc970a98dfc447d385d5d5200dbefe4970710dab8e23d"
+    },
+    {
+      "formato": "word",
+      "pagina": 82,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-082.png",
+      "sha256": "d28a088e1771b2de024b4b1de4cf66520329b090733fb9bdf2136895f8f16153"
+    },
+    {
+      "formato": "word",
+      "pagina": 83,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-083.png",
+      "sha256": "8e5b58350192172645d8e510cf1239f73d1ad3072ed975c1985bf3a22b0bf89c"
+    },
+    {
+      "formato": "word",
+      "pagina": 84,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-084.png",
+      "sha256": "381ef8ff0771755f5db3c1f78188e39f83ea0555586010825e4520c9964660f8"
+    },
+    {
+      "formato": "word",
+      "pagina": 85,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-085.png",
+      "sha256": "a0245a94905f1e4478e014cc720c3e734147a586bed01b6a0d16889beacacf6f"
+    },
+    {
+      "formato": "word",
+      "pagina": 86,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-086.png",
+      "sha256": "30e9956101cf2b78094acfabbb2440d81712f8b04edb18317639fd7fd20f5720"
+    },
+    {
+      "formato": "word",
+      "pagina": 87,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-087.png",
+      "sha256": "9c3d70864348da746aad85bdd4c6f0cf08108552eaf599c5a713e8e60bd47db5"
+    },
+    {
+      "formato": "word",
+      "pagina": 88,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-088.png",
+      "sha256": "fc90e4eadeecc0cc88ac6ff89480a3b3feb8385ba440afbe51a8ef8c7bea6d82"
+    },
+    {
+      "formato": "word",
+      "pagina": 89,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-089.png",
+      "sha256": "df80b5ea527561d6cfab5c905a7d896b61173a16ee5622af8173d75e7aad2c0a"
+    },
+    {
+      "formato": "word",
+      "pagina": 90,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-090.png",
+      "sha256": "1f0e7ffc15e78c0196c19a33d6581439c6019f5f4a8cf6c019b2105640eebc4e"
+    },
+    {
+      "formato": "word",
+      "pagina": 91,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-091.png",
+      "sha256": "59197503a267bca23f1be2b20c1dff00ad3c1a58bc35511f12e9427e9f6eeeea"
+    },
+    {
+      "formato": "word",
+      "pagina": 92,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-092.png",
+      "sha256": "73a67f797c46483601def010de2ece21d8661bca4f8499f520cfdcfd35d79886"
+    },
+    {
+      "formato": "word",
+      "pagina": 93,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-093.png",
+      "sha256": "d698ae28738cb7396535fffac69b348fa6e072b749aec4cb527c521b17ede1ec"
+    },
+    {
+      "formato": "word",
+      "pagina": 94,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-094.png",
+      "sha256": "36a04e5aa11139e46812d56e2134868b7f11e0269f20ca77bddfa37dc70f6eb2"
+    },
+    {
+      "formato": "word",
+      "pagina": 95,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-095.png",
+      "sha256": "552d03b684e2d21b656971bde9616f1d7153033580c41f4a012583347828e683"
+    },
+    {
+      "formato": "word",
+      "pagina": 96,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-096.png",
+      "sha256": "fad5801eb2f5a19d5b2f5a693d2bc8ecfa0a3e4aec07d8168cf8f52201ebb46e"
+    },
+    {
+      "formato": "word",
+      "pagina": 97,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-097.png",
+      "sha256": "7a75df6870cc9ed763f5932955d217ee2c718d25ddd48eb816cc214f898c019c"
+    },
+    {
+      "formato": "word",
+      "pagina": 98,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-098.png",
+      "sha256": "a304fdd4143f7723e7074291d0f605ce63eb333e08b03727329fa26c88a7c549"
+    },
+    {
+      "formato": "word",
+      "pagina": 99,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-099.png",
+      "sha256": "cdeb7ee8f98fb7c800b2e0142af22c3e34fb4039532c9da34fc31445d43ea45a"
+    },
+    {
+      "formato": "word",
+      "pagina": 100,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-100.png",
+      "sha256": "f8defa35de603cf3e5890bf011d52c5b8c51316e69d7febe1205ef274914c094"
+    },
+    {
+      "formato": "word",
+      "pagina": 101,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-101.png",
+      "sha256": "11143778408d4c310c2240df91980f289d2444bdbca5a37e36ea4271eba89fc3"
+    },
+    {
+      "formato": "word",
+      "pagina": 102,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-102.png",
+      "sha256": "6a280d31876af72c0b0a2c2359336a154b4b74b9a1f41c67d633e2251a4726ed"
+    },
+    {
+      "formato": "word",
+      "pagina": 103,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-103.png",
+      "sha256": "a9da5444082c5e9cd440472c194bedd9c2883e9158705b85f5073948cac54150"
+    },
+    {
+      "formato": "word",
+      "pagina": 104,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-104.png",
+      "sha256": "069503af6417d956419a6187933d6241447c10f9f8b859e17373fdb3ed9df318"
+    },
+    {
+      "formato": "word",
+      "pagina": 105,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-105.png",
+      "sha256": "de35b178c3e0ad5988e507dd32ab20ba931c9191ca0e70ff3664525ca2dd7d4c"
+    },
+    {
+      "formato": "word",
+      "pagina": 106,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-106.png",
+      "sha256": "72011913953f3f75f49865a2d93959ff94ab3963f9096f86e3024a574e40f8fc"
+    },
+    {
+      "formato": "word",
+      "pagina": 107,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-107.png",
+      "sha256": "c5034f72db8d781b9901d5d3615b7f446c0c3a6b443d2cc078e734b16548ec91"
+    },
+    {
+      "formato": "word",
+      "pagina": 108,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-108.png",
+      "sha256": "9084da15b5b0c6160d310f7673259f2eb999e951c790aaa8d2b32602e7e6c4b5"
+    },
+    {
+      "formato": "word",
+      "pagina": 109,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-109.png",
+      "sha256": "e6ec72becb5d1ba5944bc47ba77fb15e771f907337ab454778d0e619d2b841dd"
+    },
+    {
+      "formato": "word",
+      "pagina": 110,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-110.png",
+      "sha256": "a0c4833d65cd2634b5778384fc3bb66d5bd3101b65ceb8c8a76bf1280c59ae5d"
+    },
+    {
+      "formato": "word",
+      "pagina": 111,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-111.png",
+      "sha256": "4cfbfca4bcba7f7b17aed53852c83c92c84b6826842ed69cf6850f2ee8d05c14"
+    },
+    {
+      "formato": "word",
+      "pagina": 112,
+      "archivo_temporal": "tmp/conciliacion-rom/word-final-2/word-112.png",
+      "sha256": "2fd3cb3798356ad643aa9935390e63c0d64a9e5d4617c71d1ebc929f8108694f"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 1,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-001.png",
+      "sha256": "bf33c708bd6a83d9270d44f0b9a20448a5dcf5d6948038d7202f3e0395bf431e"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 2,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-002.png",
+      "sha256": "37340877eed1f64c194718dad480f293038d6efb233b8e5c53287d3bd2cc173a"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 3,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-003.png",
+      "sha256": "58410fdac866d8c5790961ba47f3cd24387c4cd0af2f7eb3f04af646eaab74f6"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 4,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-004.png",
+      "sha256": "fcd385d3998ddf3c9629e80d490a5608708257b0f76e7abeb857fbce37324df4"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 5,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-005.png",
+      "sha256": "29cf9363dd9d2d03e7182d97829b96cd49836fed3ebc1aa9d5fa3d96000088d6"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 6,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-006.png",
+      "sha256": "ae12d7c5e6cf514502a75925fc289e46f5029e452a74fbe117b226dea1b4a04b"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 7,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-007.png",
+      "sha256": "c8ff148d2ce02aab347316c3be7665893b903f945f76f8dc6ae7f7dab6ac0b5d"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 8,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-008.png",
+      "sha256": "def75be647926ede3c21d154f67315638bda36b6d6a9e62a342bfb63d4b068f6"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 9,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-009.png",
+      "sha256": "56b39b9e40bf1ed4ed72392f7b259b660ee98cf85488b4a24ff182efa418f465"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 10,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-010.png",
+      "sha256": "29de2097b6428136297eca1bb2cf60b751f0cc90c0f5f0c8639f0cb2aba53e35"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 11,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-011.png",
+      "sha256": "e02b0e514ba3d9c6f8f34062cdca1e8b6334f781e4a9eacd90017db81da36853"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 12,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-012.png",
+      "sha256": "f9cea6135350b0e915c8eb0be47a1208a2ef03ee5f41b35f7d35fb2fa9b94617"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 13,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-013.png",
+      "sha256": "5dcdf642a1e3c3584467af01a1f792f72b698ecc853aac878e78e4a93256e9a0"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 14,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-014.png",
+      "sha256": "8e5098db93d9c98850044be2f82258ccfb6457046a1786fb49f6bee72cc53bc6"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 15,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-015.png",
+      "sha256": "ebdcf9f0bf2566899a5f79a81f216cad401c5073ab065eaaad203d849455ae98"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 16,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-016.png",
+      "sha256": "4bdfd1fbf682ce2bb7a26d952a73fd4628336c72f4757260c55d9067b0c21df3"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 17,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-017.png",
+      "sha256": "2079e147575c1b0640d73b19581238838b78d46f0d3c1892d7f84d7925be9e8c"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 18,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-018.png",
+      "sha256": "9f4fd4e5925d758be3f3fd963591edd6bb0cbf107e43aaf914e804bdd1585855"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 19,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-019.png",
+      "sha256": "601921b5714e38f216074d2a6736c671a515e2397dd761f3b6dc514f39debc06"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 20,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-020.png",
+      "sha256": "6aa3588c3ea477ca8781ce99579c03554a3791f4773b98ad1e00ef666fcf460e"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 21,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-021.png",
+      "sha256": "473dba8a99dcacc082c952242cefd1062e24d7ecae21e2b051771390c8eddbb8"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 22,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-022.png",
+      "sha256": "62172d3854978a1e0809a14879826d9208c3cc4eeed840b832278196ead9f6da"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 23,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-023.png",
+      "sha256": "bcd88d7d23b152ad04472c42ea40764879e0031b2b01b58e2e136ade0bfb00b7"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 24,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-024.png",
+      "sha256": "c41da89ea0472710478600658d9e2981a0c742374bacbd18e58f130a1ac941a9"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 25,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-025.png",
+      "sha256": "444cf99bcd558eee2991aa636a5f2c46a2455c9c1f8eae250d6485e102aa9591"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 26,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-026.png",
+      "sha256": "868e266604de7091273398ded0afceebe239a6828a04187144faab1663fdd69e"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 27,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-027.png",
+      "sha256": "3ffc35897ea68289e30f623ae27946b5b54bb55eece465ab3a31aa53828ed89d"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 28,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-028.png",
+      "sha256": "f4d9db7d492b91f1a2729e545923b698f5947ec854f5ac2e68ce37aaefb31426"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 29,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-029.png",
+      "sha256": "4c58af499f808d714e04dd470c923b312d17a247be2916124b2f8a63609acf0b"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 30,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-030.png",
+      "sha256": "ff819f6077cb452cec2eab68b2a276736d59e361a3432b5562c906fec454d463"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 31,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-031.png",
+      "sha256": "65ac839565ac84bc30ffdbbc891f7d6fbdab0ee427e16cbedd2ea0a522a2bd5b"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 32,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-032.png",
+      "sha256": "100b4d2dc40e61453789c4be7e3be75475a18ab3d257cbc983ba5f8d5209f20b"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 33,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-033.png",
+      "sha256": "d66283f494ba7e8cf43e672cf78c36cc7a99b3c05cca0e2f2522504110c7b4c2"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 34,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-034.png",
+      "sha256": "e4671ee6c6f10094c367a5e1d74a2160e820124e6813590a817e0e61fe20ae2c"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 35,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-035.png",
+      "sha256": "25fb4c431da02de342b70e9b207e3c9bb0a61f54083376c803f639824e9ad165"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 36,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-036.png",
+      "sha256": "85c5027719dd17e35a582a40da08724f7478d5ac509302b6a6c358669efedfe1"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 37,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-037.png",
+      "sha256": "43a291d9c71044126ce1728c647edb69943f4e62a43982fb4e793169fed2957a"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 38,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-038.png",
+      "sha256": "cf0384794976ccbc0e1e2e7276f4b065167fa9cdd02bea144173625b4e4a7359"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 39,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-039.png",
+      "sha256": "d3be3f3bc637c3c73854ace8a16e96d771b1698cfd66d6e5079d384b0bf28cf9"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 40,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-040.png",
+      "sha256": "b1e70ff7a9cd01503be890591345a282afec4eacfe29c83db9037008c84447a3"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 41,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-041.png",
+      "sha256": "227791ef3ef2776441c393340076c456c6f7e4df94255f6216f41b836ef82753"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 42,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-042.png",
+      "sha256": "1d615d9fb504ad22a8165f0f5fdfc6bfdca1031b6b17f79c043dca0fbc44c8db"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 43,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-043.png",
+      "sha256": "632400779f4ee4addcef613acd6ca6c5ea7b1d1c84a7fb65bfe446d573547619"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 44,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-044.png",
+      "sha256": "2d5eb698302671ae35f0e4fa8fe864c6865a1bc901ef5de69b0a045573b737ab"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 45,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-045.png",
+      "sha256": "97798f0bad60010760f79f7b902be4cda06e62e729b10ac300200ae36658f40e"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 46,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-046.png",
+      "sha256": "cfdad4204f4f10e67b65c9dea5f98d354b736ab7574b9ef58160bf048ea98c86"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 47,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-047.png",
+      "sha256": "d785eef63bf37955bb4b82691ffa2f4bbbd7486b722d9b2116c7a5e6ba885460"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 48,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-048.png",
+      "sha256": "e59d19e3feef3a62e0582e5484481cbaa69b325bb7e4f2014867542d2e5df03c"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 49,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-049.png",
+      "sha256": "ddc56f5841ab42f3cb47ee432142c90367986b2969a137d2e3bff8d5f75a9201"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 50,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-050.png",
+      "sha256": "8bfca12615994dfd2206cfad7ee4296bfef0754d9c35e102d17d184aafb93a05"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 51,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-051.png",
+      "sha256": "e665f8ed3801e5d588b8a04b30f374fa903e9c673e6d09918af9c9e8e7bd7892"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 52,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-052.png",
+      "sha256": "a05b3d1685726366b17b3861dff4ff0311d3f3b5b619a6a261c858e0e321dffb"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 53,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-053.png",
+      "sha256": "5c480106d882fb885d6e44b4a435a57077efe2c0536088f0582b4635a07701e9"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 54,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-054.png",
+      "sha256": "a4bcaf9e6f503469857fc45880051d72e1b13eecb8c99919ec0189c12108f8d1"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 55,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-055.png",
+      "sha256": "3de55634e07587a2f20657e9d667c1f29e9be98e81182f58be143c08496ae9c2"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 56,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-056.png",
+      "sha256": "81df0765be018a62854fb2962841ce8e3ad7e16a389f924c6caf54127f02e533"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 57,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-057.png",
+      "sha256": "6e78ffed06aae38743276172562ca5f8775d67cf146601d45c4da77ef7dd5d4c"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 58,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-058.png",
+      "sha256": "09039ea395cf746f0f8e7836120351c828ef2d1031ddd505a39a3c715c5f72bd"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 59,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-059.png",
+      "sha256": "8c4adae283454d23bf5554bd5930cfe56bcca870bd8a75323044aae8d2b035c4"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 60,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-060.png",
+      "sha256": "a381cc172c9ab2f498d6177cdeeda2f619cf120c13bafd90ca6f851503ace5ac"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 61,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-061.png",
+      "sha256": "1bf990b3c64df77db2888baa414b79359317acc217bd08e5f000189b9e004727"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 62,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-062.png",
+      "sha256": "b92f04394a72e7161d55ade567344b58654bec278ccf5547606c3d63683328c1"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 63,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-063.png",
+      "sha256": "580e5a9179ad30f3f11676116e14ecd72428ceabb687b2f839bd8d2237df54b3"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 64,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-064.png",
+      "sha256": "4812f78b5454476eefbc5b147765c64fccd5f0a8ffdc6f109a8341910c4bbc90"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 65,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-065.png",
+      "sha256": "fb379d0f23ed8bb6d4e44a29efb1a44cbab4a283f72f452939da53380af8a122"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 66,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-066.png",
+      "sha256": "0660a38bf730c1c904d2f4296ccc84adc5002d53422e700bb558a87d9c9d7c94"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 67,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-067.png",
+      "sha256": "9433cd9d95424b4b4783277e6381667fde7478c73990bf64fc46a6759bae7766"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 68,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-068.png",
+      "sha256": "53583f69b3952fd15311f5771e757f375882afd9b525442277a42854a1d5b658"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 69,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-069.png",
+      "sha256": "b16d7dd2f3cdec29a2aae61aff9cf198a645e8926709a42f84ff0354d5c79039"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 70,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-070.png",
+      "sha256": "01fab068491f490844bdb7cb00a6b5f195dea522d810e8d50ef19c0c5917f79c"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 71,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-071.png",
+      "sha256": "7a83846549b61877b0b23678be6b4c9bf9fbd9630a86917560f1314f4f549e26"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 72,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-072.png",
+      "sha256": "35e28771a333601e14c07c1001ca82148a7e70454ce99e8622369b6a3fdd3474"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 73,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-073.png",
+      "sha256": "e490f7765c0e1eb42e4e22e5b3cc178e3c3de941e336a2e1d9f71f7af2903326"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 74,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-074.png",
+      "sha256": "ae0d5095c0d8b31d746ce184ed1309429e4c0ec66143768651841bcdc91c142a"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 75,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-075.png",
+      "sha256": "ad2689f1b364b2fb62b4e09a9d0f41aff301e22c24d37b79d86caa32f4713d6b"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 76,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-076.png",
+      "sha256": "fc0c4c01dbdd85a74b323539549a90322f18c90aff2d5f1530853ccc7a1f18fb"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 77,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-077.png",
+      "sha256": "fb444290c1cbf7c32e3fca453fc41108d4140836607a9e4f6ae1623a16664684"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 78,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-078.png",
+      "sha256": "c15517795f725ecf495cd91626ddbdb7ee210b0da7820f07a5814e0200ca41f1"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 79,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-079.png",
+      "sha256": "532f10db1ccae741b889c67b690815f098db09a7c0a4f99b621678ed5e59a8c7"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 80,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-080.png",
+      "sha256": "5e22b0e6c9bd7d57c294fe2cbf9600a4039bd76e2850feca46d7de80bbdb4f44"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 81,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-081.png",
+      "sha256": "0532776f0b2bcde2966c101417f4bb6b9a7aaa59b62a1f66c60d66d6351ef5d9"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 82,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-082.png",
+      "sha256": "982308ce333007c0b887bd0e5fa1ce97e66bf19495fe16240f4b3a5fc9a4bd86"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 83,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-083.png",
+      "sha256": "6f6e9db4e8eef945126937c50036f218a3c4739162d019c496e78a25776c29b9"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 84,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-084.png",
+      "sha256": "63161c44451777bd3da1414dd6cdc3ca328be8b211d89edffa8d21291e3008b8"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 85,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-085.png",
+      "sha256": "418bbfdd0acbcd9856f0b90fc4e0d2cdee860fccaa87e609431a0adfa36b4c94"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 86,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-086.png",
+      "sha256": "0f63e5fa092efd1d25c9ed55bf9bf64470f63eecb8c1fb08e5b692576a6df6c8"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 87,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-087.png",
+      "sha256": "50666626c7662586d743fe86fb28682e85f698249f105a7b74cbc239d9ac32f0"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 88,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-088.png",
+      "sha256": "095d680b83cba25efa05fe171279d4a8de3f7c55a28d157ddd3207d68b2add0e"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 89,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-089.png",
+      "sha256": "61da57dfab5a0d7540fe69bcb8d67cfd892b0fc4810429eb30b8e5acffbe27c5"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 90,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-090.png",
+      "sha256": "f8178e5c72dc2fb59df7f8558ab3dd02aaf3067025cd102a7cda0f68969c2df7"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 91,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-091.png",
+      "sha256": "e3dfa7a7b65b9cedf29fe6ad31f6d07748a6615c056c5f7ce90b4dcd73d38521"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 92,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-092.png",
+      "sha256": "ab3f183302e02ef71f886b09d055f5c969ed5a8067f957b284c41f1a6ff0c52c"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 93,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-093.png",
+      "sha256": "bf8c6aaf7160fd168280a3885ad909d528acec66561a2d64654d1c50db41be0d"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 94,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-094.png",
+      "sha256": "50789a162db5c2857da19f0a4766adfe2a726ffae2a944625a3fc525170bc8b3"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 95,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-095.png",
+      "sha256": "da6307a68e2944bee9a9a57101f2cc3f6d1982ea9d350fff122b394555dcc9f9"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 96,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-096.png",
+      "sha256": "12490ce0f094f323a8f43690ff0e83b892070717ffd0ae18aab5073bddb4257f"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 97,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-097.png",
+      "sha256": "cc56ede8799beb61f616de86e54c3da3d9415018c49c14bc60bdf8ea6ea1e077"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 98,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-098.png",
+      "sha256": "a8dcf6b094844c1462f7cb819c6ed2c55e13af546c09108d56e5a891cbb7b925"
+    },
+    {
+      "formato": "pdf",
+      "pagina": 99,
+      "archivo_temporal": "tmp/conciliacion-rom/pdf-final/pdf-099.png",
+      "sha256": "af2e449e6ea79e57344069eed0f3019f4aa87624c26be44a90b628c540e23a6b"
+    }
+  ]
+}

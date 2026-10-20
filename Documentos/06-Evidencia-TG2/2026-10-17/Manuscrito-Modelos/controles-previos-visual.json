@@ -1,0 +1,23 @@
+{
+  "paginas_word": 110,
+  "paginas_pdf": 99,
+  "tablas": 34,
+  "celdas": 848,
+  "figuras": 3,
+  "ecuaciones_word": 565,
+  "tablas_y_figuras_con_rotulos_en_su_pagina": true,
+  "paginas_pdf_con_correcciones": [
+    4,
+    5,
+    63,
+    64,
+    75,
+    84
+  ],
+  "renderer_empaquetado": "No disponible: falta pdf2image y no hay LibreOffice empaquetado. Se utiliza el render nativo de Microsoft Word del repositorio.",
+  "sha256_salidas": {
+    "md": "1efa9dddd08ce0bfab2e1061861a0d412b504c477ba17f7c6482f5af6d93ea58",
+    "docx": "4dc669bd5d11cee82952c34495beaa7313e1d658e78c7d37014df093c876949e",
+    "pdf": "124baf5e12556e2aecf00cb497008ef340af43f55080c1ca932091ef4c4c1598"
+  }
+}

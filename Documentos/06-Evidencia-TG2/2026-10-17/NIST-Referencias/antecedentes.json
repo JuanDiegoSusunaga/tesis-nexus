@@ -1,0 +1,60 @@
+{
+  "esquema": 1,
+  "en_preparacion": false,
+  "versiones_anteriores": {
+    "README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/version_anterior/README.md",
+      "sha256": "5d980affcee29aabcafd740c3e7e8c714e7ba35033820bc6f163a0727aa9e0f5"
+    },
+    "formalizacion/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/version_anterior/formalizacion/README.md",
+      "sha256": "9e6bbc9b7e0d19b35899e552e14c3ea03370385ee8fc11cda0d2451aea62eb75"
+    },
+    "BITACORA_TG2.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/version_anterior/BITACORA_TG2.md",
+      "sha256": "41e540b0d5d80dc1b4e9ecb38d4210392aac8aeeb2613f9989fe405000296149"
+    },
+    "PENDIENTES.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/version_anterior/PENDIENTES.md",
+      "sha256": "93c191df6cd0edec5dbc031ebe6908ecba836c238485ec84b515e317ac29ef0c"
+    },
+    "Documentos/06-Evidencia-TG2/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/version_anterior/Documentos/06-Evidencia-TG2/README.md",
+      "sha256": "734271deb09f70cbab96eaf7f3fba96f6f0164d71a271fac8019a0d942ba50b4"
+    },
+    "Documentos/04-Administrativo-TG2/Entrega-Final/README.md": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/version_anterior/Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "sha256": "17f4306a4babbdfc4bc499d79a835bd83e48d52dcebb2bbe6d6089a8ca08fb57"
+    },
+    "Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/NIST-Referencias/version_anterior/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "sha256": "66dc5b290d8c2e4df84ed1eaf33d81509c0c47e7de91e308efe716ede505ed48"
+    }
+  },
+  "edicion_previa": "tg2-2026-10-17-lean-cierre-criterios",
+  "archivos_edicion_previa": 4652,
+  "auditoria_lean": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-17/Lean-Cierre-Criterios/validacion.json",
+    "sha256": "1249d29329ad0d1564e96e29b62193a1e7d41d277fcbb2f052871c3b846a81e0"
+  },
+  "fuentes_oficiales": 12,
+  "grupos_parciales_conservados": [
+    "M26",
+    "M31",
+    "M35",
+    "M36",
+    "M37",
+    "M39",
+    "M40",
+    "M41"
+  ],
+  "fuentes_lean_modificadas": [],
+  "modificaciones_documentales": [
+    "README.md",
+    "formalizacion/README.md",
+    "BITACORA_TG2.md",
+    "PENDIENTES.md",
+    "Documentos/06-Evidencia-TG2/README.md",
+    "Documentos/04-Administrativo-TG2/Entrega-Final/README.md"
+  ]
+}

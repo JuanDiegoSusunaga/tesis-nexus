@@ -1,0 +1,3440 @@
+{
+  "esquema": 1,
+  "fecha_utc": "2026-10-17T03:51:39.133429+00:00",
+  "correcto": true,
+  "tesis_completa_verificada": false,
+  "version": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)",
+  "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "revision_documental_contexto": "195b8133370a8157563e434c8a2489b5e27df17f",
+  "nota_revision": "Los hashes identifican el árbol de trabajo ejecutado; el commit de contexto puede no contener estos cambios.",
+  "afirmaciones_catalogo": 12,
+  "afirmaciones_con_teoremas": 7,
+  "teoremas_auditados": 495,
+  "bloques_adicionales_manuscrito": 6,
+  "candidatos_inventario_manuscrito": 272,
+  "inventario_revisado_completamente": false,
+  "axiomas": {
+    "Nexus.AIR.anulador_dvd_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.cociente_frontera": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.cociente_no_nulo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.frontera_dvd_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.transicion_dvd_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.cardinal_dominio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.anulador_dominio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.transiciones_por_indices": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.validez_iff_residuos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.resto_combinacion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.invalida_residuo_no_nulo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.cancelacion_traza_invalida": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Costos.razon_throughput": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Costos.limite_amortizacion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Costos.piso_costo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Costos.costo_decrece": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Costos.equilibrio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Costos.cuentas_capitulo3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Residencia.cotas_promedio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Residencia.razon_al_menos_uno": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Residencia.ocupacion_continua": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Residencia.tabla5_2": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Reticulos.diferencia_preimagenes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.ceros_acotados": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N01.coeficiente_unico": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N01.conteo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N01.cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N01.cota_extension_cuadratica": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N02.cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N03.unicidad_conteo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N03.unicidad": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.interseccion_triple": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.acuerdo_correlacionado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.acuerdo_correlacionado_radio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.muestras_buenas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.probabilidad_omision": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.cota_omision": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.muestras_no_vacias": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N12.condicion_falla": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N12.cuentas_minimas": [
+      "propext"
+    ],
+    "Nexus.Goldilocks.modulo": [
+      "propext"
+    ],
+    "Nexus.Goldilocks.factorizacion": [
+      "propext"
+    ],
+    "Nexus.Goldilocks.potencia_generador": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.criterio_euler_siete": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.factores_primos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.certificado_lucas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.primo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.generador_primitivo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.exponente_desplazamiento": [
+      "propext"
+    ],
+    "Nexus.Goldilocks.raiz_maxima_valor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.raiz_primitiva": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.siete_no_cuadrado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cardinal_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cardinal_extension": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.irreducible_extension": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.multiplicacion_extension": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.norma_extension": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.norma_no_nula": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.inverso_extension": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.grado_reescalado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.grado_transicion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.grado_numerador_transicion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.grado_denominador": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.grado_frontera": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.grado_combinacion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.grado_numerador_combinado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.raiz_extension_primitiva": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.air_concreto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cancelacion_concreta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.coset_sin_polos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cardinal_coset": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.denominador_no_nulo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cardinal_coset_extension": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.denominador_extension_no_nulo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.distancia_composicion_concreta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.coherencia_raices": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.distancia_no_negativa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.distancia_simetrica": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.errores_triangular": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.distancia_triangular": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.errores_reindexacion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.composicion_polinomio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.evaluacion_cociente_lineal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.formula_composicion_local": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.localidad_tres_puntos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.errores_composicion_local": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.distancia_composicion_local": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.transferencia_distancia": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.transferencia_distancia_real": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.AIR.margen_un_veinticuatro": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.potencia_indice_modulo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.coset_cerrado_potencias": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.punto_lde_desplazado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.coset_extension_cerrado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.transferencia_concreta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.transferencia_concreta_real": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.distancia_mayor_un_medio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.DistanciaAIR.tabla6_16": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.esBase_iff_im_cero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.coeficiente_real": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.coeficiente_imaginario": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.grado_parte_real": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.grado_parte_imaginaria": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.imaginaria_suma": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.imaginaria_monomio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.evaluacion_imaginaria": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.evaluacion_es_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.descomposicion_polinomio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.polinomio_base_iff_imaginaria_cero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.valores_base_acotados": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.candidato_no_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.candidato_no_base_dominio_elevado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.conteo_oraculo_no_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.fraccion_oraculo_no_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.fraccion_oraculo_no_base_real": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.fraccion_no_base_perfil": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.fraccion_no_base_perfil_real": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.margen_no_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.fraccion_no_base_mayor_tres_cuartos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.comparacion_ramas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.deteccion_no_base_perfil": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.unicidad_perfil": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.evaluacion_transicion_map": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.validez_air_map": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.invalidez_candidato_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.alternativa_candidato": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.acuerdo_correlacionado_real": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.margen_capas_composicion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.margen_capas_traza": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.grado_desplegado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.evaluacion_desplegado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.recomposicion_pareja": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N04.recuperacion_capa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.binomiales_por_potencias": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.razon_binomial_le_potencia": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.H_no_negativa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.H_cero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.H_le_potencia": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.H_antitona": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.cota_omision_radio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.omision_le_potencia": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.discrepancias_le_doble": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.techo_parejas_malas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.omision_parejas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N05.omision_parejas_le_potencia": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Omision.tabla6_22": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Omision.muestras_perfiles": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Modelos.Omision.techo_perfiles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.raices_opuestas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.partes_independientes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.elevar_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.raiz_inyectiva": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.mitades_disjuntas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.cardinal_elevar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.cuadrados_elevar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.subconjunto_elevar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.cardinal_cuadrados": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.densidad_cuadrados": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.dominios_cuadrados": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.grados_positivos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.dominios_positivos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.recorrido_subconjunto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.densidad_recorrido": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.control_capa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.recuperar_torre": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.distancia_desde_acuerdo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.lema_B": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.lema_B_muestreo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.lema_B_exponencial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.grados_por_capa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.cardinal_por_capa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.suma_capas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.cardinal_final": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.suma_excepciones": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.dos_extension_no_cero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.raiz_cuadrado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.raiz_extension_cuadrado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.raiz_media_opuesta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.desplazamiento_cuadrado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.desplazamiento_no_cero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.punto_capa_no_cero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.punto_capa_inyectivo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cardinal_dominio_capa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.punto_capa_cuadrado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.punto_capa_opuesto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.dominio_capa_inicial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.indice_capa_especificacion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.representante_en_punto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.representante_cuadrado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.representante_no_cero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.tamano_capa_siguiente": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.representante_pertenece": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.opuesto_representante_pertenece": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.enlace_dominios_capa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.torres_dominio_inicial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.torres_grados_iniciales": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.torres_dominios_finales": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cardinal_inicial_torre": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.parejas_iniciales_torre": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.margen_torre_goldilocks": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.presupuestos_torres": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.muestreo_torre_goldilocks": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.representante_indice_modulo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.punto_consulta_modulo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.formula_plegado_indices": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.promedio_constante": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.promedio_monotono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.promedio_suma": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.promedio_indicador": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.promedio_producto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.cardinal_retos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.valor_escape": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.riesgo_es_promedio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.probabilidad_escape": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.riesgo_no_negativo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.riesgo_le_uno": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.cota_riesgo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.control_depende_oraculo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.excepciones_cardinal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.excepciones_control": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.recuperar_por_controles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.historia_depende_prefijo": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.recuperacion_adaptativa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.lema_B_adaptativo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.muestreo_adaptativo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.cota_excepciones_adaptativas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.probabilidad_excepcion_capa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.probabilidad_excepciones_torre": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.probabilidades_excepciones_fases": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.consulta_adaptativa_goldilocks": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.candidato_ninguno_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.candidato_propiedad": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.candidato_existe": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.candidato_unico": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.distancia_depende_dominio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.candidato_depende_dominio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.soporte_no_vacio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.ronda_critica_propiedades": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.suma_retos_cero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.cancelantes_ronda_cardinal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.probabilidad_ronda_critica": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.escape_despues_critica": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.escape_iff_cancelacion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.probabilidad_air_es_media": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.cota_cancelacion_secuencial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.cota_critica_elegida": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.candidato_perfil_ninguno": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.candidato_perfil_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.rama_traza_especificacion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.residuos_perfil_no_nulos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.suma_retos_residuo_combinado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.probabilidad_cancelacion_air_secuencial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.candidato_base_ronda_critica": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.escape_air_iff_resto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.candidato_sin_escape_transferencia": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.candidato_composicion_enlace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.alternativa_composicion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.consulta_monotona": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.consulta_no_negativa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.consulta_le_uno": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.pertenencia_parejas_buenas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.parejas_buenas_subconjunto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.pertenencia_elevar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.consulta_parejas_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.consulta_buenas_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.elevar_cardinal_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.fallos_predicado_le_doble": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.probabilidad_consulta_parejas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.muestreo_predicado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.recorrido_imagen": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.recorrido_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.recorrido_parejas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.acepta_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.acepta_parejas_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.parejas_aceptantes_acepta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.consulta_fri_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.muestreo_consulta_fri": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.fraccion_fallos_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.fraccion_fallos_enlace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.consulta_predicado_goldilocks": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.consulta_candidato_no_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.consulta_candidato_enlace": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.radios_consulta_perfil": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.maximo_consulta_perfil": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.compartida_implica_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.consulta_fri_perfil": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.traza_lejana_de_ninguno": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.composicion_lejana_de_ninguno": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.consulta_compartida_perfil": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.consulta_compartida_promedio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.consulta_compartida_ponderada": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.consulta_compartida_cuarenta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.reto_inicial": [],
+    "Nexus.N06.reto_siguiente": [],
+    "Nexus.N06.historia_retos_cons": [
+      "propext"
+    ],
+    "Nexus.N06.no_escape_historia": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.valor_constante": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.cota_promedio_fuera_escape": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.escape_historia_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.probabilidad_prefijos_inseguros": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.cota_terminal_adaptativa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.consulta_fri_total": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.ejecucion_traza_inicial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.promedio_cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cota_terminal_perfil": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.coeficientes_retos_completos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cota_terminal_air": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.ejecucion_segura_traza": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.ejecucion_segura_no_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.ejecucion_segura_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cota_terminal_conjunta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cota_prefijo_inseguro": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.solidez_interactiva_compartida": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.solidez_interactiva_cuarenta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.solidez_interactiva_limite_tabla": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.solidez_interactiva_tabla6_22": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.marca_absorbente": [
+      "propext"
+    ],
+    "Nexus.N06.marca_cero_iff": [
+      "propext"
+    ],
+    "Nexus.N06.recorrer_marca_escape": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.recorrer_marca_cero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.recorrer_marca_absorbente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.recorrer_marca_vacia": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.cambio_por_conjunto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.cambio_marca_absorbida": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.excepciones_criticas_cardinal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.excepciones_criticas_nulas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_air_condicional": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_traza_condicional": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_composicion_condicional": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_air_sin_residuos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_traza_inactiva": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_composicion_inactiva": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_traza_activa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_composicion_activa": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_air_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.ejecucion_composicion_inicial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_cero_iff_prefijo_seguro": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_inicial_cero": [],
+    "Nexus.Goldilocks.mensajes_conservan_estado": [],
+    "Nexus.Goldilocks.estado_final_cero_rechaza": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.aceptacion_activa_estado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_consulta_condicional": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.solidez_por_rondas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.error_ronda_perfiles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.solidez_por_rondas_perfiles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.valor_restaurable_monotono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.valor_restaurable_constante": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.riesgo_restaurable_no_negativo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.riesgo_restaurable_le_uno": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.riesgo_registro_marcado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.riesgo_reinicios_cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.riesgo_reinicios_minimo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.registro_marcado_iff_primer_cambio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.aceptar_registro_le_riesgo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.aceptacion_reinicios_cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.aceptacion_desde_raiz": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.aceptacion_planes_promedio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.promedio_entre_instancias": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.muestra_parejas_no_vacia": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.promedio_muestra_consulta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.respuestas_ideales_no_vacias": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.acepta_nodo_marcado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_ideal_certificado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reinicios_desde_certificado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reinicios_ideales_cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reinicios_ideales_perfiles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.acepta_adaptativo_marcado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_adaptativo_cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reinicios_politicas_adaptativas": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reinicios_adaptativos_perfiles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reinicios_adaptativos_promedio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.lista_retos_longitud": [],
+    "Nexus.N06.lista_retos_anexar": [],
+    "Nexus.N06.lista_retos_historia": [
+      "propext"
+    ],
+    "Nexus.N06.recorrer_estado_anexar": [
+      "propext"
+    ],
+    "Nexus.N06.recorrer_estado_historia": [
+      "propext"
+    ],
+    "Nexus.N06.recorrer_marca_anexar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_causal_valido": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_causal_falso": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_causal_inicial_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.paso_sin_reto_conserva_estado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.nodo_causal_origen": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.nodo_causal_destino": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.consulta_causal_marca": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.salida_causal_cero_rechaza": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_causal_certificado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_causal_cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.destino_ideal_absorbente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reto_causal_absorbente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.acepta_causal_marcada": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.respuestas_causales_no_vacias": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.plan_causal_cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.plan_causal_perfiles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.marca_historia_congruente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.FRI.acepta_oraculos_congruentes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.residuos_inicial_congruente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.monitor_traza_congruente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.monitor_composicion_congruente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_air_congruente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_traza_prefijo_congruente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_traza_congruente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_composicion_prefijo_congruente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_antes_consulta_congruente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.aceptacion_compartida_congruente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_causal_congruente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capa_traza_normalizada_anterior": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capa_composicion_normalizada_anterior": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capa_traza_terminal_constante": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capa_composicion_terminal_constante": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.inicio_composicion_normalizado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.contenido_normalizado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.marca_normalizada_antes_consulta": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.plan_terminal_perfiles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.mensajes_finales_normalizados": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.mismos_mensajes_compatible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_mismos_mensajes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.mensajes_reflexivos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.mensajes_simetricos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.mensajes_transitivos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_observado_coincide": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.mismos_mensajes_misma_observacion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_observado_inicial_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.mensaje_con_politica_compatible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.aceptacion_mismos_mensajes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.acepta_observado_coincide": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.acepta_observado_marcado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_observado_cero_rechaza": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_observado_valido": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.raiz_observada_unica": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reto_observado_absorbente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_observado_cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_observado_universal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reinicios_observados_cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reinicios_observados_perfiles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.leer_oraculo_inicial": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.leer_oraculo_siguiente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.leer_captura_oraculos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capturar_lectura_oraculos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.captura_oraculos_igual_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capa_traza_inicial_datos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capa_composicion_inicial_datos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.captura_datos_traza_igual_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.captura_datos_finales_igual_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.captura_mensajes_igual_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capa_politica_fija_traza": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capa_politica_fija_composicion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capturar_realizacion_final": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capturar_realizacion_prefijo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.decodificar_codificar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.codificar_decodificar": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.codificar_captura": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.codificacion_inyectiva": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.codificacion_sobreyectiva": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_explicito_captura": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.aceptacion_explicita_captura": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_explicito_inicial_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_explicito_cero_rechaza": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.estado_explicito_valido": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.mensaje_explicito_conserva_estado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.codificar_origen_explicito": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.codificar_destino_explicito": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reto_explicito_absorbente": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_explicito_coincide": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_explicito_cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.cambio_explicito_perfiles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.respuestas_explicitas_no_vacias": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.reto_anexado_anterior": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.N06.historia_anexada_anterior": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capa_traza_anexada": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.capa_composicion_anexada": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.mismos_mensajes_despues_reto": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.captura_destino_desde_origen": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.mismos_mensajes_antes_paso": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.codificar_origen_paso": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.paso_explicito_conserva_estado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.paso_explicito_iff_observado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.codificar_raiz_explicita": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.valor_expansion_explicita": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.probabilidad_expansion_explicita": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.acepta_explicita_marcada": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reinicios_explicitos_cota": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.reinicios_explicitos_perfiles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.valor_observado_cambio_registro": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.valor_explicito_cambio_registro": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.valor_expansion_observada": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.transportar_plan_explicito": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.decodificar_observacion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.decodificar_origen_observado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.decodificar_destino_observado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.transportar_plan_observado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.acepta_registro_codificado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.acepta_registro_decodificado": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.probabilidad_observada_valor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.plan_explicito_misma_probabilidad": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Nexus.Goldilocks.plan_observado_misma_probabilidad": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "kernel": {
+    "herramienta": "leanchecker incluido en Lean 4.35.0",
+    "modulos": [
+      "Nexus.N06.ExtensionRetos",
+      "Nexus.N06.PasosExplicitos",
+      "Nexus.N06.PlanesExplicitos",
+      "Nexus.N06.TraduccionPlanes",
+      "Nexus.N06.OraculosEmitidos",
+      "Nexus.N06.DatosTranscripcion",
+      "Nexus.N06.TranscripcionExplicita",
+      "Nexus.N06.RondasExplicitas",
+      "Nexus.N06.CongruenciaPrefijos",
+      "Nexus.N06.PoliticasCompatibles",
+      "Nexus.N06.TerminalesConstantes",
+      "Nexus.N06.MensajesCompatibles",
+      "Nexus.N06.ReiniciosObservados",
+      "Nexus.N06.Prefijos",
+      "Nexus.N06.TranscripcionCausal",
+      "Nexus.N06.SolidezCausal",
+      "Nexus.N06.ReiniciosAdaptativos",
+      "Nexus.N06.Reinicios",
+      "Nexus.N06.PrimerCambio",
+      "Nexus.N06.Muestras",
+      "Nexus.N06.ReiniciosIdeal",
+      "Nexus.N06.Estado",
+      "Nexus.N06.Monitores",
+      "Nexus.N06.EstadoConjunto",
+      "Nexus.N06.PorRondas",
+      "Nexus.N06.Transcripcion",
+      "Nexus.FRI.Experimento",
+      "Nexus.N06.Ejecucion",
+      "Nexus.N06.Solidez",
+      "Nexus.N06.Consulta",
+      "Nexus.FRI.Consulta",
+      "Nexus.N06.Parejas",
+      "Nexus.N06.Compartida",
+      "Nexus.N06.Candidato",
+      "Nexus.N06.Cancelacion",
+      "Nexus.N06.SeleccionAIR",
+      "Nexus.N06.Composicion",
+      "Nexus.N06.Experimento",
+      "Nexus.FRI.Adaptativo",
+      "Nexus.N06.Goldilocks",
+      "Nexus.FRI.Cosets",
+      "Nexus.FRI.Goldilocks",
+      "Nexus.FRI.Indices",
+      "Nexus.FRI.Dominios",
+      "Nexus.FRI.Torre",
+      "Nexus.FRI.Muestreo",
+      "Nexus.FRI.Presupuesto",
+      "Nexus.N04.RadioReal",
+      "Nexus.N04.Plegado",
+      "Nexus.N05.Cotas",
+      "Nexus.N05.Parejas",
+      "Nexus.Modelos.Omision",
+      "Nexus.Campos.Polinomios",
+      "Nexus.N03.CampoBase",
+      "Nexus.N03.Perfil",
+      "Nexus.N03.Alternativa",
+      "Nexus.Distancia.Propiedades",
+      "Nexus.AIR.Localidad",
+      "Nexus.AIR.Transferencia",
+      "Nexus.Modelos.DistanciaAIR",
+      "Nexus.Campos.Goldilocks",
+      "Nexus.AIR.Grados",
+      "Nexus.AIR.Goldilocks",
+      "Nexus.AIR.Solucion",
+      "Nexus.Modelos.Costos",
+      "Nexus.Modelos.Residencia",
+      "Nexus.Reticulos.Preimagenes",
+      "Nexus.Distancia",
+      "Nexus.N01.Solucion",
+      "Nexus.N02.Solucion",
+      "Nexus.N03.Solucion",
+      "Nexus.N04.Solucion",
+      "Nexus.N05.Muestreo",
+      "Nexus.N12.Solucion"
+    ],
+    "modo": "Replay de cada módulo por separado; se confía en los módulos importados. No es --fresh ni un verificador externo."
+  },
+  "integridad_catalogo_historico": {
+    "correcto": true,
+    "afirmaciones": 12,
+    "archivos": 9,
+    "errores": [],
+    "alcance": "Integridad y coherencia documental; no verifica verdad matemática ni seguridad.",
+    "mecanizacion": "no_disponible",
+    "dictamen": "pendiente",
+    "qrom_air_fri": "trabajo_futuro"
+  },
+  "cobertura": [
+    {
+      "id": "N01",
+      "estado": "componente_verificado",
+      "verificado": "Unicidad del coeficiente, conteo y probabilidad <=1/|K|, especializada a |K|=p^2. Se demuestra además la equivalencia AIR válida iff tres residuos nulos, para T>=3 y raíz primitiva de orden T, la identidad del anulador con X^T-1 y la linealidad del resto. Esto conecta una traza AIR inválida fija con la cota de cancelación. Se construyen Goldilocks y su extensión de cardinal p², se prueba el orden de las raíces y se instancian la equivalencia y la cota 1/p² en ellas. N06 construye el último residuo no nulo antes de los retos, el monitor secuencial y su equivalencia con cancelación total, con probabilidad <=1/p² en el AIR concreto.",
+      "teoremas": [
+        "Nexus.N01.coeficiente_unico",
+        "Nexus.N01.conteo",
+        "Nexus.N01.cota",
+        "Nexus.N01.cota_extension_cuadratica",
+        "Nexus.AIR.anulador_dvd_iff",
+        "Nexus.AIR.cociente_frontera",
+        "Nexus.AIR.cociente_no_nulo",
+        "Nexus.AIR.frontera_dvd_iff",
+        "Nexus.AIR.transicion_dvd_iff",
+        "Nexus.AIR.cardinal_dominio",
+        "Nexus.AIR.anulador_dominio",
+        "Nexus.AIR.transiciones_por_indices",
+        "Nexus.AIR.validez_iff_residuos",
+        "Nexus.AIR.resto_combinacion",
+        "Nexus.AIR.invalida_residuo_no_nulo",
+        "Nexus.AIR.cancelacion_traza_invalida",
+        "Nexus.Goldilocks.raiz_extension_primitiva",
+        "Nexus.Goldilocks.air_concreto",
+        "Nexus.Goldilocks.cancelacion_concreta"
+      ],
+      "pendiente": [
+        "Correspondencia completa con la semántica de Rust, canonicidad, serialización y protocolo; las fórmulas algebraicas de multiplicación e inverso de la extensión sí están demostradas.",
+        "Correspondencia de la distribución producto uniforme con el canal concreto; no se verifica hash adaptativo."
+      ]
+    },
+    {
+      "id": "N02",
+      "estado": "componente_verificado",
+      "verificado": "Cota (5T+1)/(8T) para toda composición A/D frente a cualquier h de grado <2T, con residuo A%D no nulo, ausencia de polos y cotas de grado explícitas. Para 4<=k<=29 (incluye el perfil TG2 4<=k<=12) y T=2^k se construye el coset L=7*<raiz(k+3)> en Fp², se demuestra |L|=8T y ausencia de polos; los grados de los tres numeradores y su combinación se derivan de grado(f)<T. La cota se instancia en esa composición concreta. Se demuestra la localidad en x,gx,g²x, la cota determinista de errores 3*epsilon y la transferencia max(0,(5T+1)/(8T)-3*epsilon), para tolerancias racionales y reales. Se deriva la clausura del coset y la correspondencia algebraica de los índices (i+8j) mod N con g^j*x. Se prueba la fórmula racional de compose y el margen estricto >1/2 si epsilon<=1/24.",
+      "teoremas": [
+        "Nexus.N02.cota",
+        "Nexus.AIR.grado_reescalado",
+        "Nexus.AIR.grado_transicion",
+        "Nexus.AIR.grado_numerador_transicion",
+        "Nexus.AIR.grado_denominador",
+        "Nexus.AIR.grado_frontera",
+        "Nexus.AIR.grado_combinacion",
+        "Nexus.AIR.grado_numerador_combinado",
+        "Nexus.Goldilocks.coset_sin_polos",
+        "Nexus.Goldilocks.cardinal_coset",
+        "Nexus.Goldilocks.denominador_no_nulo",
+        "Nexus.Goldilocks.cardinal_coset_extension",
+        "Nexus.Goldilocks.denominador_extension_no_nulo",
+        "Nexus.Goldilocks.distancia_composicion_concreta",
+        "Nexus.AIR.composicion_polinomio",
+        "Nexus.AIR.evaluacion_cociente_lineal",
+        "Nexus.AIR.formula_composicion_local",
+        "Nexus.AIR.localidad_tres_puntos",
+        "Nexus.AIR.errores_composicion_local",
+        "Nexus.AIR.distancia_composicion_local",
+        "Nexus.AIR.transferencia_distancia",
+        "Nexus.AIR.transferencia_distancia_real",
+        "Nexus.AIR.margen_un_veinticuatro",
+        "Nexus.Goldilocks.potencia_indice_modulo",
+        "Nexus.Goldilocks.coset_cerrado_potencias",
+        "Nexus.Goldilocks.punto_lde_desplazado",
+        "Nexus.Goldilocks.coset_extension_cerrado",
+        "Nexus.Goldilocks.transferencia_concreta",
+        "Nexus.Goldilocks.transferencia_concreta_real",
+        "Nexus.Goldilocks.distancia_mayor_un_medio"
+      ],
+      "pendiente": [
+        "Equivalencia con la semántica completa del ejecutable Rust y sus aperturas autenticadas; las identidades de la fórmula racional e índices LDE sí están demostradas.",
+        "N06 enlaza la selección del candidato, la ausencia de escape AIR y la transferencia; demuestra además la alternativa lejana/enlace para la composición arbitraria. Falta la integración probabilística completa de fases, consultas y oráculos comprometidos."
+      ]
+    },
+    {
+      "id": "N03",
+      "estado": "componente_verificado",
+      "verificado": "Unicidad de dos polinomios de grado <T cercanos a un mismo oráculo, para cualquier campo y dominio finito, bajo la desigualdad estricta del catálogo y radio racional. Se construye f=A+zB por coeficientes y se caracteriza que f sea base por B=0. Si f no es base y grado(f)<T, toma valores base en a lo sumo T-1 puntos. Para un oráculo a distancia delta de ese candidato se prueba la fracción no base >=1-(T-1)/N-delta, con tolerancias racionales y reales. En N=8T y delta<=1/8 la fracción supera 3/4; con radios no negativos supera en al menos 1/4 la cota d de composición. Se demuestra la unicidad del perfil para delta<=1/8, que la validez AIR se conserva y refleja al elevar coeficientes base, y la alternativa candidato base inválido / fracción no base grande para un enunciado sin traza válida base. En N06 se construye además la selección previa a AIR, parcial cuando no existe candidato, y se caracteriza su unicidad en el perfil. La rama matemática inicial se determina del oráculo sin recibir retos.",
+      "teoremas": [
+        "Nexus.N03.unicidad_conteo",
+        "Nexus.N03.unicidad",
+        "Nexus.Goldilocks.esBase_iff_im_cero",
+        "Nexus.Goldilocks.coeficiente_real",
+        "Nexus.Goldilocks.coeficiente_imaginario",
+        "Nexus.Goldilocks.grado_parte_real",
+        "Nexus.Goldilocks.grado_parte_imaginaria",
+        "Nexus.Goldilocks.imaginaria_suma",
+        "Nexus.Goldilocks.imaginaria_monomio",
+        "Nexus.Goldilocks.evaluacion_imaginaria",
+        "Nexus.Goldilocks.evaluacion_es_base",
+        "Nexus.Goldilocks.descomposicion_polinomio",
+        "Nexus.Goldilocks.polinomio_base_iff_imaginaria_cero",
+        "Nexus.Goldilocks.valores_base_acotados",
+        "Nexus.Goldilocks.candidato_no_base",
+        "Nexus.Goldilocks.candidato_no_base_dominio_elevado",
+        "Nexus.Goldilocks.conteo_oraculo_no_base",
+        "Nexus.Goldilocks.fraccion_oraculo_no_base",
+        "Nexus.Goldilocks.fraccion_oraculo_no_base_real",
+        "Nexus.Goldilocks.fraccion_no_base_perfil",
+        "Nexus.Goldilocks.fraccion_no_base_perfil_real",
+        "Nexus.Goldilocks.margen_no_base",
+        "Nexus.Goldilocks.fraccion_no_base_mayor_tres_cuartos",
+        "Nexus.Goldilocks.comparacion_ramas",
+        "Nexus.Goldilocks.deteccion_no_base_perfil",
+        "Nexus.Goldilocks.unicidad_perfil",
+        "Nexus.Goldilocks.evaluacion_transicion_map",
+        "Nexus.Goldilocks.validez_air_map",
+        "Nexus.Goldilocks.invalidez_candidato_base",
+        "Nexus.Goldilocks.alternativa_candidato"
+      ],
+      "pendiente": [
+        "La selección parcial y el caso sin candidato ya están definidos en N06. Falta el invariante probabilístico que mantenga esta rama en la transcripción completa hasta la consulta compartida.",
+        "Correspondencia completa del predicado de pertenencia al campo base y las aperturas con el ejecutable Rust y Merkle."
+      ]
+    },
+    {
+      "id": "N04",
+      "estado": "componente_verificado",
+      "verificado": "Lema A de acuerdo correlacionado, simultáneo para todos los conjuntos S, salvo a lo sumo |L| retos. Incluye forma entera e+3t<=|L| y forma de radio racional no negativo con (1-3*theta)|L|>e-1; incluye theta=1/8. Se demuestra también la forma con radio real y los márgenes de todas las capas de traza y composición con N=8T y radio 1/8. Se instancia el lema en el plegado par/impar sobre parejas r(y),-r(y), con r(y)^2=y, r(y) no nulo y característica distinta de dos: fuera de <=|L| retos se recupera un polinomio de grado <2e sobre ambas mitades y el mismo conjunto S. Se prueba que el representante de una pareja no cambia sus partes par/impar, que las dos mitades son disjuntas y que su cardinal es el doble. Las fibras del cuadrado tienen a lo sumo dos puntos; la densidad de un subconjunto no disminuye al pasar a cuadrados. Se construyen los cosets sucesivos Goldilocks con desplazamiento 7^(2^j) y raíz de orden 2^(k+3-j), para k<=29. Se demuestran la coherencia de raíces al cuadrar, el opuesto en el índice de media vuelta, la inyectividad y el cardinal exacto. Se elige un representante mediante el índice único de la primera mitad y se prueba la igualdad de cada dominio con las dos mitades de las parejas siguientes. El dominio inicial es exactamente el cosetExtension usado por AIR y N03.",
+      "teoremas": [
+        "Nexus.N04.interseccion_triple",
+        "Nexus.N04.acuerdo_correlacionado",
+        "Nexus.N04.acuerdo_correlacionado_radio",
+        "Nexus.N04.acuerdo_correlacionado_real",
+        "Nexus.N04.margen_capas_composicion",
+        "Nexus.N04.margen_capas_traza",
+        "Nexus.N04.grado_desplegado",
+        "Nexus.N04.evaluacion_desplegado",
+        "Nexus.N04.recomposicion_pareja",
+        "Nexus.N04.recuperacion_capa",
+        "Nexus.FRI.raices_opuestas",
+        "Nexus.FRI.partes_independientes",
+        "Nexus.FRI.elevar_mono",
+        "Nexus.FRI.raiz_inyectiva",
+        "Nexus.FRI.mitades_disjuntas",
+        "Nexus.FRI.cardinal_elevar",
+        "Nexus.FRI.cuadrados_elevar",
+        "Nexus.FRI.subconjunto_elevar",
+        "Nexus.FRI.cardinal_cuadrados",
+        "Nexus.FRI.densidad_cuadrados",
+        "Nexus.Goldilocks.dos_extension_no_cero",
+        "Nexus.Goldilocks.raiz_cuadrado",
+        "Nexus.Goldilocks.raiz_extension_cuadrado",
+        "Nexus.Goldilocks.raiz_media_opuesta",
+        "Nexus.Goldilocks.desplazamiento_cuadrado",
+        "Nexus.Goldilocks.desplazamiento_no_cero",
+        "Nexus.Goldilocks.punto_capa_no_cero",
+        "Nexus.Goldilocks.punto_capa_inyectivo",
+        "Nexus.Goldilocks.cardinal_dominio_capa",
+        "Nexus.Goldilocks.punto_capa_cuadrado",
+        "Nexus.Goldilocks.punto_capa_opuesto",
+        "Nexus.Goldilocks.dominio_capa_inicial",
+        "Nexus.Goldilocks.indice_capa_especificacion",
+        "Nexus.Goldilocks.representante_en_punto",
+        "Nexus.Goldilocks.representante_cuadrado",
+        "Nexus.Goldilocks.representante_no_cero",
+        "Nexus.Goldilocks.tamano_capa_siguiente",
+        "Nexus.Goldilocks.representante_pertenece",
+        "Nexus.Goldilocks.opuesto_representante_pertenece",
+        "Nexus.Goldilocks.enlace_dominios_capa"
+      ],
+      "pendiente": [
+        "Los cosets concretos, los controles por oráculo actual y su uso sobre historias adaptativas están demostrados. Falta el invariante de la rama activa del IOP conjunto N06 y su composición con AIR y la consulta compartida.",
+        "Equivalencia integral con Rust y las aperturas Merkle; se demuestran la fórmula algebraica del plegado y sus índices, sin verificar enteros de máquina ni ejecución completa."
+      ]
+    },
+    {
+      "id": "N05",
+      "estado": "componente_verificado",
+      "verificado": "Conteo exacto de muestras uniformes de q elementos distintos y cota hipergeométrica por número de parejas malas, bajo un conjunto aceptante dado. La interpretación probabilística exige q<=M. Se formaliza H(M,q,theta) con techo racional, el caso de numerador cero, su antitonicidad y H<=(1-theta)^q para M>0, q<=M y 0<=theta<=1. La comparación binomial se demuestra por recurrencia. Para parejas enumeradas por (i,false),(i,true), se prueba que las discrepancias son <=2 veces las parejas malas: una distancia >=theta implica al menos ceil(theta*M) parejas malas y por tanto la cota H para las muestras que las omiten. Se formaliza una Torre finita de dominios enlazados por raíces opuestas y grados que se dividen por dos hasta constantes. Se demuestra la conservación de densidad de todos los recorridos y la recuperación hacia atrás desde la constante final, construyendo los conjuntos excepcionales por el lema A. El lema B se deriva del alejamiento del código: fuera de esas excepciones, la fracción de recorridos aceptantes es <=1-theta. Para parejas iniciales completas se obtiene H y la cota exponencial a partir de todas las ecuaciones del recorrido, sin asumir un cardinal aceptante. Se prueba además d_j=2^(m-j), |L_0|=2^j|L_j|, la conservación de |L|/d y la suma telescópica de cardinales excepcionales <=|L_0|-|L_m|. La cuenta de excepciones es determinista y no acredita una distribución adaptativa. Se construye una Torre Goldilocks para cualquier m<=k+1 y k<=29, con fases de traza m=k y composición m=k+1. Ambas empiezan en N=8T; sus grados iniciales son T y 2T, y sus dominios finales tienen ocho y cuatro puntos. Se demuestran los márgenes para theta=1/8 y se aplica el muestreo completo a q=40 para k>=4: fuera de las excepciones y para un oráculo lejano, la omisión queda acotada por H(4T,40,1/8) y (7/8)^40. Las sumas de cardinales excepcionales son <=8T-8 y <=8T-4 en las dos fases. Se formalizan a=pos mod (n/2), la selección de la mitad correcta y la fórmula even+beta*odd de los índices a,a+n/2. N06 construye las parejas aceptantes de los recorridos completos y deduce H para el predicado de aceptación de la muestra. También instancia los fallos de campo base y enlace sobre los representantes concretos.",
+      "teoremas": [
+        "Nexus.N05.muestras_buenas",
+        "Nexus.N05.probabilidad_omision",
+        "Nexus.N05.cota_omision",
+        "Nexus.N05.muestras_no_vacias",
+        "Nexus.N05.binomiales_por_potencias",
+        "Nexus.N05.razon_binomial_le_potencia",
+        "Nexus.N05.H_no_negativa",
+        "Nexus.N05.H_cero",
+        "Nexus.N05.H_le_potencia",
+        "Nexus.N05.H_antitona",
+        "Nexus.N05.cota_omision_radio",
+        "Nexus.N05.omision_le_potencia",
+        "Nexus.N05.discrepancias_le_doble",
+        "Nexus.N05.techo_parejas_malas",
+        "Nexus.N05.omision_parejas",
+        "Nexus.N05.omision_parejas_le_potencia",
+        "Nexus.FRI.dominios_cuadrados",
+        "Nexus.FRI.grados_positivos",
+        "Nexus.FRI.dominios_positivos",
+        "Nexus.FRI.recorrido_subconjunto",
+        "Nexus.FRI.densidad_recorrido",
+        "Nexus.FRI.control_capa",
+        "Nexus.FRI.recuperar_torre",
+        "Nexus.FRI.distancia_desde_acuerdo",
+        "Nexus.FRI.lema_B",
+        "Nexus.FRI.lema_B_muestreo",
+        "Nexus.FRI.lema_B_exponencial",
+        "Nexus.FRI.grados_por_capa",
+        "Nexus.FRI.cardinal_por_capa",
+        "Nexus.FRI.suma_capas",
+        "Nexus.FRI.cardinal_final",
+        "Nexus.FRI.suma_excepciones",
+        "Nexus.Goldilocks.torres_dominio_inicial",
+        "Nexus.Goldilocks.torres_grados_iniciales",
+        "Nexus.Goldilocks.torres_dominios_finales",
+        "Nexus.Goldilocks.cardinal_inicial_torre",
+        "Nexus.Goldilocks.parejas_iniciales_torre",
+        "Nexus.Goldilocks.margen_torre_goldilocks",
+        "Nexus.Goldilocks.presupuestos_torres",
+        "Nexus.Goldilocks.muestreo_torre_goldilocks",
+        "Nexus.Goldilocks.representante_indice_modulo",
+        "Nexus.Goldilocks.punto_consulta_modulo",
+        "Nexus.Goldilocks.formula_plegado_indices"
+      ],
+      "pendiente": [
+        "Equivalencia completa de Acepta con las aperturas y el recorrido del ejecutable, incluida la semántica de enteros de máquina, formatos y Merkle; los índices y la fórmula algebraica del plegado ya se demuestran.",
+        "La muestra compartida ya está integrada con las monedas AIR/FRI y su riesgo excepcional en un experimento interactivo ideal. Permanece su correspondencia con la distribución del selector del ejecutable y el modelo ROM.",
+        "Los radios generales de H siguen siendo racionales; la propagación usa radios reales y el perfil theta=1/8 está incluido.",
+        "Distribución efectiva de las consultas generadas mediante hash y su modelo ROM."
+      ]
+    },
+    {
+      "id": "N06",
+      "estado": "componente_verificado",
+      "verificado": "Modelo exacto de retos uniformes frescos y escape absorbente; controles FRI elegidos a partir del oráculo actual, recuperación y muestreo por historias. El candidato parcial depende solo de la traza inicial; su inexistencia equivale a lejanía y, si existe, determina la rama base/no base antes de AIR. La ronda crítica es el último residuo no nulo, su escape equivale a la cancelación total y cuesta a lo sumo 1/p². Fuera de él se obtiene transferencia y la alternativa lejana/enlace de composición. Se construyen las parejas aceptantes de FRI y los controles base/enlace concretos. AceptaCompartida usa la misma muestra para ambos FRI, seis posiciones base AIR y el enlace en ambas mitades; para prefijos seguros del perfil δt=δc=1/8 su aceptación se acota por H(4T,q,1/8). Ahora Retos se enlaza con las funciones de retos y las historias: no escapar equivale a evitar cada conjunto excepcional calculado con su prefijo. Se demuestra la cota terminal FRI incluyendo las transcripciones excepcionales. PoliticaConsulta fija u antes de AIR; después ejecuta FRI de traza y FRI de composición, con mensajes que reciben solo monedas de fases anteriores y su historia propia. Las constantes finales preceden a la muestra. Para todo enunciado sin traza base válida y 4<=k<=29, se deriva Pr[no PrefijoSeguro]<=(8T-3)/p² en esa ejecución causal. Un teorema terminal genérico reúne consulta y excepciones sin condicionar la distribución a prefijos seguros. Se obtiene probabilidadConjunta<=H(4T,q,1/8)+(8T-3)/p² para q<=4T; con q=40 también (7/8)^40+(8T-3)/p² y el enlace con los cuatro superiores de la tabla 6.22. Solo se paga FRI de traza, o AIR más FRI de composición, según la rama; no se multiplican errores de ambos FRI. Se construye ahora la marca booleana del protocolo ideal: empieza en cero, los mensajes conservan su valor y uno es absorbente. La recursión de la marca se identifica con el evento Escapa. Los residuos vigilados dependen solo del candidato inicial; AIR vigila su última ronda no nula. FRI de traza se vigila solo sin candidato inicial y FRI de composición solo en la rama base con composición lejana, elegida antes de sus retos. Las marcas se conservan entre fases; para un enunciado falso, la marca cero antes de consultar equivale exactamente a PrefijoSeguro. Se acota la probabilidad condicional de una nueva transición cero a uno en cada reto AIR por 1/p² y en cada plegado activo por 4T/p², para cualquier estado previo y cualquier historia. La consulta compartida tiene cota H(4T,q,1/8) desde el estado alcanzado; en uno no crea una transición nueva. El estado final cero implica rechazo y la aceptación activa la marca. CertificadoRondas reúne estas propiedades para las transiciones concretas con epsilon=max(1/p²,4T/p²,H). Para cada uno de los nueve perfiles 4<=k<=12 y q=40 se demuestra exactamente que ese máximo es h_T=H(4T,40,1/8), como cota escogida y no como error óptimo. El resultado es interactivo ideal y no identifica intentos de reto con consultas SHA3. Se formaliza ahora un árbol adaptativo de intentos con registro de estados completos: cualquier reto parte de un origen guardado, su respuesta fresca añade un destino y consume un intento. Los mensajes añaden estados con la misma marca y no consumen retos; restaurar un nodo anterior tampoco requiere un sorteo nuevo. Los tipos finitos de respuesta pueden cambiar con la petición y toda la historia. Se demuestra la cota min(1,B*epsilon) desde un registro inicial sin marcas, bajo cotas condicionales uniformes de cambio fresco. La probabilidad de terminar con alguna marca guardada coincide con alcanzar un primer cambio excepcional; una aceptación guardada implica marca y queda acotada por ese riesgo. La cota se conserva al promediar planes sobre una semilla finita uniforme. Se demuestra que la media uniforme del subtipo de muestras de parejas es exactamente probabilidadConsulta. Los nodos ideales NEXUS guardan fase, acumulador AIR, historias FRI, constantes determinadas por la política, muestra y marca según corresponda. Las peticiones usan los monitores existentes y sus respuestas son Fp2 o la muestra uniforme sin reemplazo; cada probabilidad de cambio se deduce de CertificadoRondas. Desde la raíz cero se obtiene probabilidadReinicios<=min(1,B*errorRonda(k,q)) y, en los nueve perfiles con q=40, <=min(1,B*h_T). B cuenta retos ideales frescos y no consultas SHA3. El modelo permite mensajes arbitrarios que conserven la marca; su correspondencia con el protocolo concreto y la definición bibliográfica permanece separada. La primera instanciación de reinicios mantiene fija la política de oráculos. La ampliación NodoAdaptativo guarda una política propia en cada nodo y PeticionAdaptativa elige la de cada nuevo reto. La continuación puede escoger políticas distintas según toda la historia de intentos, sin cambiar nodos guardados. Se deduce la cota local uniformemente para la política de cada petición y se aplica el teorema del registro. Se demuestra probabilidadAdaptativa<=min(1,B*errorRonda(k,q)) y, en los nueve perfiles con q=40, <=min(1,B*h_T), sin una política global fija. También se acota la mezcla de planes con semilla finita uniforme. El registro de nodos y la regla de mensajes con marca conservada siguen siendo una abstracción ideal; no acreditan extracción Merkle ni ROM. Se añaden prefijos tipados por fase y longitud, que reconstruyen la marca y el acumulador AIR desde sus retos. Su proyección coincide exactamente con las transiciones del certificado; el estado inicial vale uno iff existe una traza base válida, los pasos sin monedas conservan el estado y el estado final cero implica rechazo. Las peticiones tipadas heredan la cota local y la absorción. PlanCausal solo permite mensajes de la gramática y nuevos retos desde un prefijo guardado, con marca reconstruida. Su aceptación se acota por min(1,B*errorRonda(k,q)) y min(1,B*h_T) en los nueve perfiles. Esta expansión mantiene fija una política causal; el juego anterior con políticas adaptativas por nodo se conserva por separado. No se ha construido todavía una función sobre transcripciones independiente de la estrategia ni el transporte entre políticas compatibles. La nueva etapa demuestra congruencia de monitores y marcas sobre los oráculos de la historia efectivamente recorrida. Se identifica que la aceptación del modelo general anterior también leía un oráculo terminal independiente: normalizarTerminal lo fija a la constante enviada y conserva mensajes y marca antes de consultar. MismosMensajes identifica políticas por los oráculos y constantes ya emitidos; se demuestran reflexividad, simetría, transitividad e invariancia del estado normalizado. PrefijoObservado conserva fase y retos y usa ese cociente, con estadoObservado y aceptaObservado independientes de las decisiones futuras. Se prueban estado inicial uno iff enunciado válido, conservación por mensajes compatibles, absorción, rechazo en cero y cota local universal. PlanObservado solo emite mensajes tipados y pide retos desde clases guardadas; cada petición elige una política respetando los mensajes ya fijados. Se demuestra min(1,B*errorRonda(k,q)) y min(1,B*h_T) en los nueve perfiles. La representación ideal por cociente y su equivalencia integral con las transcripciones y adversarios bibliográficos aún se distinguen de la verificación del ejecutable y de la transferencia ROM. Se construye TranscripcionExplicita con fase, retos y arreglos finitos de los oráculos y constantes emitidos. Capturar esos datos desde una política da igualdad exactamente cuando se cumple MismosMensajes. politicaDeDatos reproduce cualquier conjunto de datos del prefijo indicado; la realización es individual y no presupone causalidad uniforme de una familia de adversarios. Se demuestra una equivalencia biyectiva con PrefijoObservado y se transportan estado, aceptación, estado inicial, rechazo en cero y conservación por mensajes capturados. Las peticiones explícitas fijan una política canónica desde sus datos antes de la respuesta; origen y destino coinciden con el reto observado. Se transportan absorción y la cota local universal errorRonda(k,q), igual a h_T en los nueve perfiles. Los datos siguen siendo oráculos matemáticos completos y no bytes ni compromisos Merkle. Se completa la correspondencia interna de transiciones y planes con datos explícitos: anexar un reto conserva toda la historia anterior; el destino explícito coincide con el de cualquier política que realice los mensajes del origen. PasoExplicito exige un PasoSinReto y que los datos del destino reproduzcan los mensajes anteriores, sin suponer igualdad de estados. Se prueba equivalencia exacta con los pasos observados y se deduce conservación del estado. PlanExplicito guarda nodos inmutables, usa solo esos pasos y retos desde orígenes guardados. Su evaluación propia por medias uniformes coincide con la expansión genérica y cumple min(1,B·errorRonda); para los nueve perfiles es min(1,B·h_T). Para cada función terminal se transportan planes completos en ambos sentidos conservando el registro representado, el presupuesto y su valor. En particular cada plan de cualquiera de los dos modelos ideales tiene uno del otro con idéntica probabilidad de aceptación. Esto no afirma que todas las formas tipadas sean alcanzables desde vacío ni aporta el adaptador integral a adversarios bibliográficos o al ejecutable.",
+      "teoremas": [
+        "Nexus.N06.promedio_constante",
+        "Nexus.N06.promedio_monotono",
+        "Nexus.N06.promedio_suma",
+        "Nexus.N06.promedio_indicador",
+        "Nexus.N06.promedio_producto",
+        "Nexus.N06.cardinal_retos",
+        "Nexus.N06.valor_escape",
+        "Nexus.N06.riesgo_es_promedio",
+        "Nexus.N06.probabilidad_escape",
+        "Nexus.N06.riesgo_no_negativo",
+        "Nexus.N06.riesgo_le_uno",
+        "Nexus.N06.cota_riesgo",
+        "Nexus.FRI.control_depende_oraculo",
+        "Nexus.FRI.excepciones_cardinal",
+        "Nexus.FRI.excepciones_control",
+        "Nexus.FRI.recuperar_por_controles",
+        "Nexus.FRI.historia_depende_prefijo",
+        "Nexus.FRI.recuperacion_adaptativa",
+        "Nexus.FRI.lema_B_adaptativo",
+        "Nexus.FRI.muestreo_adaptativo",
+        "Nexus.FRI.cota_excepciones_adaptativas",
+        "Nexus.Goldilocks.probabilidad_excepcion_capa",
+        "Nexus.Goldilocks.probabilidad_excepciones_torre",
+        "Nexus.Goldilocks.probabilidades_excepciones_fases",
+        "Nexus.Goldilocks.consulta_adaptativa_goldilocks",
+        "Nexus.N06.candidato_ninguno_iff",
+        "Nexus.N06.candidato_propiedad",
+        "Nexus.N06.candidato_existe",
+        "Nexus.N06.candidato_unico",
+        "Nexus.N06.distancia_depende_dominio",
+        "Nexus.N06.candidato_depende_dominio",
+        "Nexus.N06.soporte_no_vacio",
+        "Nexus.N06.ronda_critica_propiedades",
+        "Nexus.N06.suma_retos_cero",
+        "Nexus.N06.cancelantes_ronda_cardinal",
+        "Nexus.N06.probabilidad_ronda_critica",
+        "Nexus.N06.escape_despues_critica",
+        "Nexus.N06.escape_iff_cancelacion",
+        "Nexus.N06.probabilidad_air_es_media",
+        "Nexus.N06.cota_cancelacion_secuencial",
+        "Nexus.N06.cota_critica_elegida",
+        "Nexus.Goldilocks.candidato_perfil_ninguno",
+        "Nexus.Goldilocks.candidato_perfil_iff",
+        "Nexus.Goldilocks.rama_traza_especificacion",
+        "Nexus.Goldilocks.residuos_perfil_no_nulos",
+        "Nexus.Goldilocks.suma_retos_residuo_combinado",
+        "Nexus.Goldilocks.probabilidad_cancelacion_air_secuencial",
+        "Nexus.Goldilocks.candidato_base_ronda_critica",
+        "Nexus.Goldilocks.escape_air_iff_resto",
+        "Nexus.Goldilocks.candidato_sin_escape_transferencia",
+        "Nexus.Goldilocks.candidato_composicion_enlace",
+        "Nexus.Goldilocks.alternativa_composicion",
+        "Nexus.N06.consulta_monotona",
+        "Nexus.N06.consulta_no_negativa",
+        "Nexus.N06.consulta_le_uno",
+        "Nexus.N06.pertenencia_parejas_buenas",
+        "Nexus.N06.parejas_buenas_subconjunto",
+        "Nexus.N06.pertenencia_elevar",
+        "Nexus.N06.consulta_parejas_iff",
+        "Nexus.N06.consulta_buenas_iff",
+        "Nexus.N06.elevar_cardinal_le",
+        "Nexus.N06.fallos_predicado_le_doble",
+        "Nexus.N06.probabilidad_consulta_parejas",
+        "Nexus.N06.muestreo_predicado",
+        "Nexus.FRI.recorrido_imagen",
+        "Nexus.FRI.recorrido_mono",
+        "Nexus.FRI.recorrido_parejas",
+        "Nexus.FRI.acepta_mono",
+        "Nexus.FRI.acepta_parejas_iff",
+        "Nexus.FRI.parejas_aceptantes_acepta",
+        "Nexus.FRI.consulta_fri_iff",
+        "Nexus.FRI.muestreo_consulta_fri",
+        "Nexus.Goldilocks.fraccion_fallos_base",
+        "Nexus.Goldilocks.fraccion_fallos_enlace",
+        "Nexus.Goldilocks.consulta_predicado_goldilocks",
+        "Nexus.Goldilocks.consulta_candidato_no_base",
+        "Nexus.Goldilocks.consulta_candidato_enlace",
+        "Nexus.Goldilocks.radios_consulta_perfil",
+        "Nexus.Goldilocks.maximo_consulta_perfil",
+        "Nexus.Goldilocks.compartida_implica_base",
+        "Nexus.Goldilocks.consulta_fri_perfil",
+        "Nexus.Goldilocks.traza_lejana_de_ninguno",
+        "Nexus.Goldilocks.composicion_lejana_de_ninguno",
+        "Nexus.Goldilocks.consulta_compartida_perfil",
+        "Nexus.Goldilocks.consulta_compartida_promedio",
+        "Nexus.Goldilocks.consulta_compartida_ponderada",
+        "Nexus.Goldilocks.consulta_compartida_cuarenta",
+        "Nexus.N06.reto_inicial",
+        "Nexus.N06.reto_siguiente",
+        "Nexus.N06.historia_retos_cons",
+        "Nexus.N06.no_escape_historia",
+        "Nexus.N06.valor_constante",
+        "Nexus.N06.cota_promedio_fuera_escape",
+        "Nexus.FRI.escape_historia_iff",
+        "Nexus.FRI.probabilidad_prefijos_inseguros",
+        "Nexus.FRI.cota_terminal_adaptativa",
+        "Nexus.FRI.consulta_fri_total",
+        "Nexus.Goldilocks.ejecucion_traza_inicial",
+        "Nexus.Goldilocks.promedio_cota",
+        "Nexus.Goldilocks.cota_terminal_perfil",
+        "Nexus.Goldilocks.coeficientes_retos_completos",
+        "Nexus.Goldilocks.cota_terminal_air",
+        "Nexus.Goldilocks.ejecucion_segura_traza",
+        "Nexus.Goldilocks.ejecucion_segura_no_base",
+        "Nexus.Goldilocks.ejecucion_segura_base",
+        "Nexus.Goldilocks.cota_terminal_conjunta",
+        "Nexus.Goldilocks.cota_prefijo_inseguro",
+        "Nexus.Goldilocks.solidez_interactiva_compartida",
+        "Nexus.Goldilocks.solidez_interactiva_cuarenta",
+        "Nexus.Goldilocks.solidez_interactiva_limite_tabla",
+        "Nexus.Goldilocks.solidez_interactiva_tabla6_22",
+        "Nexus.N06.marca_absorbente",
+        "Nexus.N06.marca_cero_iff",
+        "Nexus.N06.recorrer_marca_escape",
+        "Nexus.N06.recorrer_marca_cero",
+        "Nexus.N06.recorrer_marca_absorbente",
+        "Nexus.N06.recorrer_marca_vacia",
+        "Nexus.N06.cambio_por_conjunto",
+        "Nexus.N06.cambio_marca_absorbida",
+        "Nexus.Goldilocks.excepciones_criticas_cardinal",
+        "Nexus.Goldilocks.excepciones_criticas_nulas",
+        "Nexus.Goldilocks.cambio_air_condicional",
+        "Nexus.Goldilocks.cambio_traza_condicional",
+        "Nexus.Goldilocks.cambio_composicion_condicional",
+        "Nexus.Goldilocks.marca_air_sin_residuos",
+        "Nexus.Goldilocks.marca_traza_inactiva",
+        "Nexus.Goldilocks.marca_composicion_inactiva",
+        "Nexus.Goldilocks.marca_traza_activa",
+        "Nexus.Goldilocks.marca_composicion_activa",
+        "Nexus.Goldilocks.marca_air_base",
+        "Nexus.Goldilocks.ejecucion_composicion_inicial",
+        "Nexus.Goldilocks.estado_cero_iff_prefijo_seguro",
+        "Nexus.Goldilocks.estado_inicial_cero",
+        "Nexus.Goldilocks.mensajes_conservan_estado",
+        "Nexus.Goldilocks.estado_final_cero_rechaza",
+        "Nexus.Goldilocks.aceptacion_activa_estado",
+        "Nexus.Goldilocks.cambio_consulta_condicional",
+        "Nexus.Goldilocks.solidez_por_rondas",
+        "Nexus.Goldilocks.error_ronda_perfiles",
+        "Nexus.Goldilocks.solidez_por_rondas_perfiles",
+        "Nexus.N06.valor_restaurable_monotono",
+        "Nexus.N06.valor_restaurable_constante",
+        "Nexus.N06.riesgo_restaurable_no_negativo",
+        "Nexus.N06.riesgo_restaurable_le_uno",
+        "Nexus.N06.riesgo_registro_marcado",
+        "Nexus.N06.riesgo_reinicios_cota",
+        "Nexus.N06.riesgo_reinicios_minimo",
+        "Nexus.N06.registro_marcado_iff_primer_cambio",
+        "Nexus.N06.aceptar_registro_le_riesgo",
+        "Nexus.N06.aceptacion_reinicios_cota",
+        "Nexus.N06.aceptacion_desde_raiz",
+        "Nexus.N06.aceptacion_planes_promedio",
+        "Nexus.N06.promedio_entre_instancias",
+        "Nexus.N06.muestra_parejas_no_vacia",
+        "Nexus.N06.promedio_muestra_consulta",
+        "Nexus.Goldilocks.respuestas_ideales_no_vacias",
+        "Nexus.Goldilocks.acepta_nodo_marcado",
+        "Nexus.Goldilocks.cambio_ideal_certificado",
+        "Nexus.Goldilocks.reinicios_desde_certificado",
+        "Nexus.Goldilocks.reinicios_ideales_cota",
+        "Nexus.Goldilocks.reinicios_ideales_perfiles",
+        "Nexus.Goldilocks.acepta_adaptativo_marcado",
+        "Nexus.Goldilocks.cambio_adaptativo_cota",
+        "Nexus.Goldilocks.reinicios_politicas_adaptativas",
+        "Nexus.Goldilocks.reinicios_adaptativos_perfiles",
+        "Nexus.Goldilocks.reinicios_adaptativos_promedio",
+        "Nexus.N06.lista_retos_longitud",
+        "Nexus.N06.lista_retos_anexar",
+        "Nexus.N06.lista_retos_historia",
+        "Nexus.N06.recorrer_estado_anexar",
+        "Nexus.N06.recorrer_estado_historia",
+        "Nexus.N06.recorrer_marca_anexar",
+        "Nexus.Goldilocks.estado_causal_valido",
+        "Nexus.Goldilocks.estado_causal_falso",
+        "Nexus.Goldilocks.estado_causal_inicial_iff",
+        "Nexus.Goldilocks.paso_sin_reto_conserva_estado",
+        "Nexus.Goldilocks.nodo_causal_origen",
+        "Nexus.Goldilocks.nodo_causal_destino",
+        "Nexus.Goldilocks.consulta_causal_marca",
+        "Nexus.Goldilocks.salida_causal_cero_rechaza",
+        "Nexus.Goldilocks.cambio_causal_certificado",
+        "Nexus.Goldilocks.cambio_causal_cota",
+        "Nexus.Goldilocks.destino_ideal_absorbente",
+        "Nexus.Goldilocks.reto_causal_absorbente",
+        "Nexus.Goldilocks.acepta_causal_marcada",
+        "Nexus.Goldilocks.respuestas_causales_no_vacias",
+        "Nexus.Goldilocks.plan_causal_cota",
+        "Nexus.Goldilocks.plan_causal_perfiles",
+        "Nexus.N06.marca_historia_congruente",
+        "Nexus.FRI.acepta_oraculos_congruentes",
+        "Nexus.Goldilocks.residuos_inicial_congruente",
+        "Nexus.Goldilocks.monitor_traza_congruente",
+        "Nexus.Goldilocks.monitor_composicion_congruente",
+        "Nexus.Goldilocks.marca_air_congruente",
+        "Nexus.Goldilocks.marca_traza_prefijo_congruente",
+        "Nexus.Goldilocks.marca_traza_congruente",
+        "Nexus.Goldilocks.marca_composicion_prefijo_congruente",
+        "Nexus.Goldilocks.marca_antes_consulta_congruente",
+        "Nexus.Goldilocks.aceptacion_compartida_congruente",
+        "Nexus.Goldilocks.estado_causal_congruente",
+        "Nexus.Goldilocks.capa_traza_normalizada_anterior",
+        "Nexus.Goldilocks.capa_composicion_normalizada_anterior",
+        "Nexus.Goldilocks.capa_traza_terminal_constante",
+        "Nexus.Goldilocks.capa_composicion_terminal_constante",
+        "Nexus.Goldilocks.inicio_composicion_normalizado",
+        "Nexus.Goldilocks.contenido_normalizado",
+        "Nexus.Goldilocks.marca_normalizada_antes_consulta",
+        "Nexus.Goldilocks.plan_terminal_perfiles",
+        "Nexus.Goldilocks.mensajes_finales_normalizados",
+        "Nexus.Goldilocks.mismos_mensajes_compatible",
+        "Nexus.Goldilocks.estado_mismos_mensajes",
+        "Nexus.Goldilocks.mensajes_reflexivos",
+        "Nexus.Goldilocks.mensajes_simetricos",
+        "Nexus.Goldilocks.mensajes_transitivos",
+        "Nexus.Goldilocks.estado_observado_coincide",
+        "Nexus.Goldilocks.mismos_mensajes_misma_observacion",
+        "Nexus.Goldilocks.estado_observado_inicial_iff",
+        "Nexus.Goldilocks.mensaje_con_politica_compatible",
+        "Nexus.Goldilocks.aceptacion_mismos_mensajes",
+        "Nexus.Goldilocks.acepta_observado_coincide",
+        "Nexus.Goldilocks.acepta_observado_marcado",
+        "Nexus.Goldilocks.estado_observado_cero_rechaza",
+        "Nexus.Goldilocks.estado_observado_valido",
+        "Nexus.Goldilocks.raiz_observada_unica",
+        "Nexus.Goldilocks.reto_observado_absorbente",
+        "Nexus.Goldilocks.cambio_observado_cota",
+        "Nexus.Goldilocks.cambio_observado_universal",
+        "Nexus.Goldilocks.reinicios_observados_cota",
+        "Nexus.Goldilocks.reinicios_observados_perfiles",
+        "Nexus.Goldilocks.leer_oraculo_inicial",
+        "Nexus.Goldilocks.leer_oraculo_siguiente",
+        "Nexus.Goldilocks.leer_captura_oraculos",
+        "Nexus.Goldilocks.capturar_lectura_oraculos",
+        "Nexus.Goldilocks.captura_oraculos_igual_iff",
+        "Nexus.Goldilocks.capa_traza_inicial_datos",
+        "Nexus.Goldilocks.capa_composicion_inicial_datos",
+        "Nexus.Goldilocks.captura_datos_traza_igual_iff",
+        "Nexus.Goldilocks.captura_datos_finales_igual_iff",
+        "Nexus.Goldilocks.captura_mensajes_igual_iff",
+        "Nexus.Goldilocks.capa_politica_fija_traza",
+        "Nexus.Goldilocks.capa_politica_fija_composicion",
+        "Nexus.Goldilocks.capturar_realizacion_final",
+        "Nexus.Goldilocks.capturar_realizacion_prefijo",
+        "Nexus.Goldilocks.decodificar_codificar",
+        "Nexus.Goldilocks.codificar_decodificar",
+        "Nexus.Goldilocks.codificar_captura",
+        "Nexus.Goldilocks.codificacion_inyectiva",
+        "Nexus.Goldilocks.codificacion_sobreyectiva",
+        "Nexus.Goldilocks.estado_explicito_captura",
+        "Nexus.Goldilocks.aceptacion_explicita_captura",
+        "Nexus.Goldilocks.estado_explicito_inicial_iff",
+        "Nexus.Goldilocks.estado_explicito_cero_rechaza",
+        "Nexus.Goldilocks.estado_explicito_valido",
+        "Nexus.Goldilocks.mensaje_explicito_conserva_estado",
+        "Nexus.Goldilocks.codificar_origen_explicito",
+        "Nexus.Goldilocks.codificar_destino_explicito",
+        "Nexus.Goldilocks.reto_explicito_absorbente",
+        "Nexus.Goldilocks.cambio_explicito_coincide",
+        "Nexus.Goldilocks.cambio_explicito_cota",
+        "Nexus.Goldilocks.cambio_explicito_perfiles",
+        "Nexus.Goldilocks.respuestas_explicitas_no_vacias",
+        "Nexus.N06.reto_anexado_anterior",
+        "Nexus.N06.historia_anexada_anterior",
+        "Nexus.Goldilocks.capa_traza_anexada",
+        "Nexus.Goldilocks.capa_composicion_anexada",
+        "Nexus.Goldilocks.mismos_mensajes_despues_reto",
+        "Nexus.Goldilocks.captura_destino_desde_origen",
+        "Nexus.Goldilocks.mismos_mensajes_antes_paso",
+        "Nexus.Goldilocks.codificar_origen_paso",
+        "Nexus.Goldilocks.paso_explicito_conserva_estado",
+        "Nexus.Goldilocks.paso_explicito_iff_observado",
+        "Nexus.Goldilocks.codificar_raiz_explicita",
+        "Nexus.Goldilocks.valor_expansion_explicita",
+        "Nexus.Goldilocks.probabilidad_expansion_explicita",
+        "Nexus.Goldilocks.acepta_explicita_marcada",
+        "Nexus.Goldilocks.reinicios_explicitos_cota",
+        "Nexus.Goldilocks.reinicios_explicitos_perfiles",
+        "Nexus.Goldilocks.valor_observado_cambio_registro",
+        "Nexus.Goldilocks.valor_explicito_cambio_registro",
+        "Nexus.Goldilocks.valor_expansion_observada",
+        "Nexus.Goldilocks.transportar_plan_explicito",
+        "Nexus.Goldilocks.decodificar_observacion",
+        "Nexus.Goldilocks.decodificar_origen_observado",
+        "Nexus.Goldilocks.decodificar_destino_observado",
+        "Nexus.Goldilocks.transportar_plan_observado",
+        "Nexus.Goldilocks.acepta_registro_codificado",
+        "Nexus.Goldilocks.acepta_registro_decodificado",
+        "Nexus.Goldilocks.probabilidad_observada_valor",
+        "Nexus.Goldilocks.plan_explicito_misma_probabilidad",
+        "Nexus.Goldilocks.plan_observado_misma_probabilidad"
+      ],
+      "pendiente": [
+        "Completar el adaptador bibliográfico integral y tratar formatos inválidos y aperturas. Ya se prueban la equivalencia de representaciones, la correspondencia exacta de mensajes y retos, el transporte de planes completos en ambas direcciones y la igualdad de sus probabilidades de aceptación en los dos modelos ideales internos. Los planes desde vacío solo recorren pasos autorizados; no se afirma que toda forma tipada arbitraria sea alcanzable. Rust/Merkle/ROM sigue pendiente.",
+        "No identificar B, el número de retos ideales frescos, con consultas SHA3. La transferencia requiere registro hash, extracción/vinculación de compromisos, distribución modular de retos y selector de parejas.",
+        "La cota compartida cubre δt=δc=1/8 y 4<=k<=29; epsilon_rbr=h_T y el corolario min(1,B*h_T) están especializados a los nueve perfiles 4<=k<=12 con q=40. Generalizar radios o tamaños solo si se pretende un enunciado más amplio.",
+        "Correspondencia integral con Rust, aperturas Merkle y Fiat–Shamir en ROM; QROM AIR/FRI permanece como trabajo futuro."
+      ]
+    },
+    {
+      "id": "N07",
+      "estado": "pendiente",
+      "verificado": null,
+      "teoremas": [],
+      "pendiente": [
+        "Modelo del registro de consultas al oráculo aleatorio, árboles Merkle, extracción previa y eventos Bad_H."
+      ]
+    },
+    {
+      "id": "N08",
+      "estado": "pendiente",
+      "verificado": null,
+      "teoremas": [],
+      "pendiente": [
+        "Potencial de candidatos adaptativos, nonces y cola del selector; modelo probabilístico temporal."
+      ]
+    },
+    {
+      "id": "N09",
+      "estado": "pendiente",
+      "verificado": null,
+      "teoremas": [],
+      "pendiente": [
+        "Teorema ROM completo y sus pérdidas, condicionado al cierre de N06-N08 y al puente con el verificador."
+      ]
+    },
+    {
+      "id": "N10",
+      "estado": "evidencia_empirica_historica",
+      "verificado": null,
+      "teoremas": [],
+      "pendiente": [
+        "Se conserva la integridad documental del corpus de 14 certificados; esta ejecución no repite Rust/Python ni demuestra equivalencia general de implementaciones."
+      ]
+    },
+    {
+      "id": "N11",
+      "estado": "trabajo_futuro",
+      "verificado": null,
+      "teoremas": [],
+      "pendiente": [
+        "La cota QROM de omisión y la transferencia completa siguen abiertas; no se reabre esta línea en esta etapa."
+      ]
+    },
+    {
+      "id": "N12",
+      "estado": "componente_verificado",
+      "verificado": "Para los tres perfiles numéricos de R1, la desigualdad necesaria examinada falla para todo eta entero >=1. Se comprueban además los tres lados izquierdos mínimos y floor(8380417/32)=261888.",
+      "teoremas": [
+        "Nexus.N12.condicion_falla",
+        "Nexus.N12.cuentas_minimas"
+      ],
+      "pendiente": [
+        "Correspondencia de los parámetros tabulados con el backend y con las hipótesis del teorema bibliográfico.",
+        "Obligaciones R1-A-E y seguridad completa de ML-DSA; la inaplicabilidad no demuestra un ataque."
+      ]
+    }
+  ],
+  "resultados_manuscrito": [
+    {
+      "id": "C03-COSTOS",
+      "secciones": [
+        "3.3",
+        "3.4",
+        "6.5.3"
+      ],
+      "estado": "componentes_verificados",
+      "verificado": "Razón simbólica de throughput, límite real de amortización, piso y monotonía del costo, condición exacta de equilibrio y cuentas de tamaños/redondeos del capítulo 3.",
+      "teoremas": [
+        "Nexus.Modelos.Costos.razon_throughput",
+        "Nexus.Modelos.Costos.limite_amortizacion",
+        "Nexus.Modelos.Costos.piso_costo",
+        "Nexus.Modelos.Costos.costo_decrece",
+        "Nexus.Modelos.Costos.equilibrio",
+        "Nexus.Modelos.Costos.cuentas_capitulo3"
+      ],
+      "pendiente": [
+        "Modelo de disponibilidad y de una prueba que compruebe transacciones completas.",
+        "Las magnitudes empíricas y las afirmaciones de rendimiento de un sistema real necesitan sus datos y condiciones; la identidad del modelo no las demuestra."
+      ]
+    },
+    {
+      "id": "C05-RESIDENCIA",
+      "secciones": [
+        "5.6.3"
+      ],
+      "estado": "componentes_verificados",
+      "verificado": "Cotas y razón del modelo b+s*rho y corrección de los quince redondeos de la tabla 5.2 usando la latencia decimal preservada en R5, 478.74407894736845 microsegundos.",
+      "teoremas": [
+        "Nexus.Modelos.Residencia.cotas_promedio",
+        "Nexus.Modelos.Residencia.razon_al_menos_uno",
+        "Nexus.Modelos.Residencia.ocupacion_continua",
+        "Nexus.Modelos.Residencia.tabla5_2"
+      ],
+      "pendiente": [
+        "Definición integral de la residencia, intervalos y copias de memoria.",
+        "La aritmética del escenario no mide residencia física ni probabilidad de compromiso."
+      ]
+    },
+    {
+      "id": "C06-LEMA-6.1",
+      "secciones": [
+        "6.4.1"
+      ],
+      "estado": "nucleo_matematico_verificado",
+      "verificado": "La diferencia de representantes cortos distintos después de reducir es no nula, queda en el núcleo del mapa aditivo B y tiene cada coordenada acotada por 2L.",
+      "teoremas": [
+        "Nexus.Reticulos.diferencia_preimagenes"
+      ],
+      "pendiente": [
+        "Instanciación explícita del mapa de reducción en R_q^r y de la multiplicación matricial del backend; no se formaliza aquí una extracción desde firmas."
+      ]
+    },
+    {
+      "id": "C06-GOLDILOCKS",
+      "secciones": [
+        "6.7.1",
+        "6.7.2",
+        "6.7.5",
+        "6.7.8"
+      ],
+      "estado": "componentes_verificados",
+      "verificado": "Certificado de Lucas de la primalidad p=2^64-2^32+1, generador 7 de orden p-1, raíces para k<=32, valor numérico de la raíz máxima y relación con el desplazamiento. Se demuestra que 7 no es cuadrado, que X²-7 es irreducible y que la extensión presentada por pares es un campo de cardinal p², con fórmulas de multiplicación, norma e inverso. Se demuestra además g=omega^8 para T=2^k y N=8T.",
+      "teoremas": [
+        "Nexus.Goldilocks.modulo",
+        "Nexus.Goldilocks.factorizacion",
+        "Nexus.Goldilocks.potencia_generador",
+        "Nexus.Goldilocks.criterio_euler_siete",
+        "Nexus.Goldilocks.factores_primos",
+        "Nexus.Goldilocks.certificado_lucas",
+        "Nexus.Goldilocks.primo",
+        "Nexus.Goldilocks.generador_primitivo",
+        "Nexus.Goldilocks.exponente_desplazamiento",
+        "Nexus.Goldilocks.raiz_maxima_valor",
+        "Nexus.Goldilocks.raiz_primitiva",
+        "Nexus.Goldilocks.siete_no_cuadrado",
+        "Nexus.Goldilocks.cardinal_base",
+        "Nexus.Goldilocks.cardinal_extension",
+        "Nexus.Goldilocks.irreducible_extension",
+        "Nexus.Goldilocks.multiplicacion_extension",
+        "Nexus.Goldilocks.norma_extension",
+        "Nexus.Goldilocks.norma_no_nula",
+        "Nexus.Goldilocks.inverso_extension",
+        "Nexus.Goldilocks.coherencia_raices"
+      ],
+      "pendiente": [
+        "Equivalencia integral con el programa Rust: semántica de enteros de máquina, desbordamientos, bucles, API y serialización.",
+        "Las pruebas del campo y sus operaciones no establecen por sí solas la solidez del STARK."
+      ]
+    },
+    {
+      "id": "C06-TABLA-6.16",
+      "secciones": [
+        "6.7.2"
+      ],
+      "estado": "aritmetica_verificada",
+      "verificado": "Los cinco tamaños satisfacen N=8T y las diez cotas de la tabla 6.16 están redondeadas hacia abajo con error menor que 10^-6. Se conserva su interpretación de distancias mínimas condicionales, no probabilidades de rechazo.",
+      "teoremas": [
+        "Nexus.Modelos.DistanciaAIR.tabla6_16"
+      ],
+      "pendiente": [
+        "La fila T=262144 es un cálculo del modelo matemático; no se convierte en un perfil ejecutable admitido por TG2 v1, cuyo máximo es 4096."
+      ]
+    },
+    {
+      "id": "C06-TABLA-6.22",
+      "secciones": [
+        "6.7.8"
+      ],
+      "estado": "aritmetica_verificada",
+      "verificado": "Los cuatro límites refinados h_T+(8T-3)/p^2 de la tabla 6.22 se redondean hacia arriba, con error <10^-9. Se demuestra q=40<=4T para k>=4 y ceil((1/8)*4T)=T/2 para todos los nueve perfiles 4<=k<=12. La desigualdad probabilística del experimento interactivo conjunto se demuestra en N06/Solidez y se enlaza con estos cuatro superiores, bajo las hipótesis explícitas del modelo ideal y enunciado falso. Se certifica además la cota escogida por rondas epsilon_rbr=h_T en los nueve perfiles implementados; no se confunde con la cota ordinaria que añade (8T-3)/p².",
+      "teoremas": [
+        "Nexus.Modelos.Omision.tabla6_22",
+        "Nexus.Modelos.Omision.muestras_perfiles",
+        "Nexus.Modelos.Omision.techo_perfiles"
+      ],
+      "pendiente": [
+        "La aplicación a probabilidades del ejecutable requiere todavía la correspondencia de oráculos, transcripción, compromisos y retos hash; la prueba interactiva ideal no cierra ROM ni QROM."
+      ]
+    }
+  ],
+  "sha256_fuentes": {
+    "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md": "b9ead99a051817c61772e3bdac9f52f38f82cdd61173b126f2ceb16040a06a79",
+    "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md": "cb644d3e158fa3350f18665ad54e5a1e4fff9a7e80be6069e22f963efc18f12f",
+    "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md": "76dcf3bca7c7a23c227e1e2920d3477771dcc5abca1be8fc050979bfed41c075",
+    "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md": "b68c41082d10531cd11888283a524ddb9c421cbac3e8d7e61ea37ee01dc9ce9d",
+    "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md": "aac14761229724fa43d438ae0ee783432c78db409797c5009c9d5267672b567a",
+    "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md": "892037a264f2ef65e4e22fe6c4be703f66aaa0fd83bbf7bf0f65c6bdc45244e5",
+    "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md": "61cb25022db03d3897b090ce30173541e5b3230fe8077647a125055d881cad3d",
+    "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md": "f807dea85d3a443f7010378d9c6b1e302afaddd95f8dcc956d0fe11aad1234d4",
+    "Documentos/04-Administrativo-TG2/Avances/Catalogo-Validacion-2026-10-12/catalogo.json": "05f372f87280226ce5e62a8b569b2410424c5d33d0c9efa03de3caf363863aa2",
+    "Documentos/04-Administrativo-TG2/Avances/Cierre-Matematico-2026-09-23/RBR-AIR-FRI.md": "886380857ccab164c6b5300a9bfc736d426c37a4e82ac9af47e54b874d17cb62",
+    "Documentos/04-Administrativo-TG2/Avances/Cola-QROM-2026-09-23/Cola-y-Conteo-QROM.md": "ffda72e538d7634c834351240b7a2c635e098dfa85f171fa2ea3de5bffacc3ff",
+    "Documentos/04-Administrativo-TG2/Avances/Muestreo-QROM-2026-09-23/Muestreo-y-Puente-QROM.md": "ca373ff511f2a6d33cbed41d1a8a30beda442bd1b964f0e057e02bc0b6936207",
+    "Documentos/04-Administrativo-TG2/Avances/R1-Correspondencia-Formal-2026-09-22.md": "3af452d6ae953075d6bf3fc174ea85f7f6e24347fdd6a6222414c94bee682b56",
+    "Documentos/04-Administrativo-TG2/Avances/R4-Algebra-AIR-FRI-2026-09-22.md": "a448e2428fc9edca3b1f7b25caccd5efbaeadc89fde9d18cbd4d4cbbbfad46ac",
+    "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/Revision-Critica-ROM.md": "fb89056e602571f20bb9438fcb1e6fba415b43db30352399977188f57616fc7a",
+    "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/corpus.json": "0d74fe1300cdae66bbecf5955ba4855a0b2046f3ce39f1cedb6a6ff8c05268ed",
+    "Documentos/04-Administrativo-TG2/Avances/Transferencia-ROM-2026-09-23/Transferencia-Protocolo-ROM.md": "2336aa9548b2820b844834b4c29ef1648930f41435458d3c2cee45a86d945524",
+    "Documentos/06-Evidencia-TG2/2026-09-22/R5-residencia/sensibilidad.json": "b970262ae09ad9de413c82cc7370cd079fd85370e761093cf8edd4b7814303da",
+    "Documentos/06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/fuentes/nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f",
+    "Documentos/06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/fuentes/nexus/nexus-zk/src/stark/field.rs": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7",
+    "Documentos/06-Evidencia-TG2/2026-09-23/R4-Merkle-FS/fuentes/nexus/nexus-zk/src/stark/fri.rs": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5",
+    "formalizacion/Auditoria.lean": "e073f7d960d1ead8c9fe4c6289810f4b9b53c846176ca0060283b7d48edf31de",
+    "formalizacion/cobertura.json": "da05c693bd73590eafdaef80c0674f57423868d244d28663001549f2e3a3ca42",
+    "formalizacion/inventario-manuscrito.json": "c0c6445f426e14b58042018b2d16ce478a5c9ae165980983f991913c134c8a07",
+    "formalizacion/lake-manifest.json": "709c7dde35fe143806c87d5d5ae58591a2ce38cc73884a88d9d04d17e4d02838",
+    "formalizacion/lakefile.toml": "eb403d328c9e0f4250c1835f18fce68834cb0906990afd13294c5ff7cdc7649a",
+    "formalizacion/lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "formalizacion/Nexus/AIR/Enunciado.lean": "8b3dd4641067b3058d47d6541719e55f4ae118b0d381a8142599c5f9ff1cd029",
+    "formalizacion/Nexus/AIR/Goldilocks.lean": "972998ea898cf62ae3bc67a39c6e1a5591c7845ac322872dcacbeddb64499200",
+    "formalizacion/Nexus/AIR/Grados.lean": "a78f5ebc90681213d1b4439f03ac8cf462857f85ebae1b27996bdf5e2d675287",
+    "formalizacion/Nexus/AIR/Localidad.lean": "9291757f2ab6c87544976905ebaca5ebd23cab8f8bf740e203c67ccee4aaee2f",
+    "formalizacion/Nexus/AIR/Solucion.lean": "da6a296347ced561c4f5fa4519e9901d32002d723c2239dc68a77a17401b9635",
+    "formalizacion/Nexus/AIR/Transferencia.lean": "b357f2f8e3d994bd6c96d4b090e397e777a987b88a59c5a1eafbbb51c5e59992",
+    "formalizacion/Nexus/Campos/Goldilocks.lean": "49e0c649d6a71a8e3015aa51fd7f8b942257e50c282ca72e68d507ffa450c0eb",
+    "formalizacion/Nexus/Campos/Polinomios.lean": "4ab29a6eee4fa467832fcdb18c44aebdcced84984700cb5dacfefc10a2739f65",
+    "formalizacion/Nexus/Distancia/Propiedades.lean": "a88d2aacf6a2f18c8717fc1147794b850c35a81607ef90eddb4f0acb63a0818f",
+    "formalizacion/Nexus/Distancia.lean": "dd9e2e904d76ecbbc0a05d1edccb4a6c4b08dac1224f84c1a8c9622c7986d4f9",
+    "formalizacion/Nexus/FRI/Adaptativo.lean": "938ea7cddb6ba880df3d1fad2a1dd60f8feda604a44ba5f1c407f27e248b4fdb",
+    "formalizacion/Nexus/FRI/Consulta.lean": "f07bee9fcc9beb8da46a82d3ead919619f54afbf5994f4b899b13d3c4003bba8",
+    "formalizacion/Nexus/FRI/Cosets.lean": "4c5cf5cf9805f2d7aea8f1cd2f66c7b3842c8e35c7fd7cef16bd04a4726596ba",
+    "formalizacion/Nexus/FRI/Dominios.lean": "9144b31be2e26de90e61d7866b81d1da7e86ca156deec2c7383ec86a4116799d",
+    "formalizacion/Nexus/FRI/Experimento.lean": "3810c3ca8d0dc9ceefe83b133dbd38665ce10fc529c3589b7ceda98cbc67e227",
+    "formalizacion/Nexus/FRI/Goldilocks.lean": "2c36128c938a99d0c8315af43bb1262d317f8be0db1c364286a1a1f70486bdd1",
+    "formalizacion/Nexus/FRI/Indices.lean": "692582df6d7c42bcde14d5e9667aa12e657ccfb221197b725fa5a615a76f3c50",
+    "formalizacion/Nexus/FRI/Muestreo.lean": "7e0da4e7bfbdbfe91274f8dc7bb19db8103e5a3f045aff0e0c9fc45ed06c352b",
+    "formalizacion/Nexus/FRI/Presupuesto.lean": "b882d347c7899c6840625f592be8f8ede478c7126dcfd89b369cb2d60a15ae99",
+    "formalizacion/Nexus/FRI/Torre.lean": "147d0fe7ec13aa8a3bf47ccf056231ad0d15e62a0a94f92d3a7c79cdf7c29264",
+    "formalizacion/Nexus/Inicio.lean": "475418a03d49f70c50f1210499f5428319404a2af0b34bc402701dc55d19ad06",
+    "formalizacion/Nexus/Modelos/Costos.lean": "909318662e4eac9a62c575330ea3a16e90097add8637d93cc1ff85aa2fd536c4",
+    "formalizacion/Nexus/Modelos/DistanciaAIR.lean": "5b51618d1a58768ac3f2918bb0fa31458107dd3a194f437358dcd76bdbb4d47b",
+    "formalizacion/Nexus/Modelos/Omision.lean": "ae078702ecf89264f366b4e63099297b10b8afa1a5ec20b695039a1d713a940a",
+    "formalizacion/Nexus/Modelos/Residencia.lean": "343e360f40ddf58482488dd21897002906af6d2540cf2a4b953428c109c215ed",
+    "formalizacion/Nexus/N01/Enunciado.lean": "ef447f132dd3585e250788c6707c571ec4affc9655e6c5fcbbbf7751944079f5",
+    "formalizacion/Nexus/N01/Solucion.lean": "11f5b36b91caeb42007822aaf193e95767aa5dcc5b93be4532f5d44f8ea93636",
+    "formalizacion/Nexus/N02/Enunciado.lean": "33fbefbc30d76911b37253591086dd2104204746ae87de2a4df6640b00083f11",
+    "formalizacion/Nexus/N02/Solucion.lean": "5a4791c7cb7d4c1b941c9d624075d850bc5f8be83bb403800fa9a55f6f5872a5",
+    "formalizacion/Nexus/N03/Alternativa.lean": "78b4259abe52b3c39b4d2b71f898e63c30973133c9dd72105f9310674e990b31",
+    "formalizacion/Nexus/N03/CampoBase.lean": "406546ca2a717cdc88d5b2e3eb1fc4dbf860ca31ff5f0b93d7c8a14b647bfa25",
+    "formalizacion/Nexus/N03/Enunciado.lean": "09ebdbfc6c6f64b5b7d6ced09040bc84a8f94ca39bc35b2c98b1c410163a4c86",
+    "formalizacion/Nexus/N03/Perfil.lean": "e1e076d3d0d49606b02f2190b25f240c83622401386842582e3a61ece99cdca5",
+    "formalizacion/Nexus/N03/Solucion.lean": "01b9dfdf274ceefa956fb29279fcd97f1e6e3d050bad0cc3933d09d51b8033ae",
+    "formalizacion/Nexus/N04/Enunciado.lean": "53a0e927d1754124702d647443ce092816847be8155b7d858e8e8d969772e928",
+    "formalizacion/Nexus/N04/Plegado.lean": "899f5812bb1744ac534724a07d65200aaab56548c8baef4fe160d978723e93b8",
+    "formalizacion/Nexus/N04/RadioReal.lean": "266ee98cef313b5c241b5f880a36b321e5a93988744a26ef07cc7b25c7a7af33",
+    "formalizacion/Nexus/N04/Solucion.lean": "d6e707c9c59b07fec1b3085b2d0d222a3e256f0f368be1947a4b632fdb6c0141",
+    "formalizacion/Nexus/N05/Cotas.lean": "ed327cf6146a7a56b389d674bf0efe5b0b6aad17cd7dfcadba02571f51b68c95",
+    "formalizacion/Nexus/N05/Muestreo.lean": "5c0a871c4e77f95ff9283149c6d6075d6754f7e8739b95dbd7d05e895915ef69",
+    "formalizacion/Nexus/N05/Parejas.lean": "d74860e09a9b57efc8af4164203f6f3af06afb4e0114c2f3e04140018f2e7b73",
+    "formalizacion/Nexus/N06/Cancelacion.lean": "e0d3b128047ff4fa71dfe5f45741e6e23fdf2bb0aad904c18cb99e041d0cca85",
+    "formalizacion/Nexus/N06/Candidato.lean": "f08bda03d85cc18859a4a5ee8dd72a285c85dfd81df42f1dcd0d5e585c82b8f0",
+    "formalizacion/Nexus/N06/Compartida.lean": "4f067b9953e1bdc2a9cda4345d01052a111992bbe0a9abae6f63d42645cffbcf",
+    "formalizacion/Nexus/N06/Composicion.lean": "1cc322f85264453edd95e978ee4f01fa49e60a5320ea49e93654bfc7770bd118",
+    "formalizacion/Nexus/N06/CongruenciaPrefijos.lean": "39570d15a7eeb48719c602e8ae91ab2828a6ec5e1e5168db375910c65619570e",
+    "formalizacion/Nexus/N06/Consulta.lean": "d399d061eb3bbcc0b7cdbcb0fb3d1c8be4f806fa26bfb3a285871c0fc6b470f6",
+    "formalizacion/Nexus/N06/DatosTranscripcion.lean": "0924d59af780f0af1abebb46ea399173e35eb0feae52ea002d64118324fd93a3",
+    "formalizacion/Nexus/N06/Ejecucion.lean": "159bc346c15d15fa311dcaa3b653ef13e823149ff4e6d8e14c2b1dc1d8ff22f3",
+    "formalizacion/Nexus/N06/Estado.lean": "3aa061b73b868451ebc5f06e0decee823c449c463107c18b511a0dab49d2e606",
+    "formalizacion/Nexus/N06/EstadoConjunto.lean": "7f3d3607dfd234a3bdb2e74d1bd510d3c236270c19599ad1bd664cb181618cc4",
+    "formalizacion/Nexus/N06/Experimento.lean": "b4801cfbb286dfc1527132ed3d0484e802eab5c5441008417819cee3ac34b0b0",
+    "formalizacion/Nexus/N06/ExtensionRetos.lean": "bf6a2422162e8ab12c9887d8d630bf178e6c619cdd31905966b895a4967c9223",
+    "formalizacion/Nexus/N06/Goldilocks.lean": "f2524549e21029b1ec1d2c814e914cc72aaa06a64bea0de4d40fbdeb7882ed91",
+    "formalizacion/Nexus/N06/MensajesCompatibles.lean": "2ee59927425b3793d99619e6d6972951e71b2f55fe0a3f12f7a7a83b00987238",
+    "formalizacion/Nexus/N06/Monitores.lean": "a9ba489db8dc7f41e6862948f72b1088c5c6c24900626526307dbc01a3574c16",
+    "formalizacion/Nexus/N06/Muestras.lean": "cf5cfba3db7631a0154ad4a6ab8c44879d6f5e1502572fea429e6284ee24123c",
+    "formalizacion/Nexus/N06/OraculosEmitidos.lean": "77748e645766c1860ca08ffad5c94c6482f06a2a5eb9dd37e471914ced7fd34d",
+    "formalizacion/Nexus/N06/Parejas.lean": "95c9880f74690879f84aa0eff15b7f64b82e51a4042daeb017ce1830be854ae8",
+    "formalizacion/Nexus/N06/PasosExplicitos.lean": "11e138cc80e26ca9ceca0478cd5a907111da1abcc0c04cad1b60f53d0a5df947",
+    "formalizacion/Nexus/N06/PlanesExplicitos.lean": "ac75d97243fc651aa16c3b1f864aeb3762a26042107fa2f329345b2e16df9d2f",
+    "formalizacion/Nexus/N06/PoliticasCompatibles.lean": "fab405e37153508981be87877bdf1bacba682a4fa8f3f9053621fbadccace46d",
+    "formalizacion/Nexus/N06/PorRondas.lean": "de168041e64f73e2d17e3b1fd466aa07932077392760864908961ba2098838e7",
+    "formalizacion/Nexus/N06/Prefijos.lean": "fa95cf94f299fafdfa5ac90f9cbd69ecbbb6586db7cfdcd0161e3ade58f7610c",
+    "formalizacion/Nexus/N06/PrimerCambio.lean": "bbfc4c2dba3226d06922b427f71b2ba06e46e629484c50694f006341b113239d",
+    "formalizacion/Nexus/N06/Reinicios.lean": "a01a122e153240f75c240437d5d8ebd772f24d9d1e8825a0773de12c3b0085d8",
+    "formalizacion/Nexus/N06/ReiniciosAdaptativos.lean": "d1e95f32e909a8b4968dca24e684fc6adff8c282446de6c1aa8c54fda7f0c56c",
+    "formalizacion/Nexus/N06/ReiniciosIdeal.lean": "040ca699807c98ec0e41aad1b514b460e39ff7cecd6aa941b553495c72f4ea87",
+    "formalizacion/Nexus/N06/ReiniciosObservados.lean": "52603a75ee4d37aa2d1c08b32f9ae833c5abddefaa0aac772eddb4ce0b7e8572",
+    "formalizacion/Nexus/N06/RondasExplicitas.lean": "105aecd522d7373e9c0e2a7216c8ee22416e119de76db3e363193287c22bc36a",
+    "formalizacion/Nexus/N06/SeleccionAIR.lean": "dca00dc4020b1e8af1456b390071c7358028817dbd7aec468bf756f17534e986",
+    "formalizacion/Nexus/N06/Solidez.lean": "0d2a9cbcb8c419a3a088610dce4a48d4c263d969461261a22b6c660dd5bf3bd0",
+    "formalizacion/Nexus/N06/SolidezCausal.lean": "b8b83396361202bb23f452a6706db68553fce498ecb89e62e5bbd3407bb8fae8",
+    "formalizacion/Nexus/N06/TerminalesConstantes.lean": "8033631b17940d70ea68722fc7ddb130d7f3772c3ff9562131913bd04bae1217",
+    "formalizacion/Nexus/N06/TraduccionPlanes.lean": "b34e26956baf13e4620126442e6ab0c7010407f09bbae7d9f3d9ed9b15af3ff9",
+    "formalizacion/Nexus/N06/Transcripcion.lean": "6a26c4864a69c433e0d8af38a8af2e3d4e8a7ae056648f8b248cbb6635044282",
+    "formalizacion/Nexus/N06/TranscripcionCausal.lean": "354f4bb5eecf1d37965217b4c03a4b0d7c30b5462635fe8832ba51b0ee873b77",
+    "formalizacion/Nexus/N06/TranscripcionExplicita.lean": "07803cc9896591a4967cd27ef1a5a533df85dd18715500782d45142ccbdabc78",
+    "formalizacion/Nexus/N12/Enunciado.lean": "d28dfb78713a5638e60711db889ade65eac3de0472f0964ebb0736988734983c",
+    "formalizacion/Nexus/N12/Solucion.lean": "45421a5487f20c9d7ad31fb003bce224dac0ac55c34243002b24d68b5c3a2e12",
+    "formalizacion/Nexus/Reticulos/Preimagenes.lean": "8244802f55fd438dc95723574479ff7c9992c6d2e3554567f3b111be79475912",
+    "formalizacion/Nexus.lean": "4a94934d8ef4633f9f62987e07a97ef4074d9f63304a45eb471c4ff19d283489",
+    "scripts/inventariar_matematica.py": "1c93be9145bd4549afc8e2adfa899f8384194de802b1c11af12b815111ad583f",
+    "scripts/lean.py": "56330febbc40bbe6343f74dea96813c1ca50a06da899693f50cf862c4f6238a3",
+    "scripts/tests/test_verificar_formalizacion.py": "1216cb06b5cfc480dddeb9e12422109e03763e697d4c638596ec97b2dc383495",
+    "scripts/verificar_catalogo_validacion.py": "6ae6b2b322195a1002286c6962713d4d312c6b780812208236f1ba06462d1e3d",
+    "scripts/verificar_formalizacion.py": "967d70e9fe5ca065ed3cbe7dc0a5fd69a0412768ca23d8cb9ef5432c4fcabe77"
+  },
+  "sha256_logs": {
+    "axiomas.log": "9bd4bca7cc58d20ceb5668c2c4aedb440ddf2c1d1a8325744fd299ae4556143c",
+    "build.log": "51afb089ccde8af0249e89911c1a5ac152c56df9a498155cbb31a0ce7a743e99",
+    "catalogo.log": "47f585f4cb468ae56abccd46908f42914b15a8d59c7a94d4293727622d743f11",
+    "documentos-revision.log": "5eef81f75eeea332fa7b79cd9f0197879e52450439666d4ca85fdf63c405a870",
+    "kernel-Nexus.AIR.Goldilocks.log": "552729ad95ce335f564603fddefca355897090c765619ddacab092aaa88eacd6",
+    "kernel-Nexus.AIR.Grados.log": "5008a3e2d9b6eb1fad4f9cee609122c0880c1d77f6b9a4406050690edea61498",
+    "kernel-Nexus.AIR.Localidad.log": "9583b71b3e853b71fcca907838fa2911c84aa5b5dc1d7fa9eae5e7210ac83557",
+    "kernel-Nexus.AIR.Solucion.log": "37fb88f070acf74e3e2f1e491d23ecf19283392d08fd11d04ed0bb0a395ab016",
+    "kernel-Nexus.AIR.Transferencia.log": "2fb24d9ae423fdadca43fe46614416310205d549ce55fcca004d4f9cf12a663e",
+    "kernel-Nexus.Campos.Goldilocks.log": "9e7cc787878b057318aa367ee7adad16981eff6a14326ec3d78a4cecfb5109d2",
+    "kernel-Nexus.Campos.Polinomios.log": "f8de7cfbe37c894b5e2af1e510a19404639d7840155b2725427d7da56060f416",
+    "kernel-Nexus.Distancia.log": "1abbfd0e1435e051b08b49e1fa4e0cc724621f7c64349d061abc7bfc43627e71",
+    "kernel-Nexus.Distancia.Propiedades.log": "1d0095725bbbc572f49851427627ac9496bcc908fb86e6e289a5d753f04975fc",
+    "kernel-Nexus.FRI.Adaptativo.log": "cb15cbf5a006f26347bf14f76895890ba5b931fe6b758d0807c1d474f470ffa6",
+    "kernel-Nexus.FRI.Consulta.log": "48e6343f21748841ee4e5a18c5b6508b86ca8a3ffd91098ccb401f2ef392935f",
+    "kernel-Nexus.FRI.Cosets.log": "db43998014a8cdd8c56d1dcff74f905b0b46d02cbefa5c5b3b49c809edd5d40a",
+    "kernel-Nexus.FRI.Dominios.log": "118d11537c3ff1f8f51f0ec00f32f6659a0f0f3a131621cff5aaabd9fba720cb",
+    "kernel-Nexus.FRI.Experimento.log": "2e06c0d890eb1ebdfcc797bf15506dd4ab31b53205dbd1f24b691243e2ffda83",
+    "kernel-Nexus.FRI.Goldilocks.log": "136a2ec6f46ae6b31bf7f9ba86019d94aa6c60750589a030b0be7f3216ae5d61",
+    "kernel-Nexus.FRI.Indices.log": "ce472c3719a72868d59bcdfe6df669703ce7c2b264ff239484760bd4bc6cfdb3",
+    "kernel-Nexus.FRI.Muestreo.log": "663f7c8c68ec30de53ce01d5318ff19a01a79051abf97ddfe555d5fee1d9e7b1",
+    "kernel-Nexus.FRI.Presupuesto.log": "c303b7d4a4c50d4d083f12e87e94289511f3cb59610b290a5d04e9c40cae5a1c",
+    "kernel-Nexus.FRI.Torre.log": "0aa952bde61092f436adacc81d8fb360612593c94f1e315873a18b3918f58b79",
+    "kernel-Nexus.Modelos.Costos.log": "466e1ca8843425e1db64e7b33182995213ca9e8167582ff324c9c00dd85a94d9",
+    "kernel-Nexus.Modelos.DistanciaAIR.log": "2d12c7fae2589721c132f08e6eaebfc61eaf9ac38aae54f2991766ce25fc4fd5",
+    "kernel-Nexus.Modelos.Omision.log": "7f9320d0517cc991b3bdae0168834f3b8ef034ceb61520fc02c1e63277239d97",
+    "kernel-Nexus.Modelos.Residencia.log": "0b640cf3c5a0cb3044de494d40e6aa2b7cd16080dae60f82c03f6ca5484cba91",
+    "kernel-Nexus.N01.Solucion.log": "fb1faca949181e97c8a46f86fca5122c63cbb36f44d1e6f7c5a897ba11d99d7d",
+    "kernel-Nexus.N02.Solucion.log": "4ce1f77f64587c939fd534e4dcfa2847156e293be437d1997fdd3a2fdde5fa61",
+    "kernel-Nexus.N03.Alternativa.log": "dda90ec5abb829c4f16f35f0877baabdfa7cc38f68d576f7e3c8d2720eb82aa6",
+    "kernel-Nexus.N03.CampoBase.log": "1ff3b73a879ee865cd8fd26d0caefc3f868e9a93f1e49d57f693d92876c7734b",
+    "kernel-Nexus.N03.Perfil.log": "f628f501e72a9034c68d6021191d4fb2abed32a65c0a3bd9b0b137c6b59a8c32",
+    "kernel-Nexus.N03.Solucion.log": "81778ebe8d0c37f835cd22a6ecb67f784652965d61d5e511964b9aeb819ca0b8",
+    "kernel-Nexus.N04.Plegado.log": "f3d2e19712a06db29c694c2e292f8241feb451d328d6e0b723be9a964839df63",
+    "kernel-Nexus.N04.RadioReal.log": "e3b009cf8b07bcc3cdee39bac5c908c6e49a0ba8d9202ae14b160ebbc0f3ae15",
+    "kernel-Nexus.N04.Solucion.log": "ac01ca499252b3660457cad7a99093178707e963d418c94df075f754ce6ee48f",
+    "kernel-Nexus.N05.Cotas.log": "f2fb97d8bb5105741ff6fcd700aa6bf9385fed6690e75c9da129bf7f8d8a0be7",
+    "kernel-Nexus.N05.Muestreo.log": "133ffd9f05a81fa128d105ee83d9f39f6f29d2c29d22414fa0272a311ab5b588",
+    "kernel-Nexus.N05.Parejas.log": "448a5fcdba8cb1b633d1a3398e89a5c195ed0fea1957366ed4dba713d553fedf",
+    "kernel-Nexus.N06.Cancelacion.log": "6bc4d353995683f43538a85f64fcfec67ee8214e8aecfe997ed9b221885dd5a6",
+    "kernel-Nexus.N06.Candidato.log": "feafa95f8f432f0c41d59eeeef8926a0fdbbdc59efde7f0a517c36ddeb921815",
+    "kernel-Nexus.N06.Compartida.log": "42376f17680eb42ec7cf52c8540563f46d2aff43478cace4ed32dae3bb812bd9",
+    "kernel-Nexus.N06.Composicion.log": "30d55401be24d3fa1a9f0e378b7a0ff7ff3928118e0fa8934b78a063827d4b71",
+    "kernel-Nexus.N06.CongruenciaPrefijos.log": "be1d163d1dc00c2d498bf64d45ff5b2c8fc23e287f435b0e557d2132888c32ee",
+    "kernel-Nexus.N06.Consulta.log": "06bca738fd73991cf6516034e89481732f132801c937e86065a192a756749148",
+    "kernel-Nexus.N06.DatosTranscripcion.log": "88f53a35365fb658e98309f263c3177a10620e51f07a104a8f5b5b177c6150ad",
+    "kernel-Nexus.N06.Ejecucion.log": "a04f02ea8467bd4149fc2c0ba58202aa0c5bbc13ce8f47eda2ade5c25fb8a112",
+    "kernel-Nexus.N06.Estado.log": "f091c3fbcf3a5ff160746957ad9e7e44961ea347ce81bb4d5dee53deaf4c9f7f",
+    "kernel-Nexus.N06.EstadoConjunto.log": "2c513e46b17612d06c0cb68224326ab2f46d0198c34cd7f2069acce70fa51d02",
+    "kernel-Nexus.N06.Experimento.log": "e2fd07f8f46adfeb9247c1888aad560e84156141ab3468b15a62b3221830265a",
+    "kernel-Nexus.N06.ExtensionRetos.log": "47ac15455bcb0a4079fa293d4c4a2376cf08d2663778fee038e87aa0142d6f70",
+    "kernel-Nexus.N06.Goldilocks.log": "155943f588d59a5a74556b5fd3c30b06fe8780b9a4fabc84238b7d14a8b9c0ff",
+    "kernel-Nexus.N06.MensajesCompatibles.log": "6173ba5fbeaad2a8ff3e37c79881a401825cd868b1b6e5862cbd31a2c5713c4d",
+    "kernel-Nexus.N06.Monitores.log": "04fd0f4314ecef3a5bcbd00750b5c98df4580c2ab0ab56e721fc0ac278f1e7c7",
+    "kernel-Nexus.N06.Muestras.log": "acae9e77facdb2c0e77f2cb90b03d92d9947c9f7b254a95a16f4e8d2a37948cc",
+    "kernel-Nexus.N06.OraculosEmitidos.log": "5b2deac9583cba95aa87a836e2844f2441ccee6c923800c893de4f9f5e17cbd5",
+    "kernel-Nexus.N06.Parejas.log": "d70433dc7febd90e1afc83cdfefcfcb0ab8d008cbb4d3f2637c7be4c5d1ccac0",
+    "kernel-Nexus.N06.PasosExplicitos.log": "ca5f50f2a683c25174ccd711b759380d174777bf1eceaebebde0c639dd65bba8",
+    "kernel-Nexus.N06.PlanesExplicitos.log": "c0a702849996309376e9a74803737cd61c4b4b664c246772a0797165dc1c7a2f",
+    "kernel-Nexus.N06.PoliticasCompatibles.log": "bf96504dba207f72b3405f224894aa68b59120d9a3aed86656ec55f1c5782cfc",
+    "kernel-Nexus.N06.PorRondas.log": "f077d1c773bd58c7fa56a5f367a81dde6f2824b36892d3439d2087d04c23fb31",
+    "kernel-Nexus.N06.Prefijos.log": "e002a9920e13571c6a25412fe4814e386b977bb30223d5555a61a4d5d502e14b",
+    "kernel-Nexus.N06.PrimerCambio.log": "8b0314237196b479199622da67ed13693fc3df2ec1166d9b1ae299b3bc521e98",
+    "kernel-Nexus.N06.Reinicios.log": "4473ce8bee903dcc29b0a6507ed031ccfdfcbe723725d7918d0ad61621e97345",
+    "kernel-Nexus.N06.ReiniciosAdaptativos.log": "033edf5ffe5a0af7f9557dd35d1c602493c6a467814bfdc20ce8364f8a305fae",
+    "kernel-Nexus.N06.ReiniciosIdeal.log": "fbcf4f8b80b5d2ebaaf3c256b42a2c8fc96c4145f096684854cb331730bee183",
+    "kernel-Nexus.N06.ReiniciosObservados.log": "15819989db9b963162f06227901d8dfdac9372c2d46ce98c45bc42b35cdbc92e",
+    "kernel-Nexus.N06.RondasExplicitas.log": "b4be18d4b5ad8764e217f02b6ddfc1dd916e4cb692744513e84a21240c721bef",
+    "kernel-Nexus.N06.SeleccionAIR.log": "ec1bcbc3daee7decb0405d0378ea2382ef580562be0a9d577a9e7d97b602f64c",
+    "kernel-Nexus.N06.Solidez.log": "126c57059a3213ff10af456862a89a2912ad3eb6076171988dc9bd33f7c86402",
+    "kernel-Nexus.N06.SolidezCausal.log": "7890685e779fdf311730a4cb743ad741af21a76295747cdfe219bf4f05b644ab",
+    "kernel-Nexus.N06.TerminalesConstantes.log": "bfb386695e186f50aec21fc422bbf43214e1c9b7b564ffb05e6cad93721f65d2",
+    "kernel-Nexus.N06.TraduccionPlanes.log": "77800854c4cbf0e27df538cbbfd71d5f043bf030b079438b2213315a1e655230",
+    "kernel-Nexus.N06.Transcripcion.log": "416d33aeede9207da7d36164b7df46fba8074487196cfe18a01c3518c5b68db7",
+    "kernel-Nexus.N06.TranscripcionCausal.log": "225b846bef82a55410266cb557a30f9bbca1112afb68e20abfc96aec9cd77d7e",
+    "kernel-Nexus.N06.TranscripcionExplicita.log": "c70dc29c9e51962aae9b48785337be954a1a6b0f7f673a4640b84dc65c9eee12",
+    "kernel-Nexus.N12.Solucion.log": "a9a5488cc85e882d547bc3bc81b2f9838deff5407ab9df3c9da05ec7141d8402",
+    "kernel-Nexus.Reticulos.Preimagenes.log": "5479793d941ca9241c556f648f5d537f535acba77c1c1cd0ccf64a91b76f4e31",
+    "mathlib-revision.log": "62787bb69cf52a2f926974c378d5c649db10d451cbe8a34082ab1ace8e0b3865",
+    "version.log": "f00f804e2bfd26bec1fe2ec5dbb31705e03a85ebbffb576039c1a56debd6fe9c"
+  },
+  "dictamen_independiente": "pendiente",
+  "qrom_air_fri": "trabajo_futuro"
+}

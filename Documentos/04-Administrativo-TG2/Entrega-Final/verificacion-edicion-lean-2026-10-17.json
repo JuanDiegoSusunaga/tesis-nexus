@@ -1,0 +1,11 @@
+{
+  "edicion": "tg2-2026-10-17-lean-modelos-manuscrito",
+  "archivos_comprobados": 3741,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "manifiesto": {
+    "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "sha256": "5212c5cc7b7a1b30ba64528005ce0980f46e7e6bc2bfa8af42d8416a32b5a6ec"
+  }
+}

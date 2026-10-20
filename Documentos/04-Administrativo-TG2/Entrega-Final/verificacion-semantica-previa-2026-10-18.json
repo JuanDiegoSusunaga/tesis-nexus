@@ -1,0 +1,10 @@
+{
+  "edicion": "tg2-2026-10-18-lean-semantica-previa",
+  "archivos_comprobados": 7856,
+  "commit_codigo": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-18T17:08:29.458743+00:00",
+  "sha256_manifiesto": "969c369001bfc58b74bcf537306a444fd5f91baa66df84763be9064b5e7fe3f1",
+  "nota": "Informe fuera del manifiesto que verifica para evitar referencia hash circular."
+}

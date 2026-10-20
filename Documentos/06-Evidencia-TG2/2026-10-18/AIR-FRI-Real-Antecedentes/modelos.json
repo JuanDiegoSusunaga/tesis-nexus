@@ -1,0 +1,255 @@
+{
+  "Canal/VectoresCampo": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La extensión de un vector indexado a los dominios Goldilocks recupera cada valor y es cero fuera del dominio. Se identifica con el oráculo Merkle extraído de la tabla. La imagen de una muestra conserva exactamente su cardinal y pertenece al dominio cuadrado; se identifican las seis posiciones AIR con los índices algebraicos de ambas mitades.",
+    "limites": [
+      "La extensión es matemática y determinista. No demuestra operaciones de máquina ni uniformidad de retos."
+    ],
+    "teoremas": [
+      "Nexus.Canal.VectoresCampo.funcion_en_indice",
+      "Nexus.Canal.VectoresCampo.funcion_fuera",
+      "Nexus.Canal.VectoresCampo.valor_periodico",
+      "Nexus.Canal.VectoresCampo.funcion_valor",
+      "Nexus.Canal.VectoresCampo.muestra_dominio",
+      "Nexus.Canal.VectoresCampo.muestra_cardinal",
+      "Nexus.Canal.VectoresCampo.posiciones_seis"
+    ]
+  },
+  "FRI/ControlesCampo": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se derivan la igualdad de longitudes, el valor del oráculo desde la compatibilidad del acarreo y la fórmula del plegado sobre el campo. Por inducción sobre las listas se extraen todas las ecuaciones FRI del recorrido concreto, incluida la compatibilidad con el siguiente vector o con la constante terminal, sin recibir esas ecuaciones como hipótesis.",
+    "limites": [
+      "El argumento usa naturales y funciones de campo. No impone una ley probabilística al contenido de la tabla."
+    ],
+    "teoremas": [
+      "Nexus.Goldilocks.ControlesCampo.longitudes",
+      "Nexus.Goldilocks.ControlesCampo.valor_compatible",
+      "Nexus.Goldilocks.ControlesCampo.plegado_campo",
+      "Nexus.Goldilocks.ControlesCampo.ecuaciones"
+    ]
+  },
+  "FRI/ListaCampo": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Las listas de vectores se elevan a oráculos de las capas y se completan con la constante final. Los controles del acarreo implican la aceptación FRI de una pareja concreta y de toda una muestra de esas parejas, con los retos leídos de las mismas listas.",
+    "limites": [
+      "La aceptación derivada es la de la torre matemática; no es refinamiento universal del ejecutable Rust."
+    ],
+    "teoremas": [
+      "Nexus.Goldilocks.ListaCampo.en_indice",
+      "Nexus.Goldilocks.ListaCampo.final",
+      "Nexus.Goldilocks.ListaCampo.inicial",
+      "Nexus.Goldilocks.ListaCampo.aceptacion",
+      "Nexus.Goldilocks.ListaCampo.muestra_aceptada"
+    ]
+  },
+  "Canal/VistaCampo": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se construye un PrefijoConsulta AIR/FRI con los vectores, retos y constantes de la vista anterior a I. La traza inicial coincide con el vector base. La forma y la lectura exacta se derivan para todo canal canónico admisible desde su propia tabla, sin suponerlas para el certificado futuro.",
+    "limites": [
+      "Las funciones del prefijo construido ignoran la historia de retos porque la vista ya está fijada antes de I. Esto no prueba que cada vector estuviera fijado antes de su propio E y no autoriza trasladar la ley del experimento ideal."
+    ],
+    "teoremas": [
+      "Nexus.Canal.VistaCampo.oraculo_traza",
+      "Nexus.Canal.VistaCampo.oraculo_composicion",
+      "Nexus.Canal.VistaCampo.traza_inicial",
+      "Nexus.Canal.VistaCampo.alfas_de_lista",
+      "Nexus.Canal.VistaCampo.forma_construida",
+      "Nexus.Canal.VistaCampo.lectura_canonica",
+      "Nexus.Canal.VistaCampo.forma_canonica"
+    ]
+  },
+  "Verificador/ConsultaCampo": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Cada pareja que pertenece a GT y GC originales satisface AceptaCompartida del prefijo construido: ambas verificaciones FRI, los seis controles de campo base y el enlace local de composición. El enlace usa las posiciones reales, la inmersión Fp a Fp2 y la ausencia probada de polos en el dominio concreto. La misma muestra se comparte entre las dos fases.",
+    "limites": [
+      "Se transfiere la semántica matemática de los controles. No se supone independencia entre las fases ni se prueba aquí una ley causal de los E."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.ConsultaCampo.valor_air",
+      "Nexus.Verificador.ConsultaCampo.base_air",
+      "Nexus.Verificador.ConsultaCampo.controles_traza",
+      "Nexus.Verificador.ConsultaCampo.datos_composicion",
+      "Nexus.Verificador.ConsultaCampo.controles_composicion",
+      "Nexus.Verificador.ConsultaCampo.enlace_local",
+      "Nexus.Verificador.ConsultaCampo.consulta_buena"
+    ]
+  },
+  "N06/CardinalCompartida": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se demuestra la fórmula exacta de la probabilidad de una consulta unitaria y se usa la cota AIR/FRI compartida existente para deducir 8*cardinal<=7*(4*2^k) para todas las parejas aceptantes y cualquier subconjunto de ellas, cuando el prefijo es seguro.",
+    "limites": [
+      "La seguridad del prefijo es una condición determinista explícita; su probabilidad no se deduce del conteo."
+    ],
+    "teoremas": [
+      "Nexus.Goldilocks.CardinalCompartida.probabilidad_unitaria",
+      "Nexus.Goldilocks.CardinalCompartida.cardinal_seguro",
+      "Nexus.Goldilocks.CardinalCompartida.cardinal_subconjunto"
+    ]
+  },
+  "Verificador/CardinalVista": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se deriva para GT/GC originales, sin filtrarlos por cardinal, el límite floor(7*2^e/8) bajo PrefijoSeguro del canal concreto admisible. Si el exponente no coincide, los conjuntos están vacíos. Para un perfil k se identifica el umbral con 7*2^(k-1); los extremos son 56 y 14336 parejas buenas.",
+    "limites": [
+      "No se afirma el límite fuera del evento PrefijoSeguro. La probabilidad de su fallo sigue pendiente."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.CardinalVista.cardinal_vista",
+      "Nexus.Verificador.CardinalVista.cardinal_canonico",
+      "Nexus.Verificador.CardinalVista.umbral_perfil",
+      "Nexus.Verificador.CardinalVista.umbrales_extremos"
+    ]
+  },
+  "Verificador/ExcesoRondas": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Todo exceso del umbral algebraico en una primera I elegible implica una excepción de rondas del mismo canal canónico falso, reconstruido desde la tabla y los retos reales del prefijo. Se prueba la inclusión de eventos y de sus probabilidades incondicionales. La cota de aceptación falsa sustituye Pr(Exceso) por Pr(Rondas), con umbral ya derivado.",
+    "limites": [
+      "Pr(Rondas) todavía no está acotada. Es necesario demostrar la fijación de vectores antes de cada E y controlar las preconsultas deliberadas, los sesgos y el presupuesto común."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.ExcesoRondas.exceso_tabla",
+      "Nexus.Verificador.ExcesoRondas.exceso_implica_rondas",
+      "Nexus.Verificador.ExcesoRondas.medida_exceso",
+      "Nexus.Verificador.ExcesoRondas.cota_aceptacion"
+    ]
+  },
+  "Verificador/PresupuestoGlobal": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se prueba el coste máximo entre todos los perfiles admitidos y la cota uniforme del lector de bytes completo, incluyendo propuestas malformadas y rechazos. Del presupuesto Q de todas las consultas adversarias, incluidas propuesta e intercalaciones, se deriva el total de llamadas y de entradas distintas B=Q+V12(R). Se demuestra V12(R)=24383+R y, para R=512, B=Q+24895. La cota de aceptación falsa usa solo la hipótesis adversaria Q, sin recibir B como hipótesis separada.",
+    "limites": [
+      "Es el coste del modelo matemático con corte analítico R y EOF estricto. No identifica B con Q ni la altura del programa con Q+V. No integra aún una colección de verificaciones o reinicios que use un único presupuesto."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.PresupuestoGlobal.perfil_maximo",
+      "Nexus.Verificador.PresupuestoGlobal.costo_maximo",
+      "Nexus.Verificador.PresupuestoGlobal.presupuesto_bytes",
+      "Nexus.Verificador.PresupuestoGlobal.llamadas_totales",
+      "Nexus.Verificador.PresupuestoGlobal.entradas_distintas",
+      "Nexus.Verificador.PresupuestoGlobal.cota_desde_Q",
+      "Nexus.Verificador.PresupuestoGlobal.presupuesto_512"
+    ]
+  },
+  "Verificador/RondasReales": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La excepción de cada vista concreta se clasifica exactamente: FRI de traza lejana, cancelación del resto AIR o FRI de composición lejana. Los conjuntos excepcionales FRI usan los mismos oráculos y betas del prefijo leído. La rama con candidato fuera del campo base no genera una excepción de este tipo.",
+    "limites": [
+      "La clasificación es algebraica, no una cota de probabilidad del experimento hash. La vista previa a I no equivale a una política causal anterior a cada E."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.RondasReales.traza_iff",
+      "Nexus.Verificador.RondasReales.composicion_iff",
+      "Nexus.Verificador.RondasReales.fallos_iff",
+      "Nexus.Verificador.RondasReales.excepcion_clasificada"
+    ]
+  },
+  "Verificador/CotaRondas": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se integra para un perfil fijo la cota con Pr(no SinBad), Pr(Rondas), el umbral algebraico y B=Q+24895 para R=512, con pasado de a lo sumo Q+24894 entradas distintas. Se conservan la hipergeométrica, la cola 2^-300 y el error de acoplamiento. La hipergeométrica se acota por (7/8)^40 y esta cantidad por 1/200.",
+    "limites": [
+      "La cota puede ser vacua. Falta acotar las dos probabilidades excepcionales, integrar trabajo, selección de perfiles y reinicios, refinamiento Rust y ejemplo numérico completo. Ni 2^-300 ni 1/200 constituyen por sí solos solidez global."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.CotaRondas.hipergeometrica",
+      "Nexus.Verificador.CotaRondas.omision_cuarenta",
+      "Nexus.Verificador.CotaRondas.cota_512"
+    ]
+  }
+}

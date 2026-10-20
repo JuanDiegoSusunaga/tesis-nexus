@@ -1,0 +1,304 @@
+{
+  "esquema": 1,
+  "fecha": "2026-10-19",
+  "estado": "revision_integral_de_coherencia_con_observaciones",
+  "seguimiento": "Los seis grupos fueron corregidos documentalmente con autorización posterior del autor; se conserva intacto el diagnóstico original que sigue.",
+  "correccion_asociada": "Documentos/06-Evidencia-TG2/2026-10-19/Revision-Integral-Coherencia/correccion-verificada.json",
+  "alcance": "Lectura de los siete capítulos, resúmenes, alcance y bibliografía; cotejo de objetivos, hipótesis, conclusiones, modelos Lean seleccionados y cuentas representativas. No es un dictamen independiente ni una nueva auditoría exhaustiva de cada demostración.",
+  "manuscrito_modificado": false,
+  "word_pdf_regenerados": false,
+  "lean_recompilado": false,
+  "rust_recompilado": false,
+  "nueva_obligacion_lean_creada": false,
+  "tesis_completa_verificada": false,
+  "criterio": "Se distinguen discrepancias del texto, límites ya declarados y resultados demostrados. Las observaciones no convierten extensiones de implementación o QROM en requisitos nuevos de cierre.",
+  "hallazgos": [
+    {
+      "id": "CI01",
+      "prioridad": "alta",
+      "tipo": "objetivos_y_alcance",
+      "ubicaciones": [
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+          "lineas": [
+            61,
+            67,
+            68,
+            74
+          ]
+        },
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+          "lineas": [
+            22,
+            232,
+            876
+          ]
+        },
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+          "lineas": [
+            34,
+            36
+          ]
+        }
+      ],
+      "observacion": "El objetivo general promete prueba formal de seguridad por reducción a Module-LWE y el objetivo 4 una cadena concreta. El desarrollo reconoce que presenta fundamentos, correspondencias pendientes y una prueba ROM para otro objeto: el verificador matemático del AIR, no la inforjabilidad de ML-DSA implementada.",
+      "impacto": "El lector puede interpretar que se cumplió una promesa que los resultados y las limitaciones no sostienen.",
+      "accion_propuesta": "Alinear la presentación de objetivos, alcance y balance con los resultados efectivos. Si el objetivo es institucionalmente inmutable, declarar su cumplimiento parcial y someter esa delimitación al director. No sustituir la prueba de firmas por la cota de aceptación AIR/FRI.",
+      "exige_nueva_prueba_automaticamente": false
+    },
+    {
+      "id": "CI02",
+      "prioridad": "alta",
+      "tipo": "hipotesis_matematica_omitida",
+      "ubicaciones": [
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+          "lineas": [
+            35,
+            59
+          ]
+        }
+      ],
+      "observacion": "Se expresa la seguridad de un bloque como min-entropía por longitud sin declarar independencia ni una cota condicional por muestra. La min-entropía marginal no es aditiva para muestras arbitrariamente correlacionadas; tampoco equivale sin más a los bits de seguridad del sistema.",
+      "contraejemplo": "Sea U un byte uniforme y un bloque de 32 copias de U. Cada marginal tiene 8 bits de min-entropía, pero el bloque completo tiene 8, no 256.",
+      "evidencia_lean": [
+        {
+          "archivo": "formalizacion/Nexus/Entropia/Minima.lean",
+          "declaraciones": [
+            "min_entropia_iid",
+            "min_entropia_bits_correlacionados"
+          ]
+        }
+      ],
+      "fuente_primaria": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90B.pdf",
+      "accion_propuesta": "Enunciar H_inf(X_1,...,X_n)=n H_inf(X) bajo el supuesto IID, o usar una cota condicional explícita. Hablar de entropía conjunta, no de seguridad global. Conservar las limitaciones sobre estimación puntual y fuente física.",
+      "exige_nueva_prueba_automaticamente": false
+    },
+    {
+      "id": "CI03",
+      "prioridad": "alta",
+      "tipo": "consenso_e_incentivos_condicionales",
+      "ubicaciones": [
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+          "lineas": [
+            156,
+            162,
+            178
+          ]
+        }
+      ],
+      "observacion": "La síntesis usa consenso honesto-mayoritario para un diseño de quórum 2/3. Más de la mitad del stake honesto no basta para la intersección honesta de esos quórums. La frase que exige colusión de la mayoría para censura/MEV tampoco se sigue de tener secuenciadores concurrentes.",
+      "contraejemplo": "Con diez pesos iguales, cuatro bizantinos y seis honestos divididos en dos grupos de tres, se forman dos quórums de siete cuyo único solapamiento son los cuatro bizantinos, aunque el 60 % sea honesto.",
+      "evidencia_lean": [
+        {
+          "archivo": "formalizacion/Nexus/Modelos/QuorumIncentivos.lean",
+          "declaraciones": [
+            "quorum_estricto_interseca_honestos",
+            "quorum_inclusivo_requiere_menor_byzantino",
+            "honestidad_nash_iff"
+          ]
+        },
+        {
+          "archivo": "formalizacion/Nexus/Modelos/DisponibilidadCondicional.lean",
+          "declaraciones": [
+            "frontera_quorum_sin_interseccion_honesta"
+          ]
+        }
+      ],
+      "accion_propuesta": "Precisar el umbral y límite de stake bizantino: quórums >2/3 con peso bizantino <=1/3, o quórums >=2/3 con peso bizantino <1/3. No confundir este lema de intersección con una prueba completa del protocolo. Conservar Nash y colusión como condiciones de un juego explícito, no consecuencias universales del slashing o la concurrencia.",
+      "exige_nueva_prueba_automaticamente": false
+    },
+    {
+      "id": "CI04",
+      "prioridad": "media",
+      "tipo": "modelo_de_amortizacion_y_rendimiento",
+      "ubicaciones": [
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+          "lineas": [
+            55
+          ]
+        },
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+          "lineas": [
+            44,
+            52,
+            54,
+            70,
+            75,
+            78,
+            80,
+            173
+          ]
+        },
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+          "lineas": [
+            293,
+            295,
+            472,
+            474
+          ]
+        }
+      ],
+      "observacion": "El modelo con prueba fija tiene un límite correcto, pero varias conclusiones lo trasladan a la arquitectura como eliminación de firmas en L1 o costo independiente del lote. Si el tamaño es pi(M), el límite a d requiere pi(M)/M ->0; el costo de disponibilidad debe contabilizarse por separado. El capítulo 6 sí conserva estas condiciones. Tampoco se sigue de los benchmarks que CPU nunca sea cuello de botella ni que verificar cueste exactamente lo mismo que ECDSA.",
+      "evidencia_lean": [
+        {
+          "archivo": "formalizacion/Nexus/Modelos/Costos.lean",
+          "declaraciones": [
+            "limite_amortizacion",
+            "equilibrio"
+          ]
+        },
+        {
+          "archivo": "formalizacion/Nexus/Modelos/AmortizacionVariable.lean",
+          "declaraciones": [
+            "limite_datos_iff_sublineal",
+            "equilibrio_variable"
+          ]
+        }
+      ],
+      "accion_propuesta": "Llevar las condiciones de §6.6.5 a las conclusiones de §§1.4 y 3.4, usar pi(M) y t_pi(M) cuando se hable del sistema variable y limitar las comparaciones CPU a las rutas medidas. Definir el umbral y parámetros de los 40–140 B y del supuesto punto de equilibrio de 10^4 operaciones.",
+      "exige_nueva_prueba_automaticamente": false
+    },
+    {
+      "id": "CI05",
+      "prioridad": "media",
+      "tipo": "hipotesis_perdidas_en_sintesis",
+      "ubicaciones": [
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+          "lineas": [
+            18,
+            21
+          ]
+        },
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+          "lineas": [
+            255,
+            260,
+            266,
+            877
+          ]
+        },
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+          "lineas": [
+            103,
+            229,
+            233
+          ]
+        }
+      ],
+      "observacion": "La Tabla 7.1 resume STARK como PQ y rotación como secrecia hacia adelante sin conservar las condiciones que el cuerpo declara. La conclusión de complejidad resume iteraciones esperadas constantes sin repetir la independencia ideal y cota positiva uniforme de aceptación.",
+      "evidencia_lean": [
+        {
+          "archivo": "formalizacion/Nexus/Complejidad/Rechazo.lean",
+          "declaraciones": [
+            "esperanza_intentos",
+            "intentos_esperados_O_uno",
+            "costo_esperado_preserva_O"
+          ]
+        }
+      ],
+      "accion_propuesta": "Rotular las garantías como condicionadas: construcción hash/FRI con QROM completo no demostrado; rotación por épocas cuya secrecia depende de custodia y borrado; complejidad esperada bajo el modelo de rechazos declarado. La formulación detallada ya existe y no requiere abrir nuevos módulos para corregir la síntesis.",
+      "exige_nueva_prueba_automaticamente": false
+    },
+    {
+      "id": "CI06",
+      "prioridad": "baja",
+      "tipo": "referencias_internas_y_contribucion_no_desarrollada",
+      "ubicaciones": [
+        {
+          "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+          "lineas": [
+            47,
+            62
+          ]
+        }
+      ],
+      "observacion": "La contribución Deception Engine remite a §7.5, pero esa sección solo tiene tres líneas de trabajo futuro y no desarrolla esa propuesta. En el manuscrito, el mecanismo aparece únicamente en el propio párrafo de contribución y en referencias bibliográficas.",
+      "accion_propuesta": "Corregir la remisión y clasificarlo como idea complementaria futura, o aportar una sección de diseño dentro del alcance autorizado antes de presentarlo como contribución desarrollada. No tratar una búsqueda exploratoria sin resultados como demostración de prioridad o inexistencia de trabajos previos.",
+      "exige_nueva_prueba_automaticamente": false
+    }
+  ],
+  "controles_aritmeticos": {
+    "apt": {
+      "H_bits_por_byte": 7.5,
+      "alpha": "2^-20",
+      "modelo": "1+Bin(511,2^-7.5)",
+      "cola_en_15": "1.5226900325474851e-6",
+      "cola_en_16": "2.7640953150606422e-7",
+      "corte": 16,
+      "coincide": true
+    },
+    "perdida_B23": {
+      "log2": "-361.64065570552200337",
+      "coincide": true,
+      "limite": "Cotejo aritmético de las hipótesis citadas; no transferencia al ejecutable."
+    },
+    "tabla_6_16": {
+      "filas_cotejadas": 5,
+      "redondeo": "hacia abajo a seis decimales",
+      "coincide": true
+    },
+    "tablas_6_19_y_6_22": [
+      {
+        "T": 16,
+        "anterior": "0.052736",
+        "refinada": "0.000166165"
+      },
+      {
+        "T": 64,
+        "anterior": "0.074258",
+        "refinada": "0.002934060"
+      },
+      {
+        "T": 256,
+        "anterior": "0.095099",
+        "refinada": "0.004282720"
+      },
+      {
+        "T": 4096,
+        "anterior": "0.134071",
+        "refinada": "0.004757331"
+      }
+    ],
+    "cota_ROM": [
+      {
+        "L": 1000000,
+        "g": 20,
+        "Q": 1048576,
+        "k": 12,
+        "valor_aproximado": "0.0047573354532699026208189613951294557109758444897712",
+        "comparacion_exacta": "<0.004757335454"
+      },
+      {
+        "L": 1000000,
+        "g": 20,
+        "Q": 1000000,
+        "k": null,
+        "valor_aproximado": "0.029958214834855027348202303209189191639049081906152",
+        "comparacion_exacta": "<1/20"
+      }
+    ],
+    "fuentes_y_logs_lean_sin_cambios": 364,
+    "fuentes_y_salidas_manuscrito_sin_cambios": 12
+  },
+  "evidencia_reutilizada": [
+    "Documentos/06-Evidencia-TG2/2026-10-19/Lean-Global/verificacion.json",
+    "Documentos/06-Evidencia-TG2/2026-10-19/Conciliacion-Manuscrito-ROM/verificacion.json"
+  ],
+  "fuentes_primarias_contrastadas": [
+    "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90B.pdf",
+    "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf",
+    "https://arxiv.org/html/2312.16619v2",
+    "https://perso.ens-lyon.fr/damien.stehle/downloads/MSIS.pdf"
+  ],
+  "conclusion": "Las cotas numéricas cotejadas y los resultados Lean inspeccionados permanecen coherentes dentro de sus hipótesis. El manuscrito necesita alinear objetivos y resúmenes de garantías con ese alcance, y corregir tres omisiones importantes: independencia en entropía, umbrales de consenso y condiciones de extrapolación de modelos. No se afirma ausencia de otros errores ni corrección matemática global."
+}

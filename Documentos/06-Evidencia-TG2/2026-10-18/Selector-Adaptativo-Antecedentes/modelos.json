@@ -1,0 +1,162 @@
+{
+  "ROM/ContinuacionPrefijo": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se define el árbol residual tras n consultas, se conserva su resultado y se identifica su registro con la cola de la transcripción. El árbol residual es idéntico en todas las tablas con el mismo prefijo. La ley conjunta de resultado y cola es la evaluación con memoria iniciada en la tabla observada; cualquier observable del oráculo y del pasado se transporta a completaciones uniformes.",
+    "limites": [
+      "Se condiciona únicamente a un prefijo efectivo fijo, sin SinBad, aceptación ni selección de un futuro favorable."
+    ],
+    "teoremas": [
+      "Nexus.ROM.ContinuacionPrefijo.resultado_despues",
+      "Nexus.ROM.ContinuacionPrefijo.traza_despues",
+      "Nexus.ROM.ContinuacionPrefijo.reconstruir_traza",
+      "Nexus.ROM.ContinuacionPrefijo.despues_por_prefijo",
+      "Nexus.ROM.ContinuacionPrefijo.ley_tabla_y_pasado",
+      "Nexus.ROM.ContinuacionPrefijo.ley_continuacion",
+      "Nexus.ROM.ContinuacionPrefijo.ley_cola"
+    ]
+  },
+  "ROM/ParticionObservada": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La media total es la suma de medias de fibras por sus masas exactas. Se transfieren cotas locales a una cota global y se añade explícitamente la probabilidad de una observación desfavorable, incluidas fibras vacías o de distinto cardinal.",
+    "limites": [
+      "No se postula equiprobabilidad de los pasados ni se elimina el término excepcional. La correspondencia de un evento concreto con sus fibras sigue siendo necesaria."
+    ],
+    "teoremas": [
+      "Nexus.ROM.ParticionObservada.masa_no_negativa",
+      "Nexus.ROM.ParticionObservada.masa_por_media",
+      "Nexus.ROM.ParticionObservada.esperanza_total",
+      "Nexus.ROM.ParticionObservada.media_observada",
+      "Nexus.ROM.ParticionObservada.cota_por_fibras",
+      "Nexus.ROM.ParticionObservada.cota_constante",
+      "Nexus.ROM.ParticionObservada.cota_con_excepcion"
+    ]
+  },
+  "ROM/ObservacionesPrefijo": {
+    "grupos": [
+      "M35",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Los prefijos realizables de un árbol forman una partición finita explícita. Sus fibras son exactamente tablas que producen ese pasado, con masa |Digest|^(-u) para u direcciones distintas. Se prueba esperanza total y transferencia desde cotas condicionadas a cada pasado, conservando la probabilidad de los pasados malos.",
+    "limites": [
+      "La masa depende de direcciones distintas, no de la longitud bruta. No hay condicionamiento a un evento futuro ni selección posterior a la cadena analizada."
+    ],
+    "teoremas": [
+      "Nexus.ROM.ObservacionesPrefijo.realiza_representante",
+      "Nexus.ROM.ObservacionesPrefijo.vistas_por_prefijo",
+      "Nexus.ROM.ObservacionesPrefijo.media_fibra",
+      "Nexus.ROM.ObservacionesPrefijo.masa_prefijo",
+      "Nexus.ROM.ObservacionesPrefijo.esperanza_prefijos",
+      "Nexus.ROM.ObservacionesPrefijo.cota_por_prefijos",
+      "Nexus.ROM.ObservacionesPrefijo.cota_con_pasado_malo"
+    ]
+  },
+  "ROM/SelectorPrefijo": {
+    "grupos": [
+      "M35",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "La semilla y GT/GC pueden ser funciones arbitrarias del prefijo observado. En cada fibra se congelan esos parámetros antes de aplicar el acoplamiento. Se transfieren omisión compartida y omisión o abandono, con la misma delta y primera dirección no preconsultada.",
+    "limites": [
+      "Solo depende del pasado fijado; no permite elegir conjuntos después de ver las respuestas de la cadena. Ambos FRI conservan una única muestra compartida."
+    ],
+    "teoremas": [
+      "Nexus.ROM.SelectorPrefijo.preconsultada_iff",
+      "Nexus.ROM.SelectorPrefijo.hiper_no_negativa",
+      "Nexus.ROM.SelectorPrefijo.delta_no_negativa",
+      "Nexus.ROM.SelectorPrefijo.omision_condicionada",
+      "Nexus.ROM.SelectorPrefijo.ampliada_condicionada"
+    ]
+  },
+  "ROM/SelectorAdaptativo": {
+    "grupos": [
+      "M35",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se suman las cotas del selector sobre todos los pasados de una exploración adaptativa. La cota global de omisión o abandono es hipergeométrica+tau+delta+Pr(primera dirección preconsultada), bajo cotas g y m para el conjunto bueno compartido y las direcciones observadas. Para R=512 y k=4..12, tau<2^(-300). La frescura deja de ser una premisa global: su fallo aparece como un evento explícito.",
+    "limites": [
+      "No se demuestra que Pr(preconsulta) sea pequeña. Faltan su carga al experimento completo de candidatos/nonces, las rondas FRI y las inclusiones de aceptación falsa. No afirma uniformidad condicionada a SinBad, completar o aceptación."
+    ],
+    "teoremas": [
+      "Nexus.ROM.SelectorAdaptativo.tau_no_negativa",
+      "Nexus.ROM.SelectorAdaptativo.hiper_acotada",
+      "Nexus.ROM.SelectorAdaptativo.delta_acotada",
+      "Nexus.ROM.SelectorAdaptativo.omision_global",
+      "Nexus.ROM.SelectorAdaptativo.ampliada_global",
+      "Nexus.ROM.SelectorAdaptativo.cota_uniforme",
+      "Nexus.ROM.SelectorAdaptativo.cota_512"
+    ]
+  },
+  "Canal/SelectorAdaptativo": {
+    "grupos": [
+      "M35",
+      "M39",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Un programa anterior de bytes arbitrarios determina el prefijo de exploración. Se construye un universo finito con su soporte y todas las entradas I, se preservan prefijo y cardinal de direcciones, y se identifica la preconsulta con pertenencia de los bytes reales al pasado. Se enlaza la cota global al programa de selección de 40 índices con semilla y conjuntos elegidos del prefijo.",
+    "limites": [
+      "El programa de selección instrumentado comprueba pertenencia a GT y GC; su aceptación no es la del verificador completo. Pr(preconsulta), las cotas g/m de candidatos concretos, refinamiento Rust y presupuestos globales siguen pendientes. R permanece analítico."
+    ],
+    "teoremas": [
+      "Nexus.Canal.SelectorAdaptativo.restriccion_oraculo",
+      "Nexus.Canal.SelectorAdaptativo.prefijo_bytes",
+      "Nexus.Canal.SelectorAdaptativo.consulta_proyectada",
+      "Nexus.Canal.SelectorAdaptativo.cardinal_vistas",
+      "Nexus.Canal.SelectorAdaptativo.preconsulta_iff",
+      "Nexus.Canal.SelectorAdaptativo.muestra_igual",
+      "Nexus.Canal.SelectorAdaptativo.acepta_implica",
+      "Nexus.Canal.SelectorAdaptativo.cota_programa_512"
+    ]
+  },
+  "Verificador/ContinuacionCausal": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M39",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.4"
+    ],
+    "verificado": "Se instancia la ley de continuación con el verificador completo de bytes, propuesta adaptativa e intercalaciones. Tras un prefijo efectivo, resultado y cola del registro conservan exactamente la ley del árbol residual con memoria. Las consultas restantes se acotan por altura(programa)-n.",
+    "limites": [
+      "La cota de altura no se identifica automáticamente con Q+V_T y no demuestra solidez integral ni refinamiento universal Rust. La ley incluye excepciones y no atribuye independencia a las fases FRI."
+    ],
+    "teoremas": [
+      "Nexus.Verificador.ContinuacionCausal.resultado_tipado",
+      "Nexus.Verificador.ContinuacionCausal.cola_tipado",
+      "Nexus.Verificador.ContinuacionCausal.ley_continuacion_programa",
+      "Nexus.Verificador.ContinuacionCausal.cola_presupuesto"
+    ]
+  }
+}

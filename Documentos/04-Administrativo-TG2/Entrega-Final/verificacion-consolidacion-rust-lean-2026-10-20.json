@@ -1,0 +1,44 @@
+{
+  "fecha": "2026-10-20",
+  "estado": "Consolidación local y manifiesto comprobados sin recompilar Rust ni Lean.",
+  "comprobador": "scripts/verificar_version_tg2.py: verificar, reutilizado por Documentos/06-Evidencia-TG2/2026-10-20/Rust-Lean/consolidar.py",
+  "codigo": {
+    "commit": "3e40e283dddc15502830f9fc220e556385f9d477",
+    "padre": "c5c466c6350e4ff06d04d27ed68b029095c7aec8",
+    "archivos_del_commit": 12,
+    "arbol_limpio": true,
+    "push_realizado": false
+  },
+  "integridad_manifiesto": {
+    "edicion": "tesis-final",
+    "archivos_comprobados": 9573,
+    "commit_codigo": "3e40e283dddc15502830f9fc220e556385f9d477",
+    "errores": [],
+    "correcto": true
+  },
+  "manifiesto": {
+    "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "bytes": 2252786,
+    "sha256": "8d9db2a323a1e398349bc0937e73fb73c040013dbc13275606e778ee43c68c17"
+  },
+  "consolidacion": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Lean/consolidacion.json",
+    "sha256": "39f45e61cd709f3246b4c2d111af7ef901163552827ee0fb1059b5c05c9dfad1"
+  },
+  "preservacion": {
+    "fuentes_configuracion_rust": 88,
+    "fuentes_lean_intactas": 354,
+    "fuentes_salidas_manuscrito_intactas": 12,
+    "archivos_del_manifiesto_previo_intactos_excepto_cuatro_indices_y_seguimiento": 9372,
+    "unico_cambio_desde_revision": "REPRODUCIBILIDAD_TG2.md: nota de procedencia; ninguna fuente .rs cambia.",
+    "manifiesto_previo": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Lean/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "sha256": "8a6bd3af02835ba0916e9886ce4fbab21d801b82559319416b78ebcb2488e824"
+    }
+  },
+  "compilaciones_y_pruebas_rust_lean_repetidas": false,
+  "pruebas_aisladas_previas": 113,
+  "manuscrito_regenerado": false,
+  "commit_documental_creado": false,
+  "nota_integridad": "Este registro externo se crea después de comprobar el manifiesto y no se incluye en su propio inventario, para evitar autorreferencia. Las comprobaciones de hashes no son pruebas nuevas del programa ni acreditan refinamiento universal Rust/Lean."
+}

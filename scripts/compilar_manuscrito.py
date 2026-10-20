@@ -282,7 +282,7 @@ def recorrer(valor):
 def main():
     tablas = preparar_fuentes()
     front = (CAPITULOS / '_tesis-frontmatter.md').read_text(encoding='utf-8')
-    front = re.sub(r'^## (Resumen|Abstract|Alcance de la edición TG2)$', r'# \1 {.unnumbered}', front, flags=re.M)
+    front = re.sub(r'^## (Resumen|Abstract|Alcance de la tesis|Alcance de la edición TG2)$', r'# \1 {.unnumbered}', front, flags=re.M)
     partes = [front.strip()]
     partes.extend(p.read_text(encoding='utf-8').strip().replace('](../Figuras/', '](Figuras/')
                   for p in sorted(CAPITULOS.glob('Cap[1-7]-*.md')))

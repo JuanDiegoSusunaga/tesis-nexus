@@ -1,0 +1,171 @@
+{
+  "esquema": 1,
+  "grupos_revisados": [
+    {
+      "id": "M05",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Fijar dimensiones, salida de H, norma y distribución de la instancia.",
+        "Formalizar la relación de victoria sin asumir una reducción desde firmas reales."
+      ],
+      "modulos_nuevos": [
+        "MLDSA/CardinalRetos"
+      ],
+      "pendientes_anteriores": [
+        "El alfabeto de retos y la codificación son parámetros, sin identificar los retos/bytes de JMW24 o ML-DSA. Falta correspondencia con el juego bibliográfico y su oráculo cuántico, además de la reducción desde firmas.",
+        "Completar la cardinalidad y el codec bibliográfico, SampleInBall, juego cuántico y reducción desde firmas."
+      ],
+      "pendiente_actual": "El cardinal B_tau ya está demostrado. Faltan codec bibliográfico, SampleInBall, juego cuántico y reducción desde firmas."
+    },
+    {
+      "id": "M11",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Definir codificación inequívoca, hash externo, asociación de clave, cadena y nonce.",
+        "Probar verificación previa al cambio de estado bajo supuestos explícitos de hash y firma."
+      ],
+      "modulos_nuevos": [
+        "Cripto/DecodificacionOperacion"
+      ],
+      "pendientes_anteriores": [
+        "El codec usa listas de naturales y no se identifica con bincode ni con transacciones TG1. Verificación y asociación de claves son parámetros; no acredita seguridad de hash/firma o refinamiento del programa.",
+        "Vincular transacciones y codecs efectivos; el sobre de operaciones TG2 ya está probado, pero no equivale a bincode TG1 ni a seguridad de hash/firma."
+      ],
+      "pendiente_actual": "El sobre de operaciones tiene parser e ida y vuelta. Quedan codecs efectivos de transacciones, refinamiento e hipótesis de seguridad de hash/firma; no se identifica con bincode TG1."
+    },
+    {
+      "id": "M13",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Definir estado e invariantes de identidad, época y claves vigentes.",
+        "Demostrar atomicidad del modelo, autorización de cambios y vigencia respecto de un prefijo confiable.",
+        "Mantener custodia, destrucción de copias y secrecia hacia adelante como obligaciones adicionales."
+      ],
+      "modulos_nuevos": [
+        "Cripto/DecodificacionOperacion",
+        "Cripto/CiclosFirmados"
+      ],
+      "pendientes_anteriores": [
+        "Autorización, posesión y validez del registro son controles booleanos parametrizados. No formaliza aún su derivación de firmas, la cadena completa de registros Rust, retiro, custodia durable, destrucción o secrecia hacia adelante.",
+        "Derivar la cadena completa de altas/rotaciones/retiros y checkpoints del registro Rust y enlazarla con la política; quedan custodia, borrado y secrecia hacia adelante."
+      ],
+      "pendiente_actual": "La cadena de rotaciones firmadas y el sobre de operación están probados en el modelo. Quedan altas, retiros, archivo completo y correspondencia Rust, custodia, borrado, checkpoint durable y secrecia hacia adelante."
+    },
+    {
+      "id": "M23",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Definir un modelo de operaciones y la familia asintótica; distinguir n fijo de n variable.",
+        "Derivar el recuento k*l, las transformadas y las cotas gruesa y optimizada.",
+        "Enlazar el costo del algoritmo NTT con el del backend como obligación aparte."
+      ],
+      "modulos_nuevos": [
+        "MLDSA/ProductoNTT",
+        "Complejidad/CosteNTT"
+      ],
+      "pendientes_anteriores": [
+        "Faltan corrección algebraica de una NTT concreta y refinamiento con el backend, muestreo, hashes y costo de bits; no deduce tiempos de benchmarks.",
+        "Requiere el modelo de costo NTT y una barra uniforme p0>0; no prueba la distribución ni seguridad de ML-DSA real.",
+        "Refinar árbol par/impar y coset a la NTT real del backend, orden, Montgomery y enteros; faltan muestreo, hashes y costo de bits."
+      ],
+      "pendiente_actual": "Producto negacíclico y biyección NTT, así como las cuentas del plan compartido, están probados. Falta orden/Montgomery del backend, enteros y desbordamientos, muestreadores, hashes y coste de bits."
+    },
+    {
+      "id": "M35",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar conteo de parejas, techo, muestreo sin reemplazo y consulta compartida ya probados.",
+        "Relacionar la muestra uniforme ideal con el selector implementado sin suponer independencia de ambos FRI."
+      ],
+      "modulos_nuevos": [
+        "ROM/UniformidadSelector",
+        "ROM/LeySelector",
+        "ROM/AcoplamientoSelector",
+        "ROM/FrescuraFinita",
+        "ROM/HistoriaCausal"
+      ],
+      "pendientes_anteriores": [
+        "Derivar distribución uniforme del subconjunto completo por rechazo y enlazar entradas del selector con respuestas frescas en todas las historias; no suponer independencia entre ambos FRI."
+      ],
+      "pendiente_actual": "Uniformidad del subconjunto completo por rechazo, hipergeométrica y pérdida de aborto están probadas. Falta identificar las entradas del selector con claves frescas y sus leyes en todas las historias del protocolo y memoria compartida; no se supone independencia de ambos FRI."
+    },
+    {
+      "id": "M36",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar cotas de estado, transcripciones, reinicios y Tabla 6.22 ya mecanizados.",
+        "Completar la correspondencia externa y la revisión independiente; no identificar B ideal con consultas hash."
+      ],
+      "modulos_nuevos": [
+        "ROM/HistoriaCausal"
+      ],
+      "pendientes_anteriores": [
+        "Construir el adaptador externo integral a las rondas/reinicios ideales y completar revisión independiente; el presupuesto de inicios no equivale automáticamente a consultas hash."
+      ],
+      "pendiente_actual": "Se dispone del cilindro y ley fresca de una historia causal finita. Falta el adaptador integral de rondas y reinicios reales y revisión independiente; no se equiparan inicios y consultas hash."
+    },
+    {
+      "id": "M37",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar extracción, congelación y órdenes de primeras consultas bajo ausencia de aciertos.",
+        "Obtener los hechos de registro y familias causales para todas las historias del protocolo."
+      ],
+      "modulos_nuevos": [
+        "ROM/FrescuraFinita",
+        "ROM/HistoriaCausal"
+      ],
+      "pendientes_anteriores": [
+        "Construir familias causales y la tabla común del protocolo a partir de todos sus eventos; el nuevo evaluador Merkle registra sus consultas locales pero no modela todo Rust."
+      ],
+      "pendiente_actual": "Completaciones y ley de respuestas nuevas/repetidas están probadas para historias causales finitas. Falta derivar las estrategias y claves frescas de todos los eventos de Rust y sus familias en una tabla común."
+    },
+    {
+      "id": "M40",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Probar la cola tau_T y el potencial de candidatos antes de su primera respuesta.",
+        "Tratar abandono, intercalación, duplicados y el factor de trabajo sin condicionarlo a un nonce ya encontrado."
+      ],
+      "modulos_nuevos": [
+        "ROM/AcoplamientoSelector",
+        "ROM/HistoriaCausal"
+      ],
+      "pendientes_anteriores": [
+        "La cola supone extracciones uniformes independientes. Falta el potencial adaptativo de candidatos que trate abandono, intercalación, trabajo y duplicados en todo el protocolo.",
+        "Instanciar los árboles de potencial con candidatos reales, sus conjuntos buenos y leyes frescas condicionales; cerrar el acoplamiento con gramática, memoria y selector."
+      ],
+      "pendiente_actual": "La ley de aborto tiene pérdida exacta tau y se dispone de la ley fresca tras historia finita. Queda construir los árboles de cada candidato real, sus conjuntos buenos y el vínculo con gramática, nonces y tabla compartida."
+    },
+    {
+      "id": "M41",
+      "estado_anterior": "parcial",
+      "estado_actual": "parcial",
+      "criterio_cierre_conservado": [
+        "Conservar la cota parametrizada del evento excepcional del registro.",
+        "Demostrar la composición de los tres términos con sesgos, selector, presupuestos y adaptador causal.",
+        "Certificar el ejemplo numérico solo después de fijar las hipótesis completas."
+      ],
+      "modulos_nuevos": [
+        "ROM/AcoplamientoSelector"
+      ],
+      "pendientes_anteriores": [
+        "Derivar para el ejecutable las inclusiones y cotas de eventos compuestas. El intervalo numérico ya es exacto, pero sigue siendo evaluación de una fórmula condicionada."
+      ],
+      "pendiente_actual": "Se añade el transporte de eventos del selector con pérdida exacta tau. Faltan inclusiones y leyes de los eventos del ejecutable y el adaptador global para instanciar la composición numérica."
+    }
+  ],
+  "cerrados_en_su_modelo": [],
+  "parciales_restantes": 19,
+  "criterios_reducidos": false,
+  "tesis_completa_verificada": false,
+  "dictamen_independiente": "pendiente"
+}

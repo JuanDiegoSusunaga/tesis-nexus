@@ -1,0 +1,228 @@
+{
+  "MLDSA/CardinalRetos": {
+    "grupos": [
+      "M05"
+    ],
+    "secciones": [
+      "6.2.3",
+      "6.4.2"
+    ],
+    "verificado": "Biyeción entre retos B_tau y elección de tau posiciones con un signo por posición. Cardinal exacto choose(256,tau)*2^tau, no vaciedad equivalente a tau<=256 y vacío fuera de dimensión.",
+    "limites": [
+      "No identifica el codec bibliográfico, SampleInBall ni el acceso cuántico al oráculo, y no prueba una reducción desde firmas."
+    ],
+    "teoremas": [
+      "Nexus.MLDSA.Retos.Conteo.construir_extraer",
+      "Nexus.MLDSA.Retos.Conteo.signos_heq",
+      "Nexus.MLDSA.Retos.Conteo.extraer_construir",
+      "Nexus.MLDSA.Retos.Conteo.cardinal_soportes",
+      "Nexus.MLDSA.Retos.Conteo.cardinal_retos",
+      "Nexus.MLDSA.Retos.Conteo.retos_no_vacios",
+      "Nexus.MLDSA.Retos.Conteo.fuera_de_dimension_vacio"
+    ]
+  },
+  "MLDSA/ProductoNTT": {
+    "grupos": [
+      "M23"
+    ],
+    "secciones": [
+      "6.5"
+    ],
+    "verificado": "Las 256 evaluaciones en zeta*(zeta^2)^i anulan X^256+1. La evaluación del representante es multiplicativa, aditiva y biyectiva en Rq. Enlace del producto negacíclico con el producto coordenado de las dos transformadas recursivas.",
+    "limites": [
+      "No identifica el orden o Montgomery del backend, enteros de máquina, codecs ni coste de bits. La biyección es algebraica y no implementa una transformada inversa eficiente."
+    ],
+    "teoremas": [
+      "Nexus.MLDSA.ProductoNTT.punto_raiz",
+      "Nexus.MLDSA.ProductoNTT.modulo_se_anula",
+      "Nexus.MLDSA.ProductoNTT.evaluacion_clase",
+      "Nexus.MLDSA.ProductoNTT.evaluar_producto",
+      "Nexus.MLDSA.ProductoNTT.evaluar_suma",
+      "Nexus.MLDSA.ProductoNTT.evaluar_inyectiva",
+      "Nexus.MLDSA.ProductoNTT.evaluar_biyectiva",
+      "Nexus.MLDSA.ProductoNTT.producto_recursivo"
+    ]
+  },
+  "Complejidad/CosteNTT": {
+    "grupos": [
+      "M23"
+    ],
+    "secciones": [
+      "6.5"
+    ],
+    "verificado": "Cuenta exacta de mariposas de un plan radix dos que comparte las dos mitades. Para n=256: 1024 mariposas, 2048 sumas y 1024 productos; identidad n*log2(n) y cota del trabajo de campo.",
+    "limites": [
+      "La cuenta corresponde al plan completo con mitades compartidas, no a evaluar reiteradamente transformar en índices sueltos. No es una medición CPU ni una semántica del backend o un coste de bits; presupone los factores de mariposa disponibles."
+    ],
+    "teoremas": [
+      "Nexus.Complejidad.CosteNTT.mariposas_doble",
+      "Nexus.Complejidad.CosteNTT.mariposas_exactas",
+      "Nexus.Complejidad.CosteNTT.sumas_exactas",
+      "Nexus.Complejidad.CosteNTT.productos_exactos",
+      "Nexus.Complejidad.CosteNTT.trabajo_nlogn",
+      "Nexus.Complejidad.CosteNTT.mldsa_256_cuenta",
+      "Nexus.Complejidad.CosteNTT.base_sin_operaciones",
+      "Nexus.Complejidad.CosteNTT.mariposas_crecientes"
+    ]
+  },
+  "ROM/UniformidadSelector": {
+    "grupos": [
+      "M35"
+    ],
+    "secciones": [
+      "6.7.9"
+    ],
+    "verificado": "Toda permutación transporta la salida del selector. Se construye una biyección entre fibras de dos subconjuntos del mismo tamaño. Partición de las palabras completas y uniformidad exacta del q-subconjunto condicionada a completar antes de un corte fijo.",
+    "limites": [
+      "El espacio uniforme es el de palabras de entrada independientes de longitud fija. La positividad de completar es explícita; la prueba no atribuye esa ley a respuestas SHA3 ni a todas las historias del protocolo."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Selector.Uniformidad.salida_permutada",
+      "Nexus.ROM.Selector.Uniformidad.permutacion_subconjuntos",
+      "Nexus.ROM.Selector.Uniformidad.fibras_iguales",
+      "Nexus.ROM.Selector.Uniformidad.cardinal_subconjuntos",
+      "Nexus.ROM.Selector.Uniformidad.completas_por_fibra",
+      "Nexus.ROM.Selector.Uniformidad.uniforme_condicionado_a_completar"
+    ]
+  },
+  "ROM/LeySelector": {
+    "grupos": [
+      "M35"
+    ],
+    "secciones": [
+      "6.7.9"
+    ],
+    "verificado": "Partición de selecciones completas contenidas en G. La probabilidad condicionada coincide exactamente con choose(cardG,q)/choose(M,q), satisface H(M,q,theta) y la cota exponencial. Composición aritmética de la mezcla con un fallo de masa tau.",
+    "limites": [
+      "Las palabras son uniformes independientes y el conjunto G está fijado para esta distribución. No supone independencia de los dos FRI ni demuestra que sus conjuntos buenos sean causales en Rust."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Selector.Uniformidad.Ley.buenas_por_fibra",
+      "Nexus.ROM.Selector.Uniformidad.Ley.hipergeometrica_condicionada",
+      "Nexus.ROM.Selector.Uniformidad.Ley.cota_H_condicionada",
+      "Nexus.ROM.Selector.Uniformidad.Ley.cota_exponencial_condicionada",
+      "Nexus.ROM.Selector.Uniformidad.Ley.mezcla_con_fallo"
+    ]
+  },
+  "ROM/AcoplamientoSelector": {
+    "grupos": [
+      "M35",
+      "M40",
+      "M41"
+    ],
+    "secciones": [
+      "6.7.9"
+    ],
+    "verificado": "Ley racional normalizada que aborta con masa tau y, al completar, devuelve un q-subconjunto uniforme. Su variación total respecto de la muestra ideal es exactamente tau; todo evento pierde a lo sumo tau. Para el corte 512 y los nueve perfiles, la pérdida modelada es menor que 2^-300.",
+    "limites": [
+      "Se estudia la ley de aborto descrita a partir del resultado uniforme condicionado. La correspondencia integral con tablas ROM compartidas, nonces y el selector Rust sigue abierta. El corte 512 es analítico."
+    ],
+    "teoremas": [
+      "Nexus.ROM.Selector.Acoplamiento.masa_no_negativa",
+      "Nexus.ROM.Selector.Acoplamiento.masa_normalizada",
+      "Nexus.ROM.Selector.Acoplamiento.perdida_exacta",
+      "Nexus.ROM.Selector.Acoplamiento.error_de_evento",
+      "Nexus.ROM.Selector.Acoplamiento.perdida_acotada",
+      "Nexus.ROM.Selector.Acoplamiento.perdida_corte_512"
+    ]
+  },
+  "ROM/FrescuraFinita": {
+    "grupos": [
+      "M35",
+      "M37"
+    ],
+    "secciones": [
+      "6.7.9"
+    ],
+    "verificado": "Biyeción de completaciones de una tabla parcial con funciones en las claves libres y cardinal exacto. Cada respuesta en una clave ausente tiene masa condicionada 1/cardA; las respuestas repetidas están fijadas y una respuesta distinta es imposible.",
+    "limites": [
+      "Funciones uniformes de dominio y codominio finitos. No infiere frescura a partir de ausencia de colisión, ni construye el adaptador de todos los eventos de Rust, ni presupone SHA3 uniforme."
+    ],
+    "teoremas": [
+      "Nexus.ROM.FrescuraFinita.cardinal_completaciones",
+      "Nexus.ROM.FrescuraFinita.cardinal_fibra_nueva",
+      "Nexus.ROM.FrescuraFinita.exponente_antes_despues",
+      "Nexus.ROM.FrescuraFinita.respuesta_nueva_uniforme",
+      "Nexus.ROM.FrescuraFinita.respuesta_repetida_fija",
+      "Nexus.ROM.FrescuraFinita.respuesta_repetida_distinta_imposible"
+    ]
+  },
+  "ROM/HistoriaCausal": {
+    "grupos": [
+      "M35",
+      "M36",
+      "M37",
+      "M40"
+    ],
+    "secciones": [
+      "6.7.9"
+    ],
+    "verificado": "La estrategia depende de prefijos de respuestas. Para toda historia admisible, sus tablas compatibles equivalen a completaciones de las consultas vistas, con cardinal exacto. La siguiente respuesta fresca es uniforme condicionada a esa historia; repeticiones conservan respuesta y distintas consultas no superan la longitud del registro.",
+    "limites": [
+      "Historia causal finita y admisible fijada, sin condicionar a eventos futuros. La próxima clave debe probarse ausente. Falta identificar estas estrategias, claves y cilindros con todas las historias reales, gramática y memoria compartida."
+    ],
+    "teoremas": [
+      "Nexus.ROM.HistoriaCausal.consulta_previa_vista",
+      "Nexus.ROM.HistoriaCausal.acuerdo_historia",
+      "Nexus.ROM.HistoriaCausal.historia_es_cilindro",
+      "Nexus.ROM.HistoriaCausal.cardinal_historia",
+      "Nexus.ROM.HistoriaCausal.uniforme_tras_historia",
+      "Nexus.ROM.HistoriaCausal.repetida_tras_historia",
+      "Nexus.ROM.HistoriaCausal.consultas_distintas_acotadas"
+    ]
+  },
+  "Cripto/DecodificacionOperacion": {
+    "grupos": [
+      "M11",
+      "M13"
+    ],
+    "secciones": [
+      "5.5",
+      "6.4.3"
+    ],
+    "verificado": "Parser computable del sobre operation_bytes: comprueba dominio, 70 bytes de cabecera y longitud declarada exacta. Ida y vuelta, recodificación canónica, rango u64 de la longitud aceptada, rechazo de truncamientos, dominio y longitud incorrectos.",
+    "limites": [
+      "Parser matemático del sobre de operación TG2. No es un parser bincode de transacciones TG1 ni del archivo completo, ni demuestra seguridad del hash o firma o equivalencia instrucción por instrucción con Rust."
+    ],
+    "teoremas": [
+      "Nexus.Cripto.OperacionBytes.Parser.ventana_ocho",
+      "Nexus.Cripto.OperacionBytes.Parser.longitud_recuperada",
+      "Nexus.Cripto.OperacionBytes.Parser.forma_codificada",
+      "Nexus.Cripto.OperacionBytes.Parser.recodificar_campos",
+      "Nexus.Cripto.OperacionBytes.Parser.decodificar_codificar",
+      "Nexus.Cripto.OperacionBytes.Parser.decodificacion_canonica",
+      "Nexus.Cripto.OperacionBytes.Parser.acepta_iff_forma",
+      "Nexus.Cripto.OperacionBytes.Parser.truncamiento_rechazado",
+      "Nexus.Cripto.OperacionBytes.Parser.dominio_incorrecto_rechazado",
+      "Nexus.Cripto.OperacionBytes.Parser.longitud_incorrecta_rechazada"
+    ]
+  },
+  "Cripto/CiclosFirmados": {
+    "grupos": [
+      "M13"
+    ],
+    "secciones": [
+      "5.5",
+      "6.4.3"
+    ],
+    "verificado": "Ejecución de listas de propuestas equivalente a una cadena de instalaciones firmadas. Época e historial crecen exactamente con la longitud, se conservan checkpoint, identidades y clave predeterminada. Épocas de propuestas distintas, rechazo persistente y rechazo de repetir cualquier propuesta aplicada; la época anterior deja de estar vigente.",
+    "limites": [
+      "Se parte del modelo de rotación con verificación abstracta. No cubre altas y retiros del registro Rust, serialización global, custodia, destrucción, checkpoint externo durable ni secrecia hacia adelante."
+    ],
+    "teoremas": [
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.cadena_de_ejecucion",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.ejecutar_append",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.fallo_persistente",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.epoca_por_longitud",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.historial_por_longitud",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.historial_extendido",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.checkpoint_conservado",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.predeterminada_conservada",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.identidades_conservadas",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.rango_epocas",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.epocas_sin_duplicados",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.repetir_propuesta_antigua_rechaza",
+      "Nexus.Cripto.Epocas.Firmada.Ciclos.epoca_anterior_no_vigente"
+    ]
+  }
+}

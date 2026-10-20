@@ -1,0 +1,42 @@
+{
+  "edicion": "tesis-final",
+  "archivos_comprobados": 9653,
+  "commit_codigo": "637e77c99e804664915caf4ed928a10ef81cc870",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-20T16:21:35.780119+00:00",
+  "manifiesto": {
+    "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "bytes": 2274535,
+    "sha256": "ad08b45e5b890f1ae827334801a6969139e501eb8932f0a9061e52ea8a5d9746"
+  },
+  "verificacion_global_rust": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json",
+    "bytes": 86920,
+    "sha256": "b5f740de756ac89dad9e61e469f98b721fd3c4643a9c064f3d9ad7520c485eff"
+  },
+  "cierre": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/cierre.json",
+    "bytes": 2732,
+    "sha256": "e2b0a7ca0381b57392fd01dca559acad717ba67572a16fc3afe195f07200d09d"
+  },
+  "manifiesto_previo": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "bytes": 2271039,
+    "sha256": "c54997fa441cc38404fdc314c0f444e5e88e895ec51eefde0807a2c1b3885c32"
+  },
+  "rutas_previas_preservadas": 9641,
+  "archivos_previos_actualizados": [
+    "BITACORA_TG2.md",
+    "Documentos/01-Manuscrito/README.md",
+    "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+    "Documentos/06-Evidencia-TG2/README.md",
+    "PENDIENTES.md"
+  ],
+  "fuentes_rust_intactas": 89,
+  "fuentes_lean_intactas": 354,
+  "manuscrito_intacto": true,
+  "lean_recompilado": false,
+  "cargo_repetido_en_cierre": false,
+  "sin_commit_ni_push": true
+}
