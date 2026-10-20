@@ -1,0 +1,1991 @@
+{
+  "fecha": "2026-10-20",
+  "fecha_utc": "2026-10-20T17:32:22.168436+00:00",
+  "estado": "preparacion_verificada_para_commit_local_de_formalizacion",
+  "commit_base_documental": "a9faf0e66af1400991ac5b0215c770f96ad712b8",
+  "autorizacion": "Dale a consolidar Lean y sus herramientas, conciliar README y verificar integridad; sin compilar ni hacer push.",
+  "alcance": "Versionado de fuentes ya auditadas; no se añaden módulos ni obligaciones matemáticas.",
+  "lean_fuentes_config_intactas": 354,
+  "rust_fuentes_config_intactas": 89,
+  "manuscrito_fuentes_salidas_intactas": 12,
+  "auditoria_lean_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json",
+    "bytes": 60655,
+    "sha256": "680ace2f3dd51f0fd5eeda05f48aed387842f0e28bdd92cf63af2420127f82d0"
+  },
+  "global_rust_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json",
+    "bytes": 86920,
+    "sha256": "b5f740de756ac89dad9e61e469f98b721fd3c4643a9c064f3d9ad7520c485eff"
+  },
+  "revision_estatica": {
+    "scripts_sintaxis_correcta": 7,
+    "modulos_nexus_incluida_raiz": 348,
+    "importaciones_nexus_con_fuente": 878,
+    "lean_ejecutado": false,
+    "rust_ejecutado": false
+  },
+  "compilaciones_repetidas": false,
+  "pruebas_repetidas": false,
+  "manuscrito_regenerado": false,
+  "push_realizado": false,
+  "exclusiones": [
+    "formalizacion/.lake/",
+    ".tools/",
+    "__pycache__/",
+    "tmp/",
+    "Presentacion-Tesis-NEXUS.pdf",
+    "Repositorio independiente nexus/"
+  ],
+  "limites": "La auditoría conserva sus hipótesis: ROM clásico finito, no refinamiento universal Rust ni QROM ni dictamen independiente.",
+  "fuentes_versionadas": [
+    {
+      "archivo": "formalizacion/.gitignore",
+      "bytes": 8,
+      "sha256": "5375c2c5e323f40c0031aa8c82f66bb9197214001039e6a8c9ff2a5eb3aa24a9"
+    },
+    {
+      "archivo": "formalizacion/ALCANCE-MANUSCRITO.md",
+      "bytes": 146655,
+      "sha256": "611c6d412694ce0b47fb5c82aaafff31f7bbc5dc8b15b3e0e0aa73b670894d2d"
+    },
+    {
+      "archivo": "formalizacion/Auditoria.lean",
+      "bytes": 157969,
+      "sha256": "6899c90ab90ec9c29584aee94178f93d3dd36965bc39fc1f3023ad5a3d1b3cc3"
+    },
+    {
+      "archivo": "formalizacion/AuditoriaPuenteAdaptativo.lean",
+      "bytes": 11954,
+      "sha256": "cc83e6f23b299b2d2eb12f116b3dc21439b5af4bf6826a1b94aba1361af38f48"
+    },
+    {
+      "archivo": "formalizacion/Nexus.lean",
+      "bytes": 11414,
+      "sha256": "b18ba7d400b7fcd1204664ab82231e817067173be0e4c9a7258995e01b9267ef"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/CancelacionSesgada.lean",
+      "bytes": 6872,
+      "sha256": "87409bac0729ddc1284a7023e2134d5f33f065de9aa59cedf83341b838b2315e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/CocientesAlejados.lean",
+      "bytes": 4631,
+      "sha256": "252652fc8fa446b4e2120dbba11bcf562f822a9b86e8f5ca86f0c3ba9d754034"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/ComposicionAlejada.lean",
+      "bytes": 6860,
+      "sha256": "c7e75e3b3aeb70cdd0c6b2faeda18d97f0fb8f916b84c593e9b7d74aa9450143"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/ContraejemploGoldilocks.lean",
+      "bytes": 7062,
+      "sha256": "3867a842998f51cae7f00311673d9b9bbce06aa6f154f853923791a1e15ede64"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/DistanciaExacta.lean",
+      "bytes": 6322,
+      "sha256": "545e66c1a9273ca2991c53951b7d04e910e21eb37def017b17b9609ec4454ea9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/EjemploCancelacion.lean",
+      "bytes": 17530,
+      "sha256": "87673b8f7b3ab0360acdcf1abf159d351ca4a91ab54b7e43a4b63d27f601c783"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/Enunciado.lean",
+      "bytes": 2121,
+      "sha256": "8b3dd4641067b3058d47d6541719e55f4ae118b0d381a8142599c5f9ff1cd029"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/Goldilocks.lean",
+      "bytes": 5807,
+      "sha256": "972998ea898cf62ae3bc67a39c6e1a5591c7845ac322872dcacbeddb64499200"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/Grados.lean",
+      "bytes": 3493,
+      "sha256": "a78f5ebc90681213d1b4439f03ac8cf462857f85ebae1b27996bdf5e2d675287"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/GradosValidos.lean",
+      "bytes": 5841,
+      "sha256": "92c3d63bb3c70512ea5b053d4156fa047f60e7fa745d580550d546de80a05abe"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/Interpolacion.lean",
+      "bytes": 3191,
+      "sha256": "43616b7a3c3aeacbdd7ef83cae90b4cb6ad2b1897c797c70ed24717a6f3d425e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/Localidad.lean",
+      "bytes": 9114,
+      "sha256": "9291757f2ab6c87544976905ebaca5ebd23cab8f8bf740e203c67ccee4aaee2f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/Perturbacion.lean",
+      "bytes": 4721,
+      "sha256": "6c0eeb2cf3cc02e8f2391f907e1e360016f89065129ea1740a07e6e8e753ca7c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/Solucion.lean",
+      "bytes": 8098,
+      "sha256": "da6a296347ced561c4f5fa4519e9901d32002d723c2239dc68a77a17401b9635"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/Transferencia.lean",
+      "bytes": 5199,
+      "sha256": "b357f2f8e3d994bd6c96d4b090e397e777a987b88a59c5a1eafbbb51c5e59992"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Bytes/Codec.lean",
+      "bytes": 4104,
+      "sha256": "8b636cc7d79968eaf2fe4c8570b24d6191737e6e78b157e14c283d4b66d24ccd"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Bytes/Lectura.lean",
+      "bytes": 6611,
+      "sha256": "565549da8b0375699eb74a56d078e618b431aa9dc127c77ebe8430db39bdb180"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Bytes/LittleEndian.lean",
+      "bytes": 2093,
+      "sha256": "e3a58299d6ca70fe565e540113aac1182f6e25d4b1232d1a2dbd6a5c22d2355f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Campos/Goldilocks.lean",
+      "bytes": 6497,
+      "sha256": "49e0c649d6a71a8e3015aa51fd7f8b942257e50c282ca72e68d507ffa450c0eb"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Campos/Polinomios.lean",
+      "bytes": 3588,
+      "sha256": "4ab29a6eee4fa467832fcdb18c44aebdcced84984700cb5dacfefc10a2739f65"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/AceptacionRecorridos.lean",
+      "bytes": 6896,
+      "sha256": "1dd5d61d2142fc156180f8380c0fccfdd01cd3ff8b9f4deb610fbc041197bef1"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/AperturasAIR.lean",
+      "bytes": 7155,
+      "sha256": "d8c8089b6b68c44424c3187414168836270c0611ddbecada0dc93bdf7939030d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/CanalPrevio.lean",
+      "bytes": 4830,
+      "sha256": "cab631f4bb69e692e7407f1feb752dee46d0562639f584183b2b2f2cacab92dd"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/CapasIndexadas.lean",
+      "bytes": 1803,
+      "sha256": "7b03aaaeac0f75eadb9f22fa8f43c103c880850f5423850ffa36fd7bf41e429c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/CintaSelector.lean",
+      "bytes": 3967,
+      "sha256": "d7c48036f78b4b6231f3de57590fa6f22e5eb7f51e0a9e50248e5acb8dd691f2"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/CongelacionPrograma.lean",
+      "bytes": 5153,
+      "sha256": "24285f8ce02d190ab08e3668f111a80594ca1ca6267c5889e66616850c868e52"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/ConteoNonce.lean",
+      "bytes": 11521,
+      "sha256": "56f4535bb4827045ac3a82c1a56f62710dc662fc708268f75975d99c8952f75f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/ConteoPares.lean",
+      "bytes": 13559,
+      "sha256": "d9f471f94508357edd4f6156bc6967c620fd7da8326512d7878d24f23d5bece0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/ContextoAIR.lean",
+      "bytes": 6046,
+      "sha256": "285084717b566f18c47e56b6f2e6d77472ccc8ad627630e133c07b8a0fbf38de"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/DesafiosPrograma.lean",
+      "bytes": 10798,
+      "sha256": "68027e239965b0f42cb4653eb3d601e67da28b8837f7f02eb4b3f814b967694a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/EnlaceComposicion.lean",
+      "bytes": 9463,
+      "sha256": "4a2b7eba60ca8cd7e9d50e412bfad12aa194029c4fdc0e98219abb58065b4252"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/Entradas.lean",
+      "bytes": 6562,
+      "sha256": "0fbec188d623be84b700cdb2cabe3942c4b89f40df203baa6db782ba1b115913"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/ExtensionesPrefijo.lean",
+      "bytes": 7124,
+      "sha256": "311f940c8390a8e3cf0972c5b4debb69938195a89b2d02990da5960165920c73"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/FamiliasPrograma.lean",
+      "bytes": 4949,
+      "sha256": "6815e7dc2e5e3e438e1cad5228f571694efd6c9456aba2d7074854f1a995b9b6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/FrescuraTrabajo.lean",
+      "bytes": 3852,
+      "sha256": "9fb03df7ea725299deaf7278a31f06d1f41048562f20dceaa05c7cc828833508"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/GramaticaTG2.lean",
+      "bytes": 5381,
+      "sha256": "9826cf94c9531dd3c68d0995ae04acd8b182e11653e737da975d3266572bf9a4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/Intercalaciones.lean",
+      "bytes": 5762,
+      "sha256": "7292cc8f9f7e09e200122736d46c6b1b71da086f79080732fd701ff186185359"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/LecturaAbsorcion.lean",
+      "bytes": 4779,
+      "sha256": "6217f7958f4d2de7af888d3a5b02863691f0d694cd02669a3d73824ef9d1accc"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/LecturaCadena.lean",
+      "bytes": 5105,
+      "sha256": "a16bf8a16107bc7bda466562543f6f60088cfd609b6ea971aa835c5cd63347a4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/MuestraEfectiva.lean",
+      "bytes": 4371,
+      "sha256": "268deb93111d7d7aaf9d9b1700bc88403bfe5efb42db7fe3ea168152d768f338"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/OraculosBase.lean",
+      "bytes": 8731,
+      "sha256": "bb2994af77e80c58efb95e02a9370539028d3bbcdc3db00b79a19f8d3f0b5327"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/OraculosMerkle.lean",
+      "bytes": 6217,
+      "sha256": "6db6d71a40b38be7f4865827474015fe8b5fbb0e4912669de74b92018b46f38f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/OraculosVista.lean",
+      "bytes": 3398,
+      "sha256": "d460d7955003138ec4a4eb8a2fed84e8470e2dfd32498046b8db11379de2988d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/ParTrabajo.lean",
+      "bytes": 5528,
+      "sha256": "0a7aa35b1318135d5ab2991745f026fd90af80c99728ddb71387d464a32198e0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/ParametrosRecuperados.lean",
+      "bytes": 4319,
+      "sha256": "ad584c2bedd90aabec83ae382e52363a71aa886808acefcd6d533378638e82d1"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/PrefijoAIR.lean",
+      "bytes": 8434,
+      "sha256": "03d0c2fea65483fa6e67dfbd44e3375a5fddd6e3cdb22b6fef77e9310e07763d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/PrefijoTrabajo.lean",
+      "bytes": 12021,
+      "sha256": "423c79c490ae40714bbe9dfd506b75bfba5f78cb1153e43370a6b034df60557a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/PrimerasConsultas.lean",
+      "bytes": 7467,
+      "sha256": "1770231b0469f6a1aa8a0a455e3e39fc2b8d0637cb4f4f21a9839f467724bc5f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/PrimerasExposiciones.lean",
+      "bytes": 8339,
+      "sha256": "aeffce072084128b3f2a7d07f58e12bdcdb794b1c1b75f0d677fd46d324baf36"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/PrimerosPares.lean",
+      "bytes": 7201,
+      "sha256": "d1a503e83116888fcda355f7bfa0bd75173687ea495eccfd7855988c68e9acce"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/ProgramaTG2.lean",
+      "bytes": 8532,
+      "sha256": "d6b9331983c927efd256785007c3f204d3ace678f19f992c134201cb1747bf00"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/Raices.lean",
+      "bytes": 5428,
+      "sha256": "9b4df867e1bd6917d1e44e5a74442a81272112911d6da26b2a7a3b853f5c236c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/RaizCompartida.lean",
+      "bytes": 3368,
+      "sha256": "1f1f55c837cef6d163176674dd6fa4dac69c93a53bb7dd5070c8593467f54d6d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/ReconstruccionSelector.lean",
+      "bytes": 6672,
+      "sha256": "9cff763f24dac91c0cd5b3a81d7cb2fcc39cd586daeef0d3b4700f6f00ac6944"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/RegistroCompleto.lean",
+      "bytes": 8321,
+      "sha256": "bd869ab56765d67ce5a8fae063516e7c472b6f4a83db7a71ea9c98bbe08b7218"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/RegistroRaices.lean",
+      "bytes": 6168,
+      "sha256": "5e391f7399047c2c50f90a7b314903a93cc6afbd5c379a573deec311c7075373"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/RegistroSelector.lean",
+      "bytes": 1977,
+      "sha256": "1414f431fe7391c7b9fddca43502139f06545f381f7abd3b61164445c65182ce"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/RetosRecuperados.lean",
+      "bytes": 4406,
+      "sha256": "4d2e40fc8b5d438dafe85030c79e1d8a047a738b29fbbeeaa2aedb6f5b9923bf"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/SelectorAcoplado.lean",
+      "bytes": 7362,
+      "sha256": "8f4f2b0bb2fe02dcb70c9ea02abf46e197f12e40456432557d69aa2a8b4a4ef8"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/SelectorAdaptativo.lean",
+      "bytes": 8634,
+      "sha256": "eeebd7a26989bd292be9840af4c2134753751fe816dd52cc5ce44a5eb78c3016"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/SelectorOrdenado.lean",
+      "bytes": 3515,
+      "sha256": "9097e61a0cecac49c849572a6e09938eebc904cf5c909ae5084d54793669e3d8"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/SemillaProxima.lean",
+      "bytes": 1715,
+      "sha256": "4e97d654538c8bca65b09f67bc6e5e261c69e8215b977a56899517076f7011f7"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/SoporteCandidato.lean",
+      "bytes": 3238,
+      "sha256": "1019eae99adfc0b7302adc19f59d70b42dcb37d4a4d1767a5dfe8f823e07776f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/TrabajoPrefijo.lean",
+      "bytes": 8556,
+      "sha256": "32b2fb8460451f50668f959582f209cffc5eea736bc60dc19aa8cddd6d5f723c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/Trayecto.lean",
+      "bytes": 4453,
+      "sha256": "bdb24299f845bded3c7ff09280214981300afc8d3e9b45d2cbd339e7cfed09ce"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/TrayectoTG2.lean",
+      "bytes": 5898,
+      "sha256": "f4d7c9a869adb8f8ce267f27ddfc4c39a8c7bf64397c5e52a56c877b009631a5"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/UnionFiltrada.lean",
+      "bytes": 2504,
+      "sha256": "f83cf3dc09216dc07071e010168718cdd03ba82082da4f94142181d5883a2279"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/UnionPrefijo.lean",
+      "bytes": 2621,
+      "sha256": "16017f07d5cec88e8ef99387c8b7b8a244b3fb1b817d00c428edd37ae5b8d393"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/VectoresCampo.lean",
+      "bytes": 3136,
+      "sha256": "6109747cc1a1d418d6f94c9455ba35b6ce611bbc2af655ddc0c35f9c01df03c6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/VistaCampo.lean",
+      "bytes": 3667,
+      "sha256": "ab170db3d69bf5eb97341886785eeada6f1666e9c7869f9b985b8967f879ba4d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/VistaCausal.lean",
+      "bytes": 14781,
+      "sha256": "40a5aa2e6a5ee0e509a5eb4ef5baff34549ab30082d8c6beffe6f1dde36455e4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Canal/VistaSemantica.lean",
+      "bytes": 3466,
+      "sha256": "f0d914ca74c3430489733bc327765ba5b0f2381b44104dfa66bb0ca4fb2a6f90"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Complejidad/Comunicacion.lean",
+      "bytes": 3208,
+      "sha256": "0b0ece5facc4822875ec09cd95c3590c4a451c43c1c18991a287c59b0aa07687"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Complejidad/ContadorFirma.lean",
+      "bytes": 2970,
+      "sha256": "25d0cbd6e407a1b56c332eea23013b0c61c563714543d39519677e885a0128ad"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Complejidad/CosteNTT.lean",
+      "bytes": 1678,
+      "sha256": "10cfe03f8d4ced9b682e205c2ac1c3787fbed527a23d820aaff167e0a1b24824"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Complejidad/FamiliasCodificacion.lean",
+      "bytes": 3254,
+      "sha256": "51c92c9597bedea695e26f509bf7eb9665b4241f5dea4067907a2b741a1d22b5"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Complejidad/Firma.lean",
+      "bytes": 3227,
+      "sha256": "2c512e401841c28be4c2e92e981393f5f375e56f7ca0e43526632e09aa025f8b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Complejidad/NTT.lean",
+      "bytes": 7408,
+      "sha256": "68eb46444408265a8e3297d4d9ea8e5691376378e8482ecf30a9bb96eb944986"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Complejidad/Rechazo.lean",
+      "bytes": 6576,
+      "sha256": "65a14620e7590407f11420cdeaefbea673d6e1c6181e553669b569fcf9017465"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Complejidad/SerializacionPrueba.lean",
+      "bytes": 3581,
+      "sha256": "4d7190b9ab338457bb4ddbd924a6a88edcf14b14954d6d69b1c4a9a953cf842a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/AplicacionAutenticada.lean",
+      "bytes": 5316,
+      "sha256": "b26a532dcb97d2a5b058e1d157684c9e97de334a69d5f512b7fde998731cb104"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/CiclosFirmados.lean",
+      "bytes": 6615,
+      "sha256": "4ee64baffed4b47ba2bdc534bc86d6d80b21c9f10602458ce18f6e2d3d10661f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/DecodificacionOperacion.lean",
+      "bytes": 4865,
+      "sha256": "ba4cf3b8b7ccee836f121ee829cdfdd25387c68c3586ab32ce7751cdbab41be5"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/Derivacion.lean",
+      "bytes": 3924,
+      "sha256": "86b8a608a877a9cc6ed6cbeed2ae45231924c59eec716a9cb801cfa7c0622292"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/Firma.lean",
+      "bytes": 6162,
+      "sha256": "7a789336eb3b061e2e7602d00142125d4c52f3797f69a78c974c67b9d54b7b25"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/OperacionBytes.lean",
+      "bytes": 3029,
+      "sha256": "91433eeaabdb26bab019b6db9706a379ffba435cd5e77f3207f3eb496ce23f9d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/Oraculo.lean",
+      "bytes": 4575,
+      "sha256": "74c7a50ad7aa4017c161eed2e1f95155db4fae797e695a833b081e3701790340"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/PerdidaQROM.lean",
+      "bytes": 3475,
+      "sha256": "d7c215f76bde9b9a11a1fc81384bfa30f8edbdfba153784912e36eb840191f65"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/Probabilidad.lean",
+      "bytes": 5558,
+      "sha256": "0a4ce3bed8cae4faada7b4d2c945fee501376a2a4058a2fe34a45bf8dd3e30bb"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/RegistroEpocas.lean",
+      "bytes": 5106,
+      "sha256": "25e2f80b01a7a45c7f9dd64ed83e9d23dcf3198451803491501bf4f08a272454"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/RotacionFirmada.lean",
+      "bytes": 4458,
+      "sha256": "ea330e362a580dbbfda69655bc4d1eab5485681834364a0d04cd661fe16a06f2"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/Seguridad.lean",
+      "bytes": 4688,
+      "sha256": "8e3e07abf0df03745898ae604de55558635345274cf69ef4288b1fff11e630b6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/Transacciones.lean",
+      "bytes": 4019,
+      "sha256": "b76a98ce5bbde519e1f06c457291cdf20ac925229a83b5a49f224110bb08134e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Cripto/Variacion.lean",
+      "bytes": 5008,
+      "sha256": "8eac167de7a912351b919c324735ad8e689366558442639e90b16354254c7c71"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Distancia.lean",
+      "bytes": 965,
+      "sha256": "dd9e2e904d76ecbbc0a05d1edccb4a6c4b08dac1224f84c1a8c9622c7986d4f9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Distancia/Propiedades.lean",
+      "bytes": 1909,
+      "sha256": "a88d2aacf6a2f18c8717fc1147794b850c35a81607ef90eddb4f0acb63a0818f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Entropia/Minima.lean",
+      "bytes": 6358,
+      "sha256": "6cee7677428ff1c40046acb2f2c8c287ded4727677a4b42507c08495568877b4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Entropia/Shannon.lean",
+      "bytes": 4782,
+      "sha256": "86c8b1de5d770d8b99ca0c4ad8bad482ad9f8fc63447b7c176dc01d49510e561"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Adaptativo.lean",
+      "bytes": 14977,
+      "sha256": "a6383261d1d7504d9033c453d1492d0beb85f921a1bbaf490d4dbcb8c46d1db4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/AperturasPrograma.lean",
+      "bytes": 5770,
+      "sha256": "5dc121a7f7f0d0de708418dc1f9c596988a5a3cb2f82c4de71ea75651aa2135f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Consulta.lean",
+      "bytes": 5519,
+      "sha256": "f07bee9fcc9beb8da46a82d3ead919619f54afbf5994f4b899b13d3c4003bba8"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/ControlesCampo.lean",
+      "bytes": 6848,
+      "sha256": "4468d3f052f0ba77541df24eceb45b36d3b6fcb3980cc5d2d9b05ac7b0fdc4aa"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/ControlesValores.lean",
+      "bytes": 6054,
+      "sha256": "d7c3c391b239974dc67cdeb12aa0f046969750a6ab7ad16f180d7ccaf8478a54"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Cosets.lean",
+      "bytes": 9229,
+      "sha256": "4c5cf5cf9805f2d7aea8f1cd2f66c7b3842c8e35c7fd7cef16bd04a4726596ba"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Dominios.lean",
+      "bytes": 5453,
+      "sha256": "9144b31be2e26de90e61d7866b81d1da7e86ca156deec2c7383ec86a4116799d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Experimento.lean",
+      "bytes": 5346,
+      "sha256": "3810c3ca8d0dc9ceefe83b133dbd38665ce10fc529c3589b7ceda98cbc67e227"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/FormasLimites.lean",
+      "bytes": 2754,
+      "sha256": "3048c4a875c096544e59ac6c4ed90d993ebe2a87f5428fdaff0614cb420f4754"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Goldilocks.lean",
+      "bytes": 6876,
+      "sha256": "2c36128c938a99d0c8315af43bb1262d317f8be0db1c364286a1a1f70486bdd1"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Indices.lean",
+      "bytes": 2691,
+      "sha256": "692582df6d7c42bcde14d5e9667aa12e657ccfb221197b725fa5a615a76f3c50"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/IndicesMaquina.lean",
+      "bytes": 3993,
+      "sha256": "202d363d91363b46ea0a813afa09943c0389beee8242add149098dbac3a43981"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/ListaCampo.lean",
+      "bytes": 3213,
+      "sha256": "ceb03c709d6226658b9446fc3271213732a92b040cbdb84c2dada06125327dd0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Muestreo.lean",
+      "bytes": 3888,
+      "sha256": "7e0da4e7bfbdbfe91274f8dc7bb19db8103e5a3f045aff0e0c9fc45ed06c352b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/OraculoBase.lean",
+      "bytes": 4604,
+      "sha256": "326fb54f7f507b28deb736aef92fff9f3a167758505119b65912ef62b59dae99"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/OraculoMerkle.lean",
+      "bytes": 5705,
+      "sha256": "7530840142309ed49cf0d3b62dd011b13c3bad3337bad0bf39bc80c991ed147c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/PosicionesAIR.lean",
+      "bytes": 3145,
+      "sha256": "43d2c8468657bd16a17c58316328dd7afa2746551d3ca2e284cb5e655498e91b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Presupuesto.lean",
+      "bytes": 2826,
+      "sha256": "b882d347c7899c6840625f592be8f8ede478c7126dcfd89b369cb2d60a15ae99"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/ProgramaVerificacion.lean",
+      "bytes": 11542,
+      "sha256": "1e6106bbff997896b96e64773fc34478fd018ac700ed97f89ce2a3c5490fdb92"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Recorrido.lean",
+      "bytes": 17841,
+      "sha256": "d5eadcba5932f1f31c7cdf6cc4c11eddbd093276ddcc6a000c5123c137684578"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/RetosAfines.lean",
+      "bytes": 3828,
+      "sha256": "42090092cc3f43a417c0c87b118ce99946a38fb600f1b41597afb64f8c270fa5"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Torre.lean",
+      "bytes": 9204,
+      "sha256": "147d0fe7ec13aa8a3bf47ccf056231ad0d15e62a0a94f92d3a7c79cdf7c29264"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Inicio.lean",
+      "bytes": 474,
+      "sha256": "475418a03d49f70c50f1210499f5428319404a2af0b34bc402701dc55d19ad06"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/Anillos.lean",
+      "bytes": 5912,
+      "sha256": "94ebb9c0182fe7e59f8cc8b1e3e7bc454b0d5a744b2b1c25e7f72ccd2a64f309"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/CardinalRetos.lean",
+      "bytes": 3813,
+      "sha256": "db3b7ff40f7e751dd71066a8a466c33b3481bc4eec4603a483f32fd7625b80f4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/ContrasteJMW.lean",
+      "bytes": 2879,
+      "sha256": "53e7a19428fe66f37075217afca78be7db8175abb46f764152e7ed28a02ff6ce"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/Cortos.lean",
+      "bytes": 3901,
+      "sha256": "224227f7696381e289b2f83e8453e013ec38102b03419ae17b05b5f9d73d6848"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/MLWE.lean",
+      "bytes": 6884,
+      "sha256": "ecf201f5efd95a5703a6330f690fbc9b446501d2a466c430b29224e00cdea955"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/MSIS.lean",
+      "bytes": 6544,
+      "sha256": "fce0eff17c4c9beaf7f957614f2e7b57fe1f19d8d8735eef1497920dac24b407"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/NTTAlgebra.lean",
+      "bytes": 4902,
+      "sha256": "bd7993161892842294d75443bfbd6342850f731e0d67d6acf44b0574fa25734b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/Normas.lean",
+      "bytes": 4642,
+      "sha256": "5d127a55ea13340a5a54ec7c343007e74f61a1b697716f4a8c0ba86372e106ce"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/Parametros.lean",
+      "bytes": 4268,
+      "sha256": "f75ec199060d7919f9e99c223e7ba07c695daaa1895c0f695b67c210eea7b7b4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/Plantilla.lean",
+      "bytes": 4325,
+      "sha256": "e0cc4d5235b099090ed72f6df5a08eb30edf04c91c7119576c8391dca8f99d50"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/ProductoNTT.lean",
+      "bytes": 3363,
+      "sha256": "98816dd76216d6abf3a268c958e540ab1ff53ccf2fa80dfc302f75665c3994d9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/Representantes.lean",
+      "bytes": 4531,
+      "sha256": "84d4fd641d0f80d7f0267538db43b65c97cf2d1dbf2e4e97cd9ffdb084cb03db"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/Retos.lean",
+      "bytes": 3577,
+      "sha256": "e5d1ee98f094da7e429eca1cf8e84cf519cb24065fbba56de7b66e62ec80d341"
+    },
+    {
+      "archivo": "formalizacion/Nexus/MLDSA/SelfTarget.lean",
+      "bytes": 6307,
+      "sha256": "2fcd840c501c656e3b5ccf8cab5e5501516c9d2124481aeac875f06c97003cad"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/AperturasPrograma.lean",
+      "bytes": 3679,
+      "sha256": "ee78913bbba8827874912f2ed453c43fcfda193cb8b78bca1ce84343e3a5cf47"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/Codificacion.lean",
+      "bytes": 5698,
+      "sha256": "c4bfe8fdd9653f775f2a803ec53b7d2ca32827e1802832f788e484cf4bb81432"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/CodificacionBase.lean",
+      "bytes": 6360,
+      "sha256": "8d3c89fdd28ce49f62b912af5c2d24d8e3b676b9838c01e717890531fc32ef9d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/Etiquetas.lean",
+      "bytes": 3566,
+      "sha256": "65426a34e2c4fcfc53e8a94110497acd1465b01c2c3906eae5e21a1260eff299"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/Extraccion.lean",
+      "bytes": 5433,
+      "sha256": "aec4549ca6ccf698e9a54998a0cd4ed95e47731b025457c0f4c4de479c61db8f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/Indices.lean",
+      "bytes": 5878,
+      "sha256": "8be742be8e2bc7410a1c8c28a775229e4d8db51244c073140102ec03a07b7f59"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/MarcasGlobales.lean",
+      "bytes": 9607,
+      "sha256": "90de26ebf1e4ac4945f057eb2689017202a1508a87e576dcf65e0a075ae65116"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/ProgramaVerificacion.lean",
+      "bytes": 7804,
+      "sha256": "db7dfec9abad2b852d2e7ddf183e8f090a1ae6016414efab4198a769b56f4d60"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/PruebasIndexadas.lean",
+      "bytes": 5225,
+      "sha256": "81c8b1064fc10ed5aa201c0a5ef64e6f0a2f969ea28d43717d35492124481e11"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/Registro.lean",
+      "bytes": 4020,
+      "sha256": "51eacdec67d4a272d0c6a3fc2ec1fe38876dca4b54d48733f08f2fa32c0b523d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/RegistroVerificador.lean",
+      "bytes": 4301,
+      "sha256": "b287a67bc081478ee10ba940abc9e89f1e187adfd21e972a9d17ce2a6dd64374"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/Temporal.lean",
+      "bytes": 4966,
+      "sha256": "88f5a44d7c1a3aa5d0438e985c380145cca6cea7b7a900c634d944b98bf0057e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Merkle/Ventanas.lean",
+      "bytes": 4003,
+      "sha256": "c1bd31709c8e6c8443d9698f6344db938c7b167ff9e924eafe2216c5493f20b8"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/AmortizacionVariable.lean",
+      "bytes": 4892,
+      "sha256": "c8bc447f31185f6aa4467234899f48b443d020a0fc6f645d727b1589c524249a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/CapturaUniforme.lean",
+      "bytes": 4754,
+      "sha256": "53f1baadb05296a8898342a6a82e5cc46e1df59a25c15d4766fef07723afeb54"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/Costos.lean",
+      "bytes": 2324,
+      "sha256": "909318662e4eac9a62c575330ea3a16e90097add8637d93cc1ff85aa2fd536c4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/DisponibilidadCondicional.lean",
+      "bytes": 1641,
+      "sha256": "9dbc3498bcfbeaa56e52905e7fc14bd48dea90ee08f8d6870b8cdc601055292d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/DistanciaAIR.lean",
+      "bytes": 1020,
+      "sha256": "5b51618d1a58768ac3f2918bb0fa31458107dd3a194f437358dcd76bdbb4d47b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/IdealHistorico.lean",
+      "bytes": 3431,
+      "sha256": "bb6dfa9073947e736e165731c41c3c2263e1fceb09275b61f46fd916b6cd829c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/LayoutBackend.lean",
+      "bytes": 1541,
+      "sha256": "e33aae17fc9348d1b541f6e880d6fe2778a53b4429f02ead1430169accef1626"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/Mediciones.lean",
+      "bytes": 11309,
+      "sha256": "22ebcdf34c890657b1101d7a82afd17fdfdd0e767d89d58cbeb8c9e6455c51b2"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/Memoria.lean",
+      "bytes": 1944,
+      "sha256": "e48cdbc0a25911064ec54f2d48bbf1ba4c292eb7734895b9b794a5fe9c00961b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/Omision.lean",
+      "bytes": 1540,
+      "sha256": "ae078702ecf89264f366b4e63099297b10b8afa1a5ec20b695039a1d713a940a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/QuorumIncentivos.lean",
+      "bytes": 4255,
+      "sha256": "85645db87ae15f56e4c0965a0e72dfc8db8dfd3cdf565291bc0ea8f149334c57"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/Residencia.lean",
+      "bytes": 2420,
+      "sha256": "343e360f40ddf58482488dd21897002906af6d2540cf2a4b953428c109c215ed"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Modelos/ResidenciaIntegral.lean",
+      "bytes": 11754,
+      "sha256": "6e2f730f31e29723d676f134a25f279bd60b0a1a45d88a26933d6139497b9f07"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N01/Enunciado.lean",
+      "bytes": 1460,
+      "sha256": "ef447f132dd3585e250788c6707c571ec4affc9655e6c5fcbbbf7751944079f5"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N01/Solucion.lean",
+      "bytes": 3327,
+      "sha256": "11f5b36b91caeb42007822aaf193e95767aa5dcc5b93be4532f5d44f8ea93636"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N02/Enunciado.lean",
+      "bytes": 671,
+      "sha256": "33fbefbc30d76911b37253591086dd2104204746ae87de2a4df6640b00083f11"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N02/Solucion.lean",
+      "bytes": 1614,
+      "sha256": "5a4791c7cb7d4c1b941c9d624075d850bc5f8be83bb403800fa9a55f6f5872a5"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N03/Alternativa.lean",
+      "bytes": 3072,
+      "sha256": "78b4259abe52b3c39b4d2b71f898e63c30973133c9dd72105f9310674e990b31"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N03/CampoBase.lean",
+      "bytes": 5556,
+      "sha256": "406546ca2a717cdc88d5b2e3eb1fc4dbf860ca31ff5f0b93d7c8a14b647bfa25"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N03/Enunciado.lean",
+      "bytes": 513,
+      "sha256": "09ebdbfc6c6f64b5b7d6ced09040bc84a8f94ca39bc35b2c98b1c410163a4c86"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N03/Perfil.lean",
+      "bytes": 5142,
+      "sha256": "e1e076d3d0d49606b02f2190b25f240c83622401386842582e3a61ece99cdca5"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N03/Solucion.lean",
+      "bytes": 2121,
+      "sha256": "01b9dfdf274ceefa956fb29279fcd97f1e6e3d050bad0cc3933d09d51b8033ae"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N04/Enunciado.lean",
+      "bytes": 1591,
+      "sha256": "53a0e927d1754124702d647443ce092816847be8155b7d858e8e8d969772e928"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N04/Plegado.lean",
+      "bytes": 3520,
+      "sha256": "899f5812bb1744ac534724a07d65200aaab56548c8baef4fe160d978723e93b8"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N04/RadioReal.lean",
+      "bytes": 2319,
+      "sha256": "266ee98cef313b5c241b5f880a36b321e5a93988744a26ef07cc7b25c7a7af33"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N04/Solucion.lean",
+      "bytes": 5964,
+      "sha256": "d6e707c9c59b07fec1b3085b2d0d222a3e256f0f368be1947a4b632fdb6c0141"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N05/Cotas.lean",
+      "bytes": 5405,
+      "sha256": "ed327cf6146a7a56b389d674bf0efe5b0b6aad17cd7dfcadba02571f51b68c95"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N05/Muestreo.lean",
+      "bytes": 2184,
+      "sha256": "5c0a871c4e77f95ff9283149c6d6075d6754f7e8739b95dbd7d05e895915ef69"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N05/Parejas.lean",
+      "bytes": 3338,
+      "sha256": "d74860e09a9b57efc8af4164203f6f3af06afb4e0114c2f3e04140018f2e7b73"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Cancelacion.lean",
+      "bytes": 7039,
+      "sha256": "e0d3b128047ff4fa71dfe5f45741e6e23fdf2bb0aad904c18cb99e041d0cca85"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Candidato.lean",
+      "bytes": 3146,
+      "sha256": "f08bda03d85cc18859a4a5ee8dd72a285c85dfd81df42f1dcd0d5e585c82b8f0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/CardinalCompartida.lean",
+      "bytes": 2558,
+      "sha256": "c6fc9f5d292c0c7b42aa0d8f3f1e7a0a37adac2d0de5a7db8df7677534fafac9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Compartida.lean",
+      "bytes": 12101,
+      "sha256": "4f067b9953e1bdc2a9cda4345d01052a111992bbe0a9abae6f63d42645cffbcf"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Composicion.lean",
+      "bytes": 5277,
+      "sha256": "1cc322f85264453edd95e978ee4f01fa49e60a5320ea49e93654bfc7770bd118"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/CongruenciaPrefijos.lean",
+      "bytes": 1875,
+      "sha256": "39570d15a7eeb48719c602e8ae91ab2828a6ec5e1e5168db375910c65619570e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Consulta.lean",
+      "bytes": 6607,
+      "sha256": "d399d061eb3bbcc0b7cdbcb0fb3d1c8be4f806fa26bfb3a285871c0fc6b470f6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/DatosTranscripcion.lean",
+      "bytes": 7283,
+      "sha256": "0924d59af780f0af1abebb46ea399173e35eb0feae52ea002d64118324fd93a3"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Ejecucion.lean",
+      "bytes": 5378,
+      "sha256": "159bc346c15d15fa311dcaa3b653ef13e823149ff4e6d8e14c2b1dc1d8ff22f3"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Estado.lean",
+      "bytes": 3179,
+      "sha256": "3aa061b73b868451ebc5f06e0decee823c449c463107c18b511a0dab49d2e606"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/EstadoConjunto.lean",
+      "bytes": 7477,
+      "sha256": "7f3d3607dfd234a3bdb2e74d1bd510d3c236270c19599ad1bd664cb181618cc4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Experimento.lean",
+      "bytes": 10414,
+      "sha256": "02469d4994251c63b6759f622ea956633e8c005dff66cd65644ffc49f06c7e51"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/ExtensionRetos.lean",
+      "bytes": 3863,
+      "sha256": "bf6a2422162e8ab12c9887d8d630bf178e6c619cdd31905966b895a4967c9223"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Goldilocks.lean",
+      "bytes": 5913,
+      "sha256": "f2524549e21029b1ec1d2c814e914cc72aaa06a64bea0de4d40fbdeb7882ed91"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/MensajesCompatibles.lean",
+      "bytes": 9358,
+      "sha256": "2ee59927425b3793d99619e6d6972951e71b2f55fe0a3f12f7a7a83b00987238"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Monitores.lean",
+      "bytes": 5148,
+      "sha256": "a9ba489db8dc7f41e6862948f72b1088c5c6c24900626526307dbc01a3574c16"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Muestras.lean",
+      "bytes": 1396,
+      "sha256": "cf5cfba3db7631a0154ad4a6ab8c44879d6f5e1502572fea429e6284ee24123c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/OraculosEmitidos.lean",
+      "bytes": 2302,
+      "sha256": "77748e645766c1860ca08ffad5c94c6482f06a2a5eb9dd37e471914ced7fd34d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Parejas.lean",
+      "bytes": 3475,
+      "sha256": "95c9880f74690879f84aa0eff15b7f64b82e51a4042daeb017ce1830be854ae8"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/PasosExplicitos.lean",
+      "bytes": 4190,
+      "sha256": "11e138cc80e26ca9ceca0478cd5a907111da1abcc0c04cad1b60f53d0a5df947"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/PlanesExplicitos.lean",
+      "bytes": 6614,
+      "sha256": "ac75d97243fc651aa16c3b1f864aeb3762a26042107fa2f329345b2e16df9d2f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/PoliticasCompatibles.lean",
+      "bytes": 10163,
+      "sha256": "fab405e37153508981be87877bdf1bacba682a4fa8f3f9053621fbadccace46d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/PorRondas.lean",
+      "bytes": 6279,
+      "sha256": "de168041e64f73e2d17e3b1fd466aa07932077392760864908961ba2098838e7"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Prefijos.lean",
+      "bytes": 3088,
+      "sha256": "fa95cf94f299fafdfa5ac90f9cbd69ecbbb6586db7cfdcd0161e3ade58f7610c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/PrimerCambio.lean",
+      "bytes": 4959,
+      "sha256": "bbfc4c2dba3226d06922b427f71b2ba06e46e629484c50694f006341b113239d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Reinicios.lean",
+      "bytes": 7050,
+      "sha256": "a01a122e153240f75c240437d5d8ebd772f24d9d1e8825a0773de12c3b0085d8"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/ReiniciosAdaptativos.lean",
+      "bytes": 5179,
+      "sha256": "d1e95f32e909a8b4968dca24e684fc6adff8c282446de6c1aa8c54fda7f0c56c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/ReiniciosIdeal.lean",
+      "bytes": 8801,
+      "sha256": "040ca699807c98ec0e41aad1b514b460e39ff7cecd6aa941b553495c72f4ea87"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/ReiniciosObservados.lean",
+      "bytes": 9971,
+      "sha256": "52603a75ee4d37aa2d1c08b32f9ae833c5abddefaa0aac772eddb4ce0b7e8572"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/RondasExplicitas.lean",
+      "bytes": 4178,
+      "sha256": "105aecd522d7373e9c0e2a7216c8ee22416e119de76db3e363193287c22bc36a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/SeleccionAIR.lean",
+      "bytes": 7314,
+      "sha256": "dca00dc4020b1e8af1456b390071c7358028817dbd7aec468bf756f17534e986"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Solidez.lean",
+      "bytes": 9828,
+      "sha256": "0d2a9cbcb8c419a3a088610dce4a48d4c263d969461261a22b6c660dd5bf3bd0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/SolidezCausal.lean",
+      "bytes": 8134,
+      "sha256": "b8b83396361202bb23f452a6706db68553fce498ecb89e62e5bbd3407bb8fae8"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/TerminalesConstantes.lean",
+      "bytes": 4192,
+      "sha256": "8033631b17940d70ea68722fc7ddb130d7f3772c3ff9562131913bd04bae1217"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/TraduccionPlanes.lean",
+      "bytes": 10167,
+      "sha256": "b34e26956baf13e4620126442e6ab0c7010407f09bbae7d9f3d9ed9b15af3ff9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Transcripcion.lean",
+      "bytes": 4019,
+      "sha256": "6a26c4864a69c433e0d8af38a8af2e3d4e8a7ae056648f8b248cbb6635044282"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/TranscripcionCausal.lean",
+      "bytes": 9845,
+      "sha256": "354f4bb5eecf1d37965217b4c03a4b0d7c30b5462635fe8832ba51b0ee873b77"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/TranscripcionExplicita.lean",
+      "bytes": 4991,
+      "sha256": "07803cc9896591a4967cd27ef1a5a533df85dd18715500782d45142ccbdabc78"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N12/Enunciado.lean",
+      "bytes": 776,
+      "sha256": "d28dfb78713a5638e60711db889ade65eac3de0472f0964ebb0736988734983c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N12/Solucion.lean",
+      "bytes": 721,
+      "sha256": "45421a5487f20c9d7ad31fb003bce224dac0ac55c34243002b24d68b5c3a2e12"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/AcoplamientoArbol.lean",
+      "bytes": 3850,
+      "sha256": "f3ed0a3c089beff6c53065650d9c2cb7c18fdca956456b28f3bacb180f1c6859"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/AcoplamientoCadena.lean",
+      "bytes": 4135,
+      "sha256": "83dd6e8c49698d24f01d716fedeef1a4cb7434d3e3d9934b20cbea4340783644"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/AcoplamientoSelector.lean",
+      "bytes": 3923,
+      "sha256": "4966baf282bcb3e1f72ecb5f759f2f94726f1d002267398d6ada14442cc9fbf7"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ActivacionPrefijo.lean",
+      "bytes": 3056,
+      "sha256": "975088be7b5c6d98b4285525aaa15fdb6802e1cf4129423a06c26c6e4745954d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/CadenaCodigos.lean",
+      "bytes": 4286,
+      "sha256": "3052df3820a3e31c2b980a1cd060ec5d565afa7214233115d937226789063b19"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/CadenaMemoria.lean",
+      "bytes": 6095,
+      "sha256": "a82ca7e53440366fbaf1b8e699b358d1944e0a0d51ce71021f1701446fa76207"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/CargaPrimeras.lean",
+      "bytes": 3395,
+      "sha256": "bd77dc11f04d1d16dace91cfb51801d94014ab97e7d27f88366bc9951f11c066"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/CertificadoLegado16.lean",
+      "bytes": 5476,
+      "sha256": "3fb20e01e23544d018113fc2d2462668091f1550a6f91a9f43ec000da2b42192"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/CintasRetos.lean",
+      "bytes": 2446,
+      "sha256": "b5b6bed119c22d66bc4967a2ca784acf9a01a6fb147824a125f20216b291329e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/CoincidenciaPrograma.lean",
+      "bytes": 2041,
+      "sha256": "1aa33548b1b91db807d47d0fcc93989fa57d070ffbc5ec2d7d6bbc363a233e1b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ColaSelector.lean",
+      "bytes": 4330,
+      "sha256": "c17e3b9873c7709f54837f7d271e8f5065b8a78239ea78569f1c0992d68e0cd6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ComparacionAcoplada.lean",
+      "bytes": 4101,
+      "sha256": "82f1aa45a990d4fc929c28dc970132630f5e555a5602ea7295c0e559120a1715"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ComposicionCotas.lean",
+      "bytes": 5576,
+      "sha256": "92576e56f0cb91916894d7e98c4b0ff570f28d026c542b88ea0db8306dd7bffc"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/CongelacionPrevia.lean",
+      "bytes": 4218,
+      "sha256": "68e445ef680cf1216447747589517fa245a81a0d37ba5b746efa611c4996d396"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ConteoActivaciones.lean",
+      "bytes": 4649,
+      "sha256": "a92acdc31ba405bb819ac755904d87b00d1b6a023ddec9957a3ec769feada013"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ContinuacionPrefijo.lean",
+      "bytes": 3937,
+      "sha256": "8ad91a4e2877a5d546fd3af2c2e2c699a06933610f05069d3a2c150ae34fc5cb"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/CorteLlamadas.lean",
+      "bytes": 4309,
+      "sha256": "45432a42899837aa19c556f856652b35340c3e95b60e8a08b7f1ef519478c458"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/EjecucionBytes.lean",
+      "bytes": 7157,
+      "sha256": "f549d1df3c5b6e7615b05b916ee5a8ce7c88f8e1cf174701ea8a455cecb8b337"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/EjemploNumerico.lean",
+      "bytes": 2487,
+      "sha256": "c720c6d244936eecdbf3d046f34307d74fbbd1b3afcc65d58ebc775fdff40fa6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ExcepcionesPrefijo.lean",
+      "bytes": 5574,
+      "sha256": "4fda9221b4619396de30e6d5815d866fd828912b3460268ebadcc36733ca6d2e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/FiltroSelector.lean",
+      "bytes": 3368,
+      "sha256": "61f911ccb1db4699e07099325724b19d46abdda303a0996733a4cd0f68721061"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/FormatoBase.lean",
+      "bytes": 4935,
+      "sha256": "a1f2d3f2826cd1a75df026fec76080cb9b1eba8e2ce9935738ad48aacb2be750"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/Frescura.lean",
+      "bytes": 2518,
+      "sha256": "f58c1034d7df9be0a03148c5a73eb4f3a92f91ac94451691aa1f7092dd13f1c6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/FrescuraFinita.lean",
+      "bytes": 4167,
+      "sha256": "dbdd05df0487ad28257c23039751579bf419c82841bfc8cc5ac18dbf4c0e1861"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/HistoriaCausal.lean",
+      "bytes": 4278,
+      "sha256": "c5b454b291bc414542c2a8ed12be9daf3a54f1eb6d2cf7b6e5beed851c04fe37"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/HistoriaLocal.lean",
+      "bytes": 5467,
+      "sha256": "b39c28a4f3b706a39532cc8201874f88e71b7c4a50d85a551f2bafb4cfd86c6b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/Juego.lean",
+      "bytes": 4949,
+      "sha256": "4f70ed718867c2ddf59d20115d2a4313288ac37d290c1839f04b4f7d971de44c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/LeyArbol.lean",
+      "bytes": 4754,
+      "sha256": "fb5fd59058a6d4222f42e1d4a70c91a047e4d86ad68c54c9132f5a3269b9f6ad"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/LeyMuestreoPrograma.lean",
+      "bytes": 6177,
+      "sha256": "e92a07561f2f792f1b67135e159a87100a7c57ee18b9a330f0d7bdbf13ac97f9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/LeySelector.lean",
+      "bytes": 3893,
+      "sha256": "40e690f6a3ae8e2d782d89845cce1443f5b5a104685d245e7e82f14418641a1b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/LeySinBad.lean",
+      "bytes": 7352,
+      "sha256": "7f97c473486bda9a0a1fe9a56047ec508bbe2a79f72dab07155aea4480c91908"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/Memoria.lean",
+      "bytes": 3743,
+      "sha256": "c908c7023e9f39973ecbd49247038cdf30e66d44449318778780ed4a07e3c9c4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ObservacionesPrefijo.lean",
+      "bytes": 4441,
+      "sha256": "13540dcfdae82dc70e926c5600e74e902ca0255c29b2ce648d2417730c6be4d4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/OrdenConsultas.lean",
+      "bytes": 4947,
+      "sha256": "60bc59567b82ddb874212756f6e2ee958d96bc3903cb34ab1aaf8e4482874eb5"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/Origen.lean",
+      "bytes": 5289,
+      "sha256": "3fcd3aec00e13291e0eeb3ea97d337d336a8c2f5dcc9bfc59bcef22b4923a3fe"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/PalabrasDigest.lean",
+      "bytes": 5712,
+      "sha256": "ee9d56f62f787ae5d8a0ddd153825aeb91360071b7b756416c06e639148b8f82"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ParticionObservada.lean",
+      "bytes": 4188,
+      "sha256": "96e6a69ded144dbe86ea51abc6288557d9d656590f4cd043aea5e259cae22cdf"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/PlanPrograma.lean",
+      "bytes": 5978,
+      "sha256": "337b64c7e276d309fcae1cb54facdc9fd0b5f731de08db17af07ed447a1ae28f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/PotencialCandidatos.lean",
+      "bytes": 6273,
+      "sha256": "79d9da258f5047b6a6e1b2cb851ce127e728a52b4bd8ca210bd2edf236f241b0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/PrefijoCorte.lean",
+      "bytes": 2160,
+      "sha256": "4a99a21caa8e865b897551d7329be93032f510c051ee4e8da16c20d3ce67009b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/PrefijoPrograma.lean",
+      "bytes": 5950,
+      "sha256": "b72997e5cf21a2669ed7c15c56191b4e955da19d1c01468cc0d9b86318ede4b1"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/PrefijosGlobales.lean",
+      "bytes": 5591,
+      "sha256": "96132a96f803a781aa6d68d65415be438d3a08d68a54dfc4461a0a923aa144d6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/Preparacion.lean",
+      "bytes": 4512,
+      "sha256": "3e9867804fee22ee57d4cbd2c6432a876149be1612c9f1a7b086f0e66e1a5c75"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/PresupuestoPrefijo.lean",
+      "bytes": 2488,
+      "sha256": "18b3dc5da70f520876f3302a190386dca9b06e1d34d85178481545cb06e77db8"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/Presupuestos.lean",
+      "bytes": 3679,
+      "sha256": "a12901d5c412b0fc4b7db314a9d1c73c8ce2c84e93360e67fe4c18f9244bb41d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/PrimeraExposicion.lean",
+      "bytes": 4274,
+      "sha256": "77766d38e83814dea323d813b9de895ddce6b52673e13b9a553aeb3999424fd6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/Probabilidad.lean",
+      "bytes": 5457,
+      "sha256": "0a329bf68403c2f740f3394a3585f2ef7c3a7dd93e529a050a636fb2c6386979"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ProgramaBytes.lean",
+      "bytes": 3851,
+      "sha256": "11dedb1326e4b1adb9da5839ac9cc3db8d15d4072742caedffbeb9216a849211"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ProgramaCompartido.lean",
+      "bytes": 7065,
+      "sha256": "09a0a7f3d6fd4c81d5d77ae57285a07b653f635353111d1adcaa44209e1e1998"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ProgramaObservado.lean",
+      "bytes": 5693,
+      "sha256": "6b3f68d89b1cfdf836e42cd74d7e2113c512357c192037e16f9fd957a74ff035"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/PromediosCompletaciones.lean",
+      "bytes": 3061,
+      "sha256": "41132f9369a32c62c26f75c7ebecca0d83a634b62c976b96aebc9dcf0c1b716c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ProyeccionDigest.lean",
+      "bytes": 4726,
+      "sha256": "f6f2b204827078e0967de7f9cb76c52381f39b70c19225972c133fdfe3df995f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/RaicesCanonicas.lean",
+      "bytes": 4153,
+      "sha256": "03f82d1508e191bf73958e02638b2e6ae4ecafeb500fa317a90f64a1fe7fbe8c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ReconstruccionPublica.lean",
+      "bytes": 2751,
+      "sha256": "f4d0ea4ba5434c46fd36ac0fc01a9b4353d827e4017912cfde04d8587270571c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/RecortePrograma.lean",
+      "bytes": 2799,
+      "sha256": "e7f9c4e07c89294050369aa494004b875902a9dd991bfc1efeff8543f0190288"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/RegistroFinal.lean",
+      "bytes": 11938,
+      "sha256": "573ccbf2f04114274a176d2ea06455b1b831d1ebea54ac357be3413e61387f94"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/RegistroPrograma.lean",
+      "bytes": 5063,
+      "sha256": "18ffa8713671a3d05c0f0cad028f501b9a9b76a09cb675698cdcc67ee76de688"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/RepeticionesCinta.lean",
+      "bytes": 3304,
+      "sha256": "d291c828a22ef32d267a8ed7b4d2dee2adb4e82170c576a4ba6f998bade1b51f"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/SelectorAcoplado.lean",
+      "bytes": 7462,
+      "sha256": "bf7adc18f7113e037ee81c9dc72b818f4829be30710b1a8aa0688380f3409492"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/SelectorAdaptativo.lean",
+      "bytes": 6552,
+      "sha256": "3771f69a74807727769d38462dab60ef39c15843f211603606c78dcce0792444"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/SelectorPrefijo.lean",
+      "bytes": 5044,
+      "sha256": "83f649f5ba0014312b223b69bfa77b66ff62bafeb904f259d0ba02b9219eb3d1"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/SelectorPrimeras.lean",
+      "bytes": 7713,
+      "sha256": "7631aecd3481d306ebe947672339656ae0404fd32b9cd1dcde66f4918fdefc9c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/SelectorRechazo.lean",
+      "bytes": 5194,
+      "sha256": "d03dcec5b9129cb4cb57f871ee45da61aeae8bbc7f1f15a6c640b6571e8fa21b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/Sesgo.lean",
+      "bytes": 9241,
+      "sha256": "a21e4522d50fca2ed9412cfe99b40c01e7b61c762c62a9b659d926327b0347bc"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/SoporteFinito.lean",
+      "bytes": 7265,
+      "sha256": "5216a3e0655371c29d90aeb20a50ae657059d7cd837fda7d0ce3591b139d311a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/TablaInversa.lean",
+      "bytes": 2629,
+      "sha256": "068f9f1bf4be46838744001a6776a51cb1881f2db85ff032ebe162e056d25bff"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/TablaObservada.lean",
+      "bytes": 3126,
+      "sha256": "d9244eb79e04b8a66ffa759487850bac6a6a93ec3ad8c3fe0c85fd049b62fafb"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/UniformidadSelector.lean",
+      "bytes": 5403,
+      "sha256": "0fadbe481840f5a64f0e8a4c4d1f5c251d61d6227b485313654a823e1907621d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/ROM/ValoresFinales.lean",
+      "bytes": 2856,
+      "sha256": "cd31a2e71d70493eb3ecb1f3656fb8a5e466f40f1c99c19cd6abfedb2e361142"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Reticulos/Euclideos.lean",
+      "bytes": 8889,
+      "sha256": "5d24445e3b3801dc9baf630aef4e8630d2b56ce6bdf2fd507a442b319d43bedd"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Reticulos/Preimagenes.lean",
+      "bytes": 1262,
+      "sha256": "8244802f55fd438dc95723574479ff7c9992c6d2e3554567f3b111be79475912"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Salud/APT.lean",
+      "bytes": 6297,
+      "sha256": "4f536b83a3b2ac24f4e98fc86249d9b5317be26972f72d3387e8908ea63a55f7"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Salud/Binomial.lean",
+      "bytes": 4863,
+      "sha256": "bd1f667f004657c5230019179807c13a4ffeddf2fb514eb50a2c24dfb60856a0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Salud/DecimalesAPT.lean",
+      "bytes": 5277,
+      "sha256": "f9680b6d8b775852da9f49d63cf787bb7800b6f092a484084f70f63457d79a25"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Salud/Fuente.lean",
+      "bytes": 8720,
+      "sha256": "d4a4822fa4ce208861c3875c10e8c74f4b90fa9407c371008c97dc13f6d130a9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Salud/InvariantesLote.lean",
+      "bytes": 2510,
+      "sha256": "15355601447fe98f4327e21e24e79a2b1abe139cd97683140293dbef3a20ba0d"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Salud/Monitor.lean",
+      "bytes": 5197,
+      "sha256": "a3685df99b702d4f96e7618be19cff1733dc628d02c7ad5cdcb495229b3bdef9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Salud/Operaciones.lean",
+      "bytes": 4116,
+      "sha256": "b5d8019d9735862def10a699b2790649e93e8e5dab52b04a68b4b76652c9dc47"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Salud/RCT.lean",
+      "bytes": 3612,
+      "sha256": "b6104f9595efed4dde20b0bfabdbbddae8a0d129913acfb78f52f59290e73066"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Salud/RachasCondicionales.lean",
+      "bytes": 3604,
+      "sha256": "9602fc794b16409ef87b716d60957f94f59012b0b35eb78ae1c2ec1b3f916c23"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/Adversario.lean",
+      "bytes": 6138,
+      "sha256": "81baff8dfbdffae310d6c78b2c2121f62d080cdfd7e0bf9e9d29aac15a84d168"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CancelacionAIRCausal.lean",
+      "bytes": 9366,
+      "sha256": "046dbd74607c51c0a9d479a28b78c3c0607aee45076adea3278684b362ca1fc6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CandidatoPrevio.lean",
+      "bytes": 8406,
+      "sha256": "dbbb586a8e2a906d2a0c7f0ffe262b693f99bbb2e02d9d6561e2ec9f3665cbfb"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CandidatoTrabajo.lean",
+      "bytes": 5352,
+      "sha256": "b61aa49e3b69987a8d7924b64d62dc5d6e57136b60dd58e943dadc21ef9a7ad7"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CardinalVista.lean",
+      "bytes": 3129,
+      "sha256": "d05baa49b17c6507298b8ef3357a0cc0f71ca6bde19316610d259661b9625f3a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/Certificado.lean",
+      "bytes": 4509,
+      "sha256": "a5cda4eb06120ded09c49a5bef1f3333bae9376515de19388bdb52295d0de8aa"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CoberturaPrimeras.lean",
+      "bytes": 3249,
+      "sha256": "df7eea9bebd0b6d6987a71858d4938bca9ea3d2e48b5a08e70002610873153be"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CoberturaTrabajo.lean",
+      "bytes": 10409,
+      "sha256": "bed961a52ecd17afc7517740fb9ff1f84e6cffcd5e030f7e04393bacf35a4793"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/Completo.lean",
+      "bytes": 9145,
+      "sha256": "b04b683f01d57c93e296387eab3b22d1a03992a2b6f4da79e0b872156610174c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/ConjuntosPrevios.lean",
+      "bytes": 5935,
+      "sha256": "bf86ba54429fb4f3c34b5bee9f1bec908b25d59ce2c03fb41e67c60bf88b304a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/Consulta.lean",
+      "bytes": 6018,
+      "sha256": "bdb84432170170f8fb935fea1a939da8433ee2f10b755894394302e34724f16c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/ConsultaBuena.lean",
+      "bytes": 7924,
+      "sha256": "2274b3a702a491b10c976f66a8b3fb0ad19c0dd8d32fba57d8087f7f690751a7"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/ConsultaCampo.lean",
+      "bytes": 6669,
+      "sha256": "ddf7fecbecc6309412b7eaa6bf26d619b139e6d8e361bd3451c1477bc8e0785e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/ContinuacionCausal.lean",
+      "bytes": 3851,
+      "sha256": "aa3614fb666b948f270690b2ab29d672d200b7869d77b861dc1a20b39672e4d0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaAceptacion.lean",
+      "bytes": 7766,
+      "sha256": "94ff0f9a0f9550a03810b703939e76c33a75c621b47424e74a12cac7fa0bd6f4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaAdaptativaFinal.lean",
+      "bytes": 6334,
+      "sha256": "885cbb80d4d8798cfb7f71675abfb927fbaf39c2900b6c0d59c067bce371af46"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaFRICausal.lean",
+      "bytes": 9022,
+      "sha256": "bfbd4ab5b9112106ee873701a84c642205b9766a91ae1c113f56ae2ff59b65b4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaFalsa.lean",
+      "bytes": 6080,
+      "sha256": "a89d059558bb3ef19954fdbe49590bd84aeab44e355c640284c9762e37ab95fb"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaInicios.lean",
+      "bytes": 14493,
+      "sha256": "cba4bb95fc8da02b736f37c45caac0fc9b3c4ced0021b1aa738f77c99c9d69b0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaPerfilesFinal.lean",
+      "bytes": 8997,
+      "sha256": "ce5e522440556b1a580f3f976683ce2b65488b67c622fa8f4154ff782d2a0107"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaRondas.lean",
+      "bytes": 9069,
+      "sha256": "d002b7208b3061c8d77d5da680c679f37edd88b783eec7d974249d9ee3754309"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaSinBad.lean",
+      "bytes": 6831,
+      "sha256": "7732d909b001e81771073d3f0c4f777614aed8d2061e915a0907e01dd916f919"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoFinal.lean",
+      "bytes": 9753,
+      "sha256": "d27635f52ae810b83530aea903a36ba2b124ff9a594184f7abfc131a7894b59e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoNumerica.lean",
+      "bytes": 4830,
+      "sha256": "a9cea1ad3167edd67ebbb291409840451041d164dae6ebcbce37e4956e202fe9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/ExcepcionesHash.lean",
+      "bytes": 3177,
+      "sha256": "c4e687a6b22ea31be2a6a820058737e56d3f060b716800a46915d619bfa11df2"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/ExcesoRondas.lean",
+      "bytes": 4317,
+      "sha256": "ef89dd224b77133ead9ab2daa3cb0d40d3ca0726d65832256f2344a7f2729c9b"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/ExperimentoCausal.lean",
+      "bytes": 4252,
+      "sha256": "21c2f906bc09ca1f551c8ed1cad3904d4aecb9153056aefe5901db64e5da878a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/FamiliasAceptadas.lean",
+      "bytes": 8044,
+      "sha256": "a45562f133a93d7c567a13700ebd004fdc2b1c9dda610cf6a45bfee773d7c3c4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/FiltroFalso.lean",
+      "bytes": 4936,
+      "sha256": "e2dcb3e3a0ab2e68382f5edf825ca2e85838a3e59a2788ffc3800d9638ecd2e6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/Forma.lean",
+      "bytes": 2605,
+      "sha256": "55f82840068de5f3fbe14ad321078b0129838d91df6fa15ce25e877391d14151"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/LeyConjunta.lean",
+      "bytes": 8889,
+      "sha256": "a53ca34e98f6b0a3510728d45e9eae499df44b060e2186d306fcb7fc6bd616c6"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/LeyTransporteFRI.lean",
+      "bytes": 29290,
+      "sha256": "195017160d6d9a2a9eaea0b5192a1a9efeab0ab4e6de06ab884cc3864ec4a2bf"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/MuestraBuena.lean",
+      "bytes": 11960,
+      "sha256": "95d0b612564ec74f96cf764a4addc650d1d339227b20270644acf0f74a136ad2"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/NonceCandidato.lean",
+      "bytes": 4963,
+      "sha256": "c64d4337625558a6c6dd6beb1340e13a95685a34c8400220db31edc3d46f9ec2"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/PoliticasFalsas.lean",
+      "bytes": 7524,
+      "sha256": "9dcbf825c7605438fe4bf909c467d35861e954e5da70c6de852207ba621e8933"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/PoliticasPrefijo.lean",
+      "bytes": 3894,
+      "sha256": "6cc040b7f0b72c2b5c3a099ec99ea54d4783f21cd86ffc179014b9bfc2abafcc"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/PoliticasTrabajo.lean",
+      "bytes": 4534,
+      "sha256": "2ecc43111b0a15a1ad5b911998c9907c2ba65e0f789dcd15dbcf2636159cb167"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/PresupuestoGlobal.lean",
+      "bytes": 4664,
+      "sha256": "24bc6f40e840244982aace26bfa03a38c3bf8911f6525e94e96a401e4427d496"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/PuenteAdaptativoFinal.lean",
+      "bytes": 118216,
+      "sha256": "4e646b5866266ba0baf5693926b14bc62d310e39c32485f973a4a4657350fc17"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/RetosVista.lean",
+      "bytes": 3335,
+      "sha256": "4d9cf60d3cf203b577af1bb9d5f4b67862f9c718a4604d07d24a41f2e9b8c25e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/RondasCausales.lean",
+      "bytes": 6275,
+      "sha256": "2a274d792253862f63de9a33567c9efa594b73b78b33a01704fac53039cabf26"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/RondasReales.lean",
+      "bytes": 5951,
+      "sha256": "669ba1da3db3cbe15e7889407802bf5f14265f50b34173749a503624b0cf5415"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/SemanticaPrevia.lean",
+      "bytes": 5165,
+      "sha256": "9884ea4098787d932c97eafbef8e64d3b0297f4b595d40ee22ec123dffdf1bd3"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/SoporteCompleto.lean",
+      "bytes": 9846,
+      "sha256": "9686c5ff310769258a28d4cbdd1904129116c4ccf1024ae68e9ac566d4a466ca"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/SoporteConsulta.lean",
+      "bytes": 8369,
+      "sha256": "11b41deb414f850593263f519aaf2e932b57077bf835b3838a84ecbd086ac7c9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/TrabajoDigest.lean",
+      "bytes": 7061,
+      "sha256": "ce78c488fea85d0050c6e1ecf353ad697d0cde96549779b7c56366ddb889b573"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/TrabajoSelectorLocal.lean",
+      "bytes": 6334,
+      "sha256": "53a59f304f2976ff2524951806f94972e6a72231405c81a2ec8ae42dd631136c"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/UnionPerfilesFRI.lean",
+      "bytes": 4498,
+      "sha256": "0794a8b9f67e57e0f2b4d1c526b257c7eafaf32d48f2f6a072b844efcc75bfe1"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/ValoresConsulta.lean",
+      "bytes": 4077,
+      "sha256": "9004441aa742252106212a1cf40ef583fdf184dc038eddb85e0cadce88448fd0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/VistaPrevia.lean",
+      "bytes": 4956,
+      "sha256": "19e7f8c884ab56e033e225793c74879b4b9adce06c08afab82d3c7f7aff7d374"
+    },
+    {
+      "archivo": "formalizacion/README.md",
+      "bytes": 35909,
+      "sha256": "fa8fda90c3b684e8ee4306755a3729ab553360c22d9721ac2c6aae3f68a5e030"
+    },
+    {
+      "archivo": "formalizacion/REVISION-MANUSCRITO.md",
+      "bytes": 204888,
+      "sha256": "210515b8c5be15cf5f09b57274ec764cf26044c3b2af38d7ea3aaf6ad5605890"
+    },
+    {
+      "archivo": "formalizacion/VERIFICACION.md",
+      "bytes": 5316,
+      "sha256": "920abdfcd1a1fa52484747d62ad7a72d54c461b69a51ff5810d6b5775a419009"
+    },
+    {
+      "archivo": "formalizacion/cobertura.json",
+      "bytes": 309102,
+      "sha256": "30b4ae45be2e022490b5d80c1763f1a23426f419bb95391f58ff12d43e0a3320"
+    },
+    {
+      "archivo": "formalizacion/inventario-manuscrito.json",
+      "bytes": 3899029,
+      "sha256": "cb68885849641711aca85cdc8ba71611be8f7d32128eff86414025075eafbaf9"
+    },
+    {
+      "archivo": "formalizacion/lake-manifest.json",
+      "bytes": 3137,
+      "sha256": "709c7dde35fe143806c87d5d5ae58591a2ce38cc73884a88d9d04d17e4d02838"
+    },
+    {
+      "archivo": "formalizacion/lakefile.toml",
+      "bytes": 268,
+      "sha256": "eb403d328c9e0f4250c1835f18fce68834cb0906990afd13294c5ff7cdc7649a"
+    },
+    {
+      "archivo": "formalizacion/lean-toolchain",
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+    },
+    {
+      "archivo": "formalizacion/revision-manuscrito.json",
+      "bytes": 4148307,
+      "sha256": "3abfa06863e93637403798dec61bc9c2a10259574757ad5c457539157f3d3225"
+    },
+    {
+      "archivo": "scripts/inventariar_matematica.py",
+      "bytes": 4351,
+      "sha256": "1c93be9145bd4549afc8e2adfa899f8384194de802b1c11af12b815111ad583f"
+    },
+    {
+      "archivo": "scripts/lean.py",
+      "bytes": 5799,
+      "sha256": "942671a7d41888e2a18df53a8c62e56186738a364ac8d9130d5d72fc4e47f073"
+    },
+    {
+      "archivo": "scripts/tests/test_replay_kernel.py",
+      "bytes": 5708,
+      "sha256": "8b5c3dbbab83e4d97db1daadb9ac99d093d9f7be1327ee48c6fd077f9076c830"
+    },
+    {
+      "archivo": "scripts/tests/test_verificar_formalizacion.py",
+      "bytes": 1641,
+      "sha256": "1216cb06b5cfc480dddeb9e12422109e03763e697d4c638596ec97b2dc383495"
+    },
+    {
+      "archivo": "scripts/tests/test_verificar_revision_manuscrito.py",
+      "bytes": 3838,
+      "sha256": "a4eb687be73508ddd95b6982db8d030036738e4b0a2ee338293a2400e8455b3a"
+    },
+    {
+      "archivo": "scripts/verificar_formalizacion.py",
+      "bytes": 42689,
+      "sha256": "0b53a3ad3b6eb48bbe047985bf19afda688d1ac5b8df9ce266faf63bc4337fc6"
+    },
+    {
+      "archivo": "scripts/verificar_revision_manuscrito.py",
+      "bytes": 13296,
+      "sha256": "608b71e8102ea50bbda13139ead22c93102c6c11632c5b1440def153cd545373"
+    }
+  ],
+  "documentacion_conciliada": [
+    {
+      "archivo": ".gitattributes",
+      "bytes": 4234,
+      "sha256": "69ab10f00bb76154d0968f4636172ffd4dab5e976a0b52e9ea0ef05025fc5500"
+    },
+    {
+      "archivo": "BITACORA_TG2.md",
+      "bytes": 209766,
+      "sha256": "0e4ff6ab496605a5f7f9d4606267f7b0f927d4f76e81e968d2324e7e87c68ff7"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 10268,
+      "sha256": "3af27919f324b0c25d03319b54137e7ca33330b1098d06442b2f0990bdd25dc1"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 21589,
+      "sha256": "491560063ed0da78f5f33f22f797eda1737cce47ebb300ae8d5f19177cf3b215"
+    },
+    {
+      "archivo": "PENDIENTES.md",
+      "bytes": 39820,
+      "sha256": "61e84e53110ff109e105f48f1acc378034bb6971fffba54b0ba977bd7c9a75a5"
+    },
+    {
+      "archivo": "README.md",
+      "bytes": 15409,
+      "sha256": "3a25dc4f11cbfee2cfe3fe094b7e1deb4fe61cd11786d6dcff916906b522a2bf"
+    },
+    {
+      "archivo": "formalizacion/README.md",
+      "bytes": 35909,
+      "sha256": "fa8fda90c3b684e8ee4306755a3729ab553360c22d9721ac2c6aae3f68a5e030"
+    },
+    {
+      "archivo": "scripts/README.md",
+      "bytes": 18160,
+      "sha256": "46d35c3dcbfad499581bba7fb94c066b3cfe06f05b19ac17c0e76660b4f514b9"
+    }
+  ],
+  "archivos_previos_actualizados": [
+    ".gitattributes",
+    "BITACORA_TG2.md",
+    "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+    "Documentos/06-Evidencia-TG2/README.md",
+    "PENDIENTES.md",
+    "README.md",
+    "formalizacion/README.md"
+  ],
+  "respaldos": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/.gitattributes",
+      "bytes": 3910,
+      "sha256": "a37d5abca5b488889f960c21f096bcd2689b12cee28fb4fe41d8a81dc6834717"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/BITACORA_TG2.md",
+      "bytes": 207407,
+      "sha256": "d1c1f66b18329b62b399e1a84e1afe44487d4ee9ffa21105cc048aa56f2e84ca"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 9626,
+      "sha256": "dea3df2c118753ed80e1a9a62394e8794d545b7efcdf8c8fb20a00a458c5450a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "bytes": 2277303,
+      "sha256": "a9c687e835eb600a6027bfa201f6fecf16a307594450e4d60484362f3026ccc5"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 20845,
+      "sha256": "0df353022dfc42ed33ee93cef28703965c77d53579ed6c5c3d91d318ab8b85df"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/PENDIENTES.md",
+      "bytes": 39004,
+      "sha256": "03656fd878b86ab0237674df627f3cc4b9630052ca5ab57d91d7d137b8eb851e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/README.md",
+      "bytes": 13071,
+      "sha256": "aca3dbb4d30d2a120b1070d7544a3fccf9ade07aac2fa602d120e85fbcf60787"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/formalizacion/README.md",
+      "bytes": 34089,
+      "sha256": "ed5a2c88fef6659ab3c41ff940d1cb927910eb98960a9a14a1fc1aaea686110e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/scripts/README.md",
+      "bytes": 16500,
+      "sha256": "ba254dec2a6638a4e98fca2bfd14484d8f211ee88b787a07be95eee572602efd"
+    }
+  ],
+  "herramienta": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/consolidar.py",
+    "bytes": 12916,
+    "sha256": "1c54541dea1b2f3f4ab9ac20c1fdf8c12274d00bb0979419d02aa65d135467ad"
+  },
+  "manifiesto_previo_conservado": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "bytes": 2277303,
+    "sha256": "a9c687e835eb600a6027bfa201f6fecf16a307594450e4d60484362f3026ccc5"
+  }
+}

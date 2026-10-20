@@ -1,6 +1,8 @@
 # Índice de evidencia TG2
 
-**Consolidación documental local, 20 de octubre:** el commit autorizado incorpora manuscrito, evidencia e índices sin repetir compilaciones, regenerar salidas ni hacer push. [Preparación, alcance y respaldos](2026-10-20/Consolidacion-Documental/preparacion.json). Los registros cerrados se conservan; las fuentes Lean aún locales y sus herramientas nuevas quedan fuera de este commit, sin modificar su auditoría previa.
+**Consolidación Lean posterior, 20 de octubre:** las fuentes previamente auditadas y sus herramientas se incluyen en un commit local separado, sin modificar demostraciones, compilar, repetir pruebas ni hacer push. [Preparación, integridad y respaldos](2026-10-20/Consolidacion-Lean/preparacion.json). Se concilian los README y se preservan las 354 fuentes/configuraciones Lean, 89 Rust y doce fuentes/salidas del manuscrito. No hay módulos ni obligaciones matemáticas nuevas; se excluyen dependencias y cachés.
+
+**Antecedente documental local, 20 de octubre:** `a9faf0e` incorporó manuscrito, evidencia e índices sin repetir compilaciones, regenerar salidas ni hacer push. [Preparación, alcance y respaldos](2026-10-20/Consolidacion-Documental/preparacion.json). Los registros cerrados se conservan; las fuentes Lean y sus herramientas nuevas quedaron fuera de aquel commit y se versionan en la consolidación posterior descrita arriba, sin modificar su auditoría previa.
 
 **Última comprobación, 20 de octubre:** pasa la [verificación global final de Rust](2026-10-20/Rust-Global-Final/verificacion.json) después del contrato y de `ActiveChain`, commit `637e77c`: check de todos los targets, 223 pruebas sin fallos y build, con caché, dependencias locked/offline y cuatro trabajos/hilos. Las advertencias se conservan. No cambia ninguna fuente Rust/Lean ni el manuscrito y no se recompila Lean. Los registros de 197 pruebas globales previas y de 113/55 aisladas se mantienen como antecedentes, no se suman.
 
@@ -14,6 +16,7 @@ Las carpetas conservan resultados por fecha y etapa. Cada informe explica el alc
 
 | Fecha / carpeta | Contenido |
 |---|---|
+| `2026-10-20/Consolidacion-Lean/` | Fuentes Lean y herramientas existentes versionadas, README conciliados, respaldos y huellas cotejadas sin compilar, repetir pruebas ni hacer push |
 | `2026-10-20/Consolidacion-Documental/` | Preparación y respaldos del commit documental local, con alcance explícito y sin fuentes Lean nuevas ni push |
 | `2026-10-20/Rust-Global-Final/` | Check/test/build globales posteriores a ActiveChain: 223 pruebas sin fallos, advertencias y huellas conservadas; sin cambios de fuentes ni recompilar Lean |
 | `2026-10-20/Conciliacion-Manuscrito-Rust/` | Tesis sincronizada con el contrato y ActiveChain; Word/PDF 115/103 páginas revisadas, respaldos y controles sin recompilar Rust/Lean |

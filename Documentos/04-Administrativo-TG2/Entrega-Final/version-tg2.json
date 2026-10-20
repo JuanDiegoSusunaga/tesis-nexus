@@ -2,11 +2,11 @@
   "esquema": 1,
   "edicion": "tesis-final",
   "fecha": "2026-10-20",
-  "fecha_utc": "2026-10-20T17:04:13.526972+00:00",
-  "estado": "Tesis final unificada sincronizada con Rust y ActiveChain. Verificación global posterior del workspace Rust correcta: check, 223 pruebas sin fallos y build; advertencias conservadas. Sin cambios de fuentes, recompilar Lean ni regenerar Word/PDF. No acredita equivalencia universal Rust/Lean, validez L2 completa, transferencia QROM ni aprobación académica. Consolidación documental local autorizada; fuentes Lean aún locales excluidas del commit, sin push.",
+  "fecha_utc": "2026-10-20T17:32:22.168436+00:00",
+  "estado": "Tesis final sincronizada con Rust y ActiveChain. Fuentes Lean previamente auditadas y herramientas incluidas en la consolidación local autorizada, sin recompilar ni hacer push. Se conservan la global Lean de 2709 declaraciones y la global Rust de 223 pruebas. No acredita refinamiento universal, validez L2 completa, QROM ni aprobación académica.",
   "documentos": {
     "repositorio": "https://github.com/JuanDiegoSusunaga/tesis-nexus.git",
-    "commit_contexto": "195b8133370a8157563e434c8a2489b5e27df17f",
+    "commit_contexto": "a9faf0e66af1400991ac5b0215c770f96ad712b8",
     "identificacion": "Las huellas identifican el árbol documental conservado; el commit de contexto no implica que se hayan confirmado estos cambios.",
     "revision_conservada": "Identificada por el commit local que contiene este manifiesto; commit_contexto conserva el antecedente."
   },
@@ -16,9 +16,9 @@
     "commit": "637e77c99e804664915caf4ed928a10ef81cc870"
   },
   "manifiesto_previo": {
-    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Documental/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
-    "bytes": 2274535,
-    "sha256": "ad08b45e5b890f1ae827334801a6969139e501eb8932f0a9061e52ea8a5d9746"
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "bytes": 2277303,
+    "sha256": "a9c687e835eb600a6027bfa201f6fecf16a307594450e4d60484362f3026ccc5"
   },
   "lean": {
     "declaraciones_auditadas": 2709,
@@ -37,7 +37,8 @@
     "alcance": "Cota conservadora en ROM clásico finito para el verificador matemático de bytes, con trabajo causal, presupuestos, perfiles y reinicios bajo sus hipótesis; no refinamiento universal Rust ni seguridad QROM o SHA3 determinista.",
     "dictamen_independiente": "pendiente",
     "tesis_completa_verificada": false,
-    "inventario_historico": "Los conteos de grupos del manifiesto previo no se presentan como un nuevo censo de obligaciones."
+    "inventario_historico": "Los conteos de grupos del manifiesto previo no se presentan como un nuevo censo de obligaciones.",
+    "fuentes_versionadas": "Incluidas en el commit local que contiene este manifiesto; sin cachés ni dependencias vendorizadas."
   },
   "revision_nist": {
     "fuentes": 12,
@@ -52,8 +53,8 @@
   "archivos": [
     {
       "archivo": ".gitattributes",
-      "bytes": 3910,
-      "sha256": "a37d5abca5b488889f960c21f096bcd2689b12cee28fb4fe41d8a81dc6834717"
+      "bytes": 4234,
+      "sha256": "69ab10f00bb76154d0968f4636172ffd4dab5e976a0b52e9ea0ef05025fc5500"
     },
     {
       "archivo": ".tools/lean/anotar_qiskit_futuro.py",
@@ -607,8 +608,8 @@
     },
     {
       "archivo": "BITACORA_TG2.md",
-      "bytes": 207407,
-      "sha256": "d1c1f66b18329b62b399e1a84e1afe44487d4ee9ffa21105cc048aa56f2e84ca"
+      "bytes": 209766,
+      "sha256": "0e4ff6ab496605a5f7f9d4606267f7b0f927d4f76e81e968d2324e7e87c68ff7"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
@@ -737,8 +738,8 @@
     },
     {
       "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
-      "bytes": 9626,
-      "sha256": "dea3df2c118753ed80e1a9a62394e8794d545b7efcdf8c8fb20a00a458c5450a"
+      "bytes": 10268,
+      "sha256": "3af27919f324b0c25d03319b54137e7ca33330b1098d06442b2f0990bdd25dc1"
     },
     {
       "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/verificacion-adversario-causal-2026-10-18.json",
@@ -45456,6 +45457,61 @@
       "sha256": "c54b2093c5e000e3ad214694cbed014d1c8ef67018560643ebd8ac5881d4340b"
     },
     {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/consolidar.py",
+      "bytes": 12916,
+      "sha256": "1c54541dea1b2f3f4ab9ac20c1fdf8c12274d00bb0979419d02aa65d135467ad"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/preparacion.json",
+      "bytes": 74796,
+      "sha256": "6ac81ebb65aca56894ab00b8e32f1dd1ca0e5730e4b301a2c779c71ccdc5f195"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/.gitattributes",
+      "bytes": 3910,
+      "sha256": "a37d5abca5b488889f960c21f096bcd2689b12cee28fb4fe41d8a81dc6834717"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/BITACORA_TG2.md",
+      "bytes": 207407,
+      "sha256": "d1c1f66b18329b62b399e1a84e1afe44487d4ee9ffa21105cc048aa56f2e84ca"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 9626,
+      "sha256": "dea3df2c118753ed80e1a9a62394e8794d545b7efcdf8c8fb20a00a458c5450a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "bytes": 2277303,
+      "sha256": "a9c687e835eb600a6027bfa201f6fecf16a307594450e4d60484362f3026ccc5"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 20845,
+      "sha256": "0df353022dfc42ed33ee93cef28703965c77d53579ed6c5c3d91d318ab8b85df"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/PENDIENTES.md",
+      "bytes": 39004,
+      "sha256": "03656fd878b86ab0237674df627f3cc4b9630052ca5ab57d91d7d137b8eb851e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/README.md",
+      "bytes": 13071,
+      "sha256": "aca3dbb4d30d2a120b1070d7544a3fccf9ade07aac2fa602d120e85fbcf60787"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/formalizacion/README.md",
+      "bytes": 34089,
+      "sha256": "ed5a2c88fef6659ab3c41ff940d1cb927910eb98960a9a14a1fc1aaea686110e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/scripts/README.md",
+      "bytes": 16500,
+      "sha256": "ba254dec2a6638a4e98fca2bfd14484d8f211ee88b787a07be95eee572602efd"
+    },
+    {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Lean-Global/axiomas.log",
       "bytes": 274484,
       "sha256": "253cfbae966a444edd196d4d507c6217017bba6a8de617e2c2a033c99547d210"
@@ -46062,18 +46118,23 @@
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/README.md",
-      "bytes": 20845,
-      "sha256": "0df353022dfc42ed33ee93cef28703965c77d53579ed6c5c3d91d318ab8b85df"
+      "bytes": 21589,
+      "sha256": "491560063ed0da78f5f33f22f797eda1737cce47ebb300ae8d5f19177cf3b215"
     },
     {
       "archivo": "PENDIENTES.md",
-      "bytes": 39004,
-      "sha256": "03656fd878b86ab0237674df627f3cc4b9630052ca5ab57d91d7d137b8eb851e"
+      "bytes": 39820,
+      "sha256": "61e84e53110ff109e105f48f1acc378034bb6971fffba54b0ba977bd7c9a75a5"
     },
     {
       "archivo": "README.md",
-      "bytes": 13071,
-      "sha256": "aca3dbb4d30d2a120b1070d7544a3fccf9ade07aac2fa602d120e85fbcf60787"
+      "bytes": 15409,
+      "sha256": "3a25dc4f11cbfee2cfe3fe094b7e1deb4fe61cd11786d6dcff916906b522a2bf"
+    },
+    {
+      "archivo": "formalizacion/.gitignore",
+      "bytes": 8,
+      "sha256": "5375c2c5e323f40c0031aa8c82f66bb9197214001039e6a8c9ff2a5eb3aa24a9"
     },
     {
       "archivo": "formalizacion/ALCANCE-MANUSCRITO.md",
@@ -47832,8 +47893,8 @@
     },
     {
       "archivo": "formalizacion/README.md",
-      "bytes": 34089,
-      "sha256": "ed5a2c88fef6659ab3c41ff940d1cb927910eb98960a9a14a1fc1aaea686110e"
+      "bytes": 35909,
+      "sha256": "fa8fda90c3b684e8ee4306755a3729ab553360c22d9721ac2c6aae3f68a5e030"
     },
     {
       "archivo": "formalizacion/REVISION-MANUSCRITO.md",
@@ -48321,9 +48382,19 @@
       "sha256": "b3041688851e554e82c2340ff1e24d57017d7c662c11c9f226679717695fbcdc"
     },
     {
+      "archivo": "scripts/README.md",
+      "bytes": 18160,
+      "sha256": "46d35c3dcbfad499581bba7fb94c066b3cfe06f05b19ac17c0e76660b4f514b9"
+    },
+    {
       "archivo": "scripts/compilar_manuscrito.py",
       "bytes": 17032,
       "sha256": "c54b2093c5e000e3ad214694cbed014d1c8ef67018560643ebd8ac5881d4340b"
+    },
+    {
+      "archivo": "scripts/inventariar_matematica.py",
+      "bytes": 4351,
+      "sha256": "1c93be9145bd4549afc8e2adfa899f8384194de802b1c11af12b815111ad583f"
     },
     {
       "archivo": "scripts/lean.py",
@@ -48440,5 +48511,10 @@
     "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Documental/preparacion.json",
     "bytes": 5205,
     "sha256": "6b4233da3f65b31fba3c5222eb5e8dd799743f541fc3b7ad7e11e3fc976bf708"
+  },
+  "consolidacion_lean": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/preparacion.json",
+    "bytes": 74796,
+    "sha256": "6ac81ebb65aca56894ab00b8e32f1dd1ca0e5730e4b301a2c779c71ccdc5f195"
   }
 }

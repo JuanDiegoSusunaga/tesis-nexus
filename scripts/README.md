@@ -2,6 +2,14 @@
 
 Ejecutar desde la raíz de `Tesis`. Los scripts resuelven las rutas del proyecto a partir de su ubicación. El código Rust se clona en `nexus/` según el [README principal](../README.md).
 
+## Formalización Lean y costo de reproducción
+
+Se versionan `lean.py`, `verificar_formalizacion.py`, `inventariar_matematica.py`, `verificar_revision_manuscrito.py` y sus tres archivos de pruebas. Las fuentes, configuración y revisiones fijadas están en [`formalizacion/`](../formalizacion/README.md); las dependencias y cachés no se incluyen.
+
+La [global Lean del 20 de octubre](../Documentos/06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json) ya comprobó 2709 declaraciones. La [consolidación Git](../Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/preparacion.json) solo coteja hashes, importaciones locales y sintaxis Python, sin ejecutar Lean/Rust ni repetir pruebas. No añade módulos ni obligaciones matemáticas.
+
+`python scripts/lean.py preparar` instala herramientas locales, descarga dependencias y compila; `python scripts/lean.py build` compila. `python scripts/verificar_formalizacion.py` también ejecuta Lean y la auditoría, y puede realizar verificaciones separadas del núcleo. **No son comprobaciones gratuitas de integridad:** requieren autorización del autor. Los inventarios y revisiones pueden escribir informes; no regenerarlos sobre los registros cerrados. Para comprobar solamente la integridad documental usar el verificador del manifiesto indicado abajo, que no compila.
+
 ## Catálogo de afirmaciones
 
 ```powershell
@@ -53,12 +61,13 @@ Herramientas observadas: Rust y Cargo 1.97.1, con las dependencias fijadas en `n
 
 ```powershell
 $env:CARGO_TARGET_DIR = 'C:\tmp\nexus-target'
-cargo check --workspace --all-targets --locked --offline --manifest-path nexus/Cargo.toml
-cargo test --workspace --locked --offline --manifest-path nexus/Cargo.toml
-cargo build --workspace --locked --offline --manifest-path nexus/Cargo.toml
+$env:RUST_TEST_THREADS = '4'
+cargo check --workspace --all-targets --locked --offline --jobs 4 --manifest-path nexus/Cargo.toml
+cargo test --workspace --locked --offline --jobs 4 --manifest-path nexus/Cargo.toml
+cargo build --workspace --locked --offline --jobs 4 --manifest-path nexus/Cargo.toml
 ```
 
-La edición del 23 de septiembre pasa 197 pruebas en desarrollo. Las diez pruebas release de FRI vinculada pertenecen a la ejecución del día 22. Los informes conservan el conteo y los comandos de cada etapa.
+Estos comandos requieren autorización; no se ejecutan al versionar Lean. La última [global del 20 de octubre](../Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json) pasa check, 223 pruebas y build sobre `637e77c`, conservando advertencias. Las 197 pruebas en desarrollo del 23 de septiembre y las diez release de FRI vinculada del día 22 son antecedentes. Los informes conservan el conteo y los comandos de cada etapa; no se suman entre ejecuciones.
 
 ## 5. Elegir los scripts de investigación
 
