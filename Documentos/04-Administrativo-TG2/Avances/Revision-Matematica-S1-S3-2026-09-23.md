@@ -1,59 +1,83 @@
-# Paquete preparado para revisión matemática — S1 a S3
+# Solicitud de revisión matemática — Tesis NEXUS
 
-**Fecha:** 23 de septiembre de 2026. **Estado:** preparado; revisión independiente y envío no registrados. La aprobación previa del director no se atribuye a estas derivaciones posteriores.
+**Fecha de preparación:** 20 de octubre de 2026.
+**Destinatario:** Director de la tesis, confirmado por el autor.
+**Estado:** Sin dictamen registrado. No se han registrado envío ni recepción.
 
-**Decisión posterior del autor:** la transferencia QROM completa del protocolo AIR/FRI queda como trabajo futuro. La parte QROM de M5 y sus desarrollos pendientes se conservan para esa investigación. El cierre activo revisa las afirmaciones que se incluyan en la entrega y sus límites, sin exigir completar QROM. La presentación de resultados parciales debe identificarlos como propuestas pendientes de dictamen.
+## Propósito y alcance
 
-## Material y orden de lectura
+Se solicita revisar la correspondencia entre los enunciados de la tesis, sus hipótesis y las demostraciones, y decidir si la delimitación de resultados es suficiente para el alcance académico acordado. La preparación de este paquete, las comprobaciones internas y la compilación de Lean no se presentan como revisión externa ni aprobación.
 
-**Catálogo complementario del 12 de octubre:** [enunciados, dependencias e integridad documental](Catalogo-Validacion-2026-10-12/README.md). Permite localizar doce afirmaciones en sus fuentes y relacionarlas con M1–M6. El comprobador no verifica las demostraciones ni registra un dictamen; QROM conserva su condición de trabajo futuro.
+Se conservan las seis preguntas M1–M6 de la solicitud original; no se añaden teoremas obligatorios ni se reabren pruebas del modelo ya cubiertas. Estos identificadores son preguntas al director, no los grupos M01–M46 de la matriz de formalización. QROM de AIR/FRI y Qiskit/Aer permanecen como trabajo futuro; no bloquean esta revisión activa. Las condiciones bibliográficas y de implementación de las firmas siguen distinguiéndose del resultado AIR/FRI.
 
-**Edición consolidada para revisión:** [Word del 12 de octubre](Derivaciones-Matematicas-TG2-2026-10-12.docx) y [fuente](Derivaciones-Matematicas-TG2-2026-10-12.md). Los argumentos por rondas, ROM y potencial se integran también en §§6.7.8–6.7.9 del manuscrito. La edición previa y los paquetes siguientes son antecedentes; sus estados históricos no sustituyen el estado de esta consolidación ni cierran M1–M6.
+## Material vigente y orden de lectura
 
-**Cota QROM de cola:** [conteo y recurrencia de amplitudes](Cola-QROM-2026-09-23/README.md). Se propone un límite para Tcola mediante ausencia de ciclos anclados, capacidad local, escalera de niveles y unión sobre conjuntos de 39 índices. Para M5 revisar esos pasos y la extensión analítica de R. Los 144 perfiles incluyen 16 cotas no triviales; pasan 96 Python y 197 Rust. La omisión S continúa sin cota útil y los exponentes de cola no acreditan seguridad global.
+1. [Tesis final y formatos de lectura](../../01-Manuscrito/README.md): [Word](../../01-Manuscrito/Tesis-NEXUS-completa.docx) y [PDF](../../01-Manuscrito/Tesis-NEXUS-completa.pdf), revisados el 20 de octubre, con 115 y 103 páginas. No se regeneran para preparar esta solicitud.
+2. [Introducción y objetivos originales](../../01-Manuscrito/Capitulos/Cap1-Introduccion.md) y [conclusiones y límites](../../01-Manuscrito/Capitulos/Cap7-Conclusiones.md). El componente de reducción concreta de seguridad de las firmas se declara parcialmente cumplido; la cota ROM de AIR/FRI no lo sustituye.
+3. [Capítulo de validación](../../01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md): §6.4 para las firmas; §§6.7.2–6.7.4 para álgebra, contraejemplo y vínculo; §§6.7.5 y 6.7.8 para el modelo ideal; §6.7.9 para el resultado ROM conservador; §6.7.10 para sus exclusiones.
+4. [Estado de la formalización](../../../formalizacion/README.md), [matriz de resultados y límites](../../../formalizacion/REVISION-MANUSCRITO.md) y [ensamblaje causal](../../../formalizacion/Nexus/Verificador/PuenteAdaptativoFinal.lean). Las descripciones históricas de la matriz deben leerse con su actualización vigente, no como nuevas pruebas pendientes.
+5. [Cotas finales con trabajo](../../../formalizacion/Nexus/Verificador/CotaTrabajoFinal.lean), teoremas cota_512 y cota_512_todos; [ejemplos enlazados con aceptación](../../../formalizacion/Nexus/Verificador/CotaTrabajoNumerica.lean), teoremas aceptacion_4096_release y aceptacion_release.
+6. [Auditoría global Lean del 20 de octubre](../../06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json) y [fuentes consolidadas localmente](../../06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/preparacion.json). La auditoría registra 2709 declaraciones, sin sorryAx ni axiomas fuera de propext, Classical.choice y Quot.sound. No acredita por inferencia toda afirmación de la tesis.
+7. [Adaptación Rust](../../06-Evidencia-TG2/2026-10-20/Rust-Lean/adaptacion.json), [integración ActiveChain](../../06-Evidencia-TG2/2026-10-20/ActiveChain/integracion.json) y [global final Rust](../../06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json): check, 223 pruebas y build correctos, conservando advertencias. Son evidencia de software, no una prueba de refinamiento universal.
 
-**Muestreo QROM y cambio de juego:** [reducción condicional al verificador](Muestreo-QROM-2026-09-23/README.md). Propone la cobertura de aceptación falsa, un verificador auxiliar acotado y la aplicación del lema 4.9 de CMS19. Para M5 se solicita revisar esos tres pasos, el tamaño del conjunto local G y el presupuesto Q+V. La probabilidad de omisión o cola se define mediante β, sin cota útil demostrada. Pasan 80 Python y 197 Rust; el corpus contiene enunciados válidos y la herramienta no decide falsedad ni demuestra β.
+Base de fuentes comprobada: commit documental df1eeae3fe026d3f47aa3e88b510489abd98845d y commit Rust 637e77c99e804664915caf4ed928a10ef81cc870. Esta solicitud es una preparación local posterior; no se atribuye a ese commit un documento todavía no confirmado. El [manifiesto de la base comprobada](../../06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json) conserva sus huellas; el manifiesto vigente de Entrega-Final incorpora esta preparación sin autorreferencia. Las revisiones locales no se dan por publicadas en un servidor.
 
-**Extractor QROM y componente de campo:** [lema de estabilidad y cota en base comprimida](Extractor-QROM-2026-09-23/README.md). Avanza Q1 y Q3 con catorce tests nuevos, 66 Python y 197 Rust en esa regresión. Para M5 se solicita revisar también la unicidad de preimágenes, las dos direcciones de inestabilidad y la aplicación de CMS19. El suplemento de muestreo incorpora su cota a una reducción todavía condicional.
+## Resultado central que se pide revisar
 
-**Nueva etapa QROM:** [reducción parcial de PoW y obligaciones Q1–Q5](QROM-2026-09-23/README.md). Se deriva una cota explícita mediante DFM20 y se identifican las diferencias frente al compilador de CMS19. La revisión de M5 debe considerar por separado esta reducción y el paso aún abierto que incorpora AIR/FRI. Se añaden doce tests, con 52 Python y 197 Rust en la regresión; los experimentos no sustituyen el dictamen.
+La probabilidad se refiere a la aceptación de un certificado con enunciado inválido según la relación matemática EnunciadoValido, no a una falsificación de ML-DSA ni a la validez completa de transacciones de una aplicación.
 
-**Suplemento de revisión interna:** [revisión crítica y potencial para nonces adaptativos](Revision-Critica-ROM-2026-09-23/README.md). Refuerza §§5–8 de la transferencia ROM y añade 96 escenarios de estrategias exactas; mantiene la fórmula. No constituye el dictamen independiente solicitado.
+| Elemento | Hipótesis o valor del resultado |
+|---|---|
+| Experimento | Un único ROM clásico finito de digests de 256 bits, compartido por Merkle, canal, trabajo e índices; las respuestas repetidas conservan memoria |
+| Adversario | Programa finito adaptativo; como máximo Q llamadas adversarias en toda ejecución compatible, incluidas preparación, nonces e intercalaciones; sin información correlacionada omitida del experimento |
+| Perfiles | T = 2^k, con 4 ≤ k ≤ 12; N = 8T; M = 2^(k+2) parejas; cuarenta consultas compartidas por AIR y ambas FRI |
+| Trabajo y selector | bits = 12 o 20; como máximo R = 512 extracciones, incluidos duplicados, antes de rechazar si no se obtienen cuarenta índices distintos |
+| Presupuesto común | B = Q + 24895, derivado del programa, sin identificar B con la altura del árbol |
+| Registro auxiliar | L es el límite de marcas adicionales del registro ROM; no es el tamaño del certificado |
+| Excepciones | Bad y AIR/FRI se cobran una sola vez; el conjunto excepcional previo tiene cardinal a lo sumo 130709 e incluye el sesgo de transporte a Goldilocks |
+| Trabajo adaptativo | A lo sumo Q+1 parejas estado/nonce; factor 2^(-bits) compuesto antes de conocer las respuestas, sin condicionar al nonce ganador |
+| Perfil final adaptativo | Solo se suma el riesgo del selector sobre k = 4,…,12, manteniendo un único cargo para las excepciones |
 
-**Complementos posteriores integrados en `main`:** [solidez por rondas del IOP conjunto](Cierre-Matematico-2026-09-23/README.md) y [transferencia clásica ROM al protocolo TG2 v1](Transferencia-ROM-2026-09-23/README.md). El segundo propone una demostración con extracción por registro hash, gramática del canal, sesgo, nonces adaptativos y pérdidas explícitas. Ambos requieren dictamen y amplían M3–M5; las ediciones históricas se conservan y los argumentos están integrados en el manuscrito y suplemento del 12 de octubre. QROM permanece abierto.
+Se solicita cotejar las dos fórmulas completas de §6.7.9 con las definiciones selector, cota512 y cota512Todos de CotaTrabajoFinal. Incluyen la hipergeométrica, la cola 2^(-300), el error min{1, 512(B+515)/2^256} y el truncamiento final por uno. No deben sustituirse por la fórmula histórica más ajustada ni por una suma informal de bits de seguridad.
 
-**Lectura consolidada:** [documento Word de las derivaciones](Derivaciones-Matematicas-TG2-2026-10-12.docx) y [fuente Markdown](Derivaciones-Matematicas-TG2-2026-10-12.md). Reúne los argumentos completos, sus hipótesis, evidencia y preguntas M1–M6. La sección 1.1 explica la diferencia entre una demostración escrita pendiente de revisión y el paso de compilación que sigue abierto.
+Ejemplos a revisar con sus premisas: L = 1000000, k = 12, bits = 20 y Q = 2^20 dan una cota de aceptación falsa menor que 0,004757335454; para todos los perfiles, L = 1000000, bits = 20 y Q = 1000000 dan una cota menor que 1/20. Son límites superiores del modelo, no tasas observadas ni probabilidades necesariamente alcanzables por un ataque.
 
-1. [Manuscrito vigente](../../01-Manuscrito/README.md), §§6.7.2–6.7.6 y conclusiones.
-2. [S1: álgebra y transferencia de distancia](R4-Algebra-AIR-FRI-2026-09-22.md).
-3. [Contraejemplo de proximidad del legado](R4-Proximidad-Traza-2026-09-22.md) y [variante vinculada](R4-FRI-Vinculado-2026-09-22.md).
-4. [S2: composición interactiva ideal](R4-Cota-Interactiva-2026-09-22.md).
-5. [S3: Merkle, distribución y Fiat–Shamir](R4-Merkle-Fiat-Shamir-2026-09-23.md).
+## Seis preguntas para el dictamen
 
-El objeto revisado es una recurrencia AIR demostrativa. La validez de firmas ML-DSA y la lógica completa de aplicaciones no están aritmetizadas en este AIR. El dominio de la tesis sigue siendo sistemas en general.
+| ID | Pregunta que se conserva | Localización y puntos de atención |
+|---|---|---|
+| M1 | ¿Son correctas la divisibilidad, las cotas de grados, cancelación y distancia, bajo las hipótesis declaradas? | §6.7.2; [grados válidos](../../../formalizacion/Nexus/AIR/GradosValidos.lean), [cancelación sesgada](../../../formalizacion/Nexus/AIR/CancelacionSesgada.lean) y [cota de distancia](../../../formalizacion/Nexus/N02/Solucion.lean). Distinguir el reto uniforme ideal del transporte de bytes y una traza inválida de un enunciado falso. |
+| M2 | ¿La unicidad y elección previa del candidato próximo están justificadas sin depender de retos futuros? | §§6.7.4–6.7.5; [unicidad](../../../formalizacion/Nexus/N03/Solucion.lean), [candidato](../../../formalizacion/Nexus/N06/Candidato.lean) y [conjuntos causales previos](../../../formalizacion/Nexus/Verificador/ConjuntosPrevios.lean). Revisar distancia RS, campo base/extensión y selección a partir del pasado. |
+| M3 | ¿Son válidas las cotas FRI locales y por rondas, con sus grados, dominios y término final? | §§6.7.5 y 6.7.8; [experimento FRI](../../../formalizacion/Nexus/FRI/Experimento.lean), [cota FRI causal](../../../formalizacion/Nexus/Verificador/CotaFRICausal.lean) y [cota de rondas](../../../formalizacion/Nexus/Verificador/CotaAdaptativaFinal.lean). No atribuir una ley independiente a retos adaptativos sin el transporte demostrado. |
+| M4 | ¿La composición AIR/doble FRI y la consulta compartida justifican la descomposición final sin doble cobro? | §§6.7.8–6.7.9; [cardinal de la vista](../../../formalizacion/Nexus/Verificador/CardinalVista.lean), [cota de reconstrucción](../../../formalizacion/Nexus/Verificador/CotaSinBad.lean) y CotaTrabajoFinal. Revisar el evento de exceso, el estado absorbente, preconsultas y memoria; no sustituir la muestra común por dos muestras independientes. |
+| M5 | ¿El teorema ROM conservador cubre el adversario y presupuesto declarados, incluidos trabajo, perfiles y reinicios? | §6.7.9; [presupuesto real](../../../formalizacion/Nexus/Verificador/PresupuestoGlobal.lean), [masa del trabajo](../../../formalizacion/Nexus/Verificador/TrabajoDigest.lean), [cobertura por primeras parejas](../../../formalizacion/Nexus/Verificador/CoberturaTrabajo.lean), CotaTrabajoFinal y CotaTrabajoNumerica. Revisar el cargo Q+1, el error de acoplamiento y la ausencia de condicionamiento al nonce ganador. La parte QROM de la pregunta original queda diferida. |
+| M6 | ¿La separación entre resultados probados, resultados bibliográficos, evidencia empírica y límites es suficiente para el alcance académico acordado? | Objetivos originales, §6.4 y conclusiones. Decidir qué afirmaciones condicionales se aceptan, cuáles deben corregirse o retirarse y cuáles exigirían ampliar el alcance. No convertir por defecto refinamiento universal, despliegue o QROM en nuevos módulos obligatorios. |
 
-## Preguntas que requieren dictamen
+Las seis preguntas permanecen pendientes del director. Las referencias facilitan su revisión; no constituyen respuestas atribuidas a él.
 
-| ID | Afirmación a revisar | Evidencia o punto de atención | Estado |
-|---|---|---|---|
-| M1 | S1: divisibilidad, cancelación ≤ 1/p² y distancia ≥ (5T+1)/(8T) | Traza fija antes de α; grados y ausencia de polos; distinguir traza inválida de enunciado falso | Pendiente |
-| M2 | Unicidad y selección previa del candidato próximo | Distancia mínima RS; caso de coeficientes fuera del campo base | Pendiente |
-| M3 | FRI ideal local y nueva derivación elemental | Corolario 5.5; lema A de acuerdo, elevación de conjuntos en FRI, constante final y muestreo sin reemplazo | Pendiente |
-| M4 | Composición AIR/FRI ordinaria y por rondas | Historia adaptativa, coeficiente AIR crítico, estado absorbente, consulta compartida y una sola contribución de omisión | Pendiente |
-| M5 | Teorema ROM y desarrollos QROM propuestos para el canal concreto | En ROM: extracción y potencial. En QROM: extractor, campo, conjunto G, cobertura, lema 4.9 y cola; β^S permanece abierto | ROM: dictamen pendiente. QROM: trabajo futuro |
-| M6 | Suficiencia para el alcance aprobado de TG2 | Afirmaciones que pueden quedar como resultados condicionales y obligaciones que requieren trabajo adicional antes de la entrega | Pendiente |
+## Fronteras que el dictamen debe conservar o modificar expresamente
 
-## Afirmaciones que la edición conserva
+- La prueba ROM es del verificador matemático de bytes. No establece equivalencia universal de Rust, sus codecs, instrucciones de máquina o SHA3 determinista con el modelo ideal.
+- La ruta Rust activa aplica el corte de 512 y exige contexto externo; ActiveChain lo toma de instantáneas locales antes del registro de envíos. El AIR sigue siendo una recurrencia escalar: las raíces SHA3 generales fuera del modelo se rechazan. Los positivos sintéticos no acreditan una L2 completa, consenso o persistencia.
+- Las reducciones de firmas citadas no se convierten en una garantía concreta de inforjabilidad del ejecutable por el resultado AIR/FRI. Las garantías de entropía física, custodia y eliminación de secretos conservan sus condiciones.
+- Los límites de procedencia H1/H2 no se resuelven mediante una prueba aritmética ni con la caché recuperada. Los conteos de pruebas de distintas ejecuciones no se suman.
+- No se acreditan 100 bits, conocimiento cero, QROM completo, aprobación académica ni envío. La aprobación anterior del plan no se atribuye a estas demostraciones posteriores.
 
-- Resultados de componentes y pruebas de software, con fuentes y condiciones identificadas.
-- Contraejemplo sobre proximidad de una traza, con enunciado válido.
-- Variante experimental que detecta esos casos, con costos y límites medidos.
-- Argumento y cota conservadora en un modelo interactivo ideal, sujetos a revisión.
-- Auditoría de correspondencia Merkle/Fiat–Shamir y distribución exacta bajo sus hipótesis.
-- Nueva demostración propuesta en ROM clásico, con 108 escenarios y verificador independiente completo del corpus; once pruebas nuevas y 28 Python en total.
+## Formato de respuesta solicitado
 
-La demostración ROM y los cuatro complementos QROM siguen pendientes de dictamen: trabajo del nonce, extractor con escapes de campo, muestreo con reducción condicional y cota de cola. Falta una cota útil β^S de omisión para obtener una garantía QROM completa de AIR/FRI mediante esa reducción. No se acredita seguridad incondicional de SHA3, 100 bits, conocimiento cero ni validación completa de una blockchain. El análisis se refiere exclusivamente a TG2 v1 y su AIR demostrativo.
+Para cada pregunta, registrar:
 
-## Registro de resolución
+- Identificador M1–M6 y enunciado o pasaje exacto revisado.
+- Nombre del revisor, fecha y relación con la tesis.
+- Juicio: aceptable en su alcance, requiere corrección, no aceptable o no revisado.
+- Hipótesis que deben permanecer explícitas y observaciones justificadas.
+- Corrección concreta o decisión de alcance solicitada, cuando corresponda.
+- Resolución posterior y evidencia del cambio, sin marcar cierre antes de atender la observación.
 
-Para cada M1–M6 registrar: revisor, fecha, observación, corrección requerida y estado final. Este archivo no constituye aprobación ni evidencia de envío. El cierre académico depende del alcance acordado y de ese dictamen; la auditoría no agrega por sí sola un requisito de probar un nuevo teorema criptográfico.
+La valoración de cada pregunta se distingue de una aprobación global de la tesis. El envío, recepción y dictamen se registrarán cuando realmente ocurran; esta preparación no los anticipa.
+
+## Antecedentes conservados
+
+La solicitud original, con su estado anterior, se preserva en el [respaldo previo](../../06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md). Los [suplementos de derivaciones](Derivaciones-Matematicas-TG2-2026-10-12.md), el [catálogo de afirmaciones](Catalogo-Validacion-2026-10-12/README.md) y la [revisión interna por potencial](Revision-Critica-ROM-2026-09-23/README.md) son material de apoyo histórico, no sustitutos de la tesis y la formalización vigentes. Sus descripciones de pasos abiertos se interpretan en su fecha; no reabren el cierre posterior del modelo.
+
+Los complementos QROM permanecen archivados en sus carpetas de investigación, fuera de la lectura necesaria para resolver M1–M6 en el cierre activo.

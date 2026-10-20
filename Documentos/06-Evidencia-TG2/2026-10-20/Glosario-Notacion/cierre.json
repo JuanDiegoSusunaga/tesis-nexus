@@ -1,0 +1,244 @@
+{
+  "fecha_utc": "2026-10-20T18:26:19.367797+00:00",
+  "estado": "completa",
+  "autorizacion": "Sí, ambos: glosario de términos y siglas y sección separada de notación matemática",
+  "integridad_previa": {
+    "edicion": "tesis-final",
+    "archivos_comprobados": 9685,
+    "commit_codigo": "637e77c99e804664915caf4ed928a10ef81cc870",
+    "errores": [],
+    "correcto": true
+  },
+  "verificacion_glosario": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/verificacion.json",
+    "bytes": 61879,
+    "sha256": "06df4361ed345fbb857fb2fe0e35a1a8dc78d1265908d15a541a540bccaa9d33"
+  },
+  "verificacion_claridad_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/verificacion.json",
+    "bytes": 52806,
+    "sha256": "ee17c99c1dff787cfdc1e7fc935c25c68d26db863af7e35eecbc8b2ea2f19cbb"
+  },
+  "solicitud_word": {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-NEXUS.docx",
+    "bytes": 32282,
+    "sha256": "6655cef84bb9eb92cc6cb4926b067de30f236d77c345580ad89d094e8f5d5898"
+  },
+  "solicitud_markdown_intacta": {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md",
+    "bytes": 12384,
+    "sha256": "6bf687a97bf0a1107525f7d50f430f3ad080f3ef60aefec3983321493e2e2bb1"
+  },
+  "control_solicitud_word": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/solicitud-verificacion-final.json",
+    "bytes": 1870,
+    "sha256": "e80146853c599ec31c9e03cbc34a3e331b23742fcb8e8c6b2103906a4c4a1fd7"
+  },
+  "respaldos_claridad": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "bytes": 12012,
+      "sha256": "236265acef3e2962e4265337583a03b6b4584fc6391a7a7ee94304497e9a4be4"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "bytes": 10741,
+      "sha256": "cc5d0d07858f93cc5120424b4861b63f93045c5e07fcbf8bcbd256223f76f97a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "bytes": 21119,
+      "sha256": "02bc198cd04584c7ee7b3690705daa759c8c8c7c7271cf459228f97213657c2e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "bytes": 15670,
+      "sha256": "a3382dcee2eeea4d425a907144269ad1ba77814b145c72a1c2937708c345054a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "bytes": 30995,
+      "sha256": "42432b410390ca3f37949c3be4ba8b3d90f2c9e8643082b653ed1f361909e302"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "bytes": 104244,
+      "sha256": "4d9fc8333bc740f08277b9bb60f209bd7a82ee8b60560a14d423da07073a133b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "bytes": 12788,
+      "sha256": "d47fd776d464962d727b0a356fd3842410d6f3173ab54759b4de2c9cc46eeeee"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "bytes": 15268,
+      "sha256": "683df8882b9223f2f8efc9cd7671711bad60b79035aa307327e4d066d593752b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "bytes": 5678,
+      "sha256": "3f9d983555db87c162326d0bd0a6bc7f9944f45e68b9d7520389abce6e91d386"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "bytes": 228561,
+      "sha256": "8d47cebaf28088f7c6c356f0bf51baf2e07a1c32349b86d7b78594b1e13d9a24"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 651727,
+      "sha256": "b08eb3eda721da63436a705c52e394207cbf74e00f4b172f8eda3d6919dafe48"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2830964,
+      "sha256": "d868552e1a8f205a5093f2c38f220d26230bf8b0ddc50d854c01ba5ecc8899cc"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/plantilla-referencia.docx",
+      "bytes": 11079,
+      "sha256": "b12d9ab4782e52e6bbeb7838e26e284ca5f4ae143ebf8d42adce1e5f339db5b6"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/BITACORA_TG2.md",
+      "bytes": 212010,
+      "sha256": "855a65c84850462a5fa48d1176aeb34135dd427361d3b35d2c06c0035d1c2584"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/PENDIENTES.md",
+      "bytes": 40606,
+      "sha256": "6bc8b62418e1fd146dff504b56e1af1fa3d8b66980c5a2ded25f2560f62efd6c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/README.md",
+      "bytes": 12087,
+      "sha256": "5f244e649150ccc0ca81404fda17e9f4929c24847ac7551d47832a5adef2247d"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 10939,
+      "sha256": "bf76cdd042a6d3eeb17b898af0cae571b7ec4abfc2126238caeb2083707a4565"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 22428,
+      "sha256": "b0049034314eb1a180fc53f7e5b3c189ea6d8014de9d91fcc727f5bf323a76b9"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "bytes": 2283430,
+      "sha256": "e159f356c187cc0859a6348e73d13441293481b8929ec62ac09db41d18c2ac00"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md",
+      "bytes": 12384,
+      "sha256": "6bf687a97bf0a1107525f7d50f430f3ad080f3ef60aefec3983321493e2e2bb1"
+    }
+  ],
+  "respaldos_glosario": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 651876,
+      "sha256": "ace0d71220a4f12a3867e19dcbbdbb11cb9e861cbc8bdd6bf5ae1093bec47231"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "bytes": 230891,
+      "sha256": "11d4f2df15c29ab7c1ac66c7afef29cd0947994fae151ba5946e2955ab1d1570"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2836310,
+      "sha256": "e62e5998fcc1638c40d5f72d60258c99bb06eafd6125c0c2164d247e7c48670a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/README.md",
+      "bytes": 15409,
+      "sha256": "3a25dc4f11cbfee2cfe3fe094b7e1deb4fe61cd11786d6dcff916906b522a2bf"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/scripts/compilar_manuscrito.py",
+      "bytes": 17032,
+      "sha256": "c54b2093c5e000e3ad214694cbed014d1c8ef67018560643ebd8ac5881d4340b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/scripts/exportar_manuscrito_word.ps1",
+      "bytes": 2934,
+      "sha256": "2bc79ee858cc3c09f2beab706f4bb3339b4fd7997049e8649af94b282281a5f7"
+    }
+  ],
+  "seguimiento": [
+    {
+      "archivo": "BITACORA_TG2.md",
+      "bytes": 214604,
+      "sha256": "923d07c37f9d5f553064e956d0ad63ce87826ed37242872b718ecbf4d01a1997"
+    },
+    {
+      "archivo": "PENDIENTES.md",
+      "bytes": 41546,
+      "sha256": "5310761130aa5174ba5d8a7332e77d3cc951cd190edce504ca5650230dae1638"
+    },
+    {
+      "archivo": "README.md",
+      "bytes": 15447,
+      "sha256": "5683d938df4245e7f950d01438f374c6c61cb78b30037093d8c9cd30541c39bf"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/README.md",
+      "bytes": 12889,
+      "sha256": "7ad9a6d339140fde7731d7952747b4c7da53558739c833e050b70d8f4a9561f4"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 11780,
+      "sha256": "6b69f2783ddc236354e777bd03cccc7d60d458803ad358b6d20be285fc999559"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 23647,
+      "sha256": "05fc26b87f05181d6ca36e91987cac85cc9f3ac62fdf2704218965e34f3fdc7d"
+    }
+  ],
+  "archivos_previos_modificados_en_alcance": [
+    "BITACORA_TG2.md",
+    "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+    "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+    "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+    "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+    "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+    "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+    "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+    "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+    "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+    "Documentos/01-Manuscrito/README.md",
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+    "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+    "Documentos/06-Evidencia-TG2/README.md",
+    "PENDIENTES.md",
+    "README.md",
+    "scripts/compilar_manuscrito.py"
+  ],
+  "fuentes_rust_intactas": 89,
+  "fuentes_lean_intactas": 354,
+  "formulas_originales_identicas": true,
+  "objetivos_originales_identicos": true,
+  "compilaciones_lean_rust": false,
+  "suites_lean_rust": false,
+  "nuevas_obligaciones_matematicas": false,
+  "commit": false,
+  "push": false,
+  "envio": false,
+  "recepcion": false,
+  "aprobacion_academica": false,
+  "dictamen_director": false,
+  "herramientas": {
+    "renderizador_empaquetado": "Falla por falta de pdf2image; diagnóstico preservado.",
+    "cargador_dependencias": "No disponible en esta sesión.",
+    "alternativa": "Pandoc local, Word COM oculto, exportador local y PyMuPDF.",
+    "instalaciones": false
+  },
+  "verificacion_manifiesto": "Ejecutar después de actualizarlo; su resultado no se inserta para evitar un ciclo de huellas."
+}

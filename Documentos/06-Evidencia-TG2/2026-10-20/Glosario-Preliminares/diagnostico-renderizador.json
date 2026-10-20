@@ -1,0 +1,10 @@
+{
+  "comando": "render_docx.py sobre el respaldo Word, --output_dir tmp/glosario-preliminares/render-empaquetado",
+  "salida": "ModuleNotFoundError: No module named pdf2image",
+  "codigo_salida": 1,
+  "alternativa": "Word COM oculto, Pandoc y exportador local con PyMuPDF.",
+  "cargador_dependencias_disponible": false,
+  "instalaciones": false,
+  "automatizacion_word": "COM 80070520 en sandbox; repetición con permiso elevada correcta.",
+  "terminales_visibles_abiertas": false
+}

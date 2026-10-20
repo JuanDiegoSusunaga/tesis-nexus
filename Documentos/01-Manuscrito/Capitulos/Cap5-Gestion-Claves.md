@@ -10,12 +10,12 @@
 
 Una clave de firma post-cuántica no vive aislada: nace de una fuente de aleatoriedad, se deriva de una semilla y, a lo largo de su uso, debe **rotarse** para acotar el impacto de un eventual compromiso. El Objetivo 3 modela e implementa esta **gestión activa del ciclo de vida**, estudiada mediante cuatro elementos:
 
-1. una **fuente de entropía monitoreada**, evaluada por su **min-entropía** y vigilada por **pruebas de salud en línea** (NIST SP 800-90B), §5.2–5.3;
-2. la **derivación de claves** mediante un KDF con separación de dominio, §5.4 (conecta con el Cap. 4, §4.5);
-3. la **rotación por épocas**, disparada por política y con registro auditable, cuyas condiciones de secrecia hacia adelante se explicitan en §5.5;
-4. la **política experimental de reexpansión por firma**, evaluada por separado del gestor: propone conservar la semilla y descartar la representación de clave después de cada operación, con los límites de memoria y custodia de §5.6.
+1. una **fuente de entropía monitoreada**, evaluada por su **min-entropía** y vigilada por **pruebas de salud en línea** (NIST SP 800-90B), secciones 5.2–5.3;
+2. la **derivación de claves** mediante un KDF con separación de dominio, sección 5.4 (conecta con el Cap. 4, sección 4.5);
+3. la **rotación por épocas**, disparada por política y con registro auditable, cuyas condiciones de secrecia hacia adelante se explicitan en la sección 5.5;
+4. la **política experimental de reexpansión por firma**, evaluada por separado del gestor: propone conservar la semilla y descartar la representación de clave después de cada operación, con los límites de memoria y custodia de la sección 5.6.
 
-El monitor, la derivación y la rotación forman el ciclo del gestor (§5.7); la política de reexpansión se evalúa por separado. El diseño une la fuente de aleatoriedad con la clave Dilithium y su rotación. El capítulo corrige explícitamente el enfoque del prototipo original, que usaba la **entropía de Shannon de la semilla** como métrica de seguridad —un planteamiento erróneo que se explica y reemplaza en §5.2—.
+El monitor, la derivación y la rotación forman el ciclo del gestor (sección 5.7); la política de reexpansión se evalúa por separado. El diseño une la fuente de aleatoriedad con la clave Dilithium y su rotación. El capítulo corrige explícitamente el enfoque del prototipo original, que usaba la **entropía de Shannon de la semilla** como métrica de seguridad —un planteamiento erróneo que se explica y reemplaza en la sección 5.2—.
 
 ---
 
@@ -50,13 +50,13 @@ $$
 
 Si un mismo valor aparece $\ge C$ veces **consecutivas**, la prueba **falla** (la fuente se considera comprometida).
 
-**2. Adaptive Proportion Test (APT).** Sobre una ventana de $W$ muestras, cuenta las apariciones del primer valor, incluida la muestra de referencia; si el conteo **alcanza** el corte $C$, la prueba falla. SP 800-90B §4.4.2 establece $W=1024$ para fuentes binarias y $W=512$ para no binarias. NEXUS utiliza el segundo perfil, con muestras de un byte.
+**2. Adaptive Proportion Test (APT).** Sobre una ventana de $W$ muestras, cuenta las apariciones del primer valor, incluida la muestra de referencia; si el conteo **alcanza** el corte $C$, la prueba falla. SP 800-90B sección 4.4.2 establece $W=1024$ para fuentes binarias y $W=512$ para no binarias. NEXUS utiliza el segundo perfil, con muestras de un byte.
 
 **Parámetros implementados.** Para la barra $H=7,5$ bits/byte y $\alpha=2^{-20}$, el RCT conserva $C=4$. El APT emplea el modelo condicional $B=1+\operatorname{Bin}(511,2^{-7,5})$ y elige el menor corte con $\Pr[B\ge C]\le\alpha$. El cálculo numérico de la cola binomial produce $C=16$: la cola en 15 es aproximadamente $1,523\times10^{-6}$ y en 16, $2,764\times10^{-7}$. Se sustituyó la aproximación normal que producía 11; el conteo y la condición de disparo se comprueban explícitamente en las pruebas del módulo.
 
 **Evaluación y recuperación.** `SentinelSeed` comienza sin evaluación y mantiene bloqueadas la derivación y la rotación. `ingest_source` acumula lotes fijos de **65.536 muestras**, incluso si llegan en llamadas parciales, y aplica RCT/APT continuamente. La frecuencia máxima empírica del lote debe satisfacer la barra configurada. Un fallo de salud o de esa barra queda retenido. `begin_source_recovery` inicia una reevaluación: exige otro lote completo y, si este pasa, una renovación de semilla antes de habilitar derivaciones. Rotar conserva los contadores continuos y el historial; nunca declara sana la fuente por sí mismo.
 
-**Fuente observada y límites.** El monitor evalúa el flujo de bytes que entrega la aplicación. La semilla inicial procede de ChaCha20 inicializado desde el generador del sistema operativo; la renovación obtiene material fresco de `OsRng`. El prototipo no ofrece acceso a la fuente física de ruido del sistema operativo ni acredita automáticamente que el flujo observado sea esa fuente. Su vinculación y calificación son requisitos del despliegue. El criterio del modelo exige un margen de calificación de al menos 0,2 bits sobre la barra. La estimación puntual por frecuencia máxima usada en el barrido no incluye el límite de confianza del estimador MCV completo de SP 800-90B §6.3.1; tampoco detecta por sí sola dependencia temporal. Una salida de CSPRNG con frecuencias favorables no demuestra entropía física ni conformidad normativa.
+**Fuente observada y límites.** El monitor evalúa el flujo de bytes que entrega la aplicación. La semilla inicial procede de ChaCha20 inicializado desde el generador del sistema operativo; la renovación obtiene material fresco de `OsRng`. El prototipo no ofrece acceso a la fuente física de ruido del sistema operativo ni acredita automáticamente que el flujo observado sea esa fuente. Su vinculación y calificación son requisitos del despliegue. El criterio del modelo exige un margen de calificación de al menos 0,2 bits sobre la barra. La estimación puntual por frecuencia máxima usada en el barrido no incluye el límite de confianza del estimador MCV completo de SP 800-90B sección 6.3.1; tampoco detecta por sí sola dependencia temporal. Una salida de CSPRNG con frecuencias favorables no demuestra entropía física ni conformidad normativa.
 
 ---
 
@@ -70,7 +70,7 @@ $$
 \xi = \mathrm{KDF}\big(\underbrace{\text{material de la fuente}}_{\text{alta min-entropía}},\ \text{sal},\ \underbrace{\text{contexto}}_{\text{dominio} \,\|\, \text{epoch}}\big),
 $$
 
-y la semilla $\xi$ alimentaría `KeyGen_internal` de ML-DSA (Cap. 4, §4.5). Justificar ese modelo requiere caracterizar la fuente, el acondicionamiento, los dominios y las pérdidas de la construcción seleccionada.
+y la semilla $\xi$ alimentaría `KeyGen_internal` de ML-DSA (Cap. 4, sección 4.5). Justificar ese modelo requiere caracterizar la fuente, el acondicionamiento, los dominios y las pérdidas de la construcción seleccionada.
 
 **Implementación observada.** `SentinelSeed::derive_key_unchecked` emplea SHA3-256, sin ejecutar HKDF ni SHAKE256 en esta etapa:
 
@@ -78,9 +78,9 @@ $$
 \xi_{e,j}=\mathrm{SHA3\text{-}256}\big(D\parallel\operatorname{LE64}(e)\parallel\operatorname{LE64}(j)\parallel s_e\parallel\mathrm{contexto}\big).
 $$
 
-$D$ es `NEXUS_SENTINEL_DERIVE`, $e$ la época, $j$ el contador de derivaciones y $s_e$ la semilla retenida. `derive_key` comprueba primero la política de salud, edad y uso; `NexusKeypair::from_sentinel_seed` entrega después $\xi_{e,j}$ a `keygen_from_seed`. La semilla inicial procede de ChaCha20 inicializado desde el generador del sistema operativo; la rotación mezcla la semilla anterior con 32 bytes frescos de `OsRng` mediante SHA3-256 (§5.5). `from_bytes` permite además suministrar una semilla, cuya calidad queda a cargo del consumidor.
+$D$ es `NEXUS_SENTINEL_DERIVE`, $e$ la época, $j$ el contador de derivaciones y $s_e$ la semilla retenida. `derive_key` comprueba primero la política de salud, edad y uso; `NexusKeypair::from_sentinel_seed` entrega después $\xi_{e,j}$ a `keygen_from_seed`. La semilla inicial procede de ChaCha20 inicializado desde el generador del sistema operativo; la rotación mezcla la semilla anterior con 32 bytes frescos de `OsRng` mediante SHA3-256 (sección 5.5). `from_bytes` permite además suministrar una semilla, cuya calidad queda a cargo del consumidor.
 
-**Relación con el monitor.** Las muestras entregadas a `ingest_source` afectan la compuerta de salud; no se incorporan como material de entrada a la derivación anterior. El despliegue debe justificar la relación entre ese flujo observado y el generador que suministra semillas, así como su calificación y protección. Pasar RCT/APT o la barra de frecuencia máxima no demuestra que $s_e$ tenga alta min-entropía ni que sus derivados sean uniformes. La transición de época cambia las entradas; su separación criptográfica y la secrecia hacia adelante permanecen condicionadas por los supuestos y la eliminación de copias de §5.5.
+**Relación con el monitor.** Las muestras entregadas a `ingest_source` afectan la compuerta de salud; no se incorporan como material de entrada a la derivación anterior. El despliegue debe justificar la relación entre ese flujo observado y el generador que suministra semillas, así como su calificación y protección. Pasar RCT/APT o la barra de frecuencia máxima no demuestra que $s_e$ tenga alta min-entropía ni que sus derivados sean uniformes. La transición de época cambia las entradas; su separación criptográfica y la secrecia hacia adelante permanecen condicionadas por los supuestos y la eliminación de copias de la sección 5.5.
 
 ---
 
@@ -92,7 +92,7 @@ La rotación busca limitar la aceptación de claves comprometidas mediante époc
 
 - **uso** superior a un umbral (p. ej. 100.000 derivaciones),
 - **antigüedad** superior a un máximo (p. ej. 24 horas),
-- **fallo de las pruebas de salud** (RCT/APT, §5.3) de la fuente.
+- **fallo de las pruebas de salud** (RCT/APT, sección 5.3) de la fuente.
 
 **Mezcla y separación entre épocas.** La nueva semilla se deriva mezclando la anterior con material fresco mediante un hash de un solo sentido:
 
@@ -118,7 +118,7 @@ La resistencia a preimagen de $H$, la protección del material fresco y la elimi
 
 ### 5.6.1 Representaciones y alcance implementado
 
-FIPS 204 §3.6.3 permite conservar la semilla de 32 bytes para reconstruir el par y exige protegerla como dato sensible; RFC 9881 §§6 y 8.1 recomienda ese formato para almacenamiento e intercambio [NIST24; RFC9881]. Esto no prescribe reconstruir la clave antes de cada firma ni garantiza menor probabilidad de compromiso.
+FIPS 204 sección 3.6.3 permite conservar la semilla de 32 bytes para reconstruir el par y exige protegerla como dato sensible; RFC 9881 secciones 6 y 8.1 recomienda ese formato para almacenamiento e intercambio [NIST24; RFC9881]. Esto no prescribe reconstruir la clave antes de cada firma ni garantiza menor probabilidad de compromiso.
 
 La política experimental expande la misma semilla, firma y descarta el par al salir del ámbito. Reproduce la misma clave y no rota la época. **El gestor actual conserva las claves codificadas entre operaciones:** `KeyManager` almacena objetos `NexusKeypair`; el benchmark `residencia_bench` evalúa la política por separado. Su semilla constante y pública es un dato de ensayo, no una propuesta de custodia real.
 
@@ -176,7 +176,7 @@ H1 y H2 conservan sus latencias históricas. La serie R4 mide 327,42 µs de firm
 
 El envoltorio y los objetos del backend invocan `zeroize` al descartarse, pero existen arreglos temporales y posibles copias por compilador, biblioteca y sistema. No se ha demostrado la eliminación de todos ellos. La lectura de un buffer borrado o la presencia de un destructor tampoco basta para demostrar borrado de todas las representaciones. Medir esa propiedad requeriría instrumentación sobre claves exclusivamente de ensayo, un inventario de copias, condiciones de salida y una frontera de observación explícita; queda pendiente como evaluación de despliegue.
 
-**Conformidad.** El uso de una biblioteca que implementa ML-DSA no certifica el módulo completo. FIPS 204 §3.6.1 exige que la semilla inicial provenga de un RBG aprobado. La derivación contextual y la cadena de Sentinel requieren justificar su correspondencia con el perfil normativo; la autorización de almacenar y reexpandir una semilla no certifica cualquier KDF que la produzca.
+**Conformidad.** El uso de una biblioteca que implementa ML-DSA no certifica el módulo completo. FIPS 204 sección 3.6.1 exige que la semilla inicial provenga de un RBG aprobado. La derivación contextual y la cadena de Sentinel requieren justificar su correspondencia con el perfil normativo; la autorización de almacenar y reexpandir una semilla no certifica cualquier KDF que la produzca.
 
 ### 5.6.5 Comparación y contribución acotada
 
@@ -196,9 +196,9 @@ Los elementos anteriores forman un único ciclo de vida, que unifica los Objetiv
 
 ![La derivación queda condicionada a los controles de la fuente. Un fallo bloquea el proceso y exige recuperar y reevaluar la fuente antes de continuar. La rotación renueva la época y las claves operativas y registra el evento.](../Figuras/figura-5-1-ciclo-claves.png){width=6.5in}
 
-*Fuente: elaboración propia. Ciclo implementado en el gestor del prototipo; la vinculación de la fuente, la custodia durable y el anclaje externo mantienen los límites de §5.8. Superar RCT/APT no sustituye la caracterización de la fuente. La variante KDF debe leerse con la limitación del perfil FIPS indicada en §5.6.*
+*Fuente: elaboración propia. Ciclo implementado en el gestor del prototipo; la vinculación de la fuente, la custodia durable y el anclaje externo mantienen los límites de la sección 5.8. Superar RCT/APT no sustituye la caracterización de la fuente. La variante KDF debe leerse con la limitación del perfil FIPS indicada en la sección 5.6.*
 
-El flujo conecta la primitiva de firma y el monitoreo del Obj. 3 mediante el gestor de claves. Su recuperación requiere nuevas muestras y reevaluación. R3 implementa la actualización de claves operativas, el descarte de los secretos anteriores y el registro de la transición; la integración con la ejecución L2 conserva los límites indicados en §5.8.
+El flujo conecta la primitiva de firma y el monitoreo del Obj. 3 mediante el gestor de claves. Su recuperación requiere nuevas muestras y reevaluación. R3 implementa la actualización de claves operativas, el descarte de los secretos anteriores y el registro de la transición; la integración con la ejecución L2 conserva los límites indicados en la sección 5.8.
 
 ---
 
@@ -210,13 +210,13 @@ El flujo conecta la primitiva de firma y el monitoreo del Obj. 3 mediante el ges
 |---|---|
 | Rotación de semilla por política y mezcla unidireccional | Integrada con todas las claves del gestor; transición atómica en memoria |
 | Registro auditable de épocas y tratamiento de claves retiradas | Firmas de transición, historial público y punto de control probados; anclaje L1 pendiente |
-| Evaluación puntual por frecuencia máxima | Lotes de 65.536 muestras implementados; calificación de la fuente externa requerida (§5.3) |
+| Evaluación puntual por frecuencia máxima | Lotes de 65.536 muestras implementados; calificación de la fuente externa requerida (sección 5.3) |
 | RCT/APT, bloqueo y recuperación | Corte binomial y reevaluación implementados; 13 pruebas nuevas pasan el 22 de septiembre |
 | KDF contextual desde semilla (SHA3, dominio separado) | Implementado; derivación condicionada al estado de evaluación de `SentinelSeed` |
-| `KeyGen` reproducible de Dilithium desde semilla | **Implementado** (migrado a `fips204`; test `test_deterministic_from_seed`, Cap. 4 §4.5) |
+| `KeyGen` reproducible de Dilithium desde semilla | **Implementado** (migrado a `fips204`; test `test_deterministic_from_seed`, Cap. 4 sección 4.5) |
 | Política de residencia efímera (KeyGen JIT por firma + `zeroize`) | Latencias R4 e inventario/modelo R5 comprobados; política separada del gestor, sin medición de todas las copias |
 
-> **Validación funcional.** La verificación global de referencia del prototipo pasó 197 pruebas, con comprobaciones de tipos y construcción correctas; §6.7 distingue esa ejecución de las comprobaciones aisladas de la ruta verificadora. Los ensayos de gestión de claves cubren sustitución de claves, épocas, bloqueo, fallos intermedios y recuperación del registro. Una demostración con dos identidades ML-DSA-65 genera un archivo público de 28.416 B; el evento de rotación ocupa 17.498 B porque incluye claves y firmas. Son tamaños de esa ejecución, no una medición de latencia. La evidencia usa flujos sintéticos. Quedan abiertas la vinculación y calificación de la fuente, la custodia durable y la integración del registro en L2/L1; conectar el verificador de lotes no integra por sí solo la política de épocas. No se atribuyen al prototipo inmutabilidad global ni recuperación de secretos desde el registro.
+> **Validación funcional.** La verificación global de referencia del prototipo pasó 197 pruebas, con comprobaciones de tipos y construcción correctas; sección 6.7 distingue esa ejecución de las comprobaciones aisladas de la ruta verificadora. Los ensayos de gestión de claves cubren sustitución de claves, épocas, bloqueo, fallos intermedios y recuperación del registro. Una demostración con dos identidades ML-DSA-65 genera un archivo público de 28.416 B; el evento de rotación ocupa 17.498 B porque incluye claves y firmas. Son tamaños de esa ejecución, no una medición de latencia. La evidencia usa flujos sintéticos. Quedan abiertas la vinculación y calificación de la fuente, la custodia durable y la integración del registro en L2/L1; conectar el verificador de lotes no integra por sí solo la política de épocas. No se atribuyen al prototipo inmutabilidad global ni recuperación de secretos desde el registro.
 
 ---
 
@@ -226,11 +226,11 @@ Este capítulo desarrolló la gestión activa del ciclo de vida de claves (Objet
 
 1. Reemplazó la **métrica errónea** (entropía de Shannon de la semilla) por la **min-entropía de la fuente**, criptográficamente pertinente y conforme a NIST SP 800-90B.
 2. Definió el **monitoreo de salud en línea** (RCT/APT) como el verdadero "monitoreo activo de entropía", con **bloqueo** de la derivación ante degradación.
-3. Especificó la derivación contextual desde semilla y su enlace con la `KeyGen` determinística (Cap. 4), distinguiendo ese material del flujo observado por el monitor. Implementó rotación por épocas con auditoría e identidad de cuenta estable; su secrecia hacia adelante queda condicionada a la custodia, al material fresco y a la eliminación de secretos descritas en §5.5.
+3. Especificó la derivación contextual desde semilla y su enlace con la `KeyGen` determinística (Cap. 4), distinguiendo ese material del flujo observado por el monitor. Implementó rotación por épocas con auditoría e identidad de cuenta estable; su secrecia hacia adelante queda condicionada a la custodia, al material fresco y a la eliminación de secretos descritas en la sección 5.5.
 4. Unificó los Objetivos 2 y 3 en una **tubería única** de gestión de claves.
-5. Evaluó la política de reexpansión por firma (§5.6), con sobrecosto histórico aproximado de 0,75 ms en H1 y 0,12 ms en H2. R5 define la integral de residencia para regiones declaradas y sus hipótesis de observación. La semilla conserva la capacidad de firma; las pruebas de software no demuestran borrado físico ni menor riesgo de compromiso.
+5. Evaluó la política de reexpansión por firma (sección 5.6), con sobrecosto histórico aproximado de 0,75 ms en H1 y 0,12 ms en H2. R5 define la integral de residencia para regiones declaradas y sus hipótesis de observación. La semilla conserva la capacidad de firma; las pruebas de software no demuestran borrado físico ni menor riesgo de compromiso.
 
-El Objetivo 3 cuenta con monitor, recuperación, rotación efectiva y registro local autenticado comprobados en el gestor del prototipo. El cierre de las garantías de despliegue exige vincular y calificar la fuente (§5.3), integrar la custodia durable y validar la política de épocas en el sequencer y su anclaje externo (§5.8). Las pruebas de software no sustituyen una demostración de secrecia hacia adelante ni una comprobación del borrado de todas las copias del secreto.
+El Objetivo 3 cuenta con monitor, recuperación, rotación efectiva y registro local autenticado comprobados en el gestor del prototipo. El cierre de las garantías de despliegue exige vincular y calificar la fuente (sección 5.3), integrar la custodia durable y validar la política de épocas en el sequencer y su anclaje externo (sección 5.8). Las pruebas de software no sustituyen una demostración de secrecia hacia adelante ni una comprobación del borrado de todas las copias del secreto.
 
 ---
 
@@ -242,7 +242,7 @@ El Objetivo 3 cuenta con monitor, recuperación, rotación efectiva y registro l
 - NIST. *SP 800-90A/C: Deterministic Random Bit Generators / RBG Constructions*.
 - H. Krawczyk. *Cryptographic Extraction and Key Derivation: The HKDF Scheme*. CRYPTO 2010 (RFC 5869).
 - NIST. *SP 800-108: Recommendation for Key Derivation Using Pseudorandom Functions*.
-- NIST. *FIPS 204: ML-DSA* (KeyGen determinística desde semilla; §3.6.3 permite almacenar solo la semilla). 2024.
+- NIST. *FIPS 204: ML-DSA* (KeyGen determinística desde semilla; sección 3.6.3 permite almacenar solo la semilla). 2024.
 - [RFC9881] J. Massimo, P. Kampanakis, S. Turner, B. Westerbaan. *RFC 9881: Internet X.509 PKI — Algorithm Identifiers for ML-DSA* (la semilla como formato recomendado de clave privada). IETF, 2025.
 - [Connolly26] D. Connolly. *ML-DSA Security Considerations*. draft-connolly-cfrg-ml-dsa-security-considerations, IETF (borrador), 2026.
 - [BRS22] J. W. Bos, J. Renes, A. Sprenkels. *Dilithium for Memory Constrained Devices*. AFRICACRYPT 2022.

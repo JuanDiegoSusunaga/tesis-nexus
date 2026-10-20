@@ -1,0 +1,61 @@
+{
+  "tablas": 2,
+  "celdas": 41,
+  "ecuaciones_nativas": 19,
+  "hipervinculos": 35,
+  "preguntas": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+  ],
+  "texto_y_celdas_identicos_a_conversion": true,
+  "normalizaciones_textuales": [
+    "Oportunidades de salto invisibles en hashes",
+    "Glifo de menos matemático normalizado por Word"
+  ],
+  "estilos_cotejados_con_tesis": [
+    "Normal",
+    "Textoindependiente",
+    "FirstParagraph",
+    "Compact",
+    "Ttulo",
+    "Ttulo1",
+    "Ttulo2",
+    "Author",
+    "Fecha"
+  ],
+  "geometria_identica": true,
+  "paginas_word": 6,
+  "revision_visual_completa": true,
+  "imagenes": [
+    {
+      "archivo": "tmp/revision-word-director/render-3/word-001.png",
+      "sha256": "e9f4bd46ce246e5e1762764c528b2432aa1182ae5a7d47ddd9b65ee05b80976c"
+    },
+    {
+      "archivo": "tmp/revision-word-director/render-3/word-002.png",
+      "sha256": "fc422bc4b5597098999e23d6a93b305e0266a3b6597452dcf1b02dda7474b59e"
+    },
+    {
+      "archivo": "tmp/revision-word-director/render-3/word-003.png",
+      "sha256": "d6599b33bb72626b4563f3aafb2fc49487d8ef96d6bb4e5c572988c63dff7c32"
+    },
+    {
+      "archivo": "tmp/revision-word-director/render-3/word-004.png",
+      "sha256": "b5ed194fe93cb3db930ac0c24cc884c00aed0059e6d957ac918d5993d342f943"
+    },
+    {
+      "archivo": "tmp/revision-word-director/render-3/word-005.png",
+      "sha256": "4819675b207de6bddaab80f3e6f4b829f6855893de40ff2fc10b135b82802b3a"
+    },
+    {
+      "archivo": "tmp/revision-word-director/render-3/word-006.png",
+      "sha256": "9fa980504c3ef170387bd1f0f7a09239ba1cf5c7788be623bd08e7ea9155b02d"
+    }
+  ],
+  "word_sha256": "6655cef84bb9eb92cc6cb4926b067de30f236d77c345580ad89d094e8f5d5898",
+  "referencia_sha256": "b08eb3eda721da63436a705c52e394207cbf74e00f4b172f8eda3d6919dafe48"
+}

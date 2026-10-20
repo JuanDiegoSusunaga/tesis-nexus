@@ -1,0 +1,1614 @@
+{
+  "estado": "completa",
+  "fecha": "2026-10-20",
+  "autorizacion": "Sí, ambos",
+  "alcance": "Glosario de términos y siglas y notación matemática contextual",
+  "terminos": 33,
+  "entradas_notacion": 20,
+  "formulas_originales_identicas": true,
+  "objetivos_originales_identicos": true,
+  "ecuaciones_nativas": 664,
+  "ecuaciones_nativas_previas": 606,
+  "tablas": 34,
+  "celdas": 848,
+  "figuras": 3,
+  "fuentes_lean_intactas": 354,
+  "fuentes_rust_intactas": 89,
+  "compilaciones_lean_rust": false,
+  "commit_push_envio_dictamen": false,
+  "sintaxis_ensamblador_correcta": true,
+  "resumen_visual": {
+    "word": {
+      "paginas": 123,
+      "identicas_ya_inspeccionadas": 105,
+      "paginas_nuevas_inspeccionadas": [
+        "word-002.png",
+        "word-003.png",
+        "word-108.png",
+        "word-109.png",
+        "word-110.png",
+        "word-111.png",
+        "word-112.png",
+        "word-113.png",
+        "word-114.png",
+        "word-115.png",
+        "word-116.png",
+        "word-117.png",
+        "word-118.png",
+        "word-119.png",
+        "word-120.png",
+        "word-121.png",
+        "word-122.png",
+        "word-123.png"
+      ]
+    },
+    "pdf": {
+      "paginas": 111,
+      "identicas_ya_inspeccionadas": 97,
+      "paginas_nuevas_inspeccionadas": [
+        "pdf-003.png",
+        "pdf-099.png",
+        "pdf-100.png",
+        "pdf-101.png",
+        "pdf-102.png",
+        "pdf-103.png",
+        "pdf-104.png",
+        "pdf-105.png",
+        "pdf-106.png",
+        "pdf-107.png",
+        "pdf-108.png",
+        "pdf-109.png",
+        "pdf-110.png",
+        "pdf-111.png"
+      ]
+    }
+  },
+  "paginas": [
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-001.png",
+      "bytes": 25093,
+      "sha256": "fad22265fdd769f8d35180bde2536b0fdf39be0d84f9f6be644d1d540562f89e",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-002.png",
+      "bytes": 66913,
+      "sha256": "3bb4215eaa52ad9b9b8aa95f5f6bca4fbdeb6697368e4a6ad6a9bf48847fd123",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-003.png",
+      "bytes": 62373,
+      "sha256": "2c6ffa122e5312081e56490f81cba672fb74a57a16f8d589045608a32a8c5e08",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-004.png",
+      "bytes": 78309,
+      "sha256": "3023561f350a0cf86121cd11460e3f7e606354de17c2ca1c4fba7af38a18bbe3",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-005.png",
+      "bytes": 76927,
+      "sha256": "0bb248fd87f543c0646c102ea051a9f0fe92d3f8d31ad169d431a5deae214462",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-006.png",
+      "bytes": 37672,
+      "sha256": "a6d874d30c1436e4812cd182e38d6eefbae970be216b9d148b955dac2aa54be5",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-007.png",
+      "bytes": 74832,
+      "sha256": "7394f7b13c2cd29b9a24170d728be09c9a3d6a293df64bbc81e8e196b6739c3e",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-008.png",
+      "bytes": 87153,
+      "sha256": "78d6eb9d4a0dd81b6409c0a8a2bd553f3fbccfeb0b6ae2d00ec7c55005063be3",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-009.png",
+      "bytes": 50481,
+      "sha256": "95001d0d4a5d2905d2cbe72867553030a835987447869954478183aecf8030c7",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-010.png",
+      "bytes": 104841,
+      "sha256": "62fbb04a4780c3b57be72844a53c70407b76e0b22a9adc11bf6880adb584f6ec",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-011.png",
+      "bytes": 77512,
+      "sha256": "4c7749a7d66df3cfe401d94d2e4df6726d78cc17be16ba779fff71180df61989",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-012.png",
+      "bytes": 55846,
+      "sha256": "1fe2e76771a3e8ff7aae2ceae9fde5d161c7e1a6a121c4acad33891bdecd4568",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-013.png",
+      "bytes": 27325,
+      "sha256": "a1691ed68138817c0185ddb7817e75a419d00def11202ab3b8604a09502d12c3",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-014.png",
+      "bytes": 76737,
+      "sha256": "baff929936c97cc1aa98c0a569f12f7a8d2663d79b95d2f420270bd099b5803e",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-015.png",
+      "bytes": 65718,
+      "sha256": "28f9667abc3d0abf5ba53b6c4720f317d0201d95380729e1931e40f332b4b1a0",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-016.png",
+      "bytes": 82929,
+      "sha256": "6bafed589dc7a989334242bae712db96051b4b9c9ef48c52cda112876c3cb51a",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-017.png",
+      "bytes": 79992,
+      "sha256": "d1801af2afc449b0613adb842be2d7e546bb13802f86d3d53495dbf4e42f88ef",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-018.png",
+      "bytes": 74352,
+      "sha256": "91bd88c4ec54d9fc3310acec861da2d791fa7ca3108497b2301f9cddf6689b3e",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-019.png",
+      "bytes": 36662,
+      "sha256": "b7448ef8f992bcd98f0c5a260e092009e66be6670078eea3900e4af942b8c67a",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-020.png",
+      "bytes": 67501,
+      "sha256": "9a0f976aea1f0f5b2f97d26db76e11726415cf40484e6e073d4adc6c38bc0b71",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-021.png",
+      "bytes": 106778,
+      "sha256": "059d5bb87043a35c28ff5f6179bbad262e4daa9c7e6d040f4ba5d9eb126f4256",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-022.png",
+      "bytes": 74004,
+      "sha256": "d5b2a535cb63179d4c796495dce70c38ab1b681842289c46bfac2347d1ddd065",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-023.png",
+      "bytes": 67808,
+      "sha256": "7c08a8b613d5538a4acd4ff2068795f276026ee7349c531ebf238b1f72a36cd4",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-024.png",
+      "bytes": 77556,
+      "sha256": "d348eb92b00230c02c7ae78570a804cd0f885b0306fd9b7cd0ec570f7a11834b",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-025.png",
+      "bytes": 81288,
+      "sha256": "1b2dca14dff8c38064716728904620d37295cb0409edb4ef27589d5540efa33f",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-026.png",
+      "bytes": 78740,
+      "sha256": "15b2d1e77ca97960ff7ffd9f763848099c09e54a654852116508f228fa88989d",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-027.png",
+      "bytes": 70284,
+      "sha256": "f1b456a51a2d6b329dd5024413e7a02ef8393c55980a12a1c0a951c9da7a8c75",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-028.png",
+      "bytes": 73953,
+      "sha256": "15b78f652ceb588ff1006ce9cd6b4867ef4585279f451b31c71efb4c125dd179",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-029.png",
+      "bytes": 74728,
+      "sha256": "998783f4687a06455c15114efe0d4c4651a902e7cf64f404b4d2d99f0800d808",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-030.png",
+      "bytes": 68861,
+      "sha256": "7e5df3424be15944c5b41493e14cdf500ef037c5f9a8c495056052da64f02722",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-031.png",
+      "bytes": 59922,
+      "sha256": "b01d4a0e4b1a638ec20d9f349e6bca12a37b6dd55321070dec108e0522d70f8d",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-032.png",
+      "bytes": 68325,
+      "sha256": "5754db94b2f9dd2f871fdd501b29e9f486b5735df0626c364633c570b784aed4",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-033.png",
+      "bytes": 78453,
+      "sha256": "f6762cb4e176b1e2c448640ad4f9fbf09790bf0668e24aedc02a4a0c119bbe13",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-034.png",
+      "bytes": 77247,
+      "sha256": "16a2e686eb33042a50435a39c1010ee64bcddadc2b40a7e66eb2b920324ef68a",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-035.png",
+      "bytes": 77004,
+      "sha256": "21ba25877fcc1e61eb9058d20d664cca1ecf7d714324bd927bcd66fc1077cf08",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-036.png",
+      "bytes": 88517,
+      "sha256": "080e8a96f5a0f1fa0a87023cab10f84f0ebbb48d30c0ab16b741f74a1160fca1",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-037.png",
+      "bytes": 74094,
+      "sha256": "efa54bbc3e88f13225d8a5910807855c1c2f221f45b2acf1f2a7e827065a521b",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-038.png",
+      "bytes": 65695,
+      "sha256": "4581e1f3379fc6113140b7302b11c0914d84e40a9f170830749fd37ac910effa",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-039.png",
+      "bytes": 71692,
+      "sha256": "8e797448af21d55071979a95e829f7f153e88a06c6b4a3a972300f5d35fc32b2",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-040.png",
+      "bytes": 69268,
+      "sha256": "2fe2235045b94a7a259acb1bf65c4c3691685eba6e282d012a10ff90f65aec97",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-041.png",
+      "bytes": 78526,
+      "sha256": "5e88687e71c114c6eb00464b4f3238fb02e4f7b201d212cf2180bbe7fbbe6813",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-042.png",
+      "bytes": 75600,
+      "sha256": "ae188c7df2ed7b8843fc843b544a18d23d5b8293f4fde20f545b7dc6349408f8",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-043.png",
+      "bytes": 73982,
+      "sha256": "0257e2b3a1b31dadc6b30353b06f7222e2f239c04aedd610a34c22f618ec0233",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-044.png",
+      "bytes": 86822,
+      "sha256": "411d30c05d9bfe425cdd1daf3ea3976da9658b0bfc1b1d80e3c85120807db74c",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-045.png",
+      "bytes": 73637,
+      "sha256": "b3a8f4f8d643e7055f5018c491d64d31a372b4753fd6e8ae4d6947d6ed6caf72",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-046.png",
+      "bytes": 78254,
+      "sha256": "8094de893f7bdeb1564b8949bdcfed727a2ae05779f8b058a7e9bfed15b50064",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-047.png",
+      "bytes": 82305,
+      "sha256": "b0be9d4d471047a9dfb173b6c194ee5c5f7127d074c1c76cc66c8f3e4de87ab0",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-048.png",
+      "bytes": 79228,
+      "sha256": "cb3c34357b69937c73bbdcf7be6e33f81ea58489c7170d73897b953864be07ab",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-049.png",
+      "bytes": 75394,
+      "sha256": "88a0b36f0d39f316c5092321f20f29852dcd81d47f1b668d4a88adc4e672e19f",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-050.png",
+      "bytes": 144391,
+      "sha256": "91ed884f1b1125a4066a05ecb00dcd98a568524143e6a59ada7550ffd6fff71b",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-051.png",
+      "bytes": 85726,
+      "sha256": "ff4b83adad4e5b2ba00bc733065e429fd644097b92fa1b9fe27572147d1eaf46",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-052.png",
+      "bytes": 69582,
+      "sha256": "4864f1e1892eed70ba3c434c8b43ea3dd69ec3e2dab24900754ffde419f07f03",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-053.png",
+      "bytes": 65024,
+      "sha256": "6288e3628a8e885d7c53ef14305b1070ef3479ed47fa5694426a88c3835e11fe",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-054.png",
+      "bytes": 72774,
+      "sha256": "ea2a1f2949ffd00704a32b12fbd16e23d1386356b754de4f1916695e9493234d",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-055.png",
+      "bytes": 67878,
+      "sha256": "01c21083c27effff6ffb32f6dab0811453c01063ce105e3679e34e78c2254d87",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-056.png",
+      "bytes": 70218,
+      "sha256": "00645b61fd9c270cee5ce726639cf9bb96a5b0a992099bde8b79f4e2b1595ae8",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-057.png",
+      "bytes": 67352,
+      "sha256": "d82129f1ae2b521677e2ae4b5f46a7b5debcbe3ab20839e64017b34549c11033",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-058.png",
+      "bytes": 75597,
+      "sha256": "09df7629020424fbe71911045278dd89f8155461774335e294a352e458856ff1",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-059.png",
+      "bytes": 83185,
+      "sha256": "2cde440de14946f175409cfc97fa438f6b1c512a829f39ee388aad9ee8899958",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-060.png",
+      "bytes": 79567,
+      "sha256": "44a45403d17dfdefe67e74b65405519567abc8e916d87fe9e9a3a913f85f155b",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-061.png",
+      "bytes": 91057,
+      "sha256": "c8707b0fba456c20d2fa9ba0bac6fd949fcf194c9a348a696fe05b061a34d0a8",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-062.png",
+      "bytes": 81052,
+      "sha256": "7e51deeacb318d1f748d2455c06a518952a047132c4ac1738c1acebdad0ba5bf",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-063.png",
+      "bytes": 73784,
+      "sha256": "ccf578b7b8545dbe9162d1c7642588dfa626e6a5344d61f7f8b07852e620f4a2",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-064.png",
+      "bytes": 82332,
+      "sha256": "591b1180b83ddff3d2105a3adadfa4787f36bfb0aff68fd4b9a0c68f5f672836",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-065.png",
+      "bytes": 73434,
+      "sha256": "0db9db2a3fcd05137f75b33f70abb8e70e36ca2c47d771f58660ae30d8350235",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-066.png",
+      "bytes": 78575,
+      "sha256": "5cf61870ef5a61dc1133b3bf1dac07f06dff230ec5894f514c867a592393d87b",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-067.png",
+      "bytes": 76832,
+      "sha256": "164a020dcb0d793ef2c8a14c7df60cf00dae4202a43899137436fb04754c9230",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-068.png",
+      "bytes": 82453,
+      "sha256": "7d5da41baf610081b14f34630f7af08bc49e732dfefe99d8a71fec5189e85e9a",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-069.png",
+      "bytes": 79985,
+      "sha256": "505c16867f9afa87ea94572ba6439c28460f6771bbef46b4a216dd8630db8f7c",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-070.png",
+      "bytes": 79809,
+      "sha256": "03a661704fa87a485a30581d6f2b35747da834da624b9d8a5e6df5b82971d48a",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-071.png",
+      "bytes": 80947,
+      "sha256": "ee955256d3aa66da552cf9b0a75395ba6e8f8e759c8c443851785c26f161a039",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-072.png",
+      "bytes": 81902,
+      "sha256": "c105fb7cc8641cddd4c04db0d50022001d872a181f97c7b33666a0147d8981ec",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-073.png",
+      "bytes": 79043,
+      "sha256": "2912a2fc71c728bb5b2ea65b47981443449d12a4a9f01d18df8badb44264fe90",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-074.png",
+      "bytes": 68662,
+      "sha256": "6edcf3ee2487591501c448a857992c5606df2ba923289105e49d207a9960c72f",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-075.png",
+      "bytes": 85319,
+      "sha256": "dc108ebe7469f90887669b82db45a225b6b961398b7ce9d7b75c8d362bf8e5fe",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-076.png",
+      "bytes": 83656,
+      "sha256": "8a4158d0ec3933b68d6af383c1981626897f9e5c49aff593920e130bb0170143",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-077.png",
+      "bytes": 58199,
+      "sha256": "ecc0fee42755015ea3f1bb13c3d4eaa831beaeec97c84ae40282ed94bc92384a",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-078.png",
+      "bytes": 72080,
+      "sha256": "4f32953825d6bd15929f8ff128bbdc8f0193ed9b275fc0ceb6d729c51ef7426c",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-079.png",
+      "bytes": 83398,
+      "sha256": "810a20b0fb34c39ce6c880d5acf5f0ae722ef365244e16d90858ade50421a68d",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-080.png",
+      "bytes": 72590,
+      "sha256": "8b1aaa12fe96d85cd261bcdecc1ddbbc9b4766d6b3f44229438c630434e9c9a4",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-081.png",
+      "bytes": 84981,
+      "sha256": "7f84940ca95670c75cb65bdf7a93e278de856f67cbc678988720dd36558037d3",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-082.png",
+      "bytes": 80257,
+      "sha256": "622809a1c9d0140028ed18089849ada45b89faf5fdc32c69519b1f9d098a52c6",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-083.png",
+      "bytes": 77837,
+      "sha256": "0fe3c3b1a8ecd2539b2cabb5d114bb088b1f76c7f3e1c87decb3c6cbbee92b98",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-084.png",
+      "bytes": 75706,
+      "sha256": "2d0b22544fb2e480446bf0e91f9e2783323bf80bd6fe54d5ce2cfb699ec8397e",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-085.png",
+      "bytes": 80498,
+      "sha256": "8c155be347b82dc48667d114926ab7d3af652e51766a7b8c5c3739b040f950e0",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-086.png",
+      "bytes": 82564,
+      "sha256": "4e408932318a269289f626c5111fd7204090197d9144725b181c56ab08590137",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-087.png",
+      "bytes": 80513,
+      "sha256": "b4896f38aee3f864a358f9fc7bab41b059fe5199b3f239fdc7c8e4a466cce85c",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-088.png",
+      "bytes": 81344,
+      "sha256": "528ab5fbe64ff14e1a9998b6d53d1df5b68f4ddbd312815c7050131f9cbc3f0b",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-089.png",
+      "bytes": 78523,
+      "sha256": "c4934320c4c720329f045fe755fd375fc614403a71fa69191436f57735313d54",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-090.png",
+      "bytes": 80094,
+      "sha256": "58a8ff34820c6b6baa5e103e1a46a80877b9c63737ab3aa86a5d281ebbaec07f",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-091.png",
+      "bytes": 81028,
+      "sha256": "b6c139c4ed4ce509d4a805e24fa1ffb9df652eee223b751e4dcf7d275bc7a822",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-092.png",
+      "bytes": 82726,
+      "sha256": "bb8e14b45e1e863360b8a7b085f27effb8827e27e29e59c480a529c793e45553",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-093.png",
+      "bytes": 81731,
+      "sha256": "a74452f1d2106ff18ee6392bfa44b0c4fe13b314e85954d9a05c26502a00ab96",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-094.png",
+      "bytes": 75473,
+      "sha256": "bc932d19fded9f3ab7605d58ad99ca9d5fdab8f26ffdcfc4e4861952fdf9959a",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-095.png",
+      "bytes": 75213,
+      "sha256": "b9222515cdc0ded52cf4d4d7bbe08856a91ae4525201ad458a501d4998b86bee",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-096.png",
+      "bytes": 67413,
+      "sha256": "53402eac048ed3309f34c6273cdb215975262a975ac5ccc98bed9764d144431c",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-097.png",
+      "bytes": 77619,
+      "sha256": "9986efe23b1d6c73d28710fec106e46535ed0491951643fc34caf7f2bde6e489",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-098.png",
+      "bytes": 77135,
+      "sha256": "df337b89abd5657953e352da4a24b104f6745d62b3a35b0a3d7d22cb45a3f745",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-099.png",
+      "bytes": 80771,
+      "sha256": "c2ceee781a3708f7191bf7ba27666b70726410ba47f6de3015b05df28599d270",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-100.png",
+      "bytes": 88793,
+      "sha256": "329aef697a9283c4bac5b24e099f695bcf4c9316d4c7842e3facc71138fa7e9a",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-101.png",
+      "bytes": 25920,
+      "sha256": "96991e0001dd8228eb83f44dfbde9626e997ec9766564c21954d9b7054be533c",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-102.png",
+      "bytes": 70691,
+      "sha256": "1525563abe6c04498c98cb19827cb619ce8151152cd0c9b29a43fa1560e26aff",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-103.png",
+      "bytes": 86708,
+      "sha256": "cb70e8dc9ce2f1124e6e67d6230db5ee8e6b04ea0f19f7b20fea53fa04640575",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-104.png",
+      "bytes": 77644,
+      "sha256": "bc4d082eb67d6ef0813684947c78ad9d65c37d2b3ad4c49d1c74aea254e9f7e6",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-105.png",
+      "bytes": 81708,
+      "sha256": "cb584ec4ef2adf0f93005ee6c9e5dc01a6764cd455b6522545cf85951d1b5d67",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-106.png",
+      "bytes": 73711,
+      "sha256": "c73946e7cef667f1adfe8e18980225e65f9e4cdf8dcfb1f4981d0a1f5bc35a24",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-107.png",
+      "bytes": 68195,
+      "sha256": "81b4feb038338bcbc60de1ac66a4939d1cc7c7906d6816e70dacb599085c7b82",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-108.png",
+      "bytes": 73198,
+      "sha256": "8b073df0e7eb8d2da0b5dbc7f878d46f7110567eca5f5bb4b7d57478db8f759d",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-109.png",
+      "bytes": 83704,
+      "sha256": "e25975785c28f2d17127f478d6baf9c08370336a7b139f48ca8b33c3cbd98b0a",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-110.png",
+      "bytes": 79482,
+      "sha256": "d77fc63e8767375456d02e7f98f981f3cee9b0c550c3624466b309c77092752f",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-111.png",
+      "bytes": 79096,
+      "sha256": "031d06827f40f36e5ef21eb1320968ef35518308d24b6bce0d431f5c8c5b29e6",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-112.png",
+      "bytes": 24354,
+      "sha256": "3c84aa3b850b4a31650a1b1435774ca83e547511861da4fa9dbd59a98ec98443",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-113.png",
+      "bytes": 68995,
+      "sha256": "87dc03e47e389014fca545bd0be762e749e65393ea7bc797a4eab457905167ad",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-114.png",
+      "bytes": 75546,
+      "sha256": "d1b1583a7cd91c25cd5b9ba27a04dad08cf701f06e1f3767ec8d179495113acc",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-115.png",
+      "bytes": 28589,
+      "sha256": "3727a14641c4500a56c15047318d37b4eb6f481e42fcd1a1df79ef98398dd6df",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-116.png",
+      "bytes": 83965,
+      "sha256": "bb45f3f4fa18faa3f4d0c529d84310949a78998210b4e7a291f239574ff75777",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-117.png",
+      "bytes": 87290,
+      "sha256": "44ca781e3b5cea2efd8ff016ff6ef499eb037d29cecae8a03294bb9d5b86f58b",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-118.png",
+      "bytes": 83904,
+      "sha256": "2ab93d8f3cc0082b4a2443690cb6ebf5cc59e6ba595c7df64529b59957a5d234",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-119.png",
+      "bytes": 81650,
+      "sha256": "2fb634911fe96594ea2db6093bfcf3ee17a204e871838c8cce93033043d902ee",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-120.png",
+      "bytes": 80465,
+      "sha256": "ef4db05fd743ea04cfbb099644d41c9958b6b15d4dc21c46a7c20ee349794bb4",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-121.png",
+      "bytes": 88649,
+      "sha256": "f4a76a4503685fbe6702944b1132476cd20c64467fdfc39b46f4259b63ee5186",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-122.png",
+      "bytes": 85858,
+      "sha256": "7d93b5c02870cbb432f17be930111cf36fc08a32f4e9353147406bac92b683c6",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/word-final/word-123.png",
+      "bytes": 29288,
+      "sha256": "8795da8174958b58115ddaffae0c34a12587690209d7567a10009ceda63d2539",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-001.png",
+      "bytes": 43947,
+      "sha256": "f3a0a91d4de1650ce76a78e46a16344613517ee843f112506be59220d30076fb",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-002.png",
+      "bytes": 149478,
+      "sha256": "ab10d9b16add44ecb1bea953cc3aa93653c7dcf15fdab7fb46dbecce86b0ce15",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-003.png",
+      "bytes": 139910,
+      "sha256": "6eac56ecc1f317555c7680c0ee89fb9fbd81122388f15b1697748d8feaa98728",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-004.png",
+      "bytes": 162028,
+      "sha256": "ce209dd620365e30eeb8d14b6dbb5f8c72d55eb2b983c9850d7ca523a4bf3ede",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-005.png",
+      "bytes": 160827,
+      "sha256": "9141957eee33f3162bd6b59a1055bbbbd53b3eb6a95a9335c2160f71a2949c26",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-006.png",
+      "bytes": 72683,
+      "sha256": "78b3ff34ac728dae1d03ce9edb9278002b4a8d5427c69f6f1ea42217459621f8",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-007.png",
+      "bytes": 185250,
+      "sha256": "c7b031c2541473f45714c3e5fbb816b8cdb6621e75e8011230ebe33e34adfa70",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-008.png",
+      "bytes": 200824,
+      "sha256": "d6128853696186f33600723d0e98b618cf99de48788d3507782c35c505600fa2",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-009.png",
+      "bytes": 145019,
+      "sha256": "df3777a0dfced0aa5c1c14c00397b88c5ce2633934eb32065a058d1de4f64520",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-010.png",
+      "bytes": 191778,
+      "sha256": "edace04077c03f6d7865be2b569db015ce36e1865a02eeee698fb520c55208a7",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-011.png",
+      "bytes": 141304,
+      "sha256": "027b56aa80fae7ca1090371eccf3809cd16e6326e967f27b5d8f8acf2917121e",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-012.png",
+      "bytes": 46787,
+      "sha256": "5c169290e27e9e985f750d631cdac6711c6a3b84c89be58214459283400dd23f",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-013.png",
+      "bytes": 171934,
+      "sha256": "cec1c446ad86a5338143743d338cc6dc34faeee296df63a6a0bb593defda851f",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-014.png",
+      "bytes": 153052,
+      "sha256": "446824ad019cd8c4bd07caac6f53ccd8eb1ff76dd12c9e64723a957da4c41fb7",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-015.png",
+      "bytes": 180519,
+      "sha256": "09fd876baa04e2125ece95870c6a3a44eb7abba11e15e64c8081d7264931fe60",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-016.png",
+      "bytes": 169603,
+      "sha256": "7a8f1ff469101d05409c9b71dc73c7944094a4fab21dec2b4a2d0c2b2f66ca72",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-017.png",
+      "bytes": 147686,
+      "sha256": "ae4227f9d7ad49f53462e2e552b766c1d285d8b9ed4b1c8687575e76b1f2a61a",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-018.png",
+      "bytes": 173084,
+      "sha256": "8e1a45280975012b7c9802d27d7825cb3a8384ddcc05b78a938ffb62052c932b",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-019.png",
+      "bytes": 114646,
+      "sha256": "4aa47d1e8bc34999ca1fda09bea65dc0aefccb7a3927d6692805bafa60238319",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-020.png",
+      "bytes": 154171,
+      "sha256": "b93b70ca13af2e164478b1f425f8de4e45fc39cef0ee50045264471a2bdfb3fb",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-021.png",
+      "bytes": 180287,
+      "sha256": "557d14ef7840f1c56fe0f991ddf288f070b397164f192b77a018575119f5f946",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-022.png",
+      "bytes": 165720,
+      "sha256": "b1babca2bdeab7aed5f626baf0aea68708054346a883defe1f7f4962fd87840a",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-023.png",
+      "bytes": 183035,
+      "sha256": "76c559764912660512e92bfdd5af08b6a9cb618c347c2507bf2a3c91481381e9",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-024.png",
+      "bytes": 166918,
+      "sha256": "49ba60174523daf0f365e9a3d5335b5cc033a1b7fd4455df795ae251995153a5",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-025.png",
+      "bytes": 166560,
+      "sha256": "9d4d658bccea94f5cb80f691ed0963821556949ef0ea35b9a6f1514836c4b425",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-026.png",
+      "bytes": 184405,
+      "sha256": "dbcabbb902adf5cb76b3153c824159c0f1a7c7514d8be676ced0cd523dde9bc6",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-027.png",
+      "bytes": 100416,
+      "sha256": "78af8e129edf845a6606aeae41972bf27506e787dd1b595f6c3350502e393e18",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-028.png",
+      "bytes": 137325,
+      "sha256": "9c08e3b2419fdfd14882612251f226f1928d60aff0c2ac0259488d7513c502b7",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-029.png",
+      "bytes": 146844,
+      "sha256": "9243f35d1b5e2a8751b50f7e5b640a890cf3cafe758d57393a30e22ca4036cd6",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-030.png",
+      "bytes": 203275,
+      "sha256": "a01cbe1cd2df594eaa2368b02c14406efba8cf2b39cee5ba48a3a95bb65ec86d",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-031.png",
+      "bytes": 153168,
+      "sha256": "8ee78a12bdb2200d0c8a50cb9cc8b260421d2faa1467fa855fb90476dd3850d4",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-032.png",
+      "bytes": 127835,
+      "sha256": "b0b3235ac5afea3f13546b471f8129eab21335c90dd3225acde41c1eafbb66ce",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-033.png",
+      "bytes": 173473,
+      "sha256": "81fd8dfd88dcac6407c0a77af055d13a35d576dba4dcd21b1a22324bdcbaec43",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-034.png",
+      "bytes": 153886,
+      "sha256": "147abf57380f441f55f9367652e0b2f72d840a9ef47901c6000af2b641194e93",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-035.png",
+      "bytes": 59016,
+      "sha256": "4ea2091f2d5425b5ca6e77c4c4f41a6c462b26d7fd02e97b65f16e42dcf71a5a",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-036.png",
+      "bytes": 166717,
+      "sha256": "37313c05e315c97c0098bccd518c36f0279e88a0ffba2bc8e7dfe873838d193f",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-037.png",
+      "bytes": 164983,
+      "sha256": "fdeaa92cea040bb26ac02f076b5d600d8faa03ea0d4139644b231575f25d85c9",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-038.png",
+      "bytes": 207618,
+      "sha256": "2395709221c89abe0d3de85fa36b068ad12850cf7a640f02f0ede5667d71b874",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-039.png",
+      "bytes": 187322,
+      "sha256": "770fb0ae96ff872892255368f5b756fcd5ce92bc033eb9f0504433feb0b4d959",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-040.png",
+      "bytes": 190783,
+      "sha256": "818ad0550c1e3a728e047c84ee5580fa3f78b9fbb5c76b38a7796ba31985d00e",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-041.png",
+      "bytes": 179721,
+      "sha256": "ed769c9201b9ed87a6a510273ea84e8bd9164e2acf37991ae6dd234cf43340aa",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-042.png",
+      "bytes": 169528,
+      "sha256": "514f7ea5076ef804bf9d2ff6984031a9995d52dc86572c189d827d67caf9c996",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-043.png",
+      "bytes": 173049,
+      "sha256": "58e2839e4391003d5685f66750bcb6ded8875a8eda1678a626c795f3824cf96b",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-044.png",
+      "bytes": 174231,
+      "sha256": "3548e95a9e2f82bcc6af25887d068759cf8d4bfa00bfc4dc122513bba6990cd1",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-045.png",
+      "bytes": 126047,
+      "sha256": "c71615b33572b00034f765f929a02826e724e35a3b242f2314c087e988ceeebf",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-046.png",
+      "bytes": 124247,
+      "sha256": "802ddd9e10f553406ae76ab0941d65d96b2f147ffd7143d1681cee7e64477b2c",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-047.png",
+      "bytes": 153055,
+      "sha256": "118217530141808fbf58bda3d40589854638181de2c0e92e9dad997e9daaeac8",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-048.png",
+      "bytes": 177201,
+      "sha256": "4dc99aaf1a74b3c778a48f21efc649805971e7e7901e46799467bf67eaf99946",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-049.png",
+      "bytes": 69075,
+      "sha256": "9ee9bf912dd1f8556769b080af3c499479015f20982125e5ca0bcd85fd528319",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-050.png",
+      "bytes": 154739,
+      "sha256": "369ed70822a65a615c6f7ca168798ac82dfc36c27563ad93e1f683f4a8f47790",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-051.png",
+      "bytes": 163017,
+      "sha256": "252e0a67b9ced86e9816045e441ddeada5c7f36a6e4a963d9f8bdf563bc1c9f5",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-052.png",
+      "bytes": 158251,
+      "sha256": "0fda02539f45313fa0253ea61421c4a8056daa491d62ba12eaf7af88aa362d36",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-053.png",
+      "bytes": 128815,
+      "sha256": "09d8974eb9eb453f2c9dafbd150e4a41697e668d34c9b9f7d0539b2a3582274d",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-054.png",
+      "bytes": 193986,
+      "sha256": "d75ba1d3ac28ceb6819925ae7c49e3d4bb3c97b72e68d625bf0a5978f3878088",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-055.png",
+      "bytes": 200666,
+      "sha256": "92c3972c24da092b5540d78ed51467aa51fa9b36db3c268778eae7e4c2772bfb",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-056.png",
+      "bytes": 201547,
+      "sha256": "89d1499281e9c2c53ee2d43d46097ec8844f2ff1cce4561d02168ae8787015fc",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-057.png",
+      "bytes": 192097,
+      "sha256": "cd151edb434171f10935fe53751f3a6061280b38ceff3d77f2e5217ec5a4fc32",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-058.png",
+      "bytes": 158612,
+      "sha256": "b4a7feee8948bc7799aba80cf0206c998381a6dfa7d10e1d568ef4b29748f823",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-059.png",
+      "bytes": 159401,
+      "sha256": "04da47d9ae7a8b6fd57ff97071e012bc066b0ca936c4285c32dd5ff63cc284e6",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-060.png",
+      "bytes": 179401,
+      "sha256": "a8459d6526e75c931dd6344d2cac733cad45a2435fce2057e6325aad09e9563c",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-061.png",
+      "bytes": 159051,
+      "sha256": "c553f351a4da61cb75c7b2c1f93483e147af0c9e85972621dc45166199671b77",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-062.png",
+      "bytes": 158839,
+      "sha256": "2392d0112b77b5fd612377a445a189898259f4f08a05ec7eb738c115a5b7fc04",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-063.png",
+      "bytes": 149370,
+      "sha256": "34a7fb955ab9bff4f8027854b6609437863e703ae5e7245cc8552983d22ed16c",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-064.png",
+      "bytes": 158883,
+      "sha256": "e093052d6ec93bf5a2a0a4ed2270ab59ccc4112b9a6e76ea5a42076672459689",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-065.png",
+      "bytes": 183387,
+      "sha256": "d1a2924f73201c5f3d7828278fc60485eb8f6488d8ee1a4e57f2c0a9d3698ffc",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-066.png",
+      "bytes": 151273,
+      "sha256": "4bed4a106ebae670c25e4ec54c270d0d753feeb0c5c6116cfdf361354092eb40",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-067.png",
+      "bytes": 153929,
+      "sha256": "647cd258c0a8c69ea370d2af6b2506858e3bb795fd8520f1157b198e02f02d3b",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-068.png",
+      "bytes": 183776,
+      "sha256": "4e77179258fd583db0b26c0cb4723f603eef78bc8c08bf0ff7f2c0569a7a74ce",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-069.png",
+      "bytes": 103505,
+      "sha256": "3c5b7bf4dfbb3a70a8b1dfa6d78751245c827a5dcda900f0692ce4e2cfd9b969",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-070.png",
+      "bytes": 175491,
+      "sha256": "bf4703237a40e87d2ede575c0f37e845e40c1a4092fe4094e802306c78f70cc3",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-071.png",
+      "bytes": 145678,
+      "sha256": "19c7d217949c404133e13226b65e1de3e77319cd4c62347f92e8a578ff29287c",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-072.png",
+      "bytes": 141019,
+      "sha256": "bfbadfac5eab472cdc7059986db491a345f6e6c600e0513e53ec7b7740edbdbf",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-073.png",
+      "bytes": 176948,
+      "sha256": "962966be2b802a582369cfbf39f4e7c93ac7428a30c3203a0738f767a460d999",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-074.png",
+      "bytes": 188958,
+      "sha256": "9f4f8ccbd2e58826a74d909d7545f19828a4ec26b86179cac83a7c16905e3a0c",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-075.png",
+      "bytes": 175528,
+      "sha256": "f2e69a86475c9e3f965af487b694129aad280dfcc15c11d02fd9bc89fb8852e1",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-076.png",
+      "bytes": 179043,
+      "sha256": "3d18aaa4d44d9c21c198631faa6c350df46caf724b100c20d0d9d0e250f7eb05",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-077.png",
+      "bytes": 165781,
+      "sha256": "a65b896f0e140f7ea7cb9b833ef5c0fba04959e0bc872ca7e12816709655c8fe",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-078.png",
+      "bytes": 178650,
+      "sha256": "b3a68d8fce6c4a5dc1d0dc1eb098c7dd8e5ac2b8299be9f2beda06ff652cf9fc",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-079.png",
+      "bytes": 190448,
+      "sha256": "27aab44b936e009524c7aedf32d38b9ac5207f6d4bde087043b8ba1d30e1632e",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-080.png",
+      "bytes": 175988,
+      "sha256": "3b350c8586d90f2c9f14ca14cf5240f41ea7da152232073f4957908ec0d4f9ee",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-081.png",
+      "bytes": 196074,
+      "sha256": "9c3afebbdf2d0bcf530dd03f24664a00e8bc590c7f335ae36499b50149e4cdb7",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-082.png",
+      "bytes": 186412,
+      "sha256": "cfb519c1d7b453de28f2ba0a00ed9d0f5fb3c9e941917723852e40fb14c8994e",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-083.png",
+      "bytes": 176157,
+      "sha256": "47e513494fc04566e04fbf255e5aa54d4bb097a5deb85bccc1f424733613f6ee",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-084.png",
+      "bytes": 175809,
+      "sha256": "4a9a59fcf1a808d04bbdc0dc377b24e64ebae4e47df7d10c98879e3e9529d7b3",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-085.png",
+      "bytes": 181991,
+      "sha256": "8ef7450700f98a8436dde8e5a3fb855ff150524af0664a0d6bcf8302877d56c8",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-086.png",
+      "bytes": 179099,
+      "sha256": "98f4a1b51e0a8e0dc9af933ad6dd688357b2232bcb5adb910e8d2d58353f36c5",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-087.png",
+      "bytes": 141403,
+      "sha256": "441243ed9166bf78107cc6af4106ad5196fa41f9100fc85de4b5724496f7f0fc",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-088.png",
+      "bytes": 152500,
+      "sha256": "7daa1fffc9957472d52cf388ed4084b19917e553824177011a8810cb827adc97",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-089.png",
+      "bytes": 138610,
+      "sha256": "c38fd26f1806da2ceb7f8bd790d5a58e26cfb84d841e2cd460edf8ef0c73102e",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-090.png",
+      "bytes": 207105,
+      "sha256": "ee315cc6837b3e98bc1961b33a58df34773987382ea94ba51dce5978b0c99986",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-091.png",
+      "bytes": 172967,
+      "sha256": "589585d3e03e92acd5becdce29e277a96e86d6016f0863950b0ff6dea45c46f5",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-092.png",
+      "bytes": 210172,
+      "sha256": "b1e49aa7e3ded566b35b2338a2928fcfce1eab91357f5c93e4715c2a185f2e6d",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-093.png",
+      "bytes": 59029,
+      "sha256": "69c6d6fcbde6fad7d3d0f5e4fa1e889b757a010bb52e5a1defc081d9ba92689b",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-094.png",
+      "bytes": 153418,
+      "sha256": "f7e51e1fd7af114535529ac0c97c168900033507d675c8859edab1a395d4f813",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-095.png",
+      "bytes": 226518,
+      "sha256": "fafc1bb2cc307136d89f521df85d8c55fcb7aa1a25934d7e8d33be62d8cf2da1",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-096.png",
+      "bytes": 171171,
+      "sha256": "dada6d83e627c769be098a4c6b953371ffabb9afb347a1cd1e13e72c0221d213",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-097.png",
+      "bytes": 177225,
+      "sha256": "5aea34287398f7f35d5d6bdd7adadd9ca2c833cedd81ce1f796640f542fb4c8e",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-098.png",
+      "bytes": 182518,
+      "sha256": "fc1d65a706e8b1d96cf66693fb1f80c21af3afccf115a373e87140b35900ea55",
+      "identica_a_pagina_inspeccionada": true
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-099.png",
+      "bytes": 183264,
+      "sha256": "fa8dbdb02d145a4b3fd5a0d34d916ad52fbe5d0e2b70301a96fdd6ffc4c390d5",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-100.png",
+      "bytes": 204312,
+      "sha256": "ed9f62544e5cf8d2be1e5204f5b0e916148673b1af66874b17bdd8641dc59cc0",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-101.png",
+      "bytes": 199789,
+      "sha256": "55ef762ae29fb13b8c6367a51a6145129fb08ad4b7556fad2fb058f8d091959b",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-102.png",
+      "bytes": 105109,
+      "sha256": "78d6008ec3d0e5c3917fee8f065526aee375d12184ab99e79f8477fa06228da2",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-103.png",
+      "bytes": 167811,
+      "sha256": "1d4c99c5916595d9971de4124750aa7b4e9749544f1e0c17cbf630118a0c4bea",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-104.png",
+      "bytes": 173291,
+      "sha256": "2211262b4f06f2a3b0fd0288b35d009f09d4ba9e11aab74b3e6fbcb1d30e58fc",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-105.png",
+      "bytes": 186012,
+      "sha256": "5420e91b351f619d81e5ee5b57a114a8a184499f4db22ff9479211cfb31f4c63",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-106.png",
+      "bytes": 203865,
+      "sha256": "cdac89b1f69cb10f581bdfc0dade597d8d0ff381dec49a05278075bd61954ced",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-107.png",
+      "bytes": 212295,
+      "sha256": "f3e3e98c3f82cf2adcc465c95452f60c5ed9e80f620d2d6b39f93a0c4000ac80",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-108.png",
+      "bytes": 199810,
+      "sha256": "91b54382c55bfcedd68da9944b1b22982362d879ccb5bedb273af3c841fd2093",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-109.png",
+      "bytes": 207587,
+      "sha256": "d0dd66212009a0222210307163f6bfa182c119945e35dc479eeca2d73cc64be7",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-110.png",
+      "bytes": 183820,
+      "sha256": "2d578d1c4278ac21769071d288a50076738b77eb7ea8ddf136a376f3a2d43ca3",
+      "identica_a_pagina_inspeccionada": false
+    },
+    {
+      "archivo": "tmp/glosario-tesis/pdf-final/pdf-111.png",
+      "bytes": 36757,
+      "sha256": "ea23cbaa1faf299fd9a9d239454188cf52f9f48b1f69b9f159844d194f4c5e07",
+      "identica_a_pagina_inspeccionada": false
+    }
+  ],
+  "laminas": [
+    {
+      "archivo": "tmp/glosario-tesis/qa-final/pdf-pendientes-001.png",
+      "bytes": 782336,
+      "sha256": "c245a25aaa24c617c137997666677613199f4411ec5c0b8eef2907a6196d59f0"
+    },
+    {
+      "archivo": "tmp/glosario-tesis/qa-final/pdf-pendientes-002.png",
+      "bytes": 734940,
+      "sha256": "796ccea63736d7ce7dced31c3349e02fd3aa47436065c08f062794d673cda236"
+    },
+    {
+      "archivo": "tmp/glosario-tesis/qa-final/pdf-pendientes-003.png",
+      "bytes": 946043,
+      "sha256": "cd0293f5cbde35ea5efe806d438859343d8dfa44d90c6cb18e0235fb67700854"
+    },
+    {
+      "archivo": "tmp/glosario-tesis/qa-final/pdf-pendientes-004.png",
+      "bytes": 277957,
+      "sha256": "eb78b97f458e60a99d44fe6153ec86a9b9ad23aa9b3ba8c0f3db75f91f8e87ac"
+    },
+    {
+      "archivo": "tmp/glosario-tesis/qa-final/word-pendientes-001.png",
+      "bytes": 308179,
+      "sha256": "43f363f44b1589f6e452a7c2ff6ab3d4b32b822f3c6d5d10ae2b8aa17242c2d6"
+    },
+    {
+      "archivo": "tmp/glosario-tesis/qa-final/word-pendientes-002.png",
+      "bytes": 227028,
+      "sha256": "c379086b289b8c0fd7f0e1c5d2dbad78397f900f75a577d75c3927a7962ccc58"
+    },
+    {
+      "archivo": "tmp/glosario-tesis/qa-final/word-pendientes-003.png",
+      "bytes": 305002,
+      "sha256": "b09a5ffc850e5a6c072d3fb347e4916425fdf7f9f9cd2d9536333ee8b0638d2e"
+    },
+    {
+      "archivo": "tmp/glosario-tesis/qa-final/word-pendientes-004.png",
+      "bytes": 393125,
+      "sha256": "239388538bba68aa358b60c4a96a149b159859114beea6266630912b508053e4"
+    },
+    {
+      "archivo": "tmp/glosario-tesis/qa-final/word-pendientes-005.png",
+      "bytes": 141992,
+      "sha256": "2619dcd99393341f67489db2d8bfed9979d894d5c3fabd74453d7a7c94b82b29"
+    }
+  ],
+  "fuentes_y_salidas": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "bytes": 15296,
+      "sha256": "e12119903006945c6eb8d1f6ddfed8a7c396607c9c36c9a10a3088394bb287b5"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "bytes": 5688,
+      "sha256": "a9b255ac3633585a373f6d939cd3e50fbd6e48470a6f920d826f45b9546bdd2e"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "bytes": 12127,
+      "sha256": "f3c3ad215f81b52c21ae07b000b85fb056edd39b9d0b8645174b2a35b25e6120"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "bytes": 10852,
+      "sha256": "06a699e31e35606eee0178e6be659bfd1250617bb4791726fba6646e10cd189d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "bytes": 21627,
+      "sha256": "f6226594b092814e94bafaafa364385f0fc7e714e08c10d650350f03d987e361"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "bytes": 15841,
+      "sha256": "b31d24c8171f6e7a2338f1b59e6a80e6bd331d70858407e4024d71ae3fe3c2cb"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "bytes": 31208,
+      "sha256": "bbeea96523fcfdd25b9995868ef5737e745c135bc453e8f29aa6becaf4eea4fb"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "bytes": 105326,
+      "sha256": "753d83e4b4a4afb487e90c75bc127f833c43ac9724bbf0ac18452efcd7cb4595"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "bytes": 12880,
+      "sha256": "c1611629a4fc47c0dc2074110db5c4e9b2d94b3f4344bf54fe7f9d6305e84ee2"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-glosario.md",
+      "bytes": 14375,
+      "sha256": "89989ce7cb59ee9f1e1d6607c0d80d73371eafd4e26a2012f8e9e4ae653ddaec"
+    },
+    {
+      "archivo": "scripts/compilar_manuscrito.py",
+      "bytes": 17122,
+      "sha256": "68a4175ac4c6254c2e234adb05494aa8c61c821a92a77d2e85fb665cedd3f102"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "bytes": 245389,
+      "sha256": "193473353202fbfed3f5040d899e684c743959b58675f10eaad62c03922635e2"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 659582,
+      "sha256": "65364b79378b3ba6804c080eb27c991052a02acf896bae0c6d64ecad140b1673"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2945758,
+      "sha256": "a4fd3b8295fc4e6f45bfaec632728c04982e89b369cad14faf02eb6cd51f37af"
+    },
+    {
+      "archivo": "scripts/exportar_manuscrito_word.ps1",
+      "bytes": 2934,
+      "sha256": "cf33a797c32da8c5bf12ed0d9a7c6edeaf450e42d6caf1f968a825ad4de7ee58"
+    }
+  ],
+  "sintaxis_exportador_word_correcta": true,
+  "control_sintaxis_exportador": "Parser de PowerShell sin errores, ejecutado antes del cierre.",
+  "revision_visual": {
+    "completa": true,
+    "paginas_word": 123,
+    "paginas_pdf": 111,
+    "imagenes_identicas_previamente_inspeccionadas_word": 105,
+    "imagenes_identicas_previamente_inspeccionadas_pdf": 97,
+    "paginas_nuevas_inspeccionadas_word": 18,
+    "paginas_nuevas_inspeccionadas_pdf": 14,
+    "laminas_nativas_inspeccionadas": 9,
+    "reescalado_para_laminas": false,
+    "hallazgos_pendientes": [],
+    "ajustes_verificados": [
+      "Índice Word sin línea aislada",
+      "Última definición PDF junto al resto de la notación"
+    ]
+  }
+}

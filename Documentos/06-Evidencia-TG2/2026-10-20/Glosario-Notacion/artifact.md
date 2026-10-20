@@ -1,0 +1,9 @@
+# Contrato de la incorporación de glosario y notación
+
+El autor autoriza expresamente ambos apartados. La referencia de formato es la tesis Word de la aclaración editorial ya revisada, conservada con su Markdown y PDF en Glosario-Notacion/respaldo_previo. Se mantienen carta, márgenes de 2,54 cm, Times New Roman 12 e interlineado 1,5, jerarquía de títulos, 34 tablas, 848 celdas, tres figuras y ecuaciones nativas. El glosario y la notación se añaden antes de la bibliografía como apartados no numerados, presentes en los índices de cada formato.
+
+La nueva fuente contiene 33 entradas de términos y siglas y 20 entradas de notación por contexto. Sus definiciones sintetizan los usos y límites ya expuestos en los capítulos, con referencias a sus secciones; no incorporan una revisión bibliográfica nueva ni nuevas garantías. Las nueve fuentes anteriores mantienen exactamente sus expresiones matemáticas y los cinco objetivos. Los 58 objetos matemáticos adicionales solo representan símbolos y relaciones de la guía.
+
+La revisión inicial detecta una línea aislada del índice Word y una última definición aislada en PDF. Desviación de formato deliberada y mínima: la separación posterior de los estilos de índice baja de tres a dos puntos, sin alterar familia, tamaño ni estilos del cuerpo. Se abrevia prosa redundante de notación para evitar la página aislada PDF. Los formatos definitivos tienen 123 páginas Word y 111 PDF.
+
+El renderizador empaquetado no puede importar pdf2image y el cargador de dependencias no está disponible. Se mantienen Pandoc, Word oculto, el exportador local del proyecto y PyMuPDF, sin instalaciones. Se comprueban todas las páginas: 105 Word y 97 PDF son imágenes exactamente iguales a páginas ya inspeccionadas de Claridad-Referencias; las otras 18 Word y 14 PDF se inspeccionan completas en nueve láminas nativas sin reescalado. No se compilan Lean/Rust ni se registran commit, push, envío, recepción, aprobación o dictamen.

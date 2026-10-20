@@ -1,0 +1,52 @@
+{
+  "fuentes": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "signos_sustituidos": 4,
+      "matematica_identica": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "signos_sustituidos": 1,
+      "matematica_identica": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "signos_sustituidos": 15,
+      "matematica_identica": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "signos_sustituidos": 15,
+      "matematica_identica": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "signos_sustituidos": 23,
+      "matematica_identica": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "signos_sustituidos": 22,
+      "matematica_identica": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "signos_sustituidos": 28,
+      "matematica_identica": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "signos_sustituidos": 90,
+      "matematica_identica": true
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "signos_sustituidos": 13,
+      "matematica_identica": true
+    }
+  ],
+  "objetivos_identicos": true,
+  "lean_rust_sin_cambios": true,
+  "nuevas_obligaciones_matematicas": false
+}

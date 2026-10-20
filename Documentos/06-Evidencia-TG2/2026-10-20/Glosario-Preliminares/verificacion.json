@@ -1,0 +1,2039 @@
+{
+  "estado": "completa",
+  "fecha": "2026-10-20",
+  "cambio": "Reubicación de glosario y notación en preliminares antes del capítulo 1.",
+  "contenido_ensamblado_identico_salvo_orden": true,
+  "diez_fuentes_markdown_intactas": true,
+  "formulas_objetivos_y_definiciones_intactos": true,
+  "tablas": 34,
+  "celdas": 848,
+  "ecuaciones_nativas": 664,
+  "figuras": 3,
+  "terminos": 33,
+  "entradas_notacion": 20,
+  "fuentes_lean_intactas": 354,
+  "fuentes_rust_intactas": 89,
+  "compilaciones_lean_rust": false,
+  "destinos_pdf": {
+    "resumen": 4,
+    "abstract": 5,
+    "alcance-de-la-tesis": 6,
+    "glosario-de-términos-y-siglas": 7,
+    "notación-matemática": 11,
+    "amortización-por-lotes": 11,
+    "álgebra-y-muestreo-airfri": 11,
+    "firmas-y-gestión-de-claves": 12,
+    "presupuesto-y-cota-rom": 12,
+    "capítulo-1-introducción": 13,
+    "contexto-y-motivación": 13,
+    "modelo-de-amenaza": 13,
+    "el-problema-seguridad-post-cuántica-a-un-costo-tractable": 14,
+    "propuesta-y-contribución": 15,
+    "objetivos": 16,
+    "alcance": 17,
+    "estructura-del-documento": 18,
+    "capítulo-2-marco-teórico-y-estado-del-arte": 19,
+    "blockchain-el-trilema-y-las-arquitecturas-de-capas": 19,
+    "la-amenaza-cuántica-shor-y-grover": 19,
+    "el-panorama-pqc-y-la-estandarización-nist": 20,
+    "criptografía-post-cuántica-basada-en-retículos": 20,
+    "aleatoriedad-entropía-y-derivación-de-claves": 21,
+    "pruebas-de-conocimiento-cero-y-su-coherencia-post-cuántica": 21,
+    "referencias-del-capítulo": 22,
+    "estado-del-arte-y-posicionamiento-de-nexus": 22,
+    "síntesis-del-marco": 22,
+    "capítulo-3-diseño-de-la-arquitectura-dual-chain": 24,
+    "introducción": 24,
+    "visión-general-de-la-arquitectura": 24,
+    "el-sobrecosto-de-la-criptografía-post-cuántica": 26,
+    "la-amortización-dual-chain": 27,
+    "coherencia-post-cuántica-de-la-capa-de-pruebas": 28,
+    "modelo-de-cuenta-identidad-estable-vs.-clave-rotable": 30,
+    "disponibilidad-de-datos": 30,
+    "secuenciación-e-incentivos": 31,
+    "síntesis-y-supuesto-de-consenso": 32,
+    "finalidad": 32,
+    "referencias-del-capítulo-1": 33,
+    "introducción-1": 34,
+    "capítulo-4-núcleo-criptográfico-post-cuántico": 34,
+    "crystals-dilithium-en-nexus": 34,
+    "enlace-criptográfico-de-la-firma-a-la-transacción": 36,
+    "higiene-del-material-secreto": 37,
+    "derivación-determinística-de-claves-desde-semilla": 37,
+    "elección-del-esquema-de-firma-post-cuántica": 38,
+    "referencias-del-capítulo-2": 40,
+    "estado-de-implementación-y-limitaciones": 40,
+    "conclusiones-del-capítulo": 40,
+    "introducción-2": 42,
+    "capítulo-5-gestión-activa-del-ciclo-de-vida-de-claves": 42,
+    "la-métrica-correcta-min-entropía-de-la-fuente": 42,
+    "monitoreo-de-salud-en-línea-nist-sp-800-90b": 43,
+    "derivación-de-claves-por-kdf": 44,
+    "rotación-por-épocas-y-condiciones-de-secrecia-hacia-adelante": 45,
+    "residencia-efímera-modelo-evidencia-y-límites": 47,
+    "la-tubería-unificada": 51,
+    "conclusiones-del-capítulo-1": 53,
+    "estado-de-implementación-y-limitaciones-1": 53,
+    "referencias-del-capítulo-3": 54,
+    "capítulo-6-validación-formal-de-la-seguridad": 56,
+    "introducción-y-alcance": 56,
+    "preliminares-matemáticos": 57,
+    "modelo-de-seguridad": 59,
+    "fundamentos-y-límites-de-la-reducción-de-seguridad": 61,
+    "análisis-de-complejidad-computacional": 65,
+    "validación-empírica-complementaria": 68,
+    "limitaciones-y-alcance-de-la-validación": 79,
+    "conclusiones-del-capítulo-2": 97,
+    "referencias-del-capítulo-4": 98,
+    "capítulo-7-conclusiones-y-trabajo-futuro": 100,
+    "síntesis-el-arco-completado": 100,
+    "balance-de-los-objetivos": 100,
+    "limitaciones": 102,
+    "contribuciones": 102,
+    "trabajo-futuro": 103,
+    "reflexión-final": 104,
+    "bibliografía": 105,
+    "artículos-libros-y-actas": 105,
+    "estándares-nist-ietf": 108,
+    "informes-de-seguridad-owasp": 109,
+    "fuentes-del-estado-del-arte-industria-estado-a-mediados-de-2026": 109
+  },
+  "resumen_visual": {
+    "word": {
+      "paginas": 123,
+      "cuerpos_identicos_a_paginas_revisadas": 121,
+      "pies_identicos_al_mismo_numero_revisado": 123,
+      "paginas_con_regiones_no_identicas": [
+        "word-002.png",
+        "word-003.png"
+      ],
+      "paginas_inspeccionadas": [
+        "word-001.png",
+        "word-002.png",
+        "word-003.png",
+        "word-004.png",
+        "word-005.png",
+        "word-006.png",
+        "word-007.png",
+        "word-008.png",
+        "word-009.png",
+        "word-010.png",
+        "word-011.png",
+        "word-012.png",
+        "word-013.png",
+        "word-014.png",
+        "word-015.png",
+        "word-016.png"
+      ]
+    },
+    "pdf": {
+      "paginas": 111,
+      "cuerpos_identicos_a_paginas_revisadas": 61,
+      "pies_identicos_al_mismo_numero_revisado": 111,
+      "paginas_con_regiones_no_identicas": [
+        "pdf-002.png",
+        "pdf-003.png",
+        "pdf-007.png",
+        "pdf-015.png",
+        "pdf-018.png",
+        "pdf-019.png",
+        "pdf-020.png",
+        "pdf-022.png",
+        "pdf-023.png",
+        "pdf-024.png",
+        "pdf-028.png",
+        "pdf-031.png",
+        "pdf-032.png",
+        "pdf-033.png",
+        "pdf-035.png",
+        "pdf-037.png",
+        "pdf-038.png",
+        "pdf-039.png",
+        "pdf-040.png",
+        "pdf-041.png",
+        "pdf-042.png",
+        "pdf-046.png",
+        "pdf-048.png",
+        "pdf-052.png",
+        "pdf-053.png",
+        "pdf-055.png",
+        "pdf-056.png",
+        "pdf-057.png",
+        "pdf-058.png",
+        "pdf-059.png",
+        "pdf-062.png",
+        "pdf-065.png",
+        "pdf-066.png",
+        "pdf-067.png",
+        "pdf-068.png",
+        "pdf-069.png",
+        "pdf-070.png",
+        "pdf-071.png",
+        "pdf-075.png",
+        "pdf-076.png",
+        "pdf-078.png",
+        "pdf-079.png",
+        "pdf-080.png",
+        "pdf-081.png",
+        "pdf-082.png",
+        "pdf-092.png",
+        "pdf-094.png",
+        "pdf-098.png",
+        "pdf-099.png",
+        "pdf-103.png"
+      ],
+      "paginas_inspeccionadas": [
+        "pdf-001.png",
+        "pdf-002.png",
+        "pdf-003.png",
+        "pdf-004.png",
+        "pdf-005.png",
+        "pdf-006.png",
+        "pdf-007.png",
+        "pdf-008.png",
+        "pdf-009.png",
+        "pdf-010.png",
+        "pdf-011.png",
+        "pdf-012.png",
+        "pdf-013.png",
+        "pdf-014.png",
+        "pdf-015.png",
+        "pdf-018.png",
+        "pdf-019.png",
+        "pdf-020.png",
+        "pdf-022.png",
+        "pdf-023.png",
+        "pdf-024.png",
+        "pdf-028.png",
+        "pdf-031.png",
+        "pdf-032.png",
+        "pdf-033.png",
+        "pdf-035.png",
+        "pdf-037.png",
+        "pdf-038.png",
+        "pdf-039.png",
+        "pdf-040.png",
+        "pdf-041.png",
+        "pdf-042.png",
+        "pdf-046.png",
+        "pdf-048.png",
+        "pdf-052.png",
+        "pdf-053.png",
+        "pdf-055.png",
+        "pdf-056.png",
+        "pdf-057.png",
+        "pdf-058.png",
+        "pdf-059.png",
+        "pdf-062.png",
+        "pdf-065.png",
+        "pdf-066.png",
+        "pdf-067.png",
+        "pdf-068.png",
+        "pdf-069.png",
+        "pdf-070.png",
+        "pdf-071.png",
+        "pdf-075.png",
+        "pdf-076.png",
+        "pdf-078.png",
+        "pdf-079.png",
+        "pdf-080.png",
+        "pdf-081.png",
+        "pdf-082.png",
+        "pdf-092.png",
+        "pdf-094.png",
+        "pdf-098.png",
+        "pdf-099.png",
+        "pdf-103.png"
+      ]
+    }
+  },
+  "imagenes": [
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-001.png",
+      "bytes": 25093,
+      "sha256": "fad22265fdd769f8d35180bde2536b0fdf39be0d84f9f6be644d1d540562f89e",
+      "cuerpo_identico_a": "word-001.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-002.png",
+      "bytes": 64519,
+      "sha256": "9d524e1d6cfa511f365638562eabc04642fcf3078417a935cfac00a56f7387e4",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-003.png",
+      "bytes": 64209,
+      "sha256": "a52fd2d26b34dc449fc26ca2933c129a66b991e33d7f928b25e24c72f9951097",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-004.png",
+      "bytes": 78309,
+      "sha256": "3023561f350a0cf86121cd11460e3f7e606354de17c2ca1c4fba7af38a18bbe3",
+      "cuerpo_identico_a": "word-004.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-005.png",
+      "bytes": 76927,
+      "sha256": "0bb248fd87f543c0646c102ea051a9f0fe92d3f8d31ad169d431a5deae214462",
+      "cuerpo_identico_a": "word-005.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-006.png",
+      "bytes": 37672,
+      "sha256": "a6d874d30c1436e4812cd182e38d6eefbae970be216b9d148b955dac2aa54be5",
+      "cuerpo_identico_a": "word-006.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-007.png",
+      "bytes": 73072,
+      "sha256": "4fd0cf35b2db44680775e0f64da5f38645368c6bfd20ee7e9a895a20f09be687",
+      "cuerpo_identico_a": "word-108.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-008.png",
+      "bytes": 83625,
+      "sha256": "a51a644a0d0429e36958dab880af43970929245de95624b68615ce2d3dc3c80a",
+      "cuerpo_identico_a": "word-109.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-009.png",
+      "bytes": 79412,
+      "sha256": "237c34220c459f85bc587acddf7f7eaa52663b1444e1a30bb5990cca8c176b43",
+      "cuerpo_identico_a": "word-110.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-010.png",
+      "bytes": 79122,
+      "sha256": "d6e4c022759ccd370c2be9b619542d67978c9479d5309335ce870d5905b4608c",
+      "cuerpo_identico_a": "word-111.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-011.png",
+      "bytes": 24266,
+      "sha256": "bdc2fd44706ac4b9090471743c4e46908d522f7cd045cb971578dcdb1cb895fe",
+      "cuerpo_identico_a": "word-112.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-012.png",
+      "bytes": 68976,
+      "sha256": "d7f0682cc06de39b7c629e51bbc476a0a6f59688dc46ec94bddc9c7e6b1c5ac4",
+      "cuerpo_identico_a": "word-113.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-013.png",
+      "bytes": 75527,
+      "sha256": "c84ac6f075091581f55892922b86210b3c50f3f3133ad2e66e20a0869968c82c",
+      "cuerpo_identico_a": "word-114.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-014.png",
+      "bytes": 28551,
+      "sha256": "b337ba47c02cef7b3ce63365831bd1488df9b30053d7c7ea6e7bcccba2fd55a6",
+      "cuerpo_identico_a": "word-115.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-015.png",
+      "bytes": 74873,
+      "sha256": "57964598a617caf092f67f0684991c37245055f37f96531b64484f7ac98c8c62",
+      "cuerpo_identico_a": "word-007.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-016.png",
+      "bytes": 87183,
+      "sha256": "ff2e58239de791a33b3325dc0fe92f28d08065f8069925938b50e165de2e626d",
+      "cuerpo_identico_a": "word-008.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-017.png",
+      "bytes": 50507,
+      "sha256": "de9db64de601b4df84f2b592df6287ef844ab3b4c1f8d075404cd0cccb719cc2",
+      "cuerpo_identico_a": "word-009.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-018.png",
+      "bytes": 104849,
+      "sha256": "d67ddfc76bbb6d0d96304ec2f2997ea379f171bb81e391e66282012e5ef4579b",
+      "cuerpo_identico_a": "word-010.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-019.png",
+      "bytes": 77563,
+      "sha256": "d23445f67c0848c47c7f278268fb3d21047082275d3ea4e2b43f2059931a65a0",
+      "cuerpo_identico_a": "word-011.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-020.png",
+      "bytes": 55871,
+      "sha256": "4c4577e41498e569e5566844b9d4e73fca2f396dae7ed829f9667d8a12fe20cc",
+      "cuerpo_identico_a": "word-012.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-021.png",
+      "bytes": 27337,
+      "sha256": "0287811b22ab890b89dec11e8216d41f2642134c0bdde00d3f0f3f2eb958e51f",
+      "cuerpo_identico_a": "word-013.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-022.png",
+      "bytes": 76750,
+      "sha256": "105233955a1f334678d4d4304231aa12bd6727f421929e1cdb2b8f62bd6819e7",
+      "cuerpo_identico_a": "word-014.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-023.png",
+      "bytes": 65754,
+      "sha256": "0c736e34df98417214a8605aab8f4ad0088dc14d4ad3881804c274585de21f52",
+      "cuerpo_identico_a": "word-015.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-024.png",
+      "bytes": 82931,
+      "sha256": "a76291b07f6a906352413ebd491ce5a627ef03dab2bf4414a735b41afc2d12a4",
+      "cuerpo_identico_a": "word-016.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-025.png",
+      "bytes": 80017,
+      "sha256": "16a7ab8dd38434e9369687dae5842c7d4b0e404951721d186dc3e486d4e2f93d",
+      "cuerpo_identico_a": "word-017.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-026.png",
+      "bytes": 74387,
+      "sha256": "d70d55c1b603afcd6e535b36f4a6ec8d811f03a42a17f339f59f6a676ab966aa",
+      "cuerpo_identico_a": "word-018.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-027.png",
+      "bytes": 36685,
+      "sha256": "412654c2dd75400a5079b1faa4b6c626da0acb2aef0e068e3ae28fe088ef1de9",
+      "cuerpo_identico_a": "word-019.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-028.png",
+      "bytes": 67522,
+      "sha256": "1e377a9735c8a5538aeebd24a53d08a7cf6ecc67f619e446bbd2f1b1358c0afe",
+      "cuerpo_identico_a": "word-020.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-029.png",
+      "bytes": 106808,
+      "sha256": "64ff61cdbb65fbba7e7336376ddeb97d5342e27d4b5196be9c392ba511d66c96",
+      "cuerpo_identico_a": "word-021.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-030.png",
+      "bytes": 74040,
+      "sha256": "90eb0a3d804dee35cc8c855e0ad0d8250b075d110e4f09c1f1859211930f5cbb",
+      "cuerpo_identico_a": "word-022.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-031.png",
+      "bytes": 67780,
+      "sha256": "a69cc34481c1a53bd98df14b55c8facc36b8448857adde3483f704d1f93d1b09",
+      "cuerpo_identico_a": "word-023.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-032.png",
+      "bytes": 77563,
+      "sha256": "c82715f8fa7f878b4610b58b03b7340901e13e7900110ef048f4d02d3970eebf",
+      "cuerpo_identico_a": "word-024.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-033.png",
+      "bytes": 81254,
+      "sha256": "98f3a60ebbbaec9a776f1c8edafd4a13adcd1a263ce41f0e89a2804bf67308ab",
+      "cuerpo_identico_a": "word-025.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-034.png",
+      "bytes": 78709,
+      "sha256": "bf63051996d626caaff201d65d7b3acefc4423016476b1206744536d6619462d",
+      "cuerpo_identico_a": "word-026.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-035.png",
+      "bytes": 70282,
+      "sha256": "644b91037328a2900707a902016acc5f5e5082ae3fabaf0a49469ac4582bead3",
+      "cuerpo_identico_a": "word-027.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-036.png",
+      "bytes": 73940,
+      "sha256": "70ad6116afd92b2275f173ca81638c6c25e86bb7ecd4f0e8d275ffcdb2e9900b",
+      "cuerpo_identico_a": "word-028.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-037.png",
+      "bytes": 74710,
+      "sha256": "8b37472b51f9ec51d634c4b92b8270b7054fa07964797a8ee57d0ecc32cbdf1f",
+      "cuerpo_identico_a": "word-029.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-038.png",
+      "bytes": 68880,
+      "sha256": "6f59ccf84b47c12c820fa12d1851280b9c00f7c10f37d764a0a3ab79f5e77caf",
+      "cuerpo_identico_a": "word-030.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-039.png",
+      "bytes": 59954,
+      "sha256": "ae55bc4e9aec63cc9be96916a5060363d64558e41cc85b70763afb4091a5ff00",
+      "cuerpo_identico_a": "word-031.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-040.png",
+      "bytes": 68312,
+      "sha256": "5793577544a04168837377b19d3beb173506a33c227df4a1c6e8d3fcc0a42b9a",
+      "cuerpo_identico_a": "word-032.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-041.png",
+      "bytes": 78443,
+      "sha256": "af52b5af9890f6a13a5329a626054bd1aea1d876c2c2b056dbc0b0b470a79dd2",
+      "cuerpo_identico_a": "word-033.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-042.png",
+      "bytes": 77254,
+      "sha256": "1ee32552288638ecd4b1cd69fd4ccbfb9d9944a938974cc69448151f0d0ccfb4",
+      "cuerpo_identico_a": "word-034.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-043.png",
+      "bytes": 76999,
+      "sha256": "f8ad5e779ae2f5d4c93c3fe08bcb398ca4bee0adb34d0da4756940c200ade569",
+      "cuerpo_identico_a": "word-035.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-044.png",
+      "bytes": 88445,
+      "sha256": "21932f1eed2f09f30e82f2c3539c31f3c6cb88483bdc3a3da375c9380cfe9a33",
+      "cuerpo_identico_a": "word-036.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-045.png",
+      "bytes": 74082,
+      "sha256": "40cea04a448f0f0a04160b518b40027bfc6263dbaa78532327b79cf225cc9415",
+      "cuerpo_identico_a": "word-037.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-046.png",
+      "bytes": 65686,
+      "sha256": "73afe7b31f37ec03750a71f8e07f67a7e35aba6747abc0224b7639770067f43d",
+      "cuerpo_identico_a": "word-038.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-047.png",
+      "bytes": 71672,
+      "sha256": "4dd3010f2fa29fc4564f2766bed4e0cf154ebc9666a71d4671a785e1dd569197",
+      "cuerpo_identico_a": "word-039.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-048.png",
+      "bytes": 69291,
+      "sha256": "85ee1e784b6c665539c8c0172e405cfa47134ee83bfdc915f385fce4f21bb31a",
+      "cuerpo_identico_a": "word-040.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-049.png",
+      "bytes": 78575,
+      "sha256": "63995ae61c72807446647417409b510056aadd5c3ec4a029c867ed4b6addbf1a",
+      "cuerpo_identico_a": "word-041.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-050.png",
+      "bytes": 75595,
+      "sha256": "475c9e37d1c0cf7c47c6bc13974ea50574b836279f2d9679d30f7f58e9f5445a",
+      "cuerpo_identico_a": "word-042.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-051.png",
+      "bytes": 73951,
+      "sha256": "1eb6db8327fa62e6b0783d52eacd0d8c255c9d22999bf5f7ac4f3dac22bb475a",
+      "cuerpo_identico_a": "word-043.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-052.png",
+      "bytes": 86870,
+      "sha256": "a6c65264d176050137067935271ff8ceeec0020ce15d7e80315bf84bd9cc79aa",
+      "cuerpo_identico_a": "word-044.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-053.png",
+      "bytes": 73646,
+      "sha256": "4ca89a014713502a48f683bc8c56dc6b32c9e4a41a3f3921dca61343a3e81b36",
+      "cuerpo_identico_a": "word-045.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-054.png",
+      "bytes": 78222,
+      "sha256": "b32a46fda9933365ecf5970dfa0db473e7277e34cb7e21800b3cde259f232216",
+      "cuerpo_identico_a": "word-046.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-055.png",
+      "bytes": 82282,
+      "sha256": "3af74a0c054360d6021870919a8eeae004e9fabc833f06c14b5194f3e41e4240",
+      "cuerpo_identico_a": "word-047.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-056.png",
+      "bytes": 79226,
+      "sha256": "a556eabd2de799e783b23bd11729faa4b969fffc3b1725a9814eb45fc13d2468",
+      "cuerpo_identico_a": "word-048.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-057.png",
+      "bytes": 75382,
+      "sha256": "e97a444da88fcd363b640744275b2debb4c798d986dab088bb97231bd3ec1695",
+      "cuerpo_identico_a": "word-049.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-058.png",
+      "bytes": 144419,
+      "sha256": "9dd69aa737e2e3832267d8fc9c33ff4e2e4a266053e8021e6ee1e39d6c77543a",
+      "cuerpo_identico_a": "word-050.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-059.png",
+      "bytes": 85764,
+      "sha256": "34f7a0d1c03cb105f76ecb1ee3230bd698d5d24151ebe9ce2a1a1aee6fc6f743",
+      "cuerpo_identico_a": "word-051.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-060.png",
+      "bytes": 69606,
+      "sha256": "c5297bd932c4a49e3f7f67e1c3eb483c2be88c077aea75b2a8421e392b97a487",
+      "cuerpo_identico_a": "word-052.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-061.png",
+      "bytes": 65023,
+      "sha256": "6792b3b6f52dd75ef25ae42fd8c133433d6138bf04bf45824641a9cd6fff5508",
+      "cuerpo_identico_a": "word-053.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-062.png",
+      "bytes": 72822,
+      "sha256": "ee1999f921e87780012e38d9edaee464174473786c0d2fd627f6e8762505744b",
+      "cuerpo_identico_a": "word-054.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-063.png",
+      "bytes": 67938,
+      "sha256": "1eebf61e5dfb05ea50e183ec00ec4c3e6c15b4031d3b4288de1b14785ba647fc",
+      "cuerpo_identico_a": "word-055.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-064.png",
+      "bytes": 70217,
+      "sha256": "77e1918a4c88e32ee1cf201a2082f5745a7d28017f7865c8a5f77a2850802cfd",
+      "cuerpo_identico_a": "word-056.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-065.png",
+      "bytes": 67376,
+      "sha256": "d9082f4e01e8500f8324a32509c17162be106e15208174635bb486e84a34f1e3",
+      "cuerpo_identico_a": "word-057.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-066.png",
+      "bytes": 75569,
+      "sha256": "3d9b5f51860d95c34813a8f2688931fc8e80eb7d02372914cb9a410e1c711ee8",
+      "cuerpo_identico_a": "word-058.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-067.png",
+      "bytes": 83207,
+      "sha256": "30dfb65ad2828d27d7330346c8b9c2c502af75f9393810957901cc2e86649749",
+      "cuerpo_identico_a": "word-059.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-068.png",
+      "bytes": 79582,
+      "sha256": "995ea207e28ed045a143c9ac613715e83f0baffbd7536c44cdf20347225ea56f",
+      "cuerpo_identico_a": "word-060.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-069.png",
+      "bytes": 91079,
+      "sha256": "01f3de7eb97abda44d72842f966d6c84db57df3dfba88bc88a83004c341431c3",
+      "cuerpo_identico_a": "word-061.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-070.png",
+      "bytes": 81025,
+      "sha256": "9b3c2c3c555b19c984d217e3397e20989911fb5758ccbd15840dd62c82fa2119",
+      "cuerpo_identico_a": "word-062.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-071.png",
+      "bytes": 73735,
+      "sha256": "b9e175c751fe207fc5b6163d130c24f078d934f9dda6040fa0ec2be5aebc7f44",
+      "cuerpo_identico_a": "word-063.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-072.png",
+      "bytes": 82311,
+      "sha256": "0340cba79aca8ba7ff17ab9878a296645cb3fad78ed08428ea858c11a600f4e2",
+      "cuerpo_identico_a": "word-064.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-073.png",
+      "bytes": 73411,
+      "sha256": "39d13d58e60c0bd09be288695356ba2f8428d052004584b538178bbf39db612c",
+      "cuerpo_identico_a": "word-065.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-074.png",
+      "bytes": 78569,
+      "sha256": "a7fcca4d38935c31b634d8422db55a4df6e4765c71a33deca7241ca70eca7748",
+      "cuerpo_identico_a": "word-066.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-075.png",
+      "bytes": 76806,
+      "sha256": "ce4780f1a192525076ff5f73e686b00f13caea2a0549acd8050b0fc59a681764",
+      "cuerpo_identico_a": "word-067.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-076.png",
+      "bytes": 82439,
+      "sha256": "34f46538c947a62e2bd1857971b4f2f41f4a68198c0842b9037ed5096cd7afbb",
+      "cuerpo_identico_a": "word-068.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-077.png",
+      "bytes": 79921,
+      "sha256": "c5308e01aec90126c219b2e3ec61e6cdefe12629c92f377e1d4c434faccd68fd",
+      "cuerpo_identico_a": "word-069.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-078.png",
+      "bytes": 79836,
+      "sha256": "eacb4056c3dff2e8df234de7d6841e005ae19a0d16937b094baaa7a0f0d5cd3b",
+      "cuerpo_identico_a": "word-070.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-079.png",
+      "bytes": 80979,
+      "sha256": "aab6eb2ffd1e1274161a03cfbf6aa680978165e32b221308e170dc725c8868d9",
+      "cuerpo_identico_a": "word-071.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-080.png",
+      "bytes": 81928,
+      "sha256": "2c9e3ba33b6ec968f41e656c1b68b0c76120a1612e4f4080d7719282070f06b3",
+      "cuerpo_identico_a": "word-072.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-081.png",
+      "bytes": 79039,
+      "sha256": "71900c03dcb813e4021d7c844c794a87e84d42cc4d2c4f581c41e6a6fa80f876",
+      "cuerpo_identico_a": "word-073.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-082.png",
+      "bytes": 68712,
+      "sha256": "1f4e4a81af903d7e7a4fc443b2e8a8ab4b89d64b4a3367928c4b40687cdb1be1",
+      "cuerpo_identico_a": "word-074.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-083.png",
+      "bytes": 85361,
+      "sha256": "5306916f8fa0cf04d51ff10f7db485384c79952234771b1db907777c4f05c686",
+      "cuerpo_identico_a": "word-075.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-084.png",
+      "bytes": 83663,
+      "sha256": "1c3607a541f23df221a86a917cad3c9088cdce623badcdf92833a1985970f763",
+      "cuerpo_identico_a": "word-076.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-085.png",
+      "bytes": 58275,
+      "sha256": "33b4fc1be2d767f68102c5cb267f3cb1baa044956809ebe2467353ada8cae801",
+      "cuerpo_identico_a": "word-077.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-086.png",
+      "bytes": 72093,
+      "sha256": "3329a4158462969654fc896eb4755ffbcdb13f057b1eb38f2e65931cb4208cc9",
+      "cuerpo_identico_a": "word-078.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-087.png",
+      "bytes": 83424,
+      "sha256": "ceea6f92400974e3f59b1b87f13ee2325d206d660d407a0f934608cd185d7b31",
+      "cuerpo_identico_a": "word-079.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-088.png",
+      "bytes": 72569,
+      "sha256": "f4e06174f2269e1dc94364a8e0661e91443645561076a79a6863743c51f29c03",
+      "cuerpo_identico_a": "word-080.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-089.png",
+      "bytes": 85016,
+      "sha256": "30479f1ad3aff5c1bafb574b2c92aad3e0eed5c680be099ff309b159c17b5d12",
+      "cuerpo_identico_a": "word-081.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-090.png",
+      "bytes": 80228,
+      "sha256": "0e67b296110ddcc86bd416ba69cc20ce6523a90603f171a70155c6e4785b8659",
+      "cuerpo_identico_a": "word-082.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-091.png",
+      "bytes": 77786,
+      "sha256": "cc7ae37c39c46844d16a3811cdd443876ffe496df648fbb376ebd0a01f638644",
+      "cuerpo_identico_a": "word-083.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-092.png",
+      "bytes": 75696,
+      "sha256": "2ac3e7b6442eae13180725a0965c2398ab4da62d5ba38e44e9d31138b5331558",
+      "cuerpo_identico_a": "word-084.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-093.png",
+      "bytes": 80474,
+      "sha256": "ef25f678cfe1d8e6e00a8d1a4891b8d489b9ed259f8f9d928b950f13a2f0ab76",
+      "cuerpo_identico_a": "word-085.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-094.png",
+      "bytes": 82521,
+      "sha256": "37240ff8379ff10991638626bc4741520ae6cda83bd9c7c64f0c4321bc5d5f79",
+      "cuerpo_identico_a": "word-086.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-095.png",
+      "bytes": 80482,
+      "sha256": "d7430ac924eba8772bd1ed60573a890b57d4fa784d9a8ece77c0119dc23da7e8",
+      "cuerpo_identico_a": "word-087.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-096.png",
+      "bytes": 81366,
+      "sha256": "df12918bd5d090450878c9c48b381e6d4448f8fe3d87fc064aa793f53e089455",
+      "cuerpo_identico_a": "word-088.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-097.png",
+      "bytes": 78506,
+      "sha256": "044bc4aa5cbaf7c5cdaf6caac4248a2db0588b27ef478c701867375b8eda4463",
+      "cuerpo_identico_a": "word-089.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-098.png",
+      "bytes": 80106,
+      "sha256": "e9335bfa0f7c5c91a82a7c18495d9f6f44bc3515ca5ec79d70312f9147d83b0f",
+      "cuerpo_identico_a": "word-090.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-099.png",
+      "bytes": 81024,
+      "sha256": "1a6ccdefa894db2c91ffd1499998a9bc8e31bed92886a8b7f17fa1039e5c39b6",
+      "cuerpo_identico_a": "word-091.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-100.png",
+      "bytes": 82715,
+      "sha256": "fd69daf5405998f8f9cfbcfda840ce1997034c98f5526d54912e1dc5afd0277a",
+      "cuerpo_identico_a": "word-092.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-101.png",
+      "bytes": 81735,
+      "sha256": "62852d6c8122b242665c6acbf030d19a0ed2f70155b92bb2aa7a9fc561fb9fc9",
+      "cuerpo_identico_a": "word-093.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-102.png",
+      "bytes": 75530,
+      "sha256": "21145c196d0fef35355eae0bf585e41103bb47f023bcfb5830373e99f015c45c",
+      "cuerpo_identico_a": "word-094.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-103.png",
+      "bytes": 75259,
+      "sha256": "915605369c8b1f0a7a45a5527236f3f081604e29d8d6c925a48951ddab60afbd",
+      "cuerpo_identico_a": "word-095.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-104.png",
+      "bytes": 67428,
+      "sha256": "9d17e40084a173a81c08d8fee444035f466263c2db11d3b979750d9f4ca99713",
+      "cuerpo_identico_a": "word-096.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-105.png",
+      "bytes": 77640,
+      "sha256": "03dc68fc870a0b5f3124ac59a70d5cb5c6d70edec905dab88c5c7d513c304673",
+      "cuerpo_identico_a": "word-097.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-106.png",
+      "bytes": 77172,
+      "sha256": "83061c44ac2fea01782980c787924943a00a384f201852cf57831274ac82bcb1",
+      "cuerpo_identico_a": "word-098.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-107.png",
+      "bytes": 80847,
+      "sha256": "07f97a56aa2b095f0a572f68530ef2c814bc260f0d99bb438d0373bcc352ea14",
+      "cuerpo_identico_a": "word-099.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-108.png",
+      "bytes": 88835,
+      "sha256": "58157930c6fab2db2d4321d1826d531855ba4bcdf8055265ad58fd59487ae3f2",
+      "cuerpo_identico_a": "word-100.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-109.png",
+      "bytes": 25952,
+      "sha256": "41ad04938dc22bea399987f47d67b09fafd5fd039a26b2637ccdb31a35ce7d70",
+      "cuerpo_identico_a": "word-101.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-110.png",
+      "bytes": 70653,
+      "sha256": "5bcee638826144a821c1a4a091af984beb4d4e03e057b4dd32f9632730f00786",
+      "cuerpo_identico_a": "word-102.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-111.png",
+      "bytes": 86616,
+      "sha256": "38b37583cf50f98e32ac67cb78bd6a7e2b7ae7d9c8e5b55d3c8cff212263d385",
+      "cuerpo_identico_a": "word-103.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-112.png",
+      "bytes": 77620,
+      "sha256": "0035cf478f4d83de5d359812fe857fbd66c5a21a89e41a57b731b338638681b6",
+      "cuerpo_identico_a": "word-104.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-113.png",
+      "bytes": 81672,
+      "sha256": "1cd1ca6645d38abf929d1a3d684d806ff4fd6c8a156b596212f93d580575418d",
+      "cuerpo_identico_a": "word-105.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-114.png",
+      "bytes": 73651,
+      "sha256": "e6e8613c3e5f3581d4ffa406a0d4916ad6bf2fa7358266c1db84c821f2fc3872",
+      "cuerpo_identico_a": "word-106.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-115.png",
+      "bytes": 68135,
+      "sha256": "989ecee195b2a681dbd23c3631b83eacfde397d7bc050728f123e9a369c2fb65",
+      "cuerpo_identico_a": "word-107.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-116.png",
+      "bytes": 83965,
+      "sha256": "bb45f3f4fa18faa3f4d0c529d84310949a78998210b4e7a291f239574ff75777",
+      "cuerpo_identico_a": "word-116.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-117.png",
+      "bytes": 87290,
+      "sha256": "44ca781e3b5cea2efd8ff016ff6ef499eb037d29cecae8a03294bb9d5b86f58b",
+      "cuerpo_identico_a": "word-117.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-118.png",
+      "bytes": 83904,
+      "sha256": "2ab93d8f3cc0082b4a2443690cb6ebf5cc59e6ba595c7df64529b59957a5d234",
+      "cuerpo_identico_a": "word-118.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-119.png",
+      "bytes": 81650,
+      "sha256": "2fb634911fe96594ea2db6093bfcf3ee17a204e871838c8cce93033043d902ee",
+      "cuerpo_identico_a": "word-119.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-120.png",
+      "bytes": 80465,
+      "sha256": "ef4db05fd743ea04cfbb099644d41c9958b6b15d4dc21c46a7c20ee349794bb4",
+      "cuerpo_identico_a": "word-120.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-121.png",
+      "bytes": 88649,
+      "sha256": "f4a76a4503685fbe6702944b1132476cd20c64467fdfc39b46f4259b63ee5186",
+      "cuerpo_identico_a": "word-121.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-122.png",
+      "bytes": 85858,
+      "sha256": "7d93b5c02870cbb432f17be930111cf36fc08a32f4e9353147406bac92b683c6",
+      "cuerpo_identico_a": "word-122.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/word/word-123.png",
+      "bytes": 29288,
+      "sha256": "8795da8174958b58115ddaffae0c34a12587690209d7567a10009ceda63d2539",
+      "cuerpo_identico_a": "word-123.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-001.png",
+      "bytes": 43947,
+      "sha256": "f3a0a91d4de1650ce76a78e46a16344613517ee843f112506be59220d30076fb",
+      "cuerpo_identico_a": "pdf-001.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-002.png",
+      "bytes": 143042,
+      "sha256": "e491ea30beaa6cc17c9f7dbf3766a973a419e4d9bd26c8cec636599220cc0fc9",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-003.png",
+      "bytes": 146726,
+      "sha256": "db13347c060ad65db31f896fa9187903d2df8f0be3e207ec0f18092f10a6968f",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-004.png",
+      "bytes": 162028,
+      "sha256": "ce209dd620365e30eeb8d14b6dbb5f8c72d55eb2b983c9850d7ca523a4bf3ede",
+      "cuerpo_identico_a": "pdf-004.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-005.png",
+      "bytes": 160827,
+      "sha256": "9141957eee33f3162bd6b59a1055bbbbd53b3eb6a95a9335c2160f71a2949c26",
+      "cuerpo_identico_a": "pdf-005.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-006.png",
+      "bytes": 72683,
+      "sha256": "78b3ff34ac728dae1d03ce9edb9278002b4a8d5427c69f6f1ea42217459621f8",
+      "cuerpo_identico_a": "pdf-006.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-007.png",
+      "bytes": 182998,
+      "sha256": "677de121c1150916791eb8e3d7d55ed7b1450b719fbadbbb4c650d10461a906f",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-008.png",
+      "bytes": 204040,
+      "sha256": "ef1afdc4081f8978883a3f931c568f5761f0d82a5e97f5c86d6b0794a6a96834",
+      "cuerpo_identico_a": "pdf-100.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-009.png",
+      "bytes": 199713,
+      "sha256": "05463e8a76a2bb040ae6b51c09d4e8f3ecd44550c9f8115cad74fb79303901cc",
+      "cuerpo_identico_a": "pdf-101.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-010.png",
+      "bytes": 104966,
+      "sha256": "ff88f7999716b9c6137b409c85c9811c1a4dfceeb899fd73084a23f5bead83a7",
+      "cuerpo_identico_a": "pdf-102.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-011.png",
+      "bytes": 167458,
+      "sha256": "e4e2a3812e541e73657e2ec3af736dee0dbadd4ae84919ddee7290636a8836d6",
+      "cuerpo_identico_a": "pdf-103.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-012.png",
+      "bytes": 173160,
+      "sha256": "c675194bf61e8b547b202c9b22afa6488e8936e68bb14eb93fe6e0525d7620db",
+      "cuerpo_identico_a": "pdf-104.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-013.png",
+      "bytes": 185378,
+      "sha256": "b4e8412bce35b538a0354ed1fec14d0fc27aa23bbfc7a7323074b65aeb9f680b",
+      "cuerpo_identico_a": "pdf-007.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-014.png",
+      "bytes": 200810,
+      "sha256": "9156477be4d3a27dc2e689fc1d4aa786b8fc4b4448cc02027f51f6d0def0924e",
+      "cuerpo_identico_a": "pdf-008.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-015.png",
+      "bytes": 145041,
+      "sha256": "ad1b232003b17790b9746e3cb166d9fd73463110c84927c1caa71c79f07a4f73",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-016.png",
+      "bytes": 191778,
+      "sha256": "da9ccb5912562f245fbd2a2d5103066883af0d736fbd1bc612449af0290c58c1",
+      "cuerpo_identico_a": "pdf-010.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-017.png",
+      "bytes": 141432,
+      "sha256": "712283a9264da83a807c563eb9a9e37a13302d93d83951c86be4a638f0cad3f8",
+      "cuerpo_identico_a": "pdf-011.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-018.png",
+      "bytes": 46852,
+      "sha256": "181a1f80e38d9d8f9c2080b227c1470077c86d3744bcf6da4404e6494e582e54",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-019.png",
+      "bytes": 171960,
+      "sha256": "db98d7c1f712907f497b85439b36a56a2ad40dd604529d18cb302f5157854a69",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-020.png",
+      "bytes": 153223,
+      "sha256": "a8795eea431ea20dbc12bcbfbfbdfea404d339ff3355bb65385c8d0751951972",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-021.png",
+      "bytes": 180503,
+      "sha256": "b8d3e4a1901dc85c71a4ffcc70d0c4ad7ba8c2990a05903b65b15cd8f33adafb",
+      "cuerpo_identico_a": "pdf-015.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-022.png",
+      "bytes": 169637,
+      "sha256": "882a48ba1b86013af691fa38fa448217e5a5de2cc39c1d265761b8ce042fe9e6",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-023.png",
+      "bytes": 147812,
+      "sha256": "5141fcb1d7fe083edd907ea6b3ed74688fadacff646e8c1148cd3ffb087df671",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-024.png",
+      "bytes": 173055,
+      "sha256": "1fea99e2725b05a0542d385ee35dc37174f99fd21be7d65551321292d01a36f0",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-025.png",
+      "bytes": 114667,
+      "sha256": "fb467be9c2a816d0fae4540bc2927cd12892849125db47bc6a93aeedf10b4c4d",
+      "cuerpo_identico_a": "pdf-019.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-026.png",
+      "bytes": 154178,
+      "sha256": "85a2bfe86f11eff4019067f1e8cdbab813f533006b8b6dba6233f08573620664",
+      "cuerpo_identico_a": "pdf-020.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-027.png",
+      "bytes": 180320,
+      "sha256": "5ab10baa090167d754007fa14a433cdb4fd557e9dfdf71693ab2c0c4d7404285",
+      "cuerpo_identico_a": "pdf-021.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-028.png",
+      "bytes": 165769,
+      "sha256": "bed96b73fe2de555dc667331b9bb6ebe9f801c9c2d869f829c3aa440434129f4",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-029.png",
+      "bytes": 183052,
+      "sha256": "4676f7a200d1db3ab3daaea47882930ef31a2a7e077b9354c2ff81d72ff4138d",
+      "cuerpo_identico_a": "pdf-023.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-030.png",
+      "bytes": 167032,
+      "sha256": "74528cc1570d5d800799df943c2ce35ea30b751df5b5842d4605d95bca7467a5",
+      "cuerpo_identico_a": "pdf-024.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-031.png",
+      "bytes": 166507,
+      "sha256": "6832f3f4dc9ee531149326e8b6d440e33ef9f51f1cbdba0288342b13d5bf32f0",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-032.png",
+      "bytes": 184384,
+      "sha256": "e508005f97a73f21509c7bd9b21a88fd14048db14b82c13a2f6b44e5ec22ac55",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-033.png",
+      "bytes": 100501,
+      "sha256": "199ef946c4eab4e92dc76a0866cfe486f3ba89b31d3a9342e6099c24cf904801",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-034.png",
+      "bytes": 137248,
+      "sha256": "a9204619687580ef21a09f873700fc09d8fd34052dac8bdbf52c5abadae2769a",
+      "cuerpo_identico_a": "pdf-028.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-035.png",
+      "bytes": 146810,
+      "sha256": "fc7117b3bfcca98437c82b3d14dd627d8df2d2f9f090d7b33cb751d137fe1ace",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-036.png",
+      "bytes": 203269,
+      "sha256": "31ee677fde0e558403900f35b663edd3978e78b71a73b2b6c923b13a8a308585",
+      "cuerpo_identico_a": "pdf-030.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-037.png",
+      "bytes": 153213,
+      "sha256": "9116cd1421fd2fc6b784c59b17e881f61a7b1ac9497c0717acf87ac9ace14135",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-038.png",
+      "bytes": 127903,
+      "sha256": "8023168768a90cd36570703706a6b7e144faaa2ea41f98a6af6cdc3f9826a2a4",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-039.png",
+      "bytes": 173498,
+      "sha256": "1281c77f46e64f4f1697a4e3becb3e8fb21d7fe83fd1466e134641b65ea6da96",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-040.png",
+      "bytes": 153934,
+      "sha256": "e2bfc4f417d3a8d21f19316b3b42d1e056f6df451ede28a30bbef5f1a49ac5a2",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-041.png",
+      "bytes": 58890,
+      "sha256": "124fe3043f4ce702afd0c32d2a534723ec74a4c4522053a2e223dbe438aec07b",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-042.png",
+      "bytes": 166627,
+      "sha256": "2f3b41687b3968d66d5387956526d63ad7bc6df1e4cbbf75cf7b4ca2fc316600",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-043.png",
+      "bytes": 165001,
+      "sha256": "d60f29d174744244d7d82af88b4cca0fc5efb9e05c3b02d86164e9b83d74a027",
+      "cuerpo_identico_a": "pdf-037.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-044.png",
+      "bytes": 207466,
+      "sha256": "d6badde89f13d2338a7aeea5b00e6fd80ea6a18715e6a7ad93b3a8b4e6fd5e0b",
+      "cuerpo_identico_a": "pdf-038.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-045.png",
+      "bytes": 187236,
+      "sha256": "33821a1ce784ee28f314d4ba34b264dea42db11d18494cd6581df52e7ec39154",
+      "cuerpo_identico_a": "pdf-039.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-046.png",
+      "bytes": 190783,
+      "sha256": "bcc214570afba25b5dc33107fa4e8ff46d54a7c0d3e5451174fdb2afcba1dacb",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-047.png",
+      "bytes": 179775,
+      "sha256": "5ef8f93a1db43b592897098fe4617e3767ac8b7a3e3db762047820755cce5110",
+      "cuerpo_identico_a": "pdf-041.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-048.png",
+      "bytes": 169580,
+      "sha256": "f9ed06c8aaf46023e9002b9afd55d11641d0024e20e1995595f00edd247d8538",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-049.png",
+      "bytes": 173056,
+      "sha256": "a70a4a87aeb181b6f0fc2ce3d60c8dfbdc81d6529795aca31b16d91bef2ebaf2",
+      "cuerpo_identico_a": "pdf-043.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-050.png",
+      "bytes": 174341,
+      "sha256": "7049dc1fb65105cd5b348b9f7468db461bd047df754b1121733498efd4067a92",
+      "cuerpo_identico_a": "pdf-044.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-051.png",
+      "bytes": 125970,
+      "sha256": "5f24358bcc867c767b4f649f72566130c163789f6fe742daa4a523f43e4e27a2",
+      "cuerpo_identico_a": "pdf-045.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-052.png",
+      "bytes": 124108,
+      "sha256": "d2134dcbe89b5aacb8218b1dbdfde784ad49fc027a1d9509de4a1df67b543948",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-053.png",
+      "bytes": 153118,
+      "sha256": "5d071a8d965476d87469d10334063d35dac2d13d764623045a32e60c5f1f4f03",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-054.png",
+      "bytes": 177117,
+      "sha256": "c9c395c55a162e695d874a0b1030ec49cf3f2b16026256553f3125429ba5a826",
+      "cuerpo_identico_a": "pdf-048.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-055.png",
+      "bytes": 69030,
+      "sha256": "cc3731ba427d96203a7df7658816c6c6a92880826e06f2ee81fc32147a95ec2c",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-056.png",
+      "bytes": 154740,
+      "sha256": "599f7ace43ace8c999740c0374d12909b038571ec2671f3c4c17df2a5abd3d6d",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-057.png",
+      "bytes": 163047,
+      "sha256": "b574f83d61cedb36812df481a433e2eaf89f2a7a5275e57bb79cae2a2262deaf",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-058.png",
+      "bytes": 158297,
+      "sha256": "eecb8d63a87777a8618f059e6c641065b5aabbd094fb972218e3c5df49535b12",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-059.png",
+      "bytes": 128818,
+      "sha256": "3fad1d8b9cc9ff838a12075254222964c9ac8fd762b9020333beefa7e15be04e",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-060.png",
+      "bytes": 194124,
+      "sha256": "59470df3568e1629c55bc9f78090ca5899b83db61a5e8921d0c453e0c3a1c786",
+      "cuerpo_identico_a": "pdf-054.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-061.png",
+      "bytes": 200651,
+      "sha256": "8bc1ddf1425bddf0ba54157040b9dd8c3e1f338bf912e8fb76c94984d745a6bf",
+      "cuerpo_identico_a": "pdf-055.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-062.png",
+      "bytes": 201563,
+      "sha256": "253da43b808821980337f6b1af753f60ca983818d99874613be7ebdbd598e247",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-063.png",
+      "bytes": 192217,
+      "sha256": "cf1082333efc1b6e700a9abf4d58a13abb2fb0dac2aa43b5b4b724a8a550e917",
+      "cuerpo_identico_a": "pdf-057.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-064.png",
+      "bytes": 158566,
+      "sha256": "2c69a4530c667ece7fccb17b2f96c06116bb85e57e387bcaed92612b509986b6",
+      "cuerpo_identico_a": "pdf-058.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-065.png",
+      "bytes": 159431,
+      "sha256": "d546d244cf6c90cde423da7488135ebd08c53af299a9c5b0e7536726f9a4f05b",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-066.png",
+      "bytes": 179408,
+      "sha256": "6fb2aca3a81f42701244723c8e846f2727db2f17a15015f1e67683ff9e130e10",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-067.png",
+      "bytes": 159102,
+      "sha256": "e76ae8d91e864f963b231a2085f0f3d570bbc578bd5c873bacee96b06eef770c",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-068.png",
+      "bytes": 158896,
+      "sha256": "7fdc23f5379276be6de287ad597ae0ac5d2c6d6cc0bc109ffab889fcb80156b2",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-069.png",
+      "bytes": 149377,
+      "sha256": "3b86e76e5f94a117ec87a52cf88582b30d7e5e71f24418e525e191cbfab7048b",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-070.png",
+      "bytes": 158894,
+      "sha256": "3b2b95686af2ecaf94f9bb78a5796168db3d230368b866e04dc84ab9abdc0626",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-071.png",
+      "bytes": 183210,
+      "sha256": "bad173eb28b28f77c090685be9e22f0fa5366b01e8bcc895998ea441d395f38c",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-072.png",
+      "bytes": 151151,
+      "sha256": "4e928a935a8476856ea7db9325244157e7e83f85f1e6e4c48a629998c77a353b",
+      "cuerpo_identico_a": "pdf-066.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-073.png",
+      "bytes": 153916,
+      "sha256": "5f42e86df71d1d3ef565a71362a8524ab5cc66c4dd981c44cd3ff0d3fe193c22",
+      "cuerpo_identico_a": "pdf-067.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-074.png",
+      "bytes": 183598,
+      "sha256": "9f1ec8e2a2274cc14ff512be88ae08cb53dbd617d3aa96b3a30ac81f14ad9f78",
+      "cuerpo_identico_a": "pdf-068.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-075.png",
+      "bytes": 103378,
+      "sha256": "509ed12e06fcf1fe51a6bf5e2cabd11ba01572dc15f47c89b065803ba058158c",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-076.png",
+      "bytes": 175491,
+      "sha256": "34eba180ca1af50b02f56d7c1043a5bd3ebacc3f9cd1812a899358cf93eedf5d",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-077.png",
+      "bytes": 145717,
+      "sha256": "95d881b42ac08cc4cd5d9c3bd0c53ac34f36094b5a13f98842f4eb85cfe2fad0",
+      "cuerpo_identico_a": "pdf-071.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-078.png",
+      "bytes": 141056,
+      "sha256": "e4239b319b6d21352a801b2489927d278969d5c3440e9ed6e9c174f7575b5fa8",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-079.png",
+      "bytes": 176963,
+      "sha256": "2436b80d4fe521b38424ec68e93bbe5a631d720b5856c99a186229cad729e4aa",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-080.png",
+      "bytes": 189154,
+      "sha256": "c2e8561b3de5601aa689c5eb782fdb2a3d17a09282abc86b6fa76ee60dc6ec5a",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-081.png",
+      "bytes": 175528,
+      "sha256": "fa11920bb55541863f2140ed237857ac449ca4ba31f91564ed2d8180d0a4c9da",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-082.png",
+      "bytes": 179072,
+      "sha256": "0ecff135bdcd650e9e5a13bd04c6d40588c6dba80c061e3fa551a1c1e41f9f28",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-083.png",
+      "bytes": 165914,
+      "sha256": "b331d16cd0e5d4d425630392e4117b05bbb72718563ac29dddd49a7c7688adf7",
+      "cuerpo_identico_a": "pdf-077.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-084.png",
+      "bytes": 178621,
+      "sha256": "c800f86e9df2188994998382cd2f866798f0c6fb1c16effc0e7f0301c8864f68",
+      "cuerpo_identico_a": "pdf-078.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-085.png",
+      "bytes": 190500,
+      "sha256": "f7b590a9b2bdd88f5c35f098b75d4a47abfe770b24eb07fd90d8669d0a8c6e1c",
+      "cuerpo_identico_a": "pdf-079.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-086.png",
+      "bytes": 175983,
+      "sha256": "ade24959c5fbbbdaa74c34a19f4579476d922da3bb68d4d6f23f22edf301bfa4",
+      "cuerpo_identico_a": "pdf-080.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-087.png",
+      "bytes": 196126,
+      "sha256": "6fbbc12b91b04d6f1143a2d65f9928c31af1a8dec3695587dbbe072145cdc49d",
+      "cuerpo_identico_a": "pdf-081.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-088.png",
+      "bytes": 186449,
+      "sha256": "abd2b1043b0edbe67efa194599743c68592393fbaa82e325a9d52ad32a5915af",
+      "cuerpo_identico_a": "pdf-082.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-089.png",
+      "bytes": 176175,
+      "sha256": "3fa02c49093a3666605bb7a9b70522062802cd9e34da5be1ec947e0c8f2d1c01",
+      "cuerpo_identico_a": "pdf-083.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-090.png",
+      "bytes": 175906,
+      "sha256": "94bcc69ccc4859e407bb937f401d627bac3125bb418e3a625f2e62e7d32351f3",
+      "cuerpo_identico_a": "pdf-084.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-091.png",
+      "bytes": 181886,
+      "sha256": "7108f28040c134dc4e3d966f75c84510161951ac0cc3cb007156481f6d7db798",
+      "cuerpo_identico_a": "pdf-085.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-092.png",
+      "bytes": 179035,
+      "sha256": "7590a00293d18740ac41a8e5368c8d1fecb6241a38730dbae78699f9c3a5b21f",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-093.png",
+      "bytes": 141447,
+      "sha256": "179c75b06fbf661f5f80e791586bff298d6d23e0b972518ca8c5e71c0bc74f5b",
+      "cuerpo_identico_a": "pdf-087.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-094.png",
+      "bytes": 152390,
+      "sha256": "b00660a670c98182320f12cbb228c82fad53ca23cbbcadbd3992d13ec22190dc",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-095.png",
+      "bytes": 138550,
+      "sha256": "7af8722e699cdb2e1f90d081fd17ddc7adb897c70a28ffbb58c77d59b8d39a73",
+      "cuerpo_identico_a": "pdf-089.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-096.png",
+      "bytes": 207092,
+      "sha256": "b60dbef5577b48f3514a08abfc4a71471856f83a3bd2124ac95a484f2a0ed9e9",
+      "cuerpo_identico_a": "pdf-090.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-097.png",
+      "bytes": 173007,
+      "sha256": "1ca4cbcbe0e06f83a9821bb139cb0b98cf1bb8de211dfdae239c8035a0c8c903",
+      "cuerpo_identico_a": "pdf-091.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-098.png",
+      "bytes": 210176,
+      "sha256": "1e7dfcb1156d8cefb03ea15f604588c1e559c2e8a51488d583fa16452a3a3478",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-099.png",
+      "bytes": 59041,
+      "sha256": "4b61846962d0031dd20524baa8f0280a980e2e6d9d52b7eb3308e118f24619e7",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-100.png",
+      "bytes": 153594,
+      "sha256": "4f1cee88990ee9fb722546d4026c231e9ba204f377d21b1a29cea23b64916227",
+      "cuerpo_identico_a": "pdf-094.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-101.png",
+      "bytes": 226444,
+      "sha256": "4edb433d40927f60fdbab73b44f2726b5e64bb78743329307f892f5bb2e564a3",
+      "cuerpo_identico_a": "pdf-095.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-102.png",
+      "bytes": 171203,
+      "sha256": "952d70192460985d3a74a53e9d72a05462ee405dd73b385d46d636b2b4c18c96",
+      "cuerpo_identico_a": "pdf-096.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-103.png",
+      "bytes": 177338,
+      "sha256": "0e09f20ea0e0b3527afef3c65d051700e865832b36a57b419ce31aff5fdaf6d5",
+      "cuerpo_identico_a": null,
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-104.png",
+      "bytes": 182491,
+      "sha256": "e2827aa10d24583b5fec342d7a73d5d2fe09fd98c39dc9b4a0fa9dcaa28692bf",
+      "cuerpo_identico_a": "pdf-098.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-105.png",
+      "bytes": 186012,
+      "sha256": "5420e91b351f619d81e5ee5b57a114a8a184499f4db22ff9479211cfb31f4c63",
+      "cuerpo_identico_a": "pdf-105.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-106.png",
+      "bytes": 203865,
+      "sha256": "cdac89b1f69cb10f581bdfc0dade597d8d0ff381dec49a05278075bd61954ced",
+      "cuerpo_identico_a": "pdf-106.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-107.png",
+      "bytes": 212295,
+      "sha256": "f3e3e98c3f82cf2adcc465c95452f60c5ed9e80f620d2d6b39f93a0c4000ac80",
+      "cuerpo_identico_a": "pdf-107.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-108.png",
+      "bytes": 199810,
+      "sha256": "91b54382c55bfcedd68da9944b1b22982362d879ccb5bedb273af3c841fd2093",
+      "cuerpo_identico_a": "pdf-108.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-109.png",
+      "bytes": 207587,
+      "sha256": "d0dd66212009a0222210307163f6bfa182c119945e35dc479eeca2d73cc64be7",
+      "cuerpo_identico_a": "pdf-109.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-110.png",
+      "bytes": 183820,
+      "sha256": "2d578d1c4278ac21769071d288a50076738b77eb7ea8ddf136a376f3a2d43ca3",
+      "cuerpo_identico_a": "pdf-110.png",
+      "pie_identico_a_mismo_numero": true
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/pdf/pdf-111.png",
+      "bytes": 36757,
+      "sha256": "ea23cbaa1faf299fd9a9d239454188cf52f9f48b1f69b9f159844d194f4c5e07",
+      "cuerpo_identico_a": "pdf-111.png",
+      "pie_identico_a_mismo_numero": true
+    }
+  ],
+  "laminas": [
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-001.png",
+      "bytes": 580250,
+      "sha256": "8bdfdf7825eda74b96d766d33c70408a0f8f7ab0034e5708f246f97ed63c6443"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-002.png",
+      "bytes": 669526,
+      "sha256": "4d901d24460423e4287a59f9ddec2f18e5f95531cdb5c9dc65fb7a3eda9b307d"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-003.png",
+      "bytes": 684933,
+      "sha256": "3aacf9a477ed4f3c641cbfe9a13492166a78e87b125867c3b9056756c9efaf31"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-004.png",
+      "bytes": 650471,
+      "sha256": "1067f83e6579b6f5a53444a9a4a95eb7af2c41ee9f49cb71c953c30425ef90cd"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-005.png",
+      "bytes": 736245,
+      "sha256": "7e07ef7e150ad55437affa6d0cb4dc23a7baba777767e1a57d11df67ead6e6c8"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-006.png",
+      "bytes": 787922,
+      "sha256": "ba5fb6cb372b41a7b2ecda02d76074a9c46fc10b88b8cc817f9dc5ff1a943888"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-007.png",
+      "bytes": 604720,
+      "sha256": "f76d2d49ab5cae8165a7d6e2d2567b0c00c43e0af5715850e02533b7c2c200a1"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-008.png",
+      "bytes": 651190,
+      "sha256": "f3d1658f3344c505f7dfd838b39af140a9a959652f88d219b19afda6a7ccc84e"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-009.png",
+      "bytes": 763275,
+      "sha256": "ac29792ff523ea92103bf58f79335f42d99e9fbcf60ea56634a9a3bbc8bde930"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-010.png",
+      "bytes": 635330,
+      "sha256": "c702bd4ca842912648905dc249c39a22f175b99343a35dd91d98859f0c7781b5"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-011.png",
+      "bytes": 782538,
+      "sha256": "f8b02194a573de63fbedd2035fa52ab72c1b70ce6a5a165f4a065de2b1036169"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-012.png",
+      "bytes": 718031,
+      "sha256": "d21417bbf55c198dbd739669e61cdaaa0128cb116c6d08663ce1031eb0a16f24"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-013.png",
+      "bytes": 693198,
+      "sha256": "21f91ff1b48f2238554f0a7f3a003a18875e6ecf98e1b14cba4f49340043d15f"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-014.png",
+      "bytes": 808760,
+      "sha256": "55c748ce1010305d3846797ac80eea39a3e04e6426c6008e6c2de2988bd2ec95"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-015.png",
+      "bytes": 722080,
+      "sha256": "ecc82758f408c80e046925e785c4ab15c07db93fcbb66b0cb8f6d54fb44cc94c"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/pdf-016.png",
+      "bytes": 234676,
+      "sha256": "2af63c5168b0949b2e3db1d8a42c8cd70492e57392b80a88ebc3a49572db4593"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/word-001.png",
+      "bytes": 253451,
+      "sha256": "24b6a4b18df54de452e0677a7464261df155e5b9d85c8d192fd2b474584c5cf4"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/word-002.png",
+      "bytes": 259036,
+      "sha256": "64aaec657c35cc0fdc2be1be47c72269e83f1868db2980d18ad12407127b70bf"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/word-003.png",
+      "bytes": 227248,
+      "sha256": "74cf083932cfd2cf8e3f19d2c652bc714997ef66531c9dacbe3e66e056bca6dd"
+    },
+    {
+      "archivo": "tmp/glosario-preliminares/qa/word-004.png",
+      "bytes": 268042,
+      "sha256": "29e5ec9886c8225d9744830bcaedba44677dfa46be30bc081dddb522d1a44c8a"
+    }
+  ],
+  "salidas": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "bytes": 245389,
+      "sha256": "9534e90b33278ca82d05e3ba6d0247c8f82b0330a3074f3e6c065f182a884a44"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 660075,
+      "sha256": "5509869d55994adf7575b90ac1a8a1c3a8d598ffb1cc967cefd72cf7e7d8c2d8"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2945712,
+      "sha256": "3ce62ca6a05cf6b1f894f372a146c0dc3876bb31b9c513a1e95aebcb3638697e"
+    }
+  ],
+  "ensamblador": {
+    "archivo": "scripts/compilar_manuscrito.py",
+    "bytes": 17122,
+    "sha256": "920d5ea6f57cb37c2ba60b231ded19ebc3392ffbd233e8297ddb6c4104d32bb3"
+  },
+  "paginas_preliminares": {
+    "word": {
+      "Glosario de términos y siglas": 7,
+      "Notación matemática": 12,
+      "Capítulo 1 — Introducción": 15
+    },
+    "pdf": {
+      "Glosario de términos y siglas": 7,
+      "Notación matemática": 11,
+      "Capítulo 1 — Introducción": 13
+    }
+  },
+  "geometria_y_estilos_cotejados_identicos": true,
+  "revision_visual": {
+    "completa": true,
+    "paginas_renderizadas_word": 123,
+    "paginas_renderizadas_pdf": 111,
+    "paginas_inspeccionadas_completas_word": 16,
+    "paginas_inspeccionadas_completas_pdf": 61,
+    "laminas_nativas_inspeccionadas": 20,
+    "otros_cuerpos": "Identidad exacta de píxeles con regiones ya inspeccionadas.",
+    "todos_los_pies": "Identidad exacta con el mismo número de página ya inspeccionado.",
+    "corte_regiones_y_px": 1100,
+    "hallazgos_pendientes": []
+  }
+}

@@ -1,0 +1,24 @@
+﻿{
+    "paginas_word":  6,
+    "tablas":  [
+                   {
+                       "tabla":  1,
+                       "pagina_inicio":  2,
+                       "pagina_fin":  3,
+                       "pagina_rotulo":  2
+                   },
+                   {
+                       "tabla":  2,
+                       "pagina_inicio":  4,
+                       "pagina_fin":  4,
+                       "pagina_rotulo":  4
+                   }
+               ],
+    "figuras":  [
+
+                ],
+    "ecuaciones_bloque":  [
+
+                          ],
+    "fecha":  "2026-10-20"
+}

@@ -2,7 +2,7 @@
 
 *Fundamentos de seguridad, demostraciones y validación experimental*
 
-> **Alcance del capítulo.** Se estudian los **fundamentos y límites de seguridad post-cuántica** (§6.4), la **complejidad computacional** (§6.5) y la **evidencia experimental** (§6.6). El análisis de AIR/FRI distingue los teoremas demostrados para el verificador matemático de las garantías aún no establecidas para el ejecutable (§6.7).
+> **Alcance del capítulo.** Se estudian los **fundamentos y límites de seguridad post-cuántica** (sección 6.4), la **complejidad computacional** (sección 6.5) y la **evidencia experimental** (sección 6.6). El análisis de AIR/FRI distingue los teoremas demostrados para el verificador matemático de las garantías aún no establecidas para el ejecutable (sección 6.7).
 
 ---
 
@@ -12,14 +12,14 @@ La inforjabilidad de las firmas que autorizan transacciones es uno de los requis
 
 Por **validación formal** entendemos un procedimiento de cuatro pasos, que estructura todo el capítulo:
 
-1. **Fijar un modelo de seguridad** preciso: qué es un adversario, qué significa "romper" el esquema y bajo qué capacidades (§6.3).
-2. **Revisar las reducciones publicadas** y sus condiciones de correspondencia con los perfiles implementados (§6.4.1–6.4.2).
-3. **Examinar los supuestos y ataques cuánticos conocidos**, distinguiendo la no aplicabilidad directa de Shor de una demostración general de dureza (§6.4.3).
-4. **Acotar el costo computacional** de las operaciones del esquema mediante notación asintótica, y validarlo empíricamente (§6.5–6.6).
+1. **Fijar un modelo de seguridad** preciso: qué es un adversario, qué significa "romper" el esquema y bajo qué capacidades (sección 6.3).
+2. **Revisar las reducciones publicadas** y sus condiciones de correspondencia con los perfiles implementados (secciones 6.4.1–6.4.2).
+3. **Examinar los supuestos y ataques cuánticos conocidos**, distinguiendo la no aplicabilidad directa de Shor de una demostración general de dureza (sección 6.4.3).
+4. **Acotar el costo computacional** de las operaciones del esquema mediante notación asintótica, y validarlo empíricamente (secciones 6.5–6.6).
 
-**Alcance.** Se revisan fundamentos de **inforjabilidad** en el modelo de caja negra y condiciones pendientes de aplicación a la firma implementada. No se acredita una garantía concreta de todo el sistema. Quedan fuera del alcance los canales laterales y ataques por fallos, la seguridad del consenso, la confidencialidad vía KEM y el conocimiento cero no demostrado del PoC (§6.7).
+**Alcance.** Se revisan fundamentos de **inforjabilidad** en el modelo de caja negra y condiciones pendientes de aplicación a la firma implementada. No se acredita una garantía concreta de todo el sistema. Quedan fuera del alcance los canales laterales y ataques por fallos, la seguridad del consenso, la confidencialidad vía KEM y el conocimiento cero no demostrado del PoC (sección 6.7).
 
-**Aclaración metodológica.** Se enuncian los teoremas fundacionales y sus condiciones sin volver a demostrarlos. El aporte identifica pasos para aplicarlos a NEXUS y particulariza el análisis de complejidad y de *overhead* a la arquitectura dual. La revisión de §6.4 explicita las correspondencias pendientes.
+**Aclaración metodológica.** Se enuncian los teoremas fundacionales y sus condiciones sin volver a demostrarlos. El aporte identifica pasos para aplicarlos a NEXUS y particulariza el análisis de complejidad y de *overhead* a la arquitectura dual. La revisión de la sección 6.4 explicita las correspondencias pendientes.
 
 ---
 
@@ -43,7 +43,7 @@ Sobre los retículos se definen los problemas computacionales cuya dureza fundam
 - *$\gamma$-SIVP (Shortest Independent Vectors Problem):* hallar $n$ vectores **linealmente independientes** de $\Lambda$, todos de longitud $\le \gamma\,\lambda_n(\Lambda)$.
 - *$\gamma$-GapSVP:* problema de decisión asociado a $\gamma$-SVP.
 
-Conviene subrayar una distinción que será relevante en §6.4.2: **SVP pide un único vector corto, mientras que SIVP pide $n$ vectores cortos independientes**; son problemas distintos, y el que aparece en las reducciones de Dilithium es **SIVP** (en su versión sobre módulos). Para factores $\gamma$ polinómicos en la dimensión, $\gamma$-SVP y $\gamma$-SIVP se conjeturan **difíciles tanto clásica como cuánticamente** [Pei16], y constituyen el cimiento de seguridad de toda la familia reticular.
+Conviene subrayar una distinción que será relevante en la sección 6.4.2: **SVP pide un único vector corto, mientras que SIVP pide $n$ vectores cortos independientes**; son problemas distintos, y el que aparece en las reducciones de Dilithium es **SIVP** (en su versión sobre módulos). Para factores $\gamma$ polinómicos en la dimensión, $\gamma$-SVP y $\gamma$-SIVP se conjeturan **difíciles tanto clásica como cuánticamente** [Pei16], y constituyen el cimiento de seguridad de toda la familia reticular.
 
 ### 6.2.2 Anillos ciclotómicos y módulos
 
@@ -59,7 +59,7 @@ $$
 q \equiv 1 \pmod{2n}, \qquad\text{en efecto}\quad 8\,380\,417 = 512\cdot 16\,368 + 1,\ \text{con } 2n=512,
 $$
 
-de modo que $\mathbb{Z}_q$ contiene una raíz $2n$-ésima primitiva de la unidad. Esta propiedad habilita la **Transformada Teórica de Números (NTT)**, que permite multiplicar en $R_q$ en tiempo $O(n\log n)$ (§6.5.1) y es la razón de la eficiencia del esquema.
+de modo que $\mathbb{Z}_q$ contiene una raíz $2n$-ésima primitiva de la unidad. Esta propiedad habilita la **Transformada Teórica de Números (NTT)**, que permite multiplicar en $R_q$ en tiempo $O(n\log n)$ (sección 6.5.1) y es la razón de la eficiencia del esquema.
 
 Un **módulo** de rango $\ell$ sobre $R_q$ es $R_q^{\ell}$; las claves de Dilithium viven en módulos $R_q^{k}$, $R_q^{\ell}$ y en matrices $\mathbf{A}\in R_q^{k\times\ell}$.
 
@@ -81,7 +81,7 @@ $$
 \mathbf{A}\mathbf{z} = \mathbf{0} \pmod q \qquad\text{y}\qquad \|\mathbf{z}\| \le \beta.
 $$
 
-**Definición 6.5 (SelfTargetMSIS).** En la convención de [JMW24, Definición 3], dados $\mathbf A\in R_q^{m\times r}$ uniforme y un oráculo $H$ con salida en el espacio de retos, se busca $(\mathbf y,\mu)$ con $\mathbf y\in R_q^{m+r}$ corto y $H([\mathbf I_m\mid\mathbf A]\mathbf y\parallel\mu)=y_{m+r}$, donde el último componente es el reto. La norma, dimensiones y distribución deben fijarse en cada aplicación. El vínculo con una falsificación requiere los cambios de juego de §6.4.1.
+**Definición 6.5 (SelfTargetMSIS).** En la convención de [JMW24, Definición 3], dados $\mathbf A\in R_q^{m\times r}$ uniforme y un oráculo $H$ con salida en el espacio de retos, se busca $(\mathbf y,\mu)$ con $\mathbf y\in R_q^{m+r}$ corto y $H([\mathbf I_m\mid\mathbf A]\mathbf y\parallel\mu)=y_{m+r}$, donde el último componente es el reto. La norma, dimensiones y distribución deben fijarse en cada aplicación. El vínculo con una falsificación requiere los cambios de juego de la sección 6.4.1.
 
 **Parámetros de NEXUS.** La siguiente tabla fija los conjuntos de parámetros, conforme a **FIPS 204 / ML-DSA** [NIST24] (la parametrización que implementa el prototipo mediante el crate `fips204`):
 
@@ -125,7 +125,7 @@ con **corrección**: $\Pr[\mathsf{Verify}(pk,\mu,\mathsf{Sign}(sk,\mu))=1] \ge 1
 3. Computar la respuesta $\mathbf{z}=\mathbf{y}+c\,\mathbf{s}_1$.
 4. **Rechazo:** si $\mathbf z$ (o términos asociados) excede ciertas cotas que evitarían filtrar el secreto, **abortar y reintentar** desde (1).
 
-En esta descripción esquemática, la firma es $\sigma=(\mathbf{z},\mathbf{h},c)$, donde $\mathbf h$ es una "pista" (*hint*) de pocos bits. La verificación recomputa $\mathbf{w}'$ a partir de $\mathbf{z}$, $c$ y $\mathbf{t}$, y acepta si $c=H(\mu,\mathbf{w}'_1)$ y las normas de $\mathbf z$ están dentro de cotas. El rechazo forma parte del argumento de simulación bajo sus distribuciones e hipótesis (§6.4.1). En ML-DSA real, la clave pública codifica $(\rho,\mathbf t_1)$, la privada incluye también $K$, $tr$ y $\mathbf t_0$, y la firma transmite la semilla de reto $\tilde c$ junto con $\mathbf z$ y las pistas. La plantilla no sustituye esos algoritmos.
+En esta descripción esquemática, la firma es $\sigma=(\mathbf{z},\mathbf{h},c)$, donde $\mathbf h$ es una "pista" (*hint*) de pocos bits. La verificación recomputa $\mathbf{w}'$ a partir de $\mathbf{z}$, $c$ y $\mathbf{t}$, y acepta si $c=H(\mu,\mathbf{w}'_1)$ y las normas de $\mathbf z$ están dentro de cotas. El rechazo forma parte del argumento de simulación bajo sus distribuciones e hipótesis (sección 6.4.1). En ML-DSA real, la clave pública codifica $(\rho,\mathbf t_1)$, la privada incluye también $K$, $tr$ y $\mathbf t_0$, y la firma transmite la semilla de reto $\tilde c$ junto con $\mathbf z$ y las pistas. La plantilla no sustituye esos algoritmos.
 
 ### 6.3.2 In-forjabilidad: EUF-CMA y sUF-CMA
 
@@ -135,7 +135,7 @@ En esta descripción esquemática, la firma es $\sigma=(\mathbf{z},\mathbf{h},c)
 
 ### 6.3.3 El adversario cuántico: el QROM
 
-Un adversario cuántico realista no solo ejecuta cómputo cuántico, sino que puede **consultar la función de hash en superposición**. El modelo apropiado es el **Quantum Random-Oracle Model (QROM)** [BDF+11], en el que el oráculo $H$ responde a consultas cuánticas $\sum_x \alpha_x\lvert x\rangle\lvert 0\rangle \mapsto \sum_x \alpha_x\lvert x\rangle\lvert H(x)\rangle$. Probar la seguridad en el QROM (y no solo en el ROM clásico) es indispensable porque las técnicas clásicas de reducción —en particular el rebobinado y el *forking*— **no se trasladan sin más al caso cuántico**: medir una superposición la colapsa, de modo que no se puede "rebobinar" un adversario cuántico arbitrariamente. En el juego considerado, las consultas de firma son clásicas; permitirlas en superposición define otro modelo. Los trabajos [KLS18, B+23] tratan la dificultad del oráculo cuántico; §6.4 distingue los resultados originales de sus correcciones posteriores.
+Un adversario cuántico realista no solo ejecuta cómputo cuántico, sino que puede **consultar la función de hash en superposición**. El modelo apropiado es el **Quantum Random-Oracle Model (QROM)** [BDF+11], en el que el oráculo $H$ responde a consultas cuánticas $\sum_x \alpha_x\lvert x\rangle\lvert 0\rangle \mapsto \sum_x \alpha_x\lvert x\rangle\lvert H(x)\rangle$. Probar la seguridad en el QROM (y no solo en el ROM clásico) es indispensable porque las técnicas clásicas de reducción —en particular el rebobinado y el *forking*— **no se trasladan sin más al caso cuántico**: medir una superposición la colapsa, de modo que no se puede "rebobinar" un adversario cuántico arbitrariamente. En el juego considerado, las consultas de firma son clásicas; permitirlas en superposición define otro modelo. Los trabajos [KLS18, B+23] tratan la dificultad del oráculo cuántico; sección 6.4 distingue los resultados originales de sus correcciones posteriores.
 
 ---
 
@@ -164,17 +164,17 @@ L_Q&=\frac{2q_S\sqrt{\epsilon}}{1-p}
 \end{aligned}
 $$
 
-Sobre el evento favorable, el rechazo debe estar acotado por $p<1$ y la concentración media por $\epsilon$; el complemento tiene probabilidad a lo sumo $\delta$. El tiempo incluye $q_S$ simulaciones. El Teorema 4 mecaniza EF-CMA en **ROM** para un esquema con compresión pública, matriz y máscaras muestreadas directamente y bucle no acotado [B+23, §6]. No es una prueba mecanizada QROM de ML-DSA final.
+Sobre el evento favorable, el rechazo debe estar acotado por $p<1$ y la concentración media por $\epsilon$; el complemento tiene probabilidad a lo sumo $\delta$. El tiempo incluye $q_S$ simulaciones. El Teorema 4 mecaniza EF-CMA en **ROM** para un esquema con compresión pública, matriz y máscaras muestreadas directamente y bucle no acotado [B+23, sección 6]. No es una prueba mecanizada QROM de ML-DSA final.
 
-**Uso de las cifras de la literatura.** Se reproduce aritméticamente la fila QROM NIST3 de [B+23, §7, Figura 8]: $q_S=2^{64}$, $q_H=2^{192}$, $p=103/128$, $\epsilon=2^{-1180}$, $\delta=2^{-362}$ y simulador perfecto. Se obtiene $\log_2 L_Q\approx-361{,}64$, compatible con su cota $2^{-360}$. La elección de $p$ usa la heurística del artículo; el cálculo no prueba esas hipótesis para NEXUS. El sumando $2^{-254}$ de [DIL21, §6.2, ec. (6), nota 5] se conserva como antecedente de la prueba original, sin adoptarlo como pérdida del prototipo.
+**Uso de las cifras de la literatura.** Se reproduce aritméticamente la fila QROM NIST3 de [B+23, sección 7, Figura 8]: $q_S=2^{64}$, $q_H=2^{192}$, $p=103/128$, $\epsilon=2^{-1180}$, $\delta=2^{-362}$ y simulador perfecto. Se obtiene $\log_2 L_Q\approx-361{,}64$, compatible con su cota $2^{-360}$. La elección de $p$ usa la heurística del artículo; el cálculo no prueba esas hipótesis para NEXUS. El sumando $2^{-254}$ de [DIL21, sección 6.2, ec. (6), nota 5] se conserva como antecedente de la prueba original, sin adoptarlo como pérdida del prototipo.
 
 **Actualización de la literatura.** Fallahpour, Fehr y Huang [FFH26, Teorema 1 y Corolario 1] mejoran la reducción UF-CMA→UF-NMA en QROM con consultas clásicas de firma, simulación de transcripciones aceptantes y eventos de rechazo y concentración. Se examinó la copia CWI de 2025, preservada con hash; la ficha ePrint registra revisiones posteriores. Esta mejora no elimina SelfTargetMSIS ni demuestra la correspondencia de semillas, firma hedged, codificaciones o sUF del ejecutable. La cuenta de [B+23] se conserva identificada como reproducción de aquella versión.
 
-**Composición de transacciones.** La ruta serializa el contenido con `bincode`, calcula SHA3-256 y firma sus 32 bytes mediante ML-DSA puro con contexto vacío; no invoca HashML-DSA. La autenticidad del contenido requiere también resistencia a colisiones del hash externo y codificación inequívoca. FIPS 204 §5.4 trata el hash de aplicación y HashML-DSA: para mantener la fuerza del perfil exige fuerza clásica de colisión y segunda preimagen de al menos su parámetro de seguridad. El digest SHA3-256 externo no permite trasladar automáticamente la fuerza de ML-DSA-65/87 a la transacción [NIST24, §5.4]. Es un límite de composición, sin demostrar un ataque ni incumplimiento de la operación ML-DSA pura.
+**Composición de transacciones.** La ruta serializa el contenido con `bincode`, calcula SHA3-256 y firma sus 32 bytes mediante ML-DSA puro con contexto vacío; no invoca HashML-DSA. La autenticidad del contenido requiere también resistencia a colisiones del hash externo y codificación inequívoca. FIPS 204 sección 5.4 trata el hash de aplicación y HashML-DSA: para mantener la fuerza del perfil exige fuerza clásica de colisión y segunda preimagen de al menos su parámetro de seguridad. El digest SHA3-256 externo no permite trasladar automáticamente la fuerza de ML-DSA-65/87 a la transacción [NIST24, sección 5.4]. Es un límite de composición, sin demostrar un ataque ni incumplimiento de la operación ML-DSA pura.
 
 **Terminación del backend.** El contador de máscaras de 16 bits de `fips204` 0.4.6 puede desbordarse tras un número extremo de rechazos. El contraste local identifica el recorrido aritmético, sin ejecutar una explotación ni demostrar su probabilidad. La obligación R1-D de robustez y tratamiento del error permanece abierta; las pruebas de ida y vuelta no prueban terminación en todas las ejecuciones.
 
-**Extracción e inforjabilidad fuerte.** La cota EF-CMA anterior no establece por sí sola sUF-CMA. La rama MSIS de [DIL21, §6.2.2] trata el caso adicional con condiciones sobre reto, pistas y redondeo. Una firma válida de la clave real tampoco es automáticamente una solución para una instancia uniforme de SelfTargetMSIS: hacen falta los cambios de juego y la simulación de consultas.
+**Extracción e inforjabilidad fuerte.** La cota EF-CMA anterior no establece por sí sola sUF-CMA. La rama MSIS de [DIL21, sección 6.2.2] trata el caso adicional con condiciones sobre reto, pistas y redondeo. Una firma válida de la clave real tampoco es automáticamente una solución para una instancia uniforme de SelfTargetMSIS: hacen falta los cambios de juego y la simulación de consultas.
 
 **Lema 6.1 (diferencia de preimágenes cortas).** Sean $\mathbf x,\mathbf x'$ distintos como elementos de $R_q^r$, con representantes enteros de norma infinito a lo sumo $L$, y $\mathbf B\mathbf x=\mathbf B\mathbf x'$. La diferencia de sus representantes es no nula módulo $q$, satisface $\mathbf B(\mathbf x-\mathbf x')=\mathbf0$ y tiene norma a lo sumo $2L$.
 
@@ -182,7 +182,7 @@ Sobre el evento favorable, el rechazo debe estar acotado por $p<1$ y la concentr
 
 Dos firmas del mismo mensaje pueden tener compromisos y retos distintos; no satisfacen automáticamente esa hipótesis.
 
-**Contraste de SelfTargetMSIS.** El Teorema 2 de [JMW24] exige, además de la congruencia del módulo, $2\gamma\eta'n(m'+k')<\lfloor q/32\rfloor$. Sus pérdidas dependen de $Q$, $nq^{-k'}$, el tamaño del espacio de retos y un parámetro de aproximación; no son una equivalencia sin pérdida. En su traducción de §4 se toma $\gamma=\zeta=\max\{\gamma_1-\beta,2\gamma_2+1+2^{d-1}\tau\}$ y $m'+k'=k+\ell+1$.
+**Contraste de SelfTargetMSIS.** El Teorema 2 de [JMW24] exige, además de la congruencia del módulo, $2\gamma\eta'n(m'+k')<\lfloor q/32\rfloor$. Sus pérdidas dependen de $Q$, $nq^{-k'}$, el tamaño del espacio de retos y un parámetro de aproximación; no son una equivalencia sin pérdida. En su traducción de la sección 4 se toma $\gamma=\zeta=\max\{\gamma_1-\beta,2\gamma_2+1+2^{d-1}\tau\}$ y $m'+k'=k+\ell+1$.
 
 Con las constantes del backend, $\zeta$ vale 350209, 724481 y 769537. Aun tomando el menor entero auxiliar positivo $\eta'=1$, los lados izquierdos son 1.613.763.072, 4.451.211.264 y 6.304.047.104; el derecho es 261.888 en los tres niveles. **La condición falla.** Este cálculo descarta esa aplicación directa del teorema; no constituye un ataque ni una imposibilidad de otra reducción. R1 no elimina el supuesto SelfTargetMSIS para estos parámetros.
 
@@ -204,7 +204,7 @@ $$
 
 Resolver el problema derecho permitiría resolver el izquierdo bajo las condiciones de la reducción. Esta notación no sustituye sus pasos intermedios.
 
-La distribución decisional de [LS15, Definición 4.6] usa secreto uniforme y una familia de errores gaussianos; §6.2.3 describe secretos y errores uniformes pequeños. Equipararlas necesita transformaciones adicionales y pérdidas. Tampoco se reemplaza una condición asintótica $\omega(\cdot)$ por una constante elegida sin justificación. Se cita el fundamento de la familia y se mantiene sin instanciar un factor concreto de aproximación para NEXUS.
+La distribución decisional de [LS15, Definición 4.6] usa secreto uniforme y una familia de errores gaussianos; sección 6.2.3 describe secretos y errores uniformes pequeños. Equipararlas necesita transformaciones adicionales y pérdidas. Tampoco se reemplaza una condición asintótica $\omega(\cdot)$ por una constante elegida sin justificación. Se cita el fundamento de la familia y se mantiene sin instanciar un factor concreto de aproximación para NEXUS.
 
 ### 6.4.3 Resistencia cuántica y alcance del argumento de Shor
 
@@ -212,7 +212,7 @@ Shor [Sho97] proporciona algoritmos eficientes de factorización y logaritmo dis
 
 El problema del subgrupo oculto diédrico y los algoritmos de Kuperberg [Kup05] forman parte del contexto de investigación. No se usan aquí para demostrar una imposibilidad de reducción ni una cota inferior de complejidad para MLWE o ML-DSA.
 
-Las estimaciones *core-SVP* modelan costos de ataques mediante reducción de bases y tamizado [DIL21, §6.3 y apéndice C; Laa15; BDGL16]. Dependen del modelo de tiempo y memoria y del ataque considerado. Comparar exponentes como $0.265/0.292$ no establece una razón universal entre seguridad clásica y cuántica del esquema. Tampoco se obtiene una cota demostrada de ML-DSA dividiendo por dos una categoría NIST.
+Las estimaciones *core-SVP* modelan costos de ataques mediante reducción de bases y tamizado [DIL21, sección 6.3 y apéndice C; Laa15; BDGL16]. Dependen del modelo de tiempo y memoria y del ataque considerado. Comparar exponentes como $0.265/0.292$ no establece una razón universal entre seguridad clásica y cuántica del esquema. Tampoco se obtiene una cota demostrada de ML-DSA dividiendo por dos una categoría NIST.
 
 Para NEXUS se distinguen: (i) los conjuntos de parámetros normalizados en FIPS 204; (ii) los supuestos y reducciones que sustentan el diseño; y (iii) las estimaciones de ataques, que deben citar su versión y modelo. Ninguno de esos niveles constituye por sí solo una prueba de seguridad de todo el sistema de aplicación.
 
@@ -237,7 +237,7 @@ R1 entrega un mapa comprobable de correspondencias y diferencias, cálculos repr
 
 ### 6.5.1 La NTT como operación dominante
 
-La operación costosa en $R_q$ es la multiplicación de polinomios. Mediante la **NTT** —una Transformada de Fourier sobre $\mathbb{Z}_q$, posible porque $q\equiv 1\pmod{2n}$ (§6.2.2)— un polinomio se lleva al "dominio NTT" en $O(n\log n)$ operaciones; en ese dominio la multiplicación es **puntual** ($O(n)$), y la transformada inversa cuesta de nuevo $O(n\log n)$. Así, una multiplicación en $R_q$ cuesta
+La operación costosa en $R_q$ es la multiplicación de polinomios. Mediante la **NTT** —una Transformada de Fourier sobre $\mathbb{Z}_q$, posible porque $q\equiv 1\pmod{2n}$ (sección 6.2.2)— un polinomio se lleva al "dominio NTT" en $O(n\log n)$ operaciones; en ese dominio la multiplicación es **puntual** ($O(n)$), y la transformada inversa cuesta de nuevo $O(n\log n)$. Así, una multiplicación en $R_q$ cuesta
 
 $$
 T_{\text{mult}}(n) = O(n\log n)\ \text{operaciones en }\mathbb{Z}_q,
@@ -275,7 +275,7 @@ $$
 
 que es ajustada. El $O(k\ell\,n\log n)$ del enunciado es una **cota superior** válida bajo la convención «cada multiplicación de anillo $= O(n\log n)$». Como $n=256$ es fijo, en la práctica el costo escala con $k\ell$.
 
-**Tamaños.** La clave pública $pk=(\rho,\mathbf{t}_1)$ está dominada por $\mathbf{t}_1\in R_q^k$ ($k\cdot n$ coeficientes de $O(\log q)$ bits; $\mathbf A$ se regenera de la semilla $\rho$ de 256 bits y no se almacena), luego $|pk|=O(k\,n\log q)$. La firma $\sigma=(\mathbf{z},\mathbf{h},c)$ está dominada por $\mathbf{z}\in R_q^\ell$, luego $|\sigma|=O((k+\ell)\,n\log q)$. Ambas cotas concuerdan con los tamaños tabulados (§6.2.3).
+**Tamaños.** La clave pública $pk=(\rho,\mathbf{t}_1)$ está dominada por $\mathbf{t}_1\in R_q^k$ ($k\cdot n$ coeficientes de $O(\log q)$ bits; $\mathbf A$ se regenera de la semilla $\rho$ de 256 bits y no se almacena), luego $|pk|=O(k\,n\log q)$. La firma $\sigma=(\mathbf{z},\mathbf{h},c)$ está dominada por $\mathbf{z}\in R_q^\ell$, luego $|\sigma|=O((k+\ell)\,n\log q)$. Ambas cotas concuerdan con los tamaños tabulados (sección 6.2.3).
 
 **Tabla 6.3 — Complejidad y tamaños.**
 
@@ -292,7 +292,7 @@ El análisis cuantificado completo del *overhead* y de su amortización por la a
 
 - **Costo de datos y cómputo:** una firma ML-DSA-65 (3309 B) ocupa aproximadamente 52 veces una firma ECDSA de 64 B. En las series históricas, sus tiempos de verificación son del mismo orden; el costo relativo depende de la operación, biblioteca, hardware y carga. El tamaño constituye una motivación para la agregación, sin excluir costos de CPU.
 - **Verificación por bloque** de $m$ transacciones en una cadena única: $O(m\cdot k\ell\,n\log n)$.
-- **Amortización dual-chain:** la L1 verifica una prueba por lote; su tiempo $t_\pi(m)$ puede crecer con el lote. El costo por operación es $t_\pi(m)/m$. Trasladar las firmas fuera de L1 requiere disponibilidad de datos y una prueba de la lógica pertinente. El AIR actual no demuestra ese flujo completo; §6.6.5 explicita las condiciones del modelo.
+- **Amortización dual-chain:** la L1 verifica una prueba por lote; su tiempo $t_\pi(m)$ puede crecer con el lote. El costo por operación es $t_\pi(m)/m$. Trasladar las firmas fuera de L1 requiere disponibilidad de datos y una prueba de la lógica pertinente. El AIR actual no demuestra ese flujo completo; sección 6.6.5 explicita las condiciones del modelo.
 
 ### 6.5.4 Comparación con criptografía clásica
 
@@ -301,7 +301,7 @@ El análisis cuantificado completo del *overhead* y de su amortización por la a
 | Característica | RSA-2048 | ECDSA P-256 | **Dilithium3** |
 |---|:---:|:---:|:---:|
 | Tamaño de firma | 256 B | 64 B | **3309 B** |
-| Costo de verificación (CPU, **medido en el mismo banco**, §6.6.2) | 92,4 µs | 144,8 µs | **77,6 µs** |
+| Costo de verificación (CPU, **medido en el mismo banco**, sección 6.6.2) | 92,4 µs | 144,8 µs | **77,6 µs** |
 | Resistencia cuántica | **Rota** (Shor, tiempo poli.) | **Rota** (Shor, tiempo poli.) | **Sin ataque cuántico eficiente conocido** |
 
 En la serie histórica H2, ML-DSA-65 presenta la menor latencia de verificación de los esquemas comparados. Esta observación se limita a esos perfiles y operaciones; no establece superioridad general ni elimina las obligaciones de integración y seguridad del sistema.
@@ -310,9 +310,9 @@ En la serie histórica H2, ML-DSA-65 presenta la menor latencia de verificación
 
 ## 6.6 Validación empírica complementaria
 
-El análisis asintótico de §6.5 describe la **forma** del costo ($O(k\ell\,n\log n)$) pero oculta las **constantes**. La validación empírica caracteriza las latencias de las rutas y condiciones ensayadas; complementa la validación formal sin probar por sí sola una ley asintótica o la viabilidad de la arquitectura completa.
+El análisis asintótico de la sección 6.5 describe la **forma** del costo ($O(k\ell\,n\log n)$) pero oculta las **constantes**. La validación empírica caracteriza las latencias de las rutas y condiciones ensayadas; complementa la validación formal sin probar por sí sola una ley asintótica o la viabilidad de la arquitectura completa.
 
-**Metodología.** Banco de pruebas con el *harness* Criterion: `nexus-crypto/benches/dilithium_bench.rs` (ML-DSA) y `nexus-crypto/benches/classical_baseline.rs` (líneas base clásicas ECDSA/RSA, §6.6.2); para el verificador STARK, el *harness* dedicado `nexus-zk/examples/stark_demo.rs` (§6.6.3). Para cada nivel (Dilithium2/3/5) y operación ($\mathsf{KeyGen}$, $\mathsf{Sign}$, $\mathsf{Verify}$): 100 muestras con calentamiento, reportando la **mediana** (robusta a valores atípicos). Estas latencias corresponden a un hilo. El experimento multinúcleo se identifica por separado. Las condiciones de la nueva serie R4, con distinto número de muestras, se especifican en §6.6.4; no se atribuye toda diferencia entre máquinas exclusivamente a IPC o frecuencia.
+**Metodología.** Banco de pruebas con el *harness* Criterion: `nexus-crypto/benches/dilithium_bench.rs` (ML-DSA) y `nexus-crypto/benches/classical_baseline.rs` (líneas base clásicas ECDSA/RSA, sección 6.6.2); para el verificador STARK, el *harness* dedicado `nexus-zk/examples/stark_demo.rs` (sección 6.6.3). Para cada nivel (Dilithium2/3/5) y operación ($\mathsf{KeyGen}$, $\mathsf{Sign}$, $\mathsf{Verify}$): 100 muestras con calentamiento, reportando la **mediana** (robusta a valores atípicos). Estas latencias corresponden a un hilo. El experimento multinúcleo se identifica por separado. Las condiciones de la nueva serie R4, con distinto número de muestras, se especifican en la sección 6.6.4; no se atribuye toda diferencia entre máquinas exclusivamente a IPC o frecuencia.
 
 Los resultados históricos se reportan sobre **dos perfiles de hardware**. Permiten comparar razones entre niveles en esos perfiles, sin aislar causalmente el efecto del equipo ni acreditar independencia del hardware:
 
@@ -328,9 +328,9 @@ Los resultados históricos se reportan sobre **dos perfiles de hardware**. Permi
 **Métricas e hipótesis a contrastar.**
 
 - Tiempos por operación y verificaciones por segundo, por nivel.
-- **Contraste teoría–práctica:** examinar si las razones entre los tres niveles, con $n$ fijo, son compatibles con el modelo de §6.5 y comparar su comportamiento observado entre perfiles.
-- **Comparativa clásica en el mismo banco:** posición de Dilithium3 frente a ECDSA P-256 y RSA-2048/3072 en las tres operaciones (§6.6.2).
-- **Escalado del verificador STARK** frente al tamaño de la traza probada (§6.6.3), insumo del argumento de amortización dual-chain (§6.5.3, Cap. 3).
+- **Contraste teoría–práctica:** examinar si las razones entre los tres niveles, con $n$ fijo, son compatibles con el modelo de la sección 6.5 y comparar su comportamiento observado entre perfiles.
+- **Comparativa clásica en el mismo banco:** posición de Dilithium3 frente a ECDSA P-256 y RSA-2048/3072 en las tres operaciones (sección 6.6.2).
+- **Escalado del verificador STARK** frente al tamaño de la traza probada (sección 6.6.3), insumo del argumento de amortización dual-chain (sección 6.5.3, Cap. 3).
 
 > **Procedencia de las cifras.** Las tablas H1/H2 conservan las corridas documentadas en julio y agosto de 2026. El inventario del 22 de septiembre recuperó resultados Criterion con medianas distintas en las nueve cifras ML-DSA de H2: por ejemplo, 77,170 µs de verificación ML-DSA-65 frente a 77,6 µs publicados. Esa diferencia no procede del redondeo. Los archivos se preservan como evidencia local, sin asignarlos a la misma corrida ni presentarlos como una nueva réplica; el mtime no acredita su identidad. La revisión del 12 de octubre concilia las estadísticas y fuentes de R4 y su complemento con 451 comprobaciones sin discrepancias. Sigue pendiente reconstruir las fuentes y la identidad exacta de las corridas H1/H2. Las cifras STARK de diseño conservadas en el Cap. 3 pertenecen a una serie anterior; para comparar perfiles se usa la serie identificada en esta sección.
 
@@ -356,13 +356,13 @@ Los resultados históricos se reportan sobre **dos perfiles de hardware**. Permi
 
 1. **Latencia y capacidad estimada.** La verificación histórica tarda entre 48,8 y 390 µs según perfil y nivel. El inverso de 77,6 µs es aproximadamente 12.900 verificaciones/s; es una conversión ideal de latencia, no una medición de capacidad sostenida del sistema. El costo de datos y el de CPU deben evaluarse según la carga de la aplicación.
 2. **Razones observadas y modelo de costo.** Las tres operaciones crecen de forma **monótona** con el nivel, mientras el producto $k\ell$ pasa por 16, 30 y 56 para D2/D3/D5. Verify D5/D2 es ×2,77 en H1 y ×2,65 en H2; KeyGen D5/D2, ×2,41 y ×2,14. Estas razones son menores que las del producto $k\ell$ y son compatibles con un costo que incluye términos de orden inferior y constantes de implementación (cf. $O((k+\ell)\,n\log n + k\ell\,n)$). Tres niveles con $n=256$ fijo no prueban una ley asintótica, no aíslan el efecto del hardware y no establecen que la forma del costo sea independiente de él. Las diferencias H1/H2 describen exclusivamente las series históricas conservadas.
-3. **La firma es la operación más costosa en las tablas anteriores.** Su bucle de *rejection sampling* produce un número variable de iteraciones. El modelo independiente y la cota positiva uniforme de aceptación de §6.5.2 justifican iteraciones esperadas $O(1)$ bajo esas hipótesis; no una cota constante de peor caso ni una propiedad incondicional del backend. La mediana resume las latencias observadas.
+3. **La firma es la operación más costosa en las tablas anteriores.** Su bucle de *rejection sampling* produce un número variable de iteraciones. El modelo independiente y la cota positiva uniforme de aceptación de la sección 6.5.2 justifican iteraciones esperadas $O(1)$ bajo esas hipótesis; no una cota constante de peor caso ni una propiedad incondicional del backend. La mediana resume las latencias observadas.
 
-**Throughput de verificación multinúcleo (H2).** El registro del harness `nexus-crypto/examples/throughput_tps.rs` reporta 12.485 verificaciones/s con un hilo, 49.843 con cuatro y 199.218 con 24, sobre un lote de 4.096 mensajes y firmas. Son verificaciones de firmas aisladas; no miden ejecución, persistencia, consenso ni generación de pruebas de transacciones completas de una aplicación. R4 detectó que los trabajadores podían contar operaciones antes del inicio del reloj principal. Por ello, estas cifras se conservan como antecedente con sesgo temporal posible y no sustentan una conclusión de escalado validada. El harness experimental corregido sincroniza el inicio y mide hasta la finalización de todos los trabajadores; su primera ejecución optimizada quedó bloqueada por Windows (§6.6.4) y posteriormente se completó en la serie complementaria (§6.6.6).
+**Throughput de verificación multinúcleo (H2).** El registro del harness `nexus-crypto/examples/throughput_tps.rs` reporta 12.485 verificaciones/s con un hilo, 49.843 con cuatro y 199.218 con 24, sobre un lote de 4.096 mensajes y firmas. Son verificaciones de firmas aisladas; no miden ejecución, persistencia, consenso ni generación de pruebas de transacciones completas de una aplicación. R4 detectó que los trabajadores podían contar operaciones antes del inicio del reloj principal. Por ello, estas cifras se conservan como antecedente con sesgo temporal posible y no sustentan una conclusión de escalado validada. El harness experimental corregido sincroniza el inicio y mide hasta la finalización de todos los trabajadores; su primera ejecución optimizada quedó bloqueada por Windows (sección 6.6.4) y posteriormente se completó en la serie complementaria (sección 6.6.6).
 
 ### 6.6.2 Comparativa medida con criptografía clásica
 
-Las cifras de §6.5.4 se contrastan aquí **en el mismo banco, el mismo hardware (H2) y el mismo mensaje**, con el *harness* `classical_baseline.rs`. Los backends clásicos son los crates `p256` y `rsa` (RustCrypto) —implementaciones en Rust, como `fips204`; compartir lenguaje no acredita igual madurez u optimización—. Para RSA-2048, $\mathsf{KeyGen}$ se midió con 10 muestras (su costo, cinco órdenes de magnitud mayor, acotaría el banco); la generación RSA-3072 (segundos por clave) no se midió por no estar en ninguna ruta caliente.
+Las cifras de la sección 6.5.4 se contrastan aquí **en el mismo banco, el mismo hardware (H2) y el mismo mensaje**, con el *harness* `classical_baseline.rs`. Los backends clásicos son los crates `p256` y `rsa` (RustCrypto) —implementaciones en Rust, como `fips204`; compartir lenguaje no acredita igual madurez u optimización—. Para RSA-2048, $\mathsf{KeyGen}$ se midió con 10 muestras (su costo, cinco órdenes de magnitud mayor, acotaría el banco); la generación RSA-3072 (segundos por clave) no se midió por no estar en ninguna ruta caliente.
 
 **Tabla 6.8 — Dilithium3 frente a los esquemas clásicos incumbentes (H2, medianas).**
 
@@ -384,7 +384,7 @@ Cuatro lecturas:
 
 ### 6.6.3 Verificador STARK: serie histórica de escalado
 
-El argumento de amortización dual-chain (§6.5.3; Cap. 3, §3.5) depende de una propiedad asintótica del sistema de pruebas: que el costo del **verificador** crezca polilogarítmicamente con el tamaño del cómputo probado. Para un STARK basado en FRI, la teoría predice tamaño de prueba y tiempo de verificación $O(\lambda\,\log^2 n)$ (consultas × capas de FRI × caminos de Merkle de longitud $\log$) y costo del *prover* $\tilde O(n)$. Esta subsección contrasta el crecimiento observado del PoC básico (§6.7): blowup 8, 40 consultas, desafíos en $F_{p^2}$, *grinding* $2^{20}$, sobre H2. No mide el rendimiento del verificador vinculado con FRI de traza vinculado. El presupuesto de seguridad se trata por separado en §6.7.
+El argumento de amortización dual-chain (sección 6.5.3; Cap. 3, sección 3.5) depende de una propiedad asintótica del sistema de pruebas: que el costo del **verificador** crezca polilogarítmicamente con el tamaño del cómputo probado. Para un STARK basado en FRI, la teoría predice tamaño de prueba y tiempo de verificación $O(\lambda\,\log^2 n)$ (consultas × capas de FRI × caminos de Merkle de longitud $\log$) y costo del *prover* $\tilde O(n)$. Esta subsección contrasta el crecimiento observado del PoC básico (sección 6.7): blowup 8, 40 consultas, desafíos en $F_{p^2}$, *grinding* $2^{20}$, sobre H2. No mide el rendimiento del verificador vinculado con FRI de traza vinculado. El presupuesto de seguridad se trata por separado en la sección 6.7.
 
 **Tabla 6.9 — STARK PoC: tamaño y tiempos frente al tamaño de la traza (H2).**
 
@@ -406,7 +406,7 @@ El argumento de amortización dual-chain (§6.5.3; Cap. 3, §3.5) depende de una
 1. **Crecimiento observado.** Al multiplicar el cómputo probado por **16.384** (de $2^4$ a $2^{18}$ pasos), la prueba crece solo **×6,0** y la verificación **×6,2**. Si la relación fuera lineal, verificar a $2^{18}$ pasos costaría ~20 s; cuesta **7,74 ms**.
 2. **Tamaño y estructura de aperturas.** Los incrementos de tamaño por cada cuadruplicación de la traza son aproximadamente +61,3; +71,3; +81,3; +91,3; +101,3; +111,3; +121,3 KiB, compatibles con el crecimiento de capas y caminos del PoC. La verificación también aumenta en el rango ensayado. Los puntos finitos de latencia no demuestran un ajuste cuadrático ni una cota asintótica; su interpretación requiere separar estructura, constantes y dispersión.
 3. **Asimetría prover/verificador.** La generación histórica alcanza 10,25 s en $2^{18}$ filas. El tiempo total combina construcción de la prueba y búsqueda de nonce; estos puntos finitos no prueban una ley asintótica ni miden el costo de una aplicación completa.
-4. **Nota metodológica (*grinding*).** La búsqueda determinista de nonce depende del enunciado y contribuye al tiempo de generación, incluido el punto no monótono de $2^6$ (826 ms históricos). Sin cronometraje separado no se atribuye toda la variación al nonce ni se concluye que su peso desaparezca; R4 conserva testigos distintos y dispersión (§6.6.4).
+4. **Nota metodológica (*grinding*).** La búsqueda determinista de nonce depende del enunciado y contribuye al tiempo de generación, incluido el punto no monótono de $2^6$ (826 ms históricos). Sin cronometraje separado no se atribuye toda la variación al nonce ni se concluye que su peso desaparezca; R4 conserva testigos distintos y dispersión (sección 6.6.4).
 5. **Comparación histórica de perfiles.** En H1 (julio de 2026, rango $2^4$–$2^{12}$) la verificación midió 4,5→11,4 ms, aproximadamente 3,5× los tiempos H2 correspondientes, con tamaños de prueba coincidentes. Es un antecedente limitado a esos registros, sin acreditar la misma forma de curva ni aislar causalmente el equipo.
 
 **El *trade-off*, declarado.** Una prueba histórica de 768,2 KiB equivale a ~238 firmas Dilithium3 de 3309 B; pero se paga **una vez por lote**: a $2^{18}$ pasos equivale a ~3 B por paso probado, y su verificación histórica tarda 7,74 ms para esta recurrencia. Una fila del AIR no equivale a una transacción de la aplicación. La cadencia del prover (~10 s en un hilo a $2^{18}$) fija la latencia mínima de bacheo del PoC; su paralelización es trabajo futuro (Cap. 7).
@@ -419,7 +419,7 @@ El argumento de amortización dual-chain (§6.5.3; Cap. 3, §3.5) depende de una
 
 La nueva serie se ejecutó en el Intel Core Ultra 9 275HX de 24 núcleos/hilos, Windows 11 compilación 26200 y plan de energía Equilibrado, con rustc 1.97.1, Cargo.lock conservado y perfil optimizado. Los comandos se ejecutaron en serie, sin afinidad ni aislamiento exclusivo de la CPU. Se preservaron las fuentes y sus hashes, estado Git, metadatos del equipo, argumentos, salidas originales y resultados en los registros de reproducibilidad. El repositorio tenía cambios locales: el commit por sí solo no identifica esta ejecución.
 
-**Cobertura experimental.** Se reportan ocho casos clásicos, nueve de residencia/expansión y cuarenta pruebas STARK cronometradas. Las mediciones de latencia ML-DSA y capacidad multinúcleo se identifican por separado en §6.6.6, con sus condiciones de ejecución. Los registros de reproducibilidad conservan las incidencias y los resultados originales; no se imputan mediciones a experimentos fallidos ni se mezclan configuraciones distintas.
+**Cobertura experimental.** Se reportan ocho casos clásicos, nueve de residencia/expansión y cuarenta pruebas STARK cronometradas. Las mediciones de latencia ML-DSA y capacidad multinúcleo se identifican por separado en la sección 6.6.6, con sus condiciones de ejecución. Los registros de reproducibilidad conservan las incidencias y los resultados originales; no se imputan mediciones a experimentos fallidos ni se mezclan configuraciones distintas.
 
 **Criterion.** Calentamiento de un segundo, objetivo de medición de dos segundos y 50 muestras por caso; la generación RSA-2048 usa diez muestras, según el harness. Los intervalos son IC bootstrap del 95 % de la mediana calculados por Criterion dentro de esta ejecución. No representan variación entre equipos o días. Las firmas efímeras incluyen la expansión desde semilla; las cacheadas reutilizan el par. La expansión aislada no incluye obtención de entropía nueva.
 
@@ -477,7 +477,7 @@ Como sensibilidad aritmética, tomando $d=32$ B, $c=128$ B y una prueba fija de 
 
 ### 6.6.6 Serie complementaria R4: ejecución de los dos experimentos pendientes
 
-El autor desactivó Control inteligente de aplicaciones y comunicó el cambio. Se comprobó el estado desactivado antes de repetir los dos experimentos. Ambos finalizaron; los fallos y la configuración inicial de §6.6.4 permanecen preservados. La carpeta `R4-complemento/` contiene fuentes, hashes, comandos, toolchain, estado de Windows, resultados Criterion, CSV y corpus público de verificación. El equipo y el perfil optimizado se mantienen; las series no son una comparación pareada y el cambio de configuración forma parte de su procedencia.
+El autor desactivó Control inteligente de aplicaciones y comunicó el cambio. Se comprobó el estado desactivado antes de repetir los dos experimentos. Ambos finalizaron; los fallos y la configuración inicial de la sección 6.6.4 permanecen preservados. La carpeta `R4-complemento/` contiene fuentes, hashes, comandos, toolchain, estado de Windows, resultados Criterion, CSV y corpus público de verificación. El equipo y el perfil optimizado se mantienen; las series no son una comparación pareada y el cambio de configuración forma parte de su procedencia.
 
 ML-DSA utiliza 50 muestras, calentamiento de un segundo y objetivo de medición de dos segundos. Se informa la mediana con IC bootstrap del 95 % para cada operación y nivel. En esta ejecución, ML-DSA-65 verifica en 84,61 µs. Frente a los 149,05 µs de ECDSA y 98,07 µs de RSA-2048 de la ejecución anterior del mismo día, se observa menor latencia en los perfiles ensayados; no se atribuye una diferencia causal a un único cambio ni se generaliza a otras bibliotecas o cargas.
 
@@ -522,17 +522,17 @@ Las medianas pasan de **12.349 verificaciones/s con un hilo a 136.390 con 24**, 
 Se declaran explícitamente las fronteras de esta validación formal:
 
 - **Modelo de caja negra / QROM.** El análisis citado se refiere a la inforjabilidad del esquema bajo sus hipótesis; la correspondencia concreta sigue pendiente. Quedan fuera los canales laterales (temporización, consumo) y los ataques por fallos, relevantes en hardware real.
-- **Alcance de la inforjabilidad.** §6.4 expone fundamentos de seguridad del primitivo y obligaciones de correspondencia pendientes. Una transacción requiere además verificar identidad, mensaje autorizado y vigencia de la clave; la integridad del libro mayor depende del consenso y de las transiciones de estado. No se deduce una garantía del sistema completo de una reducción del esquema de firma.
+- **Alcance de la inforjabilidad.** sección 6.4 expone fundamentos de seguridad del primitivo y obligaciones de correspondencia pendientes. Una transacción requiere además verificar identidad, mensaje autorizado y vigencia de la clave; la integridad del libro mayor depende del consenso y de las transiciones de estado. No se deduce una garantía del sistema completo de una reducción del esquema de firma.
 - **Aceptación heredada comprobada.** La evidencia R4 conserva la aceptación de cuatro bytes sin STARK cuando coinciden entradas públicas y el registro indebido de la raíz, así como las omisiones del sobre exterior de la ruta heredada. Es un diagnóstico de aquella ruta, no el comportamiento de la entrada activa de validez: esta exige contexto externo y certificado vinculado, sin aceptación por compatibilidad o tamaño. El código heredado se conserva como referencia fuera de la aceptación nueva; sus resultados no respaldan seguridad de transiciones ni el anclaje del registro R3.
 - **Codificación de raíces y verificación canónica.** El puente heredado ignora los últimos 24 bytes de cada raíz y admite alias al reducir los ocho primeros módulo Goldilocks. La ruta activa rechaza esos alias: comprueba tipo, contexto, EOF estricto, cantidades, campos canónicos, formas y ambos recorridos FRI antes de aceptar. Admite exclusivamente escalares menores que el primo en ocho bytes y 24 bytes finales nulos. `ActiveChain` obtiene raíces, altura y metadatos de una instantánea local del lote, con filas y trabajo fijados por configuración; no toma ese contexto del certificado. La altura no pertenece al enunciado AIR y el control de envíos repetidos es local en memoria. El motor L2 usa raíces SHA3 generales: un lote fuera del dominio escalar se rechaza sin recortar su raíz. La conexión de API no prueba validez de transacciones completas ni consenso entre reinicios.
 - **Ausencia de garantía de conocimiento cero.** En una prueba de 16 filas, las aperturas públicas permiten interpolar el polinomio de traza y recuperar su segunda fila, el testigo. Este caso se reproduce en una prueba automatizada; el PoC no implementa enmascaramiento de la traza. La etiqueta histórica ZK del modo no acredita ocultación del testigo.
-- **Presupuesto de soundness.** La auditoría de §6.7.1 identifica consultas efectivas, transcripción, proximidad y obligaciones de composición. §6.7.2 desarrolla el paso algebraico bajo hipótesis explícitas. La cifra histórica de 100 bits no se acredita para el ejecutable. El análisis clásico citado no se convierte automáticamente en una cota QROM para NEXUS [BGK+23; BT24].
+- **Presupuesto de soundness.** La auditoría de la sección 6.7.1 identifica consultas efectivas, transcripción, proximidad y obligaciones de composición. sección 6.7.2 desarrolla el paso algebraico bajo hipótesis explícitas. La cifra histórica de 100 bits no se acredita para el ejecutable. El análisis clásico citado no se convierte automáticamente en una cota QROM para NEXUS [BGK+23; BT24].
 - **Alcance de las pruebas de software.** La ejecución global de referencia pasó `cargo check`, `cargo build` y 197 pruebas antes de adaptar la ruta activa. Después pasaron comprobaciones aisladas de `nexus-zk` y `nexus-active` con 113 pruebas, trece nuevas; la integración de `ActiveChain` pasó check/build y 55 pruebas de `nexus-active`, otras trece nuevas. Son ejecuciones de distinto alcance: los conteos no se suman ni se anuncian como una nueva ejecución global. Los ensayos optimizados históricos del AIR y la construcción vinculada conservan su trabajo de 20 bits; las comprobaciones aisladas en desarrollo usan 12 bits. Estos casos no demuestran soundness general, resistencia a todos los mensajes hostiles ni seguridad del sistema completo. El AIR sigue siendo una recurrencia ilustrativa, no la lógica L2 ni la verificación de firmas ML-DSA.
 - **Tensión de diseño (apuntada para el Cap. 3).** Probar la verificación de Dilithium dentro de un STARK es costoso; las firmas *hash-based* son más STARK-friendly. La elección de Dilithium optimiza la verificación directa a costa de fricción con la agregación probada; se discute como decisión consciente en el Cap. 3.
 
 ### 6.7.1 Auditoría del presupuesto STARK
 
-**Parámetros efectivos.** El verificador básico auditado usa dominio $N=8T$, cota FRI de grado menor que $2T$ y $\log_2(2T)$ capas. La tasa nominal es $1/4$. Extrae $\min(40,4T)$ índices distintos para parejas de puntos opuestos. Su presupuesto heurístico devuelve 100 independientemente de $T$ y del perfil; las pruebas comprueban esa discrepancia para cuatro y ocho filas, sin atribuirle bits de seguridad. La Tabla 6.15 describe ese código básico, no el perfil activo vinculado, que se limita a 16–4096 filas (§6.7.4).
+**Parámetros efectivos.** El verificador básico auditado usa dominio $N=8T$, cota FRI de grado menor que $2T$ y $\log_2(2T)$ capas. La tasa nominal es $1/4$. Extrae $\min(40,4T)$ índices distintos para parejas de puntos opuestos. Su presupuesto heurístico devuelve 100 independientemente de $T$ y del perfil; las pruebas comprueban esa discrepancia para cuatro y ocho filas, sin atribuirle bits de seguridad. La Tabla 6.15 describe ese código básico, no el perfil activo vinculado, que se limita a 16–4096 filas (sección 6.7.4).
 
 **Tabla 6.15 — Parámetros efectivos del PoC STARK por tamaño de traza.**
 
@@ -551,7 +551,7 @@ Se declaran explícitamente las fronteras de esta validación formal:
 
 **Proximidad frente a grado exacto.** FRI trata la distancia a un código Reed–Solomon [FRI18]. El ensayo aislado compromete 512 valores, todos cero salvo uno, y usa cero en las capas posteriores. Su interpolación tiene grado 511 y la distancia a la palabra cero es $1/512$. Con cota 128, 28 de 32 contextos públicos fijos aceptan y cuatro rechazan: el resultado coincide exactamente con consultar o evitar la pareja inconsistente. Bajo muestreo uniforme de 40 parejas sin reemplazo, la probabilidad de evitarla sería $216/256$. Los 32 casos no estiman una probabilidad criptográfica; muestran que aceptar proximidad no prueba pertenencia exacta. El ensayo no contiene un enunciado AIR falso aceptado ni rompe una garantía de FRI.
 
-**Paso desde el AIR.** El probador honesto interpola una traza de grado menor que $T$; el verificador comprueba aperturas locales y ejecuta FRI sobre la composición. No realiza una prueba FRI separada de la traza. Debe justificarse el paso desde esas comprobaciones a una ejecución válida, incluyendo adversarios que comprometan funciones arbitrarias y la proximidad correlacionada necesaria [BGK+23, Teorema 4.6 y §6]. La derivación condicional de §6.7.2 avanza este paso; la premisa de proximidad propuesta se refuta en §6.7.3, sin demostrar un enunciado falso aceptado.
+**Paso desde el AIR.** El probador honesto interpola una traza de grado menor que $T$; el verificador comprueba aperturas locales y ejecuta FRI sobre la composición. No realiza una prueba FRI separada de la traza. Debe justificarse el paso desde esas comprobaciones a una ejecución válida, incluyendo adversarios que comprometan funciones arbitrarias y la proximidad correlacionada necesaria [BGK+23, Teorema 4.6 y sección 6]. La derivación condicional de la sección 6.7.2 avanza este paso; la premisa de proximidad propuesta se refuta en la sección 6.7.3, sin demostrar un enunciado falso aceptado.
 
 **Modelo y pérdidas.** En el marco clásico citado por [BT24, Lema 1, p. 7], la transformación BCS relaciona el error por ronda y la longitud del oráculo con el presupuesto adversario:
 
@@ -560,7 +560,7 @@ $$
  + \frac{3(Q^2+1)}{2^\kappa}.
 $$
 
-La fórmula requiere el protocolo y las hipótesis del resultado. Su §3.2 trata el grinding como factor del término de consultas; no elimina los otros errores. Se conserva un cálculo de referencia con tasa $1/4$, 40 consultas y 20 bits, separado de cualquier cota de NEXUS. Faltan la correspondencia de la transcripción concreta, el muestreo, la composición AIR/FRI/Merkle y una justificación cuántica aplicable.
+La fórmula requiere el protocolo y las hipótesis del resultado. Su sección 3.2 trata el grinding como factor del término de consultas; no elimina los otros errores. Se conserva un cálculo de referencia con tasa $1/4$, 40 consultas y 20 bits, separado de cualquier cota de NEXUS. Faltan la correspondencia de la transcripción concreta, el muestreo, la composición AIR/FRI/Merkle y una justificación cuántica aplicable.
 
 **Campo y API.** Los retos reducen dos bloques de 128 bits módulo Goldilocks. Bajo bytes uniformes ideales, el cálculo exacto da variación total cercana a $2^{-96}$ por coordenada; se conserva también la probabilidad puntual máxima. No se deduce de ello un ataque ni un techo de 96 bits para todo el protocolo. La API Merkle de bajo nivel presupone un índice en rango: el ensayo acepta el mismo camino para 3 y 19 en un árbol de 16 hojas. AIR deriva índices válidos; este caso delimita la precondición de la API y no demuestra una aceptación indebida en esa ruta.
 
@@ -611,7 +611,7 @@ $$
 
 Las columnas presuponen una traza polinómica inválida y ausencia de cancelación; son cotas inferiores redondeadas hacia abajo a seis decimales. Con $\varepsilon\leq1/24$, la cota exacta supera $1/2$. No son probabilidades de rechazo de FRI.
 
-**Resultado y límite.** Siete pruebas contrastan divisibilidad en 21 trazas válidas, errores individuales, cancelación, identidad residual, transferencia y correspondencia con aperturas reales del probador. Pasaron en desarrollo y release y forman parte de la suite de 197 pruebas. El argumento escrito avanza la reducción algebraica bajo sus hipótesis. La transferencia no establece la proximidad de la traza; §6.7.3 muestra que la aceptación del verificador básico no implica la premisa propuesta. Se requiere otra ruta de extracción o una comprobación adicional vinculada al AIR. La correspondencia con resultados de proximidad correlacionada [BGK+23, Teorema 4.6 y §6], las pérdidas Fiat–Shamir y la revisión matemática independiente siguen pendientes.
+**Resultado y límite.** Siete pruebas contrastan divisibilidad en 21 trazas válidas, errores individuales, cancelación, identidad residual, transferencia y correspondencia con aperturas reales del probador. Pasaron en desarrollo y release y forman parte de la suite de 197 pruebas. El argumento escrito avanza la reducción algebraica bajo sus hipótesis. La transferencia no establece la proximidad de la traza; sección 6.7.3 muestra que la aceptación del verificador básico no implica la premisa propuesta. Se requiere otra ruta de extracción o una comprobación adicional vinculada al AIR. La correspondencia con resultados de proximidad correlacionada [BGK+23, Teorema 4.6 y sección 6], las pérdidas Fiat–Shamir y la revisión matemática independiente siguen pendientes.
 
 ### 6.7.3 Contraejemplo a la premisa de proximidad de la traza
 
@@ -643,7 +643,7 @@ La distancia se refiere al código de traza de grado menor que $T$; la cota de g
 
 **Control exhaustivo de referencia.** Un control experimental, limitado a 4–256 filas, reconstruye la raíz del LDE suministrado, interpola en el coset, exige grado menor que $T$ y comprueba todas las fronteras y transiciones. Además ejecuta el verificador básico. Acepta el caso honesto y rechaza los tres oráculos alejados. Requiere $N=8T$ elementos adicionales, $O(N\log N)$ operaciones y $O(N)$ memoria; revela la traza y no ofrece conocimiento cero. Su vínculo con un compromiso previo depende de la vinculación de Merkle. Se utiliza como control exacto de ensayo, sin integración en producción.
 
-**Consecuencia.** La premisa propuesta no puede demostrarse para el verificador básico. El argumento de §6.7.2 conserva su validez condicional; para el verificador básico se requiere una extracción alternativa. §6.7.4 implementa una comprobación adicional vinculada al AIR mediante el verificador vinculado. Anexar una prueba FRI sobre otro vector no basta. La transcripción, la correspondencia de compromisos y las pérdidas de composición requieren su propio análisis [BGK+23]. Siete pruebas cubren la familia algebraica en 21 casos, las aceptaciones reales, la distancia y el control exhaustivo. Pasaron en ambos perfiles y forman parte de la suite de 197 pruebas. Se conservan seis pruebas binarias públicas y un contraste numérico independiente.
+**Consecuencia.** La premisa propuesta no puede demostrarse para el verificador básico. El argumento de la sección 6.7.2 conserva su validez condicional; para el verificador básico se requiere una extracción alternativa. sección 6.7.4 implementa una comprobación adicional vinculada al AIR mediante el verificador vinculado. Anexar una prueba FRI sobre otro vector no basta. La transcripción, la correspondencia de compromisos y las pérdidas de composición requieren su propio análisis [BGK+23]. Siete pruebas cubren la familia algebraica en 21 casos, las aceptaciones reales, la distancia y el control exhaustivo. Pasaron en ambos perfiles y forman parte de la suite de 197 pruebas. Se conservan seis pruebas binarias públicas y un contraste numérico independiente.
 
 ### 6.7.4 Variante con FRI de traza vinculada al AIR
 
@@ -657,7 +657,7 @@ El formato y la transcripción son distintos del legado, cuyo árbol de traza us
 
 **Transcripción.** El dominio del protocolo absorbe perfil, enunciado y raíz de traza antes de los tres coeficientes de composición. Siguen las fases etiquetadas de FRI de traza y composición, cada una con raíces, retos y valor final. Se valida el nonce antes de derivar 40 índices comunes de parejas, sin reemplazo y en orden de primera aparición. El selector cuenta también los duplicados y rechaza si no reúne los cuarenta índices en 512 extracciones. El perfil esperado de 12 o 20 bits proviene del llamante; el certificado no puede rebajarlo. En cada consulta se verifican seis aperturas de traza, la coincidencia con su FRI, la composición local y ambos plegados.
 
-**Resultados.** La construcción acepta ejecuciones honestas de 16, 64, 256 y 4096 filas. Para los tres contraejemplos de §6.7.3 se reutiliza el LDE conservado y se genera una prueba vinculada: el rechazo ocurre en FRI de traza. Sus certificados originales siguen siendo aceptados por el legado; no se confunde incompatibilidad de formato con detección del caso. Diez pruebas históricas cubren además enunciado, formato, perfil, raíces, canonicidad, formas, caminos, restricciones y reconstrucción independiente de la transcripción. Pasaron en desarrollo y release y forman parte de la ejecución global de referencia de 197 pruebas. La adaptación de la API conserva los bytes y los resultados de los catorce certificados públicos: ocho honestos aceptados y seis alejados rechazados.
+**Resultados.** La construcción acepta ejecuciones honestas de 16, 64, 256 y 4096 filas. Para los tres contraejemplos de la sección 6.7.3 se reutiliza el LDE conservado y se genera una prueba vinculada: el rechazo ocurre en FRI de traza. Sus certificados originales siguen siendo aceptados por el legado; no se confunde incompatibilidad de formato con detección del caso. Diez pruebas históricas cubren además enunciado, formato, perfil, raíces, canonicidad, formas, caminos, restricciones y reconstrucción independiente de la transcripción. Pasaron en desarrollo y release y forman parte de la ejecución global de referencia de 197 pruebas. La adaptación de la API conserva los bytes y los resultados de los catorce certificados públicos: ocho honestos aceptados y seis alejados rechazados.
 
 **Tabla 6.18 — Formato de la variante con FRI de traza vinculada.**
 
@@ -692,11 +692,13 @@ Aquí $k_t=\log_2T$ y $k_c=\log_2(2T)$. El error por ronda no se utiliza como si
 
 **Candidato fijo y campo base.** La distancia mínima del código de traza es $(N-T+1)/N$. Como $2\delta_t$ es menor que esa distancia, existe a lo sumo un polinomio $f$ de grado menor que $T$ próximo a $u$. Cuando existe, queda determinado antes de los retos AIR. Si $f=A+zB$ tiene $B\ne0$, toma valores base en a lo sumo $T-1$ puntos de $L$: son raíces de $B$. Por tanto, $u$ tiene valores fuera del campo base en una fracción al menos $1-(T-1)/N-\delta_t$, detectables por las aperturas AIR principales. Esta cuenta permite considerar oráculos adversarios sobre la extensión.
 
-**Distancia y enlace.** Para un enunciado sin traza válida sobre el campo base, un candidato $f$ con coeficientes base es inválido. S1 acota la cancelación por $1/p^2$. Fuera de ese evento, la transferencia de §6.7.2 y la cercanía de $v$ al código de composición dan:
+**Distancia y enlace.** Para un enunciado sin traza válida sobre el campo base, un candidato $f$ con coeficientes base es inválido. S1 acota la cancelación por $1/p^2$. Fuera de ese evento, la transferencia de la sección 6.7.2 y la cercanía de $v$ al código de composición dan:
 
 $$
 \operatorname{dist}(v,c_u)\geq d=\frac{5T+1}{8T}-3\delta_t-\delta_c.
 $$
+
+**Notación del muestreo.** En este análisis, la letra *M* cuenta parejas de posiciones de evaluación, no operaciones de un lote. La letra *N* cuenta las posiciones individuales. Cada pareja reúne dos posiciones opuestas del dominio; por eso el número de parejas es la mitad del número de posiciones. Esta notación local es distinta de la usada para la amortización del capítulo 3.
 
 Se exige $d>0$. Con $M=N/2$, existen al menos $b=\lceil dM\rceil$ parejas que contienen una discrepancia. La probabilidad ideal de omitirlas es como máximo $H=\binom{M-b}{q}/\binom{M}{q}$, con $H=0$ si $M-b<q$. El caso del candidato fuera del campo base tiene una fracción de fallos mayor que $d$ y queda cubierto por el mismo término.
 
@@ -719,7 +721,7 @@ Si $u$ está lejos, aceptar requiere el error del FRI de traza. Si está cerca, 
 
 Se eligió $\delta_t=\delta_c=1/8$, por lo que $d=1/8+1/(8T)$. Las rondas incluyen la consulta final; la Tabla 6.18 cuenta solo capas. Los valores se redondean hacia arriba desde fracciones exactas. El script de análisis verifica nueve tamaños, unicidad y campo base en ejemplos exhaustivos pequeños, localidad, muestreo y normalización del plegado. La suite Rust conserva 197 pruebas; esta etapa no altera el protocolo.
 
-**Límite de la conclusión.** Son cotas superiores conservadoras del modelo ideal, no tasas observadas de ataque ni límites inferiores de vulnerabilidad. El argumento no acredita 100 bits y no cuantifica la seguridad del ejecutable. La derivación histórica deja esas obligaciones abiertas; §§6.7.8–6.7.10 incorporan los complementos posteriores por rondas y ROM con su estado de revisión, y mantienen QROM como trabajo futuro. No se demuestra extracción eficiente ni conocimiento cero.
+**Límite de la conclusión.** Son cotas superiores conservadoras del modelo ideal, no tasas observadas de ataque ni límites inferiores de vulnerabilidad. El argumento no acredita 100 bits y no cuantifica la seguridad del ejecutable. La derivación histórica deja esas obligaciones abiertas; secciones 6.7.8–6.7.10 incorporan los complementos posteriores por rondas y ROM con su estado de revisión, y mantienen QROM como trabajo futuro. No se demuestra extracción eficiente ni conocimiento cero.
 
 ### 6.7.6 Vinculación Merkle y auditoría Fiat–Shamir
 
@@ -727,7 +729,7 @@ Se eligió $\delta_t=\delta_c=1/8$, por lo que $d=1/8+1/(8T)$. Las rondas incluy
 
 **Vinculación y oráculos.** Fijados raíz, tamaño e índice válido, dos aperturas aceptadas de valores canónicos distintos permiten obtener una colisión SHA3. Si coinciden los hashes de hoja, las dos entradas de hoja colisionan; si difieren, el primer padre coincidente tiene entradas distintas. La variante exige profundidad exacta y deriva índices dentro del dominio. Esta propiedad no demuestra que una raíz arbitraria permita extraer un vector completo fijado antes de los retos: el paso a oráculos ideales conserva una obligación de compilación.
 
-Las hojas y nodos tienen prefijos distintos; las absorciones del canal incluyen etiqueta y longitud. Se cotejaron perfil, enunciado, raíces, fases, valores finales y nonce. La gramática concreta se inspeccionó para los 18 perfiles admitidos. El mismo SHA3 sirve a Merkle y al canal. El modelo conjunto de una sola tabla, incluidas consultas repetidas, preconsultas y reinicios, está formalizado en Lean y se utiliza en §6.7.9; no se sustituye sin justificación por monedas independientes. El enlace universal con la implementación Rust permanece separado.
+Las hojas y nodos tienen prefijos distintos; las absorciones del canal incluyen etiqueta y longitud. Se cotejaron perfil, enunciado, raíces, fases, valores finales y nonce. La gramática concreta se inspeccionó para los 18 perfiles admitidos. El mismo SHA3 sirve a Merkle y al canal. El modelo conjunto de una sola tabla, incluidas consultas repetidas, preconsultas y reinicios, está formalizado en Lean y se utiliza en la sección 6.7.9; no se sustituye sin justificación por monedas independientes. El enlace universal con la implementación Rust permanece separado.
 
 **Distribución de retos.** Para $S=2^{128}=ap+r$, un bloque uniforme reducido módulo $p$ tiene distancia de variación total a la uniforme:
 
@@ -745,32 +747,32 @@ En Goldilocks, $r=p-2^{32}$ y $\Delta_F\approx1{,}26218\times10^{-29}$. La varia
 |---|---|---|
 | Merkle | Forma validada, raíz común y aperturas contrastadas | Reconstrucción en el modelo fuera de la excepción hash acotada; equivalencia universal Rust pendiente |
 | Canal | Orden y bytes reconstruidos independientemente | Programa matemático de bytes formalizado; codecs y operaciones Rust no refinados universalmente |
-| Retos | Sesgo explícito y leyes tras prefijos efectivos | Consultas adaptativas, memoria y reinicios incluidos en la cota ROM de §6.7.9 |
+| Retos | Sesgo explícito y leyes tras prefijos efectivos | Consultas adaptativas, memoria y reinicios incluidos en la cota ROM de la sección 6.7.9 |
 | AIR y dos FRI | Muestra compartida y cobertura causal mecanizadas | Excepciones conjuntas acotadas; no acredita aritmetización de ML-DSA ni de una aplicación completa |
 | ROM/QROM | Cota conservadora del modelo clásico finito | Q y trabajo incluidos; QROM completo y seguridad de SHA3 determinista no demostrados |
 
-El Teorema 3.15 de [BGK+23, p. 25] exige propiedades por ronda y una transformación BCS determinada. La cota ordinaria $E_{\mathrm{ideal}}$ de §6.7.5 no sustituye automáticamente su error por ronda. El teorema para FRI aislado tampoco valida por sí solo el AIR y ambos recorridos con consulta compartida. La auditoría por sí sola no establece una garantía ROM/QROM del ejecutable, 100 bits ni conocimiento cero. La cota conservadora demostrada para el verificador matemático en ROM clásico se integra en §6.7.9 con sus hipótesis; no se atribuye automáticamente al ejecutable ni a una expresión de error diferente. La correspondencia con el ejecutable requiere una demostración independiente.
+El Teorema 3.15 de [BGK+23, p. 25] exige propiedades por ronda y una transformación BCS determinada. La cota ordinaria $E_{\mathrm{ideal}}$ de la sección 6.7.5 no sustituye automáticamente su error por ronda. El teorema para FRI aislado tampoco valida por sí solo el AIR y ambos recorridos con consulta compartida. La auditoría por sí sola no establece una garantía ROM/QROM del ejecutable, 100 bits ni conocimiento cero. La cota conservadora demostrada para el verificador matemático en ROM clásico se integra en la sección 6.7.9 con sus hipótesis; no se atribuye automáticamente al ejecutable ni a una expresión de error diferente. La correspondencia con el ejecutable requiere una demostración independiente.
 
 ---
 
 ### 6.7.7 Evaluación de las garantías del prototipo
 
-La evaluación distingue las garantías del prototipo básico de las propiedades del verificador vinculado. Los diseños de los capítulos 3 y 4 se interpretan bajo las condiciones de correspondencia de §6.4 y los resultados de esta sección. Una decisión de arquitectura, una operación de firma que funciona y una demostración de seguridad son aportes con obligaciones distintas.
+La evaluación distingue las garantías del prototipo básico de las propiedades del verificador vinculado. Los diseños de los capítulos 3 y 4 se interpretan bajo las condiciones de correspondencia de la sección 6.4 y los resultados de esta sección. Una decisión de arquitectura, una operación de firma que funciona y una demostración de seguridad son aportes con obligaciones distintas.
 
-Un presupuesto de aproximadamente 100 bits no se obtiene sumando directamente el tamaño del campo, las consultas y el trabajo del nonce. El campo de extensión amplía el espacio de retos, pero no fija por sí solo la solidez del verificador; el efecto del trabajo depende del presupuesto adversario y de los reinicios permitidos. Los parámetros y comentarios del código no sustituyen una demostración. Las garantías cuantitativas de este trabajo son las cotas de modelo expresadas en §6.7.9.
+Un presupuesto de aproximadamente 100 bits no se obtiene sumando directamente el tamaño del campo, las consultas y el trabajo del nonce. El campo de extensión amplía el espacio de retos, pero no fija por sí solo la solidez del verificador; el efecto del trabajo depende del presupuesto adversario y de los reinicios permitidos. Los parámetros y comentarios del código no sustituyen una demostración. Las garantías cuantitativas de este trabajo son las cotas de modelo expresadas en la sección 6.7.9.
 
-Las pruebas del verificador básico aceptan los tres oráculos alejados de §6.7.3; sus enunciados públicos conservan una traza válida. Este resultado refuta la premisa de proximidad utilizada en aquel argumento, sin demostrar una falsificación de un enunciado falso. El verificador vinculado incorpora un FRI de traza y una raíz común con AIR; el corpus comprueba esa diferencia de comportamiento. El AIR evalúa una recurrencia ilustrativa y no la verificación de ML-DSA ni la lógica completa de una aplicación.
+Las pruebas del verificador básico aceptan los tres oráculos alejados de la sección 6.7.3; sus enunciados públicos conservan una traza válida. Este resultado refuta la premisa de proximidad utilizada en aquel argumento, sin demostrar una falsificación de un enunciado falso. El verificador vinculado incorpora un FRI de traza y una raíz común con AIR; el corpus comprueba esa diferencia de comportamiento. El AIR evalúa una recurrencia ilustrativa y no la verificación de ML-DSA ni la lógica completa de una aplicación.
 
 **Tabla 6.21 — Garantías evaluadas y alcance del análisis.**
 
 | Afirmación de diseño o del prototipo | Conclusión del análisis | Referencia |
 |---|---|---|
-| STARK endurecido a aproximadamente 100 bits | Garantía no acreditada; cotas específicas de modelo y presupuesto | §§6.7.8–6.7.9 |
-| Aceptación implica proximidad de la traza | Premisa refutada para el verificador básico; variante vinculada comprobada en el corpus | §§6.7.3–6.7.4 |
-| PoC proporciona conocimiento cero | El testigo de 16 filas es recuperable; ocultación pendiente | §6.7.1 |
-| La PoC valida transacciones completas | API conectada con contexto local; AIR escalar, sin aritmetizar ML-DSA, lógica de aplicación ni raíces SHA3 generales | §§6.6.5 y 6.7.4 |
-| Firma funcional implica garantía concreta de inforjabilidad | Perfil identificado; correspondencia, semillas, codificación y errores requieren R1-A–E | §6.4 |
-| Hash de la clave pública impide toda recuperación | Evita exposición directa mientras la clave no se revele; no demuestra dureza de preimagen ni seguridad integral | §§1.2 y 6.4.3 |
+| STARK endurecido a aproximadamente 100 bits | Garantía no acreditada; cotas específicas de modelo y presupuesto | secciones 6.7.8–6.7.9 |
+| Aceptación implica proximidad de la traza | Premisa refutada para el verificador básico; variante vinculada comprobada en el corpus | secciones 6.7.3–6.7.4 |
+| PoC proporciona conocimiento cero | El testigo de 16 filas es recuperable; ocultación pendiente | sección 6.7.1 |
+| La PoC valida transacciones completas | API conectada con contexto local; AIR escalar, sin aritmetizar ML-DSA, lógica de aplicación ni raíces SHA3 generales | secciones 6.6.5 y 6.7.4 |
+| Firma funcional implica garantía concreta de inforjabilidad | Perfil identificado; correspondencia, semillas, codificación y errores requieren R1-A–E | sección 6.4 |
+| Hash de la clave pública impide toda recuperación | Evita exposición directa mientras la clave no se revele; no demuestra dureza de preimagen ni seguridad integral | secciones 1.2 y 6.4.3 |
 
 ### 6.7.8 Solidez por rondas del protocolo ideal
 
@@ -801,7 +803,7 @@ $$
 | 256 | 0,095099 | 0,004282720 |
 | 4096 | 0,134071 | 0,004757331 |
 
-Los decimales se redondean hacia arriba desde fracciones exactas. La mejora procede del argumento por casos; el protocolo y sus parámetros no cambian. Estos límites no son tasas observadas de ataque, ni garantizan SHA3 real. La derivación ideal ordinaria de §6.7.5 conserva su valor como antecedente; la transferencia siguiente desarrolla su propio registro hash y no sustituye automáticamente un error ordinario en un compilador Fiat–Shamir.
+Los decimales se redondean hacia arriba desde fracciones exactas. La mejora procede del argumento por casos; el protocolo y sus parámetros no cambian. Estos límites no son tasas observadas de ataque, ni garantizan SHA3 real. La derivación ideal ordinaria de la sección 6.7.5 conserva su valor como antecedente; la transferencia siguiente desarrolla su propio registro hash y no sustituye automáticamente un error ordinario en un compilador Fiat–Shamir.
 
 ### 6.7.9 Cota demostrada para el verificador matemático en ROM clásico
 
@@ -863,13 +865,13 @@ Las demostraciones se comprueban con el núcleo de Lean y una auditoría de sus 
 
 ### 6.7.10 Alcance cuántico y reproducibilidad
 
-Los suplementos QROM conservan una reducción parcial basada en el trabajo, un extractor sin orden, una reducción condicional al verificador y una cota propuesta para la cola de índices. La omisión cuántica de parejas incorrectas $\beta^S$ sigue sin una cota útil demostrada. La omisión del modelo clásico sí se controla en §6.7.9; ese resultado no demuestra la transferencia cuántica. El límite de cola QROM no resuelve la omisión cuántica y sus exponentes no representan bits de seguridad global de AIR/FRI. Las hipótesis, el cambio de juego y las pérdidas cuánticas requieren revisión propia.
+Los suplementos QROM conservan una reducción parcial basada en el trabajo, un extractor sin orden, una reducción condicional al verificador y una cota propuesta para la cola de índices. La omisión cuántica de parejas incorrectas $\beta^S$ sigue sin una cota útil demostrada. La omisión del modelo clásico sí se controla en la sección 6.7.9; ese resultado no demuestra la transferencia cuántica. El límite de cola QROM no resuelve la omisión cuántica y sus exponentes no representan bits de seguridad global de AIR/FRI. Las hipótesis, el cambio de juego y las pérdidas cuánticas requieren revisión propia.
 
 La transferencia QROM completa de AIR/FRI constituye trabajo futuro. Las hipótesis cuánticas de las reducciones citadas para ML-DSA pertenecen a un análisis diferente y no establecen por sí solas esa transferencia del protocolo AIR/FRI.
 
-La reproducibilidad vincula los enunciados formales, las hipótesis, las fuentes y los registros de verificación mediante huellas SHA-256. Se distinguen los contrastes empíricos de las demostraciones: los primeros verifican casos concretos, mientras que las segundas establecen resultados bajo sus premisas. La compilación y auditoría global de Lean comprueban el núcleo probabilístico conservador de §6.7.9, pero no el refinamiento universal del ejecutable.
+La reproducibilidad vincula los enunciados formales, las hipótesis, las fuentes y los registros de verificación mediante huellas SHA-256. Se distinguen los contrastes empíricos de las demostraciones: los primeros verifican casos concretos, mientras que las segundas establecen resultados bajo sus premisas. La compilación y auditoría global de Lean comprueban el núcleo probabilístico conservador de la sección 6.7.9, pero no el refinamiento universal del ejecutable.
 
-El árbol Rust que incorpora el contrato y su conexión con `ActiveChain` se identifica mediante el commit `637e77c99e804664915caf4ed928a10ef81cc870`. La compilación global de Lean y la auditoría de 2709 declaraciones se conservan con sus registros; el código Rust cuenta con la ejecución global de referencia y las dos comprobaciones aisladas diferenciadas en §6.7. No se presenta una nueva corrida global posterior a los cambios ni se atribuyen los benchmarks históricos a la integración. Las huellas de fuentes, certificados, registros y objetos Git permiten cotejar esa procedencia sin confundirla con una prueba universal de correspondencia.
+El árbol Rust que incorpora el contrato y su conexión con `ActiveChain` se identifica mediante el commit `637e77c99e804664915caf4ed928a10ef81cc870`. La compilación global de Lean y la auditoría de 2709 declaraciones se conservan con sus registros; el código Rust cuenta con la ejecución global de referencia y las dos comprobaciones aisladas diferenciadas en la sección 6.7. No se presenta una nueva corrida global posterior a los cambios ni se atribuyen los benchmarks históricos a la integración. Las huellas de fuentes, certificados, registros y objetos Git permiten cotejar esa procedencia sin confundirla con una prueba universal de correspondencia.
 
 Las derivaciones y los cálculos se conservan junto con los registros de reproducibilidad. El modelo matemático, la implementación y el despliegue tienen obligaciones de validación diferentes.
 
@@ -880,12 +882,12 @@ Las derivaciones y los cálculos se conservan junto con los registros de reprodu
 Este capítulo reúne los fundamentos de seguridad, el análisis de complejidad y la evidencia experimental de los componentes de NEXUS:
 
 1. **Fundamentos de seguridad (Obj. 4.1).** Se identifican MLWE, SelfTargetMSIS y MSIS, las correcciones de las pruebas citadas y las condiciones de las reducciones de peor caso. R1 identifica el perfil real, reproduce una pérdida de referencia y descarta la aplicación directa de JMW24 a sus parámetros. Se explicitan los pasos restantes entre plantilla y código; no se presenta una prueba concreta nueva ni una demostración general de dureza cuántica.
-2. **Análisis de complejidad (Obj. 4.2).** El recuento de productos da la cota $O(k\ell\,n\log n)$. Para $\mathsf{Sign}$ es una cota esperada bajo el modelo de rechazos independientes y la probabilidad de aceptación uniformemente acotada por debajo de §6.5.2; no se afirma terminación constante de peor caso. Las constantes medidas y el costo de datos dependen del perfil. La amortización queda condicionada a disponibilidad, prueba de la lógica pertinente y costo del prover (§6.6.5).
+2. **Análisis de complejidad (Obj. 4.2).** El recuento de productos da la cota $O(k\ell\,n\log n)$. Para $\mathsf{Sign}$ es una cota esperada bajo el modelo de rechazos independientes y la probabilidad de aceptación uniformemente acotada por debajo de la sección 6.5.2; no se afirma terminación constante de peor caso. Las constantes medidas y el costo de datos dependen del perfil. La amortización queda condicionada a disponibilidad, prueba de la lógica pertinente y costo del prover (sección 6.6.5).
 3. **Validación empírica (Obj. 4.2).** Las series históricas H1/H2 y la caché recuperada conservan identidades separadas; reconstruir sus fuentes exactas permanece pendiente. La conciliación de R4 y su complemento pasó 451 comprobaciones de fuentes y estadísticas: 29 casos Criterion, 40 mediciones STARK del verificador básico y 40 repeticiones multinúcleo, con dispersión preservada. No se atribuyen esos tiempos STARK al verificador vinculado con FRI vinculado. La cifra multinúcleo histórica conserva su limitación temporal y se presenta una nueva serie corregida. La ejecución global de referencia de 197 pruebas y las comprobaciones aisladas de la adaptación y de `ActiveChain` verifican casos concretos de sus respectivos componentes, sin acreditar una blockchain completa ni conocimiento cero del PoC.
 
-La cota conservadora de ROM clásico de §6.7.9, su puente causal, el trabajo y los reinicios están demostrados en Lean bajo las hipótesis allí declaradas. La derivación ideal y los resultados bibliográficos conservan sus propios alcances. La transferencia QROM completa de AIR/FRI queda como trabajo futuro; R1 mantiene sus obligaciones propias. El catálogo enlaza las afirmaciones y la evidencia, y la auditoría formal no sustituye la correspondencia universal con el ejecutable.
+La cota conservadora de ROM clásico de la sección 6.7.9, su puente causal, el trabajo y los reinicios están demostrados en Lean bajo las hipótesis allí declaradas. La derivación ideal y los resultados bibliográficos conservan sus propios alcances. La transferencia QROM completa de AIR/FRI queda como trabajo futuro; R1 mantiene sus obligaciones propias. El catálogo enlaza las afirmaciones y la evidencia, y la auditoría formal no sustituye la correspondencia universal con el ejecutable.
 
-El **Objetivo 4** reúne resultados formales para los modelos y validación de componentes. Su componente de reducción concreta de inforjabilidad de las firmas tiene cumplimiento parcial: las correspondencias identificadas en §6.4 no están demostradas para todo el ejecutable. La cota ROM de AIR/FRI no sustituye esa reducción. Los resultados medidos tampoco validan la arquitectura completa, cuya realización depende de la integración y de los supuestos declarados.
+El **Objetivo 4** reúne resultados formales para los modelos y validación de componentes. Su componente de reducción concreta de inforjabilidad de las firmas tiene cumplimiento parcial: las correspondencias identificadas en la sección 6.4 no están demostradas para todo el ejecutable. La cota ROM de AIR/FRI no sustituye esa reducción. Los resultados medidos tampoco validan la arquitectura completa, cuya realización depende de la integración y de los supuestos declarados.
 
 ---
 
@@ -894,9 +896,9 @@ El **Objetivo 4** reúne resultados formales para los modelos y validación de c
 > *Índice local del capítulo; la **Bibliografía** consolidada al final del documento reúne todas las obras bajo clave única.*
 
 - **[D+18]** Ducas, Kiltz, Lepoint, Lyubashevsky, Schwabe, Seiler, Stehlé. *CRYSTALS-Dilithium: A Lattice-Based Digital Signature Scheme.* IACR ToCHES 2018(1).
-- **[DIL21]** Ducas et al. *CRYSTALS-Dilithium — Algorithm Specifications and Supporting Documentation*, v3.1, 2021, §6.2–6.3.
+- **[DIL21]** Ducas et al. *CRYSTALS-Dilithium — Algorithm Specifications and Supporting Documentation*, v3.1, 2021, secciones 6.2–6.3.
 - **[B+23]** Barbosa et al. *Fixing and Mechanizing the Security Proof of Fiat-Shamir with Aborts and Dilithium*. CRYPTO 2023. https://doi.org/10.1007/978-3-031-38554-4_12.
-- **[JMW24]** Jackson, Miller, Wang. *Evaluating the security of CRYSTALS-Dilithium in the quantum random oracle model*. arXiv:2312.16619v2, 2024, Teoremas 1–2 y §4.
+- **[JMW24]** Jackson, Miller, Wang. *Evaluating the security of CRYSTALS-Dilithium in the quantum random oracle model*. arXiv:2312.16619v2, 2024, Teoremas 1–2 y sección 4.
 - **[KLS18]** Kiltz, Lyubashevsky, Schaffner. *A Concrete Treatment of Fiat-Shamir Signatures in the Quantum Random-Oracle Model.* EUROCRYPT 2018.
 - **[Lyu09]** Lyubashevsky. *Fiat-Shamir with Aborts: Applications to Lattice and Factoring-Based Signatures.* ASIACRYPT 2009. *(origen de la técnica rejection-sampling/aborts)*
 - **[Lyu12]** Lyubashevsky. *Lattice Signatures without Trapdoors.* EUROCRYPT 2012. *(esquema del que Dilithium desciende)*

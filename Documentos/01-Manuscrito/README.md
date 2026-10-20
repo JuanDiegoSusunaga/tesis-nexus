@@ -1,5 +1,8 @@
 # Manuscrito NEXUS
 
+**Consolidación editorial local, 20 de octubre:** la tesis con glosario en preliminares, la solicitud para el director y sus evidencias se incluyen en el commit que contiene esta entrada, con autorización «Dale 1». [Alcance e integridad](../06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/preparacion.json). No se regeneran los archivos ni se repiten compilaciones o revisiones visuales; se preservan sus huellas y controles previos. Sin push, envío ni dictamen. Las menciones de cambios locales sin commit en las etapas siguientes son antecedentes.
+**Claridad de lectura vigente, 20 de octubre:** las referencias se escriben con «sección» y M se explica en sus contextos de lote y muestreo. El [glosario de 33 entradas y la guía de notación de 20 entradas](Capitulos/_tesis-glosario.md) se sitúan en las páginas preliminares, después del alcance y antes del capítulo 1, por indicación del autor. El glosario comienza en la página 7 de Word y PDF; la notación, en la 12 de Word y la 11 de PDF. [Verificación y respaldos de la reubicación](../06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/verificacion.json). El contenido es idéntico salvo el orden y los índices actualizados; no hay pruebas ni obligaciones matemáticas nuevas, compilaciones Lean/Rust, commit o push. Los registros fechados siguientes son antecedentes.
+
 **Consolidación documental local, 20 de octubre:** manuscrito y evidencia se incluyen en el commit autorizado que contiene el manifiesto de entrega, sin push ni regeneración. Las fuentes Lean aún locales, sus herramientas nuevas y los temporales no forman parte de este commit documental; no se altera su estado técnico. [Alcance y respaldos](../06-Evidencia-TG2/2026-10-20/Consolidacion-Documental/preparacion.json).
 
 **Comprobación posterior a la regeneración, 20 de octubre:** pasa la [verificación global final de Rust](../06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json) sobre `637e77c`: check de todos los targets, 223 pruebas sin fallos y build, con cuatro trabajos y caché. No cambia el código, no se recompila Lean y no se regeneran las salidas del manuscrito. El texto y los informes de conciliación siguientes conservan los conteos disponibles al generarse; los nuevos logs se incorporan a la evidencia y al manifiesto sin reescribir esos antecedentes.
@@ -18,11 +21,11 @@
 - [PDF de lectura](Tesis-NEXUS-completa.pdf): índice con páginas y enlaces internos.
 - [Markdown ensamblado](Tesis-NEXUS-completa.md): contenido generado desde las fuentes.
 
-Las tres salidas corresponden a los mismos capítulos, resumen y bibliografía, con un único nombre por formato. Word tiene 115 páginas, 34 tablas, tres figuras y 606 ecuaciones nativas; el PDF tiene 103 páginas. Usan motores de maquetación distintos y cada índice corresponde a su propio archivo. El PDF se genera localmente desde el mismo Markdown, con MathML y Chrome, sin enviar el manuscrito a servicios externos. Se compararon las 848 celdas de las 34 tablas y se inspeccionaron visualmente todas las páginas de ambos formatos. Los archivos anteriores se conservan como respaldos, no como manuscritos alternativos de consulta.
+Las tres salidas corresponden a los mismos capítulos, resumen, glosario, notación y bibliografía, con un único nombre por formato. Word tiene 123 páginas, 34 tablas, tres figuras y 664 ecuaciones nativas; el PDF tiene 111 páginas. Los 58 objetos matemáticos adicionales pertenecen a la guía de notación: las 606 expresiones originales se conservan. Usan motores de maquetación distintos y cada índice corresponde a su propio archivo. El PDF se genera localmente desde el mismo Markdown, con MathML y Chrome, sin enviar el manuscrito a servicios externos. Se comparan las 848 celdas de las 34 tablas y se revisan las páginas de ambos formatos. Los archivos anteriores se conservan como respaldos, no como manuscritos alternativos de consulta.
 
 ## Fuente de edición
 
-Modificar los siete capítulos y los archivos `_tesis-frontmatter.md` y `_tesis-bibliografia.md` dentro de `Capitulos/`. Después, regenerar las salidas. `plantilla-referencia.docx` aporta los estilos; no es otro manuscrito.
+Modificar los siete capítulos y los archivos `_tesis-frontmatter.md`, `_tesis-glosario.md` y `_tesis-bibliografia.md` dentro de `Capitulos/`. Después, regenerar las salidas. `plantilla-referencia.docx` aporta los estilos; no es otro manuscrito.
 
 Formato aplicado: papel carta, márgenes de 2,54 cm, Times New Roman de 12 puntos e interlineado 1,5; tablas de 9–10 puntos, rótulos numerados por capítulo y ecuaciones editables. Las tres figuras usan texto de 10 puntos a su ancho final de 6,5 pulgadas: PNG de 320 ppp en Word y originales vectoriales en PDF. Sustituyen los diagramas de caracteres y la cadena narrativa que no cabía cómodamente en una línea. No se ha declarado conformidad con una plantilla institucional adicional.
 
@@ -42,7 +45,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/renderizar_manus
 python scripts/revisar_graficas_manuscrito.py
 ```
 
-El ensamblador normaliza las fuentes y comprueba filas, columnas y conversión matemática. La revisión compara las 848 celdas con una conversión independiente desde Markdown; reconoce la representación equivalente de `ℓ` que Word guarda como una `l` con estilo matemático script. El manuscrito conserva 606 objetos matemáticos nativos en Word. Las imágenes temporales quedan en `.tools/` o en `tmp/` según el comando de renderizado.
+El ensamblador normaliza las fuentes y comprueba filas, columnas y conversión matemática. La revisión compara las 848 celdas con una conversión independiente desde Markdown; reconoce la representación equivalente de `ℓ` que Word guarda como una `l` con estilo matemático script. El manuscrito contiene 664 objetos matemáticos nativos en Word, incluidos los de la guía de notación. Las imágenes temporales quedan en `.tools/` o en `tmp/` según el comando de renderizado.
 
 ## Revisión registrada
 

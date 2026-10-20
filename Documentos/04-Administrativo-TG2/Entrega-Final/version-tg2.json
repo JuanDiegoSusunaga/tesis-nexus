@@ -2,13 +2,13 @@
   "esquema": 1,
   "edicion": "tesis-final",
   "fecha": "2026-10-20",
-  "fecha_utc": "2026-10-20T17:32:22.168436+00:00",
-  "estado": "Tesis final sincronizada con Rust y ActiveChain. Fuentes Lean previamente auditadas y herramientas incluidas en la consolidación local autorizada, sin recompilar ni hacer push. Se conservan la global Lean de 2709 declaraciones y la global Rust de 223 pruebas. No acredita refinamiento universal, validez L2 completa, QROM ni aprobación académica.",
+  "fecha_utc": "2026-10-20T18:46:46.748379+00:00",
+  "estado": "Edición documental consolidada en el commit local que contiene este manifiesto: tesis con glosario y notación en preliminares, índices actualizados y solicitud para el director. Word/PDF 123/111 páginas. Sin recompilar ni regenerar en la consolidación, sin push, envío ni dictamen.",
   "documentos": {
     "repositorio": "https://github.com/JuanDiegoSusunaga/tesis-nexus.git",
-    "commit_contexto": "a9faf0e66af1400991ac5b0215c770f96ad712b8",
+    "commit_contexto": "df1eeae3fe026d3f47aa3e88b510489abd98845d",
     "identificacion": "Las huellas identifican el árbol documental conservado; el commit de contexto no implica que se hayan confirmado estos cambios.",
-    "revision_conservada": "Identificada por el commit local que contiene este manifiesto; commit_contexto conserva el antecedente."
+    "revision_conservada": "La preparación para el director, las aclaraciones y el glosario reubicado se incluyen en el commit local que contiene este manifiesto. El hash de ese commit se obtiene del historial Git del archivo; no se incluye autorreferencia ni se realiza push."
   },
   "codigo": {
     "repositorio": "https://github.com/JuanDiegoSusunaga/nexus.git",
@@ -16,9 +16,9 @@
     "commit": "637e77c99e804664915caf4ed928a10ef81cc870"
   },
   "manifiesto_previo": {
-    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
-    "bytes": 2277303,
-    "sha256": "a9c687e835eb600a6027bfa201f6fecf16a307594450e4d60484362f3026ccc5"
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+    "bytes": 2307019,
+    "sha256": "e68ce3e466fb5b14b5becd1d86445909295c6df1b1ea9ff4c011616f0a1bb5c0"
   },
   "lean": {
     "declaraciones_auditadas": 2709,
@@ -608,53 +608,58 @@
     },
     {
       "archivo": "BITACORA_TG2.md",
-      "bytes": 209766,
-      "sha256": "0e4ff6ab496605a5f7f9d4606267f7b0f927d4f76e81e968d2324e7e87c68ff7"
+      "bytes": 218074,
+      "sha256": "87d2211edc05a53e52ce3f586173ac126e5e4de71052257fe58f1b904042fb83"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
-      "bytes": 12012,
-      "sha256": "236265acef3e2962e4265337583a03b6b4584fc6391a7a7ee94304497e9a4be4"
+      "bytes": 12127,
+      "sha256": "f3c3ad215f81b52c21ae07b000b85fb056edd39b9d0b8645174b2a35b25e6120"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
-      "bytes": 10741,
-      "sha256": "cc5d0d07858f93cc5120424b4861b63f93045c5e07fcbf8bcbd256223f76f97a"
+      "bytes": 10852,
+      "sha256": "06a699e31e35606eee0178e6be659bfd1250617bb4791726fba6646e10cd189d"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
-      "bytes": 21119,
-      "sha256": "02bc198cd04584c7ee7b3690705daa759c8c8c7c7271cf459228f97213657c2e"
+      "bytes": 21627,
+      "sha256": "f6226594b092814e94bafaafa364385f0fc7e714e08c10d650350f03d987e361"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
-      "bytes": 15670,
-      "sha256": "a3382dcee2eeea4d425a907144269ad1ba77814b145c72a1c2937708c345054a"
+      "bytes": 15841,
+      "sha256": "b31d24c8171f6e7a2338f1b59e6a80e6bd331d70858407e4024d71ae3fe3c2cb"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
-      "bytes": 30995,
-      "sha256": "42432b410390ca3f37949c3be4ba8b3d90f2c9e8643082b653ed1f361909e302"
+      "bytes": 31208,
+      "sha256": "bbeea96523fcfdd25b9995868ef5737e745c135bc453e8f29aa6becaf4eea4fb"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
-      "bytes": 104244,
-      "sha256": "4d9fc8333bc740f08277b9bb60f209bd7a82ee8b60560a14d423da07073a133b"
+      "bytes": 105326,
+      "sha256": "753d83e4b4a4afb487e90c75bc127f833c43ac9724bbf0ac18452efcd7cb4595"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
-      "bytes": 12788,
-      "sha256": "d47fd776d464962d727b0a356fd3842410d6f3173ab54759b4de2c9cc46eeeee"
+      "bytes": 12880,
+      "sha256": "c1611629a4fc47c0dc2074110db5c4e9b2d94b3f4344bf54fe7f9d6305e84ee2"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
-      "bytes": 15268,
-      "sha256": "683df8882b9223f2f8efc9cd7671711bad60b79035aa307327e4d066d593752b"
+      "bytes": 15296,
+      "sha256": "e12119903006945c6eb8d1f6ddfed8a7c396607c9c36c9a10a3088394bb287b5"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
-      "bytes": 5678,
-      "sha256": "3f9d983555db87c162326d0bd0a6bc7f9944f45e68b9d7520389abce6e91d386"
+      "bytes": 5688,
+      "sha256": "a9b255ac3633585a373f6d939cd3e50fbd6e48470a6f920d826f45b9546bdd2e"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-glosario.md",
+      "bytes": 14375,
+      "sha256": "89989ce7cb59ee9f1e1d6607c0d80d73371eafd4e26a2012f8e9e4ae653ddaec"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Figuras/README.md",
@@ -708,28 +713,38 @@
     },
     {
       "archivo": "Documentos/01-Manuscrito/README.md",
-      "bytes": 12087,
-      "sha256": "5f244e649150ccc0ca81404fda17e9f4929c24847ac7551d47832a5adef2247d"
+      "bytes": 13617,
+      "sha256": "4f03f47737f7a0efaf9173e7a48b539b26b9c9a27273c4f931aaf48e0ef6bb97"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
-      "bytes": 651727,
-      "sha256": "b08eb3eda721da63436a705c52e394207cbf74e00f4b172f8eda3d6919dafe48"
+      "bytes": 660075,
+      "sha256": "5509869d55994adf7575b90ac1a8a1c3a8d598ffb1cc967cefd72cf7e7d8c2d8"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
-      "bytes": 228561,
-      "sha256": "8d47cebaf28088f7c6c356f0bf51baf2e07a1c32349b86d7b78594b1e13d9a24"
+      "bytes": 245389,
+      "sha256": "9534e90b33278ca82d05e3ba6d0247c8f82b0330a3074f3e6c065f182a884a44"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
-      "bytes": 2830964,
-      "sha256": "d868552e1a8f205a5093f2c38f220d26230bf8b0ddc50d854c01ba5ecc8899cc"
+      "bytes": 2945712,
+      "sha256": "3ce62ca6a05cf6b1f894f372a146c0dc3876bb31b9c513a1e95aebcb3638697e"
     },
     {
       "archivo": "Documentos/01-Manuscrito/plantilla-referencia.docx",
       "bytes": 11079,
       "sha256": "b12d9ab4782e52e6bbeb7838e26e284ca5f4ae143ebf8d42adce1e5f339db5b6"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-NEXUS.docx",
+      "bytes": 32282,
+      "sha256": "6655cef84bb9eb92cc6cb4926b067de30f236d77c345580ad89d094e8f5d5898"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md",
+      "bytes": 12384,
+      "sha256": "6bf687a97bf0a1107525f7d50f430f3ad080f3ef60aefec3983321493e2e2bb1"
     },
     {
       "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/Balance-Objetivos-TG2.md",
@@ -738,8 +753,8 @@
     },
     {
       "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
-      "bytes": 10268,
-      "sha256": "3af27919f324b0c25d03319b54137e7ca33330b1098d06442b2f0990bdd25dc1"
+      "bytes": 12881,
+      "sha256": "893c582e295594dafa6c62ac72dc3e095f0264bfab549df01f76d360426f4d33"
     },
     {
       "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/verificacion-adversario-causal-2026-10-18.json",
@@ -45192,6 +45207,171 @@
       "sha256": "d7a8397f18f0c8f45bd300bc55b81465c26fdb9942c4094d99003b6ce351c3f0"
     },
     {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/README.md",
+      "bytes": 1068,
+      "sha256": "025352af928193051e380e10b2b84dc0c631859326b175e75cb1b48d44b8e8cc"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/cambios-editoriales.json",
+      "bytes": 1601,
+      "sha256": "4756df52a34aab3b8994470bc2430c89eeb09df5435c652b722eaf7cf9321428"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/ensamblar.log",
+      "bytes": 67,
+      "sha256": "84fda2b44ecdef228198b0f44d0053b635c531c3f2d3764cdd8dec131218f2ac"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/formato-manuscrito.json",
+      "bytes": 4711,
+      "sha256": "b5582038f7f386e8c507a53e90edf61e0265dc65e92b72af7cf38cda4cfd0feb"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/paginacion-word.json",
+      "bytes": 18713,
+      "sha256": "9b0838164ec2da7d0ba747dc091869b826e41acf1c46792acdc61a8cb990c252"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/pdf.log",
+      "bytes": 63,
+      "sha256": "dcd325a7569248ff488831b582fbd3b8305d277c69717c680f4321fa9e350324"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/BITACORA_TG2.md",
+      "bytes": 212010,
+      "sha256": "855a65c84850462a5fa48d1176aeb34135dd427361d3b35d2c06c0035d1c2584"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "bytes": 12012,
+      "sha256": "236265acef3e2962e4265337583a03b6b4584fc6391a7a7ee94304497e9a4be4"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "bytes": 10741,
+      "sha256": "cc5d0d07858f93cc5120424b4861b63f93045c5e07fcbf8bcbd256223f76f97a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "bytes": 21119,
+      "sha256": "02bc198cd04584c7ee7b3690705daa759c8c8c7c7271cf459228f97213657c2e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "bytes": 15670,
+      "sha256": "a3382dcee2eeea4d425a907144269ad1ba77814b145c72a1c2937708c345054a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "bytes": 30995,
+      "sha256": "42432b410390ca3f37949c3be4ba8b3d90f2c9e8643082b653ed1f361909e302"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "bytes": 104244,
+      "sha256": "4d9fc8333bc740f08277b9bb60f209bd7a82ee8b60560a14d423da07073a133b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "bytes": 12788,
+      "sha256": "d47fd776d464962d727b0a356fd3842410d6f3173ab54759b4de2c9cc46eeeee"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "bytes": 15268,
+      "sha256": "683df8882b9223f2f8efc9cd7671711bad60b79035aa307327e4d066d593752b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "bytes": 5678,
+      "sha256": "3f9d983555db87c162326d0bd0a6bc7f9944f45e68b9d7520389abce6e91d386"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/README.md",
+      "bytes": 12087,
+      "sha256": "5f244e649150ccc0ca81404fda17e9f4929c24847ac7551d47832a5adef2247d"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 651727,
+      "sha256": "b08eb3eda721da63436a705c52e394207cbf74e00f4b172f8eda3d6919dafe48"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "bytes": 228561,
+      "sha256": "8d47cebaf28088f7c6c356f0bf51baf2e07a1c32349b86d7b78594b1e13d9a24"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2830964,
+      "sha256": "d868552e1a8f205a5093f2c38f220d26230bf8b0ddc50d854c01ba5ecc8899cc"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/01-Manuscrito/plantilla-referencia.docx",
+      "bytes": 11079,
+      "sha256": "b12d9ab4782e52e6bbeb7838e26e284ca5f4ae143ebf8d42adce1e5f339db5b6"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md",
+      "bytes": 12384,
+      "sha256": "6bf687a97bf0a1107525f7d50f430f3ad080f3ef60aefec3983321493e2e2bb1"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 10939,
+      "sha256": "bf76cdd042a6d3eeb17b898af0cae571b7ec4abfc2126238caeb2083707a4565"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "bytes": 2283430,
+      "sha256": "e159f356c187cc0859a6348e73d13441293481b8929ec62ac09db41d18c2ac00"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 22428,
+      "sha256": "b0049034314eb1a180fc53f7e5b3c189ea6d8014de9d91fcc727f5bf323a76b9"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/respaldo_previo/PENDIENTES.md",
+      "bytes": 40606,
+      "sha256": "6bc8b62418e1fd146dff504b56e1af1fa3d8b66980c5a2ded25f2560f62efd6c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/revisar.log",
+      "bytes": 3384,
+      "sha256": "2b0afc7d5ca0fe64a0050ce839f7288a02f932d889a85e4ee0509c4d136e8727"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/revision-exportacion.json",
+      "bytes": 3384,
+      "sha256": "2b0afc7d5ca0fe64a0050ce839f7288a02f932d889a85e4ee0509c4d136e8727"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/solicitud-artifact.md",
+      "bytes": 5609,
+      "sha256": "0823399c21ab8a6f0c9990219cc4ece72e4385b45b530d9e9b93af74c8aef76a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/solicitud-estructura.json",
+      "bytes": 656,
+      "sha256": "21dcea19413bb4ab4ee3556da005fd208961546f0168eb2fe398b0eca3e880ba"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/solicitud-paginacion-3.json",
+      "bytes": 626,
+      "sha256": "e1391e834e2fa99cff00cbfc6e174e71006f602acb5931d66cf0eae7f3f3466a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/solicitud-verificacion-final.json",
+      "bytes": 1870,
+      "sha256": "e80146853c599ec31c9e03cbc34a3e331b23742fcb8e8c6b2103906a4c4a1fd7"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/verificacion.json",
+      "bytes": 52806,
+      "sha256": "ee17c99c1dff787cfdc1e7fc935c25c68d26db863af7e35eecbc8b2ea2f19cbb"
+    },
+    {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Conciliacion-Manuscrito-Rust/actualizar-word-corte.log",
       "bytes": 324,
       "sha256": "7387c9f457545ab15b12c299be45568216302a0a4dae6194560574cbf143fcc8"
@@ -45457,6 +45637,51 @@
       "sha256": "c54b2093c5e000e3ad214694cbed014d1c8ef67018560643ebd8ac5881d4340b"
     },
     {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/README.md",
+      "bytes": 1283,
+      "sha256": "7de20cee1fa8c05d4ad2cf221421da14f5361a228ee82c874a1bb9e8fa343492"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/preparacion.json",
+      "bytes": 30860,
+      "sha256": "f4f0f7dd12b388786800aee8b351ca35d8b88ae387842443adf6a18c1805383e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/respaldo_previo/BITACORA_TG2.md",
+      "bytes": 216533,
+      "sha256": "ea674065f7723acb156e1dc9631b3034b182b4b1dfc5d34f9973a483e991c723"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/respaldo_previo/Documentos/01-Manuscrito/README.md",
+      "bytes": 13057,
+      "sha256": "988bc5e2e140c7364f556dc12c566e1b9f086b68831ed80dda00ee7396a41e7e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 12298,
+      "sha256": "6a78f071f06aacf7ce83b01771612b390da98642a2dcb1831ba35362cb9d7d15"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "bytes": 2307019,
+      "sha256": "e68ce3e466fb5b14b5becd1d86445909295c6df1b1ea9ff4c011616f0a1bb5c0"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/respaldo_previo/Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 24415,
+      "sha256": "768ba8d7abe76244327e4bf72fdb5039f9e6d69c06446fb7f7e512f840e372fb"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/respaldo_previo/PENDIENTES.md",
+      "bytes": 41890,
+      "sha256": "09ce904b34f45f25b925136af743b25fafa8744b79f27bada073223ab769f17c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/respaldo_previo/README.md",
+      "bytes": 15523,
+      "sha256": "db9fa8413aabfeb317c548e4b99f7157b560631b82fa872e985194d9884bd651"
+    },
+    {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/consolidar.py",
       "bytes": 12916,
       "sha256": "1c54541dea1b2f3f4ab9ac20c1fdf8c12274d00bb0979419d02aa65d135467ad"
@@ -45512,6 +45737,261 @@
       "sha256": "ba254dec2a6638a4e98fca2bfd14484d8f211ee88b787a07be95eee572602efd"
     },
     {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/README.md",
+      "bytes": 1298,
+      "sha256": "ea723bb23eb2469262f4f1bb03f60a3bbba33bdbabeebef75abc54e7da587f9d"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/artifact.md",
+      "bytes": 1999,
+      "sha256": "62745175ddb3a4bd1a52bc5efa33c24a4730574b5eea6ee1eda0fd703d752ed2"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/cierre.json",
+      "bytes": 11574,
+      "sha256": "10c985f570c41417ef6925f3797936045f177d07867f5d641ca0d6749c3179bf"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/ensamblar.log",
+      "bytes": 67,
+      "sha256": "02bb21056009737de60b30d8a42dfba0607b38bec018167ad7d62e6023bea87a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/formato-manuscrito.json",
+      "bytes": 4711,
+      "sha256": "91fb606480e085297444cf485e9fed94f4e45bbad482af280b6399c3b918379b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/paginacion-word.json",
+      "bytes": 18713,
+      "sha256": "fc83078d31d74190215ca0369f2c64d52076db88dc63add489e5bc58470fb5e3"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/pdf.log",
+      "bytes": 63,
+      "sha256": "2f361ed5c173b50e50c6c30112febfbce99a065956bfddec6e49f0074a2ab7ca"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/preparacion.json",
+      "bytes": 1750,
+      "sha256": "215307b9ebbe609900f3be46f4827a04b2b1424b2ea2dd54f9a2b5495c6e87fc"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 651876,
+      "sha256": "ace0d71220a4f12a3867e19dcbbdbb11cb9e861cbc8bdd6bf5ae1093bec47231"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "bytes": 230891,
+      "sha256": "11d4f2df15c29ab7c1ac66c7afef29cd0947994fae151ba5946e2955ab1d1570"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2836310,
+      "sha256": "e62e5998fcc1638c40d5f72d60258c99bb06eafd6125c0c2164d247e7c48670a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/README.md",
+      "bytes": 15409,
+      "sha256": "3a25dc4f11cbfee2cfe3fe094b7e1deb4fe61cd11786d6dcff916906b522a2bf"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/scripts/compilar_manuscrito.py",
+      "bytes": 17032,
+      "sha256": "c54b2093c5e000e3ad214694cbed014d1c8ef67018560643ebd8ac5881d4340b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/scripts/exportar_manuscrito_word.ps1",
+      "bytes": 2934,
+      "sha256": "2bc79ee858cc3c09f2beab706f4bb3339b4fd7997049e8649af94b282281a5f7"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/revisar.log",
+      "bytes": 3384,
+      "sha256": "5bd365f9db3eb60ce83601a15eadafc50109fe14387b5776d0462e6b48ebb405"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/revision-exportacion.json",
+      "bytes": 3384,
+      "sha256": "5bd365f9db3eb60ce83601a15eadafc50109fe14387b5776d0462e6b48ebb405"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/verificacion.json",
+      "bytes": 61879,
+      "sha256": "06df4361ed345fbb857fb2fe0e35a1a8dc78d1265908d15a541a540bccaa9d33"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/README.md",
+      "bytes": 1764,
+      "sha256": "0f1d30672cbbc0a4199eae97f01804bb9cd507a4d08a95f554baf18cc1fa8ce5"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/artifact.md",
+      "bytes": 1382,
+      "sha256": "09eb6cd50324e897c168315a83a63d9bc3af1925339a8b9aa109b1a0f0e8d20b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/cierre.json",
+      "bytes": 8350,
+      "sha256": "5f170c9f65669231bbade4bc2bf039ec36d59ba76a6374a7b25ac6e0799b6978"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/diagnostico-renderizador.json",
+      "bytes": 493,
+      "sha256": "6bf22143e6f6ce929da7cf50fcfe697948cbe17a9d8e03a10f0ae58fbad1c7f3"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/ensamblar.log",
+      "bytes": 67,
+      "sha256": "02bb21056009737de60b30d8a42dfba0607b38bec018167ad7d62e6023bea87a"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/formato-manuscrito.json",
+      "bytes": 4711,
+      "sha256": "91fb606480e085297444cf485e9fed94f4e45bbad482af280b6399c3b918379b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/paginacion-word.json",
+      "bytes": 18728,
+      "sha256": "39d098396b2afa6ea04863118311f6b115489afbc120d4be427ffa0fdbcefefc"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/pdf.log",
+      "bytes": 63,
+      "sha256": "342dd7f2ea3fbd4b59bd4a24ed45c18143e6b8049c02bed04d85e0cd95870a49"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/preparacion.json",
+      "bytes": 6471,
+      "sha256": "f70b850424d402f65b3db31059391ed11b1b13dd7c1b5d2657eabefa6ed7456c"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/BITACORA_TG2.md",
+      "bytes": 214604,
+      "sha256": "923d07c37f9d5f553064e956d0ad63ce87826ed37242872b718ecbf4d01a1997"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "bytes": 12127,
+      "sha256": "f3c3ad215f81b52c21ae07b000b85fb056edd39b9d0b8645174b2a35b25e6120"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "bytes": 10852,
+      "sha256": "06a699e31e35606eee0178e6be659bfd1250617bb4791726fba6646e10cd189d"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "bytes": 21627,
+      "sha256": "f6226594b092814e94bafaafa364385f0fc7e714e08c10d650350f03d987e361"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "bytes": 15841,
+      "sha256": "b31d24c8171f6e7a2338f1b59e6a80e6bd331d70858407e4024d71ae3fe3c2cb"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "bytes": 31208,
+      "sha256": "bbeea96523fcfdd25b9995868ef5737e745c135bc453e8f29aa6becaf4eea4fb"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "bytes": 105326,
+      "sha256": "753d83e4b4a4afb487e90c75bc127f833c43ac9724bbf0ac18452efcd7cb4595"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "bytes": 12880,
+      "sha256": "c1611629a4fc47c0dc2074110db5c4e9b2d94b3f4344bf54fe7f9d6305e84ee2"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "bytes": 15296,
+      "sha256": "e12119903006945c6eb8d1f6ddfed8a7c396607c9c36c9a10a3088394bb287b5"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "bytes": 5688,
+      "sha256": "a9b255ac3633585a373f6d939cd3e50fbd6e48470a6f920d826f45b9546bdd2e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/_tesis-glosario.md",
+      "bytes": 14375,
+      "sha256": "89989ce7cb59ee9f1e1d6607c0d80d73371eafd4e26a2012f8e9e4ae653ddaec"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/README.md",
+      "bytes": 12889,
+      "sha256": "7ad9a6d339140fde7731d7952747b4c7da53558739c833e050b70d8f4a9561f4"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 659582,
+      "sha256": "65364b79378b3ba6804c080eb27c991052a02acf896bae0c6d64ecad140b1673"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "bytes": 245389,
+      "sha256": "193473353202fbfed3f5040d899e684c743959b58675f10eaad62c03922635e2"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2945758,
+      "sha256": "a4fd3b8295fc4e6f45bfaec632728c04982e89b369cad14faf02eb6cd51f37af"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/plantilla-referencia.docx",
+      "bytes": 11079,
+      "sha256": "b12d9ab4782e52e6bbeb7838e26e284ca5f4ae143ebf8d42adce1e5f339db5b6"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 11780,
+      "sha256": "6b69f2783ddc236354e777bd03cccc7d60d458803ad358b6d20be285fc999559"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "bytes": 2297810,
+      "sha256": "903b3c9dab51725008acecf41b37d7bcc5160eba46964bd6bb40f76519f0779b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 23647,
+      "sha256": "05fc26b87f05181d6ca36e91987cac85cc9f3ac62fdf2704218965e34f3fdc7d"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/PENDIENTES.md",
+      "bytes": 41546,
+      "sha256": "5310761130aa5174ba5d8a7332e77d3cc951cd190edce504ca5650230dae1638"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/README.md",
+      "bytes": 15447,
+      "sha256": "5683d938df4245e7f950d01438f374c6c61cb78b30037093d8c9cd30541c39bf"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/scripts/compilar_manuscrito.py",
+      "bytes": 17122,
+      "sha256": "68a4175ac4c6254c2e234adb05494aa8c61c821a92a77d2e85fb665cedd3f102"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/revisar.log",
+      "bytes": 3385,
+      "sha256": "e415e23335500f7726f33e9d2ef4d816d474f22ac5083c2e9a214213193f1dc3"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/revision-exportacion.json",
+      "bytes": 3385,
+      "sha256": "e415e23335500f7726f33e9d2ef4d816d474f22ac5083c2e9a214213193f1dc3"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/verificacion.json",
+      "bytes": 76928,
+      "sha256": "821d6f48dd20f93844a251f4b885b5e0441e772042c7eb7b13e72744e2ff6921"
+    },
+    {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Lean-Global/axiomas.log",
       "bytes": 274484,
       "sha256": "253cfbae966a444edd196d4d507c6217017bba6a8de617e2c2a033c99547d210"
@@ -45525,6 +46005,46 @@
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json",
       "bytes": 60655,
       "sha256": "680ace2f3dd51f0fd5eeda05f48aed387842f0e28bdd92cf63af2420127f82d0"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/preparacion.json",
+      "bytes": 13774,
+      "sha256": "0d9efe15dd207ca5d640db22f1a61b432a0df095f89f1adfb922d97f4aed3ae6"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/preparar.py",
+      "bytes": 9686,
+      "sha256": "f68211403c6311a8c2574940df156cad08eef253ae6dd7af059b1e1caa277767"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/BITACORA_TG2.md",
+      "bytes": 209766,
+      "sha256": "0e4ff6ab496605a5f7f9d4606267f7b0f927d4f76e81e968d2324e7e87c68ff7"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md",
+      "bytes": 8065,
+      "sha256": "9635b833b6d8ed02aeee4d87d2c9715feff2da3b0bc0e793c053f712bf88a0af"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 10268,
+      "sha256": "3af27919f324b0c25d03319b54137e7ca33330b1098d06442b2f0990bdd25dc1"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "bytes": 2280692,
+      "sha256": "296e5aa7015cd40c987dd39cf0f7e4aadaa754b9ca7200c98f61df2bf3b22125"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 21589,
+      "sha256": "491560063ed0da78f5f33f22f797eda1737cce47ebb300ae8d5f19177cf3b215"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/PENDIENTES.md",
+      "bytes": 39820,
+      "sha256": "61e84e53110ff109e105f48f1acc378034bb6971fffba54b0ba977bd7c9a75a5"
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/cargo-build.log",
@@ -46118,18 +46638,18 @@
     },
     {
       "archivo": "Documentos/06-Evidencia-TG2/README.md",
-      "bytes": 21589,
-      "sha256": "491560063ed0da78f5f33f22f797eda1737cce47ebb300ae8d5f19177cf3b215"
+      "bytes": 25093,
+      "sha256": "9b53e1fe127486818ecb5c2d3c071e758ccdfd9e1bac1fc56ec5a235096b8aa8"
     },
     {
       "archivo": "PENDIENTES.md",
-      "bytes": 39820,
-      "sha256": "61e84e53110ff109e105f48f1acc378034bb6971fffba54b0ba977bd7c9a75a5"
+      "bytes": 42309,
+      "sha256": "3ca29c5797b2222c904e0a602573810a708602ddd48b4d865b51b9f431d74b28"
     },
     {
       "archivo": "README.md",
-      "bytes": 15409,
-      "sha256": "3a25dc4f11cbfee2cfe3fe094b7e1deb4fe61cd11786d6dcff916906b522a2bf"
+      "bytes": 15979,
+      "sha256": "23e793e7c2df4daac643e28303c0fde2f9d6b6a2e527e41a81f157eae51c4581"
     },
     {
       "archivo": "formalizacion/.gitignore",
@@ -48388,8 +48908,13 @@
     },
     {
       "archivo": "scripts/compilar_manuscrito.py",
-      "bytes": 17032,
-      "sha256": "c54b2093c5e000e3ad214694cbed014d1c8ef67018560643ebd8ac5881d4340b"
+      "bytes": 17122,
+      "sha256": "920d5ea6f57cb37c2ba60b231ded19ebc3392ffbd233e8297ddb6c4104d32bb3"
+    },
+    {
+      "archivo": "scripts/exportar_manuscrito_word.ps1",
+      "bytes": 2934,
+      "sha256": "cf33a797c32da8c5bf12ed0d9a7c6edeaf450e42d6caf1f968a825ad4de7ee58"
     },
     {
       "archivo": "scripts/inventariar_matematica.py",
@@ -48516,5 +49041,73 @@
     "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/preparacion.json",
     "bytes": 74796,
     "sha256": "6ac81ebb65aca56894ab00b8e32f1dd1ca0e5730e4b301a2c779c71ccdc5f195"
+  },
+  "preparacion_revision_director": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/preparacion.json",
+    "bytes": 13774,
+    "sha256": "0d9efe15dd207ca5d640db22f1a61b432a0df095f89f1adfb922d97f4aed3ae6"
+  },
+  "claridad_referencias": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/verificacion.json",
+    "bytes": 52806,
+    "sha256": "ee17c99c1dff787cfdc1e7fc935c25c68d26db863af7e35eecbc8b2ea2f19cbb",
+    "etapa": "Anterior al glosario",
+    "paginas_word": 115,
+    "paginas_pdf": 105
+  },
+  "glosario_notacion": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/verificacion.json",
+    "bytes": 61879,
+    "sha256": "06df4361ed345fbb857fb2fe0e35a1a8dc78d1265908d15a541a540bccaa9d33",
+    "cierre": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/cierre.json",
+      "bytes": 11574,
+      "sha256": "10c985f570c41417ef6925f3797936045f177d07867f5d641ca0d6749c3179bf"
+    },
+    "terminos": 33,
+    "entradas_notacion": 20,
+    "paginas_word": 123,
+    "paginas_pdf": 111,
+    "ecuaciones_nativas": 664,
+    "formulas_y_objetivos_originales_preservados": true,
+    "revision_visual": "completa",
+    "lean_recompilado": false,
+    "rust_recompilado": false
+  },
+  "solicitud_word_director": {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-NEXUS.docx",
+    "bytes": 32282,
+    "sha256": "6655cef84bb9eb92cc6cb4926b067de30f236d77c345580ad89d094e8f5d5898",
+    "control": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/solicitud-verificacion-final.json",
+      "bytes": 1870,
+      "sha256": "e80146853c599ec31c9e03cbc34a3e331b23742fcb8e8c6b2103906a4c4a1fd7"
+    },
+    "paginas_word": 6,
+    "envio": false,
+    "dictamen": false
+  },
+  "glosario_preliminares": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/verificacion.json",
+    "bytes": 76928,
+    "sha256": "821d6f48dd20f93844a251f4b885b5e0441e772042c7eb7b13e72744e2ff6921",
+    "cierre": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/cierre.json",
+      "bytes": 8350,
+      "sha256": "5f170c9f65669231bbade4bc2bf039ec36d59ba76a6374a7b25ac6e0799b6978"
+    },
+    "paginas_word": 123,
+    "paginas_pdf": 111,
+    "inicio_glosario_word_pdf": 7,
+    "inicio_notacion_word": 12,
+    "inicio_notacion_pdf": 11,
+    "diez_fuentes_markdown_intactas": true,
+    "lean_recompilado": false,
+    "rust_recompilado": false
+  },
+  "consolidacion_editorial": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/preparacion.json",
+    "bytes": 30860,
+    "sha256": "f4f0f7dd12b388786800aee8b351ca35d8b88ae387842443adf6a18c1805383e"
   }
 }

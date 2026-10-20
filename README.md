@@ -2,6 +2,8 @@
 
 **Estado al 20 de octubre de 2026.** NEXUS estudia firmas poscuánticas, gestión de claves y registros verificables para **sistemas en general**, con una arquitectura blockchain dual como modelo de referencia.
 
+**Consolidación editorial local:** la tesis actualizada, el glosario en preliminares y la solicitud para el director se conservan en el commit que contiene el manifiesto vigente, con autorización del autor. [Alcance y controles](Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/preparacion.json). Sin recompilar Lean/Rust, regenerar salidas, hacer push ni registrar envío o dictamen; las etapas anteriores permanecen como antecedentes.
+
 ## Por dónde empezar
 
 **Alcance vigente:** por decisión del autor del 23 de septiembre, completar QROM del protocolo AIR/FRI queda como **trabajo futuro**. La ruta activa prioriza revisión de resultados y consolidación del manuscrito; la sustentación está aplazada por indicación del autor del 12 de octubre. Los avances QROM se conservan con sus límites.
@@ -84,7 +86,7 @@ La disponibilidad de una revisión en el servidor depende de su publicación. La
 
 ## Estado técnico
 
-La última [global Rust](Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json), sobre `637e77c`, pasa check, 223 pruebas y build; conserva sus advertencias. Las 197 pruebas globales anteriores y las rondas aisladas de 113 y 55 son antecedentes y no se suman. Se preservan los 29 casos Criterion, 40 mediciones STARK y 40 repeticiones multinúcleo históricos con sus límites de procedencia. El [manuscrito sincronizado y revisado el 20 de octubre](Documentos/06-Evidencia-TG2/2026-10-20/Conciliacion-Manuscrito-Rust/verificacion.json) tiene 115 páginas Word, 103 PDF, 34 tablas y 3 figuras. La consolidación de fuentes Lean no regenera estas salidas.
+La última [global Rust](Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json), sobre `637e77c`, pasa check, 223 pruebas y build; conserva sus advertencias. Las 197 pruebas globales anteriores y las rondas aisladas de 113 y 55 son antecedentes y no se suman. Se preservan los 29 casos Criterion, 40 mediciones STARK y 40 repeticiones multinúcleo históricos con sus límites de procedencia. El [manuscrito con referencias aclaradas, glosario y notación en preliminares](Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/verificacion.json) tiene 123 páginas Word, 111 PDF, 34 tablas y 3 figuras; el glosario comienza en la página 7 de ambos formatos. Esta actualización documental no altera fórmulas ni objetivos originales y no recompila Lean o Rust.
 
 Las garantías concretas del ejecutable, las integraciones de despliegue y el dictamen matemático tienen pendientes explícitos en el balance. El AIR escalar no valida transacciones L2 completas ni raíces SHA3 generales. Esta organización no constituye aprobación académica ni una garantía de 100 bits o conocimiento cero.
 

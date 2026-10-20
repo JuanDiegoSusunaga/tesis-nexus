@@ -1,0 +1,183 @@
+{
+  "estado": "completa",
+  "fecha_utc": "2026-10-20T18:36:38.582960+00:00",
+  "verificacion": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/verificacion.json",
+    "bytes": 76928,
+    "sha256": "821d6f48dd20f93844a251f4b885b5e0441e772042c7eb7b13e72744e2ff6921"
+  },
+  "respaldos": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "bytes": 15296,
+      "sha256": "e12119903006945c6eb8d1f6ddfed8a7c396607c9c36c9a10a3088394bb287b5"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "bytes": 5688,
+      "sha256": "a9b255ac3633585a373f6d939cd3e50fbd6e48470a6f920d826f45b9546bdd2e"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/_tesis-glosario.md",
+      "bytes": 14375,
+      "sha256": "89989ce7cb59ee9f1e1d6607c0d80d73371eafd4e26a2012f8e9e4ae653ddaec"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "bytes": 12127,
+      "sha256": "f3c3ad215f81b52c21ae07b000b85fb056edd39b9d0b8645174b2a35b25e6120"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "bytes": 10852,
+      "sha256": "06a699e31e35606eee0178e6be659bfd1250617bb4791726fba6646e10cd189d"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "bytes": 21627,
+      "sha256": "f6226594b092814e94bafaafa364385f0fc7e714e08c10d650350f03d987e361"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "bytes": 15841,
+      "sha256": "b31d24c8171f6e7a2338f1b59e6a80e6bd331d70858407e4024d71ae3fe3c2cb"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "bytes": 31208,
+      "sha256": "bbeea96523fcfdd25b9995868ef5737e745c135bc453e8f29aa6becaf4eea4fb"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "bytes": 105326,
+      "sha256": "753d83e4b4a4afb487e90c75bc127f833c43ac9724bbf0ac18452efcd7cb4595"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "bytes": 12880,
+      "sha256": "c1611629a4fc47c0dc2074110db5c4e9b2d94b3f4344bf54fe7f9d6305e84ee2"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "bytes": 245389,
+      "sha256": "193473353202fbfed3f5040d899e684c743959b58675f10eaad62c03922635e2"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 659582,
+      "sha256": "65364b79378b3ba6804c080eb27c991052a02acf896bae0c6d64ecad140b1673"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2945758,
+      "sha256": "a4fd3b8295fc4e6f45bfaec632728c04982e89b369cad14faf02eb6cd51f37af"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/plantilla-referencia.docx",
+      "bytes": 11079,
+      "sha256": "b12d9ab4782e52e6bbeb7838e26e284ca5f4ae143ebf8d42adce1e5f339db5b6"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/scripts/compilar_manuscrito.py",
+      "bytes": 17122,
+      "sha256": "68a4175ac4c6254c2e234adb05494aa8c61c821a92a77d2e85fb665cedd3f102"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "bytes": 2297810,
+      "sha256": "903b3c9dab51725008acecf41b37d7bcc5160eba46964bd6bb40f76519f0779b"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/BITACORA_TG2.md",
+      "bytes": 214604,
+      "sha256": "923d07c37f9d5f553064e956d0ad63ce87826ed37242872b718ecbf4d01a1997"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/PENDIENTES.md",
+      "bytes": 41546,
+      "sha256": "5310761130aa5174ba5d8a7332e77d3cc951cd190edce504ca5650230dae1638"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/README.md",
+      "bytes": 15447,
+      "sha256": "5683d938df4245e7f950d01438f374c6c61cb78b30037093d8c9cd30541c39bf"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/01-Manuscrito/README.md",
+      "bytes": 12889,
+      "sha256": "7ad9a6d339140fde7731d7952747b4c7da53558739c833e050b70d8f4a9561f4"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 11780,
+      "sha256": "6b69f2783ddc236354e777bd03cccc7d60d458803ad358b6d20be285fc999559"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/respaldo_previo/Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 23647,
+      "sha256": "05fc26b87f05181d6ca36e91987cac85cc9f3ac62fdf2704218965e34f3fdc7d"
+    }
+  ],
+  "integridad_previa": {
+    "edicion": "tesis-final",
+    "archivos_comprobados": 9738,
+    "commit_codigo": "637e77c99e804664915caf4ed928a10ef81cc870",
+    "errores": [],
+    "correcto": true
+  },
+  "archivos_previos_modificados": [
+    "BITACORA_TG2.md",
+    "Documentos/01-Manuscrito/README.md",
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+    "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+    "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+    "Documentos/06-Evidencia-TG2/README.md",
+    "PENDIENTES.md",
+    "README.md",
+    "scripts/compilar_manuscrito.py"
+  ],
+  "seguimiento": [
+    {
+      "archivo": "BITACORA_TG2.md",
+      "bytes": 216533,
+      "sha256": "ea674065f7723acb156e1dc9631b3034b182b4b1dfc5d34f9973a483e991c723"
+    },
+    {
+      "archivo": "PENDIENTES.md",
+      "bytes": 41890,
+      "sha256": "09ce904b34f45f25b925136af743b25fafa8744b79f27bada073223ab769f17c"
+    },
+    {
+      "archivo": "README.md",
+      "bytes": 15523,
+      "sha256": "db9fa8413aabfeb317c548e4b99f7157b560631b82fa872e985194d9884bd651"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/README.md",
+      "bytes": 13057,
+      "sha256": "988bc5e2e140c7364f556dc12c566e1b9f086b68831ed80dda00ee7396a41e7e"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 12298,
+      "sha256": "6a78f071f06aacf7ce83b01771612b390da98642a2dcb1831ba35362cb9d7d15"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 24415,
+      "sha256": "768ba8d7abe76244327e4bf72fdb5039f9e6d69c06446fb7f7e512f840e372fb"
+    }
+  ],
+  "fuentes_lean_intactas": 354,
+  "fuentes_rust_intactas": 89,
+  "fuentes_markdown_intactas": 10,
+  "compilaciones_lean_rust": false,
+  "suites_lean_rust": false,
+  "nuevas_obligaciones_matematicas": false,
+  "commit": false,
+  "push": false,
+  "envio": false,
+  "dictamen": false,
+  "manifiesto": "Se actualiza tras este cierre y se comprueba luego sin modificar archivos."
+}

@@ -28,7 +28,7 @@ try {
         $tocStyle.Font.Size = 11
         $tocStyle.ParagraphFormat.LineSpacingRule = 0
         $tocStyle.ParagraphFormat.SpaceBefore = 0
-        $tocStyle.ParagraphFormat.SpaceAfter = 3
+        $tocStyle.ParagraphFormat.SpaceAfter = 2
     }
     $wordDocument.Sections.Item(1).PageSetup.DifferentFirstPageHeaderFooter = $true
     $footer = $wordDocument.Sections.Item(1).Footers.Item(1)

@@ -1,0 +1,366 @@
+{
+  "fecha": "2026-10-20",
+  "fecha_utc": "2026-10-20T17:39:13.212914+00:00",
+  "estado": "paquete_preparado_para_revision_del_director_sin_dictamen",
+  "autorizacion": "Dale al siguiente paso de revisión; el autor identifica a su director como revisor.",
+  "destinatario": {
+    "rol": "director",
+    "nombre": null
+  },
+  "envio_registrado": false,
+  "recepcion_registrada": false,
+  "dictamen": null,
+  "preguntas": {
+    "M1": "pendiente_de_revision_del_director",
+    "M2": "pendiente_de_revision_del_director",
+    "M3": "pendiente_de_revision_del_director",
+    "M4": "pendiente_de_revision_del_director",
+    "M5": "pendiente_de_revision_del_director",
+    "M6": "pendiente_de_revision_del_director"
+  },
+  "commit_documental_base": "df1eeae3fe026d3f47aa3e88b510489abd98845d",
+  "commit_rust": "637e77c99e804664915caf4ed928a10ef81cc870",
+  "paquete": {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md",
+    "bytes": 12384,
+    "sha256": "6bf687a97bf0a1107525f7d50f430f3ad080f3ef60aefec3983321493e2e2bb1"
+  },
+  "referencias_locales": [
+    {
+      "archivo": "formalizacion/Nexus/AIR/CancelacionSesgada.lean",
+      "bytes": 6872,
+      "sha256": "87409bac0729ddc1284a7023e2134d5f33f065de9aa59cedf83341b838b2315e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/AIR/GradosValidos.lean",
+      "bytes": 5841,
+      "sha256": "92c3d63bb3c70512ea5b053d4156fa047f60e7fa745d580550d546de80a05abe"
+    },
+    {
+      "archivo": "formalizacion/Nexus/FRI/Experimento.lean",
+      "bytes": 5346,
+      "sha256": "3810c3ca8d0dc9ceefe83b133dbd38665ce10fc529c3589b7ceda98cbc67e227"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N02/Solucion.lean",
+      "bytes": 1614,
+      "sha256": "5a4791c7cb7d4c1b941c9d624075d850bc5f8be83bb403800fa9a55f6f5872a5"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N03/Solucion.lean",
+      "bytes": 2121,
+      "sha256": "01b9dfdf274ceefa956fb29279fcd97f1e6e3d050bad0cc3933d09d51b8033ae"
+    },
+    {
+      "archivo": "formalizacion/Nexus/N06/Candidato.lean",
+      "bytes": 3146,
+      "sha256": "f08bda03d85cc18859a4a5ee8dd72a285c85dfd81df42f1dcd0d5e585c82b8f0"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CardinalVista.lean",
+      "bytes": 3129,
+      "sha256": "d05baa49b17c6507298b8ef3357a0cc0f71ca6bde19316610d259661b9625f3a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CoberturaTrabajo.lean",
+      "bytes": 10409,
+      "sha256": "bed961a52ecd17afc7517740fb9ff1f84e6cffcd5e030f7e04393bacf35a4793"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/ConjuntosPrevios.lean",
+      "bytes": 5935,
+      "sha256": "bf86ba54429fb4f3c34b5bee9f1bec908b25d59ce2c03fb41e67c60bf88b304a"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaAdaptativaFinal.lean",
+      "bytes": 6334,
+      "sha256": "885cbb80d4d8798cfb7f71675abfb927fbaf39c2900b6c0d59c067bce371af46"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaFRICausal.lean",
+      "bytes": 9022,
+      "sha256": "bfbd4ab5b9112106ee873701a84c642205b9766a91ae1c113f56ae2ff59b65b4"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaSinBad.lean",
+      "bytes": 6831,
+      "sha256": "7732d909b001e81771073d3f0c4f777614aed8d2061e915a0907e01dd916f919"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoFinal.lean",
+      "bytes": 9753,
+      "sha256": "d27635f52ae810b83530aea903a36ba2b124ff9a594184f7abfc131a7894b59e"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/CotaTrabajoNumerica.lean",
+      "bytes": 4830,
+      "sha256": "a9cea1ad3167edd67ebbb291409840451041d164dae6ebcbce37e4956e202fe9"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/PresupuestoGlobal.lean",
+      "bytes": 4664,
+      "sha256": "24bc6f40e840244982aace26bfa03a38c3bf8911f6525e94e96a401e4427d496"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/PuenteAdaptativoFinal.lean",
+      "bytes": 118216,
+      "sha256": "4e646b5866266ba0baf5693926b14bc62d310e39c32485f973a4a4657350fc17"
+    },
+    {
+      "archivo": "formalizacion/Nexus/Verificador/TrabajoDigest.lean",
+      "bytes": 7061,
+      "sha256": "ce78c488fea85d0050c6e1ecf353ad697d0cde96549779b7c56366ddb889b573"
+    },
+    {
+      "archivo": "formalizacion/README.md",
+      "bytes": 35909,
+      "sha256": "fa8fda90c3b684e8ee4306755a3729ab553360c22d9721ac2c6aae3f68a5e030"
+    },
+    {
+      "archivo": "formalizacion/REVISION-MANUSCRITO.md",
+      "bytes": 204888,
+      "sha256": "210515b8c5be15cf5f09b57274ec764cf26044c3b2af38d7ea3aaf6ad5605890"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "bytes": 12012,
+      "sha256": "236265acef3e2962e4265337583a03b6b4584fc6391a7a7ee94304497e9a4be4"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "bytes": 104244,
+      "sha256": "4d9fc8333bc740f08277b9bb60f209bd7a82ee8b60560a14d423da07073a133b"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "bytes": 12788,
+      "sha256": "d47fd776d464962d727b0a356fd3842410d6f3173ab54759b4de2c9cc46eeeee"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/README.md",
+      "bytes": 12087,
+      "sha256": "5f244e649150ccc0ca81404fda17e9f4929c24847ac7551d47832a5adef2247d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 651727,
+      "sha256": "b08eb3eda721da63436a705c52e394207cbf74e00f4b172f8eda3d6919dafe48"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2830964,
+      "sha256": "d868552e1a8f205a5093f2c38f220d26230bf8b0ddc50d854c01ba5ecc8899cc"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/ActiveChain/integracion.json",
+      "bytes": 26497,
+      "sha256": "01474763f393451ba713b4a12614297d34cfc8e8b14307bb3f30eddd38f2c488"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/preparacion.json",
+      "bytes": 74796,
+      "sha256": "6ac81ebb65aca56894ab00b8e32f1dd1ca0e5730e4b301a2c779c71ccdc5f195"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json",
+      "bytes": 60655,
+      "sha256": "680ace2f3dd51f0fd5eeda05f48aed387842f0e28bdd92cf63af2420127f82d0"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md",
+      "bytes": 8065,
+      "sha256": "9635b833b6d8ed02aeee4d87d2c9715feff2da3b0bc0e793c053f712bf88a0af"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "bytes": 2280692,
+      "sha256": "296e5aa7015cd40c987dd39cf0f7e4aadaa754b9ca7200c98f61df2bf3b22125"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json",
+      "bytes": 86920,
+      "sha256": "b5f740de756ac89dad9e61e469f98b721fd3c4643a9c064f3d9ad7520c485eff"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Lean/adaptacion.json",
+      "bytes": 29176,
+      "sha256": "cb4b434b6a9def114a3358365a641266d01d48cd3f2c339c779a8961b497366a"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Catalogo-Validacion-2026-10-12/README.md",
+      "bytes": 8842,
+      "sha256": "cb6fea1ff3e4d5056a45fa244955aed8d28e2ed18a3e629c746709f4d6b0d004"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Derivaciones-Matematicas-TG2-2026-10-12.md",
+      "bytes": 94403,
+      "sha256": "cdd1b4f06ce4a2dee1fb5ed92d3206a3d7fef631298446d23c614c9dc617da07"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Critica-ROM-2026-09-23/README.md",
+      "bytes": 1854,
+      "sha256": "18bf73bfd882059286da6eef2fa75176807837e5b2ba910daee0ce810d5a7b0e"
+    }
+  ],
+  "localizadores_teoremas": {
+    "formalizacion/Nexus/N02/Solucion.lean": [
+      "cota"
+    ],
+    "formalizacion/Nexus/N03/Solucion.lean": [
+      "unicidad"
+    ],
+    "formalizacion/Nexus/N06/Candidato.lean": [
+      "candidato_unico"
+    ],
+    "formalizacion/Nexus/Verificador/CotaAdaptativaFinal.lean": [
+      "cardinal_excepciones",
+      "cota_rondas"
+    ],
+    "formalizacion/Nexus/Verificador/CotaSinBad.lean": [
+      "cota_512"
+    ],
+    "formalizacion/Nexus/Verificador/CotaTrabajoFinal.lean": [
+      "cota_512",
+      "cota_512_todos"
+    ],
+    "formalizacion/Nexus/Verificador/CotaTrabajoNumerica.lean": [
+      "aceptacion_release",
+      "aceptacion_4096_release"
+    ],
+    "formalizacion/Nexus/Verificador/PresupuestoGlobal.lean": [
+      "presupuesto_512"
+    ]
+  },
+  "cotejo_aritmetico": {
+    "casos": [
+      {
+        "caso": "perfil_4096",
+        "L": 1000000,
+        "bits": 20,
+        "Q": 1048576,
+        "perfiles": [
+          12
+        ],
+        "limite_superior": "2378667727/500000000000",
+        "comparacion_racional_exacta": true
+      },
+      {
+        "caso": "todos_perfiles_trabajo20",
+        "L": 1000000,
+        "bits": 20,
+        "Q": 1000000,
+        "perfiles": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "limite_superior": "1/20",
+        "comparacion_racional_exacta": true
+      },
+      {
+        "caso": "todos_perfiles_trabajo12",
+        "L": 1000000,
+        "bits": 12,
+        "Q": 1000,
+        "perfiles": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "limite_superior": "1/80",
+        "comparacion_racional_exacta": true
+      }
+    ],
+    "alcance": "Cotejo aritmético de las expresiones; no es dictamen independiente ni nueva prueba de solidez."
+  },
+  "auditoria_lean_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json",
+    "bytes": 60655,
+    "sha256": "680ace2f3dd51f0fd5eeda05f48aed387842f0e28bdd92cf63af2420127f82d0"
+  },
+  "global_rust_previa": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json",
+    "bytes": 86920,
+    "sha256": "b5f740de756ac89dad9e61e469f98b721fd3c4643a9c064f3d9ad7520c485eff"
+  },
+  "lean_fuentes_config_intactas": 354,
+  "rust_fuentes_config_intactas": 89,
+  "manuscrito_fuentes_salidas_intactas": 12,
+  "compilaciones_repetidas": false,
+  "manuscrito_regenerado": false,
+  "commit_creado": false,
+  "push_realizado": false,
+  "obligaciones_matematicas_nuevas": false,
+  "limite": "Preparación documental y cotejos internos, no revisión externa ni aprobación. QROM AIR/FRI sigue como trabajo futuro.",
+  "respaldos": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/BITACORA_TG2.md",
+      "bytes": 209766,
+      "sha256": "0e4ff6ab496605a5f7f9d4606267f7b0f927d4f76e81e968d2324e7e87c68ff7"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md",
+      "bytes": 8065,
+      "sha256": "9635b833b6d8ed02aeee4d87d2c9715feff2da3b0bc0e793c053f712bf88a0af"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 10268,
+      "sha256": "3af27919f324b0c25d03319b54137e7ca33330b1098d06442b2f0990bdd25dc1"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json",
+      "bytes": 2280692,
+      "sha256": "296e5aa7015cd40c987dd39cf0f7e4aadaa754b9ca7200c98f61df2bf3b22125"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 21589,
+      "sha256": "491560063ed0da78f5f33f22f797eda1737cce47ebb300ae8d5f19177cf3b215"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/PENDIENTES.md",
+      "bytes": 39820,
+      "sha256": "61e84e53110ff109e105f48f1acc378034bb6971fffba54b0ba977bd7c9a75a5"
+    }
+  ],
+  "herramienta": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/preparar.py",
+    "bytes": 9686,
+    "sha256": "f68211403c6311a8c2574940df156cad08eef253ae6dd7af059b1e1caa277767"
+  },
+  "documentacion_actualizada": [
+    {
+      "archivo": "BITACORA_TG2.md",
+      "bytes": 212010,
+      "sha256": "855a65c84850462a5fa48d1176aeb34135dd427361d3b35d2c06c0035d1c2584"
+    },
+    {
+      "archivo": "Documentos/04-Administrativo-TG2/Entrega-Final/README.md",
+      "bytes": 10939,
+      "sha256": "bf76cdd042a6d3eeb17b898af0cae571b7ec4abfc2126238caeb2083707a4565"
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/README.md",
+      "bytes": 22428,
+      "sha256": "b0049034314eb1a180fc53f7e5b3c189ea6d8014de9d91fcc727f5bf323a76b9"
+    },
+    {
+      "archivo": "PENDIENTES.md",
+      "bytes": 40606,
+      "sha256": "6bc8b62418e1fd146dff504b56e1af1fa3d8b66980c5a2ded25f2560f62efd6c"
+    }
+  ]
+}

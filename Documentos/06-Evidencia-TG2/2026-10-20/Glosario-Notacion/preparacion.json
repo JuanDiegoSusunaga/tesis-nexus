@@ -1,0 +1,37 @@
+{
+  "autorizacion": "Sí, ambos: glosario de términos y siglas y sección separada de notación matemática",
+  "fecha_utc": "2026-10-20T18:12:10.664336+00:00",
+  "respaldos": [
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/scripts/compilar_manuscrito.py",
+      "sha256": "c54b2093c5e000e3ad214694cbed014d1c8ef67018560643ebd8ac5881d4340b",
+      "bytes": 17032
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/README.md",
+      "sha256": "3a25dc4f11cbfee2cfe3fe094b7e1deb4fe61cd11786d6dcff916906b522a2bf",
+      "bytes": 15409
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "sha256": "11d4f2df15c29ab7c1ac66c7afef29cd0947994fae151ba5946e2955ab1d1570",
+      "bytes": 230891
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "sha256": "ace0d71220a4f12a3867e19dcbbdbb11cb9e861cbc8bdd6bf5ae1093bec47231",
+      "bytes": 651876
+    },
+    {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/respaldo_previo/Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "sha256": "e62e5998fcc1638c40d5f72d60258c99bb06eafd6125c0c2164d247e7c48670a",
+      "bytes": 2836310
+    }
+  ],
+  "sin_compilaciones_lean_rust": true,
+  "sin_commit_push_envio_dictamen": true,
+  "solicitud_word": {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-NEXUS.docx",
+    "sha256": "6655cef84bb9eb92cc6cb4926b067de30f236d77c345580ad89d094e8f5d5898"
+  }
+}
