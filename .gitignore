@@ -1,5 +1,4 @@
-# Prototipo Rust: tiene su propio repositorio (github.com/JuanDiegoSusunaga/nexus)
-/nexus/
+# El workspace Rust de nexus/ forma parte de este repositorio.
 
 # Configuración local de herramientas (no versionar)
 /.claude/
@@ -11,3 +10,6 @@ __pycache__/
 # Temporales de Office
 ~$*
 *.tmp
+
+# Archivos temporales de trabajo
+/tmp/

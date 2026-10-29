@@ -1,0 +1,18 @@
+{
+  "fecha_utc": "2026-10-20T20:03:05.352993+00:00",
+  "autorizacion": "Continuacion Sigue de la revision y correccion Rust, con consolidacion local y evidencia.",
+  "base_codigo": "204fc669e80d88c26edc66f4e908de33d7faea3e",
+  "manifiesto_previo": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Politicas-L1/respaldo_previo/version-tg2.json",
+    "bytes": 2320318,
+    "sha256": "9d6cfb8bb3ad223e0294b9308fa4115a4e80298863e7d095e1077dc98da1927a"
+  },
+  "regresiones_previas_reproducidas": 2,
+  "pruebas_nuevas": 8,
+  "pruebas_workspace": 272,
+  "pruebas_release_dirigidas": 8,
+  "fuentes_protegidas_intactas": 400,
+  "lean_recompilado": false,
+  "manuscrito_regenerado": false,
+  "push": false
+}

@@ -1,0 +1,16 @@
+{
+  "fecha_utc": "2026-10-20T19:57:04.775813+00:00",
+  "autorizacion": "El autor responde dale a validar la raiz L1, probar y consolidar el corte de codigo y su manifiesto.",
+  "base_codigo": "637e77c99e804664915caf4ed928a10ef81cc870",
+  "manifiesto_previo": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Estado-L1/respaldo_previo/version-tg2.json",
+    "bytes": 2315099,
+    "sha256": "f3af14819585f7d65526a97f6aacaad34e9c5e57fec038475abcb223b05c3c57"
+  },
+  "pruebas_workspace": 264,
+  "pruebas_release_dirigidas": 14,
+  "fuentes_protegidas_intactas": 400,
+  "lean_recompilado": false,
+  "manuscrito_regenerado": false,
+  "push": false
+}

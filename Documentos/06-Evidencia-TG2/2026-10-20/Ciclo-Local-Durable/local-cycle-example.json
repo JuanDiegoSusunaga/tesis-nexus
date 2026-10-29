@@ -1,0 +1,20 @@
+{
+  "altura_inclusion": 1,
+  "bytes_paquete": 10832,
+  "claves_privadas_guardadas": false,
+  "confirmacion_duplicada_rechazada": true,
+  "emision_red": false,
+  "finalidad_bft_acreditada": false,
+  "generacion": 6,
+  "hash_envio_l1": "0x0cfc6adfdce06626c78e9779ded370089bcbea424d81cae93d6ff975005ee3ed",
+  "intentos": 1,
+  "l1_altura": 1,
+  "l2_altura": 1,
+  "nonce_emisor": 1,
+  "paquete_identico": true,
+  "perfil": "nexus-ciclo-local-durable-v1",
+  "raiz_l2": "0x75c54c8787814ab0f2beae3b14ba3f99754257745e86df0239437a7e0f8aaa69",
+  "reaperturas": 4,
+  "repeticion_rechazada": true,
+  "saldo_receptor": "7"
+}

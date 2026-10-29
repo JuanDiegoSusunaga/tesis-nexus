@@ -15,8 +15,11 @@ def es_temporal_word(ruta):
 
 def verificar(raiz, manifiesto):
     datos = json.loads(manifiesto.read_text(encoding='utf-8'))
-    if datos.get('esquema') != 1:
+    if datos.get('esquema') not in {1, 2}:
         raise ValueError('Esquema de manifiesto no admitido.')
+    integrado = datos['esquema'] == 2
+    if integrado and datos['codigo'].get('modo') != 'integrado':
+        raise ValueError('La edición unificada debe declarar el código integrado.')
     errores = []
     rutas = set()
     for item in datos['archivos']:
@@ -36,10 +39,22 @@ def verificar(raiz, manifiesto):
     codigo = (raiz / datos['codigo']['directorio']).resolve()
     if not codigo.is_relative_to(raiz.resolve()):
         raise ValueError('Directorio de código fuera del proyecto.')
-    for carpeta in [raiz, codigo]:
+    for carpeta in ([raiz] if integrado else [raiz, codigo]):
         if not (carpeta / '.git').exists():
             errores.append('Falta el repositorio Git: ' + carpeta.name)
-    if not errores:
+    if integrado and not errores:
+        prefijo = codigo.relative_to(raiz.resolve()).as_posix() + '/'
+        registrados = {nombre for nombre in rutas if nombre.startswith(prefijo)}
+        if not registrados:
+            errores.append('El manifiesto no incluye los archivos del código integrado.')
+        versionables = subprocess.check_output(
+            ['git', '-C', str(raiz), 'ls-files', '-z', '--cached', '--others',
+             '--exclude-standard', '--', prefijo],
+            creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0)
+        ).decode('utf-8').split('\0')
+        for nombre in sorted(set(versionables) - registrados - {''}):
+            errores.append('Código sin registrar en la edición: ' + nombre)
+    elif not integrado and not errores:
         revision = subprocess.check_output(['git', '-C', str(codigo), 'rev-parse', 'HEAD'], text=True, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0)).strip()
         if revision != datos['codigo']['commit']:
             errores.append('El commit de código difiere del registrado.')

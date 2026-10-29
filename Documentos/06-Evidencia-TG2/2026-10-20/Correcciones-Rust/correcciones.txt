@@ -1,0 +1,42 @@
+CORRECCIONES RUST - NEXUS - 20 DE OCTUBRE DE 2026
+
+Se corrigen los doce casos reproducidos en la revision del commit 637e77c.
+Las modificaciones son locales y aun no tienen un nuevo commit.
+
+Cambios:
+- L1 rechaza firmas falsas y bloques repetidos; avanza su altura local.
+- Estado, registro de validadores, DA y lotes se preparan en una copia y se
+  publican juntos. Un bloque rechazado no conserva efectos parciales.
+- Las transferencias validan ambos balances antes de escribir.
+- Consenso y finalidad verifican firmas, contexto y votantes unicos; aplican
+  peso entero exacto estrictamente mayor que dos tercios. El consenso evita
+  el ascenso de locks que causaba el bloqueo. Las propuestas se firman.
+- Finalidad obtiene pesos y total de una instantanea local por bloque y exige
+  ascendencia al ancla; el mensaje no puede rebajar el umbral ni inflar peso.
+- El secuenciador autentica antes de reservar nonces y ordena dependencias
+  por remitente. Solo resultados locales de ejecucion confirman los nonces.
+  Entradas demasiado grandes se rechazan antes de bloquear la cola.
+- Las operaciones comprueban gas y costos/contadores representables.
+- Trazas de fraude no autenticadas se rechazan. Al faltar ese contrato,
+  finalizar pruebas optimistas devuelve NotImplemented: siguen provisionales.
+
+Validacion: 255 pruebas globales pasan, incluidas 32 regresiones nuevas;
+check de todos los targets correcto; cuatro regresiones numericas pasan en
+release. Se reforzaron y repitieron nueve casos de fronteras numericas y quorums,
+incluido peso total u128::MAX y el rechazo de exactamente dos tercios.
+
+La referencia matematica es quorum_estricto_interseca_honestos de
+QuorumIncentivos.lean, con sus hipotesis; no se afirma seguridad o vivacidad
+BFT completas por comprobar solo firmas, interseccion de quorums y ascendencia.
+Se mantienen los limites de las secciones 3.5, 3.9-3.10 y 6.7.9 de la tesis.
+No se cambiaron las fuentes Lean, los capitulos, el nucleo AIR/FRI ni su lector.
+Los catorce certificados historicos conservan sus pruebas correctas.
+No se recompilo Lean ni se regenero el manuscrito: se verificaron las huellas
+de las fuentes protegidas y los contratos Rust existentes. No se acredita
+refinamiento universal Rust/Lean, raices SHA3 dentro del AIR escalar, QROM ni
+una L1/L2 operativa completa. Persistencia, DA real y protocolo BFT quedan con
+sus limites documentados. Los campos de pesos del gadget de finalidad pasan
+a u128; sus formatos de aplicacion son distintos del certificado AIR/FRI.
+
+verification.json identifica fuentes, limites, comandos y logs por SHA-256.
+protected-sources.json conserva las huellas cotejadas de las fuentes protegidas.

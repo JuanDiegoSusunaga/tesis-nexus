@@ -1,0 +1,82 @@
+[
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--lib",
+      "preparing_a_valid_scalar_fixture_does_not_register_its_root_or_submission",
+      "--locked",
+      "--offline"
+    ],
+    "log": "preparation-validity-context.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "check",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--offline"
+    ],
+    "log": "preparation-global-check.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "preparation-global-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "build",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "preparation-global-build.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--test",
+      "submission_preparation",
+      "--test",
+      "batch_retry",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "preparation-release-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--lib",
+      "preparing_a_valid_scalar_fixture_does_not_register_its_root_or_submission",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "preparation-release-context.log",
+    "exit_code": 0
+  }
+]

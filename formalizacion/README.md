@@ -1,5 +1,21 @@
 # Lean 4 y mathlib para NEXUS
 
+## Ruta de revisión para el director
+
+Esta carpeta contiene las matemáticas mecanizadas de la [tesis NEXUS](../README.md). Las fuentes se consultan directamente en GitHub; instalar Lean solo es necesario para repetir su comprobación.
+
+| Orden | Documento o fuente | Qué revisar |
+|---|---|---|
+| 1 | [Guía explicada del resultado](../Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md) | Problema, hipótesis, interpretación de la cota y preguntas para el director |
+| 2 | [Cota final con trabajo](Nexus/Verificador/CotaTrabajoFinal.lean) | Composición de los errores y presupuestos del modelo ROM clásico finito |
+| 3 | [Ejemplos numéricos certificados](Nexus/Verificador/CotaTrabajoNumerica.lean) | Instancias concretas y su enlace con la aceptación |
+| 4 | [Matriz de revisión](REVISION-MANUSCRITO.md) | Correspondencias con la tesis y obligaciones externas pendientes |
+| 5 | [Auditoría global](../Documentos/06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json) · [Fuente de la auditoría](Auditoria.lean) | Registro de las 2709 declaraciones y axiomas admitidos |
+
+Las cifras e hipótesis de los resultados son las conservadas en la auditoría del 20 de octubre. Esta organización no modifica las pruebas ni repite la compilación. El [prototipo Rust](../nexus/README.md) está incluido en el mismo repositorio.
+
+## Resultado y alcance vigentes
+
 **Estado vigente, 20 de octubre:** el [puente adaptativo](Nexus/Verificador/PuenteAdaptativoFinal.lean) y las [cotas finales con trabajo](Nexus/Verificador/CotaTrabajoFinal.lean) están demostrados para el modelo ROM clásico finito del verificador de bytes. Incluyen Bad, AIR/FRI con sesgo, Q+1 parejas de trabajo/nonce, factor real 2^(-bits), reinicios y perfiles de salida adaptativos, bajo el presupuesto Q y bits=12/20. Los [ejemplos numéricos](Nexus/Verificador/CotaTrabajoNumerica.lean) se enlazan con la probabilidad de aceptación. La última [compilación global autorizada](../Documentos/06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json) incluye los 347 submódulos y `Nexus.lean`, con la configuración estricta del proyecto. La [auditoría global](Auditoria.lean) revisó 2709 declaraciones sin sorryAx ni axiomas fuera de propext, Classical.choice y Quot.sound; la pasada final no produjo errores ni advertencias. Se mantienen constantes conservadoras, el corte analítico R=512 y los límites del refinamiento universal Rust y del dictamen. La [revisión vigente](REVISION-MANUSCRITO.md) separa este cierre del censo histórico y de las obligaciones externas.
 
 **Consolidación local:** se incluyen las fuentes existentes y sus herramientas en Git, sin modificar demostraciones, añadir módulos, repetir compilaciones o hacer push. La [comprobación de integridad](../Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/preparacion.json) coteja las 354 fuentes/configuraciones de la auditoría previa. No se incorporan `.lake/`, dependencias, cachés ni la instalación de `.tools/`. Este versionado no añade obligaciones matemáticas ni sustituye una revisión independiente.
@@ -10,6 +26,9 @@ Proyecto de formalización con Lean **4.35.0** y mathlib **v4.35.0**. Las
 revisiones de las dependencias se conservan en `lake-manifest.json`.
 
 **Alcance:** [resultados y modelos matemáticos del manuscrito](ALCANCE-MANUSCRITO.md), con sus hipótesis y límites. La auditoría vigente cuenta 2709 declaraciones; no certifica automáticamente la totalidad de la tesis ni el ejecutable Rust.
+
+<details>
+<summary>Antecedentes de la formalización, por etapa</summary>
 
 ## Antecedentes históricos de formalización
 
@@ -356,6 +375,8 @@ La [etapa de transferencia local](../Documentos/06-Evidencia-TG2/2026-10-16/Lean
 conserva la pérdida 3ε sobre el dominio concreto, las fórmulas locales y la tabla 6.16.
 La [etapa Goldilocks](../Documentos/06-Evidencia-TG2/2026-10-16/Lean-Goldilocks/README.md)
 conserva la construcción de los campos, raíces y dominios concretos.
+
+</details>
 
 ## Preparar y compilar
 

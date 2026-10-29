@@ -14,7 +14,35 @@ def git(carpeta, *argumentos):
     return subprocess.check_output(['git', '-C', str(carpeta), *argumentos], text=True, encoding='utf-8', creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0)).strip()
 
 
+def registrar_integrado(raiz, manifiesto, datos):
+    """Actualiza los hashes de los archivos incluidos, conservando su procedencia."""
+    rutas = git(raiz, 'ls-files', '-z', '--cached').split('\0')
+    archivos = []
+    for nombre in sorted(set(rutas) - {''}):
+        ruta = raiz / nombre
+        if ruta.resolve() == manifiesto.resolve() or es_temporal_word(ruta):
+            continue
+        if not ruta.is_file():
+            raise SystemExit('Falta un archivo versionado: ' + nombre)
+        archivos.append({'archivo': nombre, 'bytes': ruta.stat().st_size,
+                         'sha256': hashlib.sha256(ruta.read_bytes()).hexdigest()})
+    codigo = datos['codigo']['directorio'].rstrip('/') + '/'
+    if not any(item['archivo'].startswith(codigo) for item in archivos):
+        raise SystemExit('Incorporar primero los archivos Rust al índice del repositorio unificado.')
+    datos['fecha'] = date.today().isoformat()
+    datos['documentos']['commit_contexto'] = git(raiz, 'rev-parse', 'HEAD')
+    datos['archivos'] = archivos
+    manifiesto.write_text(json.dumps(datos, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print(json.dumps({'manifiesto': manifiesto.relative_to(raiz).as_posix(),
+                      'codigo_integrado': datos['codigo']['directorio'], 'archivos': len(archivos)}))
+
+
 def main():
+    if MANIFIESTO.exists():
+        datos = json.loads(MANIFIESTO.read_text(encoding='utf-8'))
+        if datos.get('esquema') == 2 and datos.get('codigo', {}).get('modo') == 'integrado':
+            registrar_integrado(RAIZ, MANIFIESTO, datos)
+            return
     codigo = RAIZ / 'nexus'
     if git(codigo, 'status', '--porcelain', '--untracked-files=all'):
         raise SystemExit('Registrar primero el commit de código; hay cambios o archivos nuevos pendientes.')

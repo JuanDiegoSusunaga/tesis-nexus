@@ -1,0 +1,27 @@
+POLITICAS LOCALES L1 - 20 DE OCTUBRE DE 2026
+
+AnchorChainConfig fija el chain_id esperado de cada transaccion firmada y el
+presupuesto por bloque de gas declarado. Por defecto se usa LOCAL (31337) y
+30 000 000. Tanto la preparacion como la recepcion comprueban estas politicas
+antes de ejecutar. Un rechazo no publica estado, recompensas ni bloques.
+
+El gas se reserva restando de un presupuesto restante solo si cabe: no existe
+una suma que pueda desbordar u64. Se admite la igualdad, incluso u64::MAX; un
+presupuesto cero solo admite bloques vacios. El gas declarado se reserva aunque
+el precio sea cero o el gas intrinseco sea menor. No se agregan comisiones.
+
+Las replicas deben compartir las politicas. El chain_id protege el dominio de
+transacciones L1; no se modifica el genesis ni el dominio de cabeceras, votos o
+transacciones L2. No se acredita aislamiento completo entre redes. La finalidad
+BFT completa, persistencia y fraude autenticado conservan sus limites previos.
+
+Dos pruebas reprodujeron las omisiones antes del cambio. Las ocho regresiones
+cubren dominio firmado, cambio de etiqueta, recepcion con raiz correcta y
+politica incompatible, rechazo atomico, reintento y fronteras numericas. Pasan
+272 pruebas globales, check de todos los targets, build y ocho casos en release.
+Los logs conservan las advertencias preexistentes de compilacion.
+
+Se cotejan 400 fuentes protegidas. Lean, capitulos de la tesis, primitivas
+ML-DSA y nucleo/lector AIR-FRI quedan intactos. No se recompila Lean ni se
+regenera el manuscrito. Estas politicas de aplicacion no constituyen un nuevo
+teorema ni trasladan el AIR escalar a la raiz SHA3 de cuentas.

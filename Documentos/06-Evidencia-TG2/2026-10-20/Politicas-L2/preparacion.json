@@ -1,0 +1,18 @@
+{
+  "fecha_utc": "2026-10-20T20:17:36.944969+00:00",
+  "autorizacion": "Sigue: continuar las correcciones Rust y extender a L2 la politica de dominio, con consolidacion local.",
+  "base_codigo": "76bee34fd52b5162f0cb4ff09624c76a8f5817e9",
+  "manifiesto_previo": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Politicas-L2/respaldo_previo/version-tg2.json",
+    "bytes": 2323270,
+    "sha256": "0ac83b5ad1e6eb4fa5cc902d61df46d3690a4e2bffd6d144e489b473011fc7d5"
+  },
+  "regresiones_previas_reproducidas": 3,
+  "pruebas_nuevas": 8,
+  "pruebas_workspace": 280,
+  "pruebas_release_dirigidas": 8,
+  "fuentes_protegidas_intactas": 400,
+  "lean_recompilado": false,
+  "manuscrito_regenerado": false,
+  "push": false
+}

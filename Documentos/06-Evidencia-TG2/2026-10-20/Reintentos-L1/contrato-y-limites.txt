@@ -1,0 +1,36 @@
+RECUPERACION LOCAL DE ENVIOS L1 - 20 DE OCTUBRE DE 2026
+
+El escenario baseline constata la limitacion de la API anterior: un hash de
+envio incorrecto deja el lote pendiente, impide repetir mark_batch_submitted y
+no permite confirmar. Esa prueba observacional pasa al constatar el bloqueo;
+no se presenta como regresion fallida. Se conserva su fuente y log.
+
+retry_batch_submission(index, expected_hash, next_hash) permite registrar un
+reemplazo para el mismo lote ya admitido. El hash esperado debe ser el vigente;
+el siguiente no puede ser cero ni estar reservado por ningun intento de ningun
+lote local. Se permiten tres reintentos despues del inicial. Rechazos conservan
+contador, fechas, historial y reservas. No se cambia lote, certificado o contexto.
+
+get_batch_submission devuelve el intento actual y todos los SubmissionAttempt.
+La confirmacion recorre los intentos en orden registrado y acepta la primera
+inclusion encontrada que coincide con publicador, raiz, cantidad y bytes. Una
+inclusion tardia del intento original sigue siendo util. Un intento procesado
+con campos distintos no oculta otro que si coincide. Errores de integridad de
+L1 se propagan; ausencia se representa mediante Ok(None). La confirmacion ocurre
+una sola vez y conserva el historial, tambien ante reintentos concurrentes.
+
+Nueve pruebas nuevas (ocho externas y una interna) cubren recuperacion, reservas,
+cambios desactualizados, limite, inclusion tardia, varias inclusiones, campos
+distintos y carreras. La prueba interna preserva bytes de certificado y contexto
+escalar sintetico, sin atribuirles ejecucion general L2. Pasan 310 pruebas globales,
+check de todos los targets, build y 17 casos dirigidos release.
+
+Son intenciones locales en memoria. La integracion selecciona L1 y emite las
+transacciones. Registrar un reemplazo no demuestra cancelacion anterior ni
+evita inclusiones multiples en L1. No hay temporizadores, recuperacion durable,
+unicidad entre instancias/reinicios o finalidad BFT. No se promueven raices
+optimistas a verificadas. La unica confirmacion es una observacion local.
+
+Se cotejan 400 fuentes protegidas: Lean, manuscrito, primitivas ML-DSA y nucleo/
+lector AIR-FRI. Los formatos firmados y certificados no cambian. No se recompila
+Lean ni se regenera la tesis; no se agrega un teorema ni se extiende el AIR escalar.

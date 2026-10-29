@@ -1,0 +1,19 @@
+{
+  "fecha_utc": "2026-10-20T20:39:45.709148+00:00",
+  "autorizacion": "Sigue: continuar revision y correcciones Rust respetando Lean y tesis, con consolidacion local.",
+  "base_codigo": "afb86b1f2cfe1645864adb3b88742dab8daf296c",
+  "manifiesto_previo": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Reintentos-L1/respaldo_previo/version-tg2.json",
+    "bytes": 2335050,
+    "sha256": "9b28fbcd869e5876ae15d92eb76cf7688a424dc77f47e411e83f01daf8c3c4e0"
+  },
+  "escenario_bloqueo_previo": 1,
+  "baseline": "Prueba observacional de la limitacion anterior; pasa al constatar que no hay recuperacion por la API existente.",
+  "pruebas_nuevas": 9,
+  "pruebas_workspace": 310,
+  "pruebas_release_dirigidas": 17,
+  "fuentes_protegidas_intactas": 400,
+  "lean_recompilado": false,
+  "manuscrito_regenerado": false,
+  "push": false
+}

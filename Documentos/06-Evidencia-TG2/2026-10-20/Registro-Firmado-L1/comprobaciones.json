@@ -1,0 +1,82 @@
+[
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--lib",
+      "l1_registration_failure_does_not_register_a_valid_scalar_root",
+      "--locked",
+      "--offline"
+    ],
+    "log": "registration-validity-context.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "check",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--offline"
+    ],
+    "log": "registration-global-check.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "registration-global-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "build",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "registration-global-build.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--test",
+      "signed_registration",
+      "--test",
+      "submission_preparation",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "registration-release-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--lib",
+      "l1_registration_failure_does_not_register_a_valid_scalar_root",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "registration-release-context.log",
+    "exit_code": 0
+  }
+]

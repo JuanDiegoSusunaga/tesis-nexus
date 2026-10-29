@@ -1,0 +1,824 @@
+{
+  "fecha_utc": "2026-10-20T21:04:09.654946+00:00",
+  "codigo": {
+    "commit": "e0d2097f8f79a0b4396703f5ebbc68fbded98d4c",
+    "padre": "7b86409eb72c9022dfd7cc30f40e9521b493ccb5",
+    "arbol_git": "b5487ca033ebaafd1a2ea9772baab7e5f9e8b2f1",
+    "arbol_limpio": true,
+    "push": false,
+    "archivos_del_commit": [
+      "README.md",
+      "REPRODUCIBILIDAD_TG2.md",
+      "nexus-active/src/batch.rs",
+      "nexus-active/src/chain.rs",
+      "nexus-active/tests/processed_recovery.rs",
+      "nexus-anchor/src/chain.rs"
+    ]
+  },
+  "contrato": {
+    "perfil": "recuperacion-registro-inicial-procesado-L1-v1",
+    "inclusion_local_canonica_comprobada": true,
+    "envoltura_completa_cotejada": true,
+    "bytes_firmados_conservados": true,
+    "politica_certificado_l2_conservada": true,
+    "solo_lotes_conocidos_sin_intentos": true,
+    "admision_actual_reutilizada": false,
+    "sobrescribe_historial": false,
+    "emision_de_red": false
+  },
+  "comprobaciones": {
+    "pruebas_nuevas": 10,
+    "pruebas_workspace": 338,
+    "pruebas_release_dirigidas": 26,
+    "check_todos_targets": true,
+    "build_workspace": true,
+    "comandos_y_salidas": {
+      "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Recuperacion-Procesada-L1/comprobaciones.json",
+      "bytes": 1600,
+      "sha256": "564d5b3efa2f1cd79eb8bcfd8a95997f7a68376249974f792ee68f09efd299ea"
+    },
+    "logs": [
+      {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Recuperacion-Procesada-L1/recovery-global-check.log",
+        "bytes": 10162,
+        "sha256": "207987ebfdda2cb823299d363a4a9721ad1b669d4251089a431fc36b2cdac67a"
+      },
+      {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Recuperacion-Procesada-L1/recovery-global-tests.log",
+        "bytes": 42227,
+        "sha256": "1e5fb9c6519aa90bb5aecf8883ad2c8bd47d2549baf7382ed8cca9c7454ff2b0"
+      },
+      {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Recuperacion-Procesada-L1/recovery-global-build.log",
+        "bytes": 6749,
+        "sha256": "0252a05ff2c180aed9945408dc073e4cc191e980d0f1889fcba3eb29b650f789"
+      },
+      {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Recuperacion-Procesada-L1/recovery-release-tests.log",
+        "bytes": 8267,
+        "sha256": "d471bc035413998d11807de591f0b78ee2afe863a28eb65220dfed6940aa884c"
+      },
+      {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Recuperacion-Procesada-L1/recovery-release-context.log",
+        "bytes": 5596,
+        "sha256": "c10837c3f60973624169bae3769af056e87e21440017902d5f4a91e6aa98c2cf"
+      },
+      {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Recuperacion-Procesada-L1/recovery-release-storage.log",
+        "bytes": 3414,
+        "sha256": "ab91f297dd92697d4e7e336b42e48a3e8201a041a3657fdf9238d32400de9d97"
+      }
+    ]
+  },
+  "preservacion": {
+    "fuentes_protegidas": 400,
+    "cambios_protegidos": [],
+    "lean_recompilado": false,
+    "manuscrito_regenerado": false,
+    "formato_air_fri_modificado": false,
+    "formato_transacciones_firmadas_modificado": false
+  },
+  "limites": [
+    "La instancia L1 es confiable y seleccionada por la integracion.",
+    "Solo un registro inicial omitido de un lote conocido, sin reemplazar intentos previos.",
+    "Lotes e historial en memoria, sin restauracion tras reiniciar o envio de red.",
+    "Inclusion local distinta de finalidad BFT; certificado L2 exigido segun el modo.",
+    "No nuevo teorema, refinamiento universal Rust/Lean o AIR de ejecucion general.",
+    "Solo commit local Rust; cambios documentales anteriores preservados."
+  ],
+  "manifiesto_previo": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Recuperacion-Procesada-L1/respaldo_previo/version-tg2.json",
+    "bytes": 2346107,
+    "sha256": "4ba453ce9fdbdcdbc9d7eda378de26dd10a7ceacca54bc278e84d3f36cc0087a"
+  },
+  "fuentes_y_configuracion": [
+    {
+      "archivo": "nexus/.gitignore",
+      "bytes": 277,
+      "sha256": "7c293d9e24013ec1518bf5d2183d9cb54979a74936fa2054d3ad7dfdd10afda7",
+      "sha256_blob_git": "7c293d9e24013ec1518bf5d2183d9cb54979a74936fa2054d3ad7dfdd10afda7",
+      "bytes_blob_git": 277
+    },
+    {
+      "archivo": "nexus/Cargo.lock",
+      "bytes": 120780,
+      "sha256": "876d0628c1715b0a5b338032130a2519c8e9088f9965b5cc87fef9df6f376d46",
+      "sha256_blob_git": "876d0628c1715b0a5b338032130a2519c8e9088f9965b5cc87fef9df6f376d46",
+      "bytes_blob_git": 120780
+    },
+    {
+      "archivo": "nexus/Cargo.toml",
+      "bytes": 1726,
+      "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea",
+      "sha256_blob_git": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea",
+      "bytes_blob_git": 1726
+    },
+    {
+      "archivo": "nexus/README.md",
+      "bytes": 44843,
+      "sha256": "7217d10046518c8be4364cfdd2bbdc400aae74bb9a386adc69b9e4e2de4169f1",
+      "sha256_blob_git": "c47c9020a6ab716b211e9d9275426293dc560d7f596c6cf4dc20707171224e0d",
+      "bytes_blob_git": 44383
+    },
+    {
+      "archivo": "nexus/REPRODUCIBILIDAD_TG2.md",
+      "bytes": 37735,
+      "sha256": "b94e38e6fedb7feaa72e6816660789ef8bb863b5818c72c0c4c6d667b2ead03d",
+      "sha256_blob_git": "b94e38e6fedb7feaa72e6816660789ef8bb863b5818c72c0c4c6d667b2ead03d",
+      "bytes_blob_git": 37735
+    },
+    {
+      "archivo": "nexus/nexus-active/Cargo.toml",
+      "bytes": 777,
+      "sha256": "f99f6541d228301a89fe1dd80f792fd8a6e0532acbae02b4a3480c5d4c9c58a9",
+      "sha256_blob_git": "f99f6541d228301a89fe1dd80f792fd8a6e0532acbae02b4a3480c5d4c9c58a9",
+      "bytes_blob_git": 777
+    },
+    {
+      "archivo": "nexus/nexus-active/experiments/tg2_canonical_verifier.rs",
+      "bytes": 4779,
+      "sha256": "bc543ed1dca51cca940a46bf05edfdc3459b95d2075c8267035b13261609447c",
+      "sha256_blob_git": "bc543ed1dca51cca940a46bf05edfdc3459b95d2075c8267035b13261609447c",
+      "bytes_blob_git": 4779
+    },
+    {
+      "archivo": "nexus/nexus-active/src/batch.rs",
+      "bytes": 18401,
+      "sha256": "78b1c00b6ba8eeb54e56edf8d5f1a7cf66bc49fad0381f5c5c1126ae996404c4",
+      "sha256_blob_git": "78b1c00b6ba8eeb54e56edf8d5f1a7cf66bc49fad0381f5c5c1126ae996404c4",
+      "bytes_blob_git": 18401
+    },
+    {
+      "archivo": "nexus/nexus-active/src/chain.rs",
+      "bytes": 43015,
+      "sha256": "33ed47f616b1248a522841840ceb6f9cb5a9847592d6a9b5b3547a8fea7cb42e",
+      "sha256_blob_git": "33ed47f616b1248a522841840ceb6f9cb5a9847592d6a9b5b3547a8fea7cb42e",
+      "bytes_blob_git": 43015
+    },
+    {
+      "archivo": "nexus/nexus-active/src/execution.rs",
+      "bytes": 13088,
+      "sha256": "d6e334734df6269ca5cbdc1a8a35a9fa3416fb942adc6ddfe410376422861c1c",
+      "sha256_blob_git": "d6e334734df6269ca5cbdc1a8a35a9fa3416fb942adc6ddfe410376422861c1c",
+      "bytes_blob_git": 13088
+    },
+    {
+      "archivo": "nexus/nexus-active/src/lib.rs",
+      "bytes": 3004,
+      "sha256": "b673dde177a6e667c15956f8832bbd788ce89d0b635c097da4353aa52bf6a599",
+      "sha256_blob_git": "b673dde177a6e667c15956f8832bbd788ce89d0b635c097da4353aa52bf6a599",
+      "bytes_blob_git": 3004
+    },
+    {
+      "archivo": "nexus/nexus-active/src/linked_verifier.rs",
+      "bytes": 3843,
+      "sha256": "7e329070f59e4cbfcaad3e5eaede2a76ced123b77f5a1335caa004f93b19db23",
+      "sha256_blob_git": "7e329070f59e4cbfcaad3e5eaede2a76ced123b77f5a1335caa004f93b19db23",
+      "bytes_blob_git": 3843
+    },
+    {
+      "archivo": "nexus/nexus-active/src/pq_verifier.rs",
+      "bytes": 4263,
+      "sha256": "98fcb4fdb5738e5aef9b53a2cb0514ec4dc29eb3cb64193ae8d14610d59930f4",
+      "sha256_blob_git": "98fcb4fdb5738e5aef9b53a2cb0514ec4dc29eb3cb64193ae8d14610d59930f4",
+      "bytes_blob_git": 4263
+    },
+    {
+      "archivo": "nexus/nexus-active/src/sequencer.rs",
+      "bytes": 19013,
+      "sha256": "57ef8f32972930c6a0d09fdbfd2d1bef332e48f7778b3f634439961b2d0dd0d1",
+      "sha256_blob_git": "c026202faa977eaf3c8523f5696bfe19eaf297fb63c1efe3935d5f51b69c5328",
+      "bytes_blob_git": 18581
+    },
+    {
+      "archivo": "nexus/nexus-active/src/verifier.rs",
+      "bytes": 13663,
+      "sha256": "c6661ff79157e6fa69261dfbb6db439559e9dddb42298567dfcc5475774923f1",
+      "sha256_blob_git": "c6661ff79157e6fa69261dfbb6db439559e9dddb42298567dfcc5475774923f1",
+      "bytes_blob_git": 13663
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/active_chain_contract.rs",
+      "bytes": 7294,
+      "sha256": "6a3db189c218423c3f57a8f0dd060e6d4c85ccb2c699123270aa78d113a8bfe4",
+      "sha256_blob_git": "6a3db189c218423c3f57a8f0dd060e6d4c85ccb2c699123270aa78d113a8bfe4",
+      "bytes_blob_git": 7294
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/batch_retry.rs",
+      "bytes": 12230,
+      "sha256": "5f7838961baaf7fef1fb05579ce509f7693aa1bbc68a16f0bbb2202be59644bc",
+      "sha256_blob_git": "5f7838961baaf7fef1fb05579ce509f7693aa1bbc68a16f0bbb2202be59644bc",
+      "bytes_blob_git": 12230
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/chain_policy.rs",
+      "bytes": 7506,
+      "sha256": "39919e6f8178531d1a4d85151030b523fd2bd91406db9cba63bcf296f8b40daf",
+      "sha256_blob_git": "39919e6f8178531d1a4d85151030b523fd2bd91406db9cba63bcf296f8b40daf",
+      "bytes_blob_git": 7506
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/execution_safety.rs",
+      "bytes": 6804,
+      "sha256": "050097fa8caf22a64863b8a8dbce989468629331c87ded08cc313db6f702f32e",
+      "sha256_blob_git": "db6135126f659dc269bb6e218970d6081aa9fdf4cd5bea243da37a845d039348",
+      "bytes_blob_git": 6680
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/l1_confirmation.rs",
+      "bytes": 9144,
+      "sha256": "328af27f811a8fcba5583ac391d27435d3a800a7cf5a2df25a2351c1135a31f0",
+      "sha256_blob_git": "328af27f811a8fcba5583ac391d27435d3a800a7cf5a2df25a2351c1135a31f0",
+      "bytes_blob_git": 9144
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/lean_contract.rs",
+      "bytes": 5096,
+      "sha256": "2ce2fd813115e2c27f61d6da8f3d958d4ab8f4235167525a67a4485eaf131639",
+      "sha256_blob_git": "2ce2fd813115e2c27f61d6da8f3d958d4ab8f4235167525a67a4485eaf131639",
+      "bytes_blob_git": 5096
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/processed_recovery.rs",
+      "bytes": 12563,
+      "sha256": "a53523c7d1344c3d3b9fec8329088c28f860dfb115f69052272c53e8451fa775",
+      "sha256_blob_git": "a53523c7d1344c3d3b9fec8329088c28f860dfb115f69052272c53e8451fa775",
+      "bytes_blob_git": 12563
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/signed_registration.rs",
+      "bytes": 12730,
+      "sha256": "690f37ad89b868c1c08f00aafbec2336a603c0c5161661baf7c43a2aabaaceec",
+      "sha256_blob_git": "690f37ad89b868c1c08f00aafbec2336a603c0c5161661baf7c43a2aabaaceec",
+      "bytes_blob_git": 12730
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/submission_preparation.rs",
+      "bytes": 11987,
+      "sha256": "e8a36db758f45f0f978982a1b57f75e72500aba9d9b22deba649989c3c17cd0b",
+      "sha256_blob_git": "e8a36db758f45f0f978982a1b57f75e72500aba9d9b22deba649989c3c17cd0b",
+      "bytes_blob_git": 11987
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/tg2_verification.rs",
+      "bytes": 11013,
+      "sha256": "6ceeb730ab48163a9ee2a59e505e57176151bcb2375ad2430d696af788875b47",
+      "sha256_blob_git": "6ceeb730ab48163a9ee2a59e505e57176151bcb2375ad2430d696af788875b47",
+      "bytes_blob_git": 11013
+    },
+    {
+      "archivo": "nexus/nexus-anchor/Cargo.toml",
+      "bytes": 701,
+      "sha256": "37633d55fc91da6fea733961e84f3f8db1ec1b316689630ba98cbf0619860169",
+      "sha256_blob_git": "37633d55fc91da6fea733961e84f3f8db1ec1b316689630ba98cbf0619860169",
+      "bytes_blob_git": 701
+    },
+    {
+      "archivo": "nexus/nexus-anchor/src/chain.rs",
+      "bytes": 24325,
+      "sha256": "e17147c8f41c61e79b81dce166e466403303c29637732b5ff57e027f4950ad39",
+      "sha256_blob_git": "c8ed7e53120249487442e92a17ebd06513f974b9bd5394fb868660eb27401a58",
+      "bytes_blob_git": 23860
+    },
+    {
+      "archivo": "nexus/nexus-anchor/src/consensus.rs",
+      "bytes": 15788,
+      "sha256": "de14bb69efdb0432955818532b7dedd93c088214c8b4542ba7491de92a8b47a0",
+      "sha256_blob_git": "b88ab44442696811539c1b906ad3235cf1f9ca0fab1ba40edd41835fdfab6458",
+      "bytes_blob_git": 15415
+    },
+    {
+      "archivo": "nexus/nexus-anchor/src/data_availability.rs",
+      "bytes": 11669,
+      "sha256": "0327f762afcc9c5ef1dfc185760f78a5a8a04e3afa68a5d1b64a1b6ed4342667",
+      "sha256_blob_git": "0327f762afcc9c5ef1dfc185760f78a5a8a04e3afa68a5d1b64a1b6ed4342667",
+      "bytes_blob_git": 11669
+    },
+    {
+      "archivo": "nexus/nexus-anchor/src/finality.rs",
+      "bytes": 12758,
+      "sha256": "b107e96d995ed474e3f064cefe8037381dce2ab99b8251541abfcf57980c140a",
+      "sha256_blob_git": "545635bf85dcd9cce10f2a33991f4da2f68c50695584a81066d1b721b35cdcd3",
+      "bytes_blob_git": 12454
+    },
+    {
+      "archivo": "nexus/nexus-anchor/src/lib.rs",
+      "bytes": 2201,
+      "sha256": "43a7b46790c7d0d537898b6a5d0d42d78188721e89e082ee4c6d9412fcb03641",
+      "sha256_blob_git": "43a7b46790c7d0d537898b6a5d0d42d78188721e89e082ee4c6d9412fcb03641",
+      "bytes_blob_git": 2201
+    },
+    {
+      "archivo": "nexus/nexus-anchor/src/validator.rs",
+      "bytes": 13656,
+      "sha256": "e9d6fa07a1d6fe0d8a10839470f4a10629809495388beae4caf477e59cc9b3d2",
+      "sha256_blob_git": "e9d6fa07a1d6fe0d8a10839470f4a10629809495388beae4caf477e59cc9b3d2",
+      "bytes_blob_git": 13656
+    },
+    {
+      "archivo": "nexus/nexus-anchor/tests/block_policy.rs",
+      "bytes": 8224,
+      "sha256": "e54fbd4ade3e81aeccfcd1edc4a5d3d310c19016f368dec59eeb3cc9a6c8ef34",
+      "sha256_blob_git": "e54fbd4ade3e81aeccfcd1edc4a5d3d310c19016f368dec59eeb3cc9a6c8ef34",
+      "bytes_blob_git": 8224
+    },
+    {
+      "archivo": "nexus/nexus-anchor/tests/chain_safety.rs",
+      "bytes": 7721,
+      "sha256": "d74d7ba32d64dfc8a9ba0dd131dee60cba16e25fa0829d6916bc69a5486c45ce",
+      "sha256_blob_git": "e5c8b3834a9fea15edf9e0e7b2a29ae596d21d3aa23c8d8b40b176845159e8c2",
+      "bytes_blob_git": 7585
+    },
+    {
+      "archivo": "nexus/nexus-anchor/tests/consensus_safety.rs",
+      "bytes": 6903,
+      "sha256": "034d9bf5a2e9e68e627be34b97edc14ba58ae4d0eb7883f0a443245876262251",
+      "sha256_blob_git": "034d9bf5a2e9e68e627be34b97edc14ba58ae4d0eb7883f0a443245876262251",
+      "bytes_blob_git": 6903
+    },
+    {
+      "archivo": "nexus/nexus-anchor/tests/finality_safety.rs",
+      "bytes": 5034,
+      "sha256": "a97a74f2e3d9b457111d92ba682f2a2f10572360a1d9968c8f417b2f279021b7",
+      "sha256_blob_git": "a97a74f2e3d9b457111d92ba682f2a2f10572360a1d9968c8f417b2f279021b7",
+      "bytes_blob_git": 5034
+    },
+    {
+      "archivo": "nexus/nexus-anchor/tests/local_da.rs",
+      "bytes": 7232,
+      "sha256": "705879a315a5f1091729ac37a433de15e853fa552e5e1ab30fc687b8ea1d1f61",
+      "sha256_blob_git": "705879a315a5f1091729ac37a433de15e853fa552e5e1ab30fc687b8ea1d1f61",
+      "bytes_blob_git": 7232
+    },
+    {
+      "archivo": "nexus/nexus-anchor/tests/local_da_chain.rs",
+      "bytes": 3995,
+      "sha256": "3808ef7a9ef72453e0a8eaa07f7fd95e9622ac42490d712c3dfd803a21c2870b",
+      "sha256_blob_git": "3808ef7a9ef72453e0a8eaa07f7fd95e9622ac42490d712c3dfd803a21c2870b",
+      "bytes_blob_git": 3995
+    },
+    {
+      "archivo": "nexus/nexus-anchor/tests/state_root_contract.rs",
+      "bytes": 11362,
+      "sha256": "6de0500cb94b615883ab0e545af3def8c47b55565444f74abc4637999ef47223",
+      "sha256_blob_git": "6de0500cb94b615883ab0e545af3def8c47b55565444f74abc4637999ef47223",
+      "bytes_blob_git": 11362
+    },
+    {
+      "archivo": "nexus/nexus-cli/Cargo.toml",
+      "bytes": 575,
+      "sha256": "4f208295a18aacd24afb5b64f9b229afb782e2810d4c269029dd4a2e41372d7d",
+      "sha256_blob_git": "4f208295a18aacd24afb5b64f9b229afb782e2810d4c269029dd4a2e41372d7d",
+      "bytes_blob_git": 575
+    },
+    {
+      "archivo": "nexus/nexus-cli/src/main.rs",
+      "bytes": 6696,
+      "sha256": "b27fd564e3bce132b2c9eadeb985fdd4672630ece06a6a0f1fc89903a26a09fc",
+      "sha256_blob_git": "b27fd564e3bce132b2c9eadeb985fdd4672630ece06a6a0f1fc89903a26a09fc",
+      "bytes_blob_git": 6696
+    },
+    {
+      "archivo": "nexus/nexus-core/Cargo.toml",
+      "bytes": 608,
+      "sha256": "558196ee7e87423f33b976acc8a2b3114bcf5c229ff5c0699fb856acdfb12aae",
+      "sha256_blob_git": "558196ee7e87423f33b976acc8a2b3114bcf5c229ff5c0699fb856acdfb12aae",
+      "bytes_blob_git": 608
+    },
+    {
+      "archivo": "nexus/nexus-core/src/block.rs",
+      "bytes": 8146,
+      "sha256": "26e9eb963d1ac61a6714c0a9162dc70f6f1044a6014f690d5bd37aab892396fe",
+      "sha256_blob_git": "26e9eb963d1ac61a6714c0a9162dc70f6f1044a6014f690d5bd37aab892396fe",
+      "bytes_blob_git": 8146
+    },
+    {
+      "archivo": "nexus/nexus-core/src/error.rs",
+      "bytes": 6137,
+      "sha256": "341ec5865031dd923fadafc84056d3e977f5863c858c379532a1a0a93ed73e71",
+      "sha256_blob_git": "341ec5865031dd923fadafc84056d3e977f5863c858c379532a1a0a93ed73e71",
+      "bytes_blob_git": 6137
+    },
+    {
+      "archivo": "nexus/nexus-core/src/lib.rs",
+      "bytes": 990,
+      "sha256": "8eeaf86806e8b783566bf4b111ea4c734604ca0f47392c6df047dcc505876ab5",
+      "sha256_blob_git": "8eeaf86806e8b783566bf4b111ea4c734604ca0f47392c6df047dcc505876ab5",
+      "bytes_blob_git": 990
+    },
+    {
+      "archivo": "nexus/nexus-core/src/merkle.rs",
+      "bytes": 10968,
+      "sha256": "42301fad5a732f43be6faadabc5c9f78d28d27610a616324132c08c60531cddf",
+      "sha256_blob_git": "42301fad5a732f43be6faadabc5c9f78d28d27610a616324132c08c60531cddf",
+      "bytes_blob_git": 10968
+    },
+    {
+      "archivo": "nexus/nexus-core/src/state.rs",
+      "bytes": 9833,
+      "sha256": "b8411c5cb89821cd90392fc1d32f9806383dc2d27b67f55312f60aee1457a8ed",
+      "sha256_blob_git": "b8411c5cb89821cd90392fc1d32f9806383dc2d27b67f55312f60aee1457a8ed",
+      "bytes_blob_git": 9833
+    },
+    {
+      "archivo": "nexus/nexus-core/src/traits.rs",
+      "bytes": 5910,
+      "sha256": "cf00fb6cf97654350aee9967df7a4292480b9bee64bbdc92b681f54c15e38e8d",
+      "sha256_blob_git": "cf00fb6cf97654350aee9967df7a4292480b9bee64bbdc92b681f54c15e38e8d",
+      "bytes_blob_git": 5910
+    },
+    {
+      "archivo": "nexus/nexus-core/src/transaction.rs",
+      "bytes": 11190,
+      "sha256": "a3a2d0da948abf1346e9ceb5381ee11809c00f648333694d0c658669a7ebe0af",
+      "sha256_blob_git": "a3a2d0da948abf1346e9ceb5381ee11809c00f648333694d0c658669a7ebe0af",
+      "bytes_blob_git": 11190
+    },
+    {
+      "archivo": "nexus/nexus-core/src/types.rs",
+      "bytes": 8899,
+      "sha256": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492",
+      "sha256_blob_git": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492",
+      "bytes_blob_git": 8899
+    },
+    {
+      "archivo": "nexus/nexus-core/tests/state_safety.rs",
+      "bytes": 2029,
+      "sha256": "2c837790214819f295ccfd4bd0d3a8e22e9d1818640547cfc582257b38852a90",
+      "sha256_blob_git": "2d3ec5954489c0e41e4dce5aa6120cc06382bef28892ec8df1317b530be253d7",
+      "bytes_blob_git": 1984
+    },
+    {
+      "archivo": "nexus/nexus-crypto/Cargo.toml",
+      "bytes": 1104,
+      "sha256": "106f1fff3dd0158804e800bf562eab73359473e5f7afa21769754551aa7c0be3",
+      "sha256_blob_git": "106f1fff3dd0158804e800bf562eab73359473e5f7afa21769754551aa7c0be3",
+      "bytes_blob_git": 1104
+    },
+    {
+      "archivo": "nexus/nexus-crypto/benches/classical_baseline.rs",
+      "bytes": 3339,
+      "sha256": "d7bc1b83ba346badf5826a974c2cbc530ec0ca86aecb519cba4c472cbceab896",
+      "sha256_blob_git": "d7bc1b83ba346badf5826a974c2cbc530ec0ca86aecb519cba4c472cbceab896",
+      "bytes_blob_git": 3339
+    },
+    {
+      "archivo": "nexus/nexus-crypto/benches/dilithium_bench.rs",
+      "bytes": 3205,
+      "sha256": "680b8e38c02b371f78951453aa938e4bc9508dbdd1524032c6a22e1c7b691cfc",
+      "sha256_blob_git": "680b8e38c02b371f78951453aa938e4bc9508dbdd1524032c6a22e1c7b691cfc",
+      "bytes_blob_git": 3205
+    },
+    {
+      "archivo": "nexus/nexus-crypto/benches/residencia_bench.rs",
+      "bytes": 3187,
+      "sha256": "4ff93c7794118936e310a333847fd9787a8a1bdb6e11fc0e9779602a98ca251e",
+      "sha256_blob_git": "4ff93c7794118936e310a333847fd9787a8a1bdb6e11fc0e9779602a98ca251e",
+      "bytes_blob_git": 3187
+    },
+    {
+      "archivo": "nexus/nexus-crypto/examples/apt_sweep.rs",
+      "bytes": 21090,
+      "sha256": "0931cdf72cace4abb3abac785682a5959737c450ca375f08a73249d476b3ace8",
+      "sha256_blob_git": "0931cdf72cace4abb3abac785682a5959737c450ca375f08a73249d476b3ace8",
+      "bytes_blob_git": 21090
+    },
+    {
+      "archivo": "nexus/nexus-crypto/examples/rotation_demo.rs",
+      "bytes": 2909,
+      "sha256": "20980e891511dcc252e5b628445527022798bb0d4ccc2bb3856380bc1ac16154",
+      "sha256_blob_git": "20980e891511dcc252e5b628445527022798bb0d4ccc2bb3856380bc1ac16154",
+      "bytes_blob_git": 2909
+    },
+    {
+      "archivo": "nexus/nexus-crypto/examples/tg2_throughput.rs",
+      "bytes": 1725,
+      "sha256": "102d51806838c53c4c2db814c16d8fea723e98bc043572931202106028e97db0",
+      "sha256_blob_git": "102d51806838c53c4c2db814c16d8fea723e98bc043572931202106028e97db0",
+      "bytes_blob_git": 1725
+    },
+    {
+      "archivo": "nexus/nexus-crypto/examples/throughput_tps.rs",
+      "bytes": 3770,
+      "sha256": "1ab4200bd4a7ee8bd085dcd9f27fd7fa39fce1396d2d227a5e0d3db483c6df71",
+      "sha256_blob_git": "1ab4200bd4a7ee8bd085dcd9f27fd7fa39fce1396d2d227a5e0d3db483c6df71",
+      "bytes_blob_git": 3770
+    },
+    {
+      "archivo": "nexus/nexus-crypto/experiments/tg2_throughput.rs",
+      "bytes": 3628,
+      "sha256": "4543da19a5a21e1325a6e077b93bf39144c83bd3fc95ef1e75a2e63cc9157dcb",
+      "sha256_blob_git": "4543da19a5a21e1325a6e077b93bf39144c83bd3fc95ef1e75a2e63cc9157dcb",
+      "bytes_blob_git": 3628
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/dilithium.rs",
+      "bytes": 19520,
+      "sha256": "f414f7970bdda33de52b93ffcb26ff758898697060c639173fa99a0fe4a08d4e",
+      "sha256_blob_git": "a4f88f8cb724da3ff8c6c37188b2f4b872280eeea149be41dbd1e2e372008645",
+      "bytes_blob_git": 19015
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/entropy.rs",
+      "bytes": 40804,
+      "sha256": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f",
+      "sha256_blob_git": "d6e684db57bb566daa221bd0e31538eb40a6342d584d3a9588ff69ebb9ee491f",
+      "bytes_blob_git": 40804
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/keypair.rs",
+      "bytes": 27890,
+      "sha256": "c54b41ef0f80a396bbf7a0d0943521fd416b6dd42d933eac090dddba6d995334",
+      "sha256_blob_git": "c54b41ef0f80a396bbf7a0d0943521fd416b6dd42d933eac090dddba6d995334",
+      "bytes_blob_git": 27890
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/lib.rs",
+      "bytes": 1067,
+      "sha256": "6154dce44c5dc2ec229f3cb47ed7c56293c6b2d4c2227b2066e96deb4d74eec9",
+      "sha256_blob_git": "6154dce44c5dc2ec229f3cb47ed7c56293c6b2d4c2227b2066e96deb4d74eec9",
+      "bytes_blob_git": 1067
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/registry.rs",
+      "bytes": 20840,
+      "sha256": "c512c6ce48321b8ce0f71bc3c45691f079fa427b018b1d805a6ce97c21467b50",
+      "sha256_blob_git": "c512c6ce48321b8ce0f71bc3c45691f079fa427b018b1d805a6ce97c21467b50",
+      "bytes_blob_git": 20840
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/signer.rs",
+      "bytes": 9701,
+      "sha256": "49377398b7647c26cb66ccef03bde56fcef1a0208a464989a289fac0e98c382a",
+      "sha256_blob_git": "49377398b7647c26cb66ccef03bde56fcef1a0208a464989a289fac0e98c382a",
+      "bytes_blob_git": 9701
+    },
+    {
+      "archivo": "nexus/nexus-crypto/tests/tg2_correspondence.rs",
+      "bytes": 2855,
+      "sha256": "74a65eeaa08044f4c5103756648e7cdad85ce67fc988f30f6424643d58d851c1",
+      "sha256_blob_git": "74a65eeaa08044f4c5103756648e7cdad85ce67fc988f30f6424643d58d851c1",
+      "bytes_blob_git": 2855
+    },
+    {
+      "archivo": "nexus/nexus-crypto/tests/tg2_residence.rs",
+      "bytes": 2612,
+      "sha256": "9d280cc114eee3da61d446d4d69e1b5697e7d1a442c496ed2bb5de1e24743628",
+      "sha256_blob_git": "9d280cc114eee3da61d446d4d69e1b5697e7d1a442c496ed2bb5de1e24743628",
+      "bytes_blob_git": 2612
+    },
+    {
+      "archivo": "nexus/nexus-crypto/tests/tg2_throughput.rs",
+      "bytes": 1297,
+      "sha256": "9c241c7a2166f3bd0c7131c8f8d2dbe1bb00c7bf5c484c07c4f4bd06ee49582c",
+      "sha256_blob_git": "9c241c7a2166f3bd0c7131c8f8d2dbe1bb00c7bf5c484c07c4f4bd06ee49582c",
+      "bytes_blob_git": 1297
+    },
+    {
+      "archivo": "nexus/nexus-network/Cargo.toml",
+      "bytes": 399,
+      "sha256": "f8718d257e43299317d256c127bff773fc7ee225d545ed89e6bfdbfb5d2e40cf",
+      "sha256_blob_git": "f8718d257e43299317d256c127bff773fc7ee225d545ed89e6bfdbfb5d2e40cf",
+      "bytes_blob_git": 399
+    },
+    {
+      "archivo": "nexus/nexus-network/src/lib.rs",
+      "bytes": 1287,
+      "sha256": "3d8cd52931d4f4db93909c0d17810b209dde16340968eea2b518f457e1542423",
+      "sha256_blob_git": "3d8cd52931d4f4db93909c0d17810b209dde16340968eea2b518f457e1542423",
+      "bytes_blob_git": 1287
+    },
+    {
+      "archivo": "nexus/nexus-network/src/peer.rs",
+      "bytes": 1139,
+      "sha256": "84a454b4c5c5555d6812e1ac524311d1c59f0810437a1b29e60f579cf5a8713f",
+      "sha256_blob_git": "84a454b4c5c5555d6812e1ac524311d1c59f0810437a1b29e60f579cf5a8713f",
+      "bytes_blob_git": 1139
+    },
+    {
+      "archivo": "nexus/nexus-network/src/protocol.rs",
+      "bytes": 315,
+      "sha256": "1c0e23d23e314dd59b39e20616784a6fb55764b70b27b1c7b03aab03fbc6915a",
+      "sha256_blob_git": "1c0e23d23e314dd59b39e20616784a6fb55764b70b27b1c7b03aab03fbc6915a",
+      "bytes_blob_git": 315
+    },
+    {
+      "archivo": "nexus/nexus-node/Cargo.toml",
+      "bytes": 726,
+      "sha256": "1452315e1614b65c392770e4c725c09731f943abc1ccf00521945ecb33475726",
+      "sha256_blob_git": "1452315e1614b65c392770e4c725c09731f943abc1ccf00521945ecb33475726",
+      "bytes_blob_git": 726
+    },
+    {
+      "archivo": "nexus/nexus-node/src/config.rs",
+      "bytes": 1119,
+      "sha256": "ebef163af60a07e1f8551bbe96419df67322ed8b0ff25e688dd85e8e5cd0dcfd",
+      "sha256_blob_git": "ebef163af60a07e1f8551bbe96419df67322ed8b0ff25e688dd85e8e5cd0dcfd",
+      "bytes_blob_git": 1119
+    },
+    {
+      "archivo": "nexus/nexus-node/src/lib.rs",
+      "bytes": 3297,
+      "sha256": "da7eb9df729ca19dbdc1f83286284a18eb8b7c4877cec2b5e5a3354ca575a162",
+      "sha256_blob_git": "da7eb9df729ca19dbdc1f83286284a18eb8b7c4877cec2b5e5a3354ca575a162",
+      "bytes_blob_git": 3297
+    },
+    {
+      "archivo": "nexus/nexus-node/src/rpc.rs",
+      "bytes": 305,
+      "sha256": "442963766bc9f30ee0ef9ca3c328b10f7ce453af810dc42bafb5280e22777b03",
+      "sha256_blob_git": "442963766bc9f30ee0ef9ca3c328b10f7ce453af810dc42bafb5280e22777b03",
+      "bytes_blob_git": 305
+    },
+    {
+      "archivo": "nexus/nexus-sentinel/Cargo.toml",
+      "bytes": 436,
+      "sha256": "9a17ef57ed874e80ee572f7e02e7e4a8ebe096d3c3d621faba7638b26d9e65af",
+      "sha256_blob_git": "9a17ef57ed874e80ee572f7e02e7e4a8ebe096d3c3d621faba7638b26d9e65af",
+      "bytes_blob_git": 436
+    },
+    {
+      "archivo": "nexus/nexus-sentinel/src/lib.rs",
+      "bytes": 1784,
+      "sha256": "31098331af6d890578ccc07da031aea55c8a5b83e0ba160025466904224c6702",
+      "sha256_blob_git": "31098331af6d890578ccc07da031aea55c8a5b83e0ba160025466904224c6702",
+      "bytes_blob_git": 1784
+    },
+    {
+      "archivo": "nexus/nexus-zk/Cargo.toml",
+      "bytes": 614,
+      "sha256": "a186b13cb9292cce8c7a7501d69a90f2f5433649a1d9d361a88fa75f7e78ae2d",
+      "sha256_blob_git": "a186b13cb9292cce8c7a7501d69a90f2f5433649a1d9d361a88fa75f7e78ae2d",
+      "bytes_blob_git": 614
+    },
+    {
+      "archivo": "nexus/nexus-zk/examples/stark_demo.rs",
+      "bytes": 1643,
+      "sha256": "ee5beb634ff18619f08513290e0cde91a07340c41a8c0f06e9d7e46e25352b40",
+      "sha256_blob_git": "ee5beb634ff18619f08513290e0cde91a07340c41a8c0f06e9d7e46e25352b40",
+      "bytes_blob_git": 1643
+    },
+    {
+      "archivo": "nexus/nexus-zk/examples/tg2_stark_measure.rs",
+      "bytes": 2003,
+      "sha256": "3399edbf42e2cfae2bc8330d499f06b2a0f6acd63a9469f8173a3c0751c69053",
+      "sha256_blob_git": "3399edbf42e2cfae2bc8330d499f06b2a0f6acd63a9469f8173a3c0751c69053",
+      "bytes_blob_git": 2003
+    },
+    {
+      "archivo": "nexus/nexus-zk/experiments/tg2_air_algebra.rs",
+      "bytes": 6546,
+      "sha256": "c899b7f9a89b00df3a3a6c0fbdfda5b2dada531127de3c74de8a46e09b3f7d55",
+      "sha256_blob_git": "c899b7f9a89b00df3a3a6c0fbdfda5b2dada531127de3c74de8a46e09b3f7d55",
+      "bytes_blob_git": 6546
+    },
+    {
+      "archivo": "nexus/nexus-zk/experiments/tg2_linked_trace_fri.rs",
+      "bytes": 10024,
+      "sha256": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f",
+      "sha256_blob_git": "6e8a7c0209db558c674dd15dce1efe60a5ea62ca53dea3f03319096180e3f49f",
+      "bytes_blob_git": 10024
+    },
+    {
+      "archivo": "nexus/nexus-zk/experiments/tg2_trace_proximity.rs",
+      "bytes": 6271,
+      "sha256": "fc73af507ce1242667d47b17d37d0b4a9570bc75a1fb49eabdb469be960b2b1f",
+      "sha256_blob_git": "fc73af507ce1242667d47b17d37d0b4a9570bc75a1fb49eabdb469be960b2b1f",
+      "bytes_blob_git": 6271
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/circuits.rs",
+      "bytes": 867,
+      "sha256": "fde3f78bb5e20e6be850bbe18f730fda3d815a45d19e906728be83aeac8ab899",
+      "sha256_blob_git": "fde3f78bb5e20e6be850bbe18f730fda3d815a45d19e906728be83aeac8ab899",
+      "bytes_blob_git": 867
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/lib.rs",
+      "bytes": 2447,
+      "sha256": "7c1b7492c122d5bc83ca3bf3e729c1f898aaabba38dfdb49b4a6d421aa29bc63",
+      "sha256_blob_git": "7c1b7492c122d5bc83ca3bf3e729c1f898aaabba38dfdb49b4a6d421aa29bc63",
+      "bytes_blob_git": 2447
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/prover.rs",
+      "bytes": 1390,
+      "sha256": "18ab5a8d19a55e554cea62062003c1d1541330d22b085b89496e5d9e49c3866d",
+      "sha256_blob_git": "18ab5a8d19a55e554cea62062003c1d1541330d22b085b89496e5d9e49c3866d",
+      "bytes_blob_git": 1390
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/air.rs",
+      "bytes": 21761,
+      "sha256": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7",
+      "sha256_blob_git": "c17a8f7b04152caf05c5361caf81ba0f886f277cbcbfb02a285b10c2621d76e7",
+      "bytes_blob_git": 21761
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/channel.rs",
+      "bytes": 7450,
+      "sha256": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d",
+      "sha256_blob_git": "4c7893a480906cd61e35a0fc07bcc6397326d8fc6e28fa8c4fe00e6829d2002d",
+      "bytes_blob_git": 7450
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/field.rs",
+      "bytes": 8456,
+      "sha256": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7",
+      "sha256_blob_git": "9f4826c0988cb3fb156084aa5df542c43d6210610d26d2bd59f74572a7608cd7",
+      "bytes_blob_git": 8456
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/fri.rs",
+      "bytes": 12645,
+      "sha256": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5",
+      "sha256_blob_git": "5eb621ce89ebdc155443b0ff08b8ac2168f1ed6e067e867e240809a8bf6cf3d5",
+      "bytes_blob_git": 12645
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/linked.rs",
+      "bytes": 12599,
+      "sha256": "0f8438b6c4d293d19888a59f53831b9873f815c55f0a2a719706ae206402fd52",
+      "sha256_blob_git": "0f8438b6c4d293d19888a59f53831b9873f815c55f0a2a719706ae206402fd52",
+      "bytes_blob_git": 12599
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/linked_codec.rs",
+      "bytes": 4815,
+      "sha256": "8c2ade36b7d5211bc88fa78a3224f7e79d408269ec54f15078ef081998b1e013",
+      "sha256_blob_git": "8c2ade36b7d5211bc88fa78a3224f7e79d408269ec54f15078ef081998b1e013",
+      "bytes_blob_git": 4815
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/merkle.rs",
+      "bytes": 5788,
+      "sha256": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f",
+      "sha256_blob_git": "04dfc76a61fbcc49c1a334831b8e093b049457da38a9464334921ea90eb79c7f",
+      "bytes_blob_git": 5788
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/mod.rs",
+      "bytes": 1169,
+      "sha256": "d1b0572405fa67466258ae09f4d42c01f2ffb6d3c84a410c283bb5189b7b2b77",
+      "sha256_blob_git": "d1b0572405fa67466258ae09f4d42c01f2ffb6d3c84a410c283bb5189b7b2b77",
+      "bytes_blob_git": 1169
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/ntt.rs",
+      "bytes": 4327,
+      "sha256": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3",
+      "sha256_blob_git": "7649462a2939cbb82630ab7cabad00d80226ee55c93b73c4c840bf8752498cb3",
+      "bytes_blob_git": 4327
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/stark/params.rs",
+      "bytes": 3662,
+      "sha256": "0366d03982279f78c8c39b759d99ee4bd0b4940a330b9216fbb2e610992d34b0",
+      "sha256_blob_git": "0366d03982279f78c8c39b759d99ee4bd0b4940a330b9216fbb2e610992d34b0",
+      "bytes_blob_git": 3662
+    },
+    {
+      "archivo": "nexus/nexus-zk/src/verifier.rs",
+      "bytes": 1461,
+      "sha256": "5f4c8168b6ff86e2712474e2dfc443f056a6091d46c48d662ad90b0ffb0b9a73",
+      "sha256_blob_git": "5f4c8168b6ff86e2712474e2dfc443f056a6091d46c48d662ad90b0ffb0b9a73",
+      "bytes_blob_git": 1461
+    },
+    {
+      "archivo": "nexus/nexus-zk/tests/lean_contract.rs",
+      "bytes": 3792,
+      "sha256": "e59186c000f56bd86d0989360437825af5a7985c07e98a63aac5c39ea5ed7e9b",
+      "sha256_blob_git": "e59186c000f56bd86d0989360437825af5a7985c07e98a63aac5c39ea5ed7e9b",
+      "bytes_blob_git": 3792
+    },
+    {
+      "archivo": "nexus/nexus-zk/tests/tg2_air_algebra.rs",
+      "bytes": 7955,
+      "sha256": "fd900251ca0b8363865c847976f618d66c8657993c0a24ad03cd5820eb86865e",
+      "sha256_blob_git": "fd900251ca0b8363865c847976f618d66c8657993c0a24ad03cd5820eb86865e",
+      "bytes_blob_git": 7955
+    },
+    {
+      "archivo": "nexus/nexus-zk/tests/tg2_linked_trace_fri.rs",
+      "bytes": 10744,
+      "sha256": "1270fe7b2a8b843b038db6fa6803975a1448044df1693b86875c20942316707d",
+      "sha256_blob_git": "7ee2be8d29e2db6f8c121dfccee2589670d7d019557b4bb1fecac284b7a5dcfe",
+      "bytes_blob_git": 10511
+    },
+    {
+      "archivo": "nexus/nexus-zk/tests/tg2_soundness.rs",
+      "bytes": 6027,
+      "sha256": "1655b2f6e24d488329883aeec256595c8a02081419d7f0cb830c2e0435b878b7",
+      "sha256_blob_git": "1655b2f6e24d488329883aeec256595c8a02081419d7f0cb830c2e0435b878b7",
+      "bytes_blob_git": 6027
+    },
+    {
+      "archivo": "nexus/nexus-zk/tests/tg2_trace_proximity.rs",
+      "bytes": 8319,
+      "sha256": "b3041688851e554e82c2340ff1e24d57017d7c662c11c9f226679717695fbcdc",
+      "sha256_blob_git": "b3041688851e554e82c2340ff1e24d57017d7c662c11c9f226679717695fbcdc",
+      "bytes_blob_git": 8319
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+ALMACENAMIENTO E INCLUSION LOCAL DA - 20 DE OCTUBRE DE 2026
+
+Se corrigen sobrescrituras de fragmentos entre envios a igual altura, admision
+de datos vacios con riesgo de modulo por cero y pruebas que no verificaban
+contra el compromiso registrado. Los bytes opacos admitidos miden 1..1 MiB.
+Cada envio tiene un indice local por altura, que L2BatchRecord conserva para
+recuperar exactamente su contenido aunque cambien altura e indice global.
+
+El recibo local version 1 separa SHA3 de los bytes completos y raiz de fragmentos
+ordenados de 256 bytes, con ultimo fragmento de longitud exacta. Las hojas atan
+dominio V1, hash del contenido, tamano, cantidad e indice. Se exigen profundidad
+canonica, longitud e indice original valido, y se rechazan hojas de relleno.
+El vector da-oracle.json procede de hashlib.sha3_256 sin importar codigo Rust.
+
+Se guardan todos los fragmentos originales sin paridad ni duplicacion. El campo
+coding_params es (cantidad, cantidad). reconstruct_batch valida bytes y recibo.
+Las APIs antiguas por altura rechazan la ambiguedad; sample comprueba todos los
+lotes locales de esa altura, sin azar ni acceso a pares. No es DAS remoto.
+
+Tres regresiones reprodujeron fallos previos. Se agregan trece pruebas (nueve
+externas de fragmentos, dos L1 y dos internas) y se refuerza una prueba anterior
+que generaba una ruta sin verificarla. Pasan 293 pruebas globales, check de todos
+los targets, build y 16 casos release. Los logs retienen avisos preexistentes.
+
+El recibo debe proceder de contexto confiable y no prueba su inclusion en L1.
+No acredita disponibilidad de red, Reed-Solomon, recuperacion con fragmentos
+perdidos, validez de ejecucion L2 ni compromiso integral de auxiliares mediante
+la raiz de cuentas. El helper es registro local, no autorizacion de consenso.
+Los recibos sin version anteriores no se admiten por el formato nuevo.
+
+Se conservan 400 fuentes protegidas. Lean, manuscrito, primitivas ML-DSA, formatos
+firmados y nucleo/lector AIR-FRI quedan intactos. No se recompila Lean ni se
+regenera la tesis. No se agrega un teorema ni se amplia el alcance escalar.

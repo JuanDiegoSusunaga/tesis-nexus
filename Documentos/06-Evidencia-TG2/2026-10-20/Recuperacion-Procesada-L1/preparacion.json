@@ -1,0 +1,17 @@
+{
+  "fecha_utc": "2026-10-20T21:03:55.746054+00:00",
+  "autorizacion": "Sigue: continuar Rust respetando Lean y tesis, con consolidacion local.",
+  "base_codigo": "7b86409eb72c9022dfd7cc30f40e9521b493ccb5",
+  "manifiesto_previo": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Recuperacion-Procesada-L1/respaldo_previo/version-tg2.json",
+    "bytes": 2346107,
+    "sha256": "4ba453ce9fdbdcdbc9d7eda378de26dd10a7ceacca54bc278e84d3f36cc0087a"
+  },
+  "pruebas_nuevas": 10,
+  "pruebas_workspace": 338,
+  "pruebas_release_dirigidas": 26,
+  "fuentes_protegidas_intactas": 400,
+  "lean_recompilado": false,
+  "manuscrito_regenerado": false,
+  "push": false
+}

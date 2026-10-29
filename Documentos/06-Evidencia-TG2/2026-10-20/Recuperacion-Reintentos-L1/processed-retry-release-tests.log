@@ -1,0 +1,203 @@
+warn: could not canonicalize path C:\Users\juand
+warning: unused import: `NexusError`
+ --> nexus-core\src\merkle.rs:5:22
+  |
+5 | use crate::{Hash256, NexusError, Hashable};
+  |                      ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ----^^^^^^^^^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `current_index`
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_current_index`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-core` (lib) generated 3 warnings (run `cargo fix --lib -p nexus-core` to apply 3 suggestions)
+warning: unused import: `PQSignature`
+ --> nexus-crypto\src\signer.rs:8:35
+  |
+8 |     Address, Hash256, NexusError, PQSignature, SignatureScheme,
+  |                                   ^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `created_at` is never read
+   --> nexus-crypto\src\entropy.rs:233:5
+    |
+225 | pub struct SentinelSeed {
+    |            ------------ field in this struct
+...
+233 |     created_at: Timestamp,
+    |     ^^^^^^^^^^
+    |
+    = note: `SentinelSeed` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-crypto` (lib) generated 2 warnings (run `cargo fix --lib -p nexus-crypto` to apply 1 suggestion)
+warning: unused imports: `BlockHeight` and `Hash256`
+ --> nexus-anchor\src\validator.rs:5:35
+  |
+5 | use nexus_core::{Address, Amount, BlockHeight, Hash256, NexusError, Timestamp};
+  |                                   ^^^^^^^^^^^  ^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `nexus_crypto::DilithiumPublicKey`
+ --> nexus-anchor\src\validator.rs:6:5
+  |
+6 | use nexus_crypto::DilithiumPublicKey;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: field `unbonding_period` is never read
+   --> nexus-anchor\src\validator.rs:306:5
+    |
+300 | pub struct ValidatorRegistry {
+    |            ----------------- field in this struct
+...
+306 |     unbonding_period: u64,
+    |     ^^^^^^^^^^^^^^^^
+    |
+    = note: `ValidatorRegistry` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-anchor` (lib) generated 3 warnings (run `cargo fix --lib -p nexus-anchor` to apply 2 suggestions)
+warning: unused import: `NexusError`
+ --> nexus-zk\src\lib.rs:9:27
+  |
+9 | use nexus_core::{Hash256, NexusError, StateRoot};
+  |                           ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nexus-zk` (lib) generated 1 warning (run `cargo fix --lib -p nexus-zk` to apply 1 suggestion)
+   Compiling nexus-active v0.1.0 (C:\Users\juand\Desktop\Tesis\nexus\nexus-active)
+warning: unused import: `std::collections::HashMap`
+  --> nexus-active\src\execution.rs:11:5
+   |
+11 | use std::collections::HashMap;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `PQSignature`
+ --> nexus-active\src\batch.rs:5:39
+  |
+5 | use nexus_core::{Hash256, NexusError, PQSignature, SignedTransaction, StateRoot, BlockHeight, Timestamp};
+  |                                       ^^^^^^^^^^^
+
+warning: unused imports: `Address` and `InMemoryState`
+  --> nexus-active\src\chain.rs:13:46
+   |
+13 |     SignedTransaction, StateRoot, Timestamp, Address, InMemoryState,
+   |                                              ^^^^^^^  ^^^^^^^^^^^^^
+
+warning: unused variable: `value`
+   --> nexus-active\src\execution.rs:256:9
+    |
+256 |         value: Amount,
+    |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_value`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `vk_hash` is never read
+  --> nexus-active\src\verifier.rs:84:5
+   |
+74 | pub struct NitroVerifier {
+   |            ------------- field in this struct
+...
+84 |     vk_hash: Hash256,
+   |     ^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `challenger` is never read
+   --> nexus-active\src\verifier.rs:103:5
+    |
+100 | struct PendingProof {
+    |        ------------ field in this struct
+...
+103 |     challenger: Option<Address>,
+    |     ^^^^^^^^^^
+    |
+    = note: `PendingProof` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: field `l1_reference` is never read
+   --> nexus-active\src\chain.rs:102:5
+    |
+ 78 | pub struct ActiveChain {
+    |            ----------- field in this struct
+...
+102 |     l1_reference: Arc<RwLock<BlockHeight>>,
+    |     ^^^^^^^^^^^^
+
+warning: `nexus-active` (lib) generated 7 warnings (run `cargo fix --lib -p nexus-active` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 14.23s
+     Running tests\batch_retry.rs (target\release\deps\batch_retry-cc1ae2fa6b593cc3.exe)
+
+running 8 tests
+test three_retries_are_allowed_and_a_fourth_leaves_the_pending_attempt_intact ... ok
+test stale_empty_and_reserved_hashes_do_not_consume_attempts_or_reservations ... ok
+test concurrent_retries_with_the_same_expected_hash_have_one_winner ... ok
+test an_included_mismatched_attempt_does_not_hide_a_later_matching_one ... ok
+test incorrect_hash_can_be_retried_without_changing_the_local_batch ... ok
+test multiple_included_attempts_choose_the_first_recorded_matching_intent ... ok
+test a_delayed_original_attempt_can_confirm_after_a_retry ... ok
+test confirmation_and_retry_race_preserves_one_confirmation_and_consistent_history ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\processed_recovery.rs (target\release\deps\processed_recovery-53fc28927ca28965.exe)
+
+running 8 tests
+test historical_expiry_and_consumed_nonce_do_not_erase_a_processed_inclusion ... ok
+test omitted_initial_registration_recovers_exact_packet_and_original_block_once ... ok
+test preparation_helpers_rejected_blocks_and_another_source_are_not_processed_inclusion ... ok
+test same_hash_does_not_authorize_an_altered_signed_envelope ... ok
+test recovery_cannot_replace_existing_attempts_or_discard_their_history ... ok
+test concurrent_recovery_commits_one_initial_observation ... ok
+test processed_inclusion_cannot_bypass_validity_or_hybrid_certificate_policy ... ok
+test actually_processed_different_payload_or_publisher_cannot_claim_the_local_batch ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests\processed_retry.rs (target\release\deps\processed_retry-06a230c8d03f3eaa.exe)
+
+running 8 tests
+test a_hash_only_intent_can_recover_an_expired_but_processed_replacement ... ok
+test unprocessed_or_altered_packets_are_rejected_before_attempts_change ... ok
+test recovery_targets_the_missing_packet_and_does_not_duplicate_an_already_recorded_attempt ... ok
+test omitted_signed_retry_preserves_both_packets_and_original_inclusion ... ok
+test stale_absent_or_globally_reserved_attempts_cannot_change_pending_history ... ok
+test concurrent_recovery_or_normal_retry_has_only_one_winning_transition ... ok
+test recovery_uses_the_same_three_retry_limit_and_cannot_consume_a_fourth ... ok
+test a_processed_different_batch_or_publisher_cannot_replace_the_local_attempt ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\signed_registration.rs (target\release\deps\signed_registration-4e18835184ad3087.exe)
+
+running 8 tests
+test hash_only_intents_remain_distinct_and_can_retry_with_a_validated_packet ... ok
+test validated_registration_retains_exact_signed_bytes_before_and_after_confirmation ... ok
+test validated_retry_keeps_both_packets_and_confirms_the_new_nonce ... ok
+test invalid_or_stale_retries_preserve_counter_packet_history_and_reservations ... ok
+test validated_retries_remain_bounded_and_do_not_store_a_rejected_fourth_packet ... ok
+test forged_envelopes_and_invalid_l1_policy_are_rejected_without_recording_bytes ... ok
+test valid_signatures_for_different_payloads_or_publishers_do_not_reserve_an_intent ... ok
+test concurrent_signed_registration_and_retries_each_have_one_winner ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

@@ -1,0 +1,39 @@
+CONFIRMACION LOCAL DE INCLUSION L1 - 20 DE OCTUBRE DE 2026
+
+Antes bastaba un indice para confirmar un envio, aunque el hash registrado
+fuera inventado, y se podia asignar un mismo hash a dos lotes. Dos regresiones
+reprodujeron estos fallos. Ahora se rechazan hashes vacios o ya asignados y
+mark_batch_confirmed requiere una instancia AnchorChain confiable del llamante.
+
+La consulta de L1 lee, bajo un bloqueo, el registro originado por una transaccion
+firmada BatchSubmit, su bloque canonico procesado y los datos DA reconstruidos.
+El helper local conserva origen None y no permite confirmar un envio. Preparar
+un bloque o rechazarlo tampoco publica ese origen. Se comparan el hash registrado,
+remitente igual al secuenciador, raiz posterior, cantidad y bytes del lote.
+
+ConfirmedBatch conserva lote, hash de transaccion, hash de bloque y altura L1.
+La transicion ocurre una vez, tambien concurrentemente. Rechazos no consumen
+el envio pendiente ni crean confirmaciones. La inclusion no promueve una raiz
+optimista a verificada ni aporta finalidad BFT.
+
+Ocho pruebas nuevas cubren hash ficticio, reutilizacion, hash cero, flujo completo
+con rechazo/reintento, metadatos/remitente diferentes, helper, tipo de transaccion
+equivocado y concurrencia. Se adapta el caso optimista anterior para rechazar la
+confirmacion ficticia. Pasan 301 pruebas globales, check de todos los targets,
+build y 16 casos dirigidos release. Los logs retienen avisos preexistentes.
+
+Se agrega una dependencia interna nexus-active -> nexus-anchor. Cargo.lock cambia
+solo esa arista, sin nuevas bibliotecas externas ni versiones. La API publica de
+confirmacion ahora recibe &AnchorChain y devuelve Result<ConfirmedBatch,...>;
+la contabilidad auxiliar de confirmacion pasa a ser interna del crate.
+
+El llamante debe seleccionar la instancia L1 autorizada. No se acredita prueba
+remota, finalidad de consenso, recuperacion durable ni unicidad entre reinicios
+u otras instancias. El indice/rango L2 y preestado siguen en el contexto local;
+BatchSubmit no agrega compromiso de ellos en L1. La raiz de cuentas no compromete
+integralmente estructuras DA. La identidad publicadora es la del secuenciador.
+
+Se conservan 400 fuentes protegidas: Lean, manuscrito, primitivas ML-DSA y nucleo/
+lector AIR-FRI. Formatos firmados y certificados no cambian. No se recompila Lean
+ni se regenera la tesis. No se agrega un teorema ni se extiende el AIR escalar;
+el lema estricto >2/3 no se presenta como finalidad de un protocolo completo.

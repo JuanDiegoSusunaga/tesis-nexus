@@ -1,0 +1,34 @@
+REGISTRO VALIDADO DE PAQUETES L1 - 20 DE OCTUBRE DE 2026
+
+register_l1_submission recibe la transaccion firmada y deriva su hash. Compara
+publicador, raiz posterior, cantidad y bytes con el lote conocido. L1 valida
+firma, cadena, nonce, fecha, vencimiento, gas, saldo y envoltura sobre una copia.
+La serializacion y la validacion de L1 preceden al registro de raices o intentos.
+Se conservan las comprobaciones de certificado, unicidad e identidad local.
+
+retry_l1_submission aplica esas comprobaciones al reemplazo, con hash vigente,
+reservas historicas y tres reintentos maximos. Los rechazos conservan contador,
+fechas, paquetes e historial. La contabilidad comun evita adquirir otra vez el
+bloqueo de contexto y mantiene una sola transicion ante llamadas concurrentes.
+
+SubmissionAttempt.transaction_bytes guarda exactamente bincode de la transaccion
+firmada validada. get_l1_submission_transaction la recupera sin otra firma antes
+y despues de confirmar. Los intentos por hash de las APIs anteriores guardan None:
+no validan el paquete L1. Es posible reintentarlos mediante la ruta validada.
+
+Nueve pruebas nuevas (ocho externas y una interna) cubren paquetes exactos,
+datos/remitentes distintos con firmas validas, firmas/politicas invalidas,
+metadatos no incluidos en el hash alterados, reintentos, limite, intentos por hash
+y concurrencia. El caso interno comprueba que un rechazo L1 no registra una raiz
+escalar valida. Pasan 328 pruebas globales, check de todos los targets, build y
+17 casos dirigidos release. Los logs conservan advertencias preexistentes.
+
+Se valida admision actual antes de procesar, sin reservar nonce ni garantizar
+estado futuro. Un nonce ya consumido se rechaza. La instancia L1 es confiable y
+elegida por la integracion. No se emiten transacciones a la red ni se acredita
+entrega, inclusion o finalidad BFT. El historial sigue en memoria. El perfil
+escalar no autentica bytes DA como ejecucion general L2.
+
+Se cotejan 400 fuentes protegidas: Lean, manuscrito, primitivas ML-DSA y nucleo/
+lector AIR-FRI. Los formatos firmados y certificados no cambian. No se recompila
+Lean ni se regenera la tesis; no se agrega un teorema ni se extiende el AIR escalar.

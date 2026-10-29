@@ -1,0 +1,94 @@
+[
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--test",
+      "chain_policy",
+      "--locked",
+      "--offline"
+    ],
+    "log": "l2-policy-integration.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--lib",
+      "configured_transaction_domain_is_shared_by_admission_and_block_execution",
+      "--locked",
+      "--offline"
+    ],
+    "log": "l2-policy-wiring.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "check",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--offline"
+    ],
+    "log": "l2-policy-global-check.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "l2-policy-global-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "build",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "l2-policy-global-build.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--test",
+      "chain_policy",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "l2-policy-release-integration.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--lib",
+      "configured_transaction_domain_is_shared_by_admission_and_block_execution",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "l2-policy-release-wiring.log",
+    "exit_code": 0
+  }
+]

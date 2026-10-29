@@ -1,0 +1,74 @@
+[
+  {
+    "comando": [
+      "cargo",
+      "check",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--offline"
+    ],
+    "log": "local-cycle-global-check.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "local-cycle-global-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "build",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "local-cycle-global-build.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-core",
+      "--test",
+      "local_checkpoint",
+      "-p",
+      "nexus-active",
+      "--test",
+      "execution_contract",
+      "-p",
+      "nexus-node",
+      "--test",
+      "durable_cycle",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "local-cycle-release-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--lib",
+      "local_checkpoint_preserves_an_accepted_scalar_certificate_and_verified_root",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "local-cycle-release-context.log",
+    "exit_code": 0
+  }
+]

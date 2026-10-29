@@ -1,0 +1,183 @@
+warn: could not canonicalize path C:\Users\juand
+   Compiling subtle v2.6.1
+   Compiling crossbeam-utils v0.8.21
+   Compiling syn v1.0.109
+   Compiling rayon-core v1.13.0
+   Compiling either v1.15.0
+   Compiling paste v1.0.15
+   Compiling num-traits v0.2.19
+   Compiling ahash v0.8.12
+   Compiling tracing-core v0.1.36
+   Compiling digest v0.10.7
+   Compiling itertools v0.10.5
+   Compiling sha2 v0.10.9
+   Compiling sha3 v0.10.8
+   Compiling blake2 v0.10.6
+   Compiling tracing-subscriber v0.2.25
+   Compiling tracing v0.1.44
+   Compiling fips204 v0.4.6
+   Compiling hashbrown v0.13.2
+   Compiling num-integer v0.1.46
+   Compiling crossbeam-epoch v0.9.18
+   Compiling chrono v0.4.43
+   Compiling num-bigint v0.4.6
+   Compiling crossbeam-deque v0.8.6
+   Compiling nexus-core v0.1.0 (C:\Users\juand\Desktop\Tesis\nexus\nexus-core)
+warning: unused import: `NexusError`
+ --> nexus-core\src\merkle.rs:5:22
+  |
+5 | use crate::{Hash256, NexusError, Hashable};
+  |                      ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+   Compiling rayon v1.11.0
+warning: variable does not need to be mutable
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ----^^^^^^^^^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `current_index`
+  --> nexus-core\src\merkle.rs:88:13
+   |
+88 |         let mut current_index = index;
+   |             ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_current_index`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+   Compiling nexus-crypto v0.1.0 (C:\Users\juand\Desktop\Tesis\nexus\nexus-crypto)
+warning: unused import: `PQSignature`
+ --> nexus-crypto\src\signer.rs:8:35
+  |
+8 |     Address, Hash256, NexusError, PQSignature, SignatureScheme,
+  |                                   ^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `created_at` is never read
+   --> nexus-crypto\src\entropy.rs:233:5
+    |
+225 | pub struct SentinelSeed {
+    |            ------------ field in this struct
+...
+233 |     created_at: Timestamp,
+    |     ^^^^^^^^^^
+    |
+    = note: `SentinelSeed` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+   Compiling ark-serialize-derive v0.4.2
+   Compiling derivative v2.2.0
+   Compiling ark-ff-asm v0.4.2
+   Compiling ark-ff-macros v0.4.2
+warning: `nexus-core` (lib) generated 3 warnings (run `cargo fix --lib -p nexus-core` to apply 3 suggestions)
+   Compiling ark-std v0.4.0
+   Compiling ark-serialize v0.4.2
+   Compiling ark-ff v0.4.2
+warning: `nexus-crypto` (lib) generated 2 warnings (run `cargo fix --lib -p nexus-crypto` to apply 1 suggestion)
+   Compiling ark-poly v0.4.2
+   Compiling ark-relations v0.4.0
+   Compiling ark-snark v0.4.0
+   Compiling ark-ec v0.4.2
+   Compiling ark-crypto-primitives v0.4.0
+   Compiling ark-bn254 v0.4.0
+   Compiling ark-groth16 v0.4.0
+   Compiling nexus-zk v0.1.0 (C:\Users\juand\Desktop\Tesis\nexus\nexus-zk)
+warning: unused import: `NexusError`
+ --> nexus-zk\src\lib.rs:9:27
+  |
+9 | use nexus_core::{Hash256, NexusError, StateRoot};
+  |                           ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+   Compiling nexus-active v0.1.0 (C:\Users\juand\Desktop\Tesis\nexus\nexus-active)
+warning: unused import: `std::collections::HashMap`
+  --> nexus-active\src\execution.rs:11:5
+   |
+11 | use std::collections::HashMap;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `PQSignature`
+ --> nexus-active\src\batch.rs:5:39
+  |
+5 | use nexus_core::{Hash256, NexusError, PQSignature, SignedTransaction, StateRoot, BlockHeight, Timestamp};
+  |                                       ^^^^^^^^^^^
+
+warning: unused imports: `Address` and `InMemoryState`
+  --> nexus-active\src\chain.rs:13:46
+   |
+13 |     SignedTransaction, StateRoot, Timestamp, Address, InMemoryState,
+   |                                              ^^^^^^^  ^^^^^^^^^^^^^
+
+warning: unused variable: `value`
+   --> nexus-active\src\execution.rs:256:9
+    |
+256 |         value: Amount,
+    |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_value`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `vk_hash` is never read
+  --> nexus-active\src\verifier.rs:84:5
+   |
+74 | pub struct NitroVerifier {
+   |            ------------- field in this struct
+...
+84 |     vk_hash: Hash256,
+   |     ^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `challenger` is never read
+   --> nexus-active\src\verifier.rs:103:5
+    |
+100 | struct PendingProof {
+    |        ------------ field in this struct
+...
+103 |     challenger: Option<Address>,
+    |     ^^^^^^^^^^
+    |
+    = note: `PendingProof` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: field `max_retries` is never read
+   --> nexus-active\src\batch.rs:260:5
+    |
+252 | pub struct BatchSubmitter {
+    |            -------------- field in this struct
+...
+260 |     max_retries: u32,
+    |     ^^^^^^^^^^^
+
+warning: field `l1_reference` is never read
+   --> nexus-active\src\chain.rs:100:5
+    |
+ 76 | pub struct ActiveChain {
+    |            ----------- field in this struct
+...
+100 |     l1_reference: Arc<RwLock<BlockHeight>>,
+    |     ^^^^^^^^^^^^
+
+warning: `nexus-zk` (lib) generated 1 warning (run `cargo fix --lib -p nexus-zk` to apply 1 suggestion)
+warning: `nexus-active` (lib) generated 8 warnings (run `cargo fix --lib -p nexus-active` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 19.74s
+     Running tests\chain_policy.rs (target\release\deps\chain_policy-04cb47492081c5db.exe)
+
+running 7 tests
+test foreign_deployment_and_call_are_rejected_before_any_execution_effect ... ok
+test default_engine_rejects_foreign_signatures_before_balance_or_nonce_changes ... ok
+test configured_sequencer_and_restored_engine_use_the_explicit_domain ... ok
+test default_sequencer_rejects_foreign_signatures_without_reserving_a_nonce ... ok
+test mixed_batch_rejects_foreign_entries_without_consuming_the_honest_nonce ... ok
+test relabelling_a_foreign_transaction_does_not_replace_its_signature ... ok
+test active_chain_rejects_foreign_transactions_at_its_public_boundary ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

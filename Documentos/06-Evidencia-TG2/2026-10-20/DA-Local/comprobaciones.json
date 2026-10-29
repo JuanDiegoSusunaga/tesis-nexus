@@ -1,0 +1,98 @@
+[
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-anchor",
+      "--test",
+      "local_da",
+      "--test",
+      "local_da_chain",
+      "--locked",
+      "--offline"
+    ],
+    "log": "da-integration.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-anchor",
+      "--lib",
+      "data_availability::tests::",
+      "--locked",
+      "--offline"
+    ],
+    "log": "da-internal.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "check",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--offline"
+    ],
+    "log": "da-global-check.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "da-global-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "build",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "da-global-build.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-anchor",
+      "--test",
+      "local_da",
+      "--test",
+      "local_da_chain",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "da-release-integration.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-anchor",
+      "--lib",
+      "data_availability::tests::",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "da-release-internal.log",
+    "exit_code": 0
+  }
+]

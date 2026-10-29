@@ -1,0 +1,39 @@
+CONTRATO LOCAL DE CUENTAS L1 - 20 DE OCTUBRE DE 2026
+
+El bloque se simula sobre el estado local; despues de ejecutar las operaciones
+se acredita la recompensa. Se calcula la raiz SHA3 de las cuentas ordenadas
+segun InMemoryState y se exige igualdad con header.state_root antes de publicar.
+Todo rechazo conserva cuentas, nonces, validadores, DA, lotes, altura y bloques.
+prepare_block calcula un candidato sin mutaciones ni certificado de consenso.
+
+El perfil mantiene transferencias, altas de validadores y envios locales de
+lotes; cada operacion aceptada incrementa el nonce una vez. El gas y el costo
+maximo se comprueban con aritmetica representable como reserva de admision;
+no se cobran comisiones. fee_percentage sigue reservado. La recompensa se
+aplica al final: en bloques de transferencias, la suma de saldos cambia solo
+por ella. Un desbordamiento rechaza el bloque completo.
+
+Los vencimientos usan la fecha del bloque, no el reloj del verificador. No se
+aceptan transacciones posteriores a esa fecha ni bloques anteriores al padre.
+Se validan version, capa, padre y raiz de transacciones. Recibos L1 aun no
+implementados: receipts_root admite unicamente ZERO.
+
+La raiz cubre cuentas, no un compromiso integral de todas las estructuras
+auxiliares. La publicacion de sus efectos es atomica, pero este perfil no
+demuestra persistencia, DA real, BFT completo ni validacion general de L2.
+Tampoco traslada la relacion escalar AIR/FRI a hashes SHA3 de cuentas.
+
+Se conservan las correcciones previas de firmas, nonces, gas y quorum. Los
+votos siguen el requisito estricto de peso autenticado >2/3 de Lean; no se
+deduce de ello seguridad/vivacidad de un protocolo BFT completo. Fraude y
+finalizacion optimistas permanecen sin contrato autenticado y se rechazan.
+
+Las nueve pruebas nuevas calculan balances, nonces y raices esperados fuera
+del constructor, cubren cabeceras alteradas, politicas de recompensa, replay
+historico y rollback de altas/DA validas cuando la raiz es falsa. Pasan 264
+pruebas globales, check/build del workspace y 14 casos dirigidos en release.
+
+Las fuentes Lean, capitulos y nucleo/lector AIR-FRI quedan intactos, al igual
+que los primitivos ML-DSA. El adaptador de firma acepta ahora tiempo explicito
+de la aplicacion; conserva bytes firmados, contexto y backend. La API ordinaria
+mantiene el reloj como referencia. No se recompila Lean ni regenera la tesis.

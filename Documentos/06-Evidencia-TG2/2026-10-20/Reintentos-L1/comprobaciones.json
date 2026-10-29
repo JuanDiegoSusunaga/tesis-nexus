@@ -1,0 +1,82 @@
+[
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--lib",
+      "submission_retries_preserve_the_validity_certificate_and_local_context",
+      "--locked",
+      "--offline"
+    ],
+    "log": "retry-validity-context.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "check",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--offline"
+    ],
+    "log": "retry-global-check.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "retry-global-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "build",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "retry-global-build.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--test",
+      "batch_retry",
+      "--test",
+      "l1_confirmation",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "retry-release-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--lib",
+      "submission_retries_preserve_the_validity_certificate_and_local_context",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "retry-release-context.log",
+    "exit_code": 0
+  }
+]

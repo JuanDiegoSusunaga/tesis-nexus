@@ -1,0 +1,33 @@
+RECUPERACION DE UN REGISTRO INICIAL OMITIDO - 20 DE OCTUBRE DE 2026
+
+recover_l1_submission requiere un lote conocido sin intentos y un paquete firmado
+que la instancia L1 confiable ya proceso. Compara publicador, raiz, cantidad y datos
+con el contexto local, exige su certificado L2 segun el modo y reserva su hash una
+sola vez. Registra directamente un ConfirmedBatch con bloque/altura originales y
+bytes exactos, sin envio pendiente intermedio, nueva firma o emision de red.
+
+validate_processed_batch_submission consulta bajo una sola lectura el bloque
+canonico, registro de lote y datos DA reconstruidos. Compara tambien la envoltura
+completa serializada: el hash actual no incluye remitente, clave o esquema. No
+repite la admision al reloj/nonce actuales de un paquete ya validado al procesarse.
+Las API de admision actual siguen rechazando nonces consumidos y vencimientos.
+
+Los rechazos ocurren antes de registrar raices o confirmaciones. No se aceptan
+candidatos preparados, bloques rechazados, helpers DA, otra fuente sin inclusion,
+payload/publicador/contexto distintos o envolturas alteradas con igual hash. Las
+llamadas concurrentes registran una sola confirmacion. Un historial existente no
+se sustituye: conserva su ruta mark_batch_confirmed y sus intentos por hash None.
+
+Ocho pruebas externas y dos internas cubren esos casos, vencimiento historico,
+coherencia DA, validez/hibrido y certificado escalar sintetico valido. Pasan 338
+pruebas globales, check de todos los targets, build y 26 pruebas dirigidas release.
+Los logs conservan advertencias preexistentes.
+
+La fuente local es confiable y elegida por la integracion. Lotes e historial siguen
+en memoria; no hay restauracion tras reiniciar ni recuperacion de reemplazos
+omitidos. La inclusion no es finalidad BFT ni autentica ejecucion general L2. El
+modo optimista sigue provisional y el AIR sigue limitado a su relacion escalar.
+
+Se cotejan 400 fuentes protegidas: Lean, manuscrito, primitivas ML-DSA y nucleo/
+lector AIR-FRI. No cambian los formatos firmados ni certificados. No se recompila
+Lean, no se regenera la tesis ni se agrega o extiende un resultado matematico.

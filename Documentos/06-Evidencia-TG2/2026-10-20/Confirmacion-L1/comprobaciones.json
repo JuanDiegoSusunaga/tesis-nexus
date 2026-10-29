@@ -1,0 +1,68 @@
+[
+  {
+    "comando": [
+      "cargo",
+      "check",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--offline"
+    ],
+    "log": "confirmation-global-check.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "confirmation-global-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "build",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "confirmation-global-build.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--test",
+      "l1_confirmation",
+      "--test",
+      "active_chain_contract",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "confirmation-release-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-anchor",
+      "--test",
+      "local_da_chain",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "confirmation-release-da.log",
+    "exit_code": 0
+  }
+]

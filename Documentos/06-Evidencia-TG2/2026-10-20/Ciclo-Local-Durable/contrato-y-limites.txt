@@ -1,0 +1,39 @@
+CICLO LOCAL DURABLE NEXUS - 20 DE OCTUBRE DE 2026
+
+El motor L2 rechaza Call y Deploy sin interprete. Se reproducen antes dos exitos
+simulados: llamada a codigo existente y despliegue sin inicializacion. El rechazo
+no crea codigo/cuentas, mueve valor, incrementa nonce o produce retornos/logs.
+La transferencia soportada conserva su contrato y la reserva de costo sin comision.
+
+DurableNode posee L1/L2 privadas, guarda antes de devolver exito y revierte memoria
+ante error previo a publicar. Conserva cuentas, codigo/storage, bloques, pool,
+nonces, lote parcial, contextos, colas, intentos, bytes firmados, confirmaciones,
+verificador, DA, validadores y metadatos locales de finalidad. Las claves privadas
+no se serializan; el llamante aporta identidad y configuracion al reabrir. La
+asignacion experimental de balances se compromete en genesis y no permite mint
+posterior. ActiveChain/AnchorChain directas conservan su uso en memoria.
+
+El almacen versionado limita el payload a 64 MiB, exige un escritor mediante
+bloqueo del SO, sincroniza un temporal nuevo y publica por renombrado. Comprueba
+longitud, generacion y checksum SHA3. Ignora temporales incompletos y rechaza el
+ultimo checkpoint corrupto sin volver silenciosamente al anterior. Conserva todas
+las generaciones; no agrega migracion ni poda. La restauracion no vuelve a validar
+al reloj actual las firmas/inclusiones historicas ya almacenadas.
+
+Trece pruebas nuevas cubren ejecucion soportada, bloqueo, corrupcion, codecs,
+reinicios, pool, lote parcial, limites e historial de reintentos, identidad,
+politicas/genesis, cuatro fallos de escritura, inclusion vencida y contexto escalar
+sintetico. El test de ciclo lanza cinco procesos y termina cada uno sin Drop;
+su helper se excluye de la corrida directa y lo ejecuta el padre. Pasan 360
+pruebas globales y 13 dirigidas release, check y build. El ejemplo reabre cuatro
+veces y produce seis generaciones verificadas ademas con Python struct/hashlib.
+
+Alcance local confiable. El checksum no autentica al escritor ni evita rollback
+malicioso de archivos. Se prueba salida de procesos, no corte electrico o garantia
+de metadatos/remotos. La custodia durable de claves sigue fuera de este componente.
+No hay transmision de red, finalidad BFT, disponibilidad remota, interprete de
+contratos o prueba AIR de ejecucion general. No se acredita rendimiento productivo.
+
+Se cotejan 400 fuentes protegidas: Lean, manuscrito, primitivas ML-DSA y nucleo/
+lector AIR-FRI. No cambian los formatos firmados o certificados ni sus teoremas.
+No se recompila Lean ni se regenera la tesis. Solo consolidacion local, sin push.

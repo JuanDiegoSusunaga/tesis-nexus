@@ -1,0 +1,19 @@
+{
+  "fuente_md_sha256": "4bbb309a856f73e0ba7f57bd298812e7aea2fb90a04236f5d1a2b8c6d4f84dac",
+  "referencia_sha256": "5509869d55994adf7575b90ac1a8a1c3a8d598ffb1cc967cefd72cf7e7d8c2d8",
+  "word_sha256": "8138c4e4d5eafd16c4f560474daad82cd1199ca8afc06b2a2ae65b172f0ca7d9",
+  "partes_preservadas_exactamente": 19,
+  "partes_editadas": [
+    "word/document.xml",
+    "word/_rels/document.xml.rels",
+    "word/settings.xml",
+    "word/numbering.xml",
+    "docProps/core.xml"
+  ],
+  "estilos_identicos_referencia": true,
+  "tablas": 0,
+  "celdas": 0,
+  "ecuaciones_nativas": 33,
+  "hipervinculos_trasladados": 23,
+  "referencia_intacta": true
+}

@@ -1,0 +1,11 @@
+{
+  "herramienta": "Python hashlib.sha3_256; sin importar codigo Rust",
+  "payload": "512 bytes de valor 7",
+  "version": 1,
+  "data_size": 512,
+  "chunk_count": 2,
+  "payload_sha3": "22c56c0906d47bb26ff07b8b8ab4e71004f70baf0fc82a08b27a55af7b06e643",
+  "leaf_0": "7d403cfbe099b7a2a5a966372a479e0591a5162a19ef36eadb78c47c73f1f26f",
+  "leaf_1": "5c93a9080a031112bc3c23b007e628827d2a53701d8a148112ba34c7a9f7e6f1",
+  "chunk_root": "a7e1f8cdd24b3a0a5235fc453b117d3dc3f14c8538442d616e6e7495fc59a4b9"
+}

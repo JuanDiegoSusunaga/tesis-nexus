@@ -1,6 +1,6 @@
 # Herramientas y reproducción de TG2
 
-Ejecutar desde la raíz de `Tesis`. Los scripts resuelven las rutas del proyecto a partir de su ubicación. El código Rust se clona en `nexus/` según el [README principal](../README.md).
+Ejecutar desde la raíz del repositorio. Los scripts resuelven las rutas del proyecto a partir de su ubicación. Desde la edición unificada del 29 de octubre, el código Rust ya está incluido en `nexus/`, junto con la tesis y Lean; basta clonar `tesis-nexus` una vez. Consultar la [entrada para el director](../README.md).
 
 ## Formalización Lean y costo de reproducción
 
@@ -24,7 +24,7 @@ Comprueba doce afirmaciones, dependencias sin ciclos, localizadores y hashes de 
 python scripts/verificar_version_tg2.py
 ```
 
-Este comando verifica el commit y el estado del código, los hashes del manuscrito, las fuentes conservadas y los resultados incluidos en el [manifiesto](../Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json). No ejecuta benchmarks ni modifica los documentos. Solo necesita Python y Git.
+Este comando verifica los hashes del manuscrito, las fuentes Rust/Lean conservadas y los resultados incluidos en el [manifiesto](../Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json). El esquema 2 comprueba el código integrado sin exigir un segundo repositorio Git; el esquema 1 conserva la comprobación del commit y estado del repositorio Rust independiente para ediciones anteriores. No ejecuta benchmarks ni modifica los documentos. Solo necesita Python y Git.
 
 ## 2. Preparar el entorno documental
 
@@ -85,7 +85,9 @@ Estos scripts históricos escriben en rutas fechadas fijas y algunos requieren a
 
 ## 6. Registrar una nueva edición
 
-Después de actualizar y revisar manuscrito, evidencia y código, hacer primero el commit del código. Ejecutar `python scripts/registrar_version_tg2.py`, revisar el manifiesto generado y `python scripts/verificar_version_tg2.py`; después hacer el commit de documentos. El manifiesto fija el commit de código, el commit documental anterior y hashes. El commit documental que contiene el manifiesto identifica la edición sin introducir una referencia circular a su propio hash.
+En la edición unificada, incorporar primero al índice los archivos que integrarán la versión con `git add` sobre las rutas elegidas. Ejecutar `python scripts/registrar_version_tg2.py`, revisar el manifiesto generado y `python scripts/verificar_version_tg2.py`; añadir después el manifiesto y crear el commit. El registrador conserva los metadatos de procedencia y actualiza las huellas de los archivos incluidos en el índice. El commit que contiene el manifiesto identifica la edición completa sin introducir una referencia circular a su propio hash. El commit Rust de origen identifica la importación histórica; los hashes identifican las fuentes integradas vigentes.
+
+Para una edición histórica de esquema 1 con Rust independiente, registrar primero el commit del código y después el documental. Ese flujo se mantiene para reproducir versiones anteriores.
 
 ## 7. Documento independiente de derivaciones
 

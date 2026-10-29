@@ -1,0 +1,72 @@
+[
+  {
+    "comando": [
+      "cargo",
+      "check",
+      "--workspace",
+      "--all-targets",
+      "--locked",
+      "--offline"
+    ],
+    "log": "processed-retry-global-check.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "processed-retry-global-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "build",
+      "--workspace",
+      "--locked",
+      "--offline"
+    ],
+    "log": "processed-retry-global-build.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--test",
+      "processed_retry",
+      "--test",
+      "processed_recovery",
+      "--test",
+      "signed_registration",
+      "--test",
+      "batch_retry",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "processed-retry-release-tests.log",
+    "exit_code": 0
+  },
+  {
+    "comando": [
+      "cargo",
+      "test",
+      "-p",
+      "nexus-active",
+      "--lib",
+      "recovering_a_processed_retry_preserves_the_accepted_scalar_certificate",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "log": "processed-retry-release-context.log",
+    "exit_code": 0
+  }
+]

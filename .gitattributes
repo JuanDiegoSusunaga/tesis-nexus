@@ -1,5 +1,9 @@
 # Conservar los bytes que identifican las mediciones y sus fuentes.
 /.gitattributes text eol=lf
+/nexus/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/scripts/verificar_version_tg2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/scripts/registrar_version_tg2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/scripts/tests/test_verificar_version_tg2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /Documentos/06-Evidencia-TG2/** -text -whitespace
 
 # Conservar los bytes de las pruebas Lean y los verificadores identificados por SHA-256.

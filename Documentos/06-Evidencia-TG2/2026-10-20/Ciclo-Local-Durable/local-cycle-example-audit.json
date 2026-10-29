@@ -1,0 +1,92 @@
+{
+  "comando": [
+    "cargo",
+    "run",
+    "-p",
+    "nexus-node",
+    "--example",
+    "local_cycle",
+    "--release",
+    "--locked",
+    "--offline",
+    "--",
+    "C:\\Users\\juand\\Desktop\\Tesis\\tmp\\rust-review-2026-10-20\\demo-store-212800437828"
+  ],
+  "exit_code": 0,
+  "reaperturas": 4,
+  "generaciones": [
+    {
+      "archivo": "tmp/rust-review-2026-10-20/demo-store-212800437828/checkpoint-00000000000000000001.bin",
+      "generacion": 1,
+      "bytes": 2264,
+      "sha256": "cf31089ca0cd2136eb79b885d852aa5337db10ef8375b33663d51dd1b62bc113",
+      "checksum_sha3_independiente": true,
+      "copia_evidencia": {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Ciclo-Local-Durable/demo-checkpoints/checkpoint-00000000000000000001.bin",
+        "bytes": 2264,
+        "sha256": "cf31089ca0cd2136eb79b885d852aa5337db10ef8375b33663d51dd1b62bc113"
+      }
+    },
+    {
+      "archivo": "tmp/rust-review-2026-10-20/demo-store-212800437828/checkpoint-00000000000000000002.bin",
+      "generacion": 2,
+      "bytes": 13188,
+      "sha256": "1a9306453c9637f38f58b61c7c205d97f0ec2fa26347f4e752dc8bddd0f76e09",
+      "checksum_sha3_independiente": true,
+      "copia_evidencia": {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Ciclo-Local-Durable/demo-checkpoints/checkpoint-00000000000000000002.bin",
+        "bytes": 13188,
+        "sha256": "1a9306453c9637f38f58b61c7c205d97f0ec2fa26347f4e752dc8bddd0f76e09"
+      }
+    },
+    {
+      "archivo": "tmp/rust-review-2026-10-20/demo-store-212800437828/checkpoint-00000000000000000003.bin",
+      "generacion": 3,
+      "bytes": 19218,
+      "sha256": "8461d3a5202d0d34b09013de54875fc083a473db9ce7ecb9a45e40f3c5576ca5",
+      "checksum_sha3_independiente": true,
+      "copia_evidencia": {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Ciclo-Local-Durable/demo-checkpoints/checkpoint-00000000000000000003.bin",
+        "bytes": 19218,
+        "sha256": "8461d3a5202d0d34b09013de54875fc083a473db9ce7ecb9a45e40f3c5576ca5"
+      }
+    },
+    {
+      "archivo": "tmp/rust-review-2026-10-20/demo-store-212800437828/checkpoint-00000000000000000004.bin",
+      "generacion": 4,
+      "bytes": 30388,
+      "sha256": "b5d906f008f68c16f8ae7dc8b8d5c9eb9ac0fece287bcf0c02415b687552a277",
+      "checksum_sha3_independiente": true,
+      "copia_evidencia": {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Ciclo-Local-Durable/demo-checkpoints/checkpoint-00000000000000000004.bin",
+        "bytes": 30388,
+        "sha256": "b5d906f008f68c16f8ae7dc8b8d5c9eb9ac0fece287bcf0c02415b687552a277"
+      }
+    },
+    {
+      "archivo": "tmp/rust-review-2026-10-20/demo-store-212800437828/checkpoint-00000000000000000005.bin",
+      "generacion": 5,
+      "bytes": 59185,
+      "sha256": "e49c8b75563393913788821ba9039d184b5cdfdd3ae250e4b71a00109f34e115",
+      "checksum_sha3_independiente": true,
+      "copia_evidencia": {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Ciclo-Local-Durable/demo-checkpoints/checkpoint-00000000000000000005.bin",
+        "bytes": 59185,
+        "sha256": "e49c8b75563393913788821ba9039d184b5cdfdd3ae250e4b71a00109f34e115"
+      }
+    },
+    {
+      "archivo": "tmp/rust-review-2026-10-20/demo-store-212800437828/checkpoint-00000000000000000006.bin",
+      "generacion": 6,
+      "bytes": 59213,
+      "sha256": "ccf995019d2bfaf03ab70cdecb10f393b287cd363bdd516c3d922919fcd96427",
+      "checksum_sha3_independiente": true,
+      "copia_evidencia": {
+        "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Ciclo-Local-Durable/demo-checkpoints/checkpoint-00000000000000000006.bin",
+        "bytes": 59213,
+        "sha256": "ccf995019d2bfaf03ab70cdecb10f393b287cd363bdd516c3d922919fcd96427"
+      }
+    }
+  ],
+  "auditor": "Python struct/hashlib independiente de la lectura Rust; comprueba envoltura y checksum, no refina el ledger."
+}

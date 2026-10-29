@@ -34,7 +34,8 @@ class VerificacionVersion(unittest.TestCase):
 
     def git(self, carpeta, *argumentos):
         return subprocess.check_output(['git', '-C', str(carpeta), *argumentos],
-                                       text=True, stderr=subprocess.PIPE).strip()
+                                       text=True, stderr=subprocess.PIPE,
+                                       creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0)).strip()
 
     def guardar(self):
         self.manifiesto.write_text(json.dumps(self.datos), encoding='utf-8')
@@ -83,6 +84,45 @@ class VerificacionVersion(unittest.TestCase):
     def test_codigo_con_archivo_nuevo(self):
         (self.codigo / 'nuevo.rs').write_text('// Ejemplo de cambio local.', encoding='utf-8')
         self.assertIn('El código tiene cambios', verificar(self.raiz, self.manifiesto)['errores'][0])
+
+
+class VerificacionIntegrada(unittest.TestCase):
+    def setUp(self):
+        self.temporal = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporal.cleanup)
+        self.raiz = Path(self.temporal.name)
+        subprocess.check_output(['git', '-C', str(self.raiz), 'init', '-q'],
+                                creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
+        self.codigo = self.raiz / 'nexus/src/lib.rs'
+        self.codigo.parent.mkdir(parents=True)
+        self.codigo.write_bytes(b'// fuente\n')
+        self.manifiesto = self.raiz / 'version.json'
+        self.datos = {'esquema': 2, 'edicion': 'unificada', 'codigo': {
+            'modo': 'integrado', 'directorio': 'nexus', 'commit': '0' * 40},
+            'archivos': [{'archivo': 'nexus/src/lib.rs', 'bytes': 10,
+                          'sha256': hashlib.sha256(self.codigo.read_bytes()).hexdigest()}]}
+        self.manifiesto.write_text(json.dumps(self.datos), encoding='utf-8')
+
+    def test_funciona_sin_repositorio_git_anidado(self):
+        self.assertFalse((self.raiz / 'nexus/.git').exists())
+        self.assertTrue(verificar(self.raiz, self.manifiesto)['correcto'])
+
+    def test_detecta_alteracion_del_codigo(self):
+        self.codigo.write_bytes(b'// cambio\n')
+        self.assertIn('Contenido diferente:', verificar(self.raiz, self.manifiesto)['errores'][0])
+
+    def test_detecta_codigo_faltante(self):
+        self.codigo.unlink()
+        self.assertIn('Falta:', verificar(self.raiz, self.manifiesto)['errores'][0])
+
+    def test_detecta_fuente_adicional(self):
+        self.codigo.with_name('nuevo.rs').write_bytes(b'// nuevo\n')
+        self.assertIn('Código sin registrar', verificar(self.raiz, self.manifiesto)['errores'][0])
+
+    def test_no_acepta_un_manifiesto_sin_codigo(self):
+        self.datos['archivos'] = []
+        self.manifiesto.write_text(json.dumps(self.datos), encoding='utf-8')
+        self.assertFalse(verificar(self.raiz, self.manifiesto)['correcto'])
 
 
 if __name__ == '__main__':

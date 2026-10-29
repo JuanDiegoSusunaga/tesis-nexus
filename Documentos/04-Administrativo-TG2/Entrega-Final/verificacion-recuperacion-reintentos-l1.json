@@ -1,0 +1,10 @@
+{
+  "edicion": "tesis-final",
+  "archivos_comprobados": 9944,
+  "commit_codigo": "8480afa707080d350dd9fff0b02e21210fff88ac",
+  "errores": [],
+  "correcto": true,
+  "fecha_utc": "2026-10-20T21:10:19.853583+00:00",
+  "sha256_manifiesto": "6100ac1052181bbd5fba984d016534c94bfacac264c612e0cd3928142ea84ea9",
+  "nota": "Informe externo al inventario para evitar autorreferencia; verificacion local sin push."
+}

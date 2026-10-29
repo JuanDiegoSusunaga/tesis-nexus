@@ -1,0 +1,21 @@
+{
+  "fecha_utc": "2026-10-20T21:28:36.651072+00:00",
+  "autorizacion": "Empecemos: ejecutar los P0 de operacion soportada y persistencia del ciclo local NEXUS.",
+  "base_codigo": "8480afa707080d350dd9fff0b02e21210fff88ac",
+  "manifiesto_previo": {
+    "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Ciclo-Local-Durable/respaldo_previo/version-tg2.json",
+    "bytes": 2353323,
+    "sha256": "6100ac1052181bbd5fba984d016534c94bfacac264c612e0cd3928142ea84ea9"
+  },
+  "regresiones_reproducidas": 2,
+  "pruebas_nuevas": 13,
+  "pruebas_workspace": 360,
+  "pruebas_release_dirigidas": 13,
+  "helper_subproceso_ignorado_en_corrida_directa": 1,
+  "fases_procesos_independientes": 5,
+  "reaperturas_ejemplo": 4,
+  "fuentes_protegidas_intactas": 400,
+  "lean_recompilado": false,
+  "manuscrito_regenerado": false,
+  "push": false
+}

@@ -1,0 +1,10 @@
+{
+  "renderizador_empaquetado": "ModuleNotFoundError: No module named pdf2image",
+  "auditores_empaquetados": "ModuleNotFoundError: No module named docx",
+  "cargador_dependencias_disponible": false,
+  "instalaciones": false,
+  "alternativa": "Pandoc local, cotejo OOXML, Word COM oculto y renderizado nativo por EMF.",
+  "actualizacion_word": "Error COM 80070520 en sandbox; repetición con permiso elevada correcta.",
+  "ajuste_lanzador": "La búsqueda del título usa prefijo ASCII para evitar la codificación de Windows PowerShell.",
+  "terminales_visibles_abiertas": false
+}

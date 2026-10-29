@@ -1,83 +1,156 @@
-# Solicitud de revisión matemática — Tesis NEXUS
+# Guía de revisión de la tesis NEXUS
 
-**Fecha de preparación:** 20 de octubre de 2026.
-**Destinatario:** Director de la tesis, confirmado por el autor.
-**Estado:** Sin dictamen registrado. No se han registrado envío ni recepción.
+**Autor:** Juan Diego Susunaga Velasquez.
+**Dirigida al director de la tesis. Fecha de preparación:** 20 de octubre de 2026.
 
-## Propósito y alcance
+## Qué solicito revisar
 
-Se solicita revisar la correspondencia entre los enunciados de la tesis, sus hipótesis y las demostraciones, y decidir si la delimitación de resultados es suficiente para el alcance académico acordado. La preparación de este paquete, las comprobaciones internas y la compilación de Lean no se presentan como revisión externa ni aprobación.
+Le solicito revisar si las afirmaciones de la tesis están justificadas por sus demostraciones y pruebas, y si las conclusiones describen correctamente lo que se logró. El punto matemático principal es un límite para la probabilidad de que un verificador acepte una afirmación falsa, bajo las hipótesis que explico a continuación.
 
-Se conservan las seis preguntas M1–M6 de la solicitud original; no se añaden teoremas obligatorios ni se reabren pruebas del modelo ya cubiertas. Estos identificadores son preguntas al director, no los grupos M01–M46 de la matriz de formalización. QROM de AIR/FRI y Qiskit/Aer permanecen como trabajo futuro; no bloquean esta revisión activa. Las condiciones bibliográficas y de implementación de las firmas siguen distinguiéndose del resultado AIR/FRI.
+La explicación principal resume el problema y el resultado. El anexo reúne las fórmulas, las condiciones y seis preguntas específicas.
 
-## Material vigente y orden de lectura
+## El problema que aborda la tesis
 
-1. [Tesis final y formatos de lectura](../../01-Manuscrito/README.md): [Word](../../01-Manuscrito/Tesis-NEXUS-completa.docx) y [PDF](../../01-Manuscrito/Tesis-NEXUS-completa.pdf), revisados el 20 de octubre, con 115 y 103 páginas. No se regeneran para preparar esta solicitud.
-2. [Introducción y objetivos originales](../../01-Manuscrito/Capitulos/Cap1-Introduccion.md) y [conclusiones y límites](../../01-Manuscrito/Capitulos/Cap7-Conclusiones.md). El componente de reducción concreta de seguridad de las firmas se declara parcialmente cumplido; la cota ROM de AIR/FRI no lo sustituye.
-3. [Capítulo de validación](../../01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md): §6.4 para las firmas; §§6.7.2–6.7.4 para álgebra, contraejemplo y vínculo; §§6.7.5 y 6.7.8 para el modelo ideal; §6.7.9 para el resultado ROM conservador; §6.7.10 para sus exclusiones.
-4. [Estado de la formalización](../../../formalizacion/README.md), [matriz de resultados y límites](../../../formalizacion/REVISION-MANUSCRITO.md) y [ensamblaje causal](../../../formalizacion/Nexus/Verificador/PuenteAdaptativoFinal.lean). Las descripciones históricas de la matriz deben leerse con su actualización vigente, no como nuevas pruebas pendientes.
-5. [Cotas finales con trabajo](../../../formalizacion/Nexus/Verificador/CotaTrabajoFinal.lean), teoremas cota_512 y cota_512_todos; [ejemplos enlazados con aceptación](../../../formalizacion/Nexus/Verificador/CotaTrabajoNumerica.lean), teoremas aceptacion_4096_release y aceptacion_release.
-6. [Auditoría global Lean del 20 de octubre](../../06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json) y [fuentes consolidadas localmente](../../06-Evidencia-TG2/2026-10-20/Consolidacion-Lean/preparacion.json). La auditoría registra 2709 declaraciones, sin sorryAx ni axiomas fuera de propext, Classical.choice y Quot.sound. No acredita por inferencia toda afirmación de la tesis.
-7. [Adaptación Rust](../../06-Evidencia-TG2/2026-10-20/Rust-Lean/adaptacion.json), [integración ActiveChain](../../06-Evidencia-TG2/2026-10-20/ActiveChain/integracion.json) y [global final Rust](../../06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json): check, 223 pruebas y build correctos, conservando advertencias. Son evidencia de software, no una prueba de refinamiento universal.
+NEXUS estudia firmas digitales poscuánticas y gestión de claves en una arquitectura de dos capas: una ejecuta operaciones y otra recibe información para su comprobación y anclaje. La tesis reúne un modelo de arquitectura, un prototipo y una evaluación de componentes; no presenta una blockchain completa ya operativa.
 
-Base de fuentes comprobada: commit documental df1eeae3fe026d3f47aa3e88b510489abd98845d y commit Rust 637e77c99e804664915caf4ed928a10ef81cc870. Esta solicitud es una preparación local posterior; no se atribuye a ese commit un documento todavía no confirmado. El [manifiesto de la base comprobada](../../06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Entrega-Final/version-tg2.json) conserva sus huellas; el manifiesto vigente de Entrega-Final incorpora esta preparación sin autorreferencia. Las revisiones locales no se dan por publicadas en un servidor.
+Una de las preguntas es cómo comprobar un cálculo mediante un certificado. El **probador** prepara ese certificado y el **verificador** lo examina para aceptar o rechazar la afirmación presentada. El certificado es un conjunto de datos de una prueba, no un certificado institucional.
 
-## Resultado central que se pide revisar
+Para ilustrar la diferencia entre un cálculo correcto y uno incorrecto, supongamos una regla sencilla: elevar dos números al cuadrado y sumar. Con 3 y 4, el resultado es 25, no 26. Este ejemplo solo explica qué significa incumplir una regla; no representa una transacción ni reproduce un ataque al protocolo.
 
-La probabilidad se refiere a la aceptación de un certificado con enunciado inválido según la relación matemática EnunciadoValido, no a una falsificación de ML-DSA ni a la validez completa de transacciones de una aplicación.
+El prototipo utiliza una recurrencia numérica ilustrativa y comprueba relaciones algebraicas sobre sus valores. No incorpora dentro de esa prueba la verificación de todas las firmas ni todas las reglas de una aplicación. Por eso, demostrar una propiedad de ese verificador no equivale a demostrar que toda la arquitectura es segura.
 
-| Elemento | Hipótesis o valor del resultado |
-|---|---|
-| Experimento | Un único ROM clásico finito de digests de 256 bits, compartido por Merkle, canal, trabajo e índices; las respuestas repetidas conservan memoria |
-| Adversario | Programa finito adaptativo; como máximo Q llamadas adversarias en toda ejecución compatible, incluidas preparación, nonces e intercalaciones; sin información correlacionada omitida del experimento |
-| Perfiles | T = 2^k, con 4 ≤ k ≤ 12; N = 8T; M = 2^(k+2) parejas; cuarenta consultas compartidas por AIR y ambas FRI |
-| Trabajo y selector | bits = 12 o 20; como máximo R = 512 extracciones, incluidos duplicados, antes de rechazar si no se obtienen cuarenta índices distintos |
-| Presupuesto común | B = Q + 24895, derivado del programa, sin identificar B con la altura del árbol |
-| Registro auxiliar | L es el límite de marcas adicionales del registro ROM; no es el tamaño del certificado |
-| Excepciones | Bad y AIR/FRI se cobran una sola vez; el conjunto excepcional previo tiene cardinal a lo sumo 130709 e incluye el sesgo de transporte a Goldilocks |
-| Trabajo adaptativo | A lo sumo Q+1 parejas estado/nonce; factor 2^(-bits) compuesto antes de conocer las respuestas, sin condicionar al nonce ganador |
-| Perfil final adaptativo | Solo se suma el riesgo del selector sobre k = 4,…,12, manteniendo un único cargo para las excepciones |
+## Qué significa el resultado matemático
 
-Se solicita cotejar las dos fórmulas completas de §6.7.9 con las definiciones selector, cota512 y cota512Todos de CotaTrabajoFinal. Incluyen la hipergeométrica, la cola 2^(-300), el error min{1, 512(B+515)/2^256} y el truncamiento final por uno. No deben sustituirse por la fórmula histórica más ajustada ni por una suma informal de bits de seguridad.
+El resultado de la sección 6.7.9 responde a esta pregunta: **¿qué tan probable es que el verificador matemático acepte un certificado cuyo enunciado es falso, aunque quien lo prepare elija sus acciones de forma maliciosa?**
 
-Ejemplos a revisar con sus premisas: L = 1000000, k = 12, bits = 20 y Q = 2^20 dan una cota de aceptación falsa menor que 0,004757335454; para todos los perfiles, L = 1000000, bits = 20 y Q = 1000000 dan una cota menor que 1/20. Son límites superiores del modelo, no tasas observadas ni probabilidades necesariamente alcanzables por un ataque.
+Aquí, una afirmación falsa es la que no satisface la relación de validez definida en el modelo. No se identifica automáticamente con una firma falsificada, un robo de fondos o una transacción inválida de una aplicación completa.
 
-## Seis preguntas para el dictamen
+La demostración obtiene una **cota superior**: un límite que la probabilidad no supera bajo las condiciones declaradas. La probabilidad real podría ser menor. El resultado tampoco afirma que exista un ataque que alcance ese límite.
 
-| ID | Pregunta que se conserva | Localización y puntos de atención |
-|---|---|---|
-| M1 | ¿Son correctas la divisibilidad, las cotas de grados, cancelación y distancia, bajo las hipótesis declaradas? | §6.7.2; [grados válidos](../../../formalizacion/Nexus/AIR/GradosValidos.lean), [cancelación sesgada](../../../formalizacion/Nexus/AIR/CancelacionSesgada.lean) y [cota de distancia](../../../formalizacion/Nexus/N02/Solucion.lean). Distinguir el reto uniforme ideal del transporte de bytes y una traza inválida de un enunciado falso. |
-| M2 | ¿La unicidad y elección previa del candidato próximo están justificadas sin depender de retos futuros? | §§6.7.4–6.7.5; [unicidad](../../../formalizacion/Nexus/N03/Solucion.lean), [candidato](../../../formalizacion/Nexus/N06/Candidato.lean) y [conjuntos causales previos](../../../formalizacion/Nexus/Verificador/ConjuntosPrevios.lean). Revisar distancia RS, campo base/extensión y selección a partir del pasado. |
-| M3 | ¿Son válidas las cotas FRI locales y por rondas, con sus grados, dominios y término final? | §§6.7.5 y 6.7.8; [experimento FRI](../../../formalizacion/Nexus/FRI/Experimento.lean), [cota FRI causal](../../../formalizacion/Nexus/Verificador/CotaFRICausal.lean) y [cota de rondas](../../../formalizacion/Nexus/Verificador/CotaAdaptativaFinal.lean). No atribuir una ley independiente a retos adaptativos sin el transporte demostrado. |
-| M4 | ¿La composición AIR/doble FRI y la consulta compartida justifican la descomposición final sin doble cobro? | §§6.7.8–6.7.9; [cardinal de la vista](../../../formalizacion/Nexus/Verificador/CardinalVista.lean), [cota de reconstrucción](../../../formalizacion/Nexus/Verificador/CotaSinBad.lean) y CotaTrabajoFinal. Revisar el evento de exceso, el estado absorbente, preconsultas y memoria; no sustituir la muestra común por dos muestras independientes. |
-| M5 | ¿El teorema ROM conservador cubre el adversario y presupuesto declarados, incluidos trabajo, perfiles y reinicios? | §6.7.9; [presupuesto real](../../../formalizacion/Nexus/Verificador/PresupuestoGlobal.lean), [masa del trabajo](../../../formalizacion/Nexus/Verificador/TrabajoDigest.lean), [cobertura por primeras parejas](../../../formalizacion/Nexus/Verificador/CoberturaTrabajo.lean), CotaTrabajoFinal y CotaTrabajoNumerica. Revisar el cargo Q+1, el error de acoplamiento y la ausencia de condicionamiento al nonce ganador. La parte QROM de la pregunta original queda diferida. |
-| M6 | ¿La separación entre resultados probados, resultados bibliográficos, evidencia empírica y límites es suficiente para el alcance académico acordado? | Objetivos originales, §6.4 y conclusiones. Decidir qué afirmaciones condicionales se aceptan, cuáles deben corregirse o retirarse y cuáles exigirían ampliar el alcance. No convertir por defecto refinamiento universal, despliegue o QROM en nuevos módulos obligatorios. |
+Por ejemplo, para 4096 filas de cálculo y los presupuestos concretos del anexo, la cota es menor que 0,004757335454, aproximadamente 0,476 %. Esta cifra no es una tasa de fallos observada en pruebas ni una probabilidad de ataque por transacción. Describe un experimento matemático con recursos y supuestos fijados. Tampoco acredita por sí sola 100 bits de seguridad.
 
-Las seis preguntas permanecen pendientes del director. Las referencias facilitan su revisión; no constituyen respuestas atribuidas a él.
+La hipótesis más importante es cómo se representa el hash. Un hash transforma datos en un resumen de longitud fija. La demostración usa un **modelo de oráculo aleatorio clásico**, abreviado ROM: para cada entrada nueva se obtiene una respuesta uniforme de 256 bits; si la entrada se repite, se conserva la respuesta anterior. El modelo comparte esas respuestas entre todas las partes del protocolo. Rust, en cambio, ejecuta la función concreta SHA3-256. La prueba en el modelo ideal no demuestra automáticamente la misma garantía para esa función concreta.
 
-## Fronteras que el dictamen debe conservar o modificar expresamente
+## Cómo se construye el argumento
 
-- La prueba ROM es del verificador matemático de bytes. No establece equivalencia universal de Rust, sus codecs, instrucciones de máquina o SHA3 determinista con el modelo ideal.
-- La ruta Rust activa aplica el corte de 512 y exige contexto externo; ActiveChain lo toma de instantáneas locales antes del registro de envíos. El AIR sigue siendo una recurrencia escalar: las raíces SHA3 generales fuera del modelo se rechazan. Los positivos sintéticos no acreditan una L2 completa, consenso o persistencia.
-- Las reducciones de firmas citadas no se convierten en una garantía concreta de inforjabilidad del ejecutable por el resultado AIR/FRI. Las garantías de entropía física, custodia y eliminación de secretos conservan sus condiciones.
-- Los límites de procedencia H1/H2 no se resuelven mediante una prueba aritmética ni con la caché recuperada. Los conteos de pruebas de distintas ejecuciones no se suman.
-- No se acreditan 100 bits, conocimiento cero, QROM completo, aprobación académica ni envío. La aprobación anterior del plan no se atribuye a estas demostraciones posteriores.
+El verificador combina restricciones sobre el cálculo con comprobaciones sobre polinomios. AIR es la representación de las reglas del cálculo mediante relaciones algebraicas. FRI es el protocolo que comprueba proximidad a evaluaciones de polinomios de grado limitado. En la construcción vinculada se comprueban tanto la traza del cálculo como la combinación de restricciones.
 
-## Formato de respuesta solicitado
+La intuición es comprobar posiciones elegidas mediante retos. La dificultad está en justificar qué puede elegir o conocer el probador antes de esos retos y qué ocurre si vuelve a intentarlo. La demostración debe cubrir sus decisiones basadas en respuestas anteriores y la memoria del hash.
 
-Para cada pregunta, registrar:
+También debe respetar que las comprobaciones comparten una misma muestra de posiciones. No sería correcto tratarlas como ensayos independientes sin demostrarlo. El anexo explica cómo la cota incluye las distintas causas de error y el efecto del trabajo exigido a cada intento.
 
-- Identificador M1–M6 y enunciado o pasaje exacto revisado.
-- Nombre del revisor, fecha y relación con la tesis.
-- Juicio: aceptable en su alcance, requiere corrección, no aceptable o no revisado.
-- Hipótesis que deben permanecer explícitas y observaciones justificadas.
-- Corrección concreta o decisión de alcance solicitada, cuando corresponda.
-- Resolución posterior y evidencia del cambio, sin marcar cierre antes de atender la observación.
+## Qué aportan Lean y Rust
 
-La valoración de cada pregunta se distingue de una aprobación global de la tesis. El envío, recepción y dictamen se registrarán cuando realmente ocurran; esta preparación no los anticipa.
+**Lean comprueba demostraciones.** En la formalización, su núcleo verifica que los teoremas se deducen de las definiciones, hipótesis y axiomas utilizados. Esto respalda el resultado matemático formalizado. No implica que toda frase de la tesis sea correcta ni que el modelo describa sin diferencias al programa ejecutable.
 
-## Antecedentes conservados
+**Rust ejecuta el prototipo.** Sus pruebas comprueban casos de aceptación, rechazo e integración. La ruta activa exige un certificado vinculado y compara sus datos con un contexto local antes de registrar un envío. Es evidencia de funcionamiento en los casos ensayados; no una demostración para todas las entradas posibles.
 
-La solicitud original, con su estado anterior, se preserva en el [respaldo previo](../../06-Evidencia-TG2/2026-10-20/Preparacion-Revision-Director/respaldo_previo/Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md). Los [suplementos de derivaciones](Derivaciones-Matematicas-TG2-2026-10-12.md), el [catálogo de afirmaciones](Catalogo-Validacion-2026-10-12/README.md) y la [revisión interna por potencial](Revision-Critica-ROM-2026-09-23/README.md) son material de apoyo histórico, no sustitutos de la tesis y la formalización vigentes. Sus descripciones de pasos abiertos se interpretan en su fecha; no reabren el cierre posterior del modelo.
+La correspondencia universal entre programa y modelo matemático sigue sin demostrarse. Además, la reducción concreta que permitiría atribuir una garantía de seguridad a las firmas del ejecutable tiene cumplimiento parcial. El resultado del verificador no sustituye esa reducción. La extensión completa de esta prueba a consultas cuánticas al hash permanece como trabajo futuro.
 
-Los complementos QROM permanecen archivados en sus carpetas de investigación, fuera de la lectura necesaria para resolver M1–M6 en el cierre activo.
+## Qué respuesta necesito del director
+
+Le agradecería señalar:
+
+1. Si la explicación del resultado y sus hipótesis es correcta, y qué pasos requieren mayor justificación.
+2. Si la tesis distingue suficientemente las demostraciones, la evidencia del programa y las afirmaciones tomadas de la literatura.
+3. Si el alcance alcanzado y sus limitaciones están descritos de forma adecuada frente a los objetivos, especialmente en la parte de seguridad concreta de las firmas.
+
+Para cada observación, bastaría identificar el pasaje, explicar el motivo y proponer la corrección o aclaración necesaria. Las seis preguntas del anexo permiten profundizar en los puntos matemáticos. No representan seis módulos nuevos pendientes de implementación.
+
+## Anexo técnico
+
+### Condiciones del resultado
+
+La cota corresponde al verificador matemático de bytes: incluye la lectura del certificado y las comprobaciones del modelo, no una equivalencia universal con el ejecutable. Sus parámetros son:
+
+- **Tamaño del cálculo.** $T=2^k$ filas, con $4\leq k\leq12$. El dominio de evaluación tiene $N=8T$ posiciones, agrupadas en $M=N/2=2^{k+2}$ parejas de posiciones opuestas. En este anexo, M cuenta parejas, no operaciones de un lote.
+- **Muestra y corte.** Se consultan cuarenta parejas distintas, compartidas por AIR y ambos recorridos FRI. Para obtenerlas se permiten como máximo $R=512$ extracciones, contando duplicados; si no se completa la muestra, se rechaza.
+- **Trabajo.** $g=12$ o $g=20$ bits. El probador puede variar un nonce, un valor usado en la búsqueda del trabajo. El análisis incluye reintentos; no supone que solo exista un nonce aceptable.
+- **Recursos adversarios.** $Q$ limita todas las llamadas del adversario al oráculo, incluidas preparación, búsqueda e intercalaciones. El adversario puede decidir su siguiente acción a partir de las respuestas anteriores, pero no recibe información correlacionada con el oráculo que se omita del experimento.
+- **Presupuesto compartido.** El verificador hace a lo sumo $24383+R$ llamadas, incluso cuando rechaza. Para $R=512$, el presupuesto común es $B=Q+24895$. B cuenta llamadas o direcciones, no la altura de un árbol.
+- **Registro auxiliar.** $L$ limita marcas adicionales del registro matemático. No es una cantidad de bytes del certificado.
+- **Modelo de hash.** Un único oráculo clásico finito de respuestas de 256 bits, con memoria y compartido por todas las partes del protocolo. No es una hipótesis de respuestas nuevas e independientes en cada llamada repetida.
+
+### Fórmulas y significado de sus términos
+
+Se reproducen las fórmulas de la sección 6.7.9 sin retirar sus términos de error. Para el primo Goldilocks $p=2^{64}-2^{32}+1$, se definen:
+
+$$
+\begin{aligned}
+\rho&=\frac{130709}{p^2}+\frac{2524360}{10^{35}},\\
+\delta(B)&=\min\left\{1,\frac{512(B+515)}{2^{256}}\right\},\\
+h_k&=\frac{\binom{\lfloor7\cdot2^{k+2}/8\rfloor}{40}}
+{\binom{2^{k+2}}{40}},\\
+\sigma_k(B)&=h_k+2^{-300}+\delta(B).
+\end{aligned}
+$$
+
+La fracción $h_k$ es una cota de omisión de la muestra: expresa la posibilidad de que sus cuarenta parejas no detecten las discrepancias consideradas en el argumento. El término $2^{-300}$ acota la cola del selector. El término $\delta(B)$ cubre el error de comparar su comportamiento real con el muestreo ideal, conservando la memoria del oráculo; esa comparación se denomina acoplamiento. El término $\rho B$ cubre conjuntamente las excepciones algebraicas y FRI, incluido el sesgo al transportar bytes al campo.
+
+Para un perfil fijo, la cota es:
+
+$$
+\begin{aligned}
+\Pr[\mathsf{AceptaFalsa}_k]\leq\min\Bigg\{1,\,
+&\min\left\{1,\frac{B(49B+L)}{2^{256}}\right\}\\
+&+\rho B+(Q+1)2^{-g}\sigma_k(B)\Bigg\},
+\end{aligned}
+$$
+
+El primer sumando controla la excepción del registro hash. El segundo cubre las excepciones AIR/FRI. El tercero combina el número de parejas estado/nonce consideradas, el trabajo y el riesgo de omisión o abandono del selector.
+
+Hay a lo sumo $Q+1$ parejas estado/nonce distintas. El factor $2^{-g}$ corresponde a la masa del trabajo en el modelo y debe componerse con el selector antes de observar las respuestas; no se obtiene escogiendo después únicamente el nonce ganador.
+
+Si el perfil final se elige adaptativamente, se usa:
+
+$$
+\begin{aligned}
+\Pr[\mathsf{AceptaFalsa}]\leq\min\Bigg\{1,\,
+&\min\left\{1,\frac{B(49B+L)}{2^{256}}\right\}\\
+&+\rho B+(Q+1)2^{-g}\sum_{j=4}^{12}\sigma_j(B)\Bigg\}.
+\end{aligned}
+$$
+
+Solo se suma por perfil el riesgo del selector. La excepción hash y las excepciones AIR/FRI se incluyen una sola vez, no una vez por cada perfil. El mínimo con uno conserva el límite propio de una probabilidad.
+
+### Cómo interpretar los ejemplos numéricos
+
+Para $L=1000000$, $T=4096$, $k=12$, $g=20$ y $Q=2^{20}$, el resultado formalizado da:
+
+$$
+\Pr[\mathsf{AceptaFalsa}_{12}]<0{,}004757335454.
+$$
+
+En palabras, el límite es aproximadamente 0,476 %, bajo todos esos supuestos. Para $L=1000000$, $g=20$ y $Q=1000000$, la unión de todos los perfiles tiene cota menor que $1/20$, es decir, 5 %. Son dos enunciados con condiciones distintas, no dos mediciones de un ataque. Una cota superior no es necesariamente ajustada ni garantiza que un adversario la alcance.
+
+Los [teoremas de la cota con trabajo](../../../formalizacion/Nexus/Verificador/CotaTrabajoFinal.lean) son cota_512 y cota_512_todos. Los [ejemplos numéricos enlazados con aceptación](../../../formalizacion/Nexus/Verificador/CotaTrabajoNumerica.lean) son aceptacion_4096_release y aceptacion_release.
+
+### Seis preguntas para examinar la demostración
+
+**1. Reglas algebraicas y detección del error.** ¿Son correctas la divisibilidad y las cotas de grados, cancelación y distancia bajo las hipótesis declaradas? La cancelación es el caso en que una combinación de restricciones oculta un error. Revisar la sección 6.7.2, [grados válidos](../../../formalizacion/Nexus/AIR/GradosValidos.lean), [cancelación sesgada](../../../formalizacion/Nexus/AIR/CancelacionSesgada.lean) y [cota de distancia](../../../formalizacion/Nexus/N02/Solucion.lean). Hay que distinguir una traza incorrecta de un enunciado falso, y el reto uniforme ideal del que se obtiene transportando bytes.
+
+**2. Elección del polinomio de referencia.** ¿Está justificada la unicidad y elección previa del candidato próximo sin usar retos futuros? Candidato próximo significa aquí el polinomio de grado acotado cercano a los valores comprometidos. Revisar las secciones 6.7.4–6.7.5, [unicidad](../../../formalizacion/Nexus/N03/Solucion.lean), [candidato](../../../formalizacion/Nexus/N06/Candidato.lean) y [conjuntos previos](../../../formalizacion/Nexus/Verificador/ConjuntosPrevios.lean). Importa que esa elección solo utilice la información ya disponible.
+
+**3. Comprobaciones FRI.** ¿Son válidas las cotas locales y por rondas, con sus grados, dominios y término final? Cada ronda reduce la comprobación mediante un plegado de evaluaciones; la justificación debe permitir remontar ese proceso. Revisar las secciones 6.7.5 y 6.7.8, [experimento FRI](../../../formalizacion/Nexus/FRI/Experimento.lean), [cota FRI causal](../../../formalizacion/Nexus/Verificador/CotaFRICausal.lean) y [cota de rondas](../../../formalizacion/Nexus/Verificador/CotaAdaptativaFinal.lean). No debe suponerse independencia de retos elegidos a partir de la historia sin el transporte demostrado.
+
+**4. Combinación de las comprobaciones.** ¿La composición AIR/doble FRI y la muestra compartida justifican la cota final sin contar dos veces una misma excepción? Revisar las secciones 6.7.8–6.7.9, [cardinal de la vista](../../../formalizacion/Nexus/Verificador/CardinalVista.lean), [cota de reconstrucción](../../../formalizacion/Nexus/Verificador/CotaSinBad.lean) y la cota con trabajo. Se deben conservar los eventos excepcionales, el exceso de reconstrucción y las consultas realizadas antes del selector, con la memoria del oráculo.
+
+**5. Decisiones adaptativas y reintentos.** ¿El teorema cubre el adversario y los presupuestos declarados, incluidos trabajo, perfiles y reinicios? Revisar la sección 6.7.9, [presupuesto derivado del programa](../../../formalizacion/Nexus/Verificador/PresupuestoGlobal.lean), [masa del trabajo](../../../formalizacion/Nexus/Verificador/TrabajoDigest.lean), [cobertura por primeras parejas](../../../formalizacion/Nexus/Verificador/CoberturaTrabajo.lean) y los teoremas finales. Interesan el cargo $Q+1$, el error de acoplamiento y que no se condicione al nonce ganador. Esta pregunta no solicita completar la extensión cuántica.
+
+**6. Correspondencia con las conclusiones de la tesis.** ¿Se distingue suficientemente lo demostrado en el modelo de lo que aporta la literatura y de lo observado en el programa? Revisar los objetivos, la sección 6.4 y las conclusiones. Solicito identificar qué afirmaciones son aceptables en su alcance, cuáles requieren corrección y cuáles exigirían ampliar el trabajo.
+
+### Por dónde comenzar la lectura
+
+Sugiero leer primero los objetivos del capítulo 1 y el balance del capítulo 7. Después, la sección 6.4 distingue los fundamentos de las firmas y sus condiciones pendientes. La sección 6.7.9 contiene la cota demostrada del verificador, y la 6.7.10 delimita su alcance cuántico.
+
+La [tesis en Word](../../01-Manuscrito/Tesis-NEXUS-completa.docx) y la [tesis en PDF](../../01-Manuscrito/Tesis-NEXUS-completa.pdf) contienen el glosario y la notación en las páginas preliminares. La [matriz de formalización](../../../formalizacion/REVISION-MANUSCRITO.md) y las fuentes enlazadas en este anexo permiten examinar detalles concretos.
+
+### Evidencia disponible y límites de la revisión
+
+La [auditoría global Lean del 20 de octubre](../../06-Evidencia-TG2/2026-10-20/Lean-Global/verificacion.json) registra 2709 declaraciones, sin pruebas admitidas mediante sorryAx ni axiomas fuera de la política declarada. Este registro respalda la comprobación formal existente; no representa una aprobación académica.
+
+La [adaptación Rust](../../06-Evidencia-TG2/2026-10-20/Rust-Lean/adaptacion.json), la [integración ActiveChain](../../06-Evidencia-TG2/2026-10-20/ActiveChain/integracion.json) y la [comprobación global final Rust](../../06-Evidencia-TG2/2026-10-20/Rust-Global-Final/verificacion.json) conservan su evidencia: check, 223 pruebas y build correctos en la última global, con advertencias registradas. No se suman los conteos de ejecuciones anteriores ni se interpretan las pruebas finitas como una demostración universal.
+
+Los límites de procedencia de las mediciones históricas H1/H2, la calificación de una fuente física de entropía, la custodia y la eliminación de secretos conservan sus condiciones. El AIR ilustrativo no acredita una aplicación L2 completa ni conocimiento cero, propiedad que exige no revelar información adicional sobre el testigo. La seguridad de las firmas y la seguridad cuántica del protocolo requieren sus propios argumentos.
+
+Esta guía solicita observaciones; no registra envío, recepción, dictamen ni aprobación de la tesis.

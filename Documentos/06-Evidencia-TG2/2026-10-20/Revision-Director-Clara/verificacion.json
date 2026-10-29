@@ -1,0 +1,194 @@
+{
+  "estado": "completa",
+  "paginas_word": 8,
+  "paginas_explicacion_principal": 3,
+  "pagina_inicio_anexo": 4,
+  "tablas": 0,
+  "ecuaciones_nativas": 33,
+  "hipervinculos_locales_verificados": 23,
+  "texto_identico_a_conversion_pandoc": true,
+  "cuatro_bloques_matematicos_identicos_a_tesis": true,
+  "preguntas_tecnicas": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+  ],
+  "estilos_cotejados_identicos": [
+    "Normal",
+    "Textoindependiente",
+    "FirstParagraph",
+    "Compact",
+    "Ttulo",
+    "Ttulo1",
+    "Ttulo2",
+    "Ttulo3",
+    "Author",
+    "Fecha"
+  ],
+  "geometria_identica": true,
+  "explicaciones": [
+    "Problema y ejemplo aritmético solo ilustrativo",
+    "Enunciado falso y cota superior",
+    "Oráculo con memoria frente a SHA3 concreto",
+    "Resultados Lean frente a pruebas Rust",
+    "Significado del ejemplo numérico y de los términos de la cota",
+    "Respuesta concreta solicitada al director"
+  ],
+  "tesis_intacta": [
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-bibliografia.md",
+      "bytes": 15296,
+      "sha256": "e12119903006945c6eb8d1f6ddfed8a7c396607c9c36c9a10a3088394bb287b5"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-frontmatter.md",
+      "bytes": 5688,
+      "sha256": "a9b255ac3633585a373f6d939cd3e50fbd6e48470a6f920d826f45b9546bdd2e"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/_tesis-glosario.md",
+      "bytes": 14375,
+      "sha256": "89989ce7cb59ee9f1e1d6607c0d80d73371eafd4e26a2012f8e9e4ae653ddaec"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
+      "bytes": 12127,
+      "sha256": "f3c3ad215f81b52c21ae07b000b85fb056edd39b9d0b8645174b2a35b25e6120"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap2-Marco-Teorico.md",
+      "bytes": 10852,
+      "sha256": "06a699e31e35606eee0178e6be659bfd1250617bb4791726fba6646e10cd189d"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap3-Diseno-Arquitectura.md",
+      "bytes": 21627,
+      "sha256": "f6226594b092814e94bafaafa364385f0fc7e714e08c10d650350f03d987e361"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap4-Nucleo-Criptografico.md",
+      "bytes": 15841,
+      "sha256": "b31d24c8171f6e7a2338f1b59e6a80e6bd331d70858407e4024d71ae3fe3c2cb"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap5-Gestion-Claves.md",
+      "bytes": 31208,
+      "sha256": "bbeea96523fcfdd25b9995868ef5737e745c135bc453e8f29aa6becaf4eea4fb"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap6-Validacion-Formal.md",
+      "bytes": 105326,
+      "sha256": "753d83e4b4a4afb487e90c75bc127f833c43ac9724bbf0ac18452efcd7cb4595"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Capitulos/Cap7-Conclusiones.md",
+      "bytes": 12880,
+      "sha256": "c1611629a4fc47c0dc2074110db5c4e9b2d94b3f4344bf54fe7f9d6305e84ee2"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.md",
+      "bytes": 245389,
+      "sha256": "9534e90b33278ca82d05e3ba6d0247c8f82b0330a3074f3e6c065f182a884a44"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.docx",
+      "bytes": 660075,
+      "sha256": "5509869d55994adf7575b90ac1a8a1c3a8d598ffb1cc967cefd72cf7e7d8c2d8"
+    },
+    {
+      "archivo": "Documentos/01-Manuscrito/Tesis-NEXUS-completa.pdf",
+      "bytes": 2945712,
+      "sha256": "3ce62ca6a05cf6b1f894f372a146c0dc3876bb31b9c513a1e95aebcb3638697e"
+    }
+  ],
+  "fuentes_lean_intactas": 354,
+  "fuentes_rust_intactas": 89,
+  "compilaciones_lean_rust": false,
+  "commit_push_envio_dictamen": false,
+  "fuente": {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-S1-S3-2026-09-23.md",
+    "bytes": 16962,
+    "sha256": "6626ce74d0d47d45f5932d3b9b8f81d9af460fd285d17718143e548454ba134b"
+  },
+  "word_temporal": {
+    "archivo": "tmp/revision-clara-director/revision-entrega.docx",
+    "bytes": 33356,
+    "sha256": "8a1972e4dddbe4bec85923f43538b09b84add1a7f5b309fbb9a47511a4d3c0a7"
+  },
+  "referencia": {
+    "archivo": "tmp/revision-clara-director/referencia.docx",
+    "bytes": 660075,
+    "sha256": "5509869d55994adf7575b90ac1a8a1c3a8d598ffb1cc967cefd72cf7e7d8c2d8"
+  },
+  "imagenes": [
+    {
+      "archivo": "tmp/revision-clara-director/render-2/word-001.png",
+      "bytes": 67001,
+      "sha256": "2a067dea715f533a2c5688c727104105cfee5ae5c69d9c43df21203a9e912058"
+    },
+    {
+      "archivo": "tmp/revision-clara-director/render-2/word-002.png",
+      "bytes": 79511,
+      "sha256": "b7624a12bf6caa492ef2a302cc8851a867c3fe86a889615f55f3422a80cc4ff5"
+    },
+    {
+      "archivo": "tmp/revision-clara-director/render-2/word-003.png",
+      "bytes": 71325,
+      "sha256": "23f82917cac9fdb25ece5487a965d4253d36f2baac5d5c9f67e6cffa4c96ba40"
+    },
+    {
+      "archivo": "tmp/revision-clara-director/render-2/word-004.png",
+      "bytes": 66022,
+      "sha256": "630ce67c307abac088724d2973d4337ff782f5df114b00500bd63e5c723f3a84"
+    },
+    {
+      "archivo": "tmp/revision-clara-director/render-2/word-005.png",
+      "bytes": 56858,
+      "sha256": "323df8fc99faa5c12b01aaaa0d86e159740b4ab8c7d36df34b21d05b317f83ac"
+    },
+    {
+      "archivo": "tmp/revision-clara-director/render-2/word-006.png",
+      "bytes": 71422,
+      "sha256": "a3d0187d073e8087f016fe4712567aa589eec45483f2eea3465bc8837672fe7a"
+    },
+    {
+      "archivo": "tmp/revision-clara-director/render-2/word-007.png",
+      "bytes": 75270,
+      "sha256": "4052f43319bda931681829685c58830d424caa6921f5ebc026e6e66fa0699861"
+    },
+    {
+      "archivo": "tmp/revision-clara-director/render-2/word-008.png",
+      "bytes": 44017,
+      "sha256": "98ef3b70942353db31881cb0bac269b9fac38bfe8642c8221dca3f5f02bdb684"
+    }
+  ],
+  "word_publicado": {
+    "archivo": "Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-NEXUS.docx",
+    "bytes": 33356,
+    "sha256": "8a1972e4dddbe4bec85923f43538b09b84add1a7f5b309fbb9a47511a4d3c0a7"
+  },
+  "revision_visual": {
+    "completa": true,
+    "paginas_inspeccionadas": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "tamano_nativo": true,
+    "hallazgos_pendientes": [],
+    "correcciones": [
+      "Lecturas sugeridas incorporadas al anexo, sin página aislada",
+      "Frase introductoria conservada junto a su fórmula",
+      "Explicación principal en tres páginas sin reducir fuente"
+    ]
+  },
+  "normalizacion_final_fuente": "Se retiran dos espacios de la línea de autor del Markdown; ese bloque se reemplaza por metadatos YAML y no forma parte del cuerpo exportado. Word y las ocho imágenes no cambian; el cotejo completo se repite y pasa."
+}

@@ -1,0 +1,39 @@
+RECUPERACION DE UN REINTENTO OMITIDO - 20 DE OCTUBRE DE 2026
+
+recover_l1_retry requiere un lote conocido con envio pendiente, hash vigente
+esperado y un reemplazo procesado por la instancia L1 confiable. Compara paquete
+completo e inclusion canonica, publicador, raiz, cantidad y datos locales. El hash
+nuevo no puede estar reservado por otro intento presente o historico. Se aplica
+el mismo limite de tres reintentos y el mismo control de vigencia que al registrar
+reemplazos normales. La admision actual de retry_l1_submission permanece igual.
+
+Tras todos los pasos que pueden rechazar, el gestor anade y confirma el reemplazo
+bajo el mismo bloqueo. Conserva el lote, certificado aceptado, bytes y fechas de
+los intentos previos; anade los bytes exactos y la fecha de recuperacion local.
+La confirmacion identifica ese paquete y su bloque/altura originales aun si otro
+intento tambien esta incluido. mark_batch_confirmed conserva su seleccion previa
+del primer intento registrado cuya inclusion coincida.
+
+Los rechazos no cambian historial, contador, fechas, reservas o confirmacion.
+Se rechazan hashes obsoletos, ausencia de pendiente, hashes reservados incluso
+por lotes confirmados, envolturas alteradas con igual hash, otra fuente sin
+inclusion, candidatos preparados, bloques rechazados, helpers DA y datos o
+publicador distintos. Las carreras recuperacion/recuperacion y recuperacion/
+reintento normal permiten una sola transicion desde el hash esperado.
+
+Ocho pruebas externas y una interna cubren esos contratos, vencimiento historico,
+paquetes tipados previos, intenciones por hash None, dos inclusiones y limite
+exacto. El ensayo escalar sintetico preserva el certificado aceptado y su raiz;
+no autentica los bytes DA como ejecucion general L2. Pasan 347 pruebas globales,
+check de todos los targets, build y 33 pruebas dirigidas release. Se conservan
+advertencias preexistentes en los logs.
+
+La fuente L1 es confiable y la elige la integracion. Lotes e intentos siguen en
+memoria; no hay restauracion tras reiniciar, envio de red o finalidad BFT. Un
+cuarto reemplazo ya procesado tambien se rechaza por esta API. No se duplica un
+paquete registrado ni se rellenan sus bytes retroactivamente. El modo optimista
+sigue provisional; esta recuperacion no registra nuevas raices o certificados.
+
+Se cotejan 400 fuentes protegidas: Lean, manuscrito, primitivas ML-DSA y nucleo/
+lector AIR-FRI. Los formatos firmados y certificados no cambian. No se recompila
+Lean, no se regenera la tesis ni se agrega o extiende un resultado matematico.

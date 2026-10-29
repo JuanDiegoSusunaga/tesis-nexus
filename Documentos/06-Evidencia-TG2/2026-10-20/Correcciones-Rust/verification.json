@@ -1,0 +1,90 @@
+{
+  "date_local": "2026-10-20",
+  "base_commit": "637e77c99e804664915caf4ed928a10ef81cc870",
+  "state": "local_uncommitted_corrections",
+  "new_commit_created": false,
+  "workspace_tests": {
+    "passed": 255,
+    "failed": 0,
+    "new_regression_tests": 32,
+    "command": "cargo test --manifest-path nexus/Cargo.toml --workspace --locked --offline",
+    "exit_code": 0,
+    "log": "final-workspace-tests.log"
+  },
+  "all_targets_check": {
+    "exit_code": 0,
+    "log": "final-check.log"
+  },
+  "release_numeric_regressions": {
+    "passed": 4,
+    "failed": 0,
+    "exit_code": 0,
+    "log": "final-release-numeric.log"
+  },
+  "strengthened_debug_boundaries": {
+    "passed": 9,
+    "failed": 0,
+    "exit_code": 0,
+    "log": "final-arithmetic-boundaries.log",
+    "notes": [
+      "Checked multiplication rejects overflow and saturates legacy estimation.",
+      "Stake quorum also completes with total stake u128::MAX."
+    ]
+  },
+  "lean_and_thesis_alignment": {
+    "model": "formalizacion/Nexus/Modelos/QuorumIncentivos.lean",
+    "theorem": "Nexus.Modelos.Quorum.quorum_estricto_interseca_honestos",
+    "condition": "authenticated distinct identities; exact stake strictly greater than 2/3",
+    "manuscript_sections": [
+      "3.5",
+      "3.9",
+      "3.10",
+      "6.7.9"
+    ],
+    "byte_contract_preserved": [
+      "canonical Goldilocks",
+      "16-4096 rows",
+      "40 shared queries",
+      "512 draws",
+      "12/20 work bits"
+    ],
+    "historical_14_certificates": "passed unchanged",
+    "protected_source_files_verified": 401,
+    "protected_source_changes": [],
+    "lean_recompiled": false,
+    "manuscript_regenerated": false
+  },
+  "material_limits": [
+    "Optimistic proofs remain provisional; fraud traces are rejected and finalization returns NotImplemented.",
+    "Local L1 processing does not constitute full BFT consensus, DA, persistence, or a universal Rust/Lean refinement.",
+    "Finality weights and certificate thresholds now use u128 application fields.",
+    "Consensus proposals require proposer signatures and phase-separated vote signing bytes."
+  ],
+  "tooling_note": "rustfmt component is absent; no toolchain installation or global formatting was performed.",
+  "source_sha256": {
+    "REPRODUCIBILIDAD_TG2.md": "6892be762a4c12fb81e0449520b1441887a3d3fe88c6d2f094535b9e34a1722a",
+    "nexus-core/src/transaction.rs": "12dca14e10cded9f9778e62b27fc4a0d38cba5b2090d274a000f86b9ed34cd13",
+    "nexus-core/src/state.rs": "b8411c5cb89821cd90392fc1d32f9806383dc2d27b67f55312f60aee1457a8ed",
+    "nexus-active/src/chain.rs": "c4848869ed2a6ca619952c1fd12c26cbfff0b4799c85747b969d3307bd20a347",
+    "nexus-active/src/execution.rs": "86c1061c3ee9d2d24b80d951c6368003d28e8d0fc43e9acb16e29b8d4519ed9a",
+    "nexus-active/src/sequencer.rs": "2f8d915e91ddf851ffc2b42256fc90a6003753e767e163e9f0873527f28df8ea",
+    "nexus-active/src/verifier.rs": "c6661ff79157e6fa69261dfbb6db439559e9dddb42298567dfcc5475774923f1",
+    "nexus-anchor/src/chain.rs": "08cc472adc757a35509131eccfd0c4232246049146038d071b8264e2ef3f0177",
+    "nexus-anchor/src/consensus.rs": "de14bb69efdb0432955818532b7dedd93c088214c8b4542ba7491de92a8b47a0",
+    "nexus-anchor/src/finality.rs": "b107e96d995ed474e3f064cefe8037381dce2ab99b8251541abfcf57980c140a",
+    "nexus-anchor/src/validator.rs": "e9d6fa07a1d6fe0d8a10839470f4a10629809495388beae4caf477e59cc9b3d2",
+    "nexus-anchor/src/data_availability.rs": "e110102306264987853553d0f7e300be0f74441831c452db0e996dc091e63ce8",
+    "nexus-active/tests/active_chain_contract.rs": "1335e11e05becb15960511fcbacb2cea8ad042d84b72103d6434d9b31ab4eb14",
+    "nexus-core/tests/state_safety.rs": "49d1046a6a6cf22232f215e25da677218b4c6d5fd7346ad38b786a3126828326",
+    "nexus-active/tests/execution_safety.rs": "050097fa8caf22a64863b8a8dbce989468629331c87ded08cc313db6f702f32e",
+    "nexus-anchor/tests/chain_safety.rs": "1441bac55754a076c069d9ecf0993cd1f03003b3ac69d811cb83bbdeb6100c8a",
+    "nexus-anchor/tests/consensus_safety.rs": "034d9bf5a2e9e68e627be34b97edc14ba58ae4d0eb7883f0a443245876262251",
+    "nexus-anchor/tests/finality_safety.rs": "a97a74f2e3d9b457111d92ba682f2a2f10572360a1d9968c8f417b2f279021b7"
+  },
+  "log_sha256": {
+    "final-workspace-tests.log": "c69f82f1cf0c9391ef1d00d842249afeeafa529292907b93afe3c175592ff910",
+    "final-check.log": "533d4dc441b94a8d7588ddf91f66b64bdeec4e6b32c1174f3b1e5a319fc125cd",
+    "final-release-numeric.log": "bd1112d276d2fed89fcc3ca8dee5974d7d4b0b34b7fa9b2f418efc6217453786",
+    "final-arithmetic-boundaries.log": "8c0e5a569c04986386e61c9239ad84cf54315f0429c6c7fc2055e37b10f5ddf5"
+  }
+}

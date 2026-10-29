@@ -1,0 +1,36 @@
+﻿{
+    "paginas_word":  8,
+    "tablas":  [
+
+               ],
+    "figuras":  [
+
+                ],
+    "ecuaciones_bloque":  [
+                              {
+                                  "ecuacion":  1,
+                                  "pagina":  5,
+                                  "y_inicio_pt":  146.65,
+                                  "y_fin_pt":  146.65
+                              },
+                              {
+                                  "ecuacion":  2,
+                                  "pagina":  5,
+                                  "y_inicio_pt":  441.65,
+                                  "y_fin_pt":  441.65
+                              },
+                              {
+                                  "ecuacion":  3,
+                                  "pagina":  6,
+                                  "y_inicio_pt":  98.65,
+                                  "y_fin_pt":  98.65
+                              },
+                              {
+                                  "ecuacion":  4,
+                                  "pagina":  6,
+                                  "y_inicio_pt":  311.65,
+                                  "y_fin_pt":  311.65
+                              }
+                          ],
+    "fecha":  "2026-10-20"
+}

@@ -8,6 +8,8 @@
 
 ## Acuerdos y evidencia
 
+- [x] Reunir tesis, formalización Lean, workspace Rust y evidencia en `tesis-nexus`, con una entrada de lectura para el director y verificación de integridad desde un solo clon. Organización del 29 de octubre; los pendientes académicos y matemáticos conservan sus estados.
+
 - [x] Registrar la aprobación del director al plan, entrega y decisiones presentadas, confirmada por el estudiante el 22 de septiembre.
 - [ ] Incorporar fecha exacta, comunicación y calendario acordado cuando estén disponibles; actualizar F0, fechas E0–E4 y revisión de la entrega parcial, distinguiendo preparación, envío y aprobación.
 - [x] Crear la matriz de trazabilidad de afirmaciones y requisitos TG2.
@@ -20,11 +22,12 @@
 
 ## Claridad de lectura de la tesis
 
+- [x] Reescribir la solicitud para el director como una guía explicada: tres páginas de lectura principal y anexo desde la página 4; ocho páginas en total, cuatro bloques matemáticos idénticos a la tesis y seis preguntas contextualizadas. [Controles, referencia y respaldos](Documentos/06-Evidencia-TG2/2026-10-20/Revision-Director-Clara/verificacion.json). Tesis y código intactos, sin compilaciones ni nuevo commit, push o envío.
 - [x] Guardar los cambios editoriales, la solicitud para el director y sus evidencias en el commit local que contiene esta entrada, con autorización «Dale 1»; excluir temporales y presentación. [Alcance e integridad](Documentos/06-Evidencia-TG2/2026-10-20/Consolidacion-Editorial/preparacion.json). Sin recompilar, regenerar Word/PDF ni hacer push.
 - [x] Reubicar el glosario y la notación en las primeras páginas, antes de la introducción, conservando sus definiciones y actualizando ambos índices. El glosario comienza en la página 7 de Word/PDF; sin compilaciones Lean/Rust. [Verificación y respaldos](Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Preliminares/verificacion.json).
 - [x] Sustituir los signos de sección por referencias escritas y explicar M en sus dos contextos, sin modificar fórmulas ni objetivos. [Controles y respaldos](Documentos/06-Evidencia-TG2/2026-10-20/Claridad-Referencias/verificacion.json).
 - [x] Incorporar, con autorización «Sí, ambos», un glosario de 33 entradas y una guía separada de 20 entradas de notación matemática; actualizar índices y formatos Word/PDF, sin compilar Lean ni Rust. [Verificación documental](Documentos/06-Evidencia-TG2/2026-10-20/Glosario-Notacion/verificacion.json).
-- [x] Preparar la [solicitud en Word con el formato de la tesis](Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-NEXUS.docx), seis páginas y preguntas numeradas del 1 al 6. No es envío ni respuesta del director.
+- [x] Preparar la primera solicitud Word de seis páginas con el formato de la tesis; se conserva como antecedente en los respaldos. La [guía Word vigente](Documentos/04-Administrativo-TG2/Avances/Revision-Matematica-NEXUS.docx) corresponde a la reescritura explicada descrita arriba. No es envío ni respuesta del director.
 - [ ] Recibir y atender el dictamen real del director; el glosario y las comprobaciones internas no lo sustituyen.
 
 ## Adaptación del verificador Rust al contrato Lean
