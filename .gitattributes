@@ -1,5 +1,10 @@
 # Conservar los bytes que identifican las mediciones y sus fuentes.
 /.gitattributes text eol=lf
+/.gitignore -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/RUTA_DE_ESTUDIO.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/requirements.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/Documentos/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/scripts/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /nexus/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /scripts/verificar_version_tg2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /scripts/registrar_version_tg2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

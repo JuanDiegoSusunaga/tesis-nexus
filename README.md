@@ -49,7 +49,7 @@ El código Rust está incluido como archivos normales en `nexus/`; no hace falta
 Solo se requieren Git y Python para estas comprobaciones de integridad; no compilan Lean ni Rust ni regeneran documentos.
 
 ```powershell
-git clone https://github.com/JuanDiegoSusunaga/tesis-nexus.git
+git clone -c core.longpaths=true https://github.com/JuanDiegoSusunaga/tesis-nexus.git
 Set-Location tesis-nexus
 python scripts/verificar_version_tg2.py
 python scripts/verificar_catalogo_validacion.py

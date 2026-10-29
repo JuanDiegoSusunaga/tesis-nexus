@@ -6,7 +6,7 @@
   "estado": "Edici?n unificada para revisi?n del director: manuscrito, matem?ticas Lean, workspace Rust y evidencia en un solo repositorio. Se conserva el alcance de las comprobaciones del 20 de octubre.",
   "documentos": {
     "repositorio": "https://github.com/JuanDiegoSusunaga/tesis-nexus.git",
-    "commit_contexto": "d16f34659646c8a811d595d367d6004d1b017e74",
+    "commit_contexto": "2bb2588c5cae5841a96f91d6fe41f90b6a642519",
     "identificacion": "El commit que contiene este manifiesto identifica todos los archivos de la edici?n unificada, incluido Rust; no hay subm?dulos ni segundo clon obligatorio.",
     "revision_conservada": "Se incorporan los cambios documentales previos, la gu?a explicada y la evidencia del ciclo durable; las descripciones sin commit/push corresponden a sus etapas hist?ricas.",
     "actualizacion_estado_l1": "Solo se consolida el repositorio Rust. Los cambios documentales locales anteriores se preservan y sus huellas se actualizan sin incorporarlos a un nuevo commit documental.",
@@ -24,7 +24,7 @@
   "codigo": {
     "repositorio": "https://github.com/JuanDiegoSusunaga/tesis-nexus.git",
     "directorio": "nexus",
-    "commit": "fb101d92b89d72fcdeadb38a6b21703d7793a169",
+    "commit": "76694476f53f25c0bbd68c96222f68db6740a130",
     "contrato_local_l1": "cuentas-L1-SHA3-v1",
     "perfil_da_local": "fragmentos-locales-v1",
     "perfil_confirmacion_local": "inclusion-procesada-local-L1-v1",
@@ -77,8 +77,8 @@
   "archivos": [
     {
       "archivo": ".gitattributes",
-      "bytes": 4637,
-      "sha256": "4093be135d6274d3689d3183f2ac44403e7228bef8371eafe5bd8b94d9b35681"
+      "bytes": 5064,
+      "sha256": "b9e6ae62fcab8dcd1c896c05144028d8dc42ae62e38c1234930edfafb56ef50d"
     },
     {
       "archivo": ".gitignore",
@@ -49442,8 +49442,8 @@
     },
     {
       "archivo": "README.md",
-      "bytes": 6080,
-      "sha256": "30df03ee6f0c913021148411a7ea8231f50ce0aba61abbd8e398b18c18b804c2"
+      "bytes": 6103,
+      "sha256": "1d276ddabcd553d5bb50d5d15ae5bd99f37c26ba918de911f7ea1d0c0167820d"
     },
     {
       "archivo": "RUTA_DE_ESTUDIO.md",
@@ -51277,8 +51277,8 @@
     },
     {
       "archivo": "nexus/README.md",
-      "bytes": 4232,
-      "sha256": "608dc1cebefea44cd65bbedeef9cc5c1a2e7598733767d3f73176ccff8f775a1"
+      "bytes": 4255,
+      "sha256": "76a07e0c41e9f195021da3ea05eccf008af533a70e372537b1d924713b13051d"
     },
     {
       "archivo": "nexus/REPRODUCIBILIDAD_TG2.md",
@@ -52471,6 +52471,7 @@
     "manuscrito_regenerado": false,
     "fuentes_y_salidas_protegidas_comprobadas": 488,
     "pruebas_verificador_integridad": 15,
-    "dictamen": "pendiente"
+    "dictamen": "pendiente",
+    "finales_de_linea_preservados_para_clones": true
   }
 }
