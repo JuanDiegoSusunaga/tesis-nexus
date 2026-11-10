@@ -1,12 +1,12 @@
 {
   "esquema": 2,
-  "edicion": "nexus-unificado-revision-2026-10-29",
-  "fecha": "2026-10-29",
+  "edicion": "nexus-unificado-revision-2026-11-10",
+  "fecha": "2026-11-10",
   "fecha_utc": "2026-10-20T21:28:55.836301+00:00",
-  "estado": "Edici?n unificada para revisi?n del director: manuscrito, matem?ticas Lean, workspace Rust y evidencia en un solo repositorio. Se conserva el alcance de las comprobaciones del 20 de octubre.",
+  "estado": "Edición unificada para revisión del director: manuscrito, matemáticas Lean, workspace Rust y evidencia en un solo repositorio. Manuscrito y Lean conservan el alcance de las comprobaciones del 20 de octubre; el workspace Rust se actualiza el 10 de noviembre y es posterior al manuscrito.",
   "documentos": {
     "repositorio": "https://github.com/JuanDiegoSusunaga/tesis-nexus.git",
-    "commit_contexto": "2bb2588c5cae5841a96f91d6fe41f90b6a642519",
+    "commit_contexto": "b713e76201fc987ef30380a5ab0824dee9951515",
     "identificacion": "El commit que contiene este manifiesto identifica todos los archivos de la edici?n unificada, incluido Rust; no hay subm?dulos ni segundo clon obligatorio.",
     "revision_conservada": "Se incorporan los cambios documentales previos, la gu?a explicada y la evidencia del ciclo durable; las descripciones sin commit/push corresponden a sus etapas hist?ricas.",
     "actualizacion_estado_l1": "Solo se consolida el repositorio Rust. Los cambios documentales locales anteriores se preservan y sus huellas se actualizan sin incorporarlos a un nuevo commit documental.",
@@ -24,7 +24,7 @@
   "codigo": {
     "repositorio": "https://github.com/JuanDiegoSusunaga/tesis-nexus.git",
     "directorio": "nexus",
-    "commit": "76694476f53f25c0bbd68c96222f68db6740a130",
+    "commit": "34789ac0986da134727f17f3034aae517638e20b",
     "contrato_local_l1": "cuentas-L1-SHA3-v1",
     "perfil_da_local": "fragmentos-locales-v1",
     "perfil_confirmacion_local": "inclusion-procesada-local-L1-v1",
@@ -36,8 +36,8 @@
     "perfil_ciclo_local_durable": "nexus-ciclo-local-durable-v1",
     "modo": "integrado",
     "repositorio_origen": "https://github.com/JuanDiegoSusunaga/nexus.git",
-    "commit_fuentes_verificadas": "b16688ce3264449545cf45c739ed5f573b12d0b1",
-    "identificacion": "El commit de origen corresponde al repositorio Rust independiente. Las fuentes integradas se identifican por las huellas de archivos; la reorganizaci?n posterior al corte verificado modifica ?nicamente documentaci?n."
+    "commit_fuentes_verificadas": "34789ac0986da134727f17f3034aae517638e20b",
+    "identificacion": "El commit de origen corresponde a la rama principal del repositorio Rust independiente. Las fuentes integradas se identifican por las huellas de archivos."
   },
   "manifiesto_previo": {
     "archivo": "Documentos/06-Evidencia-TG2/2026-10-20/Ciclo-Local-Durable/respaldo_previo/version-tg2.json",
@@ -87,8 +87,8 @@
     },
     {
       "archivo": "BITACORA_TG2.md",
-      "bytes": 221468,
-      "sha256": "eef45f9a877757bd65a4d723b0acf2522e8737b456aecfdd785f7f2c23d8545e"
+      "bytes": 223922,
+      "sha256": "2b0c1034e4b17e6f655bd85d4aabf902db99adaae9cb0743cd5ed7166b31d467"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
@@ -49426,6 +49426,31 @@
       "sha256": "b88a677dc89d245f2f2d5e9a895722908f737c00bd39d00b828e1df3dd0ad73c"
     },
     {
+      "archivo": "Documentos/07-Paper-Lean-Rust/README.md",
+      "bytes": 2215,
+      "sha256": "8cad21cf10bf4824bd2a072b77ad55a3c487c126c6954eb29786e0fd7f7ccb3b"
+    },
+    {
+      "archivo": "Documentos/07-Paper-Lean-Rust/main-es.pdf",
+      "bytes": 766391,
+      "sha256": "56e3435f6b48135b80c97302f85d4e34393a809bc5f0bf7ac5d946e43a7b64b0"
+    },
+    {
+      "archivo": "Documentos/07-Paper-Lean-Rust/main-es.tex",
+      "bytes": 37898,
+      "sha256": "ce5cdd7517041749334b661be692fe327989c7a35abb3d3844d8070c8aae4264"
+    },
+    {
+      "archivo": "Documentos/07-Paper-Lean-Rust/main.pdf",
+      "bytes": 740119,
+      "sha256": "9c495d36f331cfedd3dc35f5f5f6e1dcfc1abae3417884d0767cc0a24c1bb9bb"
+    },
+    {
+      "archivo": "Documentos/07-Paper-Lean-Rust/main.tex",
+      "bytes": 37610,
+      "sha256": "9b648bbaa996363cbf841738cbca33db063822ef6244589b24c3dafac0950cce"
+    },
+    {
       "archivo": "Documentos/media/image1.png",
       "bytes": 75969,
       "sha256": "8259eedbebd3895102cbf50ecadf110497248527514606bff2b0c168ba34f386"
@@ -49437,13 +49462,13 @@
     },
     {
       "archivo": "PENDIENTES.md",
-      "bytes": 43130,
-      "sha256": "8be514515c38ea2d96acad03cec263d0a70f3e01887f3436f161b7e08c6f671f"
+      "bytes": 44457,
+      "sha256": "401696835e093de3b07e06288e32f8726314e5c797465a55fce23fb14084455a"
     },
     {
       "archivo": "README.md",
-      "bytes": 6103,
-      "sha256": "1d276ddabcd553d5bb50d5d15ae5bd99f37c26ba918de911f7ea1d0c0167820d"
+      "bytes": 7345,
+      "sha256": "afceb64bc41faeb31d3b7b6d2fcacad0ff705c74b50b39c2a2c2bcc5b401da2a"
     },
     {
       "archivo": "RUTA_DE_ESTUDIO.md",
@@ -51256,9 +51281,14 @@
       "sha256": "3abfa06863e93637403798dec61bc9c2a10259574757ad5c457539157f3d3225"
     },
     {
+      "archivo": "nexus/.gitattributes",
+      "bytes": 130,
+      "sha256": "788d2c3c6aa6f5e48bf2b8dbdfd95b6aa86645ad763b5fa5b37793ae5f14290c"
+    },
+    {
       "archivo": "nexus/.gitignore",
-      "bytes": 277,
-      "sha256": "7c293d9e24013ec1518bf5d2183d9cb54979a74936fa2054d3ad7dfdd10afda7"
+      "bytes": 442,
+      "sha256": "761d8f0767d6d4e4842c2b3221d2c5d330754633c009ff3ce2e9d68d93c86f46"
     },
     {
       "archivo": "nexus/ANTECEDENTES_TECNICOS.md",
@@ -51266,9 +51296,14 @@
       "sha256": "ec510a324c6bd8a3a9e414cc28000c25b40f4b8e8dfaa7439efa99c0210d2ca2"
     },
     {
+      "archivo": "nexus/BITACORA_TG2.md",
+      "bytes": 4572,
+      "sha256": "b7126b864cc8fe60117c3d3d98cffe2ad9de4f495dafc5b5e233780d87bae1d1"
+    },
+    {
       "archivo": "nexus/Cargo.lock",
-      "bytes": 120780,
-      "sha256": "876d0628c1715b0a5b338032130a2519c8e9088f9965b5cc87fef9df6f376d46"
+      "bytes": 125766,
+      "sha256": "6c99786ead27045e36ecb27e9b910710b6a4e4b31402d19cddc1220b09449d8d"
     },
     {
       "archivo": "nexus/Cargo.toml",
@@ -51276,14 +51311,324 @@
       "sha256": "a280d907c786c7c52094b9879490c1d81b1a37dd09e703a3389452477b20bbea"
     },
     {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/honesto-16.bin",
+      "bytes": 196574,
+      "sha256": "305d9afdbf93719d2d60e1d94c4815bc9a4b88299d1e342d2460ad00ac3b6d37"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/honesto-256.bin",
+      "bytes": 437470,
+      "sha256": "aeb07f212fa949e4a626301c114bc6f7d8975cde0461a6a091c20f34efe4ed84"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/honesto-4096.bin",
+      "bytes": 760286,
+      "sha256": "0de358d146e90bc21cc4bed44c4ec121732bf3167c6ba7f2af61eefb4b9a9073"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/honesto-64.bin",
+      "bytes": 306782,
+      "sha256": "6cff2bc873ed4210d35ceccca81b7faf465cdd3df001ae91cbe2a8e1dd592644"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/lejano-16.bin",
+      "bytes": 196574,
+      "sha256": "b0af7f9b7f64aa6cc3ad641c37ac71b22233943cfab149e6ad4bba1d4c18e9ba"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/lejano-32.bin",
+      "bytes": 249118,
+      "sha256": "3ecd514ba6e9f7aa4e28ee18e769e3dd2e3172c28b8bd56a8e7c7c3e6fae3b9d"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-debug/lejano-64.bin",
+      "bytes": 306782,
+      "sha256": "c864fab01988f5d2d59dc8302a9b91443c92cb0fd86a4401a3367399e65a85a4"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/honesto-16.bin",
+      "bytes": 196574,
+      "sha256": "b8e9a5bd1cb00320b6499397566ff78c18bd3bd3f04b231b04835e43b467687d"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/honesto-256.bin",
+      "bytes": 437470,
+      "sha256": "3d1b622590dca8c625301e170820a8c38444f2261b1c8ea38e6c2b8d89b1fe87"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/honesto-4096.bin",
+      "bytes": 760286,
+      "sha256": "ed04343cb17d49ec4ccc2829230a9a7cc6ccf494e0af54d3b52822025791e8ac"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/honesto-64.bin",
+      "bytes": 306782,
+      "sha256": "fd7028a250c2e0176c8fe3eaf6495921280137fa30d4849050d58faab5be88cb"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/lejano-16.bin",
+      "bytes": 196574,
+      "sha256": "18e08e787ae364414003fafb6c3f6f1779a612d8042d30d2a8e8f76ffa6e8bb5"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/lejano-32.bin",
+      "bytes": 249118,
+      "sha256": "5a097bf26deb75b0d69b3757dbe170a80d1824db63090422bd8f6c4e43be4bb8"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-FRI-vinculado/corpus-release/lejano-64.bin",
+      "bytes": 306782,
+      "sha256": "ae452860dfd422e6130602b5bede72600043e1e92c8a74ff913d86a2e4251412"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-16.bin",
+      "bytes": 133128,
+      "sha256": "db046fdd7274740f16d134fb443df253c495130f622d1820ca9a55fb3a8e0eb5"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-32.bin",
+      "bytes": 164264,
+      "sha256": "8a496f8c41662fdaf73a96e7d8dcd25c988774d2cee807539bb5b49871617a15"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-debug/traza-lejana-64.bin",
+      "bytes": 198984,
+      "sha256": "0c2ff42338a7cd95221b623bc2f5ac369f67807fa346e854a4ff7fcfd4c74f42"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-16.bin",
+      "bytes": 133128,
+      "sha256": "1d2ee6f2aa11b81e70e2cb3531c3b90796c7fb6d7e89cc113774f3c5723ee8d7"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-32.bin",
+      "bytes": 164264,
+      "sha256": "ce956e0fd08f7f8c6f2ca7c400ff3869da9a188f1bcc81a3af52fcd62257f75b"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-09-22/R4-proximidad/corpus-release/traza-lejana-64.bin",
+      "bytes": 198984,
+      "sha256": "e7ebd99896cf217068d48b8f77bfcf7f7889f6e007a2c28b7f6d7098b4bbca8f"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/README.md",
+      "bytes": 8658,
+      "sha256": "af1df554e0d6a65cd62ddb4ba8a7637d02392bf3172abfa9a7ddd0c412b2560e"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/audit-check.log",
+      "bytes": 23944,
+      "sha256": "7d75efb194c500dabff43634c34088b6f46bb8d22e1396f820146afda5309f90"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/audit-merkle-after.log",
+      "bytes": 1854,
+      "sha256": "62042c1992afc2cdbf3cd43f4624aeed1718adfb666d06c4ee2b3497070588e0"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/audit-merkle-before.log",
+      "bytes": 6212,
+      "sha256": "93b52beb5f4116f7f4e77d6584faa25ffeb52fe9e7594663813d675721c2db2d"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/cargo-build.log",
+      "bytes": 4068,
+      "sha256": "a213f7658d7268cf55c02aa8a2bec27613db7b8f65b0b4aa14d70a0e0cb27ff7"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/cargo-check.log",
+      "bytes": 7410,
+      "sha256": "f2b12c87706e307d1f25746ed64111fa4cc0e38485860f7e2cdbee4be81edbaa"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/cargo-test.log",
+      "bytes": 51484,
+      "sha256": "0f0d6dcf71458321ed58d68a51cbb8bd7bcbbb70fbd1bcdb423b988c1206f403"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/genesis-lab.json",
+      "bytes": 116824,
+      "sha256": "7b5c03559dbf1ef4e51a27be74a007ea0a00bd45b93f7aef050164f97c0c7b00"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/launcher-smoke.json",
+      "bytes": 1941,
+      "sha256": "6b941035e4937ad1dfbd711c7914afef9a4b778cf4d6b672dcd817557b8c0cb8"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/network-run.json",
+      "bytes": 822,
+      "sha256": "3bd3f6958a4ac51a2c2c975e124986a14076c8ef5c26e4a050d505c89ce0df3e"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/node-0.log",
+      "bytes": 140,
+      "sha256": "206a69324a60d9620ef861563adf91581b90fb3aa24a14ae566ac560861d0503"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/node-1.log",
+      "bytes": 140,
+      "sha256": "33cea4b5e8546a11bc0f51c5d46f0421c690a158085dc2f8de61f8c2c8603843"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/node-2.log",
+      "bytes": 280,
+      "sha256": "37f8845071aed28b659a8c00ebe93c2f9d9616976f04c1e3dc54b47f4bd90649"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/node-3.log",
+      "bytes": 280,
+      "sha256": "c5b6c3a1443f62c35d00a9cc1e8147f577ed6e72aea63d3512bb8e75fcae0ebb"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Actual-y-Journal/verification.json",
+      "bytes": 23775,
+      "sha256": "145ecaf04fcfe049c45f4bcf34fe908dc3915a28f03716c0dbd04c857c669562"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Red-Publica/.gitignore",
+      "bytes": 7,
+      "sha256": "e027cf8ebf80d6dcdacced8a4dbd1c440e2436fb1868ec851db4061cb67bb787"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Red-Publica/README.md",
+      "bytes": 4967,
+      "sha256": "97759e47a04d73ec3b99bd2674f59d4acdf5f3f4f33dce9900912cc6e1ea7d34"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Red-Publica/cargo-check.log",
+      "bytes": 8058,
+      "sha256": "8528b2a1123f0046bc440a2de74fdcd0b5952246b888704f0ab1484bbfb86842"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Red-Publica/cargo-test.log",
+      "bytes": 46461,
+      "sha256": "371d946f7fc30ec979fb3bdc1fb9d81728124d86b67c2879fe0961025a587cd9"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Red-Publica/reproduction-before.json",
+      "bytes": 334,
+      "sha256": "4c6801715f1981179e226c21c77803bd7a6ef2a63ead4154d73959831bea5da3"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Red-Publica/reproduction-before.log",
+      "bytes": 4498,
+      "sha256": "9c9e07204b325cef434b1eb5939bb65ddd835ef744a75a6fb779ab165c0d0980"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Red-Publica/validator-before.rs",
+      "bytes": 13704,
+      "sha256": "56a4e4727d2e236741de2db6bd1d137d8cdec5f5617fc723e971651953aeb9b8"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Auditoria-Red-Publica/verification.json",
+      "bytes": 2149,
+      "sha256": "47ee58dc6083e5f3538ac49a5ea53125e5502f62c1a7ab66ea2b5fbac2757bf1"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Autorizacion-Claves-L2/.gitignore",
+      "bytes": 13,
+      "sha256": "6932450d7de530b2548f52b8a86f7255a9683a328fc7eec248043f9987eab0b7"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Autorizacion-Claves-L2/cargo-build.log",
+      "bytes": 5289,
+      "sha256": "cc7c3adcacd2dbcf8c03a4075780c21eb1e0e9cd45414747f440afcd91c223ee"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Autorizacion-Claves-L2/cargo-check.log",
+      "bytes": 8700,
+      "sha256": "3d27dc86887a1a0144464c834e28419281391fe2c8000a86136a63330243237e"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Autorizacion-Claves-L2/cargo-test.log",
+      "bytes": 45094,
+      "sha256": "06ba45766adc635677d7a266f0df1cee316bf98118a7a5f4b08025df32f84cc6"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Autorizacion-Claves-L2/verification.json",
+      "bytes": 19522,
+      "sha256": "f55f03772bef4be0f5ce443ea494382627fe68e1520aee6e880847b64529ecb3"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Bloqueo-Emergencia-L2/.gitignore",
+      "bytes": 13,
+      "sha256": "6932450d7de530b2548f52b8a86f7255a9683a328fc7eec248043f9987eab0b7"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Bloqueo-Emergencia-L2/cargo-build.log",
+      "bytes": 4817,
+      "sha256": "107187098a5b5e790dc887fe00e6eedeefe5dfda7915ebac7e020b7ab364beaa"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Bloqueo-Emergencia-L2/cargo-check.log",
+      "bytes": 8228,
+      "sha256": "fee0567dec068bac1a4aac4a3e1f82519ca584a2055d03c7ae3478c90691f610"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Bloqueo-Emergencia-L2/cargo-test.log",
+      "bytes": 46455,
+      "sha256": "7a607b2b2f2816aae0c4ce04a5caed309faf8b058b712857eb766f7af0b2726b"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Bloqueo-Emergencia-L2/verification.json",
+      "bytes": 20432,
+      "sha256": "684a037c1f59dd9f4f9f7849a4ed62c479efbbe57b3d705f02408a10ada10cbc"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Consenso-BFT/.gitignore",
+      "bytes": 7,
+      "sha256": "e027cf8ebf80d6dcdacced8a4dbd1c440e2436fb1868ec851db4061cb67bb787"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Consenso-BFT/README.md",
+      "bytes": 6383,
+      "sha256": "64906776a48c8e1022c632170ced58583f3577bf3efdf7fa79798355b2626ca3"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Consenso-BFT/cargo-build.log",
+      "bytes": 4402,
+      "sha256": "74cffcd40b97aa905e21892ce30bda9288848bbab24c215d15cb2eb3e58eaa63"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Consenso-BFT/cargo-check.log",
+      "bytes": 8058,
+      "sha256": "dacbd6a93aef19f67c215f485e1a07aaafb6a45fe47e45e8b0b020cfc78e3639"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Consenso-BFT/cargo-test.log",
+      "bytes": 49737,
+      "sha256": "ef74a283b711e9153b64fbe98c1bed775d2974c2e8f10ceb7df4b77f8da9bafc"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-10-30/Consenso-BFT/verification.json",
+      "bytes": 21692,
+      "sha256": "99643f3ceea3bb872b37c1f6793d71e9c25c7596578fb7de2f7be2b369ad79ed"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-11-10/Separacion-Alcance/cargo-test-resumen.log",
+      "bytes": 11596,
+      "sha256": "55f9954b5b1f2fdc85cfbc170ae546776a300ff3dd9b69e18915a1e2c89c8080"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-11-10/Separacion-Alcance/verification.json",
+      "bytes": 1733,
+      "sha256": "f3a5ac5e779ed7432b0d6e7aaacdbfc5ee2f0f5f2121185c950ad5c7275976f4"
+    },
+    {
+      "archivo": "nexus/PENDIENTES.md",
+      "bytes": 1694,
+      "sha256": "c572138991fe894a9286f1e365af8adef4306dcae6ed5589c0769b1752b1baa8"
+    },
+    {
       "archivo": "nexus/README.md",
-      "bytes": 4255,
-      "sha256": "76a07e0c41e9f195021da3ea05eccf008af533a70e372537b1d924713b13051d"
+      "bytes": 5428,
+      "sha256": "c4efc7bf0d6576f85681af4b2d0350cc3f6ddc9842f254c76956eb46f5af1c4e"
     },
     {
       "archivo": "nexus/REPRODUCIBILIDAD_TG2.md",
-      "bytes": 46679,
-      "sha256": "af0b66daba4e73b2a3bffc72fd99729dfabe3410e2f872b8211dda8ac4aed1d1"
+      "bytes": 61419,
+      "sha256": "ebce8f2ac7043cfe285f2e8dddf0ce60acf94ccbcdde2f7c3e05622acd03951d"
     },
     {
       "archivo": "nexus/nexus-active/Cargo.toml",
@@ -51296,24 +51641,29 @@
       "sha256": "bc543ed1dca51cca940a46bf05edfdc3459b95d2075c8267035b13261609447c"
     },
     {
+      "archivo": "nexus/nexus-active/src/authorization.rs",
+      "bytes": 7558,
+      "sha256": "1fc2952c0fd615bdec7e5d96d56c85841df07850285a45f105eaffa152241216"
+    },
+    {
       "archivo": "nexus/nexus-active/src/batch.rs",
       "bytes": 19738,
       "sha256": "2dbbba71a6f1649d49ac82e7087327752fd343d3f3a323ad9d27714fd096c8d0"
     },
     {
       "archivo": "nexus/nexus-active/src/chain.rs",
-      "bytes": 53062,
-      "sha256": "8a22c97476558c9f72bc78df665eff0f14485f4e55b6a5f434e3dcac6eb7ad28"
+      "bytes": 55607,
+      "sha256": "2e24ff5274dbf43dcade62b299d19605223a08ffcfe0748dbb48119899edcd33"
     },
     {
       "archivo": "nexus/nexus-active/src/execution.rs",
-      "bytes": 10886,
-      "sha256": "88ad05e40fc24b8793a8661484a4ae18f6bb8329645391ec3870fd68a3e37c1f"
+      "bytes": 13534,
+      "sha256": "53ecb764f8e5cb0502f14c4c497a16647833b9ddd0a4f504a3a85e05e852f3d2"
     },
     {
       "archivo": "nexus/nexus-active/src/lib.rs",
-      "bytes": 3004,
-      "sha256": "b673dde177a6e667c15956f8832bbd788ce89d0b635c097da4353aa52bf6a599"
+      "bytes": 3071,
+      "sha256": "3a6f78974dde75a19076128a5aa7ca2bd782b7db5186df16a0e7b25e3fb2473f"
     },
     {
       "archivo": "nexus/nexus-active/src/linked_verifier.rs",
@@ -51327,8 +51677,8 @@
     },
     {
       "archivo": "nexus/nexus-active/src/sequencer.rs",
-      "bytes": 21214,
-      "sha256": "b33419b43dfcacb5442a8e70a136c4d2a528c013e0fa4cbf139218bd151b59fc"
+      "bytes": 24848,
+      "sha256": "cfbea42dccd055cff261950c41869953897b18834e2bb5265c9864fc9b815421"
     },
     {
       "archivo": "nexus/nexus-active/src/verifier.rs",
@@ -51351,6 +51701,11 @@
       "sha256": "39919e6f8178531d1a4d85151030b523fd2bd91406db9cba63bcf296f8b40daf"
     },
     {
+      "archivo": "nexus/nexus-active/tests/emergency_freeze.rs",
+      "bytes": 9461,
+      "sha256": "026e9abb3b795b20345af9002b67e1e6f26d8a43c2ee953759bdb8beb40d5d8e"
+    },
+    {
       "archivo": "nexus/nexus-active/tests/execution_contract.rs",
       "bytes": 3851,
       "sha256": "2e87f52ab7c0a383aa0a5a477f38af233808be33b1bbc03dbd000b13ec361160"
@@ -51359,6 +51714,11 @@
       "archivo": "nexus/nexus-active/tests/execution_safety.rs",
       "bytes": 6804,
       "sha256": "050097fa8caf22a64863b8a8dbce989468629331c87ded08cc313db6f702f32e"
+    },
+    {
+      "archivo": "nexus/nexus-active/tests/key_authorization.rs",
+      "bytes": 9928,
+      "sha256": "ffd01ac772f183bdbbd4a1d7494f064fb6ae5cb10303166765aac953e0fc334e"
     },
     {
       "archivo": "nexus/nexus-active/tests/l1_confirmation.rs",
@@ -51372,13 +51732,13 @@
     },
     {
       "archivo": "nexus/nexus-active/tests/processed_recovery.rs",
-      "bytes": 12563,
-      "sha256": "a53523c7d1344c3d3b9fec8329088c28f860dfb115f69052272c53e8451fa775"
+      "bytes": 12806,
+      "sha256": "a93986d99b359e46f768373637c90501cad561598901b9484e25af1112817b3a"
     },
     {
       "archivo": "nexus/nexus-active/tests/processed_retry.rs",
-      "bytes": 15458,
-      "sha256": "6710f9e7b5644bd3b7aa442a15bff8b5d419606482f3b33aa7c5e0369915cde8"
+      "bytes": 15738,
+      "sha256": "f18573e58658d0d2b1b5a95566594a7e6b3a06682550c33e56365658030d61eb"
     },
     {
       "archivo": "nexus/nexus-active/tests/signed_registration.rs",
@@ -51401,9 +51761,14 @@
       "sha256": "37633d55fc91da6fea733961e84f3f8db1ec1b316689630ba98cbf0619860169"
     },
     {
+      "archivo": "nexus/nexus-anchor/src/bft.rs",
+      "bytes": 37963,
+      "sha256": "90b1a11530e46037a696ce726d9e5998e1316c7e081800231617d5ea960843e3"
+    },
+    {
       "archivo": "nexus/nexus-anchor/src/chain.rs",
-      "bytes": 26396,
-      "sha256": "73b1aa3170010ca83e88c12cdf2a9f63ebcf8a57130def252cb4c8a88e7bb687"
+      "bytes": 31241,
+      "sha256": "786b97ad1c7a93475cee973a52e7b2f5f0ecd9f9d438c5fe414cc49b7b9d7060"
     },
     {
       "archivo": "nexus/nexus-anchor/src/consensus.rs",
@@ -51422,13 +51787,18 @@
     },
     {
       "archivo": "nexus/nexus-anchor/src/lib.rs",
-      "bytes": 2201,
-      "sha256": "43a7b46790c7d0d537898b6a5d0d42d78188721e89e082ee4c6d9412fcb03641"
+      "bytes": 2252,
+      "sha256": "c82f0cb2d66998e309de65bea18afd564b01bf5d4d58db016525591151ebb392"
     },
     {
       "archivo": "nexus/nexus-anchor/src/validator.rs",
-      "bytes": 13704,
-      "sha256": "56a4e4727d2e236741de2db6bd1d137d8cdec5f5617fc723e971651953aeb9b8"
+      "bytes": 15443,
+      "sha256": "df299055c9ea6aa77584c1a4dc95b5bcaac6020ae58cbe5600e80972ad90e59d"
+    },
+    {
+      "archivo": "nexus/nexus-anchor/tests/bft_rounds.rs",
+      "bytes": 11205,
+      "sha256": "e7a31121bf6243eb19f054145c7cd2656c533ef6b2f2587ccbfd52e9d99ce035"
     },
     {
       "archivo": "nexus/nexus-anchor/tests/block_policy.rs",
@@ -51466,14 +51836,19 @@
       "sha256": "6de0500cb94b615883ab0e545af3def8c47b55565444f74abc4637999ef47223"
     },
     {
+      "archivo": "nexus/nexus-anchor/tests/validator_accounting.rs",
+      "bytes": 2636,
+      "sha256": "2bf765098f77e5f08eed1d5614983b210489da79916302bc0235e33cb0d08cd7"
+    },
+    {
       "archivo": "nexus/nexus-cli/Cargo.toml",
-      "bytes": 575,
-      "sha256": "4f208295a18aacd24afb5b64f9b229afb782e2810d4c269029dd4a2e41372d7d"
+      "bytes": 600,
+      "sha256": "f7692b6318da50afb50579d66d7f2b4fcce5d1a352f5a4168105a8135eb39173"
     },
     {
       "archivo": "nexus/nexus-cli/src/main.rs",
-      "bytes": 6696,
-      "sha256": "b27fd564e3bce132b2c9eadeb985fdd4672630ece06a6a0f1fc89903a26a09fc"
+      "bytes": 7661,
+      "sha256": "3045854bc451f3261daeeca5db321b18c8c20c64d230b14ab76d1789a108f210"
     },
     {
       "archivo": "nexus/nexus-core/Cargo.toml",
@@ -51496,19 +51871,24 @@
       "sha256": "341ec5865031dd923fadafc84056d3e977f5863c858c379532a1a0a93ed73e71"
     },
     {
+      "archivo": "nexus/nexus-core/src/journal.rs",
+      "bytes": 7251,
+      "sha256": "50e6cff845eafba8f0376b187cf0c1be30878aa85955843abcd7b6cb479f8cd5"
+    },
+    {
       "archivo": "nexus/nexus-core/src/lib.rs",
-      "bytes": 1010,
-      "sha256": "c71eab3efc3affa398a5d0aa7d766621ca0ae8ee241a267c5e36d652e867bf8c"
+      "bytes": 1062,
+      "sha256": "ff6baf41a7a4c4156188ecaae33db5a0a6995dd982e8ddec7b8c7ecf46b8d756"
     },
     {
       "archivo": "nexus/nexus-core/src/merkle.rs",
-      "bytes": 10968,
-      "sha256": "42301fad5a732f43be6faadabc5c9f78d28d27610a616324132c08c60531cddf"
+      "bytes": 11631,
+      "sha256": "8145c0bbfa7f4766220dd01a25f05b73e846af9f26fd30f45697d913e4f46c30"
     },
     {
       "archivo": "nexus/nexus-core/src/state.rs",
-      "bytes": 9857,
-      "sha256": "d362cbfac38140cd3e5c2d37c37b9669180ce8bbaa5a86256c98a21094cd462d"
+      "bytes": 10207,
+      "sha256": "5468fdb976b7d819691e91bb3bfa00e7ed031484839274d2f8b42c304aef4eef"
     },
     {
       "archivo": "nexus/nexus-core/src/traits.rs",
@@ -51517,8 +51897,8 @@
     },
     {
       "archivo": "nexus/nexus-core/src/transaction.rs",
-      "bytes": 11190,
-      "sha256": "a3a2d0da948abf1346e9ceb5381ee11809c00f648333694d0c658669a7ebe0af"
+      "bytes": 12918,
+      "sha256": "96c8dac96973400c7d6a02e13d456da9c4f393ffc519f2533aebc41dfe1a76cd"
     },
     {
       "archivo": "nexus/nexus-core/src/types.rs",
@@ -51526,9 +51906,19 @@
       "sha256": "d79165599498463a61f157b8dea11f5d6805a2395ace66f1e7fae2ee97e28492"
     },
     {
+      "archivo": "nexus/nexus-core/tests/journal.rs",
+      "bytes": 6838,
+      "sha256": "30f86b6e1ffb9d39657fa14f1ceffa91b7bd7ff6e4193e7ad6d2add85ca1c6a8"
+    },
+    {
       "archivo": "nexus/nexus-core/tests/local_checkpoint.rs",
       "bytes": 2340,
       "sha256": "039e4115e4851682c33858a2944c595726f24e18454350fae1bbd03ce6df5f90"
+    },
+    {
+      "archivo": "nexus/nexus-core/tests/merkle_position.rs",
+      "bytes": 1086,
+      "sha256": "db8a98fdcea8ee04fc7162a78edd2ff02dcc896d6894f520e6f0ccf0e2fc871e"
     },
     {
       "archivo": "nexus/nexus-core/tests/state_safety.rs",
@@ -51592,23 +51982,33 @@
     },
     {
       "archivo": "nexus/nexus-crypto/src/keypair.rs",
-      "bytes": 27890,
-      "sha256": "c54b41ef0f80a396bbf7a0d0943521fd416b6dd42d933eac090dddba6d995334"
+      "bytes": 29250,
+      "sha256": "9d448a9ec48436893f5b869b783fdfd74a63c535faa5ca8f86c77cf512da7d39"
     },
     {
       "archivo": "nexus/nexus-crypto/src/lib.rs",
-      "bytes": 1067,
-      "sha256": "6154dce44c5dc2ec229f3cb47ed7c56293c6b2d4c2227b2066e96deb4d74eec9"
+      "bytes": 1252,
+      "sha256": "f9279a2631d4a3d98cc9e9f9d21c997b194a6807607472876eb8ce72666cb623"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/src/recovery.rs",
+      "bytes": 5073,
+      "sha256": "ed4f95aae8d20ad8de076110aa34c4afec8261b593c8addb93dd7033a7b986a2"
     },
     {
       "archivo": "nexus/nexus-crypto/src/registry.rs",
-      "bytes": 20840,
-      "sha256": "c512c6ce48321b8ce0f71bc3c45691f079fa427b018b1d805a6ce97c21467b50"
+      "bytes": 21791,
+      "sha256": "1dbfc8bd6269a7e80570865a7cb4fafbebda7501e4c1256bd38e4ce9f8ab551b"
     },
     {
       "archivo": "nexus/nexus-crypto/src/signer.rs",
-      "bytes": 9701,
-      "sha256": "49377398b7647c26cb66ccef03bde56fcef1a0208a464989a289fac0e98c382a"
+      "bytes": 11606,
+      "sha256": "520bd1d2bcc785fde4e0da5982fb61a40a39448c270ef9620630545c2066e430"
+    },
+    {
+      "archivo": "nexus/nexus-crypto/tests/recovery_policy.rs",
+      "bytes": 4449,
+      "sha256": "8e1aed6405dfdedff0d2e816c0a3a0fab540c7bd4e4fa3ca41fe29abfa9ee68c"
     },
     {
       "archivo": "nexus/nexus-crypto/tests/tg2_correspondence.rs",
@@ -51627,13 +52027,13 @@
     },
     {
       "archivo": "nexus/nexus-network/Cargo.toml",
-      "bytes": 399,
-      "sha256": "f8718d257e43299317d256c127bff773fc7ee225d545ed89e6bfdbfb5d2e40cf"
+      "bytes": 416,
+      "sha256": "69b14a297825dec6b31ac80da796bbaee7bfb0e51570335125ef4fa5d74746df"
     },
     {
       "archivo": "nexus/nexus-network/src/lib.rs",
-      "bytes": 1287,
-      "sha256": "3d8cd52931d4f4db93909c0d17810b209dde16340968eea2b518f457e1542423"
+      "bytes": 1344,
+      "sha256": "14bfa8f5febff47ceef1a1d6e4da6f67c423c7b8332b1cb346757793f5a6f168"
     },
     {
       "archivo": "nexus/nexus-network/src/peer.rs",
@@ -51642,8 +52042,8 @@
     },
     {
       "archivo": "nexus/nexus-network/src/protocol.rs",
-      "bytes": 315,
-      "sha256": "1c0e23d23e314dd59b39e20616784a6fb55764b70b27b1c7b03aab03fbc6915a"
+      "bytes": 381,
+      "sha256": "981ce29f71987c95d222f1269e5f5267cb5b297f598af907d4cd547370f6408f"
     },
     {
       "archivo": "nexus/nexus-node/Cargo.toml",
@@ -51656,19 +52056,24 @@
       "sha256": "9eb4978268e050f7aad8dc031a365b184b91d10a8dbe00cbbd748deefc44e5fe"
     },
     {
+      "archivo": "nexus/nexus-node/src/bft.rs",
+      "bytes": 20751,
+      "sha256": "2afa8a70d1ae3c5df8286f160398bd9181497eb4c00f1b5640e92833d2d6e35b"
+    },
+    {
       "archivo": "nexus/nexus-node/src/config.rs",
       "bytes": 1119,
       "sha256": "ebef163af60a07e1f8551bbe96419df67322ed8b0ff25e688dd85e8e5cd0dcfd"
     },
     {
       "archivo": "nexus/nexus-node/src/durable.rs",
-      "bytes": 8393,
-      "sha256": "0926cbeb1c84c1d8afdbc53b1c03d51cb3e751cbedb6efb53031e88a3dbe70bd"
+      "bytes": 9533,
+      "sha256": "4434dafac4953321bf67cc3e69ad11b7a63100986212fadd9ad63811d2c631ba"
     },
     {
       "archivo": "nexus/nexus-node/src/lib.rs",
-      "bytes": 3365,
-      "sha256": "239554640a18f92000d7750852122c2b93ac2ce151e008452a9e0cf1e1fe4855"
+      "bytes": 3546,
+      "sha256": "bb88e54fe8f464fe6f3d41673ec82faf45ae6a0a7b90c81e207ed2be5e86f485"
     },
     {
       "archivo": "nexus/nexus-node/src/rpc.rs",
@@ -51676,9 +52081,24 @@
       "sha256": "442963766bc9f30ee0ef9ca3c328b10f7ce453af810dc42bafb5280e22777b03"
     },
     {
+      "archivo": "nexus/nexus-node/tests/bft_durable.rs",
+      "bytes": 17821,
+      "sha256": "8795008f44d7899f72395e1c8f8cbe154c3d241c2d1ff53cae9f223ca247d0df"
+    },
+    {
       "archivo": "nexus/nexus-node/tests/durable_cycle.rs",
-      "bytes": 12463,
-      "sha256": "800aeaab3edaa921bffa4db1cd83a43cadd7aad51d565dd690f187a1a21e4098"
+      "bytes": 12698,
+      "sha256": "4b885f3dbacfcfec8390d6f752a6fc604ee847d26130aa438ee9aef0d8416975"
+    },
+    {
+      "archivo": "nexus/nexus-node/tests/emergency_freeze.rs",
+      "bytes": 5938,
+      "sha256": "fb2aecccd824689676fb63b50db7af07ea118e7b893737a595148e146eae734f"
+    },
+    {
+      "archivo": "nexus/nexus-node/tests/key_authorization.rs",
+      "bytes": 6110,
+      "sha256": "568f875120a7360bd63d7749a7a85ade69b06e8fa1499ca4dff68b76a513aff1"
     },
     {
       "archivo": "nexus/nexus-sentinel/Cargo.toml",
@@ -51792,8 +52212,8 @@
     },
     {
       "archivo": "nexus/nexus-zk/tests/lean_contract.rs",
-      "bytes": 3792,
-      "sha256": "e59186c000f56bd86d0989360437825af5a7985c07e98a63aac5c39ea5ed7e9b"
+      "bytes": 3872,
+      "sha256": "a7dc3d99752d198107446068e19e9cc6411bd1a5e9e9ef984c9a5aa9269c4642"
     },
     {
       "archivo": "nexus/nexus-zk/tests/tg2_air_algebra.rs",
@@ -51802,8 +52222,8 @@
     },
     {
       "archivo": "nexus/nexus-zk/tests/tg2_linked_trace_fri.rs",
-      "bytes": 10744,
-      "sha256": "1270fe7b2a8b843b038db6fa6803975a1448044df1693b86875c20942316707d"
+      "bytes": 10741,
+      "sha256": "f951259b0ffbcd263cb2695e0917937603d271d26a457bea3921a9618dad46d7"
     },
     {
       "archivo": "nexus/nexus-zk/tests/tg2_soundness.rs",
@@ -52473,5 +52893,33 @@
     "pruebas_verificador_integridad": 15,
     "dictamen": "pendiente",
     "finales_de_linea_preservados_para_clones": true
+  },
+  "actualizacion_alcance_prototipo": {
+    "fecha": "2026-11-10",
+    "edicion_anterior": {
+      "edicion": "nexus-unificado-revision-2026-10-29",
+      "fecha": "2026-10-29",
+      "commit_codigo": "76694476f53f25c0bbd68c96222f68db6740a130",
+      "commit_fuentes_verificadas": "b16688ce3264449545cf45c739ed5f573b12d0b1"
+    },
+    "commit_codigo": "34789ac0986da134727f17f3034aae517638e20b",
+    "verificacion": "nexus/Documentos/06-Evidencia-TG2/2026-11-10/Separacion-Alcance/verification.json",
+    "pruebas_workspace": 412,
+    "pruebas_fallidas": 0,
+    "pruebas_ignoradas": 1,
+    "incorporado": [
+      "posición MerkleProof",
+      "contabilidad de validadores",
+      "autorización de claves L2 por épocas",
+      "bloqueo de emergencia L2",
+      "banco de pruebas BFT local con diario incremental",
+      "corpus público de regresión dentro de nexus/",
+      "borrador de artículo Lean/Rust"
+    ],
+    "excluido": "Perfil monetario NXS, transporte TCP y publicación desde Docker; rama testnet-experimental de nexus (dd46a0f).",
+    "manuscrito_regenerado": false,
+    "lean_recompilado": false,
+    "manuscrito_describe_estos_cambios": false,
+    "dictamen": "pendiente"
   }
 }

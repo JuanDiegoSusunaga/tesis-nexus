@@ -1,12 +1,20 @@
 # Pendientes — Tesis NEXUS (TG2)
 
-**Actualizado:** 2026-10-20. Seguimiento vigente; el historial se conserva en [BITACORA_TG2.md](BITACORA_TG2.md).
+**Actualizado:** 2026-11-10. Seguimiento vigente; el historial se conserva en [BITACORA_TG2.md](BITACORA_TG2.md).
 
 **Accesos:** [Ruta de cierre](Documentos/04-Administrativo-TG2/Ruta-de-Cierre-TG2.md) · [Matriz de trazabilidad](Documentos/05-Estado-del-Arte/Resumenes-y-Matriz/Matriz-Trazabilidad-TG2.md) · [Revisión de la bitácora](Documentos/04-Administrativo-TG2/Avances/Revision-Bitacora-2026-09-22.md).
 
 **Decisión del autor, 23 de septiembre:** la transferencia QROM completa del protocolo AIR/FRI queda como **trabajo futuro**. Su demostración no bloquea esta ruta de cierre de TG2. Se conservan los resultados parciales y sus límites; el trabajo activo se concentra en revisión y consolidación documental. La sustentación queda aplazada por indicación del autor del 12 de octubre.
 
 ## Acuerdos y evidencia
+
+- [x] Separar del camino principal el ensayo de testnet NXS del 30 de octubre y actualizar `nexus/` con lo ligado a los objetivos: posición Merkle, contabilidad de validadores, autorización de claves L2, bloqueo de emergencia y banco de pruebas BFT local. Check, build y **412 pruebas** correctos el 10 de noviembre; manuscrito y Lean sin cambios. El ensayo se conserva en la rama [`testnet-experimental`](https://github.com/JuanDiegoSusunaga/nexus/tree/testnet-experimental). [Contrato](nexus/REPRODUCIBILIDAD_TG2.md#alcance-de-la-rama-principal--10-de-noviembre-de-2026) · [Verificación](nexus/Documentos/06-Evidencia-TG2/2026-11-10/Separacion-Alcance/verification.json).
+
+- [x] Incorporar el borrador de artículo sobre la formalización Lean y el verificador Rust, en español e inglés. Sin envío ni revisión externa. [Fuentes y PDF](Documentos/07-Paper-Lean-Rust/README.md).
+
+- [ ] Acordar con el director si los componentes posteriores al manuscrito (autorización de claves L2, bloqueo de emergencia, banco BFT) entran al texto de la tesis o se presentan como trabajo complementario. El manuscrito describe el código del 20 de octubre.
+
+- [ ] Revisar el pull request 1 de `nexus` (rechazo de APIs Groth16 incompletas y refuerzo del diario en Unix) y decidir qué correcciones pasan a la rama principal.
 
 - [x] Reunir tesis, formalización Lean, workspace Rust y evidencia en `tesis-nexus`, con una entrada de lectura para el director y verificación de integridad desde un solo clon. Organización del 29 de octubre; los pendientes académicos y matemáticos conservan sus estados.
 

@@ -1,0 +1,489 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot,es-nolists]{babel}
+\unaccentedoperators
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Listado}
+\usepackage{xcolor}
+\usepackage{cite}
+\usepackage{hyperref}
+
+\setlength{\abovedisplayskip}{7pt plus 2pt minus 3pt}
+\setlength{\belowdisplayskip}{7pt plus 2pt minus 3pt}
+\setlength{\abovedisplayshortskip}{4pt plus 2pt minus 2pt}
+\setlength{\belowdisplayshortskip}{4pt plus 2pt minus 2pt}
+\setlength{\jot}{4pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    citecolor=green!50!black,
+    urlcolor=blue!70!black
+}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}{Lema}
+\newtheorem{proposition}{Proposici\'{o}n}
+\newtheorem{corollary}{Corolario}
+\theoremstyle{definition}
+\newtheorem{definition}{Definici\'{o}n}
+\newtheorem{remark}{Observaci\'{o}n}
+
+% Estilos para bloques de codigo Lean 4 y Rust
+\definecolor{codebg}{rgb}{0.97,0.97,0.98}
+\definecolor{codeframe}{rgb}{0.82,0.82,0.86}
+\definecolor{keywordcolor}{rgb}{0.0,0.2,0.6}
+\definecolor{commentcolor}{rgb}{0.35,0.45,0.35}
+\definecolor{stringcolor}{rgb}{0.55,0.15,0.15}
+
+\lstdefinelanguage{Lean4}{
+  keywords={module,public,import,namespace,open,scoped,attribute,set_option,def,noncomputable,theorem,lemma,by,let,have,intro,exact,apply,simpa,simp,unfold,dsimp,rw,calc,omega,linarith,norm_num,positivity,decide,ring,end,fun,where,structure,inductive,match,with,if,then,else,forall,exists},
+  sensitive=true,
+  morecomment=[l]{--},
+  morecomment=[s]{/-}{-/},
+  morestring=[b]",
+  literate=
+    {≤}{{$\le$}}1
+    {≥}{{$\ge$}}1
+    {≠}{{$\neq$}}1
+    {×}{{$\times$}}1
+    {∀}{{$\forall$}}1
+    {∃}{{$\exists$}}1
+    {∧}{{$\land$}}1
+    {∨}{{$\lor$}}1
+    {¬}{{$\lnot$}}1
+    {→}{{$\to$}}1
+    {↦}{{$\mapsto$}}1
+    {ℚ}{{$\mathbb{Q}$}}1
+    {ℕ}{{$\mathbb{N}$}}1
+    {∑}{{$\sum$}}1
+    {∈}{{$\in$}}1
+}
+
+\lstdefinelanguage{Rust}{
+  keywords={pub,fn,let,mut,if,else,match,return,struct,enum,impl,for,in,while,loop,use,mod,const,where,Self,self,u8,u16,u32,u64,u128,usize,bool,Result,Ok,Err,Option,Some,None,Vec},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]"
+}
+
+\lstset{
+  backgroundcolor=\color{codebg},
+  frame=single,
+  rulecolor=\color{codeframe},
+  basicstyle=\ttfamily\scriptsize,
+  columns=flexible,
+  keepspaces=true,
+  keywordstyle=\color{keywordcolor}\bfseries,
+  commentstyle=\color{commentcolor}\itshape,
+  stringstyle=\color{stringcolor},
+  breaklines=true,
+  breakatwhitespace=true,
+  showstringspaces=false,
+  tabsize=2,
+  captionpos=b
+}
+
+\title{Solidez Mecanizada de un Verificador AIR/FRI Vinculado a Nivel de Bytes en el ROM Cl\'{a}sico Finito: De las Pruebas en Lean 4 a una Implementaci\'{o}n Endurecida en Rust}
+
+\author{
+\IEEEauthorblockN{Juan Diego Susunaga Velasquez}
+\IEEEauthorblockA{\textit{Escuela de Ingenier\'{\i}a, Ciencia y Tecnolog\'{\i}a} \\
+\textit{Universidad del Rosario}\\
+Bogot\'{a}, Colombia \\
+juand.susunaga@urosario.edu.co}
+\and
+\IEEEauthorblockN{Pedro Mario Wightman Rojas}
+\IEEEauthorblockA{\textit{Escuela de Ingenier\'{\i}a, Ciencia y Tecnolog\'{\i}a} \\
+\textit{Universidad del Rosario}\\
+Bogot\'{a}, Colombia \\
+pedro.wightman@urosario.edu.co}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Las Pruebas Interactivas de Or\'{a}culo de Proximidad (IOPPs) como FRI y las Representaciones Intermedias Algebraicas (AIR) suelen analizarse en modelos algebraicos idealizados donde los compromisos, los desaf\'{\i}os Fiat--Shamir y la selecci\'{o}n de consultas act\'{u}an como pasos independientes. En contraste, los verificadores reales leen secuencias crudas de bytes, comparten un estado hash con memoria entre fases, ejecutan bucles acotados de deduplicaci\'{o}n y verifican nonces de prueba de trabajo (\emph{grinding}). Presentamos una mecanizaci\'{o}n libre de axiomas ad-hoc en Lean~4 (2,709 declaraciones verificadas en 347 subm\'{o}dulos) de la solidez (\emph{soundness}) de un verificador AIR/FRI vinculado a nivel de bytes en el Modelo de Or\'{a}culo Aleatorio (ROM) cl\'{a}sico finito sobre el cuerpo primo Goldilocks ($p = 2^{64} - 2^{32} + 1$). Nuestra formalizaci\'{o}n modela el lector can\'{o}nico de bytes, una tabla ROM compartida bajo $Q$ consultas adaptativas, la congelaci\'{o}n causal de or\'{a}culos y un selector acotado que extrae $40$ parejas distintas en a lo sumo $R = 512$ intentos. Refutamos formalmente la premisa de ``frescura universal'' en cadenas con m\'{u}ltiples ra\'{\i}ces, acotamos el error de acoplamiento $\delta(B)$ y componemos $g \in \{12, 20\}$ bits de trabajo sobre a lo sumo $Q + 1$ parejas estado/nonce elegibles (por ejemplo, $\Pr[\mathsf{AceptaFalsa}_{12}] < 0.004757335454$ para $T = 4096$, $g = 20$ y $Q = 2^{20}$). Finalmente, describimos c\'{o}mo la formalizaci\'{o}n gui\'{o} el endurecimiento del verificador en Rust, eliminando vulnerabilidades de aceptaci\'{o}n en el verificador legado a distancia relativa de Hamming $7/8$.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Pruebas Interactivas de Or\'{a}culo, FRI, STARK, Modelo de Or\'{a}culo Aleatorio, Lean 4, Verificaci\'{o}n Formal, Rust.
+\end{IEEEkeywords}
+
+\section{Introducci\'{o}n}
+\label{sec:intro}
+
+Los argumentos sucintos basados en Representaciones Intermedias Algebraicas (AIR) y Pruebas Interactivas de Or\'{a}culo de Proximidad de Reed--Solomon R\'{a}pidas (FRI)~\cite{ben2018fast,ben2018scalable} constituyen la base de los sistemas modernos de c\'{a}lculo verificable y rollups de validez de Capa~2 (L2).
+
+Aunque la solidez te\'{o}rica de FRI y DEEP-ALI ha sido ampliamente estudiada en la literatura criptogr\'{a}fica~\cite{ben2020proximity,habock2022summary}, persiste una brecha importante entre las demostraciones idealizadas en papel y los verificadores reales que procesan bytes:
+
+\begin{enumerate}
+    \setlength{\itemsep}{3pt}
+    \item \textbf{Lectura a Nivel de Bytes y Validaci\'{o}n Previa al Hash:} Los an\'{a}lisis en papel presuponen objetos algebraicos bien tipados. Los verificadores reales leen arreglos de bytes no confiables donde residuos no can\'{o}nicos ($x \ge p$), bytes sobrantes o capacidades de vectores controladas por el atacante pueden provocar agotamiento de memoria o maleabilidad de la transcripci\'{o}n antes de invocar el hash.
+    \item \textbf{ROM Compartido con Memoria frente a Frescura Idealizada:} La transformaci\'{o}n de Fiat--Shamir~\cite{fiat1986prove,ben2016aurora} suele analizarse tratando cada extracci\'{o}n como una muestra uniforme independiente. En una transcripci\'{o}n concreta que absorbe ra\'{\i}ces de Merkle secuenciales y nonces sobre una misma funci\'{o}n hash, un adversario adaptativo puede preconsultar, repetir o intercalar llamadas al or\'{a}culo. Suponer ``frescura universal'' en cadenas de absorci\'{o}n de ra\'{\i}ces es matem\'{a}ticamente imposible desde que se absorben dos o m\'{a}s ra\'{\i}ces.
+    \item \textbf{Bucles Acotados de Deduplicaci\'{o}n y Muestra Compartida:} Para muestrear $q = 40$ parejas distintas sobre $M = 2^{k+2}$ parejas plegadas sin reemplazo, los verificadores concretos extraen \'{\i}ndices iterativamente descartando duplicados hasta un corte fijo ($R = 512$ extracciones). Adem\'{a}s, la misma muestra de $40$ parejas se comparte simult\'{a}neamente entre las aperturas AIR y dos recorridos FRI vinculados (traza y composici\'{o}n), invalidando cualquier cota producto ingenua.
+    \item \textbf{Composici\'{o}n Adaptativa del Trabajo (\emph{Grinding}):} La prueba de trabajo de $g$ bits suele incorporarse multiplicando el error de solidez por $2^{-g} Q$. Justificar formalmente este factor exige demostrar que toda ejecuci\'{o}n aceptada proviene de una primera exposici\'{o}n estado/nonce en la historia del ROM, que existen a lo sumo $Q + 1$ parejas elegibles considerando reintentos, y que la masa $2^{-g}$ se compone localmente con el selector acoplado antes de observar las respuestas de consulta.
+\end{enumerate}
+
+En este art\'{\i}culo, desarrollado en el marco del proyecto \textbf{NEXUS}, cerramos esta brecha mecanizando de extremo a extremo el verificador AIR/FRI vinculado a nivel de bytes en \textbf{Lean~4} (v4.35.0 con \texttt{mathlib4}) y adaptando nuestra implementaci\'{o}n en \textbf{Rust} al contrato formal resultante.
+
+\subsection{Contribuciones}
+\begin{itemize}
+    \setlength{\itemsep}{3pt}
+    \item \textbf{Formalizaci\'{o}n ROM a Nivel de Bytes en Lean~4:} Formalizamos el lector can\'{o}nico de bytes, el validador de formas, el canal Fiat--Shamir, el verificador de seis aperturas AIR y el doble verificador FRI vinculado sobre el cuerpo Goldilocks $\mathbb{F}_p$. La mecanizaci\'{o}n suma \textbf{2,709 declaraciones en 347 subm\'{o}dulos}, auditadas sin \texttt{sorryAx}.
+    \item \textbf{Selector Acoplado con Memoria y Congelaci\'{o}n Causal:} Demostramos que un adversario adaptativo ($Q$ consultas) frente a un ROM con memoria coincide con el muestreo uniforme perezoso sobre prefijos efectivos finitos. Establecemos la congelaci\'{o}n causal de los or\'{a}culos antes de su primera exposici\'{o}n y acotamos la distancia entre el selector acotado ($R = 512$) y una extracci\'{o}n hipergeom\'{e}trica ideal mediante $\delta(B)$.
+    \item \textbf{Cotas de Solidez Concretas Certificadas por M\'{a}quina:} Derivamos cotas racionales cerradas tanto para un perfil fijo ($k \in \{4,\dots,12\}$, $T = 2^k$ filas) como para perfiles elegidos adaptativamente, cobrando las colisiones del registro hash ($\mathsf{Bad}$) y las excepciones algebraicas AIR/FRI una sola vez de forma global y ponderando el riesgo del selector por $2^{-g}$ sobre a lo sumo $Q + 1$ parejas.
+    \item \textbf{Codise\~{n}o y Endurecimiento del Verificador en Rust:} Documentamos c\'{o}mo la formalizaci\'{o}n gui\'{o} el redise\~{n}o de \texttt{nexus-zk::stark::linked} y \texttt{nexus-active::linked\_verifier}, eliminando fallos de solidez del verificador heredado (demostrados mediante tres contraejemplos a distancia relativa $7/8$ aceptados por el verificador antiguo) e imponiendo contexto externo.
+    \item \textbf{Delimitaci\'{o}n Epist\'{e}mica Expl\'{\i}cita:} Separamos con rigor lo que demuestran los teoremas en Lean~4 en el ROM cl\'{a}sico finito de lo que permanece fuera del modelo mecanizado (criptoan\'{a}lisis de SHA3-256 concreto, refinamiento universal del binario de m\'{a}quina y transferencia al modelo cu\'{a}ntico [QROM]).
+\end{itemize}
+
+\section{Especificaci\'{o}n del Protocolo y Modelo de Amenazas}
+\label{sec:protocol}
+
+\subsection{Dominio Algebraico y Estructura AIR/FRI Vinculada}
+El verificador opera sobre el cuerpo primo Goldilocks $\mathbb{F}_p$ con $p = 2^{64} - 2^{32} + 1 = 18{,}446{,}744{,}069{,}414{,}584{,}321$, y su extensi\'{o}n cuadr\'{a}tica $\mathbb{F}_{p^2} = \mathbb{F}_p[u]/(u^2 - 7)$ para los retos de plegado. Un perfil de ejecuci\'{o}n est\'{a} parametrizado por $k \in \{4, 5, \dots, 12\}$, correspondiente a una traza de $T = 2^k \in [16, 4096]$ filas.
+
+Con un factor de expansi\'{o}n (\emph{blowup}) de $8$, el dominio de evaluaci\'{o}n LDE tiene tama\~{n}o $N = 8T = 2^{k+3}$ sobre un coset multiplicativo $D = 7 \cdot \langle \omega_N \rangle \subset \mathbb{F}_p^\times$, donde $\omega_N^8 = g_T$ genera el subgrupo de la traza de orden $T$ y $\omega_N^{N/2} = -1$.
+
+Se comprob\'{o} exhaustivamente sobre los $65{,}408$ puntos de los nueve dominios admitidos la ausencia de polos ($x \notin \{0, 1, g_T^{T-1}\}$ y $x^T \neq 1$). Los puntos opuestos $(x, -x)$ se agrupan en $M = N / 2 = 2^{k+2}$ parejas plegadas con profundidad de \'{a}rbol $d = k + 3$.
+
+A diferencia de las pruebas FRI aisladas, nuestro verificador comprueba una relaci\'{o}n \textbf{doble FRI vinculada}:
+\begin{enumerate}
+    \setlength{\itemsep}{2pt}
+    \item \textbf{Compromiso de Traza y Aperturas AIR:} Para cada \'{\i}ndice de pareja muestreado $i \in \{0, \dots, M-1\}$, el verificador autentica seis posiciones en $[0, N)$ contra la ra\'{\i}z de Merkle compartida de la traza (las filas actuales y desplazadas tanto en $x$ como en $-x$, comprobadas en las $196{,}224$ configuraciones de \'{\i}ndices posibles).
+    \item \textbf{Enlace del Polinomio de Composici\'{o}n:} Usando los retos Fiat--Shamir extra\'{\i}dos tras absorber la ra\'{\i}z de la traza, el verificador eval\'{u}a las restricciones de transici\'{o}n y de frontera en $x$ y $-x$ y comprueba que coincidan con la capa inicial del compromiso de composici\'{o}n.
+    \item \textbf{Doble Plegado FRI:} El verificador ejecuta simult\'{a}neamente $m_{\text{traza}} = k$ rondas de plegado para la traza y $m_{\text{comp}} = k + 1$ rondas de plegado para el polinomio de composici\'{o}n sobre $\mathbb{F}_{p^2}$, reutilizando exactamente las mismas $40$ parejas de \'{\i}ndices muestreadas.
+\end{enumerate}
+
+\subsection{Gram\'{a}tica de Bytes del Certificado y Presupuesto de Llamadas}
+Un certificado serializado $(S, \pi)$ es una secuencia cruda de octetos (\texttt{List Octeto} en Lean, \texttt{\&[u8]} en Rust) acotada por un l\'{\i}mite estricto de $2\,\text{MiB}$ ($2{,}097{,}152$ bytes). Para el perfil $k$ ($d = k + 3$), la longitud en bytes de cada compromiso es
+\begin{equation}
+\label{eq:bytes_com}
+\mathsf{Bytes}_{\text{com}}(m) = 24 + 32m,
+\end{equation}
+el tama\~{n}o del recorrido de plegado FRI por fase es
+\begin{equation}
+\label{eq:bytes_fri}
+\mathsf{Bytes}_{\text{fri}}(m) = 8 + \sum_{j=0}^{m-1} \bigl(48 + 64(d - j)\bigr),
+\end{equation}
+el tama\~{n}o de cada apertura de consulta es
+\begin{equation}
+\label{eq:bytes_query}
+\begin{aligned}
+\mathsf{Bytes}_{\text{consulta}}(k) &= 8 + 6(16 + 32d) \\
+&\quad + \mathsf{Bytes}_{\text{fri}}(k) + \mathsf{Bytes}_{\text{fri}}(k+1),
+\end{aligned}
+\end{equation}
+y la longitud total en bytes del certificado es
+\begin{equation}
+\label{eq:cert_bytes}
+\begin{aligned}
+\mathsf{Bytes}(k) &= 86 + \mathsf{Bytes}_{\text{com}}(k) + \mathsf{Bytes}_{\text{com}}(k+1) \\
+&\quad + 40 \cdot \mathsf{Bytes}_{\text{consulta}}(k).
+\end{aligned}
+\end{equation}
+
+Como se establece en~\eqref{eq:bytes_com}--\eqref{eq:cert_bytes}, el tama\~{n}o exacto de cualquier certificado v\'{a}lido queda determinado de forma \'{u}nica por $k$. La Tabla~\ref{tab:profiles} resume los tama\~{n}os exactos obtenidos mediante~\eqref{eq:cert_bytes} y el presupuesto m\'{a}ximo de llamadas al or\'{a}culo por parte del verificador en los nueve perfiles.
+
+Incluso en el perfil m\'{a}s grande ($k = 12$, $T = 4096$), el certificado ocupa $760{,}286$ bytes (bajo el l\'{\i}mite de $2\,\text{MiB}$) y el verificador realiza a lo sumo $V_{\text{m\'{a}x}}(12) = 24{,}895$ llamadas al or\'{a}culo (incluyendo hasta $R = 512$ extracciones del selector), incluso cuando rechaza.
+
+\begin{table}[t]
+\centering
+\caption{Tama\~{n}os Exactos de Certificado y Presupuesto de Hashes del Verificador ($R = 512$)}
+\label{tab:profiles}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+\textbf{Perf.\ $k$} & \textbf{Filas $T$} & \textbf{Dom.\ $N$} & \textbf{Bytes Cert.} & \textbf{Hashes M\'{a}x.\ $V_{\text{m\'{a}x}}$} \\
+\midrule
+4  & 16   & 128    & 196,574 & 6,943  \\
+5  & 32   & 256    & 249,118 & 8,627  \\
+6  & 64   & 512    & 306,782 & 10,471 \\
+7  & 128  & 1,024  & 369,566 & 12,475 \\
+8  & 256  & 2,048  & 437,470 & 14,639 \\
+9  & 512  & 4,096  & 510,494 & 16,963 \\
+10 & 1,024 & 8,192  & 588,638 & 19,447 \\
+11 & 2,048 & 16,384 & 671,902 & 22,091 \\
+12 & 4,096 & 32,768 & 760,286 & 24,895 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{ROM Cl\'{a}sico Finito y Adversario Adaptativo}
+Modelamos la funci\'{o}n hash como un \'{u}nico Or\'{a}culo Aleatorio cl\'{a}sico compartido $H : \mathcal{U} \to \{0,1\}^{256}$ (\texttt{Digest}) con memoria persistente durante todo el experimento:
+\begin{itemize}
+    \item Cada entrada nueva $x \in \mathcal{U}$ devuelve una respuesta uniforme e independiente de $256$ bits en su \emph{primera} consulta; cualquier llamada posterior con la misma entrada $x$ (del adversario o del verificador) repite exactamente la respuesta registrada.
+    \item El adversario adaptativo $(\mathsf{proponer}, \mathsf{atacar}, \mathsf{actualizar})$, parametrizado por un tipo de estado arbitrario $A$, realiza a lo sumo $Q$ consultas al or\'{a}culo durante la preparaci\'{o}n, b\'{u}squeda de nonce e intercalaciones.
+    \item Sumando el costo m\'{a}ximo del verificador ($24{,}895$ llamadas para $R = 512$), el n\'{u}mero total de entradas distintas en la tabla compartida est\'{a} acotado por el presupuesto com\'{u}n $B = Q + 24{,}895$, con una cota auxiliar de marcas de registro $L$.
+    \item El trabajo exige $g \in \{12, 20\}$ bits iniciales nulos en el resumen del trabajo absorbido con un nonce de $64$ bits antes de extraer los \'{\i}ndices de consulta.
+\end{itemize}
+
+\section{Solidez Mecanizada en Lean 4}
+\label{sec:lean}
+
+Nuestra formalizaci\'{o}n en Lean~4 se estructura en $347$ subm\'{o}dulos bajo el espacio de nombres \texttt{Nexus}, culminando en \texttt{Nexus.Verificador.CotaTrabajoFinal} y \texttt{Nexus.Verificador.CotaTrabajoNumerica}. En lugar de axiomatizar estados intermedios ideales, demostramos la cota directamente desde el programa verificador de bytes.
+
+\subsection{Refutaci\'{o}n de la Frescura Universal Ingenua y Congelaci\'{o}n Causal}
+Un error frecuente al formalizar Fiat--Shamir en protocolos de m\'{u}ltiples rondas (como FRI, que absorbe hasta $m \le 30$ ra\'{\i}ces secuenciales) consiste en asumir como hip\'{o}tesis que cada absorci\'{o}n consulta un punto fresco con probabilidad $1$. En Lean~4 demostramos que dicha premisa de \emph{frescura universal} es matem\'{a}ticamente imposible desde dos ra\'{\i}ces, ya que un adversario adaptativo puede reutilizar deliberadamente ra\'{\i}ces o prefijos previos.
+
+En su lugar, construimos un acoplamiento con memoria sobre el \'{a}rbol finito de ejecuci\'{o}n ROM (\texttt{LeyArbol} y \texttt{ObservacionesPrefijo}):
+\begin{enumerate}
+    \item \textbf{Integridad del Registro Hash ($\mathsf{SinBad}$):} Definimos un detector computable sobre el registro de ejecuci\'{o}n que captura cualquier colisi\'{o}n, preimagen anticipada o ciclo de prefijos en la tabla. En \texttt{CotaSinBad}, probamos que la probabilidad de violar $\mathsf{SinBad}$ bajo el presupuesto $B = Q + 24{,}895$ y par\'{a}metro auxiliar $L$ satisface
+    \begin{equation}
+    \label{eq:sinbad}
+    \Pr[\lnot \mathsf{SinBad}] \le \min\left\{1, \frac{B(49B + L)}{2^{256}}\right\}.
+    \end{equation}
+    \item \textbf{Congelaci\'{o}n Causal de Compromisos (\texttt{PrefijoAIR}, \texttt{RondasCausales}):} Bajo la condici\'{o}n $\mathsf{SinBad}$ de~\eqref{eq:sinbad}, antes de la primera respuesta de reto ($E$) de cada capa FRI o combinaci\'{o}n AIR, la ra\'{\i}z de Merkle correspondiente se recupera de forma \'{u}nica por b\'{u}squeda inversa en la tabla previa. As\'{\i}, el vector de evaluaciones comprometido queda causalmente congelado en el pasado antes de muestrear el reto.
+    \item \textbf{Uni\'{o}n Telesc\'{o}pica de Excepciones Algebraicas y Transporte al Cuerpo (\texttt{CotaAdaptativaFinal}):} Para todo $k \in \{4,\dots,12\}$, ambos recorridos FRI y la combinaci\'{o}n AIR, el conjunto excepcional de retos en $\mathbb{F}_{p^2}$ previo a cada extracci\'{o}n $E$ tiene cardinal a lo sumo $130{,}709$ ($130{,}708$ de la suma telesc\'{o}pica FRI m\'{a}s $1$ del conjunto cr\'{\i}tico de cancelaci\'{o}n AIR). Incorporando el sesgo de reducci\'{o}n modular al proyectar $256$ bits sobre $\mathbb{F}_p^2$, cada consulta fresca de reto tiene una tasa de excepci\'{o}n acotada por
+    \begin{equation}
+    \label{eq:rho}
+    \rho = \frac{130{,}709}{p^2} + \frac{2{,}524{,}360}{10^{35}},
+    \end{equation}
+    lo que arroja una cota global $\rho B$ sobre toda la historia.
+\end{enumerate}
+
+\subsection{Selector Acotado Acoplado ($R = 512$) y Composici\'{o}n con Trabajo}
+Cuando el or\'{a}culo comprometido est\'{a} lejos del c\'{o}digo (menos de $\lfloor 7 \cdot 2^{k+2} / 8 \rfloor$ de las $M = 2^{k+2}$ parejas son ``buenas'' conjuntamente para AIR y ambos FRI), el verificador solo acepta si las $40$ parejas distintas extra\'{\i}das caen dentro del subconjunto bueno $G_T \cap G_C$, o si el selector se desv\'{\i}a del muestreo sin reemplazo.
+
+En \texttt{SelectorAcoplado} y \texttt{SelectorAdaptativo}, acoplamos el selector real con memoria (hasta $R = 512$ extracciones para reunir $40$ \'{\i}ndices distintos) con una cinta ideal independiente. Siguiendo exactamente el orden de la secci\'{o}n~6.7.9 de la tesis NEXUS, para el primo Goldilocks $p = 2^{64} - 2^{32} + 1$ y el presupuesto compartido $B = Q + 24{,}895$, adem\'{a}s de $\rho$ en~\eqref{eq:rho}, el error de acoplamiento con memoria es
+\begin{equation}
+\label{eq:delta}
+\delta(B) = \min\left\{1, \frac{512(B + 515)}{2^{256}}\right\},
+\end{equation}
+la probabilidad hipergeom\'{e}trica exacta de omisi\'{o}n de la muestra de $40$ parejas es
+\begin{equation}
+\label{eq:hk}
+h_k = \frac{\binom{\lfloor 7 \cdot 2^{k+2} / 8 \rfloor}{40}}{\binom{2^{k+2}}{40}},
+\end{equation}
+y el riesgo combinado del selector es
+\begin{equation}
+\label{eq:sigma}
+\sigma_k(B) = h_k + 2^{-300} + \delta(B).
+\end{equation}
+En~\eqref{eq:sigma}, $h_k$ definido en~\eqref{eq:hk} expresa la cota de omisi\'{o}n de la muestra, $2^{-300}$ acota la cola de abandono tras $512$ extracciones, y $\delta(B)$ definido en~\eqref{eq:delta} cubre el error de acoplamiento con memoria sobre $B + 2$ pasos efectivos.
+
+\begin{lemma}[Riesgo del Selector por Primera Exposici\'{o}n]
+\label{lem:selector}
+Condicionado a cualquier pasado fijo de a lo sumo $B$ entradas ROM y una primera direcci\'{o}n estado/nonce fresca, la probabilidad de que el selector acotado a $R = 512$ extraiga $40$ \'{\i}ndices distintos contenidos en un conjunto de cardinal $\le \lfloor 7 \cdot 2^{k+2} / 8 \rfloor$ est\'{a} acotada por $\sigma_k(B)$ seg\'{u}n~\eqref{eq:sigma}.
+\end{lemma}
+
+En \texttt{CotaInicios} y \texttt{TrabajoSelectorLocal} demostramos dos propiedades estructurales clave:
+\begin{enumerate}
+    \setlength{\itemsep}{2pt}
+    \item \textbf{A lo sumo $Q + 1$ Parejas Estado/Nonce Elegibles:} Cada inicio del selector se inyecta en una absorci\'{o}n estado/nonce distinta; en toda la ejecuci\'{o}n (incluidos rechazos, repeticiones e intercalaciones) existen a lo sumo $Q + 1$ parejas.
+    \item \textbf{Composici\'{o}n Local del Trabajo ($2^{-g}$):} Para $g \in \{12, 20\}$, el control de trabajo tiene masa $2^{-g}$ en su primera consulta y se compone con el riesgo del selector antes de observar las respuestas, dando $2^{-g}\sigma_k(B)$ por pareja elegible.
+\end{enumerate}
+
+\begin{lstlisting}[float=t, language=Lean4, caption={Cota principal de solidez mecanizada en Lean~4 (\texttt{CotaTrabajoFinal.lean}).}, label={lst:lean_main}]
+@[expose] noncomputable def selector (k B : ℕ) : ℚ :=
+  (Nat.choose (CardinalVista.umbral (k + 2)) 40 : ℚ) /
+    Nat.choose (2 ^ (k + 2)) 40 +
+    1 / (2 : ℚ) ^ 300 +
+    AcoplamientoCadena.error Digest 512 (B + 2)
+
+@[expose] noncomputable def cota512 (L bits k Q : ℕ) : ℚ :=
+  let B := Q + 24895
+  min 1 (((B * (49 * B + L) : ℕ) : ℚ) / (2 : ℚ) ^ 256) +
+    CotaAdaptativaFinal.tasa * B +
+    (1 / (2 : ℚ) ^ bits) * selector k B * (Q + 1)
+
+theorem cota_512 {A : Type} (L bits k Q : ℕ)
+    (proponer : Programa (List Octeto × A))
+    (atacar : A → GramaticaTG2.Peticion → Programa A)
+    (actualizar : A → GramaticaTG2.Peticion → Digest → A)
+    (defecto : Digest)
+    (hbits : bits = 12 ∨ bits = 20)
+    (hk0 : 4 ≤ k) (hk1 : k ≤ 12)
+    (hQ : ∀ H, Adversario.adversarias
+      (oraculo (Adversario.ejecutar bits 512
+        proponer atacar actualizar) defecto H)
+      bits 512 proponer atacar actualizar ≤ Q) :
+    let p := Adversario.ejecutar bits 512
+      proponer atacar actualizar
+    medida (fun H : universo p → Digest =>
+      PoliticasFalsas.AceptaFalsa
+        (oraculo p defecto H) bits 512 k
+        proponer atacar actualizar) ≤
+      min 1 (cota512 L bits k Q)
+\end{lstlisting}
+
+\subsection{Teoremas Principales de Solidez Mecanizados}
+La combinaci\'{o}n de~\eqref{eq:sinbad}--\eqref{eq:sigma} produce los teoremas centrales de \texttt{Nexus.Verificador.CotaTrabajoFinal}, enunciados a continuaci\'{o}n y acompa\~{n}ados por su formalizaci\'{o}n exacta en el Listado~\ref{lst:lean_main}.
+
+\begin{theorem}[Solidez a Nivel de Bytes para Perfil Fijo]
+\label{thm:fixed}
+Para todo adversario adaptativo con presupuesto de consultas $Q$, perfil $k \in \{4, \dots, 12\}$, trabajo $g \in \{12, 20\}$ y par\'{a}metro auxiliar $L$ (con $B = Q + 24{,}895$), la probabilidad en el ROM cl\'{a}sico finito de que el verificador de bytes acepte un certificado con enunciado falso satisface
+\begin{equation}
+\label{eq:bound_fixed}
+\begin{aligned}
+\Pr[\mathsf{AceptaFalsa}_k] &\le \min\biggl\{1,\;
+\min\left\{1, \frac{B(49B + L)}{2^{256}}\right\} \\
+&\quad + \rho B + (Q + 1)2^{-g}\sigma_k(B)\biggr\}.
+\end{aligned}
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Solidez Adaptativa Multi-Perfil]
+\label{thm:multi}
+Si el adversario elige adaptativamente el perfil de salida $k \in \{4, \dots, 12\}$, la probabilidad de aceptaci\'{o}n falsa sobre todos los perfiles satisface
+\begin{equation}
+\label{eq:bound_multi}
+\begin{aligned}
+\Pr[\mathsf{AceptaFalsa}] &\le \min\biggl\{1,\;
+\min\left\{1, \frac{B(49B + L)}{2^{256}}\right\} \\
+&\quad + \rho B + (Q + 1)2^{-g}\sum_{j=4}^{12} \sigma_j(B)\biggr\}.
+\end{aligned}
+\end{equation}
+En~\eqref{eq:bound_multi}, solo se suma por perfil el riesgo del selector; la excepci\'{o}n del registro hash y las excepciones AIR/FRI ($\rho B$) se incluyen una sola vez.
+\end{theorem}
+
+\begin{table*}[t]
+\centering
+\caption{Correspondencia entre los M\'{o}dulos Formales en Lean 4 y la Implementaci\'{o}n Endurecida en Rust}
+\label{tab:alignment}
+\footnotesize
+\begin{tabular}{@{}p{2.9cm}p{4.1cm}p{3.9cm}p{5.1cm}@{}}
+\toprule
+\textbf{Capa del Verificador} & \textbf{M\'{o}dulos en Lean 4} & \textbf{M\'{o}dulos en Rust} & \textbf{Invariante de Seguridad Aplicado} \\
+\midrule
+\raggedright 1. Lector Can\'{o}nico y Rechazo Previo al Hash & \raggedright\texttt{Nexus.Verificador.\allowbreak\{Certificado, Forma, Completo\}} & \raggedright\texttt{nexus-zk::stark::\allowbreak\{linked\_codec, linked\}} & Lectura little-endian expl\'{\i}cita, residuos can\'{o}nicos ($x < p$), EOF estricto y capacidades derivadas del perfil antes de asignar vectores. \\
+\addlinespace[2pt]
+\raggedright 2. Canal Fiat--Shamir y Perfil de Trabajo & \raggedright\texttt{Nexus.Canal.\allowbreak\{GramaticaTG2, ProgramaTG2, DesafiosPrograma\}} & \raggedright\texttt{nexus-zk::stark::\allowbreak\{linked, channel\}} & Dominios, etiquetas, orden de desaf\'{\i}os y exigencia de perfil externo ($g \in \{12, 20\}$); el certificado no puede rebajar $g$. \\
+\addlinespace[2pt]
+\raggedright 3. Selector Ordenado Acotado ($R = 512$) & \raggedright\texttt{Nexus.Canal.\allowbreak SelectorOrdenado} & \raggedright\texttt{nexus-zk::stark::\allowbreak linked} & Extrae exactamente $40$ \'{\i}ndices distintos por orden de primera aparici\'{o}n en $\le 512$ extracciones; rechaza si requerir\'{\i}a la $513$. \\
+\addlinespace[2pt]
+\raggedright 4. Enlace AIR y Doble FRI & \raggedright\texttt{Nexus.Verificador.Consulta}, \texttt{Nexus.FRI.\allowbreak\{ProgramaVerificacion, Recorrido, Cosets\}} & \raggedright\texttt{nexus-zk::stark::\allowbreak\{linked, fri, merkle, field\}} & Autentica $6$ posiciones contra ra\'{\i}z compartida, eval\'{u}a composici\'{o}n en $x$ y $-x$, y pliega traza ($k$) y composici\'{o}n ($k+1$) sobre $\mathbb{F}_{p^2}$. \\
+\addlinespace[2pt]
+\raggedright 5. Contexto Local y Registro de Ra\'{\i}ces & \raggedright\textit{Capa de aplicaci\'{o}n externa al teorema AIR} & \raggedright\texttt{nexus-active::\allowbreak\{linked\_verifier, verifier\}} & \texttt{NitroVerifier::verify\_expected} exige contexto local previo al registro, impide sobrescribir alturas y separa el modo optimista. \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+En \texttt{CotaTrabajoNumerica.lean}, instanciamos~\eqref{eq:bound_fixed} y~\eqref{eq:bound_multi} en aritm\'{e}tica racional exacta (\texttt{norm\_num}):
+\begin{itemize}
+    \setlength{\itemsep}{2pt}
+    \item Para $L = 10^6$, $k = 12$ ($T = 4096$ filas), $g = 20$ bits y $Q = 2^{20}$ (\texttt{aceptacion\_4096\_release}), la evaluaci\'{o}n de~\eqref{eq:bound_fixed} arroja
+    \begin{equation}
+    \label{eq:num_4096}
+    \begin{aligned}
+    \Pr[\mathsf{AceptaFalsa}_{12}] &< \frac{4{,}757{,}335{,}454}{10^{12}} \\
+    &= 0.004757335454.
+    \end{aligned}
+    \end{equation}
+    \item Sobre los nueve perfiles adaptativamente, con $L = 10^6$, $g = 20$ bits y $Q = 10^6$ (\texttt{aceptacion\_release}), aplicando $h_k \le 1/200$ en~\eqref{eq:bound_multi} se obtiene
+    \begin{equation}
+    \label{eq:num_release}
+    \Pr[\mathsf{AceptaFalsa}] < \frac{1}{20} = 0.05.
+    \end{equation}
+    \item Para el perfil de desarrollo $g = 12$ bits y $Q = 10^3$ (\texttt{ejemplo\_debug}),~\eqref{eq:bound_multi} entrega
+    \begin{equation}
+    \label{eq:num_debug}
+    \Pr[\mathsf{AceptaFalsa}] < \frac{1}{80} = 0.0125.
+    \end{equation}
+\end{itemize}
+
+\section{Del Modelo en Lean 4 al Ejecutable en Rust}
+\label{sec:rust}
+
+Una lecci\'{o}n central de este trabajo es que la mecanizaci\'{o}n en Lean~4 expuso discrepancias concretas en nuestro prototipo inicial en Rust (\texttt{nexus-zk}) que las pruebas unitarias hab\'{\i}an pasado por alto.
+
+\subsection{Refutaci\'{o}n del Verificador Legado con Contraejemplos a Distancia $7/8$}
+Antes de la formalizaci\'{o}n, el verificador STARK experimental heredado en \texttt{nexus-zk} validaba un compromiso polin\'{o}mico aislado sin vincular el polinomio de composici\'{o}n en un doble recorrido FRI.
+
+Durante nuestra auditor\'{\i}a de transferencia de distancia (S2), construimos tres trazas adversarias expl\'{\i}citas a distancia relativa de Hamming $7/8$ del c\'{o}digo de grado $< T$ (para $T = 16$ filas) con enunciados p\'{u}blicos v\'{a}lidos que eran \emph{aceptadas} por el verificador heredado. Para eliminar esta vulnerabilidad, reemplazamos la ruta can\'{o}nica por el contrato vinculado (\texttt{nexus-zk::stark::linked}).
+
+\subsection{Alineaci\'{o}n Estructural entre Lean 4 y Rust}
+La Tabla~\ref{tab:alignment} resume las cinco capas sincronizadas entre la especificaci\'{o}n en Lean~4 y los crates endurecidos en Rust (\texttt{nexus-zk} y \texttt{nexus-active}).
+
+\subsection{Endurecimiento de la Capa de Aplicaci\'{o}n (\texttt{ActiveChain})}
+En \texttt{nexus-active}, conectamos \texttt{ActiveChain} con \texttt{NitroVerifier::verify\_expected} bajo tres invariantes:
+\begin{itemize}
+    \setlength{\itemsep}{2pt}
+    \item \textbf{Contexto de Instant\'{a}nea Privada:} \texttt{ActiveChain} conserva instant\'{a}neas privadas de los lotes construidos localmente; el perfil de filas y el trabajo $g$ se fijan por configuraci\'{o}n del nodo y no desde el sobre externo.
+    \item \textbf{Verificaci\'{o}n Previa al Registro:} La ruta de validez e h\'{\i}brida ejecuta \texttt{verify\_expected} antes de registrar cualquier env\'{\i}o o ra\'{\i}z, impidiendo duplicados concurrentes mediante exclusi\'{o}n mutua.
+    \item \textbf{Sin Degradaci\'{o}n Silenciosa:} Las llamadas sin contexto esperado rechazan incondicionalmente, aislando el modo optimista de las ra\'{\i}ces verificadas.
+\end{itemize}
+
+En la verificaci\'{o}n consolidada del workspace pasan las \textbf{223 pruebas globales} (y \textbf{436 pruebas} en la suite extendida con diario BFT v2), incluidos los $14$ certificados de regresi\'{o}n ($8$ honestos aceptados y $6$ lejanos rechazados).
+
+\section{Discusi\'{o}n: L\'{\i}mites Epist\'{e}micos y Alcance}
+\label{sec:limitations}
+
+\begin{enumerate}
+    \setlength{\itemsep}{2pt}
+    \item \textbf{ROM Cl\'{a}sico Finito frente a SHA3-256 Concreto:} Las cotas demostradas en~\eqref{eq:bound_fixed} y~\eqref{eq:bound_multi} rigen en el modelo ROM ideal con memoria; el ejecutable Rust instancia el canal con \texttt{SHA3-256}. La prueba en el modelo ideal no demuestra autom\'{a}ticamente la misma garant\'{\i}a para la funci\'{o}n concreta SHA3-256.
+    \item \textbf{R\'{e}gimen de Par\'{a}metros frente a 100 Bits de Seguridad:} La ecuaci\'{o}n~\eqref{eq:num_4096} describe un experimento matem\'{a}tico con $40$ parejas, $g = 20$ bits y $Q = 2^{20}$; no acredita por s\'{\i} sola $100$ bits de seguridad ni es una tasa de ataque por transacci\'{o}n.
+    \item \textbf{Recurrencia AIR Escalar frente a Transacciones L2 Generales:} El AIR formalizado comprueba una recurrencia escalar sobre $\mathbb{F}_p$ y rechaza lotes con ra\'{\i}ces SHA3 generales fuera del modelo, sin recortar hashes ni fabricar pruebas sint\'{e}ticas para transacciones completas.
+    \item \textbf{Ausencia de Refinamiento Universal de M\'{a}quina y QROM:} Aunque auditamos est\'{a}ticamente la correspondencia entre las $88$ fuentes Rust y $354$ fuentes Lean, la equivalencia universal de m\'{a}quina y la extensi\'{o}n completa al modelo cu\'{a}ntico QROM~\cite{zhandry2019record,chiesa2020post} permanecen como trabajo futuro.
+\end{enumerate}
+
+\section{Trabajo Relacionado y Conclusi\'{o}n}
+\label{sec:conclusion}
+
+Esfuerzos recientes como \textbf{ArkLib}~\cite{arklib2024} en Lean~4 y formalizaciones en Coq, EasyCrypt e Isabelle/HOL~\cite{barthe2011certicrypt,lochbihler2019crypthol,erbsen2019simple,zinzindohoue2017hacl,almeida2017jasmin,goldberg2021cairo} se enfocan principalmente en reducciones algebraicas modulares para IOPs, esquemas de compromiso polin\'{o}mico o aritm\'{e}tica de cuerpo de bajo nivel. Nuestro trabajo los complementa al mecanizar de extremo a extremo el \emph{verificador concreto de bytes Fiat--Shamir} ($2{,}709$ declaraciones libres de axiomas ad-hoc en $347$ subm\'{o}dulos), incluyendo la deserializaci\'{o}n binaria determinista, el registro ROM con detecci\'{o}n de colisiones y ciclos ($\mathsf{SinBad}$ en~\eqref{eq:sinbad}), el selector acotado a $R = 512$ extracciones en~\eqref{eq:sigma} y las cotas racionales certificadas en~\eqref{eq:bound_fixed}--\eqref{eq:num_debug} mediante \texttt{norm\_num}.
+
+Al acoplar el lector de bytes, la memoria del ROM y el trabajo de $g$ bits sobre $Q + 1$ parejas elegibles, nuestra formalizaci\'{o}n elimina las hip\'{o}tesis idealizadas de independencia y gui\'{o} directamente el endurecimiento del verificador en Rust dentro del proyecto NEXUS. Como trabajo futuro se abordar\'{a}n las cotas de superposici\'{o}n en QROM para FRI vinculado y la validaci\'{o}n mecanizada de traducci\'{o}n entre Rust y Lean~4.
+
+\begin{thebibliography}{15}
+
+\bibitem{almeida2017jasmin}
+J.~B. Almeida, M.~Barbosa, G.~Barthe, A.~Blot, B.~Gr{\'e}goire, V.~Laporte, T.~Oliveira, H.~Pacheco, B.~Schmidt, and P.-Y. Strub, ``Jasmin: High-assurance and high-speed cryptography,'' in \emph{Proc. ACM SIGSAC Conf. Comput. Commun. Secur. (CCS)}, 2017, pp. 1807--1823.
+
+\bibitem{arklib2024}
+ArkLib Contributors, ``ArkLib: A formal library of interactive oracle proofs and arguments of knowledge in {Lean 4},'' GitHub repository, 2024.
+
+\bibitem{barthe2011certicrypt}
+G.~Barthe, B.~Gr{\'e}goire, S.~Heraud, and S.~Zanella-B{\'e}guelin, ``Computer-aided security proofs for the working cryptographer,'' in \emph{Advances in Cryptology -- CRYPTO 2011}, Springer, 2011, pp. 71--90.
+
+\bibitem{ben2018fast}
+E.~Ben-Sasson, I.~Bentov, Y.~Horesh, and M.~Riabzev, ``Fast {Reed--Solomon} interactive oracle proofs of proximity,'' in \emph{Proc. 45th Int. Colloq. Automata, Languages, and Programming (ICALP)}, 2018, pp. 14:1--14:17.
+
+\bibitem{ben2018scalable}
+E.~Ben-Sasson, I.~Bentov, Y.~Horesh, and M.~Riabzev, ``Scalable, transparent, and post-quantum secure computational integrity,'' \emph{IACR Cryptology ePrint Archive}, Rep. 2018/046, 2018.
+
+\bibitem{ben2020proximity}
+E.~Ben-Sasson, D.~Carmon, Y.~Ishai, S.~Kopparty, and S.~Saraf, ``Proximity gaps for {Reed--Solomon} codes,'' in \emph{Proc. IEEE 61st Annu. Symp. Found. Comput. Sci. (FOCS)}, 2020, pp. 900--909.
+
+\bibitem{ben2016aurora}
+E.~Ben-Sasson, A.~Chiesa, and N.~Spooner, ``Interactive oracle proofs,'' in \emph{Theory of Cryptography Conf. (TCC 2016-B)}, Springer, 2016, pp. 31--60.
+
+\bibitem{chiesa2020post}
+A.~Chiesa, P.~Manohar, and N.~Spooner, ``Succinct arguments in the quantum random oracle model,'' in \emph{Theory of Cryptography Conf. (TCC)}, Springer, 2019, pp. 1--29.
+
+\bibitem{erbsen2019simple}
+A.~Erbsen, J.~Philipoom, J.~Gross, R.~Sloan, and A.~Chlipala, ``Simple high-level code for cryptographic arithmetic -- with proofs, without compromises,'' in \emph{Proc. IEEE Symp. Security and Privacy (SP)}, 2019, pp. 1202--1219.
+
+\bibitem{fiat1986prove}
+A.~Fiat and A.~Shamir, ``How to prove yourself: Practical solutions to identification and signature problems,'' in \emph{Advances in Cryptology -- CRYPTO '86}, Springer, 1986, pp. 186--194.
+
+\bibitem{goldberg2021cairo}
+L.~Goldberg, S.~Papini, and M.~Riabzev, ``Cairo -- a {Turing}-complete {STARK}-friendly {CPU} architecture,'' \emph{IACR Cryptology ePrint Archive}, Rep. 2021/1063, 2021.
+
+\bibitem{habock2022summary}
+U.~Hab{\"o}ck, ``A summary on the {FRI} low degree test,'' \emph{IACR Cryptology ePrint Archive}, Rep. 2022/1216, 2022.
+
+\bibitem{lochbihler2019crypthol}
+A.~Lochbihler, S.~R. Sefidgar, D.~Basin, and U.~Maurer, ``Formalizing constructive cryptography using {CryptHOL},'' in \emph{Proc. IEEE 32nd Comput. Security Found. Symp. (CSF)}, 2019, pp. 152--166.
+
+\bibitem{zhandry2019record}
+M.~Zhandry, ``How to record quantum queries, and applications to quantum indifferentiability,'' in \emph{Advances in Cryptology -- CRYPTO 2019}, Springer, 2019, pp. 239--268.
+
+\bibitem{zinzindohoue2017hacl}
+J.-K. Zinzindohou{\'e}, K.~Bhargavan, J.~Protzenko, and B.~Beurdouche, ``{HACL*}: A verified modern cryptographic library,'' in \emph{Proc. ACM SIGSAC Conf. Comput. Commun. Secur. (CCS)}, 2017, pp. 1789--1806.
+
+\end{thebibliography}
+
+\end{document}

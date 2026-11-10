@@ -1,5 +1,17 @@
 # 📓 Bitácora de Trabajo de Grado 2 (TG2) — Proyecto NEXUS
 
+## Separación del alcance y actualización del prototipo — 10 de noviembre de 2026
+
+El 30 de octubre el autor amplió el prototipo hacia una testnet con unidad de prueba NXS: perfil monetario, transporte TCP, paquetes Docker y una publicación temporal mediante túnel. Ese trabajo se guardó solo en el repositorio `nexus` y no se incorporó a esta edición.
+
+El 10 de noviembre el autor considera que ese incremento se aproxima demasiado a un producto de criptomoneda y pide separarlo. Se vuelve a ejecutar la suite sobre aquel estado (436 pruebas aprobadas) y se conserva íntegro en la rama [`testnet-experimental`](https://github.com/JuanDiegoSusunaga/nexus/tree/testnet-experimental). La rama principal de `nexus` se revierte y recupera únicamente lo ligado a los objetivos de la tesis: verificación de posición en `MerkleProof`, tres correcciones de contabilidad de validadores, autorización de claves L2 por épocas, bloqueo de emergencia y un banco de pruebas BFT de cuatro validadores ML-DSA-65 con diario recuperable. El motor BFT se desacopla del génesis monetario; no hay emisión, comisiones, quema ni transporte de red.
+
+Sobre el código resultante (`34789ac`) pasan `cargo check --workspace --all-targets`, `cargo build --workspace` y **412 pruebas**, con una ignorada, locked/offline y rustc 1.97.1. [Contrato vigente](nexus/REPRODUCIBILIDAD_TG2.md#alcance-de-la-rama-principal--10-de-noviembre-de-2026) · [Verificación](nexus/Documentos/06-Evidencia-TG2/2026-11-10/Separacion-Alcance/verification.json) · [Bitácora del prototipo](nexus/BITACORA_TG2.md).
+
+En este repositorio se sincroniza `nexus/` con esa rama principal, incluidos los veinte archivos públicos de regresión que ahora leen sus pruebas dentro del propio workspace, y se añade el [borrador de artículo](Documentos/07-Paper-Lean-Rust/README.md) sobre la formalización Lean y el verificador en Rust. El manifiesto se registra de nuevo como edición `nexus-unificado-revision-2026-11-10`.
+
+No se modifican manuscrito, capítulos ni Lean, y no se recompila la formalización. El manuscrito describe el código del 20 de octubre: los componentes incorporados hoy son posteriores y no están descritos en él. Queda por acordar con el director si alguno entra al texto. El enlace público del 30 de octubre ya no está activo. Los documentos locales de aquella etapa se conservan en la rama local `respaldo-documentos-2026-10-30`. No hay dictamen.
+
 ## Edición unificada para revisión del director — 29 de octubre de 2026
 
 El autor solicita preparar GitHub para su director e incluir tesis, matemáticas y Rust «todo en uno». Se organiza `tesis-nexus` como entrada única: PDF y Word del manuscrito, guía explicada y preguntas para el director, balance de objetivos, formalización Lean y workspace Rust completo en `nexus/`. La copia se incorpora como archivos normales, sin submódulos ni necesidad de un segundo clon; el repositorio Rust original conserva su historial y enlaza al conjunto.
