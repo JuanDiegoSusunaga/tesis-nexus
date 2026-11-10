@@ -14,7 +14,7 @@
 
 - [ ] Acordar con el director si los componentes posteriores al manuscrito (autorización de claves L2, bloqueo de emergencia, banco BFT) entran al texto de la tesis o se presentan como trabajo complementario. El manuscrito describe el código del 20 de octubre.
 
-- [ ] Revisar el pull request 1 de `nexus` (rechazo de APIs Groth16 incompletas y refuerzo del diario en Unix) y decidir qué correcciones pasan a la rama principal.
+- [x] Incorporar del pull request 1 de `nexus` el rechazo de las APIs Groth16 incompletas y el refuerzo del diario en Unix. Check, build y **415 pruebas** correctos; la medición de carga queda en la rama experimental. [Verificación](nexus/Documentos/06-Evidencia-TG2/2026-11-10/Correcciones-Verificador-Diario/verification.json).
 
 - [x] Reunir tesis, formalización Lean, workspace Rust y evidencia en `tesis-nexus`, con una entrada de lectura para el director y verificación de integridad desde un solo clon. Organización del 29 de octubre; los pendientes académicos y matemáticos conservan sus estados.
 

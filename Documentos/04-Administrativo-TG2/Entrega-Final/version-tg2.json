@@ -6,7 +6,7 @@
   "estado": "Edición unificada para revisión del director: manuscrito, matemáticas Lean, workspace Rust y evidencia en un solo repositorio. Manuscrito y Lean conservan el alcance de las comprobaciones del 20 de octubre; el workspace Rust se actualiza el 10 de noviembre y es posterior al manuscrito.",
   "documentos": {
     "repositorio": "https://github.com/JuanDiegoSusunaga/tesis-nexus.git",
-    "commit_contexto": "b713e76201fc987ef30380a5ab0824dee9951515",
+    "commit_contexto": "04c2ceae9a04cca38ec18a1b12d94ce1370e5fd8",
     "identificacion": "El commit que contiene este manifiesto identifica todos los archivos de la edici?n unificada, incluido Rust; no hay subm?dulos ni segundo clon obligatorio.",
     "revision_conservada": "Se incorporan los cambios documentales previos, la gu?a explicada y la evidencia del ciclo durable; las descripciones sin commit/push corresponden a sus etapas hist?ricas.",
     "actualizacion_estado_l1": "Solo se consolida el repositorio Rust. Los cambios documentales locales anteriores se preservan y sus huellas se actualizan sin incorporarlos a un nuevo commit documental.",
@@ -24,7 +24,7 @@
   "codigo": {
     "repositorio": "https://github.com/JuanDiegoSusunaga/tesis-nexus.git",
     "directorio": "nexus",
-    "commit": "34789ac0986da134727f17f3034aae517638e20b",
+    "commit": "e0c09842b774ba36f1b6f296888805e6adf9699e",
     "contrato_local_l1": "cuentas-L1-SHA3-v1",
     "perfil_da_local": "fragmentos-locales-v1",
     "perfil_confirmacion_local": "inclusion-procesada-local-L1-v1",
@@ -36,7 +36,7 @@
     "perfil_ciclo_local_durable": "nexus-ciclo-local-durable-v1",
     "modo": "integrado",
     "repositorio_origen": "https://github.com/JuanDiegoSusunaga/nexus.git",
-    "commit_fuentes_verificadas": "34789ac0986da134727f17f3034aae517638e20b",
+    "commit_fuentes_verificadas": "e0c09842b774ba36f1b6f296888805e6adf9699e",
     "identificacion": "El commit de origen corresponde a la rama principal del repositorio Rust independiente. Las fuentes integradas se identifican por las huellas de archivos."
   },
   "manifiesto_previo": {
@@ -87,8 +87,8 @@
     },
     {
       "archivo": "BITACORA_TG2.md",
-      "bytes": 223922,
-      "sha256": "2b0c1034e4b17e6f655bd85d4aabf902db99adaae9cb0743cd5ed7166b31d467"
+      "bytes": 224422,
+      "sha256": "6517c4eec395f9c47c25f57e5bdae50f3dea0fdcec0d5cd4f517771434f88b84"
     },
     {
       "archivo": "Documentos/01-Manuscrito/Capitulos/Cap1-Introduccion.md",
@@ -49462,13 +49462,13 @@
     },
     {
       "archivo": "PENDIENTES.md",
-      "bytes": 44457,
-      "sha256": "401696835e093de3b07e06288e32f8726314e5c797465a55fce23fb14084455a"
+      "bytes": 44623,
+      "sha256": "5ecd6f15f47f262f67f8904b90e608a2e6fa83e9e3f98d165d4bc26348d22097"
     },
     {
       "archivo": "README.md",
-      "bytes": 7345,
-      "sha256": "afceb64bc41faeb31d3b7b6d2fcacad0ff705c74b50b39c2a2c2bcc5b401da2a"
+      "bytes": 7542,
+      "sha256": "96f020272d5e0ecac5ac11427e09fa9ffcb526bf311c61c4ce666f7861a78813"
     },
     {
       "archivo": "RUTA_DE_ESTUDIO.md",
@@ -51297,8 +51297,8 @@
     },
     {
       "archivo": "nexus/BITACORA_TG2.md",
-      "bytes": 4572,
-      "sha256": "b7126b864cc8fe60117c3d3d98cffe2ad9de4f495dafc5b5e233780d87bae1d1"
+      "bytes": 5207,
+      "sha256": "a83cdcf5db180401b7d3b137a61be8d4ec0b65fc862b5ca06a23101fdf5f162d"
     },
     {
       "archivo": "nexus/Cargo.lock",
@@ -51606,6 +51606,16 @@
       "sha256": "99643f3ceea3bb872b37c1f6793d71e9c25c7596578fb7de2f7be2b369ad79ed"
     },
     {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-11-10/Correcciones-Verificador-Diario/cargo-test-resumen.log",
+      "bytes": 10901,
+      "sha256": "1a3d903ce49e45307d286bc79aa3b2eabaa82c5e21398a8b4daab9c442da76fc"
+    },
+    {
+      "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-11-10/Correcciones-Verificador-Diario/verification.json",
+      "bytes": 1800,
+      "sha256": "66f1a7499898b739e13a00529ac4d14368d8c3417848fb2f7de2ff1b9f8bf464"
+    },
+    {
       "archivo": "nexus/Documentos/06-Evidencia-TG2/2026-11-10/Separacion-Alcance/cargo-test-resumen.log",
       "bytes": 11596,
       "sha256": "55f9954b5b1f2fdc85cfbc170ae546776a300ff3dd9b69e18915a1e2c89c8080"
@@ -51617,18 +51627,18 @@
     },
     {
       "archivo": "nexus/PENDIENTES.md",
-      "bytes": 1694,
-      "sha256": "c572138991fe894a9286f1e365af8adef4306dcae6ed5589c0769b1752b1baa8"
+      "bytes": 1797,
+      "sha256": "a3573370e438fee1eb76b0033ba83189b09b482d2afa00be3c003ff93bfc795f"
     },
     {
       "archivo": "nexus/README.md",
-      "bytes": 5428,
-      "sha256": "c4efc7bf0d6576f85681af4b2d0350cc3f6ddc9842f254c76956eb46f5af1c4e"
+      "bytes": 5487,
+      "sha256": "266dae74f2975d2bd2fa6ade567cfb7986601bf4c0be2a056db94add00d87ff6"
     },
     {
       "archivo": "nexus/REPRODUCIBILIDAD_TG2.md",
-      "bytes": 61419,
-      "sha256": "ebce8f2ac7043cfe285f2e8dddf0ce60acf94ccbcdde2f7c3e05622acd03951d"
+      "bytes": 61989,
+      "sha256": "1f3f1c8c6d89a3cf7ca7713cebbf60f0531ace7b4de9dc7af13a1880f51100d4"
     },
     {
       "archivo": "nexus/nexus-active/Cargo.toml",
@@ -51872,8 +51882,8 @@
     },
     {
       "archivo": "nexus/nexus-core/src/journal.rs",
-      "bytes": 7251,
-      "sha256": "50e6cff845eafba8f0376b187cf0c1be30878aa85955843abcd7b6cb479f8cd5"
+      "bytes": 10172,
+      "sha256": "d602d492259b983dedb6c8990d703ab34d8ee7038bea3e3d59026d993f8abe66"
     },
     {
       "archivo": "nexus/nexus-core/src/lib.rs",
@@ -52057,8 +52067,8 @@
     },
     {
       "archivo": "nexus/nexus-node/src/bft.rs",
-      "bytes": 20751,
-      "sha256": "2afa8a70d1ae3c5df8286f160398bd9181497eb4c00f1b5640e92833d2d6e35b"
+      "bytes": 21046,
+      "sha256": "51b8793dad36a74489dec399c11b311dbe02bc32cabd6bbbe937f77d069dddf6"
     },
     {
       "archivo": "nexus/nexus-node/src/config.rs",
@@ -52147,13 +52157,13 @@
     },
     {
       "archivo": "nexus/nexus-zk/src/lib.rs",
-      "bytes": 2447,
-      "sha256": "7c1b7492c122d5bc83ca3bf3e729c1f898aaabba38dfdb49b4a6d421aa29bc63"
+      "bytes": 2600,
+      "sha256": "28601fb44284af8a1e8d869d496f35fb1ee9e9de2d989803a36a21591c9d1470"
     },
     {
       "archivo": "nexus/nexus-zk/src/prover.rs",
-      "bytes": 1390,
-      "sha256": "18ab5a8d19a55e554cea62062003c1d1541330d22b085b89496e5d9e49c3866d"
+      "bytes": 932,
+      "sha256": "e47b9ea59ceb52af05b615cea962d539e07d4eb443c82f1531caa84e4051821b"
     },
     {
       "archivo": "nexus/nexus-zk/src/stark/air.rs",
@@ -52207,8 +52217,13 @@
     },
     {
       "archivo": "nexus/nexus-zk/src/verifier.rs",
-      "bytes": 1461,
-      "sha256": "5f4c8168b6ff86e2712474e2dfc443f056a6091d46c48d662ad90b0ffb0b9a73"
+      "bytes": 1281,
+      "sha256": "c6abc5abe9f27bc7f19e14079e2ec5d6fde1f3667d1f79942a1a4c8949815288"
+    },
+    {
+      "archivo": "nexus/nexus-zk/tests/generic_verifier_rejection.rs",
+      "bytes": 1531,
+      "sha256": "57ae9dfb4d2f419f9f27af9c2ad24f870f90781c4a5c49ebd0cf41b594b7a884"
     },
     {
       "archivo": "nexus/nexus-zk/tests/lean_contract.rs",
@@ -52902,9 +52917,9 @@
       "commit_codigo": "76694476f53f25c0bbd68c96222f68db6740a130",
       "commit_fuentes_verificadas": "b16688ce3264449545cf45c739ed5f573b12d0b1"
     },
-    "commit_codigo": "34789ac0986da134727f17f3034aae517638e20b",
+    "commit_codigo": "e0c09842b774ba36f1b6f296888805e6adf9699e",
     "verificacion": "nexus/Documentos/06-Evidencia-TG2/2026-11-10/Separacion-Alcance/verification.json",
-    "pruebas_workspace": 412,
+    "pruebas_workspace": 415,
     "pruebas_fallidas": 0,
     "pruebas_ignoradas": 1,
     "incorporado": [
@@ -52914,12 +52929,17 @@
       "bloqueo de emergencia L2",
       "banco de pruebas BFT local con diario incremental",
       "corpus público de regresión dentro de nexus/",
-      "borrador de artículo Lean/Rust"
+      "borrador de artículo Lean/Rust",
+      "rechazo de APIs Groth16 incompletas",
+      "sincronización de directorio del diario en Unix"
     ],
     "excluido": "Perfil monetario NXS, transporte TCP y publicación desde Docker; rama testnet-experimental de nexus (dd46a0f).",
     "manuscrito_regenerado": false,
     "lean_recompilado": false,
     "manuscrito_describe_estos_cambios": false,
-    "dictamen": "pendiente"
+    "dictamen": "pendiente",
+    "commit_codigo_separacion": "34789ac0986da134727f17f3034aae517638e20b",
+    "pruebas_workspace_separacion": 412,
+    "verificacion_correcciones": "nexus/Documentos/06-Evidencia-TG2/2026-11-10/Correcciones-Verificador-Diario/verification.json"
   }
 }
