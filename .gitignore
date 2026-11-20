@@ -13,3 +13,6 @@ __pycache__/
 
 # Archivos temporales de trabajo
 /tmp/
+
+# Textos completos de artículos de terceros (derechos de autor): solo en la copia local.
+Documentos/05-Estado-del-Arte/Papers-y-Articulos/
